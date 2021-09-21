@@ -25,7 +25,7 @@ A client app for the Chum repositories
 %setup -q -n %{name}-%{version}
 
 %build
-%cmake -DCHUMGUI_VERSION=%(echo %{version} | grep -Eo '^[0-9]+.[0-9]+.[0-9]+') .
+%cmake -DCHUMGUI_VERSION=%(echo %{version} | grep -Eo '^[0-9]+(\.[0-9]+)*') .
 cmake --build .
 
 %install
