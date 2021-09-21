@@ -44,11 +44,20 @@ void ChumPackage::setPkid(const QString &pkid) {
   });
 }
 
-void ChumPackage::install() {
+void ChumPackage::installPackage() {
   if (m_pkid.isEmpty()) {
     return;
   }
 
   auto pktr = Daemon::installPackage(m_pkid);
+  connect(pktr, &Transaction::finished, pktr, &Transaction::deleteLater);
+}
+
+void ChumPackage::updatePackage() {
+  if (m_pkid.isEmpty()) {
+    return;
+  }
+
+  auto pktr = Daemon::updatePackage(m_pkid);
   connect(pktr, &Transaction::finished, pktr, &Transaction::deleteLater);
 }

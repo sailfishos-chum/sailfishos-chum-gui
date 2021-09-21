@@ -22,7 +22,8 @@ public:
   void setPkid(const QString &pkid);
 
 public slots:
-  void install();
+  void installPackage();
+  void updatePackage();
 
 signals:
   void updated();

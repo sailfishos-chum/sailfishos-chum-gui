@@ -7,6 +7,7 @@ Page {
   property alias pkid: pkg.pkid
   property alias title: header.title
   property alias version: availableVersionItem.value
+  readonly property bool _installed: !!pkg.installedVersion
 
   id: page
   allowedOrientations: Orientation.All
@@ -21,9 +22,14 @@ Page {
 
     PullDownMenu {
       MenuItem {
-        //% "Install"
-        text: qsTrId("chum-install")
-        onClicked: pkg.install()
+        text: _installed
+          //% "Update"
+          ? qsTrId("chum-update")
+          //% "Install"
+          : qsTrId("chum-install")
+        onClicked: _installed
+          ? pkg.updatePackage()
+          : pkg.installPackage()
       }
     }
 
@@ -61,7 +67,7 @@ Page {
 
         ChumDetailItem {
           id: installedVersionItem
-          visible: value
+          visible: _installed
           //% "Installed version"
           label: qsTrId("chum-pkg-installed-version")
           value: pkg.installedVersion
