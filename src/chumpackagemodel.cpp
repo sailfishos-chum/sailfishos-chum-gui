@@ -44,7 +44,7 @@ QHash<int, QByteArray> ChumPackageModel::roleNames() const {
 
 void ChumPackageModel::reset() {
   beginResetModel();
-  auto pktr = Daemon::getPackages();
+  auto pktr = Daemon::getPackages(Transaction::FilterNotDevel);
   connect(pktr, &Transaction::package, this, [this]([[maybe_unused]] auto info, const auto &packageID, [[maybe_unused]] const auto &summary) {
     const auto repo = Daemon::packageData(packageID);
     if (repo == CHUM) {
