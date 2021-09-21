@@ -45,17 +45,17 @@ install(FILES ${PROJECT_NAME}.desktop
   DESTINATION share/applications
 )
 
+file(GLOB RPM_FILES rpm/*)
 add_custom_target(distfiles SOURCES
   qml/sailfishos-chum-gui.qml
   qml/cover/CoverPage.qml
   qml/pages/MainPage.qml
   qml/pages/PackagePage.qml
   qml/components/ChumDetailItem.qml
-  rpm/${PROJECT_NAME}.changes
-  rpm/${PROJECT_NAME}.spec
   mapplauncherd/privileges.d/${PROJECT_NAME}
   LICENSE
   README.md
   ${PROJECT_NAME}.desktop
+  ${RPM_FILES}
   ${TS_FILES}
 )
