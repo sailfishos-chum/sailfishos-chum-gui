@@ -1,0 +1,2 @@
+${CMAKE_INSTALL_PREFIX}
+${CMAKE_BINARY_DIR}/sailfishos-chum-gui:bin

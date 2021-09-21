@@ -1,0 +1,2 @@
+# Allow sailfishos-chum-gui to manage packages
+/usr/bin/sailfishos-chum-gui,r
