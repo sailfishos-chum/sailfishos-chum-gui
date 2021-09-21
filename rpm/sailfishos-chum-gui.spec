@@ -16,6 +16,7 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  cmake
 BuildRequires:  sailfish-svg2png
 BuildRequires:  PackageKit-Qt5-devel
+BuildRequires:  qt5-qttools-linguist
 
 %description
 A client app for the Chum repositories
