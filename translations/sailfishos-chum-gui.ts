@@ -18,23 +18,28 @@
         <source>Install</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="chum-pkg-version">
-        <location filename="../qml/pages/PackagePage.qml" line="65"/>
+    <message id="chum-pkg-installed-version">
+        <location filename="../qml/pages/PackagePage.qml" line="66"/>
+        <source>Installed version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-pkg-available-version">
+        <location filename="../qml/pages/PackagePage.qml" line="73"/>
         <source>Available version</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-download-size">
-        <location filename="../qml/pages/PackagePage.qml" line="70"/>
+        <location filename="../qml/pages/PackagePage.qml" line="78"/>
         <source>Download size</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-license">
-        <location filename="../qml/pages/PackagePage.qml" line="76"/>
+        <location filename="../qml/pages/PackagePage.qml" line="84"/>
         <source>License</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-link">
-        <location filename="../qml/pages/PackagePage.qml" line="86"/>
+        <location filename="../qml/pages/PackagePage.qml" line="94"/>
         <source>Link</source>
         <translation type="unfinished"></translation>
     </message>

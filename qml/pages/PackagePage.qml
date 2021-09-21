@@ -6,7 +6,7 @@ import "../components"
 Page {
   property alias pkid: pkg.pkid
   property alias title: header.title
-  property alias version: versionItem.value
+  property alias version: availableVersionItem.value
 
   id: page
   allowedOrientations: Orientation.All
@@ -60,9 +60,17 @@ Page {
         spacing: Theme.paddingMedium
 
         ChumDetailItem {
-          id: versionItem
+          id: installedVersionItem
+          visible: value
+          //% "Installed version"
+          label: qsTrId("chum-pkg-installed-version")
+          value: pkg.installedVersion
+        }
+
+        ChumDetailItem {
+          id: availableVersionItem
           //% "Available version"
-          label: qsTrId("chum-pkg-version")
+          label: qsTrId("chum-pkg-available-version")
         }
 
         ChumDetailItem {

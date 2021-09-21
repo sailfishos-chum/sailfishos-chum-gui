@@ -21,15 +21,26 @@ void ChumPackage::setPkid(const QString &pkid) {
     return;
   }
 
-  auto pktr = Daemon::getDetails(m_pkid);
-  connect(pktr, &Transaction::finished, pktr, &Transaction::deleteLater);
-  connect(pktr, &Transaction::details, this, [this](const auto &v) {
+  auto details_tr = Daemon::getDetails(m_pkid);
+  connect(details_tr, &Transaction::finished, details_tr, &Transaction::deleteLater);
+  connect(details_tr, &Transaction::details, this, [this](const auto &v) {
     m_description = v.description();
     m_summary     = v.summary();
     m_url         = v.url();
     m_license     = v.license();
     m_size        = v.size();
     emit updated();
+  });
+
+  auto resolve_tr = Daemon::resolve(Daemon::packageName(m_pkid), Transaction::FilterInstalled);
+  connect(resolve_tr, &Transaction::finished, resolve_tr, &Transaction::deleteLater);
+  connect(resolve_tr, &Transaction::package, this, [this](
+    [[maybe_unused]] auto info,
+    const auto &packageID,
+    [[maybe_unused]] const auto &summary
+  ) {
+    m_installed_version = Daemon::packageVersion(packageID);
+    emit installedVersionChanged();
   });
 }
 
