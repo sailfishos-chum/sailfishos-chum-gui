@@ -1,8 +1,14 @@
 add_executable(${PROJECT_NAME}
+  chum.cpp
+  chum.h
+  chumabstractpackagemodel.cpp
+  chumabstractpackagemodel.h
+  chumavailablepackagesmodel.cpp
+  chumavailablepackagesmodel.h
   chumpackage.cpp
   chumpackage.h
-  chumpackagemodel.cpp
-  chumpackagemodel.h
+  chumupdatesmodel.cpp
+  chumupdatesmodel.h
   main.cpp
 )
 

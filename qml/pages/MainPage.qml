@@ -1,56 +1,44 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import org.chum 1.0
+import "../components"
 
 Page {
   id: page
   allowedOrientations: Orientation.All
 
-  ChumPackageModel {
-    id: packageModel
-  }
-
-  SilicaListView {
+  SilicaFlickable {
     anchors.fill: parent
-    model: packageModel
-
-    header: PageHeader {
-      title: "Chum"
-      //% "Available packages"
-      description: qsTrId("chum-available-packages")
-    }
-
-    delegate: ListItem {
-      height: Theme.itemSizeMedium
-
-      onClicked: pageStack.push(Qt.resolvedUrl("PackagePage.qml"), {
-        pkid:    model.packageId,
-        title:   model.packageName,
-        version: model.packageVersion
-      })
-
-      Label {
-        anchors {
-          left: parent.left
-          leftMargin: Theme.horizontalPageMargin
-          right: parent.right
-          rightMargin: Theme.horizontalPageMargin
-          verticalCenter: parent.verticalCenter
-        }
-        text: model.packageName
-        wrapMode: Text.WordWrap
-        color: parent.highlighted ? Theme.highlightColor : Theme.primaryColor
-      }
-    }
+    contentHeight: content.height
 
     PullDownMenu {
       MenuItem {
-        //% "Reload"
-        text: qsTrId("chum-reload")
-        onClicked: packageModel.reset()
+        enabled: false
+        //% "About"
+        text: qsTrId("chum-about")
       }
     }
 
-    VerticalScrollDecorator {}
+    Column {
+      id: content
+      width: parent.width
+
+      PageHeader {
+        title: "Chum"
+      }
+
+      MainPageButton {
+        enabled: chum.updatesCount > 0
+        text: enabled
+          ? updatesNotification.summary
+          //% "No updates available"
+          : qsTrId("chum-no-updates")
+        onClicked: pageStack.push(Qt.resolvedUrl("UpdatesPage.qml"))
+      }
+
+      MainPageButton {
+        text: qsTrId("chum-available-packages")
+        onClicked: pageStack.push(Qt.resolvedUrl("AvailablePackagesPage.qml"))
+      }
+    }
   }
 }

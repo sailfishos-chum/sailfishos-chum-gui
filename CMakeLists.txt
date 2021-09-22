@@ -49,9 +49,13 @@ file(GLOB RPM_FILES rpm/*)
 add_custom_target(distfiles SOURCES
   qml/sailfishos-chum-gui.qml
   qml/cover/CoverPage.qml
+  qml/pages/AvailablePackagesPage.qml
   qml/pages/MainPage.qml
   qml/pages/PackagePage.qml
+  qml/pages/UpdatesPage.qml
   qml/components/ChumDetailItem.qml
+  qml/components/MainPageButton.qml
+  qml/components/PackagesPage.qml
   mapplauncherd/privileges.d/${PROJECT_NAME}
   LICENSE
   README.md
