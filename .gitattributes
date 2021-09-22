@@ -1,0 +1,2 @@
+# Use target-compatible line endings as the safe default for cross compilation.
+* text=auto eol=lf
