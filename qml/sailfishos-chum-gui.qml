@@ -10,6 +10,21 @@ ApplicationWindow {
   readonly property string chumDisplayName: "Chum"
   readonly property string configGroup:     "/apps/sailfishos-chum-gui/"
 
+  function _packageOperationNotification(operation) {
+    switch (operation) {
+    case Chum.PackageInstallation:
+      //: %1 - package name, %2 - package version
+      //% "%1 %2 installed"
+      return QT_TRID_NOOP("chum-package-installed")
+    case Chum.PackageUpdate:
+      //: %1 - package name, %2 - package version
+      //% "%1 %2 updated"
+      return QT_TRID_NOOP("chum-package-updated")
+    default:
+      return null
+    }
+  }
+
   initialPage: Component { MainPage { } }
   cover: Qt.resolvedUrl("cover/CoverPage.qml")
   allowedOrientations: defaultAllowedOrientations
@@ -67,6 +82,13 @@ ApplicationWindow {
           updatesNotification.close()
           updatesNotificationId.value = 0
         }
+      }
+    }
+
+    onPackageOperationFinished: {
+      var trid = _packageOperationNotification(operation)
+      if (trid) {
+        notification.show(qsTrId(trid).arg(name).arg(version))
       }
     }
 

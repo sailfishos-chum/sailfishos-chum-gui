@@ -41,19 +41,3 @@ void ChumPackage::setPkid(const QString &pkid) {
     emit this->installedVersionChanged();
   });
 }
-
-void ChumPackage::installPackage() {
-  if (m_pkid.isEmpty()) {
-    return;
-  }
-
-  Daemon::installPackage(m_pkid);
-}
-
-void ChumPackage::updatePackage() {
-  if (m_pkid.isEmpty()) {
-    return;
-  }
-
-  Daemon::updatePackage(m_pkid);
-}

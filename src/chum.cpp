@@ -4,6 +4,18 @@
 
 using namespace PackageKit;
 
+static inline auto role2operation(Transaction::Role role) {
+  switch (role) {
+  case Transaction::RoleInstallFiles:
+  case Transaction::RoleInstallPackages:
+    return Chum::PackageInstallation;
+  case Transaction::RoleUpdatePackages:
+    return Chum::PackageUpdate;
+  default:
+    return Chum::PackageUnknownOperation;
+  }
+}
+
 const QString Chum::repoName{QStringLiteral("sailfishos-chum")};
 
 bool Chum::isChumPackage(const QString &id) {
@@ -13,24 +25,7 @@ bool Chum::isChumPackage(const QString &id) {
 Chum::Chum(QObject *parent)
   : QObject{parent}
 {
-  auto pk = Daemon::global();
-  connect(pk, &Daemon::updatesChanged, this, &Chum::getUpdates);
-//  connect(pk, &Daemon::transactionListChanged, this, [this](
-//    const auto &tids
-//  ) {
-//    for (const auto &tid : tids) {
-//      if (!m_tids.contains(tid)) {
-//        auto pktr = new Transaction{tid};
-//        connect(pktr, &Transaction::finished, this, [this, pktr]() {
-//          switch (pktr->role()) {
-//          case Transaction::RoleInstallPackages:
-//            pktr
-//          }
-//        });
-//      }
-//    }
-//    m_tids = tids.toSet();
-//  });
+  connect(Daemon::global(), &Daemon::updatesChanged, this, &Chum::getUpdates);
 }
 
 void Chum::getUpdates() {
@@ -70,5 +65,30 @@ void Chum::refreshRepo(bool force) {
   connect(pktr, &Transaction::finished, this, [this]() {
     m_refreshing_repo = false;
     emit this->refreshingRepoChanged();
+  });
+}
+
+void Chum::installPackage(const QString &id) {
+  startOperation(Daemon::installPackage(id), id);
+}
+
+void Chum::updatePackage(const QString &id) {
+  startOperation(Daemon::updatePackage(id), id);
+}
+
+void Chum::startOperation(Transaction *pktr, const QString &pkg_id) {
+  connect(pktr, &Transaction::roleChanged, this, [this, pktr, pkg_id]() {
+    emit this->packageOperationStarted(
+      role2operation(pktr->role()),
+      Daemon::packageName(pkg_id)
+    );
+  });
+
+  connect(pktr, &Transaction::finished, this, [this, pktr, pkg_id]() {
+    emit this->packageOperationFinished(
+      role2operation(pktr->role()),
+      Daemon::packageName(pkg_id),
+      Daemon::packageVersion(pkg_id)
+    );
   });
 }

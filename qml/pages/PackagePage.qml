@@ -28,8 +28,8 @@ Page {
           //% "Install"
           : qsTrId("chum-install")
         onClicked: _installed
-          ? pkg.updatePackage()
-          : pkg.installPackage()
+          ? chum.updatePackage(pkid)
+          : chum.installPackage(pkid)
       }
     }
 
