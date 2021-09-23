@@ -29,7 +29,7 @@ void ChumPackage::setPkid(const QString &pkid) {
     m_url         = v.url();
     m_license     = v.license();
     m_size        = v.size();
-    emit updated();
+    emit this->updated();
   });
 
   auto resolve_tr = Daemon::resolve(Daemon::packageName(m_pkid), Transaction::FilterInstalled);
@@ -40,7 +40,7 @@ void ChumPackage::setPkid(const QString &pkid) {
     [[maybe_unused]] const auto &summary
   ) {
     m_installed_version = Daemon::packageVersion(packageID);
-    emit installedVersionChanged();
+    emit this->installedVersionChanged();
   });
 }
 

@@ -11,6 +11,22 @@ Chum::Chum(QObject *parent)
 {
   auto pk = Daemon::global();
   connect(pk, &Daemon::updatesChanged, this, &Chum::getUpdates);
+//  connect(pk, &Daemon::transactionListChanged, this, [this](
+//    const auto &tids
+//  ) {
+//    for (const auto &tid : tids) {
+//      if (!m_tids.contains(tid)) {
+//        auto pktr = new Transaction{tid};
+//        connect(pktr, &Transaction::finished, this, [this, pktr]() {
+//          switch (pktr->role()) {
+//          case Transaction::RoleInstallPackages:
+//            pktr
+//          }
+//        });
+//      }
+//    }
+//    m_tids = tids.toSet();
+//  });
 }
 
 bool Chum::isChumPackage(const QString &id) {
