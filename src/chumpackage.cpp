@@ -22,7 +22,6 @@ void ChumPackage::setPkid(const QString &pkid) {
   }
 
   auto details_tr = Daemon::getDetails(m_pkid);
-  connect(details_tr, &Transaction::finished, details_tr, &Transaction::deleteLater);
   connect(details_tr, &Transaction::details, this, [this](const auto &v) {
     m_description = v.description();
     m_summary     = v.summary();
@@ -33,7 +32,6 @@ void ChumPackage::setPkid(const QString &pkid) {
   });
 
   auto resolve_tr = Daemon::resolve(Daemon::packageName(m_pkid), Transaction::FilterInstalled);
-  connect(resolve_tr, &Transaction::finished, resolve_tr, &Transaction::deleteLater);
   connect(resolve_tr, &Transaction::package, this, [this](
     [[maybe_unused]] auto info,
     const auto &packageID,
@@ -49,8 +47,7 @@ void ChumPackage::installPackage() {
     return;
   }
 
-  auto pktr = Daemon::installPackage(m_pkid);
-  connect(pktr, &Transaction::finished, pktr, &Transaction::deleteLater);
+  Daemon::installPackage(m_pkid);
 }
 
 void ChumPackage::updatePackage() {
@@ -58,6 +55,5 @@ void ChumPackage::updatePackage() {
     return;
   }
 
-  auto pktr = Daemon::updatePackage(m_pkid);
-  connect(pktr, &Transaction::finished, pktr, &Transaction::deleteLater);
+  Daemon::updatePackage(m_pkid);
 }
