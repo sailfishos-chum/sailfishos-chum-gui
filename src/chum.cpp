@@ -6,6 +6,10 @@ using namespace PackageKit;
 
 const QString Chum::repoName{QStringLiteral("sailfishos-chum")};
 
+bool Chum::isChumPackage(const QString &id) {
+  return Daemon::packageData(id) == repoName;
+}
+
 Chum::Chum(QObject *parent)
   : QObject{parent}
 {
@@ -29,10 +33,6 @@ Chum::Chum(QObject *parent)
 //  });
 }
 
-bool Chum::isChumPackage(const QString &id) {
-  return Daemon::packageData(id) == repoName;
-}
-
 void Chum::getUpdates() {
   static decltype(m_updates_count) new_count;
   new_count = 0;
@@ -49,7 +49,26 @@ void Chum::getUpdates() {
   connect(pktr, &Transaction::finished, this, [this]() {
     if (m_updates_count != new_count) {
       m_updates_count = new_count;
-      emit updatesCountChanged();
+      emit this->updatesCountChanged();
     }
+  });
+}
+
+void Chum::refreshRepo(bool force) {
+  if (m_refreshing_repo) {
+    return;
+  }
+
+  m_refreshing_repo = true;
+  emit refreshingRepoChanged();
+
+  auto pktr = Daemon::repoSetData(
+    repoName,
+    QStringLiteral("refresh-now"),
+    QVariant::fromValue(force).toString()
+  );
+  connect(pktr, &Transaction::finished, this, [this]() {
+    m_refreshing_repo = false;
+    emit this->refreshingRepoChanged();
   });
 }

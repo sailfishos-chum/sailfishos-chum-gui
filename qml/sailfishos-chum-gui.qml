@@ -7,7 +7,8 @@ import "pages"
 
 ApplicationWindow {
   property int _updatesCount: 0
-  readonly property string configGroup: "/apps/sailfishos-chum-gui/"
+  readonly property string chumDisplayName: "Chum"
+  readonly property string configGroup:     "/apps/sailfishos-chum-gui/"
 
   initialPage: Component { MainPage { } }
   cover: Qt.resolvedUrl("cover/CoverPage.qml")
@@ -20,8 +21,26 @@ ApplicationWindow {
   }
 
   Notification {
+    function showPopup(title, message, icn) {
+      replacesId = 0
+      previewSummary = title
+      previewBody = message
+      icon = icn || Qt.application.name
+      publish()
+    }
+
+    function show(message, icn) {
+      showPopup("", message, icn)
+    }
+
+    id: notification
+    appName: chumDisplayName
+    expireTimeout: 3000
+  }
+
+  Notification {
     id: updatesNotification
-    appName: "Chum"
+    appName: chumDisplayName
     appIcon: Qt.application.name
     //% "%n update(s) available"
     summary: qsTrId("chum-updates-available", _updatesCount)
@@ -29,6 +48,13 @@ ApplicationWindow {
 
   Chum {
     id: chum
+
+    onRefreshingRepoChanged: {
+      if (!refreshingRepo) {
+        //% "Repository refreshed"
+        notification.show(qsTrId("chum-repo-refreshed"))
+      }
+    }
 
     onUpdatesCountChanged: {
       if (_updatesCount !== updatesCount) {

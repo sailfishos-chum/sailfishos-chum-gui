@@ -11,10 +11,19 @@ Page {
     contentHeight: content.height
 
     PullDownMenu {
+      busy: chum.refreshingRepo
+
       MenuItem {
         enabled: false
         //% "About"
         text: qsTrId("chum-about")
+      }
+
+      MenuItem {
+        enabled: !chum.refreshingRepo
+        //% "Refresh cache"
+        text: qsTrId("chum-refresh-cache")
+        onClicked: chum.refreshRepo()
       }
     }
 

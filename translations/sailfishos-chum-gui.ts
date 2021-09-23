@@ -5,7 +5,7 @@
     <name></name>
     <message id="chum-available-packages">
         <location filename="../qml/pages/AvailablePackagesPage.qml" line="6"/>
-        <location filename="../qml/pages/MainPage.qml" line="39"/>
+        <location filename="../qml/pages/MainPage.qml" line="45"/>
         <source>Available packages</source>
         <translation type="unfinished"></translation>
     </message>
@@ -50,20 +50,30 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-updates-available" numerus="yes">
-        <location filename="../qml/sailfishos-chum-gui.qml" line="27"/>
+        <location filename="../qml/sailfishos-chum-gui.qml" line="46"/>
         <source>%n update(s) available</source>
         <translation>
             <numerusform>%n update available</numerusform>
             <numerusform>%n updates available</numerusform>
         </translation>
     </message>
+    <message id="chum-repo-refreshed">
+        <location filename="../qml/sailfishos-chum-gui.qml" line="55"/>
+        <source>Repository refreshed</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="chum-about">
         <location filename="../qml/pages/MainPage.qml" line="17"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="chum-refresh-cache">
+        <location filename="../qml/pages/MainPage.qml" line="22"/>
+        <source>Refresh cache</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="chum-no-updates">
-        <location filename="../qml/pages/MainPage.qml" line="34"/>
+        <location filename="../qml/pages/MainPage.qml" line="40"/>
         <source>No updates available</source>
         <oldsource>No update available</oldsource>
         <translation type="unfinished"></translation>
