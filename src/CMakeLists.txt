@@ -28,6 +28,12 @@ target_link_libraries(${PROJECT_NAME}
   PkgConfig::sailfishapp
 )
 
+set_property(
+  TARGET ${PROJECT_NAME}
+  PROPERTY
+    POSITION_INDEPENDENT_CODE ON
+)
+
 install(TARGETS ${PROJECT_NAME}
   RUNTIME
     DESTINATION bin
