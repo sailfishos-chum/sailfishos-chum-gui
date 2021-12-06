@@ -41,8 +41,8 @@ Page {
       }
       MenuItem {
         text:qsTr("Discussion Forum")
-        onClicked: Qt.openUrlExternally(meta.forums)
-        visible: meta.hasOwnProperty("forums")
+        onClicked: Qt.openUrlExternally(meta.forum)
+        visible: meta.hasOwnProperty("forum")
       }
       MenuItem {
         text: _installed
@@ -79,6 +79,10 @@ Page {
         wrapMode: Text.WordWrap
         font.pixelSize: Theme.fontSizeSmall
         color: Theme.highlightColor
+      }
+
+      ScreenshotsBox {
+        screenshots: meta.hasOwnProperty("screenshots") ? meta.screenshots : []
       }
 
       Column {
@@ -130,7 +134,7 @@ Page {
         Button {
             id: btnDonate
             text: qsTr("Make Dontation")
-            visible: meta.hasOwnProperty("donataion")
+            visible: meta.hasOwnProperty("donation")
             onClicked: {
                 Qt.openUrlExternally(meta.donation)
             }
