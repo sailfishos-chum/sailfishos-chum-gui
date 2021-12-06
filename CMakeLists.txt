@@ -13,6 +13,7 @@ find_package(Qt5
 )
 
 find_package(packagekitqt5 REQUIRED)
+find_package(yaml-cpp REQUIRED)
 
 pkg_search_module(sailfishapp
   REQUIRED

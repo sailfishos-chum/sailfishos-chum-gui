@@ -2,6 +2,7 @@
 
 #include <PackageKit/Daemon>
 #include <PackageKit/Details>
+#include <QDebug>
 
 using namespace PackageKit;
 
@@ -28,6 +29,21 @@ void ChumPackage::setPkid(const QString &pkid) {
     m_url         = v.url();
     m_license     = v.license();
     m_size        = v.size();
+
+    int idx = m_description.indexOf("BEGINCHUMMETADATA");
+    if (idx >= 0) {
+        YAML::Node meta = YAML::Load(m_description.mid(idx + 17).toStdString());
+
+        YAML::Emitter emitter;
+        emitter << YAML::DoubleQuoted << YAML::Flow << YAML::BeginSeq << meta;
+        std::string out(emitter.c_str() + 1);  // Strip leading [ character
+        m_metadata = QString::fromStdString(out);
+        m_metadata = m_metadata.replace("~", "\"\"");
+        qDebug() << "metadata:\n" << m_metadata << '\n';
+
+        m_description = m_description.left(idx - 1);
+
+    }
     emit this->updated();
   });
 

@@ -12,6 +12,7 @@ BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
+BuildRequires:  pkgconfig(yaml-cpp)
 BuildRequires:  desktop-file-utils
 BuildRequires:  cmake >= 3.11
 BuildRequires:  sailfish-svg2png

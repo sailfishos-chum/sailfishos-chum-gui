@@ -26,6 +26,7 @@ target_link_libraries(${PROJECT_NAME}
   Qt5::DBus
   PK::packagekitqt5
   PkgConfig::sailfishapp
+  yaml-cpp
 )
 
 install(TARGETS ${PROJECT_NAME}

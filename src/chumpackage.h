@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QObject>
+#include "yaml-cpp/yaml.h"
 
 class ChumPackage : public QObject {
   Q_OBJECT
@@ -10,6 +11,7 @@ class ChumPackage : public QObject {
   Q_PROPERTY(QString    summary     MEMBER m_summary      NOTIFY updated)
   Q_PROPERTY(QString    url         MEMBER m_url          NOTIFY updated)
   Q_PROPERTY(QString    license     MEMBER m_license      NOTIFY updated)
+  Q_PROPERTY(QString    metadata    MEMBER m_metadata     NOTIFY updated)
   Q_PROPERTY(qulonglong size        MEMBER m_size         NOTIFY updated)
 
 public:
@@ -34,4 +36,5 @@ private:
   QString     m_url;
   QString     m_license;
   qulonglong  m_size{0};
+  QString     m_metadata;
 };
