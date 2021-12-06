@@ -16,7 +16,7 @@ static inline auto role2operation(Transaction::Role role) {
   }
 }
 
-const QString Chum::repoName{QStringLiteral("sailfishos-chum")};
+const QString Chum::repoName{QStringLiteral("sailfishos-chum-testing")};
 
 bool Chum::isChumPackage(const QString &id) {
   return Daemon::packageData(id) == repoName;
