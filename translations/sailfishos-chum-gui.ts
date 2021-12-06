@@ -14,41 +14,6 @@
         <source>Reload</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="chum-update">
-        <location filename="../qml/pages/PackagePage.qml" line="27"/>
-        <source>Update</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="chum-install">
-        <location filename="../qml/pages/PackagePage.qml" line="29"/>
-        <source>Install</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="chum-pkg-installed-version">
-        <location filename="../qml/pages/PackagePage.qml" line="72"/>
-        <source>Installed version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="chum-pkg-available-version">
-        <location filename="../qml/pages/PackagePage.qml" line="79"/>
-        <source>Available version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="chum-pkg-download-size">
-        <location filename="../qml/pages/PackagePage.qml" line="84"/>
-        <source>Download size</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="chum-pkg-license">
-        <location filename="../qml/pages/PackagePage.qml" line="90"/>
-        <source>License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="chum-pkg-link">
-        <location filename="../qml/pages/PackagePage.qml" line="100"/>
-        <source>Link</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message id="chum-updates-available" numerus="yes">
         <location filename="../qml/sailfishos-chum-gui.qml" line="61"/>
         <source>%n update(s) available</source>
@@ -88,6 +53,64 @@
         <location filename="../qml/pages/MainPage.qml" line="43"/>
         <source>No updates available</source>
         <oldsource>No update available</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-update">
+        <location filename="../qml/pages/PackagePage.qml" line="50"/>
+        <source>Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-install">
+        <location filename="../qml/pages/PackagePage.qml" line="52"/>
+        <source>Install</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-pkg-installed-version">
+        <location filename="../qml/pages/PackagePage.qml" line="97"/>
+        <source>Installed version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-pkg-available-version">
+        <location filename="../qml/pages/PackagePage.qml" line="104"/>
+        <source>Available version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-pkg-download-size">
+        <location filename="../qml/pages/PackagePage.qml" line="109"/>
+        <source>Download size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-pkg-license">
+        <location filename="../qml/pages/PackagePage.qml" line="115"/>
+        <source>License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-pkg-link">
+        <location filename="../qml/pages/PackagePage.qml" line="125"/>
+        <source>Link</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PackagePage</name>
+    <message>
+        <location filename="../qml/pages/PackagePage.qml" line="33"/>
+        <source>Project Repository</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PackagePage.qml" line="38"/>
+        <source>File Issue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PackagePage.qml" line="43"/>
+        <source>Discussion Forum</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PackagePage.qml" line="132"/>
+        <source>Make Dontation</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

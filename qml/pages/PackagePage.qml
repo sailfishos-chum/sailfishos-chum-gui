@@ -5,15 +5,23 @@ import "../components"
 
 Page {
   property alias pkid: pkg.pkid
-  property alias title: header.title
+  property alias title: header.description
   property alias version: availableVersionItem.value
   readonly property bool _installed: !!pkg.installedVersion
+  property var meta
 
   id: page
   allowedOrientations: Orientation.All
 
   ChumPackage {
     id: pkg
+
+    onUpdated: {
+        console.log(pkg.metadata);
+        meta = JSON.parse(pkg.metadata);
+        console.log(JSON.stringify(meta, null, 4));
+        //meta = m;
+    }
   }
 
   SilicaFlickable {
@@ -21,6 +29,21 @@ Page {
     contentHeight: content.height
 
     PullDownMenu {
+      MenuItem {
+        text:qsTr("Project Repository")
+        onClicked: Qt.openUrlExternally(meta.repo)
+        visible: meta.hasOwnProperty("repo")
+      }
+      MenuItem {
+        text:qsTr("File Issue")
+        onClicked: Qt.openUrlExternally(meta.issues)
+        visible: meta.hasOwnProperty("issues")
+      }
+      MenuItem {
+        text:qsTr("Discussion Forum")
+        onClicked: Qt.openUrlExternally(meta.forums)
+        visible: meta.hasOwnProperty("forums")
+      }
       MenuItem {
         text: _installed
           //% "Update"
@@ -38,9 +61,11 @@ Page {
       width: parent.width
       spacing: Theme.paddingLarge
 
-      PageHeader {
+      FancyPageHeader {
         id: header
-        description: pkg.summary
+        title: pkg.summary
+        description: pkid
+        iconSource: meta.hasOwnProperty("icon") ? meta.icon : ""
       }
 
       Label {
@@ -101,6 +126,14 @@ Page {
             .arg(pkg.url)
 
           onLinkActivated: Qt.openUrlExternally(link)
+        }
+        Button {
+            id: btnDonate
+            text: qsTr("Make Dontation")
+            visible: meta.hasOwnProperty("donataion")
+            onClicked: {
+                Qt.openUrlExternally(meta.donation)
+            }
         }
       }
     }
