@@ -5,6 +5,8 @@ project(sailfishos-chum-gui
   VERSION   ${CHUMGUI_VERSION}
 )
 
+set(REPO "sailfishos-chum" CACHE STRING "Alias of the repository")
+
 include(FindPkgConfig)
 
 find_package(Qt5

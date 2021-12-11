@@ -1,3 +1,6 @@
+add_compile_options(
+        -DREPO_ALIAS="${REPO}")
+
 add_executable(${PROJECT_NAME}
   chum.cpp
   chum.h

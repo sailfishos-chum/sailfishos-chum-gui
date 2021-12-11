@@ -1,3 +1,5 @@
+#define chum_testing_repo 1
+
 Name:           sailfishos-chum-gui
 Summary:        Chum GUI
 Version:        0.2.0
@@ -7,7 +9,11 @@ License:        MIT
 URL:            https://github.com/sailfishos-chum/sailfishos-chum-gui
 Source0:        %{name}-%{version}.tar.bz2
 Requires:       sailfishsilica-qt5 >= 0.10.9
+%if 0%{?chum_testing_repo}
+Requires:       sailfishos-chum-testing
+%else
 Requires:       sailfishos-chum
+%endif
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
@@ -26,7 +32,11 @@ A client app for the Chum repositories
 %setup -q -n %{name}-%{version}
 
 %build
-%cmake -DCHUMGUI_VERSION=%(echo %{version} | grep -Eo '^[0-9]+(\.[0-9]+)*') .
+%cmake -DCHUMGUI_VERSION=%(echo %{version} | grep -Eo '^[0-9]+(\.[0-9]+)*') \
+%if 0%{?chum_testing_repo}
+       -DREPO=sailfishos-chum-testing \
+%endif
+     .
 cmake --build .
 
 %install

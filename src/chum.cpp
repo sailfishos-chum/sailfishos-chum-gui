@@ -5,7 +5,7 @@
 using namespace PackageKit;
 
 Chum* Chum::s_instance{nullptr};
-const QString Chum::s_repoName{QStringLiteral("sailfishos-chum")};
+const QString Chum::s_repoName{QStringLiteral(REPO_ALIAS)};
 
 static inline auto role2operation(Transaction::Role role) {
   switch (role) {
