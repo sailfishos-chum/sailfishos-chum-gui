@@ -19,12 +19,7 @@ public:
   };
   Q_ENUM(PackageOperation)
 
-  static const QString repoName;
-
-  static bool isChumPackage(const QString &id);
-
-  explicit Chum(QObject *parent = nullptr);
-
+  // repo operations
   bool refreshingRepo() const {
     return m_refreshing_repo;
   }
@@ -32,6 +27,10 @@ public:
   quint32 updatesCount() const {
     return m_updates_count;
   }
+
+  // static public methods
+  static Chum* instance();
+  static bool isChumPackage(const QString &id);
 
 public slots:
   void getUpdates();
@@ -46,9 +45,14 @@ signals:
   void packageOperationFinished(PackageOperation operation, const QString &name, const QString &version);
 
 private:
+  explicit Chum(QObject *parent = nullptr);
+
   void startOperation(PackageKit::Transaction *pktr, const QString &pkg_id);
 
 private:
   bool          m_refreshing_repo{false};
   quint32       m_updates_count{0};
+
+  static Chum* s_instance;
+  static const QString s_repoName;
 };

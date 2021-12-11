@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import org.chum 1.0
 import "../components"
 
 Page {
@@ -11,7 +12,7 @@ Page {
     contentHeight: content.height
 
     PullDownMenu {
-      busy: chum.refreshingRepo
+      busy: Chum.refreshingRepo
 
       MenuItem {
         enabled: false
@@ -20,10 +21,10 @@ Page {
       }
 
       MenuItem {
-        enabled: !chum.refreshingRepo
+        enabled: !Chum.refreshingRepo
         //% "Refresh cache"
         text: qsTrId("chum-refresh-cache")
-        onClicked: chum.refreshRepo()
+        onClicked: Chum.refreshRepo()
       }
     }
 
@@ -36,7 +37,7 @@ Page {
       }
 
       MainPageButton {
-        enabled: chum.updatesCount > 0
+        enabled: Chum.updatesCount > 0
         text: enabled
           ? updatesNotification.summary
           //% "No updates available"

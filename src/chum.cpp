@@ -4,6 +4,9 @@
 
 using namespace PackageKit;
 
+Chum* Chum::s_instance{nullptr};
+const QString Chum::s_repoName{QStringLiteral("sailfishos-chum")};
+
 static inline auto role2operation(Transaction::Role role) {
   switch (role) {
   case Transaction::RoleInstallFiles:
@@ -16,16 +19,20 @@ static inline auto role2operation(Transaction::Role role) {
   }
 }
 
-const QString Chum::repoName{QStringLiteral("sailfishos-chum-testing")};
-
 bool Chum::isChumPackage(const QString &id) {
-  return Daemon::packageData(id) == repoName;
+  return Daemon::packageData(id) == s_repoName;
 }
 
 Chum::Chum(QObject *parent)
   : QObject{parent}
 {
   connect(Daemon::global(), &Daemon::updatesChanged, this, &Chum::getUpdates);
+}
+
+Chum* Chum::instance()
+{
+  if (!s_instance) s_instance = new Chum();
+  return s_instance;
 }
 
 void Chum::getUpdates() {
@@ -58,7 +65,7 @@ void Chum::refreshRepo(bool force) {
   emit refreshingRepoChanged();
 
   auto pktr = Daemon::repoSetData(
-    repoName,
+    s_repoName,
     QStringLiteral("refresh-now"),
     QVariant::fromValue(force).toString()
   );

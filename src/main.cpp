@@ -10,10 +10,13 @@
   qmlRegisterType<NAME>("org.chum", 1, 0, #NAME)
 
 int main(int argc, char *argv[]) {
-  CHUM_REGISTER_TYPE(Chum);
   CHUM_REGISTER_TYPE(ChumPackage);
   CHUM_REGISTER_TYPE(ChumAvailablePackagesModel);
   CHUM_REGISTER_TYPE(ChumUpdatesModel);
+
+  qmlRegisterSingletonType<Chum>("org.chum", 1, 0, "Chum", [](QQmlEngine *, QJSEngine *) -> QObject * {
+        return static_cast<QObject *>(Chum::instance());
+    });
 
   SailfishApp::application(argc, argv);
   QCoreApplication::setApplicationVersion(QStringLiteral(CHUMGUI_VERSION));

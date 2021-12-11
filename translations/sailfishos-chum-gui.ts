@@ -5,7 +5,7 @@
     <name></name>
     <message id="chum-available-packages">
         <location filename="../qml/pages/AvailablePackagesPage.qml" line="6"/>
-        <location filename="../qml/pages/MainPage.qml" line="48"/>
+        <location filename="../qml/pages/MainPage.qml" line="49"/>
         <source>Available packages</source>
         <translation type="unfinished"></translation>
     </message>
@@ -40,17 +40,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-about">
-        <location filename="../qml/pages/MainPage.qml" line="19"/>
+        <location filename="../qml/pages/MainPage.qml" line="20"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-refresh-cache">
-        <location filename="../qml/pages/MainPage.qml" line="25"/>
+        <location filename="../qml/pages/MainPage.qml" line="26"/>
         <source>Refresh cache</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-no-updates">
-        <location filename="../qml/pages/MainPage.qml" line="43"/>
+        <location filename="../qml/pages/MainPage.qml" line="44"/>
         <source>No updates available</source>
         <oldsource>No update available</oldsource>
         <translation type="unfinished"></translation>

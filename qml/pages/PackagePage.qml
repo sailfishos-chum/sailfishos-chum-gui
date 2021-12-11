@@ -51,8 +51,8 @@ Page {
           //% "Install"
           : qsTrId("chum-install")
         onClicked: _installed
-          ? chum.updatePackage(pkid)
-          : chum.installPackage(pkid)
+          ? Chum.updatePackage(pkid)
+          : Chum.installPackage(pkid)
       }
     }
 
