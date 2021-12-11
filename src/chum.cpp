@@ -19,20 +19,18 @@ static inline auto role2operation(Transaction::Role role) {
   }
 }
 
-bool Chum::isChumPackage(const QString &id) {
-  return Daemon::packageData(id) == s_repoName;
-}
-
 Chum::Chum(QObject *parent)
-  : QObject{parent}
-{
+  : QObject{parent} {
   connect(Daemon::global(), &Daemon::updatesChanged, this, &Chum::getUpdates);
 }
 
-Chum* Chum::instance()
-{
+Chum* Chum::instance() {
   if (!s_instance) s_instance = new Chum();
   return s_instance;
+}
+
+bool Chum::isChumPackage(const QString &id) {
+  return Daemon::packageData(id) == s_repoName;
 }
 
 void Chum::getUpdates() {
