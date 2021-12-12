@@ -38,7 +38,7 @@ void ChumPackage::setPkid(const QString &pkid) {
 void ChumPackage::setUpdateAvailable(bool up) {
   if (up == m_update_available) return;
   m_update_available = up;
-  emit updateAvailableChanged();
+  emit updated(m_id, PackageUpdateAvailableRole);
 }
 
 void ChumPackage::setDetails(const PackageKit::Details &v) {
@@ -61,8 +61,8 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
     m_name += b.left(1).toUpper() + b.mid(1).toLower() + " ";
   m_name = m_name.trimmed();
 
+  // parse description
   QStringList descLines = m_description.split(QRegularExpression("(?m)^\\s*$"), QString::SkipEmptyParts);
-  qDebug() << descLines;
 
   YAML::Node meta;
 

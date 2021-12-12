@@ -13,13 +13,16 @@ class ChumPackagesModel
   Q_OBJECT
   Q_INTERFACES(QQmlParserStatus)
 
+  Q_PROPERTY(bool    filterUpdatesOnly READ filterUpdatesOnly WRITE setFilterUpdatesOnly NOTIFY filterUpdatesOnlyChanged)
   Q_PROPERTY(QString search READ search WRITE setSearch NOTIFY searchChanged)
 
 public:
   explicit ChumPackagesModel(QObject *parent = nullptr);
 
+  bool filterUpdatesOnly() const { return m_filter_updates_only; }
   QString search() const { return m_search; }
 
+  void setFilterUpdatesOnly(bool filter);
   void setSearch(QString search);
 
   Q_INVOKABLE void reset();
@@ -29,9 +32,10 @@ public:
   QHash<int, QByteArray> roleNames() const override;
 
   void classBegin() override {}
-  void componentComplete() override { reset(); }
+  void componentComplete() override { m_postpone_loading=false; reset(); }
 
 signals:
+  void filterUpdatesOnlyChanged();
   void searchChanged();
 
 private:
@@ -39,6 +43,8 @@ private:
 
 private:
   QList<QString> m_packages;
+  bool           m_postpone_loading{true};
 
+  bool m_filter_updates_only{false};
   QString m_search;
 };

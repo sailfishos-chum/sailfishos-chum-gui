@@ -4,11 +4,12 @@ import org.chum 1.0
 import "../components"
 
 Page {
+  property ChumPackage pkg
+
+  readonly property bool _installed: !!pkg.installedVersion
+
   id: page
   allowedOrientations: Orientation.All
-
-  property ChumPackage pkg
-  readonly property bool _installed: !!pkg.installedVersion
 
   SilicaFlickable {
     anchors.fill: parent

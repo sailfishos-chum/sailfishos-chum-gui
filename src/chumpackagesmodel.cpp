@@ -1,6 +1,8 @@
 #include "chumpackagesmodel.h"
 #include "chum.h"
 
+#include <QDebug>
+
 #include <algorithm>
 
 ChumPackagesModel::ChumPackagesModel(QObject *parent)
@@ -34,12 +36,13 @@ QVariant ChumPackagesModel::data(const QModelIndex &index, int role) const {
 QHash<int, QByteArray> ChumPackagesModel::roleNames() const {
   return {
     {ChumPackage::PackageIdRole,       QByteArrayLiteral("packageId")},
-    {ChumPackage::PackageNameRole,     QByteArrayLiteral("packageName")},
     {ChumPackage::PackageInstalledVersionRole,  QByteArrayLiteral("packageInstalledVersion")},
+    {ChumPackage::PackageNameRole,     QByteArrayLiteral("packageName")},
   };
 }
 
 void ChumPackagesModel::reset() {
+  if (m_postpone_loading) return;
   beginResetModel();
 
   m_packages.clear();
@@ -49,7 +52,8 @@ void ChumPackagesModel::reset() {
   for (ChumPackage* p: Chum::instance()->packages()) {
     disconnect(p, nullptr, this, nullptr);
     // TODO apply filters, such as category, updatable, search query
-
+    if (m_filter_updates_only && !p->updateAvailable())
+      continue;
     // add to filtered packages and follow package updates
     packages.push_back(p);
     connect(p, &ChumPackage::updated, this, &ChumPackagesModel::updatePackage);
@@ -64,6 +68,8 @@ void ChumPackagesModel::reset() {
   for (const ChumPackage* p: packages)
     m_packages.push_back(p->id());
 
+  qDebug() << "Packages in the list:" << m_packages.length();
+
   endResetModel();
 }
 
@@ -77,12 +83,10 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
   };
 
   QList<ChumPackage::Role> search_roles{
-    ChumPackage::PackageRefreshRole,
     ChumPackage::PackageNameRole
   };
 
   QList<ChumPackage::Role> sort_roles{
-    ChumPackage::PackageRefreshRole,
     ChumPackage::PackageNameRole
   };
 
@@ -101,6 +105,8 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
   bool filter_or_order_may_change = false;
   if (!m_search.isEmpty() && search_roles.contains(role))
     filter_or_order_may_change = true;
+  if (m_filter_updates_only && role == ChumPackage::PackageUpdateAvailableRole)
+    filter_or_order_may_change = true;
   // TODO: other filters
 
   // check if sorting maybe altered
@@ -116,6 +122,12 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
   int i = m_packages.indexOf(packageId);
   if (i < 0) return; // no such package
   dataChanged(index(i), index(i) ); // just refresh whole row to simplify processing here
+}
+
+void ChumPackagesModel::setFilterUpdatesOnly(bool filter) {
+  m_filter_updates_only = filter;
+  emit filterUpdatesOnlyChanged();
+  reset();
 }
 
 void ChumPackagesModel::setSearch(QString search) {

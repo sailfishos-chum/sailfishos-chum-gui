@@ -4,7 +4,7 @@ import org.chum 1.0
 
 Page {
   property string subTitle
-  property alias model: view.model
+  property alias  updatesOnly: chumModel.filterUpdatesOnly
 
   id: page
   allowedOrientations: Orientation.All
@@ -39,11 +39,15 @@ Page {
       }
     }
 
+    model: ChumPackagesModel {
+      id: chumModel
+    }
+
     PullDownMenu {
       MenuItem {
         //% "Reload"
         text: qsTrId("chum-reload")
-        onClicked: model.reset()
+        onClicked: chumModel.reset()
       }
     }
 

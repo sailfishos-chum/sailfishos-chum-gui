@@ -8,7 +8,7 @@ class ChumPackage : public QObject {
 
   // TODO: properties should be all read only, setters are used from C++
   Q_PROPERTY(QString id READ id NOTIFY pkidChanged)
-  Q_PROPERTY(bool    updateAvailable READ updateAvailable NOTIFY updateAvailableChanged)
+  Q_PROPERTY(bool    updateAvailable READ updateAvailable NOTIFY updated)
 
   Q_PROPERTY(QString    description READ description  NOTIFY updated)
   Q_PROPERTY(QString    installedVersion READ installedVersion NOTIFY updated)
@@ -22,9 +22,10 @@ class ChumPackage : public QObject {
 public:
   enum Role {
     PackageIdRole = Qt::UserRole + 1,
-    PackageNameRole,
     PackageInstalledVersionRole,
+    PackageNameRole,
     PackageSummaryRole,
+    PackageUpdateAvailableRole,
 
     PackageOtherRole,
     PackageRefreshRole // used for updates of many parameters

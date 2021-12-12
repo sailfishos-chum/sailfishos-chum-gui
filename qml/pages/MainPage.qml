@@ -42,12 +42,18 @@ Page {
           ? updatesNotification.summary
           //% "No updates available"
           : qsTrId("chum-no-updates")
-        onClicked: pageStack.push(Qt.resolvedUrl("UpdatesPage.qml"))
+        onClicked: pageStack.push(Qt.resolvedUrl("PackagesListPage.qml"), {
+                                      subTitle: updatesNotification.summary,
+                                      updatesOnly: true
+                                    })
       }
 
       MainPageButton {
         text: qsTrId("chum-available-packages")
-        onClicked: pageStack.push(Qt.resolvedUrl("AvailablePackagesPage.qml"))
+        onClicked: pageStack.push(Qt.resolvedUrl("PackagesListPage.qml"), {
+                                    //% "Available packages"
+                                    subTitle: qsTrId("chum-available-packages")
+                                  })
       }
     }
   }
