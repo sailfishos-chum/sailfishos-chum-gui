@@ -1,8 +1,6 @@
 #include "chum.h"
 #include "chumpackage.h"
 #include "chumpackagesmodel.h"
-#include "chumavailablepackagesmodel.h"
-#include "chumupdatesmodel.h"
 #include <sailfishapp.h>
 
 #include <QtQuick>
@@ -13,8 +11,6 @@
 int main(int argc, char *argv[]) {
   CHUM_REGISTER_TYPE(ChumPackage);
   CHUM_REGISTER_TYPE(ChumPackagesModel);
-  CHUM_REGISTER_TYPE(ChumAvailablePackagesModel);
-  CHUM_REGISTER_TYPE(ChumUpdatesModel);
 
   qmlRegisterSingletonType<Chum>("org.chum", 1, 0, "Chum", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return static_cast<QObject *>(Chum::instance());

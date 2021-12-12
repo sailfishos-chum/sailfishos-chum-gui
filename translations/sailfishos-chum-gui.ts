@@ -4,7 +4,6 @@
 <context>
     <name></name>
     <message id="chum-available-packages">
-        <location filename="../qml/pages/AvailablePackagesPage.qml" line="6"/>
         <location filename="../qml/pages/MainPage.qml" line="52"/>
         <location filename="../qml/pages/MainPage.qml" line="55"/>
         <source>Available packages</source>

@@ -4,16 +4,10 @@ add_compile_options(
 add_executable(${PROJECT_NAME}
   chum.cpp
   chum.h
-  chumabstractpackagemodel.cpp
-  chumabstractpackagemodel.h
-  chumavailablepackagesmodel.cpp
-  chumavailablepackagesmodel.h
   chumpackage.cpp
   chumpackage.h
   chumpackagesmodel.cpp
   chumpackagesmodel.h
-  chumupdatesmodel.cpp
-  chumupdatesmodel.h
   main.cpp
 )
 
