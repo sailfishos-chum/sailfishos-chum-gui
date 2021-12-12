@@ -13,6 +13,12 @@ ChumPackage::ChumPackage(QObject *parent)
 {
 }
 
+
+ChumPackage::ChumPackage(QString id, QObject *parent)
+  : QObject{parent}, m_id(id)
+{
+}
+
 void ChumPackage::setPkid(const QString &pkid) {
   if (m_pkid == pkid) return;
 
@@ -44,6 +50,17 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
   m_license     = v.license();
   m_size        = v.size();
 
+  // derive name
+  m_name = Daemon::packageName(m_pkid);
+  for (QString prefix: {"harbour-", "openrepos-"})
+    if (m_name.startsWith(prefix))
+      m_name = m_name.mid(prefix.length());
+  QStringList nparts = m_name.split('-');
+  m_name = QString{};
+  for (const QString& b: nparts)
+    m_name += b.left(1).toUpper() + b.mid(1).toLower() + " ";
+  m_name = m_name.trimmed();
+
   QStringList descLines = m_description.split(QRegularExpression("(?m)^\\s*$"), QString::SkipEmptyParts);
   qDebug() << descLines;
 
@@ -52,7 +69,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
   try {
       meta = YAML::Load(descLines.last().toStdString());
   } catch(const YAML::ParserException &e) {
-      qDebug() << "Invalid Yaml";
+      qWarning() << "Invalid Chum section for" << m_pkid;
   }
 
   qDebug() << "Node size:" << meta.size();
@@ -71,7 +88,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
       m_description = descLines.join("\n\n");
   }
 
-  emit this->updated();
+  emit updated(m_id, PackageRefreshRole);
 }
 
 void ChumPackage::setInstalledVersion(const QString &v)
@@ -79,6 +96,5 @@ void ChumPackage::setInstalledVersion(const QString &v)
   m_installed_update = false;
   if (v == m_installed_version) return;
   m_installed_version = v;
-  emit this->installedVersionChanged();
-  qDebug() << "Set installed version for" << m_pkid << v;
+  emit updated(m_id, PackageInstalledVersionRole);
 }

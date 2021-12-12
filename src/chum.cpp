@@ -49,6 +49,8 @@ QString Chum::packageId(const QString &pkg_id)
 /// Note that m_busy is not checked for methods that are called
 /// internally only.
 ///
+/// At the end of updates, packagesChanged() is emitted.
+///
 void Chum::refreshPackages() {
   if (!m_busy) {
     m_busy = true;
@@ -77,15 +79,18 @@ void Chum::refreshPackagesFinished()
     last_ids.insert(packageId(p));
   auto current = m_packages.keys();
   for (const QString &id: current)
-    if (!last_ids.contains(id))
+    if (!last_ids.contains(id)) {
+      ChumPackage *p = m_packages.value(id, nullptr);
+      if (p) p->deleteLater();
       m_packages.remove(id);
+    }
 
   // create or update packages
   for (const QString &p: m_packages_last_refresh) {
     const QString id = packageId(p);
     ChumPackage *package = m_packages.value(id, nullptr);
     if (!package) {
-       package = new ChumPackage(this);
+       package = new ChumPackage(id, this);
        m_packages[id] = package;
     }
     package->setPkid(p);
@@ -191,6 +196,7 @@ void Chum::getUpdates(bool force) {
     }
     m_busy = false;
     emit busyChanged();
+    emit packagesChanged();
   });
 }
 

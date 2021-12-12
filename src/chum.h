@@ -27,6 +27,9 @@ public:
   bool busy() const { return m_busy; }
   quint32 updatesCount() const { return m_updates_count; }
 
+  QList<ChumPackage*> packages() const { return m_packages.values(); }
+  ChumPackage* package(const QString &id) const { return m_packages.value(id, nullptr); }
+
   // static public methods
   static Chum* instance();
   static bool isChumPackage(const QString &id);
@@ -40,6 +43,7 @@ public slots:
 signals:
   void busyChanged();
   void updatesCountChanged();
+  void packagesChanged();
   void packageOperationStarted( PackageOperation operation, const QString &name);
   void packageOperationFinished(PackageOperation operation, const QString &name, const QString &version);
   void repositoryRefreshed();

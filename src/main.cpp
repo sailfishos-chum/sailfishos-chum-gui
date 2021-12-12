@@ -1,5 +1,6 @@
 #include "chum.h"
 #include "chumpackage.h"
+#include "chumpackagesmodel.h"
 #include "chumavailablepackagesmodel.h"
 #include "chumupdatesmodel.h"
 #include <sailfishapp.h>
@@ -11,6 +12,7 @@
 
 int main(int argc, char *argv[]) {
   CHUM_REGISTER_TYPE(ChumPackage);
+  CHUM_REGISTER_TYPE(ChumPackagesModel);
   CHUM_REGISTER_TYPE(ChumAvailablePackagesModel);
   CHUM_REGISTER_TYPE(ChumUpdatesModel);
 

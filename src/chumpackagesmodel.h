@@ -2,45 +2,42 @@
 
 #include <QAbstractListModel>
 #include <QQmlParserStatus>
+#include <QSet>
 
-class ChumAbstractPackageModel
+#include "chumpackage.h"
+
+class ChumPackagesModel
   : public QAbstractListModel
   , public QQmlParserStatus
 {
   Q_OBJECT
   Q_INTERFACES(QQmlParserStatus)
 
-public:
-  enum Role {
-    PackageIdRole,
-    PackageNameRole,
-    PackageVersionRole,
-    PackageSummaryRole,
-  };
+  Q_PROPERTY(QString search READ search WRITE setSearch NOTIFY searchChanged)
 
-  explicit ChumAbstractPackageModel(QObject *parent = nullptr);
+public:
+  explicit ChumPackagesModel(QObject *parent = nullptr);
+
+  QString search() const { return m_search; }
+
+  void setSearch(QString search);
 
   int rowCount(const QModelIndex &parent = QModelIndex()) const override;
   QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
   QHash<int, QByteArray> roleNames() const override;
 
   void classBegin() override {}
-  void componentComplete() override {
-    reset();
-  }
+  void componentComplete() override { reset(); }
 
-public slots:
-  virtual void reset() = 0;
-
-protected slots:
-  void insertPackage(int info, const QString &packageID, const QString &summary);
+signals:
+  void searchChanged();
 
 private:
-  struct Package {
-    QString id;
-    QString name;
-    QString version;
-    QString summary;
-  };
-  QVector<Package> m_data;
+  void reset();
+  void updatePackage(QString packageId, ChumPackage::Role role);
+
+private:
+  QList<QString> m_packages;
+
+  QString m_search;
 };
