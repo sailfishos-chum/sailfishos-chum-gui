@@ -3,6 +3,9 @@
 #include <PackageKit/Daemon>
 #include <PackageKit/Details>
 #include <QDebug>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QRegularExpression>
 #include <yaml-cpp/yaml.h>
 
@@ -64,22 +67,23 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
   // parse description
   QStringList descLines = m_description.split(QRegularExpression("(?m)^\\s*$"), QString::SkipEmptyParts);
 
-  YAML::Node meta;
+  QByteArray metainjson;
+  YAML::Node metayaml;
 
   try {
-      meta = YAML::Load(descLines.last().toStdString());
+      metayaml = YAML::Load(descLines.last().toStdString());
   } catch(const YAML::ParserException &e) {
       qWarning() << "Invalid Chum section for" << m_pkid;
   }
 
-  qDebug() << "Node size:" << meta.size();
-  if (!meta.IsNull() && meta.size() > 0) {
+  if (!metayaml.IsNull() && metayaml.size() > 0) {
       YAML::Emitter emitter;
-      emitter << YAML::DoubleQuoted << YAML::Flow << YAML::BeginSeq << meta;
+      emitter << YAML::DoubleQuoted << YAML::Flow << YAML::BeginSeq << metayaml;
       std::string out(emitter.c_str() + 1);  // Strip leading [ character
-      m_metadata = QString::fromStdString(out);
-      m_metadata = m_metadata.replace("~", "\"\"");
-      qDebug() << "metadata:\n" << m_metadata << '\n';
+      metainjson = QByteArray::fromStdString(out);
+      metainjson = metainjson.replace("~", "\"\"");
+
+      qDebug() << m_pkid << "Meta:" << metainjson;
 
       //remove yaml from list
       descLines.pop_back();
@@ -87,6 +91,27 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
       //Reconstruct the description
       m_description = descLines.join("\n\n");
   }
+
+  // Parse metadata
+  QJsonObject json{QJsonDocument::fromJson(metainjson).object()};
+  m_name = json.value("PackageName").toString(m_name);
+  m_type = json.value("Type").toString(m_id.startsWith(QStringLiteral("harbour-")) ?
+                                                         QStringLiteral("desktop-application") :
+                                                         QStringLiteral("generic"));
+  m_developer_name = json.value("DeveloperName").toString();
+  m_categories = json.value("Categories").toVariant().toStringList();
+  if (m_categories.isEmpty()) m_categories.push_back("Other");
+
+  m_repo_type = json.value("Custom").toObject().value("RepoType").toString();
+  m_repo_url = json.value("Custom").toObject().value("Repo").toString();
+
+  m_icon = json.value("Icon").toString();
+  m_screenshots = json.value("Screenshots").toVariant().toStringList();
+
+  m_url = json.value("Url").toObject().value("Homepage").toString(m_url);
+  m_url_forum = json.value("Url").toObject().value("Help").toString();
+  m_url_issues = json.value("Url").toObject().value("Bugtracker").toString();
+  m_donation = json.value("Url").toObject().value("Donation").toString();
 
   emit updated(m_id, PackageRefreshRole);
 }

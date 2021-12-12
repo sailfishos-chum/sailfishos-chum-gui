@@ -18,18 +18,18 @@ Page {
     PullDownMenu {
       MenuItem {
         text:qsTr("Project Repository")
-        onClicked: Qt.openUrlExternally(meta.repo)
-        visible: meta.hasOwnProperty("repo")
+        onClicked: Qt.openUrlExternally(pkg.repo)
+        visible: pkg.repo
       }
       MenuItem {
         text:qsTr("File Issue")
-        onClicked: Qt.openUrlExternally(meta.issues)
-        visible: meta.hasOwnProperty("issues")
+        onClicked: Qt.openUrlExternally(pkg.urlIssues)
+        visible: pkg.urlIssues
       }
       MenuItem {
         text:qsTr("Discussion Forum")
-        onClicked: Qt.openUrlExternally(meta.forum)
-        visible: meta.hasOwnProperty("forum")
+        onClicked: Qt.openUrlExternally(pkg.urlForum)
+        visible: pkg.urlForum
       }
       MenuItem {
         text: _installed
@@ -37,11 +37,14 @@ Page {
           ? qsTrId("chum-update")
           //% "Install"
           : qsTrId("chum-install")
+        visible: !_installed || pkg.updateAvailable
         onClicked: _installed
           ? Chum.updatePackage(pkid)
           : Chum.installPackage(pkid)
       }
     }
+
+    Component.onCompleted: console.log('COMP ' + pkg.repo)
 
     Column {
       id: content
@@ -50,9 +53,9 @@ Page {
 
       FancyPageHeader {
         id: header
-        title: pkg.summary
-        description: pkid
-        iconSource: meta.hasOwnProperty("icon") ? meta.icon : ""
+        title: pkg.name
+        description: pkg.summary
+        iconSource: pkg.icon
       }
 
       Label {
@@ -69,7 +72,7 @@ Page {
       }
 
       ScreenshotsBox {
-        screenshots: meta.hasOwnProperty("screenshots") ? meta.screenshots : []
+        screenshots: pkg.screenshots
       }
 
       Column {
@@ -120,10 +123,11 @@ Page {
         }
         Button {
             id: btnDonate
+            anchors.horizontalCenter: parent.horizontalCenter
             text: qsTr("Make Dontation")
-            visible: meta.hasOwnProperty("donation")
+            visible: pkg.donation
             onClicked: {
-                Qt.openUrlExternally(meta.donation)
+                Qt.openUrlExternally(pkg.donation)
             }
         }
       }

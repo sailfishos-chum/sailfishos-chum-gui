@@ -24,6 +24,8 @@ QVariant ChumPackagesModel::data(const QModelIndex &index, int role) const {
   switch (role) {
   case ChumPackage::PackageIdRole:
     return p->id();
+  case ChumPackage::PackageIconRole:
+    return p->icon();
   case ChumPackage::PackageNameRole:
     return p->name();
   case ChumPackage::PackageInstalledVersionRole:
@@ -36,6 +38,7 @@ QVariant ChumPackagesModel::data(const QModelIndex &index, int role) const {
 QHash<int, QByteArray> ChumPackagesModel::roleNames() const {
   return {
     {ChumPackage::PackageIdRole,       QByteArrayLiteral("packageId")},
+    {ChumPackage::PackageIconRole,     QByteArrayLiteral("packageIcon")},
     {ChumPackage::PackageInstalledVersionRole,  QByteArrayLiteral("packageInstalledVersion")},
     {ChumPackage::PackageNameRole,     QByteArrayLiteral("packageName")},
   };
