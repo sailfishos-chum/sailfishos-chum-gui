@@ -4,25 +4,11 @@ import org.chum 1.0
 import "../components"
 
 Page {
-  property alias pkid: pkg.pkid
-  property alias title: header.description
-  property alias version: availableVersionItem.value
-  readonly property bool _installed: !!pkg.installedVersion
-  property var meta
-
   id: page
   allowedOrientations: Orientation.All
 
-  ChumPackage {
-    id: pkg
-
-    onUpdated: {
-        console.log(pkg.metadata);
-        meta = JSON.parse(pkg.metadata);
-        console.log(JSON.stringify(meta, null, 4));
-        //meta = m;
-    }
-  }
+  property ChumPackage pkg
+  readonly property bool _installed: !!pkg.installedVersion
 
   SilicaFlickable {
     anchors.fill: parent

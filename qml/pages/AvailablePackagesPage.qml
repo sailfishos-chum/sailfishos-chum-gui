@@ -4,5 +4,5 @@ import "../components"
 PackagesPage {
   //% "Available packages"
   subTitle: qsTrId("chum-available-packages")
-  model: ChumAvailablePackagesModel {}
+  model: ChumPackagesModel {}
 }

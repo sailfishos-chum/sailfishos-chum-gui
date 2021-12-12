@@ -22,9 +22,7 @@ Page {
       height: Theme.itemSizeMedium
 
       onClicked: pageStack.push(Qt.resolvedUrl("../pages/PackagePage.qml"), {
-        pkid:    model.packageId,
-        title:   model.packageName,
-        version: model.packageVersion
+        pkg:    Chum.package(model.packageId)
       })
 
       Label {

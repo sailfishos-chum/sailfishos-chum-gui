@@ -57,7 +57,7 @@ void ChumPackagesModel::reset() {
 
   // sort packages
   std::sort(packages.begin(), packages.end(), [](const ChumPackage *a, const ChumPackage *b){
-    return a->name() > b->name();
+    return a->name() < b->name();
   });
 
   // record the result

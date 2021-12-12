@@ -28,7 +28,7 @@ public:
   quint32 updatesCount() const { return m_updates_count; }
 
   QList<ChumPackage*> packages() const { return m_packages.values(); }
-  ChumPackage* package(const QString &id) const { return m_packages.value(id, nullptr); }
+  Q_INVOKABLE ChumPackage* package(const QString &id) const { return m_packages.value(id, nullptr); }
 
   // static public methods
   static Chum* instance();

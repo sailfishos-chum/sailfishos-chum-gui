@@ -22,6 +22,8 @@ public:
 
   void setSearch(QString search);
 
+  Q_INVOKABLE void reset();
+
   int rowCount(const QModelIndex &parent = QModelIndex()) const override;
   QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
   QHash<int, QByteArray> roleNames() const override;
@@ -33,7 +35,6 @@ signals:
   void searchChanged();
 
 private:
-  void reset();
   void updatePackage(QString packageId, ChumPackage::Role role);
 
 private:
