@@ -64,11 +64,9 @@ ApplicationWindow {
   Connections {
     target: Chum
 
-    onRefreshingRepoChanged: {
-      if (!Chum.refreshingRepo) {
-        //% "Repository refreshed"
-        notification.show(qsTrId("chum-repo-refreshed"))
-      }
+    onRepositoryRefreshed: {
+      //% "Repository refreshed"
+      notification.show(qsTrId("chum-repo-refreshed"))
     }
 
     onUpdatesCountChanged: {
@@ -91,7 +89,5 @@ ApplicationWindow {
         notification.show(qsTrId(trid).arg(name).arg(version))
       }
     }
-
-    Component.onCompleted: Chum.getUpdates()
   }
 }

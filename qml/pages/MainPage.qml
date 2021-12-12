@@ -12,7 +12,7 @@ Page {
     contentHeight: content.height
 
     PullDownMenu {
-      busy: Chum.refreshingRepo
+      busy: Chum.busy
 
       MenuItem {
         enabled: false
@@ -21,7 +21,7 @@ Page {
       }
 
       MenuItem {
-        enabled: !Chum.refreshingRepo
+        enabled: !Chum.busy
         //% "Refresh cache"
         text: qsTrId("chum-refresh-cache")
         onClicked: Chum.refreshRepo()

@@ -23,7 +23,7 @@
         </translation>
     </message>
     <message id="chum-repo-refreshed">
-        <location filename="../qml/sailfishos-chum-gui.qml" line="70"/>
+        <location filename="../qml/sailfishos-chum-gui.qml" line="69"/>
         <source>Repository refreshed</source>
         <translation type="unfinished"></translation>
     </message>
