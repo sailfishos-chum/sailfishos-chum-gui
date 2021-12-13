@@ -44,8 +44,6 @@ Page {
       }
     }
 
-    Component.onCompleted: console.log('COMP ' + pkg.repo)
-
     Column {
       id: content
       width: parent.width
