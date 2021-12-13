@@ -55,8 +55,11 @@ add_custom_target(distfiles SOURCES
   qml/pages/MainPage.qml
   qml/pages/PackagePage.qml
   qml/pages/PackagesListPage.qml
+  qml/pages/ScreenshotPage.qml
   qml/components/ChumDetailItem.qml
+  qml/components/FancyPageHeader.qml
   qml/components/MainPageButton.qml
+  qml/components/ScreenshotsBox.qml
   mapplauncherd/privileges.d/${PROJECT_NAME}
   LICENSE
   README.md
