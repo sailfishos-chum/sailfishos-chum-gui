@@ -4,6 +4,7 @@ import org.chum 1.0
 
 Page {
   property string subTitle
+  property string search
   property alias  updatesOnly: chumModel.filterUpdatesOnly
 
   id: page
@@ -13,9 +14,24 @@ Page {
     id: view
     anchors.fill: parent
 
-    header: PageHeader {
-      title: "Chum"
-      description: subTitle
+    header: Column {
+        spacing: Theme.paddingLarge
+        width: view.width
+
+        PageHeader {
+            title: "Chum"
+            description: subTitle
+        }
+
+        SearchField {
+            id: searchField
+            text: page.search
+            width: parent.width
+            placeholderText: qsTr("Search")
+            EnterKey.enabled: text.length > 0
+            EnterKey.onClicked: page.search = text
+            onTextChanged: if (!text) page.search = text // cleared
+        }
     }
 
     delegate: ListItem {
@@ -41,6 +57,7 @@ Page {
 
     model: ChumPackagesModel {
       id: chumModel
+      search: page.search
     }
 
     PullDownMenu {

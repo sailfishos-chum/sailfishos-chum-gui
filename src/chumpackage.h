@@ -30,7 +30,9 @@ class ChumPackage : public QObject {
 public:
   enum Role {
     PackageIdRole = Qt::UserRole + 1,
-    PackageDeveloperName,
+    PackageCategoriesRole,
+    PackageDescriptionRole,
+    PackageDeveloperNameRole,
     PackageIconRole,
     PackageInstalledVersionRole,
     PackageNameRole,

@@ -54,9 +54,24 @@ void ChumPackagesModel::reset() {
   // filter packages
   for (ChumPackage* p: Chum::instance()->packages()) {
     disconnect(p, nullptr, this, nullptr);
-    // TODO apply filters, such as category, updatable, search query
+    // apply filters, such as category, updatable, search query
     if (m_filter_updates_only && !p->updateAvailable())
       continue;
+    if (!m_search.isEmpty()) {
+      bool found = true;
+      QStringList lines{ p->name(),
+            p->summary(),
+            p->categories().join(' '),
+            p->developerName(),
+            p->description() };
+      QString txt = lines.join('\n').normalized(QString::NormalizationForm_KC).toLower();
+      for (QString query: m_search.split(' ', QString::SkipEmptyParts)) {
+          query = query.normalized(QString::NormalizationForm_KC).toLower();
+          found = found && txt.contains(query);
+      }
+      if (!found) continue;
+    }
+
     // add to filtered packages and follow package updates
     packages.push_back(p);
     connect(p, &ChumPackage::updated, this, &ChumPackagesModel::updatePackage);
@@ -71,7 +86,7 @@ void ChumPackagesModel::reset() {
   for (const ChumPackage* p: packages)
     m_packages.push_back(p->id());
 
-  qDebug() << "Packages in the list:" << m_packages.length();
+  qDebug() << "Packages in the list:" << m_packages.length() << "Search:" << m_search;
 
   endResetModel();
 }
@@ -86,7 +101,11 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
   };
 
   QList<ChumPackage::Role> search_roles{
-    ChumPackage::PackageNameRole
+    ChumPackage::PackageNameRole,
+    ChumPackage::PackageSummaryRole,
+    ChumPackage::PackageCategoriesRole,
+    ChumPackage::PackageDeveloperNameRole,
+    ChumPackage::PackageDescriptionRole
   };
 
   QList<ChumPackage::Role> sort_roles{
@@ -135,6 +154,7 @@ void ChumPackagesModel::setFilterUpdatesOnly(bool filter) {
 
 void ChumPackagesModel::setSearch(QString search) {
   if (search == m_search) return;
+  m_search = search;
   emit searchChanged();
   reset();
 }
