@@ -87,10 +87,14 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
 
       //remove yaml from list
       descLines.pop_back();
-
-      //Reconstruct the description
-      m_description = descLines.join("\n\n");
   }
+
+  // drop newlines from description paragraphs
+  for (int i=0; i < descLines.length(); ++i)
+    descLines[i] = descLines[i].replace('\n', ' ').simplified();
+
+  // Reconstruct the description
+  m_description = descLines.join("\n\n");
 
   // Parse metadata
   QJsonObject json{QJsonDocument::fromJson(metainjson).object()};
