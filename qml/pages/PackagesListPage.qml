@@ -28,11 +28,12 @@ Page {
             text: page.search
             width: parent.width
             placeholderText: qsTr("Search")
-            EnterKey.enabled: text.length > 0
-            EnterKey.onClicked: page.search = text
-            onTextChanged: if (!text) page.search = text // cleared
+            onTextChanged: page.search = text
         }
     }
+
+    // prevent newly added list delegates from stealing focus away from the search field
+    currentIndex: -1
 
     delegate: ListItem {
       height: Theme.itemSizeMedium
