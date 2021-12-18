@@ -11,7 +11,7 @@
 #include <QNetworkReply>
 #include <QUrl>
 
-static QString reqAuth{QStringLiteral("bearer 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")};
+static QString reqAuth{QStringLiteral("bearer " GITHUB_TOKEN)};
 static QString reqUrl{QStringLiteral("https://api.github.com/graphql")};
 
 static bool parseUrl(const QString &u, QString &org, QString &repo) {
@@ -94,6 +94,7 @@ query {
 
   QNetworkRequest request;
   request.setUrl(reqUrl);
+  request.setRawHeader("Content-Type", "application/x-www-form-urlencoded");
   request.setRawHeader("Authorization", reqAuth.toLocal8Bit());
   QNetworkReply *reply = nMng->post(request, query.toLocal8Bit());
   connect(reply, &QNetworkReply::finished, [this, reply](){

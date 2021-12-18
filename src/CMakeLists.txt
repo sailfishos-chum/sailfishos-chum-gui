@@ -25,6 +25,10 @@ set_source_files_properties(main.cpp PROPERTIES
   COMPILE_DEFINITIONS CHUMGUI_VERSION=\"${CHUMGUI_VERSION}\"
 )
 
+set_source_files_properties(projectgithub.cpp PROPERTIES
+  COMPILE_DEFINITIONS GITHUB_TOKEN=\"${GITHUB_TOKEN}\"
+)
+
 target_link_libraries(${PROJECT_NAME}
   Qt5::Quick
   Qt5::DBus
