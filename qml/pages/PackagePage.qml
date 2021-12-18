@@ -111,12 +111,6 @@ Page {
         width: parent.width
 
         ChumDetailItem {
-          //% "License"
-          label: qsTrId("chum-license")
-          value: pkg.license
-        }
-
-        ChumDetailItem {
           id: installedVersionItem
           visible: _installed
           //% "Installed version"
