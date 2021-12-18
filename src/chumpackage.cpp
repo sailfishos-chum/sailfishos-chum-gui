@@ -1,5 +1,7 @@
 #include "chumpackage.h"
 
+#include "projectgithub.h"
+
 #include <PackageKit/Daemon>
 #include <PackageKit/Details>
 #include <QDebug>
@@ -11,6 +13,13 @@
 
 using namespace PackageKit;
 
+#define SET_IF_EMPTY(var, role, value) { \
+  if (!var.isEmpty() || var==value) return; \
+  var = value; \
+  emit updated(m_id, role); \
+}
+
+
 ChumPackage::ChumPackage(QObject *parent)
   : QObject{parent}
 {
@@ -20,6 +29,14 @@ ChumPackage::ChumPackage(QObject *parent)
 ChumPackage::ChumPackage(QString id, QObject *parent)
   : QObject{parent}, m_id(id)
 {
+}
+
+QString ChumPackage::developer() const {
+  if (!m_developer_login.isEmpty() && !m_developer_name.isEmpty())
+    return QStringLiteral("%1 (%2)").arg(m_developer_name, m_developer_login);
+  if (!m_developer_login.isEmpty()) return m_developer_login;
+  if (!m_developer_name.isEmpty()) return m_developer_name;
+  return QString();
 }
 
 void ChumPackage::setPkid(const QString &pkid) {
@@ -117,6 +134,9 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
   m_url_issues = json.value("Url").toObject().value("Bugtracker").toString();
   m_donation = json.value("Url").toObject().value("Donation").toString();
 
+  if (ProjectGitHub::isProject(m_repo_url))
+    m_project = new ProjectGitHub(m_repo_url, this);
+
   emit updated(m_id, PackageRefreshRole);
 }
 
@@ -126,4 +146,44 @@ void ChumPackage::setInstalledVersion(const QString &v)
   if (v == m_installed_version) return;
   m_installed_version = v;
   emit updated(m_id, PackageInstalledVersionRole);
+}
+
+void ChumPackage::setDeveloperLogin(const QString &login) {
+  SET_IF_EMPTY(m_developer_login, PackageDeveloperLoginRole, login);
+}
+
+void ChumPackage::setDeveloperName(const QString &name) {
+  SET_IF_EMPTY(m_developer_name, PackageDeveloperLoginRole, name);
+}
+
+void ChumPackage::setUrl(const QString &url) {
+  SET_IF_EMPTY(m_url, PackageOtherRole, url);
+}
+
+void ChumPackage::setUrlForum(const QString &url) {
+  SET_IF_EMPTY(m_url_forum, PackageOtherRole, url);
+}
+
+void ChumPackage::setUrlIssues(const QString &url) {
+  SET_IF_EMPTY(m_url_issues, PackageOtherRole, url);
+}
+
+void ChumPackage::setForksCount(int count) {
+  m_forks_count = count;
+  emit updated(m_id, PackageOtherRole);
+}
+
+void ChumPackage::setIssuesCount(int count) {
+  m_issues_count = count;
+  emit updated(m_id, PackageOtherRole);
+}
+
+void ChumPackage::setReleasesCount(int count) {
+  m_releases_count = count;
+  emit updated(m_id, PackageOtherRole);
+}
+
+void ChumPackage::setStarsCount(int count) {
+  m_stars_count = count;
+  emit updated(m_id, PackageStarsCountRole);
 }

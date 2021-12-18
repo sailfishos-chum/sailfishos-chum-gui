@@ -8,7 +8,12 @@ add_executable(${PROJECT_NAME}
   chumpackage.h
   chumpackagesmodel.cpp
   chumpackagesmodel.h
+  projectabstract.cpp
+  projectabstract.h
+  projectgithub.cpp
+  projectgithub.h
   main.cpp
+  main.h
 )
 
 target_compile_definitions(${PROJECT_NAME}

@@ -52,7 +52,13 @@ Page {
       FancyPageHeader {
         id: header
         title: pkg.name
-        description: pkg.summary
+        description: {
+            if (pkg.summary && pkg.developer)
+                return "%1\n%2".arg(pkg.summary).arg(pkg.developer);
+            if (pkg.developer) return pkg.developer;
+            if (pkg.summary) return pkg.summary;
+            return "";
+        }
         iconSource: pkg.icon
       }
 

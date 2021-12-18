@@ -26,10 +26,12 @@ QVariant ChumPackagesModel::data(const QModelIndex &index, int role) const {
     return p->id();
   case ChumPackage::PackageIconRole:
     return p->icon();
-  case ChumPackage::PackageNameRole:
-    return p->name();
   case ChumPackage::PackageInstalledVersionRole:
     return p->installedVersion();
+  case ChumPackage::PackageNameRole:
+    return p->name();
+  case ChumPackage::PackageStarsCountRole:
+    return p->starsCount();
   default:
     return QVariant{};
   }
@@ -41,6 +43,7 @@ QHash<int, QByteArray> ChumPackagesModel::roleNames() const {
     {ChumPackage::PackageIconRole,     QByteArrayLiteral("packageIcon")},
     {ChumPackage::PackageInstalledVersionRole,  QByteArrayLiteral("packageInstalledVersion")},
     {ChumPackage::PackageNameRole,     QByteArrayLiteral("packageName")},
+    {ChumPackage::PackageStarsCountRole, QByteArrayLiteral("packageStarsCount")},
   };
 }
 
@@ -62,6 +65,7 @@ void ChumPackagesModel::reset() {
       QStringList lines{ p->name(),
             p->summary(),
             p->categories().join(' '),
+            p->developerLogin(),
             p->developerName(),
             p->description() };
       QString txt = lines.join('\n').normalized(QString::NormalizationForm_KC).toLower();
@@ -95,8 +99,10 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
   // check if update is of interest
   QList<ChumPackage::Role> roles{
     ChumPackage::PackageRefreshRole,
+    ChumPackage::PackageIconRole,
     ChumPackage::PackageIdRole,
     ChumPackage::PackageNameRole,
+    ChumPackage::PackageStarsCountRole,
     ChumPackage::PackageInstalledVersionRole
   };
 
@@ -104,6 +110,7 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
     ChumPackage::PackageNameRole,
     ChumPackage::PackageSummaryRole,
     ChumPackage::PackageCategoriesRole,
+    ChumPackage::PackageDeveloperLoginRole,
     ChumPackage::PackageDeveloperNameRole,
     ChumPackage::PackageDescriptionRole
   };

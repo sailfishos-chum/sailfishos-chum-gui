@@ -10,7 +10,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-reload">
-        <location filename="../qml/pages/PackagesListPage.qml" line="66"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="67"/>
         <source>Reload</source>
         <translation type="unfinished"></translation>
     </message>
@@ -66,27 +66,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-installed-version">
-        <location filename="../qml/pages/PackagePage.qml" line="89"/>
+        <location filename="../qml/pages/PackagePage.qml" line="95"/>
         <source>Installed version</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-available-version">
-        <location filename="../qml/pages/PackagePage.qml" line="96"/>
+        <location filename="../qml/pages/PackagePage.qml" line="102"/>
         <source>Available version</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-download-size">
-        <location filename="../qml/pages/PackagePage.qml" line="101"/>
+        <location filename="../qml/pages/PackagePage.qml" line="107"/>
         <source>Download size</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-license">
-        <location filename="../qml/pages/PackagePage.qml" line="107"/>
+        <location filename="../qml/pages/PackagePage.qml" line="113"/>
         <source>License</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-link">
-        <location filename="../qml/pages/PackagePage.qml" line="117"/>
+        <location filename="../qml/pages/PackagePage.qml" line="123"/>
         <source>Link</source>
         <translation type="unfinished"></translation>
     </message>
@@ -109,7 +109,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PackagePage.qml" line="125"/>
+        <location filename="../qml/pages/PackagePage.qml" line="131"/>
         <source>Make Dontation</source>
         <translation type="unfinished"></translation>
     </message>

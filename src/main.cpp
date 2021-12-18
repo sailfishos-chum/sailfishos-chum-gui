@@ -1,12 +1,15 @@
 #include "chum.h"
 #include "chumpackage.h"
 #include "chumpackagesmodel.h"
+#include "main.h"
 #include <sailfishapp.h>
 
 #include <QtQuick>
 
 #define CHUM_REGISTER_TYPE(NAME) \
   qmlRegisterType<NAME>("org.chum", 1, 0, #NAME)
+
+QNetworkAccessManager *nMng{nullptr};
 
 int main(int argc, char *argv[]) {
   CHUM_REGISTER_TYPE(ChumPackage);
@@ -18,6 +21,8 @@ int main(int argc, char *argv[]) {
 
   SailfishApp::application(argc, argv);
   QCoreApplication::setApplicationVersion(QStringLiteral(CHUMGUI_VERSION));
+
+  nMng = new QNetworkAccessManager(qApp);
 
   QQuickView v;
   v.setSource(SailfishApp::pathToMainQml());
