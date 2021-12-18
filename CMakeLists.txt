@@ -59,6 +59,7 @@ add_custom_target(distfiles SOURCES
   qml/pages/ScreenshotPage.qml
   qml/components/ChumDetailItem.qml
   qml/components/FancyPageHeader.qml
+  qml/components/ImageLabel.qml
   qml/components/MainPageButton.qml
   qml/components/ScreenshotsBox.qml
   mapplauncherd/privileges.d/${PROJECT_NAME}

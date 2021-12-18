@@ -13,7 +13,7 @@ Page {
 
   SilicaFlickable {
     anchors.fill: parent
-    contentHeight: content.height
+    contentHeight: content.height + Theme.paddingLarge
 
     PullDownMenu {
       MenuItem {
@@ -62,6 +62,33 @@ Page {
         iconSource: pkg.icon
       }
 
+      Row {
+          anchors {
+            right: parent.right
+            rightMargin: Theme.horizontalPageMargin
+          }
+          spacing: Theme.paddingLarge
+
+          ImageLabel {
+              image: "image://theme/icon-m-favorite"
+              label: pkg.starsCount
+              visible: pkg.starsCount >= 0
+          }
+
+          ImageLabel {
+              image: "image://theme/icon-m-shuffle"
+              label: pkg.forksCount
+              visible: pkg.forksCount >= 0
+          }
+      }
+
+      ChumDetailItem {
+        //% "Categories"
+        label: qsTrId("chum-pkg-categories")
+        value: pkg.categories.join(" ")
+        visible: value
+      }
+
       Label {
         anchors {
           left: parent.left
@@ -80,13 +107,14 @@ Page {
       }
 
       Column {
-        anchors {
-          left: parent.left
-          leftMargin: Theme.horizontalPageMargin
-          right: parent.right
-          rightMargin: Theme.horizontalPageMargin
-        }
         spacing: Theme.paddingMedium
+        width: parent.width
+
+        ChumDetailItem {
+          //% "License"
+          label: qsTrId("chum-license")
+          value: pkg.license
+        }
 
         ChumDetailItem {
           id: installedVersionItem
@@ -125,15 +153,34 @@ Page {
 
           onLinkActivated: Qt.openUrlExternally(link)
         }
-        Button {
-            id: btnDonate
-            anchors.horizontalCenter: parent.horizontalCenter
-            text: qsTr("Make Dontation")
-            visible: pkg.donation
-            onClicked: {
-                Qt.openUrlExternally(pkg.donation)
-            }
+      }
+
+      Column {
+        width: parent.width
+
+        MainPageButton {
+          visible: pkg.releasesCount > 0
+          //% "Releases (%1)"
+          text: qsTrId("chum-releases-number").arg(pkg.releasesCount)
+          onClicked: console.log("Releases list page")
         }
+
+        MainPageButton {
+          visible: pkg.issuesCount > 0
+          //% "Issues (%1)"
+          text: qsTrId("chum-issues-number").arg(pkg.issuesCount)
+          onClicked: console.log("Issues list page")
+        }
+      }
+
+      Button {
+          id: btnDonate
+          anchors.horizontalCenter: parent.horizontalCenter
+          text: qsTr("Make Dontation")
+          visible: pkg.donation
+          onClicked: {
+              Qt.openUrlExternally(pkg.donation)
+          }
       }
     }
   }
