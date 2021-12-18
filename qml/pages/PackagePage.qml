@@ -158,14 +158,14 @@ Page {
       Column {
         width: parent.width
 
-        MainPageButton {
+        MoreButton {
           visible: pkg.releasesCount > 0
           //% "Releases (%1)"
           text: qsTrId("chum-releases-number").arg(pkg.releasesCount)
           onClicked: console.log("Releases list page")
         }
 
-        MainPageButton {
+        MoreButton {
           visible: pkg.issuesCount > 0
           //% "Issues (%1)"
           text: qsTrId("chum-issues-number").arg(pkg.issuesCount)
