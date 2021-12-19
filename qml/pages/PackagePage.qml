@@ -16,6 +16,7 @@ Page {
     contentHeight: content.height + Theme.paddingLarge
 
     PullDownMenu {
+      busy: Chum.busy
       MenuItem {
         text:qsTr("Project Repository")
         onClicked: Qt.openUrlExternally(pkg.repo)
@@ -39,8 +40,8 @@ Page {
           : qsTrId("chum-install")
         visible: !_installed || pkg.updateAvailable
         onClicked: _installed
-          ? Chum.updatePackage(pkid)
-          : Chum.installPackage(pkid)
+          ? Chum.updatePackage(pkg.pkid)
+          : Chum.installPackage(pkg.pkid)
       }
     }
 

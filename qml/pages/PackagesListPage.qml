@@ -63,6 +63,7 @@ Page {
     }
 
     PullDownMenu {
+      busy: Chum.busy
       MenuItem {
         //% "Reload"
         text: qsTrId("chum-reload")

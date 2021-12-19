@@ -64,6 +64,8 @@ ApplicationWindow {
   Connections {
     target: Chum
 
+    onError: notification.show(errorTxt)
+
     onRepositoryRefreshed: {
       //% "Repository refreshed"
       notification.show(qsTrId("chum-repo-refreshed"))

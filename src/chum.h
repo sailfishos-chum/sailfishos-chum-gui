@@ -44,6 +44,7 @@ public slots:
 
 signals:
   void busyChanged();
+  void error(QString errorTxt);
   void statusChanged();
   void updatesCountChanged();
   void packagesChanged();

@@ -10,6 +10,7 @@ class ChumPackage : public QObject {
   Q_OBJECT
 
   Q_PROPERTY(QString id READ id NOTIFY pkidChanged)
+  Q_PROPERTY(QString pkid READ pkid NOTIFY pkidChanged)
   Q_PROPERTY(bool    updateAvailable READ updateAvailable NOTIFY updated)
 
   Q_PROPERTY(QStringList categories READ categories   NOTIFY updated)
@@ -59,8 +60,8 @@ public:
 
   Q_INVOKABLE LoadableObject* releases();
 
-  QString pkid() const { return m_pkid; }
   QString id() const { return m_id; }
+  QString pkid() const { return m_pkid; }
   bool updateAvailable() const { return m_update_available; }
   bool detailsNeedsUpdate() const { return m_details_update; }
   bool installedVersionNeedsUpdate() const { return m_installed_update; }

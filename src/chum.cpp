@@ -273,14 +273,22 @@ void Chum::startOperation(Transaction *pktr, const QString &pkg_id) {
     );
   });
 
-  connect(pktr, &Transaction::finished, this, [this, pktr, pkg_id]() {
+  connect(pktr, &Transaction::finished, this,
+          [this, pktr, pkg_id](PackageKit::Transaction::Exit status, uint /*runtime*/) {
     m_busy = false;
     emit busyChanged();
     SET_STATUS(QStringLiteral());
-    emit this->packageOperationFinished(
-      role2operation(pktr->role()),
-      Daemon::packageName(pkg_id),
-      Daemon::packageVersion(pkg_id)
-    );
+    if (status == PackageKit::Transaction::ExitSuccess)
+      emit this->packageOperationFinished(
+        role2operation(pktr->role()),
+        Daemon::packageName(pkg_id),
+        Daemon::packageVersion(pkg_id)
+      );
+  });
+
+  connect(pktr, &Transaction::errorCode,
+          [this, pktr, pkg_id](PackageKit::Transaction::Error /*error*/, const QString &details){
+      qWarning() << "Failed" << role2operation(pktr->role()) << pkg_id << details;
+      emit error(details);
   });
 }

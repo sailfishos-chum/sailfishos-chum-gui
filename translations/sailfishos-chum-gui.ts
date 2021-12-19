@@ -15,7 +15,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-reload">
-        <location filename="../qml/pages/PackagesListPage.qml" line="68"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="69"/>
         <source>Reload</source>
         <translation type="unfinished"></translation>
     </message>
@@ -28,7 +28,7 @@
         </translation>
     </message>
     <message id="chum-repo-refreshed">
-        <location filename="../qml/sailfishos-chum-gui.qml" line="69"/>
+        <location filename="../qml/sailfishos-chum-gui.qml" line="71"/>
         <source>Repository refreshed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -61,52 +61,52 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-update">
-        <location filename="../qml/pages/PackagePage.qml" line="37"/>
+        <location filename="../qml/pages/PackagePage.qml" line="38"/>
         <source>Update</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-install">
-        <location filename="../qml/pages/PackagePage.qml" line="39"/>
+        <location filename="../qml/pages/PackagePage.qml" line="40"/>
         <source>Install</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-categories">
-        <location filename="../qml/pages/PackagePage.qml" line="87"/>
+        <location filename="../qml/pages/PackagePage.qml" line="88"/>
         <source>Categories</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-installed-version">
-        <location filename="../qml/pages/PackagePage.qml" line="117"/>
+        <location filename="../qml/pages/PackagePage.qml" line="118"/>
         <source>Installed version</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-available-version">
-        <location filename="../qml/pages/PackagePage.qml" line="124"/>
+        <location filename="../qml/pages/PackagePage.qml" line="125"/>
         <source>Available version</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-download-size">
-        <location filename="../qml/pages/PackagePage.qml" line="129"/>
+        <location filename="../qml/pages/PackagePage.qml" line="130"/>
         <source>Download size</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-license">
-        <location filename="../qml/pages/PackagePage.qml" line="135"/>
+        <location filename="../qml/pages/PackagePage.qml" line="136"/>
         <source>License</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-link">
-        <location filename="../qml/pages/PackagePage.qml" line="145"/>
+        <location filename="../qml/pages/PackagePage.qml" line="146"/>
         <source>Link</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-releases-number">
-        <location filename="../qml/pages/PackagePage.qml" line="158"/>
+        <location filename="../qml/pages/PackagePage.qml" line="159"/>
         <source>Releases (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-issues-number">
-        <location filename="../qml/pages/PackagePage.qml" line="168"/>
+        <location filename="../qml/pages/PackagePage.qml" line="169"/>
         <source>Issues (%1)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -154,22 +154,22 @@
 <context>
     <name>PackagePage</name>
     <message>
-        <location filename="../qml/pages/PackagePage.qml" line="20"/>
+        <location filename="../qml/pages/PackagePage.qml" line="21"/>
         <source>Project Repository</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PackagePage.qml" line="25"/>
+        <location filename="../qml/pages/PackagePage.qml" line="26"/>
         <source>File Issue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PackagePage.qml" line="30"/>
+        <location filename="../qml/pages/PackagePage.qml" line="31"/>
         <source>Discussion Forum</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PackagePage.qml" line="176"/>
+        <location filename="../qml/pages/PackagePage.qml" line="177"/>
         <source>Make Dontation</source>
         <translation type="unfinished"></translation>
     </message>
