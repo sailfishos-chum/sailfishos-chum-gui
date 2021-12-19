@@ -56,6 +56,7 @@ add_custom_target(distfiles SOURCES
   qml/pages/MainPage.qml
   qml/pages/PackagePage.qml
   qml/pages/PackagesListPage.qml
+  qml/pages/ReleasesListPage.qml
   qml/pages/ScreenshotPage.qml
   qml/components/ChumDetailItem.qml
   qml/components/FancyPageHeader.qml

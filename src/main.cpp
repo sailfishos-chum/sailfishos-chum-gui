@@ -1,6 +1,7 @@
 #include "chum.h"
 #include "chumpackage.h"
 #include "chumpackagesmodel.h"
+#include "loadableobject.h"
 #include "main.h"
 #include <sailfishapp.h>
 
@@ -14,6 +15,7 @@ QNetworkAccessManager *nMng{nullptr};
 int main(int argc, char *argv[]) {
   CHUM_REGISTER_TYPE(ChumPackage);
   CHUM_REGISTER_TYPE(ChumPackagesModel);
+  CHUM_REGISTER_TYPE(LoadableObject);
 
   qmlRegisterSingletonType<Chum>("org.chum", 1, 0, "Chum", [](QQmlEngine *, QJSEngine *) -> QObject * {
         return static_cast<QObject *>(Chum::instance());

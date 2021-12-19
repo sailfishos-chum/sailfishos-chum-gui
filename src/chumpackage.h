@@ -3,12 +3,12 @@
 #include <QObject>
 #include <PackageKit/Details>
 
+#include "loadableobject.h"
 #include "projectabstract.h"
 
 class ChumPackage : public QObject {
   Q_OBJECT
 
-  // TODO: properties should be all read only, setters are used from C++
   Q_PROPERTY(QString id READ id NOTIFY pkidChanged)
   Q_PROPERTY(bool    updateAvailable READ updateAvailable NOTIFY updated)
 
@@ -56,6 +56,8 @@ public:
 
   ChumPackage(QObject *parent = nullptr);
   ChumPackage(QString id, QObject *parent = nullptr);
+
+  Q_INVOKABLE LoadableObject* releases();
 
   QString pkid() const { return m_pkid; }
   QString id() const { return m_id; }
@@ -108,6 +110,7 @@ signals:
 
 private:
   ProjectAbstract *m_project{nullptr};
+  LoadableObject   m_releases;
 
   QString     m_id; // ID of the package as used in Chum
   QString     m_pkid; // Package ID as set by PackageKit

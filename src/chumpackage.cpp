@@ -23,6 +23,7 @@ using namespace PackageKit;
 ChumPackage::ChumPackage(QObject *parent)
   : QObject{parent}
 {
+  // not used, added for compatibility
 }
 
 
@@ -37,6 +38,15 @@ QString ChumPackage::developer() const {
   if (!m_developer_login.isEmpty()) return m_developer_login;
   if (!m_developer_name.isEmpty()) return m_developer_name;
   return QString();
+}
+
+LoadableObject* ChumPackage::releases() {
+  if (m_releases.ready()) return &m_releases;
+  if (m_project != nullptr)
+    m_project->releases(&m_releases);
+  else
+    m_releases.setEmpty();
+  return &m_releases;
 }
 
 void ChumPackage::setPkid(const QString &pkid) {

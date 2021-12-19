@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+#include "loadableobject.h"
+
 class ChumPackage;
 
 class ProjectAbstract : public QObject
@@ -10,6 +12,8 @@ class ProjectAbstract : public QObject
   Q_OBJECT
 public:
   explicit ProjectAbstract(ChumPackage *package);
+
+  virtual void releases(LoadableObject *value) = 0;
 
 signals:
 

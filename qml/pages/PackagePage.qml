@@ -156,7 +156,10 @@ Page {
           visible: pkg.releasesCount > 0
           //% "Releases (%1)"
           text: qsTrId("chum-releases-number").arg(pkg.releasesCount)
-          onClicked: console.log("Releases list page")
+          onClicked: pageStack.push(Qt.resolvedUrl("../pages/ReleasesListPage.qml"), {
+                                        pkg: pkg,
+                                        releases: pkg.releases()
+                                    })
         }
 
         MoreButton {

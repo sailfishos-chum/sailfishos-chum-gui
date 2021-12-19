@@ -27,7 +27,8 @@ Page {
             id: searchField
             text: page.search
             width: parent.width
-            placeholderText: qsTr("Search")
+            //% "Search"
+            placeholderText: qsTrId("chum-search")
             onTextChanged: page.search = text
         }
     }

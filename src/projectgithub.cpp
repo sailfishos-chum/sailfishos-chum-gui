@@ -7,9 +7,13 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonValue>
+#include <QLocale>
 #include <QNetworkRequest>
 #include <QNetworkReply>
+#include <QSharedPointer>
 #include <QUrl>
+#include <QVariantList>
+#include <QVariantMap>
 
 static QString reqAuth{QStringLiteral("bearer " GITHUB_TOKEN)};
 static QString reqUrl{QStringLiteral("https://api.github.com/graphql")};
@@ -134,6 +138,65 @@ query {
     vi = r.value("discussions").toObject().value("totalCount").toInt();
     if (vi>=0)
       m_package->setUrlForum(QStringLiteral("https://github.com/%1/%2/discussions").arg(m_org, m_repo));
+
+    reply->deleteLater();
+  });
+}
+
+void ProjectGitHub::releases(LoadableObject *value) {
+  const QString releases_id{QStringLiteral("releases")};
+  value->reset(releases_id);
+
+  QString query = QStringLiteral(R"(
+{
+"query": "
+query {
+  repository(owner: \"%1\", name:\"%2\") {
+    releases(first: 30, orderBy: {field: CREATED_AT, direction: DESC}) {
+      totalCount
+      nodes {
+        createdAt
+        name
+        tagName
+      }
+    }
+  }
+}"
+}
+)").arg(m_org, m_repo);
+  query = query.replace('\n', ' ');
+
+  QNetworkRequest request;
+  request.setUrl(reqUrl);
+  request.setRawHeader("Content-Type", "application/x-www-form-urlencoded");
+  request.setRawHeader("Authorization", reqAuth.toLocal8Bit());
+  QNetworkReply *reply = nMng->post(request, query.toLocal8Bit());
+  connect(reply, &QNetworkReply::finished, [this, releases_id, reply, value](){
+    if (reply->error() != QNetworkReply::NoError) {
+      qWarning() << "Failed to fetch releases for" << this->m_org << this->m_repo;
+      qWarning() << "Error: " << reply->errorString();
+    }
+
+    QByteArray data = reply->readAll();
+    QVariantList r = QJsonDocument::fromJson(data).object().
+          value("data").toObject().value("repository").toObject().
+          value("releases").toObject().value("nodes").toArray().toVariantList();
+
+    QVariantList rlist;
+    for (auto e: r) {
+      QVariantMap element = e.toMap();
+      QVariantMap m;
+      m["id"] = element.value("tagName");
+      m["name"] = element.value("name");
+      QDateTime dt = QDateTime::fromString(element.value("createdAt").toString(),
+                                           Qt::ISODate);
+      m["datetime"] = QLocale::system().toString(dt.toLocalTime().date(), QLocale::LongFormat);
+      rlist.append(m);
+    }
+
+    QVariantMap result;
+    result["releases"] = rlist;
+    value->setValue(releases_id, result);
 
     reply->deleteLater();
   });

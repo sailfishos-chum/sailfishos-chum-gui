@@ -14,6 +14,8 @@ public:
 
   static bool isProject(const QString &url);
 
+  virtual void releases(LoadableObject *value) override;
+
 signals:
 
 private:

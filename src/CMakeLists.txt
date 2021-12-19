@@ -8,6 +8,8 @@ add_executable(${PROJECT_NAME}
   chumpackage.h
   chumpackagesmodel.cpp
   chumpackagesmodel.h
+  loadableobject.cpp
+  loadableobject.h
   projectabstract.cpp
   projectabstract.h
   projectgithub.cpp
