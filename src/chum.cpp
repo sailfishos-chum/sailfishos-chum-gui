@@ -9,6 +9,13 @@ using namespace PackageKit;
 Chum* Chum::s_instance{nullptr};
 const QString Chum::s_repo_name{QStringLiteral(REPO_ALIAS)};
 
+#define SET_STATUS(status) { \
+  if (m_status != status) {  \
+    m_status = status;       \
+    emit statusChanged();    \
+  }                          \
+}
+
 static inline auto role2operation(Transaction::Role role) {
   switch (role) {
   case Transaction::RoleInstallFiles:
@@ -60,6 +67,8 @@ void Chum::refreshPackages() {
   m_packages_last_refresh.clear();
 
   auto pktr = Daemon::getPackages(Transaction::FilterNotDevel);
+  //% "Get list of packages"
+  SET_STATUS(qtTrId("chum-get-list-packages"));
   connect(pktr, &Transaction::package,  this, [this](
           [[maybe_unused]] int info,
           const QString &packageID,
@@ -96,6 +105,7 @@ void Chum::refreshPackagesFinished()
     package->setPkid(p);
   }
 
+  SET_STATUS(QStringLiteral());
   refreshDetails();
 }
 
@@ -104,6 +114,9 @@ void Chum::refreshDetails() {
     m_busy = true;
     emit busyChanged();
   }
+
+  //% "Get package details"
+  SET_STATUS(qtTrId("chum-get-package-details"));
 
   QStringList packages;
   for (const ChumPackage *p: m_packages.values())
@@ -121,6 +134,7 @@ void Chum::refreshDetails() {
   });
 
   connect(tr, &Transaction::finished, this, [this]() {
+     SET_STATUS(QStringLiteral());
      this->refreshInstalledVersion();
   });
 }
@@ -130,6 +144,9 @@ void Chum::refreshInstalledVersion() {
     m_busy = true;
     emit busyChanged();
   }
+
+  //% "Get versions of installed packages"
+  SET_STATUS(qtTrId("chum-get-package-version"));
 
   QStringList packages;
   for (ChumPackage *p: m_packages.values())
@@ -152,6 +169,7 @@ void Chum::refreshInstalledVersion() {
   });
 
   connect(tr, &Transaction::finished, this, [this]() {
+     SET_STATUS(QStringLiteral());
      this->getUpdates(true);;
   });
 }
@@ -168,6 +186,9 @@ void Chum::getUpdates(bool force) {
     m_busy = true;
     emit busyChanged();
   }
+
+  //% "Check for updates"
+  SET_STATUS(qtTrId("chum-check-updates"));
 
   for (ChumPackage *p: m_packages.values())
     p->setUpdateAvailable(false);
@@ -194,6 +215,7 @@ void Chum::getUpdates(bool force) {
       m_updates_count = new_count;
       emit this->updatesCountChanged();
     }
+    SET_STATUS(QStringLiteral());
     m_busy = false;
     emit busyChanged();
     emit packagesChanged();
@@ -209,12 +231,16 @@ void Chum::refreshRepo(bool force) {
     emit busyChanged();
   }
 
+  //% "Refresh repositories"
+  SET_STATUS(qtTrId("chum-refresh-repository"));
+
   auto pktr = Daemon::repoSetData(
     s_repo_name,
     QStringLiteral("refresh-now"),
     QVariant::fromValue(force).toString()
   );
   connect(pktr, &Transaction::finished, this, [this]() {
+    SET_STATUS(QStringLiteral());
     refreshPackages();
     emit this->repositoryRefreshed();
   });
@@ -225,6 +251,8 @@ void Chum::installPackage(const QString &id) {
   if (m_busy) return;
   m_busy = true;
   emit busyChanged();
+  //% "Install package"
+  SET_STATUS(qtTrId("chum-install-package"));
   startOperation(Daemon::installPackage(id), id);
 }
 
@@ -232,6 +260,8 @@ void Chum::updatePackage(const QString &id) {
   if (m_busy) return;
   m_busy = true;
   emit busyChanged();
+  //% "Update package"
+  SET_STATUS(qtTrId("chum-update-package"));
   startOperation(Daemon::updatePackage(id), id);
 }
 
@@ -246,6 +276,7 @@ void Chum::startOperation(Transaction *pktr, const QString &pkg_id) {
   connect(pktr, &Transaction::finished, this, [this, pktr, pkg_id]() {
     m_busy = false;
     emit busyChanged();
+    SET_STATUS(QStringLiteral());
     emit this->packageOperationFinished(
       role2operation(pktr->role()),
       Daemon::packageName(pkg_id),

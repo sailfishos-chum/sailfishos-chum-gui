@@ -4,8 +4,8 @@
 <context>
     <name></name>
     <message id="chum-available-packages">
-        <location filename="../qml/pages/MainPage.qml" line="52"/>
-        <location filename="../qml/pages/MainPage.qml" line="55"/>
+        <location filename="../qml/pages/MainPage.qml" line="74"/>
+        <location filename="../qml/pages/MainPage.qml" line="78"/>
         <source>Available packages</source>
         <translation type="unfinished"></translation>
     </message>
@@ -45,17 +45,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-about">
-        <location filename="../qml/pages/MainPage.qml" line="20"/>
+        <location filename="../qml/pages/MainPage.qml" line="41"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-refresh-cache">
-        <location filename="../qml/pages/MainPage.qml" line="26"/>
+        <location filename="../qml/pages/MainPage.qml" line="47"/>
         <source>Refresh cache</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-no-updates">
-        <location filename="../qml/pages/MainPage.qml" line="44"/>
+        <location filename="../qml/pages/MainPage.qml" line="65"/>
         <source>No updates available</source>
         <oldsource>No update available</oldsource>
         <translation type="unfinished"></translation>
@@ -111,8 +111,43 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-releases">
-        <location filename="../qml/pages/ReleasesListPage.qml" line="21"/>
+        <location filename="../qml/pages/ReleasesListPage.qml" line="28"/>
         <source>Releases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-get-list-packages">
+        <location filename="../src/chum.cpp" line="71"/>
+        <source>Get list of packages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-get-package-details">
+        <location filename="../src/chum.cpp" line="119"/>
+        <source>Get package details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-get-package-version">
+        <location filename="../src/chum.cpp" line="149"/>
+        <source>Get versions of installed packages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-check-updates">
+        <location filename="../src/chum.cpp" line="191"/>
+        <source>Check for updates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-refresh-repository">
+        <location filename="../src/chum.cpp" line="235"/>
+        <source>Refresh repositories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-install-package">
+        <location filename="../src/chum.cpp" line="255"/>
+        <source>Install package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-update-package">
+        <location filename="../src/chum.cpp" line="264"/>
+        <source>Update package</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

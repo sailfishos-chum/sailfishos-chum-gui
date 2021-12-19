@@ -7,6 +7,27 @@ Page {
   id: page
   allowedOrientations: Orientation.All
 
+  BusyIndicator {
+    id: busyInd
+    anchors.centerIn: parent
+    running: Chum.busy
+    size: BusyIndicatorSize.Large
+  }
+
+  Label {
+      anchors {
+        top: busyInd.bottom
+        topMargin: Theme.paddingLarge
+        horizontalCenter: parent.horizontalCenter
+      }
+      color: Theme.highlightColor
+      horizontalAlignment: Text.AlignHCenter
+      text: Chum.status
+      visible: busyInd.running
+      width: parent.width - 2*Theme.horizontalPageMargin
+      wrapMode: Text.WordWrap
+  }
+
   SilicaFlickable {
     anchors.fill: parent
     contentHeight: content.height
@@ -42,6 +63,7 @@ Page {
           ? updatesNotification.summary
           //% "No updates available"
           : qsTrId("chum-no-updates")
+        visible: !Chum.busy
         onClicked: pageStack.push(Qt.resolvedUrl("PackagesListPage.qml"), {
                                       subTitle: updatesNotification.summary,
                                       updatesOnly: true
@@ -50,6 +72,7 @@ Page {
 
       MainPageButton {
         text: qsTrId("chum-available-packages")
+        visible: !Chum.busy
         onClicked: pageStack.push(Qt.resolvedUrl("PackagesListPage.qml"), {
                                     //% "Available packages"
                                     subTitle: qsTrId("chum-available-packages")

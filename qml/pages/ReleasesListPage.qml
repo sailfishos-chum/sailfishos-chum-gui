@@ -12,6 +12,13 @@ Page {
     id: page
     allowedOrientations: Orientation.All
 
+    BusyIndicator {
+        id: busyInd
+        anchors.centerIn: parent
+        running: !releases.ready
+        size: BusyIndicatorSize.Large
+    }
+
     SilicaListView {
         anchors.fill: parent
 

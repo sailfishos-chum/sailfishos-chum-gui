@@ -13,6 +13,7 @@ class Transaction;
 class Chum : public QObject {
   Q_OBJECT
   Q_PROPERTY(bool    busy READ busy NOTIFY busyChanged)
+  Q_PROPERTY(QString status READ status NOTIFY statusChanged)
   Q_PROPERTY(quint32 updatesCount   READ updatesCount NOTIFY updatesCountChanged)
 
 public:
@@ -25,6 +26,7 @@ public:
 
   // repo operations
   bool busy() const { return m_busy; }
+  QString status() const { return m_status; }
   quint32 updatesCount() const { return m_updates_count; }
 
   QList<ChumPackage*> packages() const { return m_packages.values(); }
@@ -42,6 +44,7 @@ public slots:
 
 signals:
   void busyChanged();
+  void statusChanged();
   void updatesCountChanged();
   void packagesChanged();
   void packageOperationStarted( PackageOperation operation, const QString &name);
@@ -63,6 +66,7 @@ private:
 
 private:
   bool          m_busy{false};
+  QString       m_status;
   quint32       m_updates_count{0};
 
   QHash<QString, ChumPackage*> m_packages;
