@@ -82,13 +82,21 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
 
   // derive name
   m_name = Daemon::packageName(m_pkid);
-  for (QString prefix: {"harbour-", "openrepos-"})
+  for (const QLatin1String &prefix: {QLatin1String("harbour-"), QLatin1String("openrepos-")})
     if (m_name.startsWith(prefix))
-      m_name = m_name.mid(prefix.length());
-  QStringList nparts = m_name.split('-');
-  m_name = QString{};
-  for (const QString& b: nparts)
-    m_name += b.left(1).toUpper() + b.mid(1).toLower() + " ";
+      m_name = m_name.mid(prefix.size());
+  bool capitalize = true;
+  const QChar sep{'-'};
+  const QChar space{' '};
+  for (auto begin = m_name.begin(), end = m_name.end(), it = begin; it != end; ++it) {
+    if (capitalize) {
+      *it = it->toUpper();
+      capitalize = false;
+    } else if (it != begin && *it == sep) {
+      *it = space;
+      capitalize = true;
+    }
+  }
   m_name = m_name.trimmed();
 
   // parse description

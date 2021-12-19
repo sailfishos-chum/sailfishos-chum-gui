@@ -1,6 +1,3 @@
-add_compile_options(
-        -DREPO_ALIAS="${REPO}")
-
 add_executable(${PROJECT_NAME}
   chum.cpp
   chum.h
@@ -21,6 +18,10 @@ add_executable(${PROJECT_NAME}
 target_compile_definitions(${PROJECT_NAME}
   PRIVATE
     $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>
+)
+
+set_source_files_properties(chum.cpp PROPERTIES
+  COMPILE_DEFINITIONS REPO_ALIAS=\"${REPO}\"
 )
 
 set_source_files_properties(main.cpp PROPERTIES
