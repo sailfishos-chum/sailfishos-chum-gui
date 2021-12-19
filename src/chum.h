@@ -34,7 +34,6 @@ public:
 
   // static public methods
   static Chum* instance();
-  static bool isChumPackage(const QString &id);
 
 public slots:
   void getUpdates(bool force = false);
@@ -59,6 +58,7 @@ private:
 
   void getUpdatesFinished();
   void refreshPackages();
+  void refreshPackagesInstalled();
   void refreshPackagesFinished();
   void refreshDetails();
   void refreshInstalledVersion();
@@ -72,6 +72,7 @@ private:
 
   QHash<QString, ChumPackage*> m_packages;
   QSet<QString>                m_packages_last_refresh;
+  QSet<QString>                m_packages_last_refresh_installed;
 
   // static
   static Chum*         s_instance;

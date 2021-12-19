@@ -116,37 +116,37 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-get-list-packages">
-        <location filename="../src/chum.cpp" line="71"/>
+        <location filename="../src/chum.cpp" line="68"/>
         <source>Get list of packages</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-get-package-details">
-        <location filename="../src/chum.cpp" line="119"/>
+        <location filename="../src/chum.cpp" line="139"/>
         <source>Get package details</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-get-package-version">
-        <location filename="../src/chum.cpp" line="149"/>
+        <location filename="../src/chum.cpp" line="169"/>
         <source>Get versions of installed packages</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-check-updates">
-        <location filename="../src/chum.cpp" line="191"/>
+        <location filename="../src/chum.cpp" line="211"/>
         <source>Check for updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-refresh-repository">
-        <location filename="../src/chum.cpp" line="235"/>
+        <location filename="../src/chum.cpp" line="252"/>
         <source>Refresh repositories</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-install-package">
-        <location filename="../src/chum.cpp" line="255"/>
+        <location filename="../src/chum.cpp" line="272"/>
         <source>Install package</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-update-package">
-        <location filename="../src/chum.cpp" line="264"/>
+        <location filename="../src/chum.cpp" line="281"/>
         <source>Update package</source>
         <translation type="unfinished"></translation>
     </message>

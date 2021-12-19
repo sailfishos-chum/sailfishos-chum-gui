@@ -39,10 +39,6 @@ Chum* Chum::instance() {
   return s_instance;
 }
 
-bool Chum::isChumPackage(const QString &id) {
-  return Daemon::packageData(id) == s_repo_name;
-}
-
 QString Chum::packageId(const QString &pkg_id)
 {
   // use the name as package ID to ensure that we have only one copy of each package
@@ -65,6 +61,7 @@ void Chum::refreshPackages() {
   }
 
   m_packages_last_refresh.clear();
+  m_packages_last_refresh_installed.clear();
 
   auto pktr = Daemon::getPackages(Transaction::FilterNotDevel);
   //% "Get list of packages"
@@ -74,10 +71,33 @@ void Chum::refreshPackages() {
           const QString &packageID,
           [[maybe_unused]] const QString &summary
           ) {
-    if (isChumPackage(packageID))
+    QString pd = Daemon::packageData(packageID);
+    if (pd == s_repo_name)
+      m_packages_last_refresh.insert(packageID);
+    else if (pd == QStringLiteral("installed"))
+      m_packages_last_refresh_installed.insert(packageID);
+  });
+  connect(pktr, &Transaction::finished, this, &Chum::refreshPackagesInstalled);
+}
+
+void Chum::refreshPackagesInstalled()
+{
+  // check what repository provides installed packages
+  QHash<QString,QString> packages;
+  for (const auto &p: m_packages_last_refresh_installed)
+    packages[p] = Daemon::packageName(p);
+
+  auto tr = Daemon::whatProvides(packages.values());
+  connect(tr, &Transaction::package,  this, [this](
+          [[maybe_unused]] int info,
+          const QString &packageID,
+          [[maybe_unused]] const QString &summary
+          ) {
+    QString pd = Daemon::packageData(packageID);
+    if (pd == s_repo_name)
       m_packages_last_refresh.insert(packageID);
   });
-  connect(pktr, &Transaction::finished, this, &Chum::refreshPackagesFinished);
+  connect(tr, &Transaction::finished, this, &Chum::refreshPackagesFinished);
 }
 
 void Chum::refreshPackagesFinished()
@@ -201,14 +221,11 @@ void Chum::getUpdates(bool force) {
     const QString &packageID,
     [[maybe_unused]] const QString &summary
   ) {
-    if (isChumPackage(packageID)) {
       ChumPackage *p = m_packages.value(packageId(packageID), nullptr);
-      if (p)
+      if (p) {
         p->setUpdateAvailable(true);
-      else
-        qWarning() << "Package" << packageID << "missing among the current packages";
-      ++new_count;
-    }
+        ++new_count;
+      }
   });
   connect(pktr, &Transaction::finished, this, [this]() {
     if (m_updates_count != new_count) {
