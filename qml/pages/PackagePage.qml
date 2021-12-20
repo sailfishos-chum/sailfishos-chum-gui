@@ -6,8 +6,6 @@ import "../components"
 Page {
   property ChumPackage pkg
 
-  readonly property bool _installed: !!pkg.installedVersion
-
   id: page
   allowedOrientations: Orientation.All
 
@@ -33,13 +31,13 @@ Page {
         visible: pkg.urlForum
       }
       MenuItem {
-        text: _installed
+        text: pkg.installed
           //% "Update"
           ? qsTrId("chum-update")
           //% "Install"
           : qsTrId("chum-install")
-        visible: !_installed || pkg.updateAvailable
-        onClicked: _installed
+        visible: !pkg.installed || pkg.updateAvailable
+        onClicked: pkg.installed
           ? Chum.updatePackage(pkg.pkid)
           : Chum.installPackage(pkg.pkid)
       }
@@ -113,7 +111,7 @@ Page {
 
         ChumDetailItem {
           id: installedVersionItem
-          visible: _installed
+          visible: pkg.installed
           //% "Installed version"
           label: qsTrId("chum-pkg-installed-version")
           value: pkg.installedVersion
@@ -123,6 +121,7 @@ Page {
           id: availableVersionItem
           //% "Available version"
           label: qsTrId("chum-pkg-available-version")
+          value: pkg.availableVersion
         }
 
         ChumDetailItem {

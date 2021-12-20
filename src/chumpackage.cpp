@@ -40,6 +40,18 @@ QString ChumPackage::developer() const {
   return QString();
 }
 
+bool ChumPackage::installed() const {
+  return !m_installed_version.isEmpty();
+}
+
+LoadableObject* ChumPackage::release(const QString &id) {
+  if (m_project != nullptr)
+    m_project->release(id, &m_release);
+  else
+    m_release.setEmpty();
+  return &m_releases;
+}
+
 LoadableObject* ChumPackage::releases() {
   if (m_releases.ready()) return &m_releases;
   if (m_project != nullptr)
@@ -74,6 +86,7 @@ void ChumPackage::setUpdateAvailable(bool up) {
 void ChumPackage::setDetails(const PackageKit::Details &v) {
   m_details_update = false;
 
+  m_available_version = Daemon::packageVersion(v.packageId());
   m_description = v.description();
   m_summary     = v.summary();
   m_url         = v.url();

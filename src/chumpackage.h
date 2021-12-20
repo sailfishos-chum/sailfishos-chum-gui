@@ -13,6 +13,7 @@ class ChumPackage : public QObject {
   Q_PROPERTY(QString pkid READ pkid NOTIFY pkidChanged)
   Q_PROPERTY(bool    updateAvailable READ updateAvailable NOTIFY updated)
 
+  Q_PROPERTY(QString    availableVersion READ availableVersion NOTIFY updated)
   Q_PROPERTY(QStringList categories READ categories   NOTIFY updated)
   Q_PROPERTY(QString    description READ description  NOTIFY updated)
   Q_PROPERTY(QString    developer   READ developer    NOTIFY updated)
@@ -21,8 +22,9 @@ class ChumPackage : public QObject {
   Q_PROPERTY(QString    donation    READ donation     NOTIFY updated)
   Q_PROPERTY(int        forksCount  READ forksCount   NOTIFY updated)
   Q_PROPERTY(QString    icon        READ icon         NOTIFY updated)
-  Q_PROPERTY(int        issuesCount READ issuesCount  NOTIFY updated)
+  Q_PROPERTY(bool       installed   READ installed    NOTIFY updated)
   Q_PROPERTY(QString    installedVersion READ installedVersion NOTIFY updated)
+  Q_PROPERTY(int        issuesCount READ issuesCount  NOTIFY updated)
   Q_PROPERTY(QString    license     READ license      NOTIFY updated)
   Q_PROPERTY(QString    name        READ name         NOTIFY updated)
   Q_PROPERTY(int        releasesCount READ releasesCount  NOTIFY updated)
@@ -39,11 +41,13 @@ class ChumPackage : public QObject {
 public:
   enum Role {
     PackageIdRole = Qt::UserRole + 1,
+    PackageAvailableVersionRole,
     PackageCategoriesRole,
     PackageDescriptionRole,
     PackageDeveloperLoginRole,
     PackageDeveloperNameRole,
     PackageIconRole,
+    PackageInstalledRole,
     PackageInstalledVersionRole,
     PackageNameRole,
     PackageStarsCountRole,
@@ -58,6 +62,7 @@ public:
   ChumPackage(QObject *parent = nullptr);
   ChumPackage(QString id, QObject *parent = nullptr);
 
+  Q_INVOKABLE LoadableObject* release(const QString &id);
   Q_INVOKABLE LoadableObject* releases();
 
   QString id() const { return m_id; }
@@ -66,6 +71,7 @@ public:
   bool detailsNeedsUpdate() const { return m_details_update; }
   bool installedVersionNeedsUpdate() const { return m_installed_update; }
 
+  QString availableVersion() const { return m_available_version; }
   QStringList categories() const { return m_categories; }
   QString description() const { return m_description; }
   QString developer() const;
@@ -74,6 +80,7 @@ public:
   QString donation() const { return m_donation; }
   int     forksCount() const { return m_forks_count; }
   QString icon() const { return m_icon; }
+  bool    installed() const;
   QString installedVersion() const { return m_installed_version; }
   int     issuesCount() const { return m_issues_count; }
   QString license() const { return m_license; }
@@ -111,6 +118,7 @@ signals:
 
 private:
   ProjectAbstract *m_project{nullptr};
+  LoadableObject   m_release;
   LoadableObject   m_releases;
 
   QString     m_id; // ID of the package as used in Chum
@@ -120,6 +128,7 @@ private:
   bool        m_details_update{false};
   bool        m_installed_update{false};
 
+  QString     m_available_version;
   QStringList m_categories;
   QString     m_description;
   QString     m_developer_login;
