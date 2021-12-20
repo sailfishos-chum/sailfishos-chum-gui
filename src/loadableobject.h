@@ -14,6 +14,7 @@ class LoadableObject : public QObject
 public:
   explicit LoadableObject(QObject *parent = nullptr);
 
+  QString valueId() const { return m_value_id; }
   bool ready() const { return m_ready; }
   QVariantMap value() const { return m_value; }
 

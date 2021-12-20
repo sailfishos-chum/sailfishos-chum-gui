@@ -143,6 +143,56 @@ query {
   });
 }
 
+void ProjectGitHub::release(const QString &release_id, LoadableObject *value) {
+  if (value->ready() && value->valueId()==release_id)
+    return; // value already corresponds to that release
+  value->reset(release_id);
+
+  QString query = QStringLiteral(R"(
+{
+"query": "
+query {
+  repository(owner: \"%1\", name:\"%2\") {
+    release(tagName: \"%3\") {
+      name
+      createdAt
+      descriptionHTML
+    }
+  }
+}"
+}
+)").arg(m_org, m_repo, release_id);
+
+  query = query.replace('\n', ' ');
+
+  QNetworkRequest request;
+  request.setUrl(reqUrl);
+  request.setRawHeader("Content-Type", "application/x-www-form-urlencoded");
+  request.setRawHeader("Authorization", reqAuth.toLocal8Bit());
+  QNetworkReply *reply = nMng->post(request, query.toLocal8Bit());
+  connect(reply, &QNetworkReply::finished, [this, release_id, reply, value](){
+    if (reply->error() != QNetworkReply::NoError) {
+      qWarning() << "Failed to fetch release for" << this->m_org << this->m_repo;
+      qWarning() << "Error: " << reply->errorString();
+    }
+
+    QByteArray data = reply->readAll();
+    QVariantMap r = QJsonDocument::fromJson(data).object().
+          value("data").toObject().value("repository").toObject().
+          value("release").toObject().toVariantMap();
+
+    QVariantMap result;
+    result["name"] = r.value("name");
+    result["description"] = r.value("descriptionHTML");
+    QDateTime dt = QDateTime::fromString(r.value("createdAt").toString(),
+                                         Qt::ISODate);
+    result["datetime"] = QLocale::system().toString(dt.toLocalTime().date(), QLocale::LongFormat);
+
+    value->setValue(release_id, result);
+    reply->deleteLater();
+  });
+}
+
 void ProjectGitHub::releases(LoadableObject *value) {
   const QString releases_id{QStringLiteral("releases")};
   value->reset(releases_id);

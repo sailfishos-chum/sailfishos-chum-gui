@@ -1,5 +1,7 @@
 #include "loadableobject.h"
 
+#include <QDebug>
+
 LoadableObject::LoadableObject(QObject *parent) :
   QObject(parent)
 {

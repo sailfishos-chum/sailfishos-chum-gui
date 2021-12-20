@@ -118,7 +118,7 @@ signals:
 
 private:
   ProjectAbstract *m_project{nullptr};
-  LoadableObject   m_release;
+  LoadableObject   m_release_info;
   LoadableObject   m_releases;
 
   QString     m_id; // ID of the package as used in Chum
