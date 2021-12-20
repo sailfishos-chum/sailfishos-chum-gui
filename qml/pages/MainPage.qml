@@ -1,17 +1,39 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import org.chum 1.0
 import "../components"
 
 Page {
   id: page
   allowedOrientations: Orientation.All
 
+  BusyIndicator {
+    id: busyInd
+    anchors.centerIn: parent
+    running: Chum.busy
+    size: BusyIndicatorSize.Large
+  }
+
+  Label {
+      anchors {
+        top: busyInd.bottom
+        topMargin: Theme.paddingLarge
+        horizontalCenter: parent.horizontalCenter
+      }
+      color: Theme.highlightColor
+      horizontalAlignment: Text.AlignHCenter
+      text: Chum.status
+      visible: busyInd.running
+      width: parent.width - 2*Theme.horizontalPageMargin
+      wrapMode: Text.WordWrap
+  }
+
   SilicaFlickable {
     anchors.fill: parent
     contentHeight: content.height
 
     PullDownMenu {
-      busy: chum.refreshingRepo
+      busy: Chum.busy
 
       MenuItem {
         enabled: false
@@ -20,10 +42,10 @@ Page {
       }
 
       MenuItem {
-        enabled: !chum.refreshingRepo
+        enabled: !Chum.busy
         //% "Refresh cache"
         text: qsTrId("chum-refresh-cache")
-        onClicked: chum.refreshRepo()
+        onClicked: Chum.refreshRepo()
       }
     }
 
@@ -36,17 +58,25 @@ Page {
       }
 
       MainPageButton {
-        enabled: chum.updatesCount > 0
+        enabled: Chum.updatesCount > 0
         text: enabled
           ? updatesNotification.summary
           //% "No updates available"
           : qsTrId("chum-no-updates")
-        onClicked: pageStack.push(Qt.resolvedUrl("UpdatesPage.qml"))
+        visible: !Chum.busy
+        onClicked: pageStack.push(Qt.resolvedUrl("PackagesListPage.qml"), {
+                                      subTitle: updatesNotification.summary,
+                                      updatesOnly: true
+                                    })
       }
 
       MainPageButton {
         text: qsTrId("chum-available-packages")
-        onClicked: pageStack.push(Qt.resolvedUrl("AvailablePackagesPage.qml"))
+        visible: !Chum.busy
+        onClicked: pageStack.push(Qt.resolvedUrl("PackagesListPage.qml"), {
+                                    //% "Available packages"
+                                    subTitle: qsTrId("chum-available-packages")
+                                  })
       }
     }
   }

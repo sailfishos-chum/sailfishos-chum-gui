@@ -4,32 +4,42 @@ import org.chum 1.0
 import "../components"
 
 Page {
-  property alias pkid: pkg.pkid
-  property alias title: header.title
-  property alias version: availableVersionItem.value
-  readonly property bool _installed: !!pkg.installedVersion
+  property ChumPackage pkg
 
   id: page
   allowedOrientations: Orientation.All
 
-  ChumPackage {
-    id: pkg
-  }
-
   SilicaFlickable {
     anchors.fill: parent
-    contentHeight: content.height
+    contentHeight: content.height + Theme.paddingLarge
 
     PullDownMenu {
+      busy: Chum.busy
       MenuItem {
-        text: _installed
+        text:qsTr("Project Repository")
+        onClicked: Qt.openUrlExternally(pkg.repo)
+        visible: pkg.repo
+      }
+      MenuItem {
+        text:qsTr("File Issue")
+        onClicked: Qt.openUrlExternally(pkg.urlIssues)
+        visible: pkg.urlIssues
+      }
+      MenuItem {
+        text:qsTr("Discussion Forum")
+        onClicked: Qt.openUrlExternally(pkg.urlForum)
+        visible: pkg.urlForum
+      }
+      MenuItem {
+        text: pkg.installed
           //% "Update"
           ? qsTrId("chum-update")
           //% "Install"
           : qsTrId("chum-install")
-        onClicked: _installed
-          ? chum.updatePackage(pkid)
-          : chum.installPackage(pkid)
+        visible: !pkg.installed || pkg.updateAvailable
+        onClicked: pkg.installed
+          ? Chum.updatePackage(pkg.pkid)
+          : Chum.installPackage(pkg.pkid)
       }
     }
 
@@ -38,9 +48,44 @@ Page {
       width: parent.width
       spacing: Theme.paddingLarge
 
-      PageHeader {
+      FancyPageHeader {
         id: header
-        description: pkg.summary
+        title: pkg.name
+        description: {
+            if (pkg.summary && pkg.developer)
+                return "%1\n%2".arg(pkg.summary).arg(pkg.developer);
+            if (pkg.developer) return pkg.developer;
+            if (pkg.summary) return pkg.summary;
+            return "";
+        }
+        iconSource: pkg.icon
+      }
+
+      Row {
+          anchors {
+            right: parent.right
+            rightMargin: Theme.horizontalPageMargin
+          }
+          spacing: Theme.paddingLarge
+
+          ImageLabel {
+              image: "image://theme/icon-m-favorite"
+              label: pkg.starsCount
+              visible: pkg.starsCount >= 0
+          }
+
+          ImageLabel {
+              image: "image://theme/icon-m-shuffle"
+              label: pkg.forksCount
+              visible: pkg.forksCount >= 0
+          }
+      }
+
+      ChumDetailItem {
+        //% "Categories"
+        label: qsTrId("chum-pkg-categories")
+        value: pkg.categories.join(" ")
+        visible: value
       }
 
       Label {
@@ -56,18 +101,17 @@ Page {
         color: Theme.highlightColor
       }
 
+      ScreenshotsBox {
+        screenshots: pkg.screenshots
+      }
+
       Column {
-        anchors {
-          left: parent.left
-          leftMargin: Theme.horizontalPageMargin
-          right: parent.right
-          rightMargin: Theme.horizontalPageMargin
-        }
         spacing: Theme.paddingMedium
+        width: parent.width
 
         ChumDetailItem {
           id: installedVersionItem
-          visible: _installed
+          visible: pkg.installed
           //% "Installed version"
           label: qsTrId("chum-pkg-installed-version")
           value: pkg.installedVersion
@@ -77,6 +121,7 @@ Page {
           id: availableVersionItem
           //% "Available version"
           label: qsTrId("chum-pkg-available-version")
+          value: pkg.availableVersion
         }
 
         ChumDetailItem {
@@ -102,6 +147,37 @@ Page {
 
           onLinkActivated: Qt.openUrlExternally(link)
         }
+      }
+
+      Column {
+        width: parent.width
+
+        MoreButton {
+          visible: pkg.releasesCount > 0
+          //% "Releases (%1)"
+          text: qsTrId("chum-releases-number").arg(pkg.releasesCount)
+          onClicked: pageStack.push(Qt.resolvedUrl("../pages/ReleasesListPage.qml"), {
+                                        pkg: pkg,
+                                        releases: pkg.releases()
+                                    })
+        }
+
+        MoreButton {
+          visible: pkg.issuesCount > 0
+          //% "Issues (%1)"
+          text: qsTrId("chum-issues-number").arg(pkg.issuesCount)
+          onClicked: console.log("Issues list page")
+        }
+      }
+
+      Button {
+          id: btnDonate
+          anchors.horizontalCenter: parent.horizontalCenter
+          text: qsTr("Make Dontation")
+          visible: pkg.donation
+          onClicked: {
+              Qt.openUrlExternally(pkg.donation)
+          }
       }
     }
   }
