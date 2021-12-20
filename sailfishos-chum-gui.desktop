@@ -4,3 +4,6 @@ X-Nemo-Application-Type=silica-qt5
 Icon=sailfishos-chum-gui
 Exec=sailfishos-chum-gui
 Name=Chum
+
+[X-Sailjail]
+Sandboxing=Disabled
