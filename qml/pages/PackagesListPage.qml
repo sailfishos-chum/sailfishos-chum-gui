@@ -4,7 +4,8 @@ import org.chum 1.0
 
 Page {
   property string subTitle
-  property alias model: view.model
+  property string search
+  property alias  updatesOnly: chumModel.filterUpdatesOnly
 
   id: page
   allowedOrientations: Orientation.All
@@ -13,18 +14,33 @@ Page {
     id: view
     anchors.fill: parent
 
-    header: PageHeader {
-      title: "Chum"
-      description: subTitle
+    header: Column {
+        spacing: Theme.paddingLarge
+        width: view.width
+
+        PageHeader {
+            title: "Chum"
+            description: subTitle
+        }
+
+        SearchField {
+            id: searchField
+            text: page.search
+            width: parent.width
+            //% "Search"
+            placeholderText: qsTrId("chum-search")
+            onTextChanged: page.search = text
+        }
     }
+
+    // prevent newly added list delegates from stealing focus away from the search field
+    currentIndex: -1
 
     delegate: ListItem {
       height: Theme.itemSizeMedium
 
       onClicked: pageStack.push(Qt.resolvedUrl("../pages/PackagePage.qml"), {
-        pkid:    model.packageId,
-        title:   model.packageName,
-        version: model.packageVersion
+        pkg:    Chum.package(model.packageId)
       })
 
       Label {
@@ -41,11 +57,17 @@ Page {
       }
     }
 
+    model: ChumPackagesModel {
+      id: chumModel
+      search: page.search
+    }
+
     PullDownMenu {
+      busy: Chum.busy
       MenuItem {
         //% "Reload"
         text: qsTrId("chum-reload")
-        onClicked: model.reset()
+        onClicked: chumModel.reset()
       }
     }
 

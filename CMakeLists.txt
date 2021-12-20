@@ -5,6 +5,9 @@ project(sailfishos-chum-gui
   VERSION   ${CHUMGUI_VERSION}
 )
 
+set(REPO "sailfishos-chum" CACHE STRING "Alias of the repository")
+set(GITHUB_TOKEN "unset" CACHE STRING "GitHub access token for GraphQL queries")
+
 include(FindPkgConfig)
 
 find_package(Qt5
@@ -50,13 +53,18 @@ file(GLOB RPM_FILES rpm/*)
 add_custom_target(distfiles SOURCES
   qml/sailfishos-chum-gui.qml
   qml/cover/CoverPage.qml
-  qml/pages/AvailablePackagesPage.qml
   qml/pages/MainPage.qml
   qml/pages/PackagePage.qml
-  qml/pages/UpdatesPage.qml
+  qml/pages/PackagesListPage.qml
+  qml/pages/ReleasePage.qml
+  qml/pages/ReleasesListPage.qml
+  qml/pages/ScreenshotPage.qml
   qml/components/ChumDetailItem.qml
+  qml/components/FancyPageHeader.qml
+  qml/components/ImageLabel.qml
   qml/components/MainPageButton.qml
-  qml/components/PackagesPage.qml
+  qml/components/MoreButton.qml
+  qml/components/ScreenshotsBox.qml
   mapplauncherd/privileges.d/${PROJECT_NAME}
   LICENSE
   README.md

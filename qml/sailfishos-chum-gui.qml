@@ -61,19 +61,19 @@ ApplicationWindow {
     summary: qsTrId("chum-updates-available", _updatesCount)
   }
 
-  Chum {
-    id: chum
+  Connections {
+    target: Chum
 
-    onRefreshingRepoChanged: {
-      if (!refreshingRepo) {
-        //% "Repository refreshed"
-        notification.show(qsTrId("chum-repo-refreshed"))
-      }
+    onError: notification.show(errorTxt)
+
+    onRepositoryRefreshed: {
+      //% "Repository refreshed"
+      notification.show(qsTrId("chum-repo-refreshed"))
     }
 
     onUpdatesCountChanged: {
-      if (_updatesCount !== updatesCount) {
-        _updatesCount = updatesCount
+      if (_updatesCount !== Chum.updatesCount) {
+        _updatesCount = Chum.updatesCount
         if (_updatesCount > 0) {
           updatesNotification.replacesId = updatesNotificationId.value
           updatesNotification.publish()
@@ -91,7 +91,5 @@ ApplicationWindow {
         notification.show(qsTrId(trid).arg(name).arg(version))
       }
     }
-
-    Component.onCompleted: getUpdates()
   }
 }

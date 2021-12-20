@@ -24,7 +24,7 @@ Row {
                 anchors.fill: parent
                 onClicked: pageStack.push(
                                Qt.resolvedUrl("../pages/ScreenshotPage.qml"), {
-                                   model: app.screenshots,
+                                   screenshots: screenshots,
                                    currentIndex: model.index
                                }, PageStackAction.Immediate)
             }

@@ -5,7 +5,12 @@ Label {
   property string label
   property string value
 
-  width: parent.width
+  anchors {
+    left: parent.left
+    leftMargin: Theme.horizontalPageMargin
+    right: parent.right
+    rightMargin: Theme.horizontalPageMargin
+  }
   color: Theme.highlightColor
   wrapMode: Text.WrapAtWordBoundaryOrAnywhere
   font.pixelSize: Theme.fontSizeExtraSmall
