@@ -13,6 +13,7 @@ class ProjectAbstract : public QObject
 public:
   explicit ProjectAbstract(ChumPackage *package);
 
+  virtual void issues(LoadableObject *value) = 0;
   virtual void release(const QString &id, LoadableObject *value) = 0;
   virtual void releases(LoadableObject *value) = 0;
 

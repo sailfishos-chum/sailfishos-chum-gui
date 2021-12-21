@@ -44,6 +44,15 @@ bool ChumPackage::installed() const {
   return !m_installed_version.isEmpty();
 }
 
+LoadableObject* ChumPackage::issues() {
+  if (m_issues.ready()) return &m_issues;
+  if (m_project != nullptr)
+    m_project->issues(&m_issues);
+  else
+    m_issues.setEmpty();
+  return &m_issues;
+}
+
 LoadableObject* ChumPackage::release(const QString &id) {
   if (m_project != nullptr)
     m_project->release(id, &m_release_info);
