@@ -23,13 +23,16 @@ using namespace PackageKit;
 ChumPackage::ChumPackage(QObject *parent)
   : QObject{parent}
 {
-  // not used, added for compatibility
+  m_issues = new LoadableObject(this);
+  m_release_info = new LoadableObject(this);
+  m_releases = new LoadableObject(this);
 }
 
 
-ChumPackage::ChumPackage(QString id, QObject *parent)
-  : QObject{parent}, m_id(id)
+ChumPackage::ChumPackage(const QString &id, QObject *parent)
+  : ChumPackage(parent)
 {
+  m_id = id;
 }
 
 QString ChumPackage::developer() const {
@@ -45,29 +48,29 @@ bool ChumPackage::installed() const {
 }
 
 LoadableObject* ChumPackage::issues() {
-  if (m_issues.ready()) return &m_issues;
+  if (m_issues->ready()) return m_issues;
   if (m_project != nullptr)
-    m_project->issues(&m_issues);
+    m_project->issues(m_issues);
   else
-    m_issues.setEmpty();
-  return &m_issues;
+    m_issues->setEmpty();
+  return m_issues;
 }
 
 LoadableObject* ChumPackage::release(const QString &id) {
   if (m_project != nullptr)
-    m_project->release(id, &m_release_info);
+    m_project->release(id, m_release_info);
   else
-    m_release_info.setEmpty();
-  return &m_release_info;
+    m_release_info->setEmpty();
+  return m_release_info;
 }
 
 LoadableObject* ChumPackage::releases() {
-  if (m_releases.ready()) return &m_releases;
+  if (m_releases->ready()) return m_releases;
   if (m_project != nullptr)
-    m_project->releases(&m_releases);
+    m_project->releases(m_releases);
   else
-    m_releases.setEmpty();
-  return &m_releases;
+    m_releases->setEmpty();
+  return m_releases;
 }
 
 void ChumPackage::setPkid(const QString &pkid) {

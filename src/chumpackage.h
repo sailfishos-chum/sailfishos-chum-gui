@@ -60,7 +60,7 @@ public:
   };
 
   ChumPackage(QObject *parent = nullptr);
-  ChumPackage(QString id, QObject *parent = nullptr);
+  ChumPackage(const QString &id, QObject *parent = nullptr);
 
   Q_INVOKABLE LoadableObject* issues();
   Q_INVOKABLE LoadableObject* release(const QString &id);
@@ -119,9 +119,9 @@ signals:
 
 private:
   ProjectAbstract *m_project{nullptr};
-  LoadableObject   m_issues;
-  LoadableObject   m_release_info;
-  LoadableObject   m_releases;
+  LoadableObject  *m_issues{nullptr};
+  LoadableObject  *m_release_info{nullptr};
+  LoadableObject  *m_releases{nullptr};
 
   QString     m_id; // ID of the package as used in Chum
   QString     m_pkid; // Package ID as set by PackageKit
