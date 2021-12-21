@@ -23,6 +23,7 @@ using namespace PackageKit;
 ChumPackage::ChumPackage(QObject *parent)
   : QObject{parent}
 {
+  m_issue_info = new LoadableObject(this);
   m_issues = new LoadableObject(this);
   m_release_info = new LoadableObject(this);
   m_releases = new LoadableObject(this);
@@ -45,6 +46,14 @@ QString ChumPackage::developer() const {
 
 bool ChumPackage::installed() const {
   return !m_installed_version.isEmpty();
+}
+
+LoadableObject* ChumPackage::issue(const QString &id) {
+  if (m_project != nullptr)
+    m_project->issue(id, m_issue_info);
+  else
+    m_issue_info->setEmpty();
+  return m_issue_info;
 }
 
 LoadableObject* ChumPackage::issues() {

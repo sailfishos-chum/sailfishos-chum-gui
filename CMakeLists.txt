@@ -53,6 +53,7 @@ file(GLOB RPM_FILES rpm/*)
 add_custom_target(distfiles SOURCES
   qml/sailfishos-chum-gui.qml
   qml/cover/CoverPage.qml
+  qml/pages/IssuePage.qml
   qml/pages/IssuesListPage.qml
   qml/pages/MainPage.qml
   qml/pages/PackagePage.qml

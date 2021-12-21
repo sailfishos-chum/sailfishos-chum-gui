@@ -176,6 +176,100 @@ query {
 }
 
 
+void ProjectGitHub::issue(const QString &issue_id, LoadableObject *value) {
+  if (value->ready() && value->valueId()==issue_id)
+    return; // value already corresponds to that release
+  value->reset(issue_id);
+
+  QString query = QStringLiteral(R"(
+{
+"query": "
+query {
+  repository(owner: \"%1\", name:\"%2\") {
+    issue(number: %3) {
+      number
+      title
+      author {
+        ... on User {
+          login
+          name
+        }
+        ... on Organization {
+          login
+          name
+        }
+      }
+      bodyHTML
+      createdAt
+      updatedAt
+      comments(last:100) {
+        totalCount
+        nodes {
+          author {
+            ... on User {
+              login
+              name
+            }
+            ... on Organization {
+              login
+              name
+            }
+          }
+          bodyHTML
+          createdAt
+          updatedAt
+        }
+      }
+    }
+  }
+}"
+}
+)").arg(m_org, m_repo, issue_id);
+
+  query = query.replace('\n', ' ');
+
+  QNetworkReply *reply = sendQuery(query);
+  connect(reply, &QNetworkReply::finished, [this, issue_id, reply, value](){
+    if (reply->error() != QNetworkReply::NoError) {
+      qWarning() << "Failed to fetch issue for" << this->m_org << this->m_repo;
+      qWarning() << "Error: " << reply->errorString();
+    }
+
+    QByteArray data = reply->readAll();
+    QVariantMap r = QJsonDocument::fromJson(data).object().
+          value("data").toObject().value("repository").toObject().
+          value("issue").toObject().toVariantMap();
+
+    QVariantMap result;
+    result["id"] = r.value("number");
+    result["commentsCount"] = r.value("comments").toMap().value("totalCount").toInt();
+    result["number"] = r.value("number");
+    result["title"] = r.value("title");
+    QVariantList clist = r.value("comments").toMap().value("nodes").toList();
+    QVariantList result_list;
+    QVariantMap m;
+    m["author"] = getName(r.value("author"));
+    m["created"] = parseDate(r.value("createdAt").toString(), true);
+    m["updated"] = parseDate(r.value("updatedAt").toString(), true);
+    m["body"] = r.value("bodyHTML").toString();
+    result_list.append(m);
+    for (auto e: clist) {
+      QVariantMap element = e.toMap();
+      m.clear();
+      m["author"] = getName(element.value("author"));
+      m["created"] = parseDate(element.value("createdAt").toString(), true);
+      m["updated"] = parseDate(element.value("updatedAt").toString(), true);
+      m["body"] = element.value("bodyHTML").toString();
+      result_list.append(m);
+    }
+
+    result["discussion"] = result_list;
+    value->setValue(issue_id, result);
+    reply->deleteLater();
+  });
+}
+
+
 void ProjectGitHub::issues(LoadableObject *value) {
   const QString issues_id{QStringLiteral("issues")};
   value->reset(issues_id);

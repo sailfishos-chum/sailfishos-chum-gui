@@ -62,6 +62,7 @@ public:
   ChumPackage(QObject *parent = nullptr);
   ChumPackage(const QString &id, QObject *parent = nullptr);
 
+  Q_INVOKABLE LoadableObject* issue(const QString &id);
   Q_INVOKABLE LoadableObject* issues();
   Q_INVOKABLE LoadableObject* release(const QString &id);
   Q_INVOKABLE LoadableObject* releases();
@@ -119,6 +120,7 @@ signals:
 
 private:
   ProjectAbstract *m_project{nullptr};
+  LoadableObject  *m_issue_info{nullptr};
   LoadableObject  *m_issues{nullptr};
   LoadableObject  *m_release_info{nullptr};
   LoadableObject  *m_releases{nullptr};
