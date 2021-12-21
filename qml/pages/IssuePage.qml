@@ -35,7 +35,7 @@ Page {
             }
 
             Item {
-                height: Theme.paddingLarge
+                height: Theme.paddingMedium
                 width: parent.width
             }
 

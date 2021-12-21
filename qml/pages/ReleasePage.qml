@@ -27,14 +27,37 @@ Page {
 
         Column {
             id: content
-            spacing: Theme.paddingLarge
             visible: release.ready
             width: parent.width
 
             PageHeader {
                 title: pkg.name
-                //% "Release %1"
-                description: qsTrId("chum-release").arg(releaseName)
+                //% "Release"
+                description: qsTrId("chum-release")
+            }
+
+            Item {
+                height: Theme.paddingMedium
+                width: parent.width
+            }
+
+            Label {
+                anchors {
+                    left: parent.left
+                    leftMargin: Theme.horizontalPageMargin
+                    right: parent.right
+                    rightMargin: Theme.horizontalPageMargin
+                }
+                color: Theme.highlightColor
+                font.pixelSize: Theme.fontSizeLarge
+                text: releaseName
+                visible: release.ready
+                wrapMode: Text.WordWrap
+            }
+
+            Item {
+                height: Theme.paddingSmall
+                width: parent.width
             }
 
             Label {
@@ -50,6 +73,11 @@ Page {
                 text: releaseDate
             }
 
+            Item {
+                height: Theme.paddingLarge
+                width: parent.width
+            }
+
             Label {
                 anchors {
                     left: parent.left
@@ -57,7 +85,7 @@ Page {
                     right: parent.right
                     rightMargin: Theme.horizontalPageMargin
                 }
-                color: Theme.highlightColor
+                color: Theme.primaryColor
                 text: releaseDescription
                 textFormat: Text.RichText
                 wrapMode: Text.WordWrap
