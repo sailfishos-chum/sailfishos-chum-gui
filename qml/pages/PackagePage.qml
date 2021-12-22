@@ -81,13 +81,11 @@ Page {
           }
       }
 
-      ChumDetailItem {
-        //% "Categories"
-        label: qsTrId("chum-pkg-categories")
-        value: pkg.categories.join(" ")
-        visible: value
+      AppInformation {
+          pkg: page.pkg
       }
 
+      /*
       Label {
         anchors {
           left: parent.left
@@ -100,7 +98,7 @@ Page {
         font.pixelSize: Theme.fontSizeSmall
         color: Theme.highlightColor
       }
-
+*/
       ScreenshotsBox {
         screenshots: pkg.screenshots
       }
@@ -108,45 +106,6 @@ Page {
       Column {
         spacing: Theme.paddingMedium
         width: parent.width
-
-        ChumDetailItem {
-          id: installedVersionItem
-          visible: pkg.installed
-          //% "Installed version"
-          label: qsTrId("chum-pkg-installed-version")
-          value: pkg.installedVersion
-        }
-
-        ChumDetailItem {
-          id: availableVersionItem
-          //% "Available version"
-          label: qsTrId("chum-pkg-available-version")
-          value: pkg.availableVersion
-        }
-
-        ChumDetailItem {
-          //% "Download size"
-          label: qsTrId("chum-pkg-download-size")
-          value: Format.formatFileSize(pkg.size)
-        }
-
-        ChumDetailItem {
-          //% "License"
-          label: qsTrId("chum-pkg-license")
-          value: pkg.license
-        }
-
-        ChumDetailItem {
-          visible: !!pkg.url
-          text: '<font color="%1">%3</font> <font color="%2"><a href="%4">%4</a></font>'
-            .arg(Theme.secondaryHighlightColor)
-            .arg(Theme.primaryColor)
-            //% "Link"
-            .arg(qsTrId("chum-pkg-link"))
-            .arg(pkg.url)
-
-          onLinkActivated: Qt.openUrlExternally(link)
-        }
       }
 
       Column {

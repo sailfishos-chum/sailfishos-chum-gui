@@ -7,10 +7,11 @@ Label {
 
   anchors {
     left: parent.left
-    leftMargin: Theme.horizontalPageMargin
     right: parent.right
     rightMargin: Theme.horizontalPageMargin
   }
+  topPadding: Theme.paddingSmall
+  bottomPadding: Theme.paddingSmall
   color: Theme.highlightColor
   wrapMode: Text.WrapAtWordBoundaryOrAnywhere
   font.pixelSize: Theme.fontSizeExtraSmall
