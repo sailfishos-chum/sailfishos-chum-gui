@@ -5,5 +5,4 @@ ProjectAbstract::ProjectAbstract(ChumPackage *package) :
   QObject(package),
   m_package(package)
 {
-
 }

@@ -151,8 +151,35 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-release">
-        <location filename="../qml/pages/ReleasePage.qml" line="37"/>
-        <source>Release %1</source>
+        <location filename="../qml/pages/ReleasePage.qml" line="36"/>
+        <source>Release</source>
+        <oldsource>Release %1</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-issues">
+        <location filename="../qml/pages/IssuesListPage.qml" line="28"/>
+        <source>Issues</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-issue-nr-by">
+        <location filename="../qml/pages/IssuesListPage.qml" line="78"/>
+        <source>#%1 by %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-issue">
+        <location filename="../qml/pages/IssuePage.qml" line="34"/>
+        <source>Issue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-issues-comments-number">
+        <location filename="../qml/pages/IssuePage.qml" line="72"/>
+        <source>Comments: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-created-updated-datetime">
+        <location filename="../qml/pages/IssuePage.qml" line="119"/>
+        <location filename="../qml/pages/IssuesListPage.qml" line="107"/>
+        <source>Created: %1; Updated: %2</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -174,7 +201,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PackagePage.qml" line="176"/>
+        <location filename="../qml/pages/PackagePage.qml" line="179"/>
         <source>Make Dontation</source>
         <translation type="unfinished"></translation>
     </message>

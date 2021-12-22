@@ -166,7 +166,10 @@ Page {
           visible: pkg.issuesCount > 0
           //% "Issues (%1)"
           text: qsTrId("chum-issues-number").arg(pkg.issuesCount)
-          onClicked: console.log("Issues list page")
+          onClicked: pageStack.push(Qt.resolvedUrl("../pages/IssuesListPage.qml"), {
+                                        pkg: pkg,
+                                        issues: pkg.issues()
+                                    })
         }
       }
 

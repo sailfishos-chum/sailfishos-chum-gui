@@ -18,6 +18,26 @@
 static QString reqAuth{QStringLiteral("bearer " GITHUB_TOKEN)};
 static QString reqUrl{QStringLiteral("https://api.github.com/graphql")};
 
+//////////////////////////////////////////////////////
+/// helper functions
+
+static QString getName(const QVariant &v) {
+  QVariantMap m = v.toMap();
+  QString login = m[QLatin1String("login")].toString();
+  QString name = m[QLatin1String("name")].toString();
+  if (login.isEmpty()) return name;
+  if (name.isEmpty()) return login;
+  return QStringLiteral("%1 (%2)").arg(name, login);
+}
+
+static QNetworkReply* sendQuery(const QString &query) {
+  QNetworkRequest request;
+  request.setUrl(reqUrl);
+  request.setRawHeader("Content-Type", "application/x-www-form-urlencoded");
+  request.setRawHeader("Authorization", reqAuth.toLocal8Bit());
+  return nMng->post(request, query.toLocal8Bit());
+}
+
 static bool parseUrl(const QString &u, QString &org, QString &repo) {
   QUrl url(u);
   QString host = url.host();
@@ -30,6 +50,21 @@ static bool parseUrl(const QString &u, QString &org, QString &repo) {
   repo = path[1];
   return true;
 }
+
+static QString parseDate(QString txt, bool short_format=false) {
+  QDateTime dt = QDateTime::fromString(txt, Qt::ISODate);
+  return QLocale::system().toString(dt.toLocalTime().date(),
+                                    short_format ? QLocale::ShortFormat :
+                                                   QLocale::LongFormat);
+}
+
+//static QString parseDateTime(QString txt) {
+//  QDateTime dt = QDateTime::fromString(txt, Qt::ISODate);
+//  return QLocale::system().toString(dt.toLocalTime(), QLocale::LongFormat);
+//}
+
+//////////////////////////////////////////////////////
+/// ProjectGitHub
 
 ProjectGitHub::ProjectGitHub(const QString &url, ChumPackage *package) : ProjectAbstract(package) {
   bool ok = parseUrl(url, m_org, m_repo);
@@ -55,6 +90,7 @@ bool ProjectGitHub::isProject(const QString &url) {
   QString o, p;
   return parseUrl(url, o, p);
 }
+
 
 void ProjectGitHub::fetchRepoInfo() {
   QString query = QStringLiteral(R"(
@@ -96,11 +132,7 @@ query {
 )").arg(m_org, m_repo);
   query = query.replace('\n', ' ');
 
-  QNetworkRequest request;
-  request.setUrl(reqUrl);
-  request.setRawHeader("Content-Type", "application/x-www-form-urlencoded");
-  request.setRawHeader("Authorization", reqAuth.toLocal8Bit());
-  QNetworkReply *reply = nMng->post(request, query.toLocal8Bit());
+  QNetworkReply *reply = sendQuery(query);
   connect(reply, &QNetworkReply::finished, [this, reply](){
     if (reply->error() != QNetworkReply::NoError) {
       qWarning() << "Failed to fetch repository data for" << this->m_org << this->m_repo;
@@ -143,6 +175,172 @@ query {
   });
 }
 
+
+void ProjectGitHub::issue(const QString &issue_id, LoadableObject *value) {
+  if (value->ready() && value->valueId()==issue_id)
+    return; // value already corresponds to that release
+  value->reset(issue_id);
+
+  QString query = QStringLiteral(R"(
+{
+"query": "
+query {
+  repository(owner: \"%1\", name:\"%2\") {
+    issue(number: %3) {
+      number
+      title
+      author {
+        ... on User {
+          login
+          name
+        }
+        ... on Organization {
+          login
+          name
+        }
+      }
+      bodyHTML
+      createdAt
+      updatedAt
+      comments(last:100) {
+        totalCount
+        nodes {
+          author {
+            ... on User {
+              login
+              name
+            }
+            ... on Organization {
+              login
+              name
+            }
+          }
+          bodyHTML
+          createdAt
+          updatedAt
+        }
+      }
+    }
+  }
+}"
+}
+)").arg(m_org, m_repo, issue_id);
+
+  query = query.replace('\n', ' ');
+
+  QNetworkReply *reply = sendQuery(query);
+  connect(reply, &QNetworkReply::finished, [this, issue_id, reply, value](){
+    if (reply->error() != QNetworkReply::NoError) {
+      qWarning() << "Failed to fetch issue for" << this->m_org << this->m_repo;
+      qWarning() << "Error: " << reply->errorString();
+    }
+
+    QByteArray data = reply->readAll();
+    QVariantMap r = QJsonDocument::fromJson(data).object().
+          value("data").toObject().value("repository").toObject().
+          value("issue").toObject().toVariantMap();
+
+    QVariantMap result;
+    result["id"] = r.value("number");
+    result["commentsCount"] = r.value("comments").toMap().value("totalCount").toInt();
+    result["number"] = r.value("number");
+    result["title"] = r.value("title");
+    QVariantList clist = r.value("comments").toMap().value("nodes").toList();
+    QVariantList result_list;
+    QVariantMap m;
+    m["author"] = getName(r.value("author"));
+    m["created"] = parseDate(r.value("createdAt").toString(), true);
+    m["updated"] = parseDate(r.value("updatedAt").toString(), true);
+    m["body"] = r.value("bodyHTML").toString();
+    result_list.append(m);
+    for (auto e: clist) {
+      QVariantMap element = e.toMap();
+      m.clear();
+      m["author"] = getName(element.value("author"));
+      m["created"] = parseDate(element.value("createdAt").toString(), true);
+      m["updated"] = parseDate(element.value("updatedAt").toString(), true);
+      m["body"] = element.value("bodyHTML").toString();
+      result_list.append(m);
+    }
+
+    result["discussion"] = result_list;
+    value->setValue(issue_id, result);
+    reply->deleteLater();
+  });
+}
+
+
+void ProjectGitHub::issues(LoadableObject *value) {
+  const QString issues_id{QStringLiteral("issues")};
+  value->reset(issues_id);
+
+  QString query = QStringLiteral(R"(
+{
+"query": "
+query {
+  repository(owner: \"%1\", name:\"%2\") {
+    issues(first: 100, states: OPEN, orderBy: {field: UPDATED_AT, direction: DESC}) {
+      nodes {
+        number
+        title
+        author {
+          ... on User {
+            login
+            name
+          }
+          ... on Organization {
+            login
+            name
+          }
+        }
+        createdAt
+        updatedAt
+        comments {
+          totalCount
+        }
+      }
+    }
+  }
+}"
+}
+)").arg(m_org, m_repo);
+  query = query.replace('\n', ' ');
+
+  QNetworkReply *reply = sendQuery(query);
+  connect(reply, &QNetworkReply::finished, [this, issues_id, reply, value](){
+    if (reply->error() != QNetworkReply::NoError) {
+      qWarning() << "Failed to fetch issues for" << this->m_org << this->m_repo;
+      qWarning() << "Error: " << reply->errorString();
+    }
+
+    QByteArray data = reply->readAll();
+    QVariantList r = QJsonDocument::fromJson(data).object().
+          value("data").toObject().value("repository").toObject().
+          value("issues").toObject().value("nodes").toArray().toVariantList();
+
+    QVariantList rlist;
+    for (auto e: r) {
+      QVariantMap element = e.toMap();
+      QVariantMap m;
+      m["id"] = element.value("number");
+      m["author"] = getName(element.value("author"));
+      m["commentsCount"] = element.value("comments").toMap().value("totalCount").toInt();
+      m["number"] = element.value("number");
+      m["title"] = element.value("title");
+      m["created"] = parseDate(element.value("createdAt").toString(), true);
+      m["updated"] = parseDate(element.value("updatedAt").toString(), true);
+      rlist.append(m);
+    }
+
+    QVariantMap result;
+    result["issues"] = rlist;
+    value->setValue(issues_id, result);
+
+    reply->deleteLater();
+  });
+}
+
+
 void ProjectGitHub::release(const QString &release_id, LoadableObject *value) {
   if (value->ready() && value->valueId()==release_id)
     return; // value already corresponds to that release
@@ -165,11 +363,7 @@ query {
 
   query = query.replace('\n', ' ');
 
-  QNetworkRequest request;
-  request.setUrl(reqUrl);
-  request.setRawHeader("Content-Type", "application/x-www-form-urlencoded");
-  request.setRawHeader("Authorization", reqAuth.toLocal8Bit());
-  QNetworkReply *reply = nMng->post(request, query.toLocal8Bit());
+  QNetworkReply *reply = sendQuery(query);
   connect(reply, &QNetworkReply::finished, [this, release_id, reply, value](){
     if (reply->error() != QNetworkReply::NoError) {
       qWarning() << "Failed to fetch release for" << this->m_org << this->m_repo;
@@ -184,14 +378,13 @@ query {
     QVariantMap result;
     result["name"] = r.value("name");
     result["description"] = r.value("descriptionHTML");
-    QDateTime dt = QDateTime::fromString(r.value("createdAt").toString(),
-                                         Qt::ISODate);
-    result["datetime"] = QLocale::system().toString(dt.toLocalTime().date(), QLocale::LongFormat);
+    result["datetime"] = parseDate(r.value("createdAt").toString());
 
     value->setValue(release_id, result);
     reply->deleteLater();
   });
 }
+
 
 void ProjectGitHub::releases(LoadableObject *value) {
   const QString releases_id{QStringLiteral("releases")};
@@ -216,11 +409,7 @@ query {
 )").arg(m_org, m_repo);
   query = query.replace('\n', ' ');
 
-  QNetworkRequest request;
-  request.setUrl(reqUrl);
-  request.setRawHeader("Content-Type", "application/x-www-form-urlencoded");
-  request.setRawHeader("Authorization", reqAuth.toLocal8Bit());
-  QNetworkReply *reply = nMng->post(request, query.toLocal8Bit());
+  QNetworkReply *reply = sendQuery(query);
   connect(reply, &QNetworkReply::finished, [this, releases_id, reply, value](){
     if (reply->error() != QNetworkReply::NoError) {
       qWarning() << "Failed to fetch releases for" << this->m_org << this->m_repo;
@@ -238,9 +427,7 @@ query {
       QVariantMap m;
       m["id"] = element.value("tagName");
       m["name"] = element.value("name");
-      QDateTime dt = QDateTime::fromString(element.value("createdAt").toString(),
-                                           Qt::ISODate);
-      m["datetime"] = QLocale::system().toString(dt.toLocalTime().date(), QLocale::LongFormat);
+      m["datetime"] = parseDate(element.value("createdAt").toString());
       rlist.append(m);
     }
 

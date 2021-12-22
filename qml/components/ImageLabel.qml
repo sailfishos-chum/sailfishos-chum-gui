@@ -6,8 +6,10 @@ Item {
     height: Math.max(imageUi.implicitHeight, labelUi.implicitHeight)
     width: childrenRect.width
 
+    property alias textColor: labelUi.color
     property alias image: imageUi.source
     property alias label: labelUi.text
+    property alias fontSize: labelUi.font.pixelSize
 
     Image {
         id: imageUi
