@@ -1,6 +1,7 @@
 #include "chumpackage.h"
 
 #include "projectgithub.h"
+#include "projectgitlab.h"
 
 #include <PackageKit/Daemon>
 #include <PackageKit/Details>
@@ -187,6 +188,8 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
   for (const QString &u: {m_repo_url, m_url}) {
       if (ProjectGitHub::isProject(u))
         m_project = new ProjectGitHub(u, this);
+      else if (ProjectGitLab::isProject(u))
+        m_project = new ProjectGitLab(u, this);
       if (m_project) break;
   }
 

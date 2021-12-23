@@ -9,6 +9,7 @@ License:        MIT
 URL:            https://github.com/sailfishos-chum/sailfishos-chum-gui
 Source0:        %{name}-%{version}.tar.bz2
 Source1:        token-github.txt
+Source2:        token-gitlab.txt
 Requires:       sailfishsilica-qt5 >= 0.10.9
 %if 0%{?chum_testing_repo}
 Requires:       sailfishos-chum-testing
@@ -35,6 +36,7 @@ A client app for the Chum repositories
 %build
 %cmake -DCHUMGUI_VERSION=%(echo %{version} | grep -Eo '^[0-9]+(\.[0-9]+)*') \
        -DGITHUB_TOKEN=%(cat token-github.txt)  \
+       -DGITLAB_TOKEN=%(cat token-gitlab.txt)  \
 %if 0%{?chum_testing_repo}
        -DREPO=sailfishos-chum-testing \
 %endif
