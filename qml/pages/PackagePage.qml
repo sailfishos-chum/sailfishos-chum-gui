@@ -81,24 +81,19 @@ Page {
           }
       }
 
+      ChumDetailItem {
+        //% "Categories"
+        label: qsTrId("chum-pkg-categories")
+        value: pkg.categories.join(" ")
+        visible: value
+        anchors.leftMargin: Theme.horizontalPageMargin
+        anchors.rightMargin: Theme.horizontalPageMargin
+      }
+
       AppInformation {
           pkg: page.pkg
       }
 
-      /*
-      Label {
-        anchors {
-          left: parent.left
-          leftMargin: Theme.horizontalPageMargin
-          right: parent.right
-          rightMargin: Theme.horizontalPageMargin
-        }
-        text: pkg.description
-        wrapMode: Text.WordWrap
-        font.pixelSize: Theme.fontSizeSmall
-        color: Theme.highlightColor
-      }
-*/
       ScreenshotsBox {
         screenshots: pkg.screenshots
       }

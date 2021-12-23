@@ -8,13 +8,12 @@ Label {
   anchors {
     left: parent.left
     right: parent.right
-    rightMargin: Theme.horizontalPageMargin
   }
   topPadding: Theme.paddingSmall
   bottomPadding: Theme.paddingSmall
   color: Theme.highlightColor
   wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-  font.pixelSize: Theme.fontSizeExtraSmall
+  font.pixelSize: Theme.fontSizeSmall
   textFormat: Text.StyledText
   text: '<font color="%1">%2</font> %3'
     .arg(Theme.secondaryHighlightColor)

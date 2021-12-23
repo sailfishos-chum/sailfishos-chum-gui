@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-BackgroundItem {
+MouseArea {
     property bool _expanded: false
 
     property var pkg
@@ -10,25 +10,11 @@ BackgroundItem {
     width: parent.width
     height: content.height
     clip: true
-    highlighted: down && !highlightDelayTimer.running
-    _showPress: highlighted
     propagateComposedEvents: true
-
-    onPressedChanged: {
-        if (pressed) {
-            highlightDelayTimer.restart()
-        }
-    }
 
     onClicked: _expanded = !_expanded
 
     Behavior on height { NumberAnimation { duration: 200; easing.type: Easing.InOutQuad } }
-
-    Timer {
-        // Idea is from the official store client
-        id: highlightDelayTimer
-        interval: 50
-    }
 
     Column {
         id: content
@@ -50,7 +36,6 @@ BackgroundItem {
                 text: pkg.description
                 color: infoItem.highlighted ? Theme.highlightColor : Theme.primaryColor
                 linkColor: Theme.highlightColor
-                font.pixelSize: Theme.fontSizeSmall
                 wrapMode: Text.WordWrap
                 onLinkActivated: openLink(link)
             }
@@ -66,13 +51,6 @@ BackgroundItem {
             id: spacer
             visible: _expanded
             height: Theme.paddingMedium
-        }
-
-        ChumDetailItem {
-          //% "Categories"
-          label: qsTrId("chum-pkg-categories")
-          value: pkg.categories.join(" ")
-          visible: _expanded && value
         }
 
         ChumDetailItem {

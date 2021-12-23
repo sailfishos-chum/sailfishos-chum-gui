@@ -71,42 +71,42 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-categories">
-        <location filename="../qml/components/AppInformation.qml" line="73"/>
+        <location filename="../qml/pages/PackagePage.qml" line="86"/>
         <source>Categories</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-installed-version">
-        <location filename="../qml/components/AppInformation.qml" line="82"/>
+        <location filename="../qml/components/AppInformation.qml" line="60"/>
         <source>Installed version</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-available-version">
-        <location filename="../qml/components/AppInformation.qml" line="89"/>
+        <location filename="../qml/components/AppInformation.qml" line="67"/>
         <source>Available version</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-download-size">
-        <location filename="../qml/components/AppInformation.qml" line="96"/>
+        <location filename="../qml/components/AppInformation.qml" line="74"/>
         <source>Download size</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-license">
-        <location filename="../qml/components/AppInformation.qml" line="103"/>
+        <location filename="../qml/components/AppInformation.qml" line="81"/>
         <source>License</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-link">
-        <location filename="../qml/components/AppInformation.qml" line="114"/>
+        <location filename="../qml/components/AppInformation.qml" line="92"/>
         <source>Link</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-releases-number">
-        <location filename="../qml/pages/PackagePage.qml" line="117"/>
+        <location filename="../qml/pages/PackagePage.qml" line="112"/>
         <source>Releases (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-issues-number">
-        <location filename="../qml/pages/PackagePage.qml" line="127"/>
+        <location filename="../qml/pages/PackagePage.qml" line="122"/>
         <source>Issues (%1)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -201,7 +201,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PackagePage.qml" line="138"/>
+        <location filename="../qml/pages/PackagePage.qml" line="133"/>
         <source>Make Dontation</source>
         <translation type="unfinished"></translation>
     </message>
