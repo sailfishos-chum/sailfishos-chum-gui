@@ -34,7 +34,7 @@ MouseArea {
                 width: parent.width
                 maximumLineCount: _expanded ? 0 : 7
                 text: pkg.description
-                color: infoItem.highlighted ? Theme.highlightColor : Theme.primaryColor
+                color: infoItem.pressed ? Theme.highlightColor : Theme.primaryColor
                 linkColor: Theme.highlightColor
                 wrapMode: Text.WordWrap
                 onLinkActivated: openLink(link)
@@ -98,6 +98,7 @@ MouseArea {
         Image {
             anchors.right: parent.right
             source: "image://theme/icon-lock-more"
+            visible: !_expanded
         }
     }
 }
