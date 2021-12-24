@@ -13,11 +13,12 @@ class Transaction;
 
 class Chum : public QObject {
   Q_OBJECT
-  Q_PROPERTY(bool    busy READ busy NOTIFY busyChanged)
-  Q_PROPERTY(bool    repoAvailable READ repoAvailable NOTIFY repoUpdated)
-  Q_PROPERTY(bool    repoManaged READ repoManaged NOTIFY repoUpdated)
-  Q_PROPERTY(bool    repoTesting READ repoTesting WRITE setRepoTesting NOTIFY repoUpdated)
-  Q_PROPERTY(QString status READ status NOTIFY statusChanged)
+  Q_PROPERTY(bool    busy           READ busy NOTIFY busyChanged)
+  Q_PROPERTY(quint32 installedCount READ installedCount NOTIFY installedCountChanged)
+  Q_PROPERTY(bool    repoAvailable  READ repoAvailable NOTIFY repoUpdated)
+  Q_PROPERTY(bool    repoManaged    READ repoManaged NOTIFY repoUpdated)
+  Q_PROPERTY(bool    repoTesting    READ repoTesting WRITE setRepoTesting NOTIFY repoUpdated)
+  Q_PROPERTY(QString status         READ status NOTIFY statusChanged)
   Q_PROPERTY(quint32 updatesCount   READ updatesCount NOTIFY updatesCountChanged)
 
 public:
@@ -29,6 +30,7 @@ public:
   Q_ENUM(PackageOperation)
 
   bool    busy() const { return m_busy; }
+  quint32 installedCount() const { return m_installed_count; }
   bool    repoAvailable() const { return m_ssu.repoAvailable(); }
   bool    repoManaged() const { return m_ssu.manageRepo(); }
   bool    repoTesting() const { return m_ssu.repoTesting(); }
@@ -51,6 +53,7 @@ public slots:
 
 signals:
   void busyChanged();
+  void installedCountChanged();
   void error(QString errorTxt);
   void errorFatal(QString errorTitle, QString errorTxt);
   void statusChanged();
@@ -81,6 +84,7 @@ private:
   Ssu           m_ssu;
   bool          m_busy{false};
   QString       m_status;
+  quint32       m_installed_count{0};
   quint32       m_updates_count{0};
 
   QHash<QString, ChumPackage*> m_packages;

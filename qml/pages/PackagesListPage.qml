@@ -5,6 +5,7 @@ import org.chum 1.0
 Page {
   property string subTitle
   property string search
+  property alias  installedOnly: chumModel.filterInstalledOnly
   property alias  updatesOnly: chumModel.filterUpdatesOnly
 
   id: page

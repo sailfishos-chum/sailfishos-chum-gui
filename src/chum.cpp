@@ -182,21 +182,28 @@ void Chum::refreshInstalledVersion() {
       p->setInstalledVersion(p->installedVersion());
     }
 
+  static decltype(m_installed_count) new_count;
+  new_count = 0;
   auto tr = Daemon::resolve(packages, Transaction::FilterInstalled);
   connect(tr, &Transaction::package, this, [this](
           [[maybe_unused]] auto info,
           const auto &packageID,
           [[maybe_unused]] const auto &summary) {
     ChumPackage *p = m_packages.value(packageId(packageID), nullptr);
-    if (p)
+    if (p) {
       p->setInstalledVersion(Daemon::packageVersion(packageID));
-    else
+      ++new_count;
+    } else
       qWarning() << "Got installed version for missing package:" << packageID;
   });
 
   connect(tr, &Transaction::finished, this, [this]() {
+      if (m_installed_count != new_count) {
+        m_installed_count = new_count;
+        emit this->installedCountChanged();
+      }
      SET_STATUS(QStringLiteral());
-     this->getUpdates(true);;
+     this->getUpdates(true);
   });
 }
 

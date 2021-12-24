@@ -85,6 +85,21 @@ Page {
                                     subTitle: qsTrId("chum-available-packages")
                                   })
       }
+
+      MainPageButton {
+        enabled: Chum.installedCount > 0
+        text: enabled
+          //% "Installed packages"
+          ? qsTrId("chum-installed-packages-no")
+          //% "No packages installed"
+          : qsTrId("chum-no-installed")
+        visible: !Chum.busy
+        onClicked: pageStack.push(Qt.resolvedUrl("PackagesListPage.qml"), {
+                                      //% "Installed"
+                                      subTitle: qsTrId("chum-installed"),
+                                      installedOnly: true
+                                    })
+      }
     }
   }
 }

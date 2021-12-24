@@ -62,6 +62,8 @@ void ChumPackagesModel::reset() {
   for (ChumPackage* p: Chum::instance()->packages()) {
     disconnect(p, nullptr, this, nullptr);
     // apply filters, such as category, updatable, search query
+    if (m_filter_installed_only && !p->installed())
+      continue;
     if (m_filter_updates_only && !p->updateAvailable())
       continue;
     if (!m_search.isEmpty()) {
@@ -140,6 +142,8 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
   bool filter_or_order_may_change = false;
   if (!m_search.isEmpty() && search_roles.contains(role))
     filter_or_order_may_change = true;
+  if (m_filter_installed_only && role == ChumPackage::PackageInstalledRole)
+    filter_or_order_may_change = true;
   if (m_filter_updates_only && role == ChumPackage::PackageUpdateAvailableRole)
     filter_or_order_may_change = true;
   // TODO: other filters
@@ -162,6 +166,12 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
 void ChumPackagesModel::setFilterUpdatesOnly(bool filter) {
   m_filter_updates_only = filter;
   emit filterUpdatesOnlyChanged();
+  reset();
+}
+
+void ChumPackagesModel::setFilterInstalledOnly(bool filter) {
+  m_filter_installed_only = filter;
+  emit filterInstalledOnlyChanged();
   reset();
 }
 

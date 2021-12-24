@@ -202,6 +202,7 @@ void ChumPackage::setInstalledVersion(const QString &v)
   if (v == m_installed_version) return;
   m_installed_version = v;
   emit updated(m_id, PackageInstalledVersionRole);
+  emit updated(m_id, PackageInstalledRole);
 }
 
 void ChumPackage::setDeveloperLogin(const QString &login) {
