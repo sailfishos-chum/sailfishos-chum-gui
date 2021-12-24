@@ -7,7 +7,6 @@
 using namespace PackageKit;
 
 Chum* Chum::s_instance{nullptr};
-const QString Chum::s_repo_name{QStringLiteral(REPO_ALIAS)};
 
 #define SET_STATUS(status) { \
   if (m_status != status) {  \
@@ -29,9 +28,16 @@ static inline auto role2operation(Transaction::Role role) {
 }
 
 Chum::Chum(QObject *parent)
-  : QObject{parent} {
+  : QObject{parent}
+{
+  connect(&m_ssu, &Ssu::updated, this, &Chum::repositoriesListUpdated);
+  connect(&m_ssu, &Ssu::updated, this, &Chum::repoUpdated);
   connect(Daemon::global(), &Daemon::updatesChanged, [this]() { this->getUpdates(); });
-  refreshPackages();
+
+  m_busy = true;
+  //% "Load repositories"
+  SET_STATUS(qtTrId("chum-load-repositories"));
+  m_ssu.loadRepos();
 }
 
 Chum* Chum::instance() {
@@ -72,7 +78,7 @@ void Chum::refreshPackages() {
           [[maybe_unused]] const QString &summary
           ) {
     QString pd = Daemon::packageData(packageID);
-    if (pd == s_repo_name)
+    if (pd == m_ssu.repoName())
       m_packages_last_refresh.insert(packageID);
     else if (pd == QStringLiteral("installed"))
       m_packages_last_refresh_installed.insert(packageID);
@@ -94,7 +100,7 @@ void Chum::refreshPackagesInstalled()
           [[maybe_unused]] const QString &summary
           ) {
     QString pd = Daemon::packageData(packageID);
-    if (pd == s_repo_name)
+    if (pd == m_ssu.repoName())
       m_packages_last_refresh.insert(packageID);
   });
   connect(tr, &Transaction::finished, this, &Chum::refreshPackagesFinished);
@@ -248,11 +254,11 @@ void Chum::refreshRepo(bool force) {
     emit busyChanged();
   }
 
-  //% "Refresh repositories"
+  //% "Refreshing Chum repository"
   SET_STATUS(qtTrId("chum-refresh-repository"));
 
   auto pktr = Daemon::repoSetData(
-    s_repo_name,
+    m_ssu.repoName(),
     QStringLiteral("refresh-now"),
     QVariant::fromValue(force).toString()
   );
@@ -261,6 +267,43 @@ void Chum::refreshRepo(bool force) {
     refreshPackages();
     emit this->repositoryRefreshed();
   });
+  connect(pktr, &Transaction::errorCode,
+          [this](PackageKit::Transaction::Error /*error*/, const QString &details){
+      qWarning() << "Failed to refresh Chum repository" << details;
+      //% "Failed to refresh Chum repository"
+      emit error(qtTrId("chum-refresh-repository-failed"));
+  });
+}
+
+void Chum::repositoriesListUpdated() {
+  if (!m_ssu.manageRepo()) {
+      // repos are managed outside of GUI, probably misconfiguration
+      //% "Cannot manage Chum repositories through GUI"
+      emit error(qtTrId("chum-repo-management-disabled"));
+  } else if (!m_ssu.repoAvailable()) {
+      m_busy = true;
+      emit busyChanged();
+      //% "Adding Chum repository"
+      SET_STATUS(qtTrId("chum-add-repo"));
+      m_ssu.setRepo();
+      return;
+  }
+  refreshRepo(true);
+}
+
+void Chum::setRepoTesting(bool testing) {
+  if (!m_ssu.manageRepo()) {
+      emit error(qtTrId("chum-repo-management-disabled"));
+      return;
+  }
+
+  if (!m_ssu.repoAvailable() || m_ssu.repoTesting() != testing) {
+      m_busy = true;
+      emit busyChanged();
+      //% "Setting up Chum repository"
+      SET_STATUS(qtTrId("chum-setup-repo"));
+      m_ssu.setRepo(testing);
+  }
 }
 
 // operations on packages

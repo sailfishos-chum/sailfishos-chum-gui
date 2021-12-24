@@ -90,38 +90,65 @@
         <source>Releases</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="chum-load-repositories">
+        <location filename="../src/chum.cpp" line="39"/>
+        <source>Load repositories</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="chum-get-list-packages">
-        <location filename="../src/chum.cpp" line="68"/>
+        <location filename="../src/chum.cpp" line="74"/>
         <source>Get list of packages</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-get-package-details">
-        <location filename="../src/chum.cpp" line="139"/>
+        <location filename="../src/chum.cpp" line="145"/>
         <source>Get package details</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-get-package-version">
-        <location filename="../src/chum.cpp" line="169"/>
+        <location filename="../src/chum.cpp" line="175"/>
         <source>Get versions of installed packages</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-check-updates">
-        <location filename="../src/chum.cpp" line="211"/>
+        <location filename="../src/chum.cpp" line="217"/>
         <source>Check for updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-refresh-repository">
-        <location filename="../src/chum.cpp" line="252"/>
-        <source>Refresh repositories</source>
+        <location filename="../src/chum.cpp" line="258"/>
+        <source>Refresh Chum repository</source>
+        <oldsource>Refresh repositories</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-refresh-repository-failed">
+        <location filename="../src/chum.cpp" line="274"/>
+        <source>Failed to refresh Chum repository</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-repo-management-disabled">
+        <location filename="../src/chum.cpp" line="282"/>
+        <location filename="../src/chum.cpp" line="296"/>
+        <source>Cannot manage Chum repositories through GUI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-add-repo">
+        <location filename="../src/chum.cpp" line="287"/>
+        <source>Adding Chum repository</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-setup-repo">
+        <location filename="../src/chum.cpp" line="304"/>
+        <source>Setting up Chum repository</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-install-package">
-        <location filename="../src/chum.cpp" line="272"/>
+        <location filename="../src/chum.cpp" line="315"/>
         <source>Install package</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-update-package">
-        <location filename="../src/chum.cpp" line="281"/>
+        <location filename="../src/chum.cpp" line="324"/>
         <source>Update package</source>
         <translation type="unfinished"></translation>
     </message>
