@@ -91,10 +91,13 @@ Page {
       }
 
       AppInformation {
-          pkg: page.pkg
+        pkg: page.pkg
+        shrunkHeight: 500
+        enableExpansion: screenshots.visible || btnDonate.visible || btnReleases.visible || btnIssues.visible
       }
 
       ScreenshotsBox {
+        id: screenshots
         screenshots: pkg.screenshots
       }
 
@@ -107,6 +110,7 @@ Page {
         width: parent.width
 
         MoreButton {
+          id: btnReleases
           visible: pkg.releasesCount > 0
           //% "Releases (%1)"
           text: qsTrId("chum-releases-number").arg(pkg.releasesCount)
@@ -117,6 +121,7 @@ Page {
         }
 
         MoreButton {
+          id: btnIssues
           visible: pkg.issuesCount > 0
           //% "Issues (%1)"
           text: qsTrId("chum-issues-number").arg(pkg.issuesCount)

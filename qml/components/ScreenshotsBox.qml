@@ -5,6 +5,7 @@ Row {
     id: screenshotBox
     width: parent.width
     property var screenshots
+    visible: screenshots.length > 0
 
     Repeater {
         model: Math.min(screenshots.length, 3)
