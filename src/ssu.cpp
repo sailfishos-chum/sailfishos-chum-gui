@@ -51,7 +51,7 @@ void Ssu::onListFinished(QDBusPendingCallWatcher *call) {
       QVariantMap pars;
       arg >> name >> url >> pars;
       arg.endStructure();
-      qDebug() << name << url << pars;
+      //qDebug() << name << url << pars;
       std::pair<QString,QString> r(name, url);
       m_repos.append(r);
     }
@@ -86,7 +86,18 @@ void Ssu::onListFinished(QDBusPendingCallWatcher *call) {
 
   m_manage_repo = true;
 
-  qDebug() << m_manage_repo << m_repo_testing << m_repo_name;
+  // Check if addition worked out as expected
+  if (!m_added_repo_name.isEmpty() && m_added_repo_name != m_repo_name) {
+    qWarning() << "Failed to add new repository with alias " << m_added_repo_name;
+    qWarning() << "Check whether this alias has been defined by SSU in enabled or disabled repositories";
+    qWarning() << "Remove such repository definition from SSU if it is there";
+    m_manage_repo = false;
+    emit updated();
+    return;
+  }
+  m_added_repo_name.clear();
+
+  qDebug() << "SSU repo:" << m_manage_repo << m_repo_testing << m_repo_name;
 
   emit updated();
 }
@@ -127,6 +138,7 @@ void Ssu::setRepo(bool testing) {
   callWithArgumentList(QDBus::BlockWithGui, QStringLiteral("addRepo"),
                        QVariantList{rname, url});
   call(QDBus::BlockWithGui, QStringLiteral("updateRepos"));
+  m_added_repo_name = rname;
 
   // refresh list
   loadRepos();

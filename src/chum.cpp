@@ -248,6 +248,11 @@ void Chum::getUpdates(bool force) {
 // refresh repository and call package info updates
 void Chum::refreshRepo(bool force) {
   if (m_busy && !force) return;
+  if (!m_ssu.repoAvailable()) {
+      //% "Cannot refresh repository as it is not available"
+      emit error(qtTrId("chum-refresh-repository-impossible"));
+      return;
+  }
 
   if (!m_busy) {
     m_busy = true;
@@ -278,8 +283,15 @@ void Chum::refreshRepo(bool force) {
 void Chum::repositoriesListUpdated() {
   if (!m_ssu.manageRepo()) {
       // repos are managed outside of GUI, probably misconfiguration
-      //% "Cannot manage Chum repositories through GUI"
-      emit error(qtTrId("chum-repo-management-disabled"));
+      emit errorFatal(
+            //% "Repositories misconfigured"
+            qtTrId("chum-repo-management-disabled-title"),
+            //% "Cannot manage Chum repositories through GUI. You probably have multiple Chum "
+            //% "repositories defined in SSU or Chum repository disabled.\n\n"
+            //% "Please remove all defined Chum repositories and restart GUI. "
+            //% "GUI will add missing Chum repository if needed on restart."
+            qtTrId("chum-repo-management-disabled-txt"));
+      return;
   } else if (!m_ssu.repoAvailable()) {
       m_busy = true;
       emit busyChanged();

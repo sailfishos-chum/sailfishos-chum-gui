@@ -52,6 +52,7 @@ public slots:
 signals:
   void busyChanged();
   void error(QString errorTxt);
+  void errorFatal(QString errorTitle, QString errorTxt);
   void statusChanged();
   void updatesCountChanged();
   void packagesChanged();

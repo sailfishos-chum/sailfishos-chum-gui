@@ -32,6 +32,7 @@ private:
   QString m_repo_name;
 
   QList< std::pair<QString,QString> > m_repos;
+  QString m_added_repo_name;
 };
 
 #endif // SSU_H
