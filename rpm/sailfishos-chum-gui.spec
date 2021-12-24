@@ -9,6 +9,7 @@ Source0:        %{name}-%{version}.tar.bz2
 Source1:        token-github.txt
 Source2:        token-gitlab.txt
 Requires:       sailfishsilica-qt5 >= 0.10.9
+Requires:       ssu
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
@@ -39,6 +40,12 @@ rm -rf %{buildroot}
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications \
    %{buildroot}%{_datadir}/applications/*.desktop
+
+%postun
+ssu rr sailfishos-chum || true
+ssu rr sailfishos-chum-testing || true
+rm -f /var/cache/ssu/features.ini || true
+ssu ur || true
 
 %files
 %defattr(-,root,root,-)
