@@ -62,15 +62,6 @@ Page {
       search: page.search
     }
 
-    PullDownMenu {
-      busy: Chum.busy
-      MenuItem {
-        //% "Reload"
-        text: qsTrId("chum-reload")
-        onClicked: chumModel.reset()
-      }
-    }
-
     VerticalScrollDecorator {}
   }
 }

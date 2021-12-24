@@ -16,6 +16,7 @@ Page {
 
         Column {
             id: content
+            spacing: Theme.paddingLarge
             width: parent.width
 
             PageHeader {

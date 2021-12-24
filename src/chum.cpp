@@ -287,7 +287,8 @@ void Chum::repositoriesListUpdated() {
             //% "Repositories misconfigured"
             qtTrId("chum-repo-management-disabled-title"),
             //% "Cannot manage Chum repositories through GUI. You probably have multiple Chum "
-            //% "repositories defined in SSU or Chum repository disabled.\n\n"
+            //% "repositories defined in SSU or Chum repository disabled. For listing repositories "
+            //% "and their removal, use 'ssu' command in terminal.\n\n"
             //% "Please remove all defined Chum repositories and restart GUI. "
             //% "GUI will add missing Chum repository if needed on restart."
             qtTrId("chum-repo-management-disabled-txt"));
