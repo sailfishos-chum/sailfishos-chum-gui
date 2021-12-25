@@ -9,8 +9,7 @@
 class ChumPackage : public QObject {
   Q_OBJECT
 
-  Q_PROPERTY(QString id READ id NOTIFY pkidChanged)
-  Q_PROPERTY(QString pkid READ pkid NOTIFY pkidChanged)
+  Q_PROPERTY(QString id READ id NOTIFY idChanged)
 
   Q_PROPERTY(QString    availableVersion READ availableVersion NOTIFY updated)
   Q_PROPERTY(QStringList categories READ categories   NOTIFY updated)
@@ -68,7 +67,8 @@ public:
   Q_INVOKABLE LoadableObject* releases();
 
   QString id() const { return m_id; }
-  QString pkid() const { return m_pkid; }
+  QString pkidLatest() const { return m_pkid_latest; }
+  QString pkidInstalled() const { return m_pkid_installed; }
   bool detailsNeedsUpdate() const { return m_details_update; }
   bool installedVersionNeedsUpdate() const { return m_installed_update; }
 
@@ -98,10 +98,10 @@ public:
   QString urlForum() const { return m_url_forum; }
   QString urlIssues() const { return m_url_issues; }
 
-  void setPkid(const QString &pkid);
+  void setPkidLatest(const QString &pkid);
+  void setPkidInstalled(const QString &pkid);
   void setUpdateAvailable(bool up);
   void setDetails(const PackageKit::Details &v);
-  void setInstalledVersion(const QString &v);
 
   void setDeveloperLogin(const QString &login);
   void setDeveloperName(const QString &name);
@@ -114,9 +114,12 @@ public:
   void setUrlIssues(const QString &url);
 
 signals:
+  void idChanged();
   void updated(QString packageId, Role role);
-  void pkidChanged();
   void updateAvailableChanged();
+
+private:
+  void setInstalledVersion(const QString &v);
 
 private:
   ProjectAbstract *m_project{nullptr};
@@ -126,7 +129,8 @@ private:
   LoadableObject  *m_releases{nullptr};
 
   QString     m_id; // ID of the package as used in Chum
-  QString     m_pkid; // Package ID as set by PackageKit
+  QString     m_pkid_latest; // Package ID as set by PackageKit
+  QString     m_pkid_installed; // Package ID as set by PackageKit
   QString     m_installed_version;
   bool        m_update_available{false};
   bool        m_details_update{false};

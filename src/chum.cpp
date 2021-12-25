@@ -128,7 +128,7 @@ void Chum::refreshPackagesFinished()
        package = new ChumPackage(id, this);
        m_packages[id] = package;
     }
-    package->setPkid(p);
+    package->setPkidLatest(p);
   }
 
   SET_STATUS(QStringLiteral());
@@ -147,7 +147,7 @@ void Chum::refreshDetails() {
   QStringList packages;
   for (const ChumPackage *p: m_packages.values())
     if (p->detailsNeedsUpdate())
-      packages.append(p->pkid());
+      packages.append(p->pkidLatest());
 
   auto tr = Daemon::getDetails(packages);
   connect(tr, &Transaction::details, this, [this](const auto &v) {
@@ -177,9 +177,9 @@ void Chum::refreshInstalledVersion() {
   QStringList packages;
   for (ChumPackage *p: m_packages.values())
     if (p->installedVersionNeedsUpdate()) {
-      packages.append(Daemon::packageName(p->pkid()));
+      packages.append(Daemon::packageName(p->pkidLatest()));
       // reset requirement flag that can be set for non-installed package
-      p->setInstalledVersion(p->installedVersion());
+      p->setPkidInstalled(p->pkidInstalled());
     }
 
   static decltype(m_installed_count) new_count;
@@ -191,7 +191,7 @@ void Chum::refreshInstalledVersion() {
           [[maybe_unused]] const auto &summary) {
     ChumPackage *p = m_packages.value(packageId(packageID), nullptr);
     if (p) {
-      p->setInstalledVersion(Daemon::packageVersion(packageID));
+      p->setPkidInstalled(packageID);
       ++new_count;
     } else
       qWarning() << "Got installed version for missing package:" << packageID;
@@ -333,7 +333,16 @@ void Chum::installPackage(const QString &id) {
   emit busyChanged();
   //% "Install package"
   SET_STATUS(qtTrId("chum-install-package"));
-  startOperation(Daemon::installPackage(id), id);
+  startOperation(Daemon::installPackage(m_packages.value(id)->pkidLatest()), id);
+}
+
+void Chum::uninstallPackage(const QString &id) {
+  if (m_busy) return;
+  m_busy = true;
+  emit busyChanged();
+  //% "Uninstall package"
+  SET_STATUS(qtTrId("chum-uninstall-package"));
+  startOperation(Daemon::removePackage(m_packages.value(id)->pkidInstalled()), id);
 }
 
 void Chum::updatePackage(const QString &id) {
@@ -342,7 +351,7 @@ void Chum::updatePackage(const QString &id) {
   emit busyChanged();
   //% "Update package"
   SET_STATUS(qtTrId("chum-update-package"));
-  startOperation(Daemon::updatePackage(id), id);
+  startOperation(Daemon::updatePackage(m_packages.value(id)->pkidLatest()), id);
 }
 
 void Chum::startOperation(Transaction *pktr, const QString &pkg_id) {
@@ -368,7 +377,10 @@ void Chum::startOperation(Transaction *pktr, const QString &pkg_id) {
 
   connect(pktr, &Transaction::errorCode,
           [this, pktr, pkg_id](PackageKit::Transaction::Error /*error*/, const QString &details){
-      qWarning() << "Failed" << role2operation(pktr->role()) << pkg_id << details;
+      qWarning() << "Failed" << role2operation(pktr->role())
+                 << m_packages.value(pkg_id)->pkidLatest()
+                 << m_packages.value(pkg_id)->pkidInstalled()
+                 << details;
       emit error(details);
   });
 }

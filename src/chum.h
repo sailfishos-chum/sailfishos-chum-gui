@@ -49,6 +49,7 @@ public slots:
   void getUpdates(bool force = false);
   void refreshRepo(bool force = false);
   void installPackage(const QString &id);
+  void uninstallPackage(const QString &id);
   void updatePackage(const QString &id);
 
 signals:

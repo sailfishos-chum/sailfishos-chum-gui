@@ -50,13 +50,11 @@
         <oldsource>Refresh cache</oldsource>
         <translation type="unfinished"></translation>
     </message>
-    <message id="chum-installed-packages-no" numerus="yes">
+    <message id="chum-installed-packages-no">
         <location filename="../qml/pages/MainPage.qml" line="93"/>
-        <source>Installed packages: %n</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
+        <source>Installed packages</source>
+        <oldsource>Installed packages: %n</oldsource>
+        <translation type="unfinished"></translation>
     </message>
     <message id="chum-no-installed">
         <location filename="../qml/pages/MainPage.qml" line="95"/>
@@ -84,8 +82,13 @@
         <source>Install</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="chum-uninstall">
+        <location filename="../qml/pages/PackagePage.qml" line="46"/>
+        <source>Uninstall</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="chum-pkg-categories">
-        <location filename="../qml/pages/PackagePage.qml" line="86"/>
+        <location filename="../qml/pages/PackagePage.qml" line="92"/>
         <source>Categories</source>
         <translation type="unfinished"></translation>
     </message>
@@ -181,8 +184,13 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
         <source>Install package</source>
         <translation type="unfinished"></translation>
     </message>
-    <message id="chum-update-package">
+    <message id="chum-uninstall-package">
         <location filename="../src/chum.cpp" line="344"/>
+        <source>Uninstall package</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-update-package">
+        <location filename="../src/chum.cpp" line="353"/>
         <source>Update package</source>
         <translation type="unfinished"></translation>
     </message>
@@ -268,7 +276,11 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../qml/pages/PackagePage.qml" line="133"/>
+=======
+        <location filename="../qml/pages/PackagePage.qml" line="185"/>
+>>>>>>> 328efbe (Add support for package removal)
         <source>Make Dontation</source>
         <translation type="unfinished"></translation>
     </message>

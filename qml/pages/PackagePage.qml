@@ -38,8 +38,14 @@ Page {
           : qsTrId("chum-install")
         visible: !pkg.installed || pkg.updateAvailable
         onClicked: pkg.installed
-          ? Chum.updatePackage(pkg.pkid)
-          : Chum.installPackage(pkg.pkid)
+          ? Chum.updatePackage(pkg.id)
+          : Chum.installPackage(pkg.id)
+      }
+      MenuItem {
+        //% "Uninstall"
+        text: qsTrId("chum-uninstall")
+        visible: pkg.installed
+        onClicked: Chum.uninstallPackage(pkg.id)
       }
     }
 
