@@ -2,17 +2,19 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 MouseArea {
-    property bool _expanded: false
-    property int  shrunkHeight: 500
-    property bool enableExpansion: true
-    property var pkg
-
     id: infoItem
-    width: parent.width
-    height: content.height + (dots.visible ? dots.height : 0)
+
+    property bool enableExpansion: true
+    property int  shrunkHeight: 500
+    property var  pkg
+
+    property bool _expanded: false
+
     clip: true
-    propagateComposedEvents: true
     enabled: enableExpansion
+    height: content.height + (dots.visible ? dots.height : 0)
+    width: parent.width
+    propagateComposedEvents: true
     onClicked: _expanded = !_expanded
 
     Behavior on height { NumberAnimation { duration: 200; easing.type: Easing.InOutQuad } }
@@ -34,7 +36,6 @@ MouseArea {
             Label {
                 id: bodyLabel
                 width: parent.width
-                //maximumLineCount: _expanded ? 0 : 7
                 text: pkg.description
                 color: infoItem.pressed ? Theme.highlightColor : Theme.primaryColor
                 linkColor: Theme.highlightColor
@@ -107,4 +108,3 @@ MouseArea {
         direction: OpacityRamp.TopToBottom
     }
 }
-

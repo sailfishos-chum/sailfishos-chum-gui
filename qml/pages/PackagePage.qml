@@ -92,18 +92,13 @@ Page {
 
       AppInformation {
         pkg: page.pkg
-        shrunkHeight: 500
+        shrunkHeight: page.height/4
         enableExpansion: screenshots.visible || btnDonate.visible || btnReleases.visible || btnIssues.visible
       }
 
       ScreenshotsBox {
         id: screenshots
         screenshots: pkg.screenshots
-      }
-
-      Column {
-        spacing: Theme.paddingMedium
-        width: parent.width
       }
 
       Column {

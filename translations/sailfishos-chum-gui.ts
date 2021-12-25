@@ -76,12 +76,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-releases-number">
-        <location filename="../qml/pages/PackagePage.qml" line="116"/>
+        <location filename="../qml/pages/PackagePage.qml" line="111"/>
         <source>Releases (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-issues-number">
-        <location filename="../qml/pages/PackagePage.qml" line="127"/>
+        <location filename="../qml/pages/PackagePage.qml" line="122"/>
         <source>Issues (%1)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -158,27 +158,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-installed-version">
-        <location filename="../qml/components/AppInformation.qml" line="56"/>
+        <location filename="../qml/components/AppInformation.qml" line="57"/>
         <source>Installed version</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-available-version">
-        <location filename="../qml/components/AppInformation.qml" line="63"/>
+        <location filename="../qml/components/AppInformation.qml" line="64"/>
         <source>Available version</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-download-size">
-        <location filename="../qml/components/AppInformation.qml" line="70"/>
+        <location filename="../qml/components/AppInformation.qml" line="71"/>
         <source>Download size</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-license">
-        <location filename="../qml/components/AppInformation.qml" line="77"/>
+        <location filename="../qml/components/AppInformation.qml" line="78"/>
         <source>License</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-link">
-        <location filename="../qml/components/AppInformation.qml" line="88"/>
+        <location filename="../qml/components/AppInformation.qml" line="89"/>
         <source>Link</source>
         <translation type="unfinished"></translation>
     </message>
@@ -201,7 +201,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PackagePage.qml" line="138"/>
+        <location filename="../qml/pages/PackagePage.qml" line="133"/>
         <source>Make Dontation</source>
         <translation type="unfinished"></translation>
     </message>
