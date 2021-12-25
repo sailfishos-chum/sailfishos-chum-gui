@@ -272,7 +272,7 @@ void Chum::refreshRepo(bool force) {
   auto pktr = Daemon::repoSetData(
     m_ssu.repoName(),
     QStringLiteral("refresh-now"),
-    QVariant::fromValue(force).toString()
+    QVariant::fromValue(true).toString()
   );
   connect(pktr, &Transaction::finished, this, [this]() {
     SET_STATUS(QStringLiteral());
