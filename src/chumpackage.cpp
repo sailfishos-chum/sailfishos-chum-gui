@@ -163,10 +163,16 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
 
   // Parse metadata
   QJsonObject json{QJsonDocument::fromJson(metainjson).object()};
+
   m_name = json.value("PackageName").toString(m_name);
-  m_type = json.value("Type").toString(m_id.startsWith(QStringLiteral("harbour-")) ?
-                                                         QStringLiteral("desktop-application") :
-                                                         QStringLiteral("generic"));
+
+  QString typestr = json.value("Type").toString(m_id.startsWith(QStringLiteral("harbour-")) ?
+                                                  QStringLiteral("desktop-application") :
+                                                  QStringLiteral("generic"));
+  if (typestr == QStringLiteral("desktop-application")) m_type = PackageApplicationDesktop;
+  else if (typestr == QStringLiteral("console-application")) m_type = PackageApplicationConsole;
+  else m_type = PackageGeneric;
+
   m_developer_name = json.value("DeveloperName").toString();
   m_categories = json.value("Categories").toVariant().toStringList();
   if (m_categories.isEmpty()) m_categories.push_back("Other");

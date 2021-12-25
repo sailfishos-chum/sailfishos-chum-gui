@@ -31,7 +31,7 @@ class ChumPackage : public QObject {
   Q_PROPERTY(qulonglong size        READ size         NOTIFY updated)
   Q_PROPERTY(int        starsCount  READ starsCount   NOTIFY updated)
   Q_PROPERTY(QString    summary     READ summary      NOTIFY updated)
-  Q_PROPERTY(QString    type        READ type         NOTIFY updated)
+  Q_PROPERTY(PackageType type       READ type         NOTIFY updated)
   Q_PROPERTY(bool       updateAvailable READ updateAvailable NOTIFY updated)
   Q_PROPERTY(QString    url         READ url          NOTIFY updated)
   Q_PROPERTY(QString    urlForum    READ urlForum     NOTIFY updated)
@@ -57,6 +57,13 @@ public:
     PackageOtherRole,
     PackageRefreshRole // used for updates of many parameters
   };
+
+  enum PackageType {
+    PackageApplicationDesktop,
+    PackageApplicationConsole,
+    PackageGeneric
+  };
+  Q_ENUM(PackageType)
 
   ChumPackage(QObject *parent = nullptr);
   ChumPackage(const QString &id, QObject *parent = nullptr);
@@ -91,7 +98,7 @@ public:
   qulonglong size() const { return m_size; }
   int     starsCount() const { return m_stars_count; }
   QString summary() const { return m_summary; }
-  QString type() const { return m_type; }
+  PackageType type() const { return m_type; }
   bool    updateAvailable() const { return m_update_available; }
   QString url() const { return m_url; }
   QString urlForum() const { return m_url_forum; }
@@ -153,7 +160,7 @@ private:
   qulonglong  m_size{0};
   int         m_stars_count{-1};
   QString     m_summary;
-  QString     m_type;
+  PackageType m_type;
   QString     m_url;
   QString     m_url_forum;
   QString     m_url_issues;

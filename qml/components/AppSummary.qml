@@ -24,6 +24,7 @@ Item {
             rightMargin: Theme.paddingLarge
             verticalCenter: item.verticalCenter
         }
+        spacing: Theme.paddingSmall
 
         ImageLabel {
             image: pkg.updateAvailable ?
@@ -42,6 +43,23 @@ Item {
             width: parent.width
         }
 
+        ImageLabel {
+            image: pkg.type === ChumPackage.PackageApplicationDesktop ?
+                       "image://theme/icon-s-sailfish" :
+                       "image://theme/icon-s-clipboard"
+            label: {
+                if (pkg.type === ChumPackage.PackageApplicationDesktop)
+                    //% "Sailfish application"
+                    return qsTrId("chum-pkg-type-desktop");
+                if (pkg.type === ChumPackage.PackageApplicationConsole)
+                    //% "Console application"
+                    return qsTrId("chum-pkg-type-console");
+                return ""; // will hide other types
+            }
+            visible: label
+            width: parent.width
+        }
+
         ChumDetailItem {
           id: categories
           //% "Categories"
@@ -55,7 +73,6 @@ Item {
         id: stickers
         anchors {
           right: parent.right
-          rightMargin: Theme.horizontalPageMargin
           verticalCenter: item.verticalCenter
         }
         spacing: Theme.paddingLarge
