@@ -68,6 +68,7 @@ Page {
       }
 
       Row {
+          id: stickers
           anchors {
             right: parent.right
             rightMargin: Theme.horizontalPageMargin
@@ -88,6 +89,7 @@ Page {
       }
 
       ChumDetailItem {
+        id: categories
         //% "Categories"
         label: qsTrId("chum-pkg-categories")
         value: pkg.categories.join(" ")
@@ -98,7 +100,12 @@ Page {
 
       AppInformation {
         pkg: page.pkg
-        shrunkHeight: page.height/4
+        shrunkHeight: Math.max(page.height/4, page.height - (y - content.y + content.spacing +
+                                                             (screenshots.visible ? (screenshots.height+content.spacing) : 0) +
+                                                             (btnReleases.visible ? btnReleases.implicitHeight : 0) +
+                                                             (btnIssues.visible ? btnIssues.implicitHeight : 0) +
+                                                             (btnReleases.visible || btnIssues.visible ? content.spacing : 0) +
+                                                             (btnDonate.visible ? (btnDonate.height+content.spacing) : 0)))
         enableExpansion: screenshots.visible || btnDonate.visible || btnReleases.visible || btnIssues.visible
       }
 
