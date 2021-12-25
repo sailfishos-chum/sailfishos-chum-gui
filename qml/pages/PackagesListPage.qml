@@ -5,6 +5,7 @@ import org.chum 1.0
 Page {
   property string subTitle
   property string search
+  property alias  applicationsOnly: chumModel.filterApplicationsOnly
   property alias  installedOnly: chumModel.filterInstalledOnly
   property alias  updatesOnly: chumModel.filterUpdatesOnly
 
@@ -61,6 +62,18 @@ Page {
     model: ChumPackagesModel {
       id: chumModel
       search: page.search
+    }
+
+    PullDownMenu {
+      busy: Chum.busy
+      MenuItem {
+        text: page.applicationsOnly ?
+              //% "Show all packages"
+              qsTrId("chum-packages-list-show-all") :
+              //% "Show applications only"
+              qsTrId("chum-packages-list-show-apps")
+        onClicked: page.applicationsOnly = !page.applicationsOnly
+      }
     }
 
     VerticalScrollDecorator {}

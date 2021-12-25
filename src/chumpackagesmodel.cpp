@@ -34,6 +34,8 @@ QVariant ChumPackagesModel::data(const QModelIndex &index, int role) const {
     return p->name();
   case ChumPackage::PackageStarsCountRole:
     return p->starsCount();
+  case ChumPackage::PackageTypeRole:
+    return p->type();
   default:
     return QVariant{};
   }
@@ -47,6 +49,7 @@ QHash<int, QByteArray> ChumPackagesModel::roleNames() const {
     {ChumPackage::PackageInstalledVersionRole,  QByteArrayLiteral("packageInstalledVersion")},
     {ChumPackage::PackageNameRole,     QByteArrayLiteral("packageName")},
     {ChumPackage::PackageStarsCountRole, QByteArrayLiteral("packageStarsCount")},
+    {ChumPackage::PackageTypeRole, QByteArrayLiteral("packageType")},
     {ChumPackage::PackageUpdateAvailableRole,  QByteArrayLiteral("packageUpdateAvailable")},
   };
 }
@@ -62,6 +65,10 @@ void ChumPackagesModel::reset() {
   for (ChumPackage* p: Chum::instance()->packages()) {
     disconnect(p, nullptr, this, nullptr);
     // apply filters, such as category, updatable, search query
+    if (m_filter_applications_only &&
+        p->type()!=ChumPackage::PackageApplicationConsole &&
+        p->type()!=ChumPackage::PackageApplicationDesktop)
+      continue;
     if (m_filter_installed_only && !p->installed())
       continue;
     if (m_filter_updates_only && !p->updateAvailable())
@@ -109,6 +116,7 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
     ChumPackage::PackageIdRole,
     ChumPackage::PackageNameRole,
     ChumPackage::PackageStarsCountRole,
+    ChumPackage::PackageTypeRole,
     ChumPackage::PackageInstalledRole,
     ChumPackage::PackageInstalledVersionRole,
     ChumPackage::PackageUpdateAvailableRole
@@ -142,6 +150,8 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
   bool filter_or_order_may_change = false;
   if (!m_search.isEmpty() && search_roles.contains(role))
     filter_or_order_may_change = true;
+  if (m_filter_applications_only && role == ChumPackage::PackageTypeRole)
+    filter_or_order_may_change = true;
   if (m_filter_installed_only && role == ChumPackage::PackageInstalledRole)
     filter_or_order_may_change = true;
   if (m_filter_updates_only && role == ChumPackage::PackageUpdateAvailableRole)
@@ -163,15 +173,21 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
   dataChanged(index(i), index(i) ); // just refresh whole row to simplify processing here
 }
 
-void ChumPackagesModel::setFilterUpdatesOnly(bool filter) {
-  m_filter_updates_only = filter;
-  emit filterUpdatesOnlyChanged();
+void ChumPackagesModel::setFilterApplicationsOnly(bool filter) {
+  m_filter_applications_only = filter;
+  emit filterApplicationsOnlyChanged();
   reset();
 }
 
 void ChumPackagesModel::setFilterInstalledOnly(bool filter) {
   m_filter_installed_only = filter;
   emit filterInstalledOnlyChanged();
+  reset();
+}
+
+void ChumPackagesModel::setFilterUpdatesOnly(bool filter) {
+  m_filter_updates_only = filter;
+  emit filterUpdatesOnlyChanged();
   reset();
 }
 
