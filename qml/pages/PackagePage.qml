@@ -67,35 +67,8 @@ Page {
         iconSource: pkg.icon
       }
 
-      Row {
-          id: stickers
-          anchors {
-            right: parent.right
-            rightMargin: Theme.horizontalPageMargin
-          }
-          spacing: Theme.paddingLarge
-
-          ImageLabel {
-              image: "image://theme/icon-m-favorite"
-              label: pkg.starsCount
-              visible: pkg.starsCount >= 0
-          }
-
-          ImageLabel {
-              image: "image://theme/icon-m-shuffle"
-              label: pkg.forksCount
-              visible: pkg.forksCount >= 0
-          }
-      }
-
-      ChumDetailItem {
-        id: categories
-        //% "Categories"
-        label: qsTrId("chum-pkg-categories")
-        value: pkg.categories.join(" ")
-        visible: value
-        anchors.leftMargin: Theme.horizontalPageMargin
-        anchors.rightMargin: Theme.horizontalPageMargin
+      AppSummary {
+          pkg: page.pkg
       }
 
       AppInformation {
