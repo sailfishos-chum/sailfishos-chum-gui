@@ -86,73 +86,26 @@ Page {
         label: qsTrId("chum-pkg-categories")
         value: pkg.categories.join(" ")
         visible: value
+        anchors.leftMargin: Theme.horizontalPageMargin
+        anchors.rightMargin: Theme.horizontalPageMargin
       }
 
-      Label {
-        anchors {
-          left: parent.left
-          leftMargin: Theme.horizontalPageMargin
-          right: parent.right
-          rightMargin: Theme.horizontalPageMargin
-        }
-        text: pkg.description
-        wrapMode: Text.WordWrap
-        font.pixelSize: Theme.fontSizeSmall
-        color: Theme.highlightColor
+      AppInformation {
+        pkg: page.pkg
+        shrunkHeight: page.height/4
+        enableExpansion: screenshots.visible || btnDonate.visible || btnReleases.visible || btnIssues.visible
       }
 
       ScreenshotsBox {
+        id: screenshots
         screenshots: pkg.screenshots
-      }
-
-      Column {
-        spacing: Theme.paddingMedium
-        width: parent.width
-
-        ChumDetailItem {
-          id: installedVersionItem
-          visible: pkg.installed
-          //% "Installed version"
-          label: qsTrId("chum-pkg-installed-version")
-          value: pkg.installedVersion
-        }
-
-        ChumDetailItem {
-          id: availableVersionItem
-          //% "Available version"
-          label: qsTrId("chum-pkg-available-version")
-          value: pkg.availableVersion
-        }
-
-        ChumDetailItem {
-          //% "Download size"
-          label: qsTrId("chum-pkg-download-size")
-          value: Format.formatFileSize(pkg.size)
-        }
-
-        ChumDetailItem {
-          //% "License"
-          label: qsTrId("chum-pkg-license")
-          value: pkg.license
-        }
-
-        ChumDetailItem {
-          visible: !!pkg.url
-          text: '<font color="%1">%3</font> <font color="%2"><a href="%4">%4</a></font>'
-            .arg(Theme.secondaryHighlightColor)
-            .arg(Theme.primaryColor)
-            //% "Link"
-            .arg(qsTrId("chum-pkg-link"))
-            .arg(pkg.url)
-
-          onLinkActivated: Qt.openUrlExternally(link)
-        }
       }
 
       Column {
         width: parent.width
 
         MoreButton {
+          id: btnReleases
           visible: pkg.releasesCount > 0
           //% "Releases (%1)"
           text: qsTrId("chum-releases-number").arg(pkg.releasesCount)
@@ -163,6 +116,7 @@ Page {
         }
 
         MoreButton {
+          id: btnIssues
           visible: pkg.issuesCount > 0
           //% "Issues (%1)"
           text: qsTrId("chum-issues-number").arg(pkg.issuesCount)
