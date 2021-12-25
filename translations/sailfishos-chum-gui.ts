@@ -44,16 +44,27 @@
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="chum-settings-title">
+        <location filename="../qml/pages/MainPage.qml" line="47"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="21"/>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="chum-refresh-cache">
         <location filename="../qml/pages/MainPage.qml" line="54"/>
         <source>Refresh repository</source>
         <oldsource>Refresh cache</oldsource>
         <translation type="unfinished"></translation>
     </message>
+    <message id="chum-no-updates">
+        <location filename="../qml/pages/MainPage.qml" line="72"/>
+        <source>No updates available</source>
+        <oldsource>No update available</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="chum-installed-packages-no">
         <location filename="../qml/pages/MainPage.qml" line="93"/>
         <source>Installed packages</source>
-        <oldsource>Installed packages: %n</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-no-installed">
@@ -64,12 +75,6 @@
     <message id="chum-installed">
         <location filename="../qml/pages/MainPage.qml" line="99"/>
         <source>Installed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="chum-no-updates">
-        <location filename="../qml/pages/MainPage.qml" line="72"/>
-        <source>No updates available</source>
-        <oldsource>No update available</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-update">
@@ -93,12 +98,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-releases-number">
-        <location filename="../qml/pages/PackagePage.qml" line="111"/>
+        <location filename="../qml/pages/PackagePage.qml" line="117"/>
         <source>Releases (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-issues-number">
-        <location filename="../qml/pages/PackagePage.qml" line="122"/>
+        <location filename="../qml/pages/PackagePage.qml" line="128"/>
         <source>Issues (%1)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -140,7 +145,7 @@
     <message id="chum-refresh-repository">
         <location filename="../src/chum.cpp" line="270"/>
         <source>Refreshing Chum repository</source>
-        <oldsource>Refresh Chum repository</oldsource>
+        <oldsource>Refresh repositories</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-refresh-repository-failed">
@@ -158,20 +163,16 @@
         <source>Cannot manage Chum repositories through GUI. You probably have multiple Chum repositories defined in SSU or Chum repository disabled. For listing repositories and their removal, use &apos;ssu&apos; command in terminal.
 
 Please remove all defined Chum repositories and restart GUI. GUI will add missing Chum repository if needed on restart.</source>
-        <oldsource>Cannot manage Chum repositories through GUI. You probably have multiple Chum repositories defined in SSU or Chum repository disabled.
-
-Please remove all defined Chum repositories and restart GUI. GUI will add missing Chum repository if needed on restart.</oldsource>
-        <translation type="unfinished"></translation>
-    </message>
-    <message id="chum-repo-management-disabled">
-        <location filename="../src/chum.cpp" line="316"/>
-        <source></source>
-        <oldsource>Cannot manage Chum repositories through GUI</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="307"/>
         <source>Adding Chum repository</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-repo-management-disabled">
+        <location filename="../src/chum.cpp" line="316"/>
+        <source></source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-setup-repo">
@@ -213,7 +214,6 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
     <message id="chum-issue-with-number">
         <location filename="../qml/pages/IssuePage.qml" line="35"/>
         <source>Issue: #%1</source>
-        <oldsource>Issue: %1</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-issue">
@@ -257,6 +257,31 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
         <source>Link</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="chum-settings-status-repo-management-failed">
+        <location filename="../qml/pages/SettingsPage.qml" line="35"/>
+        <source>Chum repository management failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-settings-status-repo-available">
+        <location filename="../qml/pages/SettingsPage.qml" line="39"/>
+        <source>Current status: Chum repository available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-settings-status-repo-not-available">
+        <location filename="../qml/pages/SettingsPage.qml" line="41"/>
+        <source>Current status: Chum repository is not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-settings-testing-description">
+        <location filename="../qml/pages/SettingsPage.qml" line="52"/>
+        <source>Use testing version of Chum repository. This is mainly useful for developers for testing their packages before publishing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-settings-testing">
+        <location filename="../qml/pages/SettingsPage.qml" line="54"/>
+        <source>Use testing repository</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PackagePage</name>
@@ -276,11 +301,7 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
         <translation type="unfinished"></translation>
     </message>
     <message>
-<<<<<<< HEAD
-        <location filename="../qml/pages/PackagePage.qml" line="133"/>
-=======
-        <location filename="../qml/pages/PackagePage.qml" line="185"/>
->>>>>>> 328efbe (Add support for package removal)
+        <location filename="../qml/pages/PackagePage.qml" line="139"/>
         <source>Make Dontation</source>
         <translation type="unfinished"></translation>
     </message>
