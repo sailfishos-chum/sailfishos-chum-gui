@@ -90,12 +90,10 @@ void ChumPackage::setPkidLatest(const QString &pkid) {
 
   if (m_pkid_latest.isEmpty()) {
     m_details_update = false;
-    m_installed_update = false;
     return;
   }
 
   m_details_update = true;
-  m_installed_update = true;
 }
 
 void ChumPackage::setUpdateAvailable(bool up) {
@@ -195,8 +193,11 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
   emit updated(m_id, PackageRefreshRole);
 }
 
+void ChumPackage::clearInstalled() {
+  setPkidInstalled(QString{});
+}
+
 void ChumPackage::setPkidInstalled(const QString &pkid) {
-  m_installed_update = false;
   if (m_pkid_installed == pkid) return;
   m_pkid_installed = pkid;
   setInstalledVersion(Daemon::packageVersion(pkid));

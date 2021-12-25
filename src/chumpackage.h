@@ -70,7 +70,6 @@ public:
   QString pkidLatest() const { return m_pkid_latest; }
   QString pkidInstalled() const { return m_pkid_installed; }
   bool detailsNeedsUpdate() const { return m_details_update; }
-  bool installedVersionNeedsUpdate() const { return m_installed_update; }
 
   QString availableVersion() const { return m_available_version; }
   QStringList categories() const { return m_categories; }
@@ -102,6 +101,7 @@ public:
   void setPkidInstalled(const QString &pkid);
   void setUpdateAvailable(bool up);
   void setDetails(const PackageKit::Details &v);
+  void clearInstalled();
 
   void setDeveloperLogin(const QString &login);
   void setDeveloperName(const QString &name);
@@ -134,7 +134,6 @@ private:
   QString     m_installed_version;
   bool        m_update_available{false};
   bool        m_details_update{false};
-  bool        m_installed_update{false};
 
   QString     m_available_version;
   QStringList m_categories;

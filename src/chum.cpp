@@ -112,6 +112,8 @@ void Chum::refreshPackagesFinished()
   QSet<QString> last_ids;
   for (const QString &p: m_packages_last_refresh)
     last_ids.insert(packageId(p));
+
+  // remove packages that are not listed anymore
   auto current = m_packages.keys();
   for (const QString &id: current)
     if (!last_ids.contains(id)) {
@@ -175,12 +177,10 @@ void Chum::refreshInstalledVersion() {
   SET_STATUS(qtTrId("chum-get-package-version"));
 
   QStringList packages;
-  for (ChumPackage *p: m_packages.values())
-    if (p->installedVersionNeedsUpdate()) {
-      packages.append(Daemon::packageName(p->pkidLatest()));
-      // reset requirement flag that can be set for non-installed package
-      p->setPkidInstalled(p->pkidInstalled());
-    }
+  for (ChumPackage *p: m_packages.values()) {
+    p->clearInstalled();
+    packages.append(Daemon::packageName(p->pkidLatest()));
+  }
 
   static decltype(m_installed_count) new_count;
   new_count = 0;
@@ -373,6 +373,7 @@ void Chum::startOperation(Transaction *pktr, const QString &pkg_id) {
         Daemon::packageName(pkg_id),
         Daemon::packageVersion(pkg_id)
       );
+    refreshPackages(); // update all packages details and installed status
   });
 
   connect(pktr, &Transaction::errorCode,
