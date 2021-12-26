@@ -4,24 +4,49 @@ import Sailfish.Silica 1.0
 Item {
     property alias title: header.title
     property alias description: header.description
+    property alias author: auth.text
     property alias iconSource: image.source
 
     width: parent.width
-    height: header.height
+    height: Math.max(column.height, image.height + image.anchors.topMargin)
 
-    PageHeader {
-        id: header
-        width: parent.width -
-               (image.visible ? image.width + Theme.paddingMedium : 0)
+    Column {
+        id: column
+        anchors {
+            left: parent.left
+            right: image.visible ? image.left : parent.right
+            rightMargin: image.visible ? Theme.paddingLarge : Theme.horizontalPageMargin
+        }
+
+        PageHeader {
+            id: header
+            rightMargin: 0
+            width: parent.width
+        }
+
+        Label {
+            id: auth
+            anchors {
+                left: parent.left
+                leftMargin: Theme.horizontalPageMargin
+                right: parent.right
+            }
+            color: Theme.secondaryHighlightColor
+            font.pixelSize: Theme.fontSizeSmall
+            horizontalAlignment: implicitWidth < width ? Text.AlignRight : Text.AlignLeft
+            truncationMode: TruncationMode.Fade
+            visible: text
+        }
     }
 
     Image {
         id: image
         visible: source.toString()
         anchors {
-            verticalCenter: header.verticalCenter
+            top: parent.top
+            topMargin: Theme.horizontalPageMargin + Theme.paddingMedium
             right: parent.right
-            rightMargin: Theme.paddingMedium
+            rightMargin: Theme.horizontalPageMargin
         }
         width: Theme.iconSizeLauncher
         height: Theme.iconSizeLauncher
