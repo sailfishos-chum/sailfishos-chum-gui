@@ -72,7 +72,9 @@ Page {
           : qsTrId("chum-no-updates")
         visible: !Chum.busy
         onClicked: pageStack.push(Qt.resolvedUrl("PackagesListPage.qml"), {
-                                      subTitle: updatesNotification.summary,
+                                      subTitleAll: updatesNotification.summary,
+                                      //% "%: applications"
+                                      subTitleApp: qsTrId("chum-updates-apps", updatesNotification.summary),
                                       updatesOnly: true
                                     })
       }
@@ -81,8 +83,10 @@ Page {
         text: qsTrId("chum-available-packages")
         visible: !Chum.busy
         onClicked: pageStack.push(Qt.resolvedUrl("PackagesListPage.qml"), {
-                                    //% "Available packages"
-                                    subTitle: qsTrId("chum-available-packages")
+                                      //% "Available packages"
+                                      subTitleAll: qsTrId("chum-available-packages"),
+                                      //% "Available applications"
+                                      subTitleApp: qsTrId("chum-available-apps")
                                   })
       }
 
@@ -95,8 +99,10 @@ Page {
           : qsTrId("chum-no-installed")
         visible: !Chum.busy
         onClicked: pageStack.push(Qt.resolvedUrl("PackagesListPage.qml"), {
-                                      //% "Installed"
-                                      subTitle: qsTrId("chum-installed"),
+                                      //% "Installed packages"
+                                      subTitleAll: qsTrId("chum-installed-packages"),
+                                      //% "Installed applications"
+                                      subTitleApp: qsTrId("chum-installed-apps"),
                                       installedOnly: true
                                     })
       }

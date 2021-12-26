@@ -3,7 +3,8 @@ import Sailfish.Silica 1.0
 import org.chum 1.0
 
 Page {
-  property string subTitle
+  property string subTitleAll // shown when all packages are listed
+  property string subTitleApp // shown when apps only are listed
   property string search
   property alias  applicationsOnly: chumModel.filterApplicationsOnly
   property alias  installedOnly: chumModel.filterInstalledOnly
@@ -22,7 +23,7 @@ Page {
 
         PageHeader {
             title: "Chum"
-            description: subTitle
+            description: applicationsOnly ? subTitleApp : subTitleAll
         }
 
         SearchField {
