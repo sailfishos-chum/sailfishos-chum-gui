@@ -3,10 +3,13 @@
 #include <PackageKit/Daemon>
 
 #include <QDebug>
+#include <QSettings>
 
 using namespace PackageKit;
 
 Chum* Chum::s_instance{nullptr};
+
+static QString s_config_showapps{QStringLiteral("main/showAppsByDefault")};
 
 #define SET_STATUS(status) { \
   if (m_status != status) {  \
@@ -34,6 +37,9 @@ Chum::Chum(QObject *parent)
   connect(&m_ssu, &Ssu::updated, this, &Chum::repoUpdated);
   connect(Daemon::global(), &Daemon::updatesChanged, [this]() { this->getUpdates(); });
 
+  QSettings settings;
+  m_show_apps_by_default = (settings.value(s_config_showapps, 1).toInt() != 0);
+
   m_busy = true;
   //% "Load repositories"
   SET_STATUS(qtTrId("chum-load-repositories"));
@@ -49,6 +55,14 @@ QString Chum::packageId(const QString &pkg_id)
 {
   // use the name as package ID to ensure that we have only one copy of each package
   return Daemon::packageName(pkg_id);
+}
+
+void Chum::setShowAppsByDefault(bool v) {
+  if (m_show_apps_by_default == v) return;
+  m_show_apps_by_default = v;
+  QSettings settings;
+  settings.setValue(s_config_showapps, v ? 1 : 0);
+  emit showAppsByDefaultChanged();
 }
 
 /////////////////////////////////////////////////////////////

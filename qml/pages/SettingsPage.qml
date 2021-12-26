@@ -44,6 +44,16 @@ Page {
             }
 
             TextSwitch {
+                checked: Chum.showAppsByDefault
+                //% "When listing available software, show only applications by default. This is a default setting and, in each listing, "
+                //% "you can switch between showing only applications or all packages using pulley menu."
+                description: qsTrId("chum-settings-show-apps-description")
+                //% "Show applications only by default"
+                text: qsTrId("chum-settings-show-apps")
+                onClicked: Chum.showAppsByDefault = !Chum.showAppsByDefault
+            }
+
+            TextSwitch {
                 automaticCheck: false
                 busy: Chum.busy
                 checked: Chum.repoTesting
@@ -52,7 +62,6 @@ Page {
                 description: qsTrId("chum-settings-testing-description")
                 //% "Use testing repository"
                 text: qsTrId("chum-settings-testing")
-
                 onClicked: Chum.repoTesting = !Chum.repoTesting;
             }
         }

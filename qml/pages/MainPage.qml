@@ -80,13 +80,15 @@ Page {
       }
 
       MainPageButton {
-        text: qsTrId("chum-available-packages")
+        text: Chum.showAppsByDefault ? qsTrId("chum-available-apps") :
+                                       qsTrId("chum-available-packages")
         visible: !Chum.busy
         onClicked: pageStack.push(Qt.resolvedUrl("PackagesListPage.qml"), {
                                       //% "Available packages"
                                       subTitleAll: qsTrId("chum-available-packages"),
                                       //% "Available applications"
-                                      subTitleApp: qsTrId("chum-available-apps")
+                                      subTitleApp: qsTrId("chum-available-apps"),
+                                      applicationsOnly: Chum.showAppsByDefault
                                   })
       }
 
