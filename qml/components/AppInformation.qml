@@ -30,24 +30,19 @@ MouseArea {
             rightMargin: Theme.horizontalPageMargin
         }
 
-        Item {
+        Label {
+            id: bodyLabel
             width: parent.width
-            height: bodyLabel.height
-
-            Label {
-                id: bodyLabel
-                width: parent.width
-                text: pkg.description
-                color: infoItem.pressed ? Theme.highlightColor : Theme.primaryColor
-                linkColor: Theme.highlightColor
-                wrapMode: Text.WordWrap
-                onLinkActivated: openLink(link)
-            }
+            text: pkg.description
+            color: infoItem.pressed ? Theme.highlightColor : Theme.primaryColor
+            linkColor: Theme.highlightColor
+            wrapMode: Text.WordWrap
+            onLinkActivated: openLink(link)
         }
 
         Item {
             id: spacer
-            height: Theme.paddingMedium
+            height: Theme.paddingLarge
         }
 
         ChumDetailItem {
