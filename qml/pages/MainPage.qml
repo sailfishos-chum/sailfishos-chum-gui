@@ -73,8 +73,8 @@ Page {
         visible: !Chum.busy
         onClicked: pageStack.push(Qt.resolvedUrl("PackagesListPage.qml"), {
                                       subTitleAll: updatesNotification.summary,
-                                      //% "%: applications"
-                                      subTitleApp: qsTrId("chum-updates-apps", updatesNotification.summary),
+                                      //% "Updates, applications only"
+                                      subTitleApp: qsTrId("chum-updates-apps"),
                                       updatesOnly: true
                                     })
       }
