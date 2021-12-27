@@ -47,6 +47,7 @@ QHash<int, QByteArray> ChumPackagesModel::roleNames() const {
     {ChumPackage::PackageInstalledVersionRole,  QByteArrayLiteral("packageInstalledVersion")},
     {ChumPackage::PackageNameRole,     QByteArrayLiteral("packageName")},
     {ChumPackage::PackageStarsCountRole, QByteArrayLiteral("packageStarsCount")},
+    {ChumPackage::PackageUpdateAvailableRole,  QByteArrayLiteral("packageUpdateAvailable")},
   };
 }
 
@@ -107,7 +108,8 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
     ChumPackage::PackageNameRole,
     ChumPackage::PackageStarsCountRole,
     ChumPackage::PackageInstalledRole,
-    ChumPackage::PackageInstalledVersionRole
+    ChumPackage::PackageInstalledVersionRole,
+    ChumPackage::PackageUpdateAvailableRole
   };
 
   QList<ChumPackage::Role> search_roles{

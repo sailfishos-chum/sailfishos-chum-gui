@@ -11,6 +11,8 @@ add_executable(${PROJECT_NAME}
   projectabstract.h
   projectgithub.cpp
   projectgithub.h
+  projectgitlab.cpp
+  projectgitlab.h
   main.cpp
   main.h
 )
@@ -30,6 +32,10 @@ set_source_files_properties(main.cpp PROPERTIES
 
 set_source_files_properties(projectgithub.cpp PROPERTIES
   COMPILE_DEFINITIONS GITHUB_TOKEN=\"${GITHUB_TOKEN}\"
+)
+
+set_source_files_properties(projectgitlab.cpp PROPERTIES
+  COMPILE_DEFINITIONS GITLAB_TOKEN=\"${GITLAB_TOKEN}\"
 )
 
 target_link_libraries(${PROJECT_NAME}

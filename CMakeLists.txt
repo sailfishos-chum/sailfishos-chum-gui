@@ -7,6 +7,7 @@ project(sailfishos-chum-gui
 
 set(REPO "sailfishos-chum" CACHE STRING "Alias of the repository")
 set(GITHUB_TOKEN "unset" CACHE STRING "GitHub access token for GraphQL queries")
+set(GITLAB_TOKEN "unset" CACHE STRING "GitLab.com access token for GraphQL queries")
 
 include(FindPkgConfig)
 

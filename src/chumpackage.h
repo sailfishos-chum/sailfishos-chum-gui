@@ -11,7 +11,6 @@ class ChumPackage : public QObject {
 
   Q_PROPERTY(QString id READ id NOTIFY pkidChanged)
   Q_PROPERTY(QString pkid READ pkid NOTIFY pkidChanged)
-  Q_PROPERTY(bool    updateAvailable READ updateAvailable NOTIFY updated)
 
   Q_PROPERTY(QString    availableVersion READ availableVersion NOTIFY updated)
   Q_PROPERTY(QStringList categories READ categories   NOTIFY updated)
@@ -34,6 +33,7 @@ class ChumPackage : public QObject {
   Q_PROPERTY(int        starsCount  READ starsCount   NOTIFY updated)
   Q_PROPERTY(QString    summary     READ summary      NOTIFY updated)
   Q_PROPERTY(QString    type        READ type         NOTIFY updated)
+  Q_PROPERTY(bool       updateAvailable READ updateAvailable NOTIFY updated)
   Q_PROPERTY(QString    url         READ url          NOTIFY updated)
   Q_PROPERTY(QString    urlForum    READ urlForum     NOTIFY updated)
   Q_PROPERTY(QString    urlIssues   READ urlIssues    NOTIFY updated)
@@ -69,7 +69,6 @@ public:
 
   QString id() const { return m_id; }
   QString pkid() const { return m_pkid; }
-  bool updateAvailable() const { return m_update_available; }
   bool detailsNeedsUpdate() const { return m_details_update; }
   bool installedVersionNeedsUpdate() const { return m_installed_update; }
 
@@ -94,6 +93,7 @@ public:
   int     starsCount() const { return m_stars_count; }
   QString summary() const { return m_summary; }
   QString type() const { return m_type; }
+  bool    updateAvailable() const { return m_update_available; }
   QString url() const { return m_url; }
   QString urlForum() const { return m_url_forum; }
   QString urlIssues() const { return m_url_issues; }

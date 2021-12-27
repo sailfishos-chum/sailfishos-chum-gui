@@ -30,8 +30,11 @@ Page {
 
             PageHeader {
                 title: pkg.name
-                //% "Issue"
-                description: qsTrId("chum-issue")
+                description: issue.ready ?
+                                 //% "Issue: #%1"
+                                 qsTrId("chum-issue-with-number").arg(number) :
+                                 //% "Issue"
+                                 qsTrId("chum-issue")
             }
 
             Item {

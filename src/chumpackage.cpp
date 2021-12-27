@@ -1,6 +1,7 @@
 #include "chumpackage.h"
 
 #include "projectgithub.h"
+#include "projectgitlab.h"
 
 #include <PackageKit/Daemon>
 #include <PackageKit/Details>
@@ -152,8 +153,6 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
       metainjson = QByteArray::fromStdString(out);
       metainjson = metainjson.replace("~", "\"\"");
 
-      qDebug() << m_pkid << "Meta:" << metainjson;
-
       //remove yaml from list
       descLines.pop_back();
   }
@@ -186,8 +185,13 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
   m_url_issues = json.value("Url").toObject().value("Bugtracker").toString();
   m_donation = json.value("Url").toObject().value("Donation").toString();
 
-  if (ProjectGitHub::isProject(m_repo_url))
-    m_project = new ProjectGitHub(m_repo_url, this);
+  for (const QString &u: {m_repo_url, m_url}) {
+      if (ProjectGitHub::isProject(u))
+        m_project = new ProjectGitHub(u, this);
+      else if (ProjectGitLab::isProject(u))
+        m_project = new ProjectGitLab(u, this);
+      if (m_project) break;
+  }
 
   emit updated(m_id, PackageRefreshRole);
 }

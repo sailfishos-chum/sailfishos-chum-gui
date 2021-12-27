@@ -141,18 +141,24 @@
         <source>#%1 by %2</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="chum-issue-with-number">
+        <location filename="../qml/pages/IssuePage.qml" line="35"/>
+        <source>Issue: #%1</source>
+        <oldsource>Issue: %1</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="chum-issue">
-        <location filename="../qml/pages/IssuePage.qml" line="34"/>
+        <location filename="../qml/pages/IssuePage.qml" line="37"/>
         <source>Issue</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-issues-comments-number">
-        <location filename="../qml/pages/IssuePage.qml" line="72"/>
+        <location filename="../qml/pages/IssuePage.qml" line="75"/>
         <source>Comments: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-created-updated-datetime">
-        <location filename="../qml/pages/IssuePage.qml" line="119"/>
+        <location filename="../qml/pages/IssuePage.qml" line="122"/>
         <location filename="../qml/pages/IssuesListPage.qml" line="107"/>
         <source>Created: %1; Updated: %2</source>
         <translation type="unfinished"></translation>
