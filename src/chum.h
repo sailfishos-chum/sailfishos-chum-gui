@@ -85,6 +85,7 @@ private:
   void refreshInstalledVersion();
 
   void startOperation(PackageKit::Transaction *pktr, const QString &pkg_id);
+  void setStatus(QString status);
 
 private:
   Ssu           m_ssu;
