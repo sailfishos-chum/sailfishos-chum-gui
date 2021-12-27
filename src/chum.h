@@ -54,6 +54,7 @@ public slots:
   void installPackage(const QString &id);
   void uninstallPackage(const QString &id);
   void updatePackage(const QString &id);
+  void updateAllPackages();
 
 signals:
   void busyChanged();

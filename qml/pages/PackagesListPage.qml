@@ -87,6 +87,12 @@ Page {
     PullDownMenu {
       busy: Chum.busy
       MenuItem {
+        //% "Apply all updates"
+        text: qsTrId("chum-packages-list-apply-all-updates")
+        onClicked: Chum.updateAllPackages()
+        visible: page.updatesOnly
+      }
+      MenuItem {
         text: page.applicationsOnly ?
               //% "Show all packages"
               qsTrId("chum-packages-list-show-all") :

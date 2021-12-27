@@ -342,38 +342,60 @@ void Chum::setRepoTesting(bool testing) {
 // operations on packages
 void Chum::installPackage(const QString &id) {
   if (m_busy) return;
+  ChumPackage *p = m_packages.value(id, nullptr);
+  if (!p) return; // no such id
   m_busy = true;
   emit busyChanged();
   //% "Install package"
   SET_STATUS(qtTrId("chum-install-package"));
-  startOperation(Daemon::installPackage(m_packages.value(id)->pkidLatest()), id);
+  startOperation(Daemon::installPackage(p->pkidLatest()), id);
 }
 
 void Chum::uninstallPackage(const QString &id) {
   if (m_busy) return;
+  ChumPackage *p = m_packages.value(id, nullptr);
+  if (!p) return; // no such id
   m_busy = true;
   emit busyChanged();
   //% "Uninstall package"
   SET_STATUS(qtTrId("chum-uninstall-package"));
-  startOperation(Daemon::removePackage(m_packages.value(id)->pkidInstalled()), id);
+  startOperation(Daemon::removePackage(p->pkidInstalled()), id);
 }
 
 void Chum::updatePackage(const QString &id) {
   if (m_busy) return;
+  ChumPackage *p = m_packages.value(id, nullptr);
+  if (!p) return; // no such id
   m_busy = true;
   emit busyChanged();
   //% "Update package"
   SET_STATUS(qtTrId("chum-update-package"));
-  startOperation(Daemon::updatePackage(m_packages.value(id)->pkidLatest()), id);
+  startOperation(Daemon::updatePackage(p->pkidLatest()), id);
+}
+
+void Chum::updateAllPackages() {
+  if (m_busy) return;
+  QStringList pkids;
+  for (ChumPackage *p: m_packages.values())
+    if (p->updateAvailable())
+      pkids.append(p->pkidLatest());
+  if (pkids.isEmpty()) return; // nothing to update
+
+  m_busy = true;
+  emit busyChanged();
+  //% "Update all packages"
+  SET_STATUS(qtTrId("chum-update-all-packages"));
+  startOperation(Daemon::updatePackages(pkids), QString{});
 }
 
 void Chum::startOperation(Transaction *pktr, const QString &pkg_id) {
-  connect(pktr, &Transaction::roleChanged, this, [this, pktr, pkg_id]() {
-    emit this->packageOperationStarted(
-      role2operation(pktr->role()),
-      Daemon::packageName(pkg_id)
-    );
-  });
+  if (!pkg_id.isEmpty())
+    connect(pktr, &Transaction::roleChanged, this, [this, pktr, pkg_id]() {
+        emit this->packageOperationStarted(
+              role2operation(pktr->role()),
+              Daemon::packageName(pkg_id)
+              );
+      });
 
   connect(pktr, &Transaction::finished, this,
           [this, pktr, pkg_id](PackageKit::Transaction::Exit status, uint /*runtime*/) {
@@ -391,10 +413,15 @@ void Chum::startOperation(Transaction *pktr, const QString &pkg_id) {
 
   connect(pktr, &Transaction::errorCode,
           [this, pktr, pkg_id](PackageKit::Transaction::Error /*error*/, const QString &details){
-      qWarning() << "Failed" << role2operation(pktr->role())
-                 << m_packages.value(pkg_id)->pkidLatest()
-                 << m_packages.value(pkg_id)->pkidInstalled()
-                 << details;
+      ChumPackage *p = m_packages.value(pkg_id, nullptr);
+      if (p)
+        qWarning() << "Failed" << role2operation(pktr->role())
+                   << m_packages.value(pkg_id)->pkidLatest()
+                   << m_packages.value(pkg_id)->pkidInstalled()
+                   << details;
+      else
+        qWarning() << "Failed" << role2operation(pktr->role())
+                   << details;
       emit error(details);
   });
 }
