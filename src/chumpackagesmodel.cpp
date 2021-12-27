@@ -36,6 +36,8 @@ QVariant ChumPackagesModel::data(const QModelIndex &index, int role) const {
     return p->starsCount();
   case ChumPackage::PackageTypeRole:
     return p->type();
+  case ChumPackage::PackageUpdateAvailableRole:
+    return p->updateAvailable();
   default:
     return QVariant{};
   }

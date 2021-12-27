@@ -40,7 +40,26 @@ Page {
     currentIndex: -1
 
     delegate: ListItem {
-      height: Theme.itemSizeMedium
+      contentHeight: Theme.itemSizeMedium
+
+      menu: ContextMenu {
+          MenuItem {
+              //% "Update"
+              text: qsTrId("chum-update")
+              onClicked: Chum.updatePackage(model.packageId)
+              visible: model.packageUpdateAvailable
+          }
+          MenuItem {
+              text: model.packageInstalled ?
+                        //% "Uninstall"
+                        qsTrId("chum-uninstall") :
+                        //% "Install"
+                        qsTrId("chum-install")
+              onClicked: model.packageInstalled ?
+                             Chum.uninstallPackage(model.packageId) :
+                             Chum.installPackage(model.packageId)
+          }
+      }
 
       onClicked: pageStack.push(Qt.resolvedUrl("../pages/PackagePage.qml"), {
         pkg:    Chum.package(model.packageId)
