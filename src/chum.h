@@ -5,6 +5,7 @@
 #include <QSet>
 
 #include "chumpackage.h"
+#include "ssu.h"
 
 namespace PackageKit {
 class Transaction;
@@ -13,6 +14,9 @@ class Transaction;
 class Chum : public QObject {
   Q_OBJECT
   Q_PROPERTY(bool    busy READ busy NOTIFY busyChanged)
+  Q_PROPERTY(bool    repoAvailable READ repoAvailable NOTIFY repoUpdated)
+  Q_PROPERTY(bool    repoManaged READ repoManaged NOTIFY repoUpdated)
+  Q_PROPERTY(bool    repoTesting READ repoTesting WRITE setRepoTesting NOTIFY repoUpdated)
   Q_PROPERTY(QString status READ status NOTIFY statusChanged)
   Q_PROPERTY(quint32 updatesCount   READ updatesCount NOTIFY updatesCountChanged)
 
@@ -24,10 +28,14 @@ public:
   };
   Q_ENUM(PackageOperation)
 
-  // repo operations
-  bool busy() const { return m_busy; }
+  bool    busy() const { return m_busy; }
+  bool    repoAvailable() const { return m_ssu.repoAvailable(); }
+  bool    repoManaged() const { return m_ssu.manageRepo(); }
+  bool    repoTesting() const { return m_ssu.repoTesting(); }
   QString status() const { return m_status; }
   quint32 updatesCount() const { return m_updates_count; }
+
+  void    setRepoTesting(bool testing);
 
   QList<ChumPackage*> packages() const { return m_packages.values(); }
   Q_INVOKABLE ChumPackage* package(const QString &id) const { return m_packages.value(id, nullptr); }
@@ -44,17 +52,21 @@ public slots:
 signals:
   void busyChanged();
   void error(QString errorTxt);
+  void errorFatal(QString errorTitle, QString errorTxt);
   void statusChanged();
   void updatesCountChanged();
   void packagesChanged();
   void packageOperationStarted( PackageOperation operation, const QString &name);
   void packageOperationFinished(PackageOperation operation, const QString &name, const QString &version);
+  void repoUpdated(); // signal ssu properties change
   void repositoryRefreshed();
 
 private:
   explicit Chum(QObject *parent = nullptr);
 
   QString packageId(const QString &pkg_id);
+
+  void repositoriesListUpdated();
 
   void getUpdatesFinished();
   void refreshPackages();
@@ -66,6 +78,7 @@ private:
   void startOperation(PackageKit::Transaction *pktr, const QString &pkg_id);
 
 private:
+  Ssu           m_ssu;
   bool          m_busy{false};
   QString       m_status;
   quint32       m_updates_count{0};

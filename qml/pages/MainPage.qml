@@ -43,7 +43,14 @@ Page {
 
       MenuItem {
         enabled: !Chum.busy
-        //% "Refresh cache"
+        //% "Settings"
+        text: qsTrId("chum-settings-title")
+        onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
+      }
+
+      MenuItem {
+        enabled: !Chum.busy
+        //% "Refresh repository"
         text: qsTrId("chum-refresh-cache")
         onClicked: Chum.refreshRepo()
       }

@@ -5,7 +5,6 @@ project(sailfishos-chum-gui
   VERSION   ${CHUMGUI_VERSION}
 )
 
-set(REPO "sailfishos-chum" CACHE STRING "Alias of the repository")
 set(GITHUB_TOKEN "unset" CACHE STRING "GitHub access token for GraphQL queries")
 set(GITLAB_TOKEN "unset" CACHE STRING "GitLab.com access token for GraphQL queries")
 
@@ -57,11 +56,13 @@ add_custom_target(distfiles SOURCES
   qml/pages/IssuePage.qml
   qml/pages/IssuesListPage.qml
   qml/pages/MainPage.qml
+  qml/pages/MessagePage.qml
   qml/pages/PackagePage.qml
   qml/pages/PackagesListPage.qml
   qml/pages/ReleasePage.qml
   qml/pages/ReleasesListPage.qml
   qml/pages/ScreenshotPage.qml
+  qml/pages/SettingsPage.qml
   qml/components/AppInformation.qml
   qml/components/ChumDetailItem.qml
   qml/components/FancyPageHeader.qml

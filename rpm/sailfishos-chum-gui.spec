@@ -1,5 +1,3 @@
-#define chum_testing_repo 1
-
 Name:           sailfishos-chum-gui
 Summary:        Chum GUI
 Version:        0.2.0
@@ -11,11 +9,7 @@ Source0:        %{name}-%{version}.tar.bz2
 Source1:        token-github.txt
 Source2:        token-gitlab.txt
 Requires:       sailfishsilica-qt5 >= 0.10.9
-%if 0%{?chum_testing_repo}
-Requires:       sailfishos-chum-testing
-%else
-Requires:       sailfishos-chum
-%endif
+Requires:       ssu
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
@@ -37,9 +31,6 @@ A client app for the Chum repositories
 %cmake -DCHUMGUI_VERSION=%(echo %{version} | grep -Eo '^[0-9]+(\.[0-9]+)*') \
        -DGITHUB_TOKEN=%(cat token-github.txt)  \
        -DGITLAB_TOKEN=%(cat token-gitlab.txt)  \
-%if 0%{?chum_testing_repo}
-       -DREPO=sailfishos-chum-testing \
-%endif
      .
 cmake --build .
 
@@ -49,6 +40,12 @@ rm -rf %{buildroot}
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications \
    %{buildroot}%{_datadir}/applications/*.desktop
+
+%postun
+ssu rr sailfishos-chum || true
+ssu rr sailfishos-chum-testing || true
+rm -f /var/cache/ssu/features.ini || true
+ssu ur || true
 
 %files
 %defattr(-,root,root,-)

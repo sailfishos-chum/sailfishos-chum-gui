@@ -66,6 +66,14 @@ ApplicationWindow {
 
     onError: notification.show(errorTxt)
 
+    onErrorFatal: {
+        pageStack.replaceAbove(null,
+                               Qt.resolvedUrl("pages/MessagePage.qml"), {
+                                   title: errorTitle,
+                                   text: errorTxt
+                               });
+    }
+
     onRepositoryRefreshed: {
       //% "Repository refreshed"
       notification.show(qsTrId("chum-repo-refreshed"))
