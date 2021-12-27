@@ -51,18 +51,6 @@ static bool parseUrl(const QString &u, QString &org, QString &repo) {
   return true;
 }
 
-static QString parseDate(QString txt, bool short_format=false) {
-  QDateTime dt = QDateTime::fromString(txt, Qt::ISODate);
-  return QLocale::system().toString(dt.toLocalTime().date(),
-                                    short_format ? QLocale::ShortFormat :
-                                                   QLocale::LongFormat);
-}
-
-//static QString parseDateTime(QString txt) {
-//  QDateTime dt = QDateTime::fromString(txt, Qt::ISODate);
-//  return QLocale::system().toString(dt.toLocalTime(), QLocale::LongFormat);
-//}
-
 //////////////////////////////////////////////////////
 /// ProjectGitHub
 

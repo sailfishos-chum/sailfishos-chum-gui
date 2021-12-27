@@ -18,6 +18,8 @@ public:
   virtual void release(const QString &id, LoadableObject *value) = 0;
   virtual void releases(LoadableObject *value) = 0;
 
+  static QString parseDate(QString txt, bool short_format=false);
+
 signals:
 
 protected:
