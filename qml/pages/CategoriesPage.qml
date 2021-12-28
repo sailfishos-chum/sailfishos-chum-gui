@@ -103,6 +103,11 @@ Page {
             category: qsTrId("chum-category-utilities")
             categoryIds: "System;Utility"
         }
+        ListElement {
+            //% "Other"
+            category: qsTrId("chum-category-other")
+            categoryIds: "Other"
+        }
     }
 
     VerticalScrollDecorator {}
