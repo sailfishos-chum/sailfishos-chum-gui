@@ -73,8 +73,6 @@ ProjectGitHub::ProjectGitHub(const QString &url, ChumPackage *package) : Project
     return;
   }
 
-  qDebug() << "Github" << m_org << m_repo;
-
   // settings that can be set from knowing repo url
   m_package->setDeveloperLogin(m_org);
   // url is not set as it can be different homepage that is retrieved from query

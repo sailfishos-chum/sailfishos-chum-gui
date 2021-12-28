@@ -105,8 +105,6 @@ void ChumPackagesModel::reset() {
   for (const ChumPackage* p: packages)
     m_packages.push_back(p->id());
 
-  qDebug() << "Packages in the list:" << m_packages.length() << "Search:" << m_search;
-
   endResetModel();
 }
 
