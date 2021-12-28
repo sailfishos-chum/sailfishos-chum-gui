@@ -63,12 +63,12 @@ void ProjectGitLab::initSites() {
   if (!s_sites.isEmpty()) return;
   for (const QString &sitetoken: QStringLiteral(GITLAB_TOKEN).split(QChar('|'))) {
       QStringList st = sitetoken.split(QChar(':'));
-      qDebug() << "GL:" << st << sitetoken;
       if (st.size() != 2) {
           qWarning() << "Error parsing provided GitLab site-token pairs";
           return;
       }
       s_sites[st[0]] = st[1];
+      qDebug() << "GitLab support added for" << st[0];
   }
 }
 
