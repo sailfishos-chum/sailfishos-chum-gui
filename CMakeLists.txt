@@ -64,6 +64,7 @@ add_custom_target(distfiles SOURCES
   qml/pages/ScreenshotPage.qml
   qml/pages/SettingsPage.qml
   qml/components/AppInformation.qml
+  qml/components/AppSummary.qml
   qml/components/ChumDetailItem.qml
   qml/components/FancyPageHeader.qml
   qml/components/ImageLabel.qml

@@ -83,20 +83,17 @@ LoadableObject* ChumPackage::releases() {
   return m_releases;
 }
 
-void ChumPackage::setPkid(const QString &pkid) {
-  if (m_pkid == pkid) return;
+void ChumPackage::setPkidLatest(const QString &pkid) {
+  if (m_pkid_latest == pkid) return;
 
-  m_pkid = pkid;
-  emit pkidChanged();
+  m_pkid_latest = pkid;
 
-  if (m_pkid.isEmpty()) {
+  if (m_pkid_latest.isEmpty()) {
     m_details_update = false;
-    m_installed_update = false;
     return;
   }
 
   m_details_update = true;
-  m_installed_update = true;
 }
 
 void ChumPackage::setUpdateAvailable(bool up) {
@@ -116,7 +113,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
   m_size        = v.size();
 
   // derive name
-  m_name = Daemon::packageName(m_pkid);
+  m_name = Daemon::packageName(m_pkid_latest);
   for (const QLatin1String &prefix: {QLatin1String("harbour-"), QLatin1String("openrepos-")})
     if (m_name.startsWith(prefix))
       m_name = m_name.mid(prefix.size());
@@ -143,7 +140,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
   try {
       metayaml = YAML::Load(descLines.last().toStdString());
   } catch(const YAML::ParserException &e) {
-      qWarning() << "Invalid Chum section for" << m_pkid;
+      qWarning() << "Invalid Chum section for" << m_pkid_latest;
   }
 
   if (!metayaml.IsNull() && metayaml.size() > 0) {
@@ -166,10 +163,16 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
 
   // Parse metadata
   QJsonObject json{QJsonDocument::fromJson(metainjson).object()};
+
   m_name = json.value("PackageName").toString(m_name);
-  m_type = json.value("Type").toString(m_id.startsWith(QStringLiteral("harbour-")) ?
-                                                         QStringLiteral("desktop-application") :
-                                                         QStringLiteral("generic"));
+
+  QString typestr = json.value("Type").toString(m_id.startsWith(QStringLiteral("harbour-")) ?
+                                                  QStringLiteral("desktop-application") :
+                                                  QStringLiteral("generic"));
+  if (typestr == QStringLiteral("desktop-application")) m_type = PackageApplicationDesktop;
+  else if (typestr == QStringLiteral("console-application")) m_type = PackageApplicationConsole;
+  else m_type = PackageGeneric;
+
   m_developer_name = json.value("DeveloperName").toString();
   m_categories = json.value("Categories").toVariant().toStringList();
   if (m_categories.isEmpty()) m_categories.push_back("Other");
@@ -196,12 +199,22 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
   emit updated(m_id, PackageRefreshRole);
 }
 
+void ChumPackage::clearInstalled() {
+  setPkidInstalled(QString{});
+}
+
+void ChumPackage::setPkidInstalled(const QString &pkid) {
+  if (m_pkid_installed == pkid) return;
+  m_pkid_installed = pkid;
+  setInstalledVersion(Daemon::packageVersion(pkid));
+}
+
 void ChumPackage::setInstalledVersion(const QString &v)
 {
-  m_installed_update = false;
   if (v == m_installed_version) return;
   m_installed_version = v;
   emit updated(m_id, PackageInstalledVersionRole);
+  emit updated(m_id, PackageInstalledRole);
 }
 
 void ChumPackage::setDeveloperLogin(const QString &login) {

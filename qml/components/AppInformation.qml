@@ -8,10 +8,11 @@ MouseArea {
     property int  shrunkHeight: 500
     property var  pkg
 
-    property bool _expanded: false
+    property bool _expanded: !_expansionEnabled
+    property bool _expansionEnabled: enableExpansion && content.implicitHeight > shrunkHeight
 
     clip: true
-    enabled: enableExpansion
+    enabled: _expansionEnabled
     height: content.height + (dots.visible ? dots.height : 0)
     width: parent.width
     propagateComposedEvents: true
@@ -21,7 +22,7 @@ MouseArea {
 
     Column {
         id: content
-        height: !enableExpansion || _expanded || shrunkHeight > implicitHeight ? implicitHeight : shrunkHeight
+        height: (!_expansionEnabled || _expanded) ? implicitHeight : shrunkHeight - dots.height
         anchors {
             left: parent.left
             right: parent.right
@@ -29,25 +30,19 @@ MouseArea {
             rightMargin: Theme.horizontalPageMargin
         }
 
-        Item {
+        Label {
+            id: bodyLabel
             width: parent.width
-            height: bodyLabel.height
-
-            Label {
-                id: bodyLabel
-                width: parent.width
-                text: pkg.description
-                color: infoItem.pressed ? Theme.highlightColor : Theme.primaryColor
-                linkColor: Theme.highlightColor
-                wrapMode: Text.WordWrap
-                onLinkActivated: openLink(link)
-            }
+            text: pkg.description
+            color: infoItem.pressed ? Theme.highlightColor : Theme.primaryColor
+            linkColor: Theme.highlightColor
+            wrapMode: Text.WordWrap
+            onLinkActivated: openLink(link)
         }
 
         Item {
             id: spacer
-            visible: _expanded
-            height: Theme.paddingMedium
+            height: Theme.paddingLarge
         }
 
         ChumDetailItem {
@@ -99,12 +94,12 @@ MouseArea {
         anchors.right: parent.right
         anchors.rightMargin: Theme.horizontalPageMargin
         source: "image://theme/icon-lock-more"
-        visible: !_expanded && enableExpansion
+        visible: !_expanded
     }
 
     OpacityRampEffect {
         sourceItem: content
-        enabled: !_expanded && enableExpansion
+        enabled: !_expanded
         direction: OpacityRamp.TopToBottom
     }
 }

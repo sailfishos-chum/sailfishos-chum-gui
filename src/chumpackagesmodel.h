@@ -13,15 +13,21 @@ class ChumPackagesModel
   Q_OBJECT
   Q_INTERFACES(QQmlParserStatus)
 
+  Q_PROPERTY(bool    filterApplicationsOnly READ filterApplicationsOnly WRITE setFilterApplicationsOnly NOTIFY filterApplicationsOnlyChanged)
+  Q_PROPERTY(bool    filterInstalledOnly READ filterInstalledOnly WRITE setFilterInstalledOnly NOTIFY filterInstalledOnlyChanged)
   Q_PROPERTY(bool    filterUpdatesOnly READ filterUpdatesOnly WRITE setFilterUpdatesOnly NOTIFY filterUpdatesOnlyChanged)
   Q_PROPERTY(QString search READ search WRITE setSearch NOTIFY searchChanged)
 
 public:
   explicit ChumPackagesModel(QObject *parent = nullptr);
 
+  bool filterApplicationsOnly() const { return m_filter_applications_only; }
+  bool filterInstalledOnly() const { return m_filter_installed_only; }
   bool filterUpdatesOnly() const { return m_filter_updates_only; }
   QString search() const { return m_search; }
 
+  void setFilterApplicationsOnly(bool filter);
+  void setFilterInstalledOnly(bool filter);
   void setFilterUpdatesOnly(bool filter);
   void setSearch(QString search);
 
@@ -35,6 +41,8 @@ public:
   void componentComplete() override { m_postpone_loading=false; reset(); }
 
 signals:
+  void filterApplicationsOnlyChanged();
+  void filterInstalledOnlyChanged();
   void filterUpdatesOnlyChanged();
   void searchChanged();
 
@@ -45,6 +53,8 @@ private:
   QList<QString> m_packages;
   bool           m_postpone_loading{true};
 
+  bool m_filter_applications_only{false};
+  bool m_filter_installed_only{false};
   bool m_filter_updates_only{false};
   QString m_search;
 };

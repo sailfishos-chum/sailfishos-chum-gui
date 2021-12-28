@@ -74,8 +74,6 @@ ProjectGitLab::ProjectGitLab(const QString &url, ChumPackage *package) : Project
     return;
   }
 
-  qDebug() << "GitLab" << m_path;
-
   // url is not set as it can be different homepage that is retrieved from query
   m_package->setUrlIssues(QStringLiteral("https://gitlab.com/%1/-/issues").arg(m_path));
 

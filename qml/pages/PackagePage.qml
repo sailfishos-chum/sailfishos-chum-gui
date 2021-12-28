@@ -38,8 +38,14 @@ Page {
           : qsTrId("chum-install")
         visible: !pkg.installed || pkg.updateAvailable
         onClicked: pkg.installed
-          ? Chum.updatePackage(pkg.pkid)
-          : Chum.installPackage(pkg.pkid)
+          ? Chum.updatePackage(pkg.id)
+          : Chum.installPackage(pkg.id)
+      }
+      MenuItem {
+        //% "Uninstall"
+        text: qsTrId("chum-uninstall")
+        visible: pkg.installed
+        onClicked: Chum.uninstallPackage(pkg.id)
       }
     }
 
@@ -51,48 +57,23 @@ Page {
       FancyPageHeader {
         id: header
         title: pkg.name
-        description: {
-            if (pkg.summary && pkg.developer)
-                return "%1\n%2".arg(pkg.summary).arg(pkg.developer);
-            if (pkg.developer) return pkg.developer;
-            if (pkg.summary) return pkg.summary;
-            return "";
-        }
+        author: pkg.developer
+        description: pkg.summary
         iconSource: pkg.icon
       }
 
-      Row {
-          anchors {
-            right: parent.right
-            rightMargin: Theme.horizontalPageMargin
-          }
-          spacing: Theme.paddingLarge
-
-          ImageLabel {
-              image: "image://theme/icon-m-favorite"
-              label: pkg.starsCount
-              visible: pkg.starsCount >= 0
-          }
-
-          ImageLabel {
-              image: "image://theme/icon-m-shuffle"
-              label: pkg.forksCount
-              visible: pkg.forksCount >= 0
-          }
-      }
-
-      ChumDetailItem {
-        //% "Categories"
-        label: qsTrId("chum-pkg-categories")
-        value: pkg.categories.join(" ")
-        visible: value
-        anchors.leftMargin: Theme.horizontalPageMargin
-        anchors.rightMargin: Theme.horizontalPageMargin
+      AppSummary {
+          pkg: page.pkg
       }
 
       AppInformation {
         pkg: page.pkg
-        shrunkHeight: page.height/4
+        shrunkHeight: Math.max(page.height/4, page.height - (y - content.y + content.spacing +
+                                                             (screenshots.visible ? (screenshots.height+content.spacing) : 0) +
+                                                             (btnReleases.visible ? btnReleases.implicitHeight : 0) +
+                                                             (btnIssues.visible ? btnIssues.implicitHeight : 0) +
+                                                             (btnReleases.visible || btnIssues.visible ? content.spacing : 0) +
+                                                             (btnDonate.visible ? (btnDonate.height+content.spacing) : 0)))
         enableExpansion: screenshots.visible || btnDonate.visible || btnReleases.visible || btnIssues.visible
       }
 

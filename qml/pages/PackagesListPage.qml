@@ -3,8 +3,11 @@ import Sailfish.Silica 1.0
 import org.chum 1.0
 
 Page {
-  property string subTitle
+  property string subTitleAll // shown when all packages are listed
+  property string subTitleApp // shown when apps only are listed
   property string search
+  property alias  applicationsOnly: chumModel.filterApplicationsOnly
+  property alias  installedOnly: chumModel.filterInstalledOnly
   property alias  updatesOnly: chumModel.filterUpdatesOnly
 
   id: page
@@ -20,7 +23,7 @@ Page {
 
         PageHeader {
             title: "Chum"
-            description: subTitle
+            description: applicationsOnly ? subTitleApp : subTitleAll
         }
 
         SearchField {
@@ -37,7 +40,26 @@ Page {
     currentIndex: -1
 
     delegate: ListItem {
-      height: Theme.itemSizeMedium
+      contentHeight: Theme.itemSizeMedium
+
+      menu: ContextMenu {
+          MenuItem {
+              //% "Update"
+              text: qsTrId("chum-update")
+              onClicked: Chum.updatePackage(model.packageId)
+              visible: model.packageUpdateAvailable
+          }
+          MenuItem {
+              text: model.packageInstalled ?
+                        //% "Uninstall"
+                        qsTrId("chum-uninstall") :
+                        //% "Install"
+                        qsTrId("chum-install")
+              onClicked: model.packageInstalled ?
+                             Chum.uninstallPackage(model.packageId) :
+                             Chum.installPackage(model.packageId)
+          }
+      }
 
       onClicked: pageStack.push(Qt.resolvedUrl("../pages/PackagePage.qml"), {
         pkg:    Chum.package(model.packageId)
@@ -60,6 +82,24 @@ Page {
     model: ChumPackagesModel {
       id: chumModel
       search: page.search
+    }
+
+    PullDownMenu {
+      busy: Chum.busy
+      MenuItem {
+        //% "Apply all updates"
+        text: qsTrId("chum-packages-list-apply-all-updates")
+        onClicked: Chum.updateAllPackages()
+        visible: page.updatesOnly
+      }
+      MenuItem {
+        text: page.applicationsOnly ?
+              //% "Show all packages"
+              qsTrId("chum-packages-list-show-all") :
+              //% "Show applications only"
+              qsTrId("chum-packages-list-show-apps")
+        onClicked: page.applicationsOnly = !page.applicationsOnly
+      }
     }
 
     VerticalScrollDecorator {}

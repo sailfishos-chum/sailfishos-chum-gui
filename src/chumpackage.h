@@ -9,8 +9,7 @@
 class ChumPackage : public QObject {
   Q_OBJECT
 
-  Q_PROPERTY(QString id READ id NOTIFY pkidChanged)
-  Q_PROPERTY(QString pkid READ pkid NOTIFY pkidChanged)
+  Q_PROPERTY(QString id READ id NOTIFY idChanged)
 
   Q_PROPERTY(QString    availableVersion READ availableVersion NOTIFY updated)
   Q_PROPERTY(QStringList categories READ categories   NOTIFY updated)
@@ -32,7 +31,7 @@ class ChumPackage : public QObject {
   Q_PROPERTY(qulonglong size        READ size         NOTIFY updated)
   Q_PROPERTY(int        starsCount  READ starsCount   NOTIFY updated)
   Q_PROPERTY(QString    summary     READ summary      NOTIFY updated)
-  Q_PROPERTY(QString    type        READ type         NOTIFY updated)
+  Q_PROPERTY(PackageType type       READ type         NOTIFY updated)
   Q_PROPERTY(bool       updateAvailable READ updateAvailable NOTIFY updated)
   Q_PROPERTY(QString    url         READ url          NOTIFY updated)
   Q_PROPERTY(QString    urlForum    READ urlForum     NOTIFY updated)
@@ -59,6 +58,13 @@ public:
     PackageRefreshRole // used for updates of many parameters
   };
 
+  enum PackageType {
+    PackageApplicationDesktop,
+    PackageApplicationConsole,
+    PackageGeneric
+  };
+  Q_ENUM(PackageType)
+
   ChumPackage(QObject *parent = nullptr);
   ChumPackage(const QString &id, QObject *parent = nullptr);
 
@@ -68,9 +74,9 @@ public:
   Q_INVOKABLE LoadableObject* releases();
 
   QString id() const { return m_id; }
-  QString pkid() const { return m_pkid; }
+  QString pkidLatest() const { return m_pkid_latest; }
+  QString pkidInstalled() const { return m_pkid_installed; }
   bool detailsNeedsUpdate() const { return m_details_update; }
-  bool installedVersionNeedsUpdate() const { return m_installed_update; }
 
   QString availableVersion() const { return m_available_version; }
   QStringList categories() const { return m_categories; }
@@ -92,16 +98,17 @@ public:
   qulonglong size() const { return m_size; }
   int     starsCount() const { return m_stars_count; }
   QString summary() const { return m_summary; }
-  QString type() const { return m_type; }
+  PackageType type() const { return m_type; }
   bool    updateAvailable() const { return m_update_available; }
   QString url() const { return m_url; }
   QString urlForum() const { return m_url_forum; }
   QString urlIssues() const { return m_url_issues; }
 
-  void setPkid(const QString &pkid);
+  void setPkidLatest(const QString &pkid);
+  void setPkidInstalled(const QString &pkid);
   void setUpdateAvailable(bool up);
   void setDetails(const PackageKit::Details &v);
-  void setInstalledVersion(const QString &v);
+  void clearInstalled();
 
   void setDeveloperLogin(const QString &login);
   void setDeveloperName(const QString &name);
@@ -114,9 +121,12 @@ public:
   void setUrlIssues(const QString &url);
 
 signals:
+  void idChanged();
   void updated(QString packageId, Role role);
-  void pkidChanged();
   void updateAvailableChanged();
+
+private:
+  void setInstalledVersion(const QString &v);
 
 private:
   ProjectAbstract *m_project{nullptr};
@@ -126,11 +136,11 @@ private:
   LoadableObject  *m_releases{nullptr};
 
   QString     m_id; // ID of the package as used in Chum
-  QString     m_pkid; // Package ID as set by PackageKit
+  QString     m_pkid_latest; // Package ID as set by PackageKit
+  QString     m_pkid_installed; // Package ID as set by PackageKit
   QString     m_installed_version;
   bool        m_update_available{false};
   bool        m_details_update{false};
-  bool        m_installed_update{false};
 
   QString     m_available_version;
   QStringList m_categories;
@@ -150,7 +160,7 @@ private:
   qulonglong  m_size{0};
   int         m_stars_count{-1};
   QString     m_summary;
-  QString     m_type;
+  PackageType m_type;
   QString     m_url;
   QString     m_url_forum;
   QString     m_url_issues;

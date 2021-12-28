@@ -3,13 +3,13 @@ import Sailfish.Silica 1.0
 
 Item {
     id: item
-    height: Math.max(imageUi.implicitHeight, labelUi.implicitHeight)
-    width: childrenRect.width
+    height: visible ? Math.max(imageUi.implicitHeight, labelUi.implicitHeight) : 0
+    width: visible ? imageUi.width + labelUi.anchors.leftMargin + labelUi.implicitWidth : 0
 
-    property alias textColor: labelUi.color
+    property alias fontSize: labelUi.font.pixelSize
     property alias image: imageUi.source
     property alias label: labelUi.text
-    property alias fontSize: labelUi.font.pixelSize
+    property alias textColor: labelUi.color
 
     Image {
         id: imageUi
@@ -24,5 +24,6 @@ Item {
         anchors.verticalCenter: item.verticalCenter
         color: Theme.highlightColor
         font.pixelSize: Theme.fontSizeSmall
+        truncationMode: TruncationMode.Fade
     }
 }
