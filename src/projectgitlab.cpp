@@ -15,8 +15,7 @@
 #include <QVariantList>
 #include <QVariantMap>
 
-static QString reqAuth{QStringLiteral("Bearer " GITLAB_TOKEN)};
-static QString reqUrl{QStringLiteral("https://gitlab.com/api/graphql")};
+QMap<QString, QString> ProjectGitLab::s_sites;
 
 //////////////////////////////////////////////////////
 /// helper functions
@@ -30,51 +29,66 @@ static QString getName(const QVariant &v) {
   return QStringLiteral("%1 (%2)").arg(name, login);
 }
 
-static QNetworkReply* sendQuery(const QString &query) {
-  QNetworkRequest request;
-  request.setUrl(reqUrl);
-  request.setRawHeader("Content-Type", "application/json");
-  request.setRawHeader("Authorization", reqAuth.toLocal8Bit());
-  return nMng->post(request, query.toLocal8Bit());
-}
-
-static bool parseUrl(const QString &u, QString &path) {
+static void parseUrl(const QString &u, QString &h, QString &path) {
   QUrl url(u);
-  QString host = url.host();
+  h = url.host();
   QString p = url.path();
   if (p.startsWith('/')) p = p.mid(1);
   if (p.endsWith('/')) p.chop(1);
-
-  if (host != QStringLiteral("gitlab.com"))
-    return false;
-
   path = p;
-  return true;
 }
 
 //////////////////////////////////////////////////////
 /// ProjectGitLab
 
 ProjectGitLab::ProjectGitLab(const QString &url, ChumPackage *package) : ProjectAbstract(package) {
-  bool ok = parseUrl(url, m_path);
-  if (!ok) {
+  initSites();
+  parseUrl(url, m_host, m_path);
+  if (!s_sites.contains(m_host)) {
     qWarning() << "Shouldn't happen: ProjectGitLab initialized with incorrect service" << url;
     return;
   }
 
+  m_token = s_sites.value(m_host, QString{});
+
   // url is not set as it can be different homepage that is retrieved from query
-  m_package->setUrlIssues(QStringLiteral("https://gitlab.com/%1/-/issues").arg(m_path));
+  m_package->setUrlIssues(QStringLiteral("https://%1/%2/-/issues").arg(m_host, m_path));
 
   // fetch information from GitLab
   fetchRepoInfo();
 }
 
 // static
-bool ProjectGitLab::isProject(const QString &url) {
-  QString p;
-  return parseUrl(url, p);
+void ProjectGitLab::initSites() {
+  if (!s_sites.isEmpty()) return;
+  for (const QString &sitetoken: QStringLiteral(GITLAB_TOKEN).split(QChar('|'))) {
+      QStringList st = sitetoken.split(QChar(':'));
+      if (st.size() != 2) {
+          qWarning() << "Error parsing provided GitLab site-token pairs";
+          return;
+      }
+      s_sites[st[0]] = st[1];
+      qDebug() << "GitLab support added for" << st[0];
+  }
 }
 
+// static
+bool ProjectGitLab::isProject(const QString &url) {
+  initSites();
+  QString h, p;
+  parseUrl(url, h, p);
+  return s_sites.contains(h);
+}
+
+QNetworkReply* ProjectGitLab::sendQuery(const QString &query) {
+  QString reqAuth = QStringLiteral("Bearer %1").arg(m_token);
+  QString reqUrl = QStringLiteral("https://%1/api/graphql").arg(m_host);
+  QNetworkRequest request;
+  request.setUrl(reqUrl);
+  request.setRawHeader("Content-Type", "application/json");
+  request.setRawHeader("Authorization", reqAuth.toLocal8Bit());
+  return nMng->post(request, query.toLocal8Bit());
+}
 
 void ProjectGitLab::fetchRepoInfo() {
   QString query = QStringLiteral(R"(

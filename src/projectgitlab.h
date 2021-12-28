@@ -2,6 +2,7 @@
 #define PROJECTGITLAB_H
 
 #include <QObject>
+#include <QNetworkReply>
 #include <QString>
 
 #include "projectabstract.h"
@@ -22,11 +23,17 @@ public:
 signals:
 
 private:
+  QNetworkReply* sendQuery(const QString &query);
   void fetchRepoInfo();
 
-private:
-  QString m_path;
+  static void initSites();
 
+private:
+  QString m_host;
+  QString m_path;
+  QString m_token;
+
+  static QMap<QString, QString> s_sites;
 };
 
 #endif // PROJECTGITLAB_H

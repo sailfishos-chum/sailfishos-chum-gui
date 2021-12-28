@@ -22,15 +22,25 @@ BuildRequires:  PackageKit-Qt5-devel
 BuildRequires:  qt5-qttools-linguist
 
 %description
-A client app for the Chum repositories
+A client app for the Chum repositories.
+
+PackageName: Chum GUI
+Type: desktop-application
+Categories:
+  - System
+  - Utility
+Custom:
+  Repo: https://github.com/sailfishos-chum/sailfishos-chum-gui
+Icon: https://raw.githubusercontent.com/sailfishos-chum/sailfishos-chum-gui/main/icons/sailfishos-chum-gui.svg
 
 %prep
 %setup -q -n %{name}-%{version}
 
 %build
+
 %cmake -DCHUMGUI_VERSION=%(echo %{version} | grep -Eo '^[0-9]+(\.[0-9]+)*') \
-       -DGITHUB_TOKEN=%(cat token-github.txt)  \
-       -DGITLAB_TOKEN=%(cat token-gitlab.txt)  \
+       -DGITHUB_TOKEN=%(cat %{SOURCE1})  \
+       -DGITLAB_TOKEN=%(cat %{SOURCE2})  \
      .
 cmake --build .
 
