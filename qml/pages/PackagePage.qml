@@ -16,17 +16,20 @@ Page {
     PullDownMenu {
       busy: Chum.busy
       MenuItem {
-        text:qsTr("Project Repository")
+        //% "Project Repository"
+        text: qsTrId("chum-package-project-repo")
         onClicked: Qt.openUrlExternally(pkg.repo)
         visible: pkg.repo
       }
       MenuItem {
-        text:qsTr("File Issue")
+        //% "File Issue"
+        text: qsTrId("chum-package-file-issue")
         onClicked: Qt.openUrlExternally(pkg.urlIssues)
         visible: pkg.urlIssues
       }
       MenuItem {
-        text:qsTr("Discussion Forum")
+        //% "Discussion Forum"
+        text: qsTrId("chum-package-discussion-forum")
         onClicked: Qt.openUrlExternally(pkg.urlForum)
         visible: pkg.urlForum
       }
@@ -111,7 +114,8 @@ Page {
       Button {
           id: btnDonate
           anchors.horizontalCenter: parent.horizontalCenter
-          text: qsTr("Make Dontation")
+          //% "Make Dontation"
+          text: qsTrId("chum-package-donation")
           visible: pkg.donation
           onClicked: {
               Qt.openUrlExternally(pkg.donation)
