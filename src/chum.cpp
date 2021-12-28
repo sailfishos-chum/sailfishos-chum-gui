@@ -321,7 +321,7 @@ void Chum::repositoriesListUpdated() {
 
 void Chum::setRepoTesting(bool testing) {
   if (!m_ssu.manageRepo()) {
-      emit error(qtTrId("chum-repo-management-disabled"));
+      emit error(qtTrId("chum-repo-management-disabled-title"));
       return;
   }
 
