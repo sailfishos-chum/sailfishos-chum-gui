@@ -16,6 +16,8 @@ static inline auto role2operation(Transaction::Role role) {
   case Transaction::RoleInstallFiles:
   case Transaction::RoleInstallPackages:
     return Chum::PackageInstallation;
+  case Transaction::RoleRemovePackages:
+    return Chum::PackageRemove;
   case Transaction::RoleUpdatePackages:
     return Chum::PackageUpdate;
   default:
@@ -341,7 +343,8 @@ void Chum::installPackage(const QString &id) {
   emit busyChanged();
   //% "Install package"
   setStatus(qtTrId("chum-install-package"));
-  startOperation(Daemon::installPackage(p->pkidLatest()), id);
+  QString pkid = p->pkidLatest();
+  startOperation(Daemon::installPackage(pkid), pkid);
 }
 
 void Chum::uninstallPackage(const QString &id) {
@@ -352,7 +355,8 @@ void Chum::uninstallPackage(const QString &id) {
   emit busyChanged();
   //% "Uninstall package"
   setStatus(qtTrId("chum-uninstall-package"));
-  startOperation(Daemon::removePackage(p->pkidInstalled()), id);
+  QString pkid = p->pkidInstalled();
+  startOperation(Daemon::removePackage(pkid), pkid);
 }
 
 void Chum::updatePackage(const QString &id) {
@@ -363,7 +367,8 @@ void Chum::updatePackage(const QString &id) {
   emit busyChanged();
   //% "Update package"
   setStatus(qtTrId("chum-update-package"));
-  startOperation(Daemon::updatePackage(p->pkidLatest()), id);
+  QString pkid = p->pkidLatest();
+  startOperation(Daemon::updatePackage(pkid), pkid);
 }
 
 void Chum::updateAllPackages() {
@@ -406,16 +411,10 @@ void Chum::startOperation(Transaction *pktr, const QString &pkg_id) {
 
   connect(pktr, &Transaction::errorCode,
           [this, pktr, pkg_id](PackageKit::Transaction::Error /*error*/, const QString &details){
-      ChumPackage *p = m_packages.value(pkg_id, nullptr);
-      if (p)
-        qWarning() << "Failed" << role2operation(pktr->role())
-                   << m_packages.value(pkg_id)->pkidLatest()
-                   << m_packages.value(pkg_id)->pkidInstalled()
-                   << details;
-      else
-        qWarning() << "Failed" << role2operation(pktr->role())
-                   << details;
-      emit error(details);
+    qWarning() << "Failed" << role2operation(pktr->role())
+               << pkg_id
+               << details;
+    emit error(details);
   });
 }
 

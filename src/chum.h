@@ -26,6 +26,7 @@ public:
   enum PackageOperation {
     PackageUnknownOperation,
     PackageInstallation,
+    PackageRemove,
     PackageUpdate,
   };
   Q_ENUM(PackageOperation)
