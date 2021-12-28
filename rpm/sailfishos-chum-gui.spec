@@ -28,9 +28,10 @@ A client app for the Chum repositories
 %setup -q -n %{name}-%{version}
 
 %build
+
 %cmake -DCHUMGUI_VERSION=%(echo %{version} | grep -Eo '^[0-9]+(\.[0-9]+)*') \
-       -DGITHUB_TOKEN=%(cat token-github.txt)  \
-       -DGITLAB_TOKEN=%(cat token-gitlab.txt)  \
+       -DGITHUB_TOKEN=%(cat %{SOURCE1})  \
+       -DGITLAB_TOKEN=%(cat %{SOURCE2})  \
      .
 cmake --build .
 
