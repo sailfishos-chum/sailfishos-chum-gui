@@ -7,6 +7,7 @@ Page {
   property string subTitleApp // shown when apps only are listed
   property string search
   property alias  applicationsOnly: chumModel.filterApplicationsOnly
+  property alias  category: chumModel.showCategory
   property alias  installedOnly: chumModel.filterInstalledOnly
   property alias  updatesOnly: chumModel.filterUpdatesOnly
 
@@ -87,18 +88,18 @@ Page {
     PullDownMenu {
       busy: Chum.busy
       MenuItem {
-        //% "Apply all updates"
-        text: qsTrId("chum-packages-list-apply-all-updates")
-        onClicked: Chum.updateAllPackages()
-        visible: page.updatesOnly
-      }
-      MenuItem {
         text: page.applicationsOnly ?
               //% "Show all packages"
               qsTrId("chum-packages-list-show-all") :
               //% "Show applications only"
               qsTrId("chum-packages-list-show-apps")
         onClicked: page.applicationsOnly = !page.applicationsOnly
+      }
+      MenuItem {
+        //% "Apply all updates"
+        text: qsTrId("chum-packages-list-apply-all-updates")
+        onClicked: Chum.updateAllPackages()
+        visible: page.updatesOnly
       }
     }
 

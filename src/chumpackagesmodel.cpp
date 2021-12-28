@@ -24,6 +24,8 @@ QVariant ChumPackagesModel::data(const QModelIndex &index, int role) const {
   switch (role) {
   case ChumPackage::PackageIdRole:
     return p->id();
+  case ChumPackage::PackageCategoriesRole:
+    return p->categories();
   case ChumPackage::PackageIconRole:
     return p->icon();
   case ChumPackage::PackageInstalledRole:
@@ -46,6 +48,7 @@ QVariant ChumPackagesModel::data(const QModelIndex &index, int role) const {
 QHash<int, QByteArray> ChumPackagesModel::roleNames() const {
   return {
     {ChumPackage::PackageIdRole,       QByteArrayLiteral("packageId")},
+    {ChumPackage::PackageCategoriesRole, QByteArrayLiteral("packageCategories")},
     {ChumPackage::PackageIconRole,     QByteArrayLiteral("packageIcon")},
     {ChumPackage::PackageInstalledRole,  QByteArrayLiteral("packageInstalled")},
     {ChumPackage::PackageInstalledVersionRole,  QByteArrayLiteral("packageInstalledVersion")},
@@ -74,6 +77,9 @@ void ChumPackagesModel::reset() {
     if (m_filter_installed_only && !p->installed())
       continue;
     if (m_filter_updates_only && !p->updateAvailable())
+      continue;
+    if (!m_show_category.isEmpty() &&
+        !m_show_category.intersects(p->categories().toSet()))
       continue;
     if (!m_search.isEmpty()) {
       bool found = true;
@@ -156,6 +162,8 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
     filter_or_order_may_change = true;
   if (m_filter_updates_only && role == ChumPackage::PackageUpdateAvailableRole)
     filter_or_order_may_change = true;
+  if (!m_show_category.isEmpty() && role == ChumPackage::PackageCategoriesRole)
+    filter_or_order_may_change = true;
   // TODO: other filters
 
   // check if sorting maybe altered
@@ -195,5 +203,12 @@ void ChumPackagesModel::setSearch(QString search) {
   if (search == m_search) return;
   m_search = search;
   emit searchChanged();
+  reset();
+}
+
+void ChumPackagesModel::setShowCategory(QString category) {
+  QStringList c = category.split(QChar(';'));
+  m_show_category = c.toSet();
+  emit showCategoryChanged();
   reset();
 }

@@ -17,6 +17,7 @@ class ChumPackagesModel
   Q_PROPERTY(bool    filterInstalledOnly READ filterInstalledOnly WRITE setFilterInstalledOnly NOTIFY filterInstalledOnlyChanged)
   Q_PROPERTY(bool    filterUpdatesOnly READ filterUpdatesOnly WRITE setFilterUpdatesOnly NOTIFY filterUpdatesOnlyChanged)
   Q_PROPERTY(QString search READ search WRITE setSearch NOTIFY searchChanged)
+  Q_PROPERTY(QString showCategory READ showCategory WRITE setShowCategory NOTIFY showCategoryChanged)
 
 public:
   explicit ChumPackagesModel(QObject *parent = nullptr);
@@ -25,11 +26,13 @@ public:
   bool filterInstalledOnly() const { return m_filter_installed_only; }
   bool filterUpdatesOnly() const { return m_filter_updates_only; }
   QString search() const { return m_search; }
+  QString showCategory() const { return m_show_category.toList().join(QChar(';')); }
 
   void setFilterApplicationsOnly(bool filter);
   void setFilterInstalledOnly(bool filter);
   void setFilterUpdatesOnly(bool filter);
   void setSearch(QString search);
+  void setShowCategory(QString category);
 
   Q_INVOKABLE void reset();
 
@@ -45,6 +48,7 @@ signals:
   void filterInstalledOnlyChanged();
   void filterUpdatesOnlyChanged();
   void searchChanged();
+  void showCategoryChanged();
 
 private:
   void updatePackage(QString packageId, ChumPackage::Role role);
@@ -57,4 +61,5 @@ private:
   bool m_filter_installed_only{false};
   bool m_filter_updates_only{false};
   QString m_search;
+  QSet<QString> m_show_category;
 };
