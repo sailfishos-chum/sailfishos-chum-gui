@@ -78,7 +78,8 @@ void ChumPackagesModel::reset() {
       continue;
     if (m_filter_updates_only && !p->updateAvailable())
       continue;
-    if (!m_show_category.isEmpty() && !p->categories().contains(m_show_category))
+    if (!m_show_category.isEmpty() &&
+        !m_show_category.intersects(p->categories().toSet()))
       continue;
     if (!m_search.isEmpty()) {
       bool found = true;
@@ -206,8 +207,8 @@ void ChumPackagesModel::setSearch(QString search) {
 }
 
 void ChumPackagesModel::setShowCategory(QString category) {
-  if (category == m_show_category) return;
-  m_show_category = category;
+  QStringList c = category.split(QChar(';'));
+  m_show_category = c.toSet();
   emit showCategoryChanged();
   reset();
 }

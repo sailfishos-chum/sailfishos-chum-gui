@@ -81,6 +81,13 @@ Page {
       }
 
       MainPageButton {
+        //% "Categories"
+        text: qsTrId("chum-categories")
+        visible: !Chum.busy
+        onClicked: pageStack.push(Qt.resolvedUrl("CategoriesPage.qml"))
+      }
+
+      MainPageButton {
         text: Chum.showAppsByDefault ? qsTrId("chum-available-apps") :
                                        qsTrId("chum-available-packages")
         visible: !Chum.busy

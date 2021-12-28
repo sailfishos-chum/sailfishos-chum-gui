@@ -26,7 +26,7 @@ public:
   bool filterInstalledOnly() const { return m_filter_installed_only; }
   bool filterUpdatesOnly() const { return m_filter_updates_only; }
   QString search() const { return m_search; }
-  QString showCategory() const { return m_show_category; }
+  QString showCategory() const { return m_show_category.toList().join(QChar(';')); }
 
   void setFilterApplicationsOnly(bool filter);
   void setFilterInstalledOnly(bool filter);
@@ -61,5 +61,5 @@ private:
   bool m_filter_installed_only{false};
   bool m_filter_updates_only{false};
   QString m_search;
-  QString m_show_category;
+  QSet<QString> m_show_category;
 };
