@@ -21,8 +21,15 @@ BuildRequires:  sailfish-svg2png
 BuildRequires:  PackageKit-Qt5-devel
 BuildRequires:  qt5-qttools-linguist
 
+# Bundle YAML library only for builds at OBS corresponding to older SFOS version targets
+%if 0%{?sailfishos_version} && 0%{?sailfishos_version}<40000
+%define bundle_yaml 1
+%endif
+
+%if 0%{?bundle_yaml}
 %define __provides_exclude_from ^%{_datadir}/.*$
 %define __requires_exclude ^libyaml-cpp.*$
+%endif
 
 %description
 A client app for the Chum repositories.
@@ -57,8 +64,10 @@ desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications \
    %{buildroot}%{_datadir}/applications/*.desktop
 
+%if 0%{?bundle_yaml}
 mkdir -p %{buildroot}%{_datadir}/%{name}/lib
 cp -a %{_libdir}/libyaml-cpp.so.* %{buildroot}%{_datadir}/%{name}/lib
+%endif
 
 %postun
 ssu rr sailfishos-chum || true
