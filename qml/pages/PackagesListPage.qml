@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import org.chum 1.0
+import "../components"
 
 Page {
   id: page
@@ -44,7 +45,8 @@ Page {
     currentIndex: -1
 
     delegate: ListItem {
-      contentHeight: Theme.itemSizeMedium
+      id: lItem
+      contentHeight: item.height
 
       menu: ContextMenu {
           MenuItem {
@@ -66,17 +68,9 @@ Page {
         pkg:    Chum.package(model.packageId)
       })
 
-      Label {
-        anchors {
-          left: parent.left
-          leftMargin: Theme.horizontalPageMargin
-          right: parent.right
-          rightMargin: Theme.horizontalPageMargin
-          verticalCenter: parent.verticalCenter
-        }
-        text: model.packageName
-        wrapMode: Text.WordWrap
-        color: parent.highlighted ? Theme.highlightColor : Theme.primaryColor
+      PackagesListItem {
+          id: item
+          highlighted: lItem.highlighted
       }
     }
 
