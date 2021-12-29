@@ -67,6 +67,8 @@ desktop-file-install --delete-original       \
 %if 0%{?bundle_yaml}
 mkdir -p %{buildroot}%{_datadir}/%{name}/lib
 cp -a %{_libdir}/libyaml-cpp.so.* %{buildroot}%{_datadir}/%{name}/lib
+# strip executable bit from all libraries
+chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
 %endif
 
 %postun
