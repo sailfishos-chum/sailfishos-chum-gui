@@ -18,7 +18,7 @@ public:
   QString repoName() const { return m_manage_repo ? m_repo_name : QString{}; }
 
   void loadRepos();
-  void setRepo(bool testing=false);
+  void setRepo(const QString &version=QString(), bool testing=false);
 
 signals:
   void updated();

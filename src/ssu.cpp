@@ -102,7 +102,7 @@ void Ssu::onListFinished(QDBusPendingCallWatcher *call) {
   emit updated();
 }
 
-void Ssu::setRepo(bool testing) {
+void Ssu::setRepo(const QString &version, bool testing) {
   if (!m_manage_repo) {
       qWarning() << "Cannot set repository via SSU - management disabled";
       return;
@@ -118,6 +118,11 @@ void Ssu::setRepo(bool testing) {
   QString rname = testing ? QStringLiteral("sailfishos-chum-testing") :
                             QStringLiteral("sailfishos-chum");
   QString url = testing ? s_repo_testing : s_repo_regular;
+
+  if (!version.isEmpty()) {
+      url = url.replace(QLatin1String("%(release)"), version);
+  }
+
   if (rname != m_repo_name) {
       // check if proposed name is taken
       for (bool done=false; !done; ) {

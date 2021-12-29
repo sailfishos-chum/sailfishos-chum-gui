@@ -64,6 +64,40 @@ Page {
                 text: qsTrId("chum-settings-testing")
                 onClicked: Chum.repoTesting = !Chum.repoTesting;
             }
+
+            SectionHeader {text: qsTrId("chum-settings-advanced")}
+
+            Label {
+                anchors {
+                    left: parent.left
+                    leftMargin: Theme.horizontalPageMargin
+                    right: parent.right
+                    rightMargin: Theme.horizontalPageMargin
+                }
+                color: Theme.highlightColor
+                text: qsTrId("chum-settings-override-release")
+            }
+
+            TextField {
+                id: txtRelease
+                anchors {
+                    left: parent.left
+                    leftMargin: Theme.horizontalPageMargin
+                    right: parent.right
+                    rightMargin: Theme.horizontalPageMargin
+                }
+                EnterKey.enabled: true
+                EnterKey.iconSource: "image://theme/icon-m-enter-close"
+                EnterKey.onClicked: {
+                    console.log("Setting release to ", txtRelease.text);
+                    Chum.manualVersion = txtRelease.text;
+                    focus = false
+                }
+            }
         }
+    }
+
+    Component.onCompleted: {
+        txtRelease.text = Chum.manualVersion;
     }
 }
