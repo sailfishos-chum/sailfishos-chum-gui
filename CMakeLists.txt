@@ -49,6 +49,10 @@ install(FILES ${PROJECT_NAME}.desktop
   DESTINATION share/applications
 )
 
+install(FILES icons/sailfishos-chum-gui.svg
+  DESTINATION share/${PROJECT_NAME}/icons
+)
+
 file(GLOB RPM_FILES rpm/*)
 add_custom_target(distfiles SOURCES
   qml/sailfishos-chum-gui.qml
