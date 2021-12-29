@@ -3,15 +3,15 @@ import Sailfish.Silica 1.0
 import org.chum 1.0
 
 Page {
-  property string subTitleAll // shown when all packages are listed
-  property string subTitleApp // shown when apps only are listed
+  id: page
+
+  property string title
   property string search
   property alias  applicationsOnly: chumModel.filterApplicationsOnly
   property alias  category: chumModel.showCategory
   property alias  installedOnly: chumModel.filterInstalledOnly
   property alias  updatesOnly: chumModel.filterUpdatesOnly
 
-  id: page
   allowedOrientations: Orientation.All
 
   SilicaListView {
@@ -23,8 +23,11 @@ Page {
         width: view.width
 
         PageHeader {
-            title: "Chum"
-            description: applicationsOnly ? subTitleApp : subTitleAll
+            title: page.title ? page.title : _extra
+            description: page.title ? _extra : ""
+            property string _extra: applicationsOnly ?
+                                        qsTrId("chum-applications") :
+                                        qsTrId("chum-packages")
         }
 
         SearchField {

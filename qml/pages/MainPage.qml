@@ -73,9 +73,7 @@ Page {
         visible: !Chum.busy
         onClicked: pageStack.push(Qt.resolvedUrl("PackagesListPage.qml"), {
                                       //% "Updates"
-                                      subTitleAll: qsTrId("chum-updates-all"),
-                                      //% "Updates, applications only"
-                                      subTitleApp: qsTrId("chum-updates-apps"),
+                                      title: qsTrId("chum-updates"),
                                       updatesOnly: true
                                     })
       }
@@ -88,14 +86,13 @@ Page {
       }
 
       MainPageButton {
-        text: Chum.showAppsByDefault ? qsTrId("chum-available-apps") :
-                                       qsTrId("chum-available-packages")
+        text: Chum.showAppsByDefault ?
+                  //% "Applications"
+                  qsTrId("chum-applications") :
+                  //% "Packages"
+                  qsTrId("chum-packages")
         visible: !Chum.busy
         onClicked: pageStack.push(Qt.resolvedUrl("PackagesListPage.qml"), {
-                                      //% "Available packages"
-                                      subTitleAll: qsTrId("chum-available-packages"),
-                                      //% "Available applications"
-                                      subTitleApp: qsTrId("chum-available-apps"),
                                       applicationsOnly: Chum.showAppsByDefault
                                   })
       }
@@ -109,10 +106,8 @@ Page {
           : qsTrId("chum-no-installed")
         visible: !Chum.busy
         onClicked: pageStack.push(Qt.resolvedUrl("PackagesListPage.qml"), {
-                                      //% "Installed packages"
-                                      subTitleAll: qsTrId("chum-installed-packages"),
-                                      //% "Installed applications"
-                                      subTitleApp: qsTrId("chum-installed-apps"),
+                                      //% "Installed"
+                                      title: qsTrId("chum-installed"),
                                       installedOnly: true
                                     })
       }
