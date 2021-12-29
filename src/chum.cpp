@@ -163,7 +163,7 @@ void Chum::refreshDetails() {
   auto tr = Daemon::getDetails(packages);
   connect(tr, &Transaction::details, this, [this](const auto &v) {
     const QString pkid = v.packageId();
-    ChumPackage *p = m_packages.value(packageId(pkid), nullptr);
+    ChumPackage *p = m_packages.value(this->packageId(pkid), nullptr);
     if (p)
       p->setDetails(v);
     else
@@ -196,7 +196,7 @@ void Chum::refreshInstalledVersion() {
           [[maybe_unused]] auto info,
           const auto &packageID,
           [[maybe_unused]] const auto &summary) {
-    ChumPackage *p = m_packages.value(packageId(packageID), nullptr);
+    ChumPackage *p = m_packages.value(this->packageId(packageID), nullptr);
     if (p) p->setPkidInstalled(packageID);
     else
       qWarning() << "Got installed version for missing package:" << packageID;
@@ -211,7 +211,7 @@ void Chum::refreshInstalledVersion() {
         m_installed_count = new_count;
         emit this->installedCountChanged();
       }
-     setStatus(QStringLiteral());
+     this->setStatus(QStringLiteral());
      this->getUpdates(true);
   });
 }
@@ -241,7 +241,7 @@ void Chum::getUpdates(bool force) {
     const QString &packageID,
     [[maybe_unused]] const QString &summary
   ) {
-      ChumPackage *p = m_packages.value(packageId(packageID), nullptr);
+      ChumPackage *p = m_packages.value(this->packageId(packageID), nullptr);
       if (p) p->setUpdateAvailable(true);
   });
   connect(pktr, &Transaction::finished, this, [this]() {
@@ -253,10 +253,10 @@ void Chum::getUpdates(bool force) {
       m_updates_count = new_count;
       emit this->updatesCountChanged();
     }
-    setStatus(QStringLiteral());
+    this->setStatus(QStringLiteral());
     m_busy = false;
-    emit busyChanged();
-    emit packagesChanged();
+    emit this->busyChanged();
+    emit this->packagesChanged();
   });
 }
 
