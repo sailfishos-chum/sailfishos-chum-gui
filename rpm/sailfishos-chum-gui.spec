@@ -21,6 +21,9 @@ BuildRequires:  sailfish-svg2png
 BuildRequires:  PackageKit-Qt5-devel
 BuildRequires:  qt5-qttools-linguist
 
+%define __provides_exclude_from ^%{_datadir}/.*$
+%define __requires_exclude ^libyaml-cpp.*$
+
 %description
 A client app for the Chum repositories.
 
@@ -50,6 +53,9 @@ rm -rf %{buildroot}
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications \
    %{buildroot}%{_datadir}/applications/*.desktop
+
+mkdir -p %{buildroot}%{_datadir}/%{name}/lib
+cp -a %{_libdir}/libyaml-cpp.so.* %{buildroot}%{_datadir}/%{name}/lib
 
 %postun
 ssu rr sailfishos-chum || true
