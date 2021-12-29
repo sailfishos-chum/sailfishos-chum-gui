@@ -16,19 +16,15 @@ Page {
         width: view.width
 
         PageHeader {
-            title: "Chum"
             //% "Categories"
-            description: qsTrId("chum-categories")
+            title: qsTrId("chum-categories")
         }
     }
 
     delegate: ListItem {
       contentHeight: Theme.itemSizeSmall
       onClicked: pageStack.push(Qt.resolvedUrl("../pages/PackagesListPage.qml"), {
-                                    //% "%1 (packages)"
-                                    subTitleAll: qsTrId("chum-available-packages-category").arg(model.category),
-                                    //% "%1 (applications)"
-                                    subTitleApp: qsTrId("chum-available-apps-category").arg(model.category),
+                                    title: model.category,
                                     applicationsOnly: Chum.showAppsByDefault,
                                     category: model.categoryIds
       })
