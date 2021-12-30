@@ -127,13 +127,13 @@ query {
     vi = r.value("starCount").toInt(-1);
     if (vi>=0) m_package->setStarsCount(vi);
 
-    vi = r.value("forksCount").toInt(0);
+    vi = r.value("forksCount").toInt(-1);
     if (vi>=0) m_package->setForksCount(vi);
 
-    vi = r.value("openIssuesCount").toInt(0);
+    vi = r.value("openIssuesCount").toInt(-1);
     if (vi>=0) m_package->setIssuesCount(vi);
 
-    vi = r.value("releases").toObject().value("count").toInt();
+    vi = r.value("releases").toObject().value("count").toInt(-1);
     if (vi>=0) m_package->setReleasesCount(vi);
 
     reply->deleteLater();
