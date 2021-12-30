@@ -69,7 +69,7 @@ void Chum::setManualVersion(const QString &v) {
     }
 
     if (m_manualVersion == v) return;
-    m_manualVersion = v;
+    m_manualVersion = v.trimmed();
 
     QSettings settings;
     settings.setValue(s_config_manualversion, v);
@@ -77,7 +77,6 @@ void Chum::setManualVersion(const QString &v) {
 
     m_busy = true;
     emit busyChanged();
-    //% "Setting up Chum repository"
     setStatus(qtTrId("chum-setup-repo"));
     m_ssu.setRepo(m_manualVersion, m_ssu.repoTesting());
 }

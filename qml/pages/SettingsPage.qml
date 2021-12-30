@@ -65,7 +65,10 @@ Page {
                 onClicked: Chum.repoTesting = !Chum.repoTesting;
             }
 
-            SectionHeader {text: qsTrId("chum-settings-advanced")}
+            SectionHeader {
+                //% "Advanced"
+                text: qsTrId("chum-settings-advanced")
+            }
 
             Label {
                 anchors {
@@ -75,6 +78,7 @@ Page {
                     rightMargin: Theme.horizontalPageMargin
                 }
                 color: Theme.highlightColor
+                //% "Override chum repository release"
                 text: qsTrId("chum-settings-override-release")
             }
 

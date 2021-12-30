@@ -381,14 +381,14 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-advanced">
-        <location filename="../qml/pages/SettingsPage.qml" line="68"/>
-        <source></source>
-        <oldsource>Advanced</oldsource>
+        <location filename="../qml/pages/SettingsPage.qml" line="70"/>
+        <source>Advanced</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-override-release">
-        <location filename="../qml/pages/SettingsPage.qml" line="78"/>
-        <source>"Override Chum Repository Release"</source>
+        <location filename="../qml/pages/SettingsPage.qml" line="82"/>
+        <source>Override chum repository release</source>
+        <oldsource>&quot;Override Chum Repository Release&quot;</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-categories">
