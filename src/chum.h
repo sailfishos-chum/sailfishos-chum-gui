@@ -21,6 +21,7 @@ class Chum : public QObject {
   Q_PROPERTY(bool    showAppsByDefault READ showAppsByDefault WRITE setShowAppsByDefault NOTIFY showAppsByDefaultChanged)
   Q_PROPERTY(QString status         READ status NOTIFY statusChanged)
   Q_PROPERTY(quint32 updatesCount   READ updatesCount NOTIFY updatesCountChanged)
+  Q_PROPERTY(QString manualVersion  READ manualVersion WRITE setManualVersion NOTIFY manualVersionChanged)
 
 public:
   enum PackageOperation {
@@ -39,9 +40,11 @@ public:
   bool    showAppsByDefault() const { return m_show_apps_by_default; };
   QString status() const { return m_status; }
   quint32 updatesCount() const { return m_updates_count; }
+  QString manualVersion() const { return m_manualVersion; }
 
   void    setRepoTesting(bool testing);
   void    setShowAppsByDefault(bool v);
+  void    setManualVersion(const QString &v);
 
   QList<ChumPackage*> packages() const { return m_packages.values(); }
   Q_INVOKABLE ChumPackage* package(const QString &id) const { return m_packages.value(id, nullptr); }
@@ -70,6 +73,7 @@ signals:
   void repoUpdated(); // signal ssu properties change
   void repositoryRefreshed();
   void showAppsByDefaultChanged();
+  void manualVersionChanged();
 
 private:
   explicit Chum(QObject *parent = nullptr);
@@ -95,6 +99,7 @@ private:
   quint32       m_installed_count{0};
   quint32       m_updates_count{0};
   bool          m_show_apps_by_default{false};
+  QString       m_manualVersion;
 
   QHash<QString, ChumPackage*> m_packages;
   QSet<QString>                m_packages_last_refresh;

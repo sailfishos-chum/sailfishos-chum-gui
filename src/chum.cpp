@@ -10,6 +10,7 @@ using namespace PackageKit;
 Chum* Chum::s_instance{nullptr};
 
 static QString s_config_showapps{QStringLiteral("main/showAppsByDefault")};
+static QString s_config_manualversion{QStringLiteral("main/manualVersion")};
 
 static inline auto role2operation(Transaction::Role role) {
   switch (role) {
@@ -34,6 +35,7 @@ Chum::Chum(QObject *parent)
 
   QSettings settings;
   m_show_apps_by_default = (settings.value(s_config_showapps, 1).toInt() != 0);
+  m_manualVersion = (settings.value(s_config_manualversion, QString()).toString());
 
   m_busy = true;
   //% "Load repositories"
@@ -58,6 +60,25 @@ void Chum::setShowAppsByDefault(bool v) {
   QSettings settings;
   settings.setValue(s_config_showapps, v ? 1 : 0);
   emit showAppsByDefaultChanged();
+}
+
+void Chum::setManualVersion(const QString &v) {
+    if (!m_ssu.manageRepo()) {
+        emit error(qtTrId("chum-repo-management-disabled-title"));
+        return;
+    }
+
+    if (m_manualVersion == v) return;
+    m_manualVersion = v.trimmed();
+
+    QSettings settings;
+    settings.setValue(s_config_manualversion, v);
+    emit manualVersionChanged();
+
+    m_busy = true;
+    emit busyChanged();
+    setStatus(qtTrId("chum-setup-repo"));
+    m_ssu.setRepo(m_manualVersion, m_ssu.repoTesting());
 }
 
 /////////////////////////////////////////////////////////////
@@ -313,7 +334,7 @@ void Chum::repositoriesListUpdated() {
       emit busyChanged();
       //% "Adding Chum repository"
       setStatus(qtTrId("chum-add-repo"));
-      m_ssu.setRepo();
+      m_ssu.setRepo(m_manualVersion);
       return;
   }
   refreshRepo(true);
@@ -330,7 +351,7 @@ void Chum::setRepoTesting(bool testing) {
       emit busyChanged();
       //% "Setting up Chum repository"
       setStatus(qtTrId("chum-setup-repo"));
-      m_ssu.setRepo(testing);
+      m_ssu.setRepo(m_manualVersion, testing);
   }
 }
 
