@@ -86,6 +86,7 @@ Page {
                     right: parent.right
                     rightMargin: Theme.horizontalPageMargin
                 }
+                text: Chum.manualVersion;
                 EnterKey.enabled: true
                 EnterKey.iconSource: "image://theme/icon-m-enter-close"
                 EnterKey.onClicked: {
@@ -95,9 +96,5 @@ Page {
                 }
             }
         }
-    }
-
-    Component.onCompleted: {
-        txtRelease.text = Chum.manualVersion;
     }
 }
