@@ -70,30 +70,44 @@ Item {
         visible: text
     }
 
-    Row {
+    Column {
         id: stickers
         anchors.bottom: parent.bottom
         anchors.bottomMargin: Theme.paddingLarge/2
         anchors.right: parent.right
         anchors.rightMargin: Theme.horizontalPageMargin
-        height: Math.max(stars.visible ? stars.height : 0,
-                         status.visible ? status.height : 0)
-        spacing: Theme.paddingLarge
-
-        ImageLabel {
-            id: stars
-            anchors.verticalCenter: parent.verticalCenter
-            image: "image://theme/icon-s-favorite"
-            label: model.packageStarsCount
-            visible: model.packageStarsCount >= 0
-        }
+        width: Math.max(stars.visible ? stars.width : 0,
+                        status.visible ? status.width : 0)
+        spacing: Theme.paddingSmall
 
         Image {
             id: status
-            anchors.verticalCenter: parent.verticalCenter
+            anchors.right: parent.right
             source: model.packageUpdateAvailable ? "image://theme/icon-s-update" :
                                                   "image://theme/icon-s-installed"
             visible: model.packageInstalled || model.packageUpdateAvailable
+        }
+
+        Row {
+            id: stars
+            anchors.right: parent.right
+            height: Math.max(starsLab.height, starsImage.height)
+            spacing: Theme.paddingSmall
+            visible: model.packageStarsCount >= 0
+
+            Label {
+                id: starsLab
+                anchors.verticalCenter: parent.verticalCenter
+                color: Theme.highlightColor
+                font.pixelSize: Theme.fontSizeSmall
+                text: model.packageStarsCount
+            }
+
+            Image {
+                id: starsImage
+                anchors.verticalCenter: parent.verticalCenter
+                source: "image://theme/icon-s-favorite"
+            }
         }
     }
 }
