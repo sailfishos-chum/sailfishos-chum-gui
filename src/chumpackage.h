@@ -43,6 +43,7 @@ public:
     PackageAvailableVersionRole,
     PackageCategoriesRole,
     PackageDescriptionRole,
+    PackageDeveloperRole,
     PackageDeveloperLoginRole,
     PackageDeveloperNameRole,
     PackageIconRole,
