@@ -43,7 +43,6 @@ Page {
 
       MenuItem {
         enabled: !Chum.busy
-        //% "Settings"
         text: qsTrId("chum-settings-title")
         onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
       }
@@ -79,7 +78,6 @@ Page {
       }
 
       MainPageButton {
-        //% "Categories"
         text: qsTrId("chum-categories")
         visible: !Chum.busy
         onClicked: pageStack.push(Qt.resolvedUrl("CategoriesPage.qml"))
@@ -101,7 +99,7 @@ Page {
         enabled: Chum.installedCount > 0
         text: enabled
           //% "Installed packages"
-          ? qsTrId("chum-installed-packages-no")
+          ? qsTrId("chum-installed-packages")
           //% "No packages installed"
           : qsTrId("chum-no-installed")
         visible: !Chum.busy

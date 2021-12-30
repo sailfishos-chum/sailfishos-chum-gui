@@ -303,10 +303,11 @@ void Chum::refreshRepo(bool force) {
     QStringLiteral("refresh-now"),
     QVariant::fromValue(true).toString()
   );
-  connect(pktr, &Transaction::finished, this, [this]() {
+  connect(pktr, &Transaction::finished, this, [this](PackageKit::Transaction::Exit status) {
     setStatus(QStringLiteral());
     refreshPackages();
-    emit this->repositoryRefreshed();
+    if (status == PackageKit::Transaction::ExitSuccess)
+      emit this->repositoryRefreshed();
   });
   connect(pktr, &Transaction::errorCode,
           [this](PackageKit::Transaction::Error /*error*/, const QString &details){

@@ -103,7 +103,6 @@ Page {
                     text: {
                         if (model.created === model.updated)
                             return model.created;
-                        //% "Created: %1; Updated: %2"
                         return qsTrId("chum-created-updated-datetime").
                                arg(model.created).arg(model.updated);
                     }

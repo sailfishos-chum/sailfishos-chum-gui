@@ -144,13 +144,13 @@ query {
     if (!v.isEmpty()) m_package->setUrl(v);
     else m_package->setUrl(QStringLiteral("https://github.com/%1/%2").arg(m_org, m_repo));
 
-    vi = r.value("forks").toObject().value("totalCount").toInt();
+    vi = r.value("forks").toObject().value("totalCount").toInt(-1);
     if (vi>=0) m_package->setForksCount(vi);
 
-    vi = r.value("issues").toObject().value("totalCount").toInt();
+    vi = r.value("issues").toObject().value("totalCount").toInt(-1);
     if (vi>=0) m_package->setIssuesCount(vi);
 
-    vi = r.value("releases").toObject().value("totalCount").toInt();
+    vi = r.value("releases").toObject().value("totalCount").toInt(-1);
     if (vi>=0) m_package->setReleasesCount(vi);
 
     vi = r.value("discussions").toObject().value("totalCount").toInt();

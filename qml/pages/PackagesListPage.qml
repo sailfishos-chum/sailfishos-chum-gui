@@ -48,16 +48,13 @@ Page {
 
       menu: ContextMenu {
           MenuItem {
-              //% "Update"
               text: qsTrId("chum-update")
               onClicked: Chum.updatePackage(model.packageId)
               visible: model.packageUpdateAvailable
           }
           MenuItem {
               text: model.packageInstalled ?
-                        //% "Uninstall"
                         qsTrId("chum-uninstall") :
-                        //% "Install"
                         qsTrId("chum-install")
               onClicked: model.packageInstalled ?
                              Chum.uninstallPackage(model.packageId) :
