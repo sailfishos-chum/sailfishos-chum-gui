@@ -13,6 +13,8 @@ Page {
   property alias  installedOnly: chumModel.filterInstalledOnly
   property alias  updatesOnly: chumModel.filterUpdatesOnly
 
+  signal searchFocus;
+
   allowedOrientations: Orientation.All
 
   SilicaListView {
@@ -38,6 +40,14 @@ Page {
             //% "Search"
             placeholderText: qsTrId("chum-search")
             onTextChanged: page.search = text
+        }
+
+        Connections {
+            target: page
+            onSearchFocus: {
+                console.log("Signal focus");
+                searchField.forceActiveFocus();
+            }
         }
     }
 
@@ -98,5 +108,11 @@ Page {
     }
 
     VerticalScrollDecorator {}
+  }
+
+  Component.onCompleted: {
+      if (chumModel.rowCount() > 10) {
+          page.searchFocus();
+      }
   }
 }
