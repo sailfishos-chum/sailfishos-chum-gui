@@ -70,6 +70,11 @@ Page {
             categoryIds: "Graphics"
         }
         ListElement {
+            //% "Libraries"
+            category: qsTrId("chum-category-libraries")
+            categoryIds: "Library"
+        }
+        ListElement {
             //% "Location and Navigation"
             category: qsTrId("chum-category-maps")
             categoryIds: "Maps"

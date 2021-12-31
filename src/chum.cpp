@@ -99,7 +99,7 @@ void Chum::refreshPackages() {
   m_packages_last_refresh.clear();
   m_packages_last_refresh_installed.clear();
 
-  auto pktr = Daemon::getPackages(Transaction::FilterNotDevel);
+  auto pktr = Daemon::getPackages(Transaction::FilterNotSource);
   //% "Get list of packages"
   setStatus(qtTrId("chum-get-list-packages"));
   connect(pktr, &Transaction::package,  this, [this](
@@ -107,6 +107,10 @@ void Chum::refreshPackages() {
           const QString &packageID,
           [[maybe_unused]] const QString &summary
           ) {
+    QString pn = Daemon::packageName(packageID);
+    if (pn.endsWith(QStringLiteral("-debuginfo")) ||
+        pn.endsWith(QStringLiteral("-debugsource")) )
+      return;
     QString pd = Daemon::packageData(packageID);
     if (pd == m_ssu.repoName())
       m_packages_last_refresh.insert(packageID);

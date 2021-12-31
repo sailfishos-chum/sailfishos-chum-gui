@@ -113,10 +113,13 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
   m_size        = v.size();
 
   // derive name
-  m_name = Daemon::packageName(m_pkid_latest);
+  QString pname = Daemon::packageName(m_pkid_latest);
+  m_name = pname;
   for (const QLatin1String &prefix: {QLatin1String("harbour-"), QLatin1String("openrepos-")})
     if (m_name.startsWith(prefix))
       m_name = m_name.mid(prefix.size());
+  if (m_name.endsWith(QStringLiteral("-devel")))
+    m_name = m_name.left(m_name.size() - 6 /*sizeof -devel*/) + QStringLiteral("-development");
   bool capitalize = true;
   const QChar sep{'-'};
   const QChar space{' '};
@@ -175,7 +178,9 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
 
   m_developer_name = json.value("DeveloperName").toString();
   m_categories = json.value("Categories").toVariant().toStringList();
-  if (m_categories.isEmpty()) m_categories.push_back("Other");
+  if (pname.endsWith(QStringLiteral("-devel")))
+    m_categories.push_back(QStringLiteral("Library"));
+  if (m_categories.isEmpty()) m_categories.push_back(QStringLiteral("Other"));
 
   m_repo_type = json.value("Custom").toObject().value("RepoType").toString();
   m_repo_url = json.value("Custom").toObject().value("Repo").toString();
