@@ -21,7 +21,7 @@ Page {
 
             Image {
                 source: Qt.resolvedUrl("../../icons/sailfishos-chum-gui.svg")
-                width: parent.width / 3
+                width: Math.min(page.width, page.height) / 3
                 height: width
                 anchors.horizontalCenter: parent.horizontalCenter
             }
@@ -84,8 +84,6 @@ Page {
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
                 horizontalAlignment: Text.AlignHCenter
-
-                Component.onCompleted: console.log(qsTrId("chum-about-description"))
             }
         }
     }
