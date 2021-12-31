@@ -36,9 +36,9 @@ Page {
       busy: Chum.busy
 
       MenuItem {
-        enabled: false
         //% "About"
         text: qsTrId("chum-about")
+        onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
       }
 
       MenuItem {
