@@ -118,7 +118,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
   for (const QLatin1String &prefix: {QLatin1String("harbour-"), QLatin1String("openrepos-")})
     if (m_name.startsWith(prefix))
       m_name = m_name.mid(prefix.size());
-  if (m_name.endsWith(QStringLiteral("-devel")))
+  if (m_name.endsWith(QLatin1String("-devel")))
     m_name = m_name.left(m_name.size() - 6 /*sizeof -devel*/) + QStringLiteral("-development");
   bool capitalize = true;
   const QChar sep{'-'};

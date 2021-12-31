@@ -108,8 +108,8 @@ void Chum::refreshPackages() {
           [[maybe_unused]] const QString &summary
           ) {
     QString pn = Daemon::packageName(packageID);
-    if (pn.endsWith(QStringLiteral("-debuginfo")) ||
-        pn.endsWith(QStringLiteral("-debugsource")) )
+    if (pn.endsWith(QLatin1String("-debuginfo")) ||
+        pn.endsWith(QLatin1String("-debugsource")) )
       return;
     QString pd = Daemon::packageData(packageID);
     if (pd == m_ssu.repoName())
