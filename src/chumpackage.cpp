@@ -114,24 +114,31 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
 
   // derive name
   QString pname = Daemon::packageName(m_pkid_latest);
-  m_name = pname;
-  for (const QLatin1String &prefix: {QLatin1String("harbour-"), QLatin1String("openrepos-")})
-    if (m_name.startsWith(prefix))
-      m_name = m_name.mid(prefix.size());
-  if (m_name.endsWith(QLatin1String("-devel")))
-    m_name = m_name.left(m_name.size() - 6 /*sizeof -devel*/) + QStringLiteral("-development");
-  bool capitalize = true;
-  const QChar sep{'-'};
-  const QChar space{' '};
-  for (auto begin = m_name.begin(), end = m_name.end(), it = begin; it != end; ++it) {
-    if (capitalize) {
-      *it = it->toUpper();
-      capitalize = false;
-    } else if (it != begin && *it == sep) {
-      *it = space;
-      capitalize = true;
-    }
+  m_package_name = pname;
+  m_name = QString{};
+  QStringList nparts = pname.split('-');
+  bool is_app = false;
+  bool is_lib = false;
+  if (nparts.size() > 0) {
+     if (nparts.first() == QLatin1String("harbour")) {
+         is_app = true;
+         nparts.removeFirst();
+     } else if (nparts.first() == QLatin1String("openrepos"))
+       nparts.removeFirst();
+     else if (nparts.first().startsWith(QLatin1String("lib"))) {
+       is_lib = true;
+       nparts.first() = nparts.first().mid(3);
+       //% "Library"
+       nparts.insert(1, qtTrId("chum-desc-library"));
+     }
+     if (nparts.last() == QLatin1String("devel")) {
+       is_lib = true;
+       //% "Development"
+       nparts.last() = qtTrId("chum-desc-development");
+     }
   }
+  for (const QString& b: nparts)
+    m_name += b.left(1).toUpper() + b.mid(1).toLower() + " ";
   m_name = m_name.trimmed();
 
   // parse description
@@ -169,7 +176,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
 
   m_name = json.value("PackageName").toString(m_name);
 
-  QString typestr = json.value("Type").toString(m_id.startsWith(QStringLiteral("harbour-")) ?
+  QString typestr = json.value("Type").toString(is_app ?
                                                   QStringLiteral("desktop-application") :
                                                   QStringLiteral("generic"));
   if (typestr == QStringLiteral("desktop-application")) m_type = PackageApplicationDesktop;
@@ -178,7 +185,8 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
 
   m_developer_name = json.value("DeveloperName").toString();
   m_categories = json.value("Categories").toVariant().toStringList();
-  if (pname.endsWith(QStringLiteral("-devel")))
+  // guess category only if it is empty
+  if (is_lib && m_categories.isEmpty())
     m_categories.push_back(QStringLiteral("Library"));
   if (m_categories.isEmpty()) m_categories.push_back(QStringLiteral("Other"));
 

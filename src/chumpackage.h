@@ -25,6 +25,7 @@ class ChumPackage : public QObject {
   Q_PROPERTY(int        issuesCount READ issuesCount  NOTIFY updated)
   Q_PROPERTY(QString    license     READ license      NOTIFY updated)
   Q_PROPERTY(QString    name        READ name         NOTIFY updated)
+  Q_PROPERTY(QString    packageName READ packageName  NOTIFY updated)
   Q_PROPERTY(int        releasesCount READ releasesCount  NOTIFY updated)
   Q_PROPERTY(QString    repo        READ repo         NOTIFY updated)
   Q_PROPERTY(QStringList screenshots READ screenshots NOTIFY updated)
@@ -93,6 +94,7 @@ public:
   int     issuesCount() const { return m_issues_count; }
   QString license() const { return m_license; }
   QString name() const { return m_name; }
+  QString packageName() const { return m_package_name; }
   QString repo() const { return m_repo_url; }
   int     releasesCount() const { return m_releases_count; }
   QStringList screenshots() const { return m_screenshots; }
@@ -154,6 +156,7 @@ private:
   int         m_issues_count{-1};
   QString     m_license;
   QString     m_name;
+  QString     m_package_name;
   int         m_releases_count{-1};
   QString     m_repo_type;
   QString     m_repo_url;
