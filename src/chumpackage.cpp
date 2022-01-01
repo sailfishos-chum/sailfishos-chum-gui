@@ -115,6 +115,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
   // derive name
   QString pname = Daemon::packageName(m_pkid_latest);
   m_name = pname;
+  m_package_name = pname;
   for (const QLatin1String &prefix: {QLatin1String("harbour-"), QLatin1String("openrepos-")})
     if (m_name.startsWith(prefix))
       m_name = m_name.mid(prefix.size());

@@ -62,6 +62,14 @@ MouseArea {
         }
 
         ChumDetailItem {
+            id: packageNameItem
+            //% "Package name"
+            label: qsTrId("chum-pkg-package-name")
+            value: pkg.packageName
+            visible: pkg.packageName
+        }
+
+        ChumDetailItem {
             //% "Download size"
             label: qsTrId("chum-pkg-download-size")
             value: Format.formatFileSize(pkg.size)
