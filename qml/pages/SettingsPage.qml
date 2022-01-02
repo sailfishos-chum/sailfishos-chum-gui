@@ -120,7 +120,7 @@ Page {
                 //% "when Chum repository is not available for your Sailfish OS version, as for "
                 //% "Cbeta users."
                 description: qsTrId("chum-setings-override-release-description")
-                //% "Specify Sailfish version
+                //% "Specify Sailfish version"
                 placeholderText: qsTrId("chum-setings-override-release-placeholder")
                 text: Chum.manualVersion
                 EnterKey.enabled: true

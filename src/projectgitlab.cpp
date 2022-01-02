@@ -91,11 +91,11 @@ QNetworkReply* ProjectGitLab::sendQuery(const QString &query) {
 }
 
 void ProjectGitLab::fetchRepoInfo() {
-  QString query = QStringLiteral(R"(
+  QString query = QStringLiteral(R"GR4PHQL(
 {
 "query": "
 query {
-  project(fullPath: \"%1\") {
+  project(fullPath: "%1") {
     forksCount
     openIssuesCount
     mergeRequests(state: opened) {
@@ -108,7 +108,7 @@ query {
   }
 }"
 }
-)").arg(m_path);
+)GR4PHQL").arg(m_path);
   query = query.replace('\n', ' ');
 
   QNetworkReply *reply = sendQuery(query);
@@ -146,12 +146,12 @@ void ProjectGitLab::issue(const QString &issue_id, LoadableObject *value) {
     return; // value already corresponds to that release
   value->reset(issue_id);
 
-  QString query = QStringLiteral(R"(
+  QString query = QStringLiteral(R"GR4PHQL(
 {
 "query": "
 query {
-  project(fullPath: \"%1\") {
-    issue(iid: \"%2\") {
+  project(fullPath: "%1") {
+    issue(iid: "%2") {
       iid
       title
       author {
@@ -176,7 +176,7 @@ query {
   }
 }"
 }
-)").arg(m_path, issue_id);
+)GR4PHQL").arg(m_path, issue_id);
 
   query = query.replace('\n', ' ');
 
@@ -227,11 +227,11 @@ void ProjectGitLab::issues(LoadableObject *value) {
   const QString issues_id{QStringLiteral("issues")};
   value->reset(issues_id);
 
-  QString query = QStringLiteral(R"(
+  QString query = QStringLiteral(R"GR4PHQL(
 {
 "query": "
 query {
-  project(fullPath: \"%1\") {
+  project(fullPath: "%1") {
     issues(state: opened, sort: UPDATED_DESC) {
       nodes {
         iid
@@ -252,7 +252,7 @@ query {
   }
 }"
 }
-)").arg(m_path);
+)GR4PHQL").arg(m_path);
   query = query.replace('\n', ' ');
 
   QNetworkReply *reply = sendQuery(query);
@@ -295,12 +295,12 @@ void ProjectGitLab::release(const QString &release_id, LoadableObject *value) {
     return; // value already corresponds to that release
   value->reset(release_id);
 
-  QString query = QStringLiteral(R"(
+  QString query = QStringLiteral(R"GR4PHQL(
 {
 "query": "
 query {
-  project(fullPath: \"%1\") {
-    release(tagName: \"%2\") {
+  project(fullPath: "%1") {
+    release(tagName: "%2") {
       name
       createdAt
       descriptionHtml
@@ -308,7 +308,7 @@ query {
   }
 }"
 }
-)").arg(m_path, release_id);
+)GR4PHQL").arg(m_path, release_id);
 
   query = query.replace('\n', ' ');
 
@@ -339,11 +339,11 @@ void ProjectGitLab::releases(LoadableObject *value) {
   const QString releases_id{QStringLiteral("releases")};
   value->reset(releases_id);
 
-  QString query = QStringLiteral(R"(
+  QString query = QStringLiteral(R"GR4PHQL(
 {
 "query": "
 query {
-  project(fullPath: \"%1\") {
+  project(fullPath: "%1") {
     releases {
       nodes {
         name
@@ -354,7 +354,7 @@ query {
   }
 }"
 }
-)").arg(m_path);
+)GR4PHQL").arg(m_path);
   query = query.replace('\n', ' ');
 
   QNetworkReply *reply = sendQuery(query);

@@ -79,11 +79,11 @@ bool ProjectGitHub::isProject(const QString &url) {
 
 
 void ProjectGitHub::fetchRepoInfo() {
-    QString query = QStringLiteral(R"(
+    QString query = QStringLiteral(R"GR4PHQL(
 {
 "query": "
 query {
-  repository(owner: \"%1\", name:\"%2\") {
+  repository(owner: "%1", name:"%2") {
     owner {
       ... on User {
         login
@@ -115,7 +115,7 @@ query {
   }
 }"
 }
-)").arg(m_org, m_repo);
+)GR4PHQL").arg(m_org, m_repo);
     query = query.replace('\n', ' ');
 
     QNetworkReply *reply = sendQuery(query);
@@ -167,11 +167,11 @@ void ProjectGitHub::issue(const QString &issue_id, LoadableObject *value) {
         return; // value already corresponds to that release
     value->reset(issue_id);
 
-    QString query = QStringLiteral(R"(
+    QString query = QStringLiteral(R"GR4PHQL(
 {
 "query": "
 query {
-  repository(owner: \"%1\", name:\"%2\") {
+  repository(owner: "%1", name:"%2") {
     issue(number: %3) {
       number
       title
@@ -210,7 +210,7 @@ query {
   }
 }"
 }
-)").arg(m_org, m_repo, issue_id);
+)GR4PHQL").arg(m_org, m_repo, issue_id);
 
     query = query.replace('\n', ' ');
 
@@ -260,11 +260,11 @@ void ProjectGitHub::issues(LoadableObject *value) {
     const QString issues_id{QStringLiteral("issues")};
     value->reset(issues_id);
 
-    QString query = QStringLiteral(R"(
+    QString query = QStringLiteral(R"GR4PHQL(
 {
 "query": "
 query {
-  repository(owner: \"%1\", name:\"%2\") {
+  repository(owner: "%1", name:"%2") {
     issues(first: 100, states: OPEN, orderBy: {field: UPDATED_AT, direction: DESC}) {
       nodes {
         number
@@ -289,7 +289,7 @@ query {
   }
 }"
 }
-)").arg(m_org, m_repo);
+)GR4PHQL").arg(m_org, m_repo);
     query = query.replace('\n', ' ');
 
     QNetworkReply *reply = sendQuery(query);
@@ -332,12 +332,12 @@ void ProjectGitHub::release(const QString &release_id, LoadableObject *value) {
         return; // value already corresponds to that release
     value->reset(release_id);
 
-    QString query = QStringLiteral(R"(
+    QString query = QStringLiteral(R"GR4PHQL(
 {
 "query": "
 query {
-  repository(owner: \"%1\", name:\"%2\") {
-    release(tagName: \"%3\") {
+  repository(owner: "%1", name:"%2") {
+    release(tagName: "%3") {
       name
       createdAt
       descriptionHTML
@@ -345,7 +345,7 @@ query {
   }
 }"
 }
-)").arg(m_org, m_repo, release_id);
+)GR4PHQL").arg(m_org, m_repo, release_id);
 
     query = query.replace('\n', ' ');
 
@@ -376,11 +376,11 @@ void ProjectGitHub::releases(LoadableObject *value) {
     const QString releases_id{QStringLiteral("releases")};
     value->reset(releases_id);
 
-    QString query = QStringLiteral(R"(
+    QString query = QStringLiteral(R"GR4PHQL(
 {
 "query": "
 query {
-  repository(owner: \"%1\", name:\"%2\") {
+  repository(owner: "%1", name:"%2") {
     releases(first: 30, orderBy: {field: CREATED_AT, direction: DESC}) {
       totalCount
       nodes {
@@ -392,7 +392,7 @@ query {
   }
 }"
 }
-)").arg(m_org, m_repo);
+)GR4PHQL").arg(m_org, m_repo);
     query = query.replace('\n', ' ');
 
     QNetworkReply *reply = sendQuery(query);
