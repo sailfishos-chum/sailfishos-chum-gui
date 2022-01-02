@@ -120,7 +120,7 @@ Page {
                             return model.created;
                         //% "Created: %1; Updated: %2"
                         return qsTrId("chum-created-updated-datetime").
-                               arg(model.created).arg(model.updated);
+                        arg(model.created).arg(model.updated);
                     }
                     truncationMode: TruncationMode.Fade
                     color: Theme.secondaryHighlightColor

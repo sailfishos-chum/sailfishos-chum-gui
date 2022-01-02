@@ -9,10 +9,10 @@ Item {
     property ChumPackage pkg
 
     anchors {
-      left: parent.left
-      leftMargin: Theme.horizontalPageMargin
-      right: parent.right
-      rightMargin: Theme.horizontalPageMargin
+        left: parent.left
+        leftMargin: Theme.horizontalPageMargin
+        right: parent.right
+        rightMargin: Theme.horizontalPageMargin
     }
     height: Math.max(info.height, stickers.height)
 
@@ -61,19 +61,19 @@ Item {
         }
 
         ChumDetailItem {
-          id: categories
-          //% "Categories"
-          label: qsTrId("chum-pkg-categories")
-          value: pkg.categories.join(" ")
-          visible: value
+            id: categories
+            //% "Categories"
+            label: qsTrId("chum-pkg-categories")
+            value: pkg.categories.join(" ")
+            visible: value
         }
     }
 
     Row {
         id: stickers
         anchors {
-          right: parent.right
-          verticalCenter: item.verticalCenter
+            right: parent.right
+            verticalCenter: item.verticalCenter
         }
         spacing: Theme.paddingLarge
 

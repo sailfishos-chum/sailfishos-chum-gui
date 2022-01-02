@@ -6,30 +6,30 @@
 
 class LoadableObject : public QObject
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  Q_PROPERTY(bool ready READ ready NOTIFY readyChanged)
-  Q_PROPERTY(QVariantMap value READ value NOTIFY valueChanged)
+    Q_PROPERTY(bool ready READ ready NOTIFY readyChanged)
+    Q_PROPERTY(QVariantMap value READ value NOTIFY valueChanged)
 
 public:
-  explicit LoadableObject(QObject *parent = nullptr);
+    explicit LoadableObject(QObject *parent = nullptr);
 
-  QString valueId() const { return m_value_id; }
-  bool ready() const { return m_ready; }
-  QVariantMap value() const { return m_value; }
+    QString valueId() const { return m_value_id; }
+    bool ready() const { return m_ready; }
+    QVariantMap value() const { return m_value; }
 
-  void reset(const QString &value_id);
-  void setEmpty();
-  void setValue(const QString &value_id, const QVariantMap &value);
+    void reset(const QString &value_id);
+    void setEmpty();
+    void setValue(const QString &value_id, const QVariantMap &value);
 
 signals:
-  void readyChanged();
-  void valueChanged();
+    void readyChanged();
+    void valueChanged();
 
 private:
-  bool m_ready{false};
-  QVariantMap m_value;
-  QString m_value_id;
+    bool m_ready{false};
+    QVariantMap m_value;
+    QString m_value_id;
 };
 
 #endif // LOADABLEOBJECT_H

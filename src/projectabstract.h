@@ -9,21 +9,21 @@ class ChumPackage;
 
 class ProjectAbstract : public QObject
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  explicit ProjectAbstract(ChumPackage *package);
+    explicit ProjectAbstract(ChumPackage *package);
 
-  virtual void issue(const QString &id, LoadableObject *value) = 0;
-  virtual void issues(LoadableObject *value) = 0;
-  virtual void release(const QString &id, LoadableObject *value) = 0;
-  virtual void releases(LoadableObject *value) = 0;
+    virtual void issue(const QString &id, LoadableObject *value) = 0;
+    virtual void issues(LoadableObject *value) = 0;
+    virtual void release(const QString &id, LoadableObject *value) = 0;
+    virtual void releases(LoadableObject *value) = 0;
 
-  static QString parseDate(QString txt, bool short_format=false);
+    static QString parseDate(QString txt, bool short_format=false);
 
 signals:
 
 protected:
-  ChumPackage *m_package;
+    ChumPackage *m_package;
 };
 
 #endif // PROJECTABSTRACT_H

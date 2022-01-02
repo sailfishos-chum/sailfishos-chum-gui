@@ -8,25 +8,25 @@
 
 class ProjectGitHub : public ProjectAbstract
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  explicit ProjectGitHub(const QString &url, ChumPackage *package);
+    explicit ProjectGitHub(const QString &url, ChumPackage *package);
 
-  static bool isProject(const QString &url);
+    static bool isProject(const QString &url);
 
-  virtual void issue(const QString &id, LoadableObject *value) override;
-  virtual void issues(LoadableObject *value) override;
-  virtual void release(const QString &id, LoadableObject *value) override;
-  virtual void releases(LoadableObject *value) override;
+    virtual void issue(const QString &id, LoadableObject *value) override;
+    virtual void issues(LoadableObject *value) override;
+    virtual void release(const QString &id, LoadableObject *value) override;
+    virtual void releases(LoadableObject *value) override;
 
 signals:
 
 private:
-  void fetchRepoInfo();
+    void fetchRepoInfo();
 
 private:
-  QString m_org;
-  QString m_repo;
+    QString m_org;
+    QString m_repo;
 
 };
 

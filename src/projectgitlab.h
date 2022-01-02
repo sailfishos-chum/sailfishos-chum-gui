@@ -9,31 +9,31 @@
 
 class ProjectGitLab : public ProjectAbstract
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  explicit ProjectGitLab(const QString &url, ChumPackage *package);
+    explicit ProjectGitLab(const QString &url, ChumPackage *package);
 
-  static bool isProject(const QString &url);
+    static bool isProject(const QString &url);
 
-  virtual void issue(const QString &id, LoadableObject *value) override;
-  virtual void issues(LoadableObject *value) override;
-  virtual void release(const QString &id, LoadableObject *value) override;
-  virtual void releases(LoadableObject *value) override;
+    virtual void issue(const QString &id, LoadableObject *value) override;
+    virtual void issues(LoadableObject *value) override;
+    virtual void release(const QString &id, LoadableObject *value) override;
+    virtual void releases(LoadableObject *value) override;
 
 signals:
 
 private:
-  QNetworkReply* sendQuery(const QString &query);
-  void fetchRepoInfo();
+    QNetworkReply* sendQuery(const QString &query);
+    void fetchRepoInfo();
 
-  static void initSites();
+    static void initSites();
 
 private:
-  QString m_host;
-  QString m_path;
-  QString m_token;
+    QString m_host;
+    QString m_path;
+    QString m_token;
 
-  static QMap<QString, QString> s_sites;
+    static QMap<QString, QString> s_sites;
 };
 
 #endif // PROJECTGITLAB_H

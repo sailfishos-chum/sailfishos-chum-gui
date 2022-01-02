@@ -84,7 +84,7 @@ Item {
             id: status
             anchors.right: parent.right
             source: model.packageUpdateAvailable ? "image://theme/icon-s-update" :
-                                                  "image://theme/icon-s-installed"
+                                                   "image://theme/icon-s-installed"
             visible: model.packageInstalled || model.packageUpdateAvailable
         }
 
