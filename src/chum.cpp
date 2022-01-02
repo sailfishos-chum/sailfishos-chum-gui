@@ -125,7 +125,7 @@ void Chum::refreshPackagesInstalled()
 {
   // check what repository provides installed packages
   QHash<QString,QString> packages;
-  for (const auto &p: std::as_const(m_packages_last_refresh_installed))
+  for (const auto &p: m_packages_last_refresh_installed)
     packages[p] = Daemon::packageName(p);
 
   auto tr = Daemon::whatProvides(packages.values());
@@ -145,7 +145,7 @@ void Chum::refreshPackagesFinished()
 {
   // check if some packages disappeared
   QSet<QString> last_ids;
-  for (const QString &p: std::as_const(m_packages_last_refresh))
+  for (const QString &p: m_packages_last_refresh)
     last_ids.insert(packageId(p));
 
   // remove packages that are not listed anymore
@@ -158,7 +158,7 @@ void Chum::refreshPackagesFinished()
     }
 
   // create or update packages
-  for (const QString &p: std::as_const(m_packages_last_refresh)) {
+  for (const QString &p: m_packages_last_refresh) {
     const QString id = packageId(p);
     ChumPackage *package = m_packages.value(id, nullptr);
     if (!package) {
@@ -182,7 +182,7 @@ void Chum::refreshDetails() {
   setStatus(qtTrId("chum-get-package-details"));
 
   QStringList packages;
-  for (const ChumPackage *p: std::as_const(m_packages))
+  for (const ChumPackage *p: m_packages)
     if (p->detailsNeedsUpdate())
       packages.append(p->pkidLatest());
 
@@ -212,7 +212,7 @@ void Chum::refreshInstalledVersion() {
   setStatus(qtTrId("chum-get-package-version"));
 
   QStringList packages;
-  for (ChumPackage *p: std::as_const(m_packages)) {
+  for (ChumPackage *p: m_packages) {
     p->clearInstalled();
     packages.append(Daemon::packageName(p->pkidLatest()));
   }
@@ -230,7 +230,7 @@ void Chum::refreshInstalledVersion() {
 
   connect(tr, &Transaction::finished, this, [this]() {
       size_t new_count = 0;
-      for (ChumPackage *p: std::as_const(m_packages))
+      for (ChumPackage *p: m_packages)
         if (p->installed())
           ++new_count;
       if (m_installed_count != new_count) {
@@ -258,7 +258,7 @@ void Chum::getUpdates(bool force) {
   //% "Check for updates"
   setStatus(qtTrId("chum-check-updates"));
 
-  for (ChumPackage *p: std::as_const(m_packages))
+  for (ChumPackage *p: m_packages)
     p->setUpdateAvailable(false);
 
   auto pktr = Daemon::getUpdates();
@@ -272,7 +272,7 @@ void Chum::getUpdates(bool force) {
   });
   connect(pktr, &Transaction::finished, this, [this]() {
     size_t new_count = 0;
-    for (ChumPackage *p: std::as_const(m_packages))
+    for (ChumPackage *p: m_packages)
       if (p->updateAvailable())
         ++new_count;
     if (m_updates_count != new_count) {
@@ -401,7 +401,7 @@ void Chum::updatePackage(const QString &id) {
 void Chum::updateAllPackages() {
   if (m_busy) return;
   QStringList pkids;
-  for (ChumPackage *p: std::as_const(m_packages))
+  for (ChumPackage *p: m_packages)
     if (p->updateAvailable())
       pkids.append(p->pkidLatest());
   if (pkids.isEmpty()) return; // nothing to update
