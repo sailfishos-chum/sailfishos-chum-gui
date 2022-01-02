@@ -119,7 +119,7 @@ query {
   query = query.replace('\n', ' ');
 
   QNetworkReply *reply = sendQuery(query);
-  connect(reply, &QNetworkReply::finished, [this, reply](){
+  connect(reply, &QNetworkReply::finished, this, [this, reply](){
     if (reply->error() != QNetworkReply::NoError) {
       qWarning() << "Failed to fetch repository data for" << this->m_org << this->m_repo;
       qWarning() << "Error: " << reply->errorString();
@@ -215,7 +215,7 @@ query {
   query = query.replace('\n', ' ');
 
   QNetworkReply *reply = sendQuery(query);
-  connect(reply, &QNetworkReply::finished, [this, issue_id, reply, value](){
+  connect(reply, &QNetworkReply::finished, this, [this, issue_id, reply, value](){
     if (reply->error() != QNetworkReply::NoError) {
       qWarning() << "Failed to fetch issue for" << this->m_org << this->m_repo;
       qWarning() << "Error: " << reply->errorString();
@@ -239,7 +239,7 @@ query {
     m["updated"] = parseDate(r.value("updatedAt").toString(), true);
     m["body"] = r.value("bodyHTML").toString();
     result_list.append(m);
-    for (auto e: clist) {
+    for (const auto &e: clist) {
       QVariantMap element = e.toMap();
       m.clear();
       m["author"] = getName(element.value("author"));
@@ -293,7 +293,7 @@ query {
   query = query.replace('\n', ' ');
 
   QNetworkReply *reply = sendQuery(query);
-  connect(reply, &QNetworkReply::finished, [this, issues_id, reply, value](){
+  connect(reply, &QNetworkReply::finished, this, [this, issues_id, reply, value](){
     if (reply->error() != QNetworkReply::NoError) {
       qWarning() << "Failed to fetch issues for" << this->m_org << this->m_repo;
       qWarning() << "Error: " << reply->errorString();
@@ -305,7 +305,7 @@ query {
           value("issues").toObject().value("nodes").toArray().toVariantList();
 
     QVariantList rlist;
-    for (auto e: r) {
+    for (const auto &e: r) {
       QVariantMap element = e.toMap();
       QVariantMap m;
       m["id"] = element.value("number");
@@ -350,7 +350,7 @@ query {
   query = query.replace('\n', ' ');
 
   QNetworkReply *reply = sendQuery(query);
-  connect(reply, &QNetworkReply::finished, [this, release_id, reply, value](){
+  connect(reply, &QNetworkReply::finished, this, [this, release_id, reply, value](){
     if (reply->error() != QNetworkReply::NoError) {
       qWarning() << "Failed to fetch release for" << this->m_org << this->m_repo;
       qWarning() << "Error: " << reply->errorString();
@@ -396,7 +396,7 @@ query {
   query = query.replace('\n', ' ');
 
   QNetworkReply *reply = sendQuery(query);
-  connect(reply, &QNetworkReply::finished, [this, releases_id, reply, value](){
+  connect(reply, &QNetworkReply::finished, this, [this, releases_id, reply, value](){
     if (reply->error() != QNetworkReply::NoError) {
       qWarning() << "Failed to fetch releases for" << this->m_org << this->m_repo;
       qWarning() << "Error: " << reply->errorString();
@@ -408,7 +408,7 @@ query {
           value("releases").toObject().value("nodes").toArray().toVariantList();
 
     QVariantList rlist;
-    for (auto e: r) {
+    for (const auto &e: r) {
       QVariantMap element = e.toMap();
       QVariantMap m;
       m["id"] = element.value("tagName");

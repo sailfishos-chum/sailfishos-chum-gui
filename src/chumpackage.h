@@ -125,7 +125,7 @@ public:
 
 signals:
   void idChanged();
-  void updated(QString packageId, Role role);
+  void updated(QString packageId, ChumPackage::Role role);
   void updateAvailableChanged();
 
 private:

@@ -46,7 +46,7 @@ public:
   void    setShowAppsByDefault(bool v);
   void    setManualVersion(const QString &v);
 
-  QList<ChumPackage*> packages() const { return m_packages.values(); }
+  const QList<ChumPackage*> packages() const { return m_packages.values(); }
   Q_INVOKABLE ChumPackage* package(const QString &id) const { return m_packages.value(id, nullptr); }
 
   // static public methods
@@ -68,8 +68,8 @@ signals:
   void statusChanged();
   void updatesCountChanged();
   void packagesChanged();
-  void packageOperationStarted( PackageOperation operation, const QString &name);
-  void packageOperationFinished(PackageOperation operation, const QString &name, const QString &version);
+  void packageOperationStarted( Chum::PackageOperation operation, const QString &name);
+  void packageOperationFinished(Chum::PackageOperation operation, const QString &name, const QString &version);
   void repoUpdated(); // signal ssu properties change
   void repositoryRefreshed();
   void showAppsByDefaultChanged();

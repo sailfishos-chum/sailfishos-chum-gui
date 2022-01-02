@@ -61,7 +61,7 @@ void Ssu::onListFinished(QDBusPendingCallWatcher *call) {
   int count = 0;
   bool has_reg = false;
   QString repo_name;
-  for (const auto &u: m_repos)
+  for (const auto &u: std::as_const(m_repos))
     if (u.second.startsWith(s_repo_regular_prefix)) {
         ++count;
         has_reg = true;
@@ -127,7 +127,7 @@ void Ssu::setRepo(const QString &version, bool testing) {
       // check if proposed name is taken
       for (bool done=false; !done; ) {
           done = true;
-          for (const auto &u: m_repos) {
+          for (const auto &u: std::as_const(m_repos)) {
               if (u.first == rname) {
                   rname.append(QStringLiteral("-gui"));
                   done = false;
