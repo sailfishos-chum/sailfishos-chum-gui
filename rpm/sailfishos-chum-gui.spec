@@ -1,6 +1,6 @@
 Name:           sailfishos-chum-gui
 Summary:        Chum GUI
-Version:        0.2.0
+Version:        0.3.0
 Release:        1
 Group:          Applications/System
 License:        MIT

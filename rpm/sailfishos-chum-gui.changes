@@ -1,3 +1,9 @@
+* Sun Jan 02 2022 Rinigus <rinigus.git@gmail.com> 0.3.0-1
+- Add metadata support
+- Add GitHub and GitLab integration
+- GUI updates and addition of missing elements
+- Manage Chum repositories from GUI
+
 * Thu Sep 23 2021 Petr Tsymbarovich <petr@tsymbarovich.ru> 0.2.0-1
 - Don't list devel packages
 - Show installed version for updates
