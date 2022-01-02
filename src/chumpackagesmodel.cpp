@@ -181,7 +181,7 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
   // minor change and invalidate corresponding cell
   int i = m_packages.indexOf(packageId);
   if (i < 0) return; // no such package
-  dataChanged(index(i), index(i) ); // just refresh whole row to simplify processing here
+  emit dataChanged(index(i), index(i) ); // just refresh whole row to simplify processing here
 }
 
 void ChumPackagesModel::setFilterApplicationsOnly(bool filter) {

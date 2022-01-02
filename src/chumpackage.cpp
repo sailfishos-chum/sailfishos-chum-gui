@@ -20,7 +20,6 @@ using namespace PackageKit;
   emit updated(m_id, role); \
 }
 
-
 ChumPackage::ChumPackage(QObject *parent)
   : QObject{parent}
 {
@@ -138,7 +137,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
      }
   }
   for (const QString& b: nparts)
-    m_name += b.left(1).toUpper() + b.mid(1).toLower() + " ";
+    m_name += b.at(0).toUpper() + b.mid(1).toLower() + " ";
   m_name = m_name.trimmed();
 
   // parse description

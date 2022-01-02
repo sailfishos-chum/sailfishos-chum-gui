@@ -31,7 +31,7 @@ Chum::Chum(QObject *parent)
 {
   connect(&m_ssu, &Ssu::updated, this, &Chum::repositoriesListUpdated);
   connect(&m_ssu, &Ssu::updated, this, &Chum::repoUpdated);
-  connect(Daemon::global(), &Daemon::updatesChanged, [this]() { this->getUpdates(); });
+  connect(Daemon::global(), &Daemon::updatesChanged, this, [this]() { this->getUpdates(); });
 
   QSettings settings;
   m_show_apps_by_default = (settings.value(s_config_showapps, 1).toInt() != 0);
@@ -167,7 +167,7 @@ void Chum::refreshPackagesFinished()
     package->setPkidLatest(p);
   }
 
-  setStatus(QStringLiteral());
+  setStatus(QLatin1String(""));
   refreshDetails();
 }
 
@@ -181,7 +181,7 @@ void Chum::refreshDetails() {
   setStatus(qtTrId("chum-get-package-details"));
 
   QStringList packages;
-  for (const ChumPackage *p: m_packages.values())
+  for (const ChumPackage *p: m_packages)
     if (p->detailsNeedsUpdate())
       packages.append(p->pkidLatest());
 
@@ -196,7 +196,7 @@ void Chum::refreshDetails() {
   });
 
   connect(tr, &Transaction::finished, this, [this]() {
-     setStatus(QStringLiteral());
+     setStatus(QLatin1String(""));
      this->refreshInstalledVersion();
   });
 }
@@ -211,7 +211,7 @@ void Chum::refreshInstalledVersion() {
   setStatus(qtTrId("chum-get-package-version"));
 
   QStringList packages;
-  for (ChumPackage *p: m_packages.values()) {
+  for (ChumPackage *p: m_packages) {
     p->clearInstalled();
     packages.append(Daemon::packageName(p->pkidLatest()));
   }
@@ -229,14 +229,14 @@ void Chum::refreshInstalledVersion() {
 
   connect(tr, &Transaction::finished, this, [this]() {
       size_t new_count = 0;
-      for (ChumPackage *p: m_packages.values())
+      for (ChumPackage *p: m_packages)
         if (p->installed())
           ++new_count;
       if (m_installed_count != new_count) {
         m_installed_count = new_count;
         emit this->installedCountChanged();
       }
-     this->setStatus(QStringLiteral());
+     this->setStatus(QLatin1String(""));
      this->getUpdates(true);
   });
 }
@@ -257,7 +257,7 @@ void Chum::getUpdates(bool force) {
   //% "Check for updates"
   setStatus(qtTrId("chum-check-updates"));
 
-  for (ChumPackage *p: m_packages.values())
+  for (ChumPackage *p: m_packages)
     p->setUpdateAvailable(false);
 
   auto pktr = Daemon::getUpdates();
@@ -271,14 +271,14 @@ void Chum::getUpdates(bool force) {
   });
   connect(pktr, &Transaction::finished, this, [this]() {
     size_t new_count = 0;
-    for (ChumPackage *p: m_packages.values())
+    for (ChumPackage *p: m_packages)
       if (p->updateAvailable())
         ++new_count;
     if (m_updates_count != new_count) {
       m_updates_count = new_count;
       emit this->updatesCountChanged();
     }
-    this->setStatus(QStringLiteral());
+    this->setStatus(QLatin1String(""));
     m_busy = false;
     emit this->busyChanged();
     emit this->packagesChanged();
@@ -308,12 +308,12 @@ void Chum::refreshRepo(bool force) {
     QVariant::fromValue(true).toString()
   );
   connect(pktr, &Transaction::finished, this, [this](PackageKit::Transaction::Exit status) {
-    setStatus(QStringLiteral());
+    setStatus(QLatin1String(""));
     refreshPackages();
     if (status == PackageKit::Transaction::ExitSuccess)
       emit this->repositoryRefreshed();
   });
-  connect(pktr, &Transaction::errorCode,
+  connect(pktr, &Transaction::errorCode, this,
           [this](PackageKit::Transaction::Error /*error*/, const QString &details){
       qWarning() << "Failed to refresh Chum repository" << details;
       //% "Failed to refresh Chum repository"
@@ -400,7 +400,7 @@ void Chum::updatePackage(const QString &id) {
 void Chum::updateAllPackages() {
   if (m_busy) return;
   QStringList pkids;
-  for (ChumPackage *p: m_packages.values())
+  for (ChumPackage *p: m_packages)
     if (p->updateAvailable())
       pkids.append(p->pkidLatest());
   if (pkids.isEmpty()) return; // nothing to update
@@ -425,7 +425,7 @@ void Chum::startOperation(Transaction *pktr, const QString &pkg_id) {
           [this, pktr, pkg_id](PackageKit::Transaction::Exit status, uint /*runtime*/) {
     m_busy = false;
     emit busyChanged();
-    setStatus(QStringLiteral());
+    setStatus(QLatin1String(""));
     if (status == PackageKit::Transaction::ExitSuccess)
       emit this->packageOperationFinished(
         role2operation(pktr->role()),
@@ -435,7 +435,7 @@ void Chum::startOperation(Transaction *pktr, const QString &pkg_id) {
     refreshPackages(); // update all packages details and installed status
   });
 
-  connect(pktr, &Transaction::errorCode,
+  connect(pktr, &Transaction::errorCode, this,
           [this, pktr, pkg_id](PackageKit::Transaction::Error /*error*/, const QString &details){
     qWarning() << "Failed" << role2operation(pktr->role())
                << pkg_id

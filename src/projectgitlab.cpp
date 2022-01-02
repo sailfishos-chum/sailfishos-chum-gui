@@ -112,7 +112,7 @@ query {
   query = query.replace('\n', ' ');
 
   QNetworkReply *reply = sendQuery(query);
-  connect(reply, &QNetworkReply::finished, [this, reply](){
+  connect(reply, &QNetworkReply::finished, this, [this, reply](){
     if (reply->error() != QNetworkReply::NoError) {
       qWarning() << "GitLab: Failed to fetch repository data for GitLab" << this->m_path;
       qWarning() << "GitLab: Error: " << reply->errorString();
@@ -181,7 +181,7 @@ query {
   query = query.replace('\n', ' ');
 
   QNetworkReply *reply = sendQuery(query);
-  connect(reply, &QNetworkReply::finished, [this, issue_id, reply, value](){
+  connect(reply, &QNetworkReply::finished, this, [this, issue_id, reply, value](){
     if (reply->error() != QNetworkReply::NoError) {
       qWarning() << "GitLab: Failed to fetch issue for" << this->m_path;
       qWarning() << "GitLab: Error: " << reply->errorString();
@@ -256,7 +256,7 @@ query {
   query = query.replace('\n', ' ');
 
   QNetworkReply *reply = sendQuery(query);
-  connect(reply, &QNetworkReply::finished, [this, issues_id, reply, value](){
+  connect(reply, &QNetworkReply::finished, this, [this, issues_id, reply, value](){
     if (reply->error() != QNetworkReply::NoError) {
       qWarning() << "GitLab: Failed to fetch issues for" << this->m_path;
       qWarning() << "GitLab: Error: " << reply->errorString();
@@ -268,7 +268,7 @@ query {
           value("issues").toObject().value("nodes").toArray().toVariantList();
 
     QVariantList rlist;
-    for (auto e: r) {
+    for (const auto &e: r) {
       QVariantMap element = e.toMap();
       QVariantMap m;
       m["id"] = element.value("iid");
@@ -313,7 +313,7 @@ query {
   query = query.replace('\n', ' ');
 
   QNetworkReply *reply = sendQuery(query);
-  connect(reply, &QNetworkReply::finished, [this, release_id, reply, value](){
+  connect(reply, &QNetworkReply::finished, this, [this, release_id, reply, value](){
     if (reply->error() != QNetworkReply::NoError) {
       qWarning() << "GitLab: Failed to fetch release for" << this->m_path;
       qWarning() << "GitLab: Error: " << reply->errorString();
@@ -358,7 +358,7 @@ query {
   query = query.replace('\n', ' ');
 
   QNetworkReply *reply = sendQuery(query);
-  connect(reply, &QNetworkReply::finished, [this, releases_id, reply, value](){
+  connect(reply, &QNetworkReply::finished, this, [this, releases_id, reply, value](){
     if (reply->error() != QNetworkReply::NoError) {
       qWarning() << "GitLab: Failed to fetch releases for" << this->m_path;
       qWarning() << "GitLab: Error: " << reply->errorString();
@@ -370,7 +370,7 @@ query {
           value("releases").toObject().value("nodes").toArray().toVariantList();
 
     QVariantList rlist;
-    for (auto e: r) {
+    for (const auto &e: r) {
       QVariantMap element = e.toMap();
       QVariantMap m;
       m["id"] = element.value("tagName");
