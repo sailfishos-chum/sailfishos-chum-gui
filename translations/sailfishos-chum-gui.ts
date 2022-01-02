@@ -4,22 +4,22 @@
 <context>
     <name></name>
     <message id="chum-search">
-        <location filename="../qml/pages/PackagesListPage.qml" line="39"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="41"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-packages-list-show-all">
-        <location filename="../qml/pages/PackagesListPage.qml" line="87"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="97"/>
         <source>Show all packages</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-packages-list-show-apps">
-        <location filename="../qml/pages/PackagesListPage.qml" line="89"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="99"/>
         <source>Show applications only</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-packages-list-apply-all-updates">
-        <location filename="../qml/pages/PackagesListPage.qml" line="94"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="104"/>
         <source>Apply all updates</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84,13 +84,13 @@
     </message>
     <message id="chum-applications">
         <location filename="../qml/pages/MainPage.qml" line="89"/>
-        <location filename="../qml/pages/PackagesListPage.qml" line="30"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="32"/>
         <source>Applications</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-packages">
         <location filename="../qml/pages/MainPage.qml" line="91"/>
-        <location filename="../qml/pages/PackagesListPage.qml" line="31"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="33"/>
         <source>Packages</source>
         <translation type="unfinished"></translation>
     </message>
@@ -126,19 +126,19 @@
     </message>
     <message id="chum-update">
         <location filename="../qml/pages/PackagePage.qml" line="39"/>
-        <location filename="../qml/pages/PackagesListPage.qml" line="53"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="63"/>
         <source>Update</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-install">
         <location filename="../qml/pages/PackagePage.qml" line="41"/>
-        <location filename="../qml/pages/PackagesListPage.qml" line="60"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="70"/>
         <source>Install</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-uninstall">
         <location filename="../qml/pages/PackagePage.qml" line="49"/>
-        <location filename="../qml/pages/PackagesListPage.qml" line="59"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="69"/>
         <source>Uninstall</source>
         <translation type="unfinished"></translation>
     </message>
@@ -320,18 +320,23 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
         <source>Available version</source>
         <translation type="unfinished"></translation>
     </message>
+    <message id="chum-pkg-package-name">
+        <location filename="../qml/components/AppInformation.qml" line="67"/>
+        <source>Package name</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="chum-pkg-download-size">
-        <location filename="../qml/components/AppInformation.qml" line="66"/>
+        <location filename="../qml/components/AppInformation.qml" line="74"/>
         <source>Download size</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-license">
-        <location filename="../qml/components/AppInformation.qml" line="73"/>
+        <location filename="../qml/components/AppInformation.qml" line="81"/>
         <source>License</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-link">
-        <location filename="../qml/components/AppInformation.qml" line="84"/>
+        <location filename="../qml/components/AppInformation.qml" line="92"/>
         <source>Link</source>
         <translation type="unfinished"></translation>
     </message>
@@ -526,6 +531,16 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
         <location filename="../qml/pages/AboutPage.qml" line="80"/>
         <source>Sailfish OS Community repositories provide a collection of applications, tools, and libraries compiled for different combinations of architectures and Sailfish versions.&lt;br&gt;&lt;br&gt;The ambition is to become the main repository for software distribution on Sailfish OS. When compared to software distribution via Jolla Store or OpenRepos, the software is compiled into RPMs in a reproducible way directly from the source. The source used for the compilation is available at OBS together with the compiled packages. This is in contrast with the Jolla Store and OpenRepos where all packages are uploaded in binary form without any control over how the binary was compiled.&lt;br&gt;&lt;br&gt;By collecting the software in a single automated build system, we can benefit from collaboration between developers through shared packaging of required libraries, reduce duplication of work by keeping the packages up to date, and get a clear overview of missing software.</source>
         <oldsource>Sailfish OS Community repositories provide a collection of applications, tools, and libraries compiled for different combinations of architectures and Sailfish versions.&lt;br&gt;&lt;br&gt;The ambition is to become the main repository for software distribution on Sailfish OS.When compared to software distribution via Jolla Store or OpenRepos, the software is compiled into RPMs in a reproducible way directly from the source. The source used for the compilation is available at OBS together with the compiled packages. This is in contrast with the Jolla Store and OpenRepos where all packages are uploaded in binary form without any control over how the binary was compiled.&lt;br&gt;&lt;br&gt;By collecting the software in a single automated build system, we can benefit from collaboration between developers through shared packaging of required libraries, reduce duplication of work by keeping the packages up to date, and get a clear overview of missing software.</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-desc-library">
+        <location filename="../src/chumpackage.cpp" line="131"/>
+        <source>Library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-desc-development">
+        <location filename="../src/chumpackage.cpp" line="136"/>
+        <source>Development</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
