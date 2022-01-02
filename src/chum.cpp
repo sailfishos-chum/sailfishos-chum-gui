@@ -4,7 +4,6 @@
 
 #include <QDebug>
 #include <QSettings>
-#include <utility>
 
 using namespace PackageKit;
 
@@ -168,7 +167,7 @@ void Chum::refreshPackagesFinished()
     package->setPkidLatest(p);
   }
 
-  setStatus(QLatin1String());
+  setStatus(QLatin1String(""));
   refreshDetails();
 }
 
@@ -197,7 +196,7 @@ void Chum::refreshDetails() {
   });
 
   connect(tr, &Transaction::finished, this, [this]() {
-     setStatus(QLatin1String());
+     setStatus(QLatin1String(""));
      this->refreshInstalledVersion();
   });
 }
@@ -237,7 +236,7 @@ void Chum::refreshInstalledVersion() {
         m_installed_count = new_count;
         emit this->installedCountChanged();
       }
-     this->setStatus(QLatin1String());
+     this->setStatus(QLatin1String(""));
      this->getUpdates(true);
   });
 }
@@ -279,7 +278,7 @@ void Chum::getUpdates(bool force) {
       m_updates_count = new_count;
       emit this->updatesCountChanged();
     }
-    this->setStatus(QLatin1String());
+    this->setStatus(QLatin1String(""));
     m_busy = false;
     emit this->busyChanged();
     emit this->packagesChanged();
@@ -309,7 +308,7 @@ void Chum::refreshRepo(bool force) {
     QVariant::fromValue(true).toString()
   );
   connect(pktr, &Transaction::finished, this, [this](PackageKit::Transaction::Exit status) {
-    setStatus(QLatin1String());
+    setStatus(QLatin1String(""));
     refreshPackages();
     if (status == PackageKit::Transaction::ExitSuccess)
       emit this->repositoryRefreshed();
@@ -426,7 +425,7 @@ void Chum::startOperation(Transaction *pktr, const QString &pkg_id) {
           [this, pktr, pkg_id](PackageKit::Transaction::Exit status, uint /*runtime*/) {
     m_busy = false;
     emit busyChanged();
-    setStatus(QLatin1String());
+    setStatus(QLatin1String(""));
     if (status == PackageKit::Transaction::ExitSuccess)
       emit this->packageOperationFinished(
         role2operation(pktr->role()),
