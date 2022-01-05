@@ -230,6 +230,10 @@ void ChumPackage::setInstalledVersion(const QString &v)
 }
 
 void ChumPackage::setDeveloperLogin(const QString &login) {
+    // If developer name was set (presumingly from SPEC) then avoid setting login separately.
+    // As login is impssible to set from SPEC separately, this prevents getting conflicting
+    // records
+    if (!m_developer_name.isEmpty()) return;
     SET_IF_EMPTY(m_developer_login, PackageDeveloperRole, login);
 }
 
