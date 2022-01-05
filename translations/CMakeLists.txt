@@ -2,6 +2,7 @@ set(TS_FILES
   sailfishos-chum-gui.ts
   sailfishos-chum-gui-pl.ts
   sailfishos-chum-gui-sv.ts
+  sailfishos-chum-gui-de.ts
 )
 
 # Implementing custom logic as
