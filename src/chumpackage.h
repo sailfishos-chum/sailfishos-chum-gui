@@ -144,6 +144,7 @@ private:
     QString     m_description;
     QString     m_developer_login;
     QString     m_developer_name;
+    bool        m_developer_name_from_spec{false};
     QString     m_donation;
     int         m_forks_count{-1};
     QString     m_icon;
