@@ -131,6 +131,7 @@ query {
         QString v;
         int vi;
 
+        // set login before name
         v = r.value("owner").toObject().value("login").toString();
         if (!v.isEmpty()) m_package->setDeveloperLogin(v);
 

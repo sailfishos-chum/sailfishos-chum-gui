@@ -15,8 +15,6 @@ class ChumPackage : public QObject {
     Q_PROPERTY(QStringList categories READ categories   NOTIFY updated)
     Q_PROPERTY(QString    description READ description  NOTIFY updated)
     Q_PROPERTY(QString    developer   READ developer    NOTIFY updated)
-    Q_PROPERTY(QString    developerLogin READ developerLogin  NOTIFY updated)
-    Q_PROPERTY(QString    developerName READ developerName  NOTIFY updated)
     Q_PROPERTY(QString    donation    READ donation     NOTIFY updated)
     Q_PROPERTY(int        forksCount  READ forksCount   NOTIFY updated)
     Q_PROPERTY(QString    icon        READ icon         NOTIFY updated)
@@ -45,8 +43,6 @@ public:
         PackageCategoriesRole,
         PackageDescriptionRole,
         PackageDeveloperRole,
-        PackageDeveloperLoginRole,
-        PackageDeveloperNameRole,
         PackageIconRole,
         PackageInstalledRole,
         PackageInstalledVersionRole,
@@ -84,8 +80,6 @@ public:
     QStringList categories() const { return m_categories; }
     QString description() const { return m_description; }
     QString developer() const;
-    QString developerLogin() const { return m_developer_login; }
-    QString developerName() const { return m_developer_name; }
     QString donation() const { return m_donation; }
     int     forksCount() const { return m_forks_count; }
     QString icon() const { return m_icon; }

@@ -230,11 +230,11 @@ void ChumPackage::setInstalledVersion(const QString &v)
 }
 
 void ChumPackage::setDeveloperLogin(const QString &login) {
-    SET_IF_EMPTY(m_developer_login, PackageDeveloperLoginRole, login);
+    SET_IF_EMPTY(m_developer_login, PackageDeveloperRole, login);
 }
 
 void ChumPackage::setDeveloperName(const QString &name) {
-    SET_IF_EMPTY(m_developer_name, PackageDeveloperLoginRole, name);
+    SET_IF_EMPTY(m_developer_name, PackageDeveloperRole, name);
 }
 
 void ChumPackage::setUrl(const QString &url) {
