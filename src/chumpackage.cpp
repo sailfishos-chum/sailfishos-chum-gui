@@ -183,6 +183,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
     else m_type = PackageGeneric;
 
     m_developer_name = json.value("DeveloperName").toString();
+    m_developer_name_from_spec = !m_developer_name.isEmpty();
     m_categories = json.value("Categories").toVariant().toStringList();
     // guess category only if it is empty
     if (is_lib && m_categories.isEmpty())
@@ -230,11 +231,15 @@ void ChumPackage::setInstalledVersion(const QString &v)
 }
 
 void ChumPackage::setDeveloperLogin(const QString &login) {
-    SET_IF_EMPTY(m_developer_login, PackageDeveloperLoginRole, login);
+    // If developer name was set (presumingly from SPEC) then avoid setting login separately.
+    // As login is impssible to set from SPEC separately, this prevents getting conflicting
+    // records
+    if (m_developer_name_from_spec) return;
+    SET_IF_EMPTY(m_developer_login, PackageDeveloperRole, login);
 }
 
 void ChumPackage::setDeveloperName(const QString &name) {
-    SET_IF_EMPTY(m_developer_name, PackageDeveloperLoginRole, name);
+    SET_IF_EMPTY(m_developer_name, PackageDeveloperRole, name);
 }
 
 void ChumPackage::setUrl(const QString &url) {

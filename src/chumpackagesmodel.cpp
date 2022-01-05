@@ -89,8 +89,7 @@ void ChumPackagesModel::reset() {
             QStringList lines{ p->name(),
                         p->summary(),
                         p->categories().join(' '),
-                        p->developerLogin(),
-                        p->developerName(),
+                        p->developer(),
                         p->description() };
             QString txt = lines.join('\n').normalized(QString::NormalizationForm_KC).toLower();
             for (QString query: m_search.split(' ', QString::SkipEmptyParts)) {
@@ -135,8 +134,7 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
         ChumPackage::PackageNameRole,
                 ChumPackage::PackageSummaryRole,
                 ChumPackage::PackageCategoriesRole,
-                ChumPackage::PackageDeveloperLoginRole,
-                ChumPackage::PackageDeveloperNameRole,
+                ChumPackage::PackageDeveloperRole,
                 ChumPackage::PackageDescriptionRole
     };
 
