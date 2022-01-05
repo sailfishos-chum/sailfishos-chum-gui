@@ -1,5 +1,6 @@
 set(TS_FILES
   sailfishos-chum-gui.ts
+  sailfishos-chum-gui-fr.ts
   sailfishos-chum-gui-pl.ts
   sailfishos-chum-gui-sv.ts
 )

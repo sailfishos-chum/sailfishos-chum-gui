@@ -52,7 +52,7 @@
         <location filename="../qml/sailfishos-chum-gui.qml" line="26"/>
         <source>%1 %2 updated</source>
         <extracomment>%1 - package name, %2 - package version</extracomment>
-        <translation type="unfinished"%1 %2 mis à jour</translation>
+        <translation type="unfinished">%1 %2 mis à jour</translation>
     </message>
     <message id="chum-about">
         <location filename="../qml/pages/MainPage.qml" line="40"/>
