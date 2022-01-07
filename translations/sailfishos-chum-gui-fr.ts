@@ -396,7 +396,7 @@ Veuillez supprimer tous les dépôts Chum et redémarrer l&apos;application grap
     <message id="chum-settings-testing-description">
         <location filename="../qml/pages/SettingsPage.qml" line="86"/>
         <source>Use testing version of Chum repository. This is mainly useful for developers for testing their packages before publishing.</source>
-        <translation>Utiliser la version de test du dépôt Chum. Ceci est surout utile pour les développeurs quand ils testent leurs paquets avant publication.</translation>
+        <translation>Utiliser la version de test du dépôt Chum. Ceci est surtout utile pour les développeurs quand ils testent leurs paquets avant publication.</translation>
     </message>
     <message id="chum-settings-testing">
         <location filename="../qml/pages/SettingsPage.qml" line="88"/>
@@ -447,7 +447,7 @@ Veuillez supprimer tous les dépôts Chum et redémarrer l&apos;application grap
     <message id="chum-category-games">
         <location filename="../qml/pages/CategoriesPage.qml" line="64"/>
         <source>Games</source>
-        <translation type="unfinished">Jeux</translation>
+        <translation>Jeux</translation>
     </message>
     <message id="chum-category-graphics">
         <location filename="../qml/pages/CategoriesPage.qml" line="69"/>
@@ -522,7 +522,7 @@ Veuillez supprimer tous les dépôts Chum et redémarrer l&apos;application grap
     <message id="chum-about-home">
         <location filename="../qml/pages/AboutPage.qml" line="49"/>
         <source>Home</source>
-        <translation type="unfinished">Accueil</translation>
+        <translation>Accueil</translation>
     </message>
     <message id="chum-about-issues">
         <location filename="../qml/pages/AboutPage.qml" line="58"/>
