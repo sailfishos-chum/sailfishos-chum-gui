@@ -180,7 +180,7 @@
     <message id="chum-issues-number">
         <location filename="../qml/pages/PackagePage.qml" line="106"/>
         <source>Issues (%1)</source>
-        <translation>Fehler (%1)</translation>
+        <translation>Probleme (%1)</translation>
     </message>
     <message id="chum-releases">
         <location filename="../qml/pages/ReleasesListPage.qml" line="28"/>
@@ -284,7 +284,7 @@ Bitte enferne alle definierten Chum Repositories und starte die GUI neu. Die GUI
     <message id="chum-issues">
         <location filename="../qml/pages/IssuesListPage.qml" line="28"/>
         <source>Issues</source>
-        <translation>Fehler</translation>
+        <translation>Probleme</translation>
     </message>
     <message id="chum-issue-nr-by">
         <location filename="../qml/pages/IssuesListPage.qml" line="78"/>
@@ -294,12 +294,12 @@ Bitte enferne alle definierten Chum Repositories und starte die GUI neu. Die GUI
     <message id="chum-issue-with-number">
         <location filename="../qml/pages/IssuePage.qml" line="35"/>
         <source>Issue: #%1</source>
-        <translation>Fehler: #%1</translation>
+        <translation>Problem: #%1</translation>
     </message>
     <message id="chum-issue">
         <location filename="../qml/pages/IssuePage.qml" line="37"/>
         <source>Issue</source>
-        <translation>Fehler</translation>
+        <translation>Problem</translation>
     </message>
     <message id="chum-issues-comments-number">
         <location filename="../qml/pages/IssuePage.qml" line="75"/>
@@ -527,7 +527,7 @@ Bitte enferne alle definierten Chum Repositories und starte die GUI neu. Die GUI
     <message id="chum-about-issues">
         <location filename="../qml/pages/AboutPage.qml" line="58"/>
         <source>Issues</source>
-        <translation>Fehler</translation>
+        <translation>Probleme</translation>
     </message>
     <message id="chum-about-description">
         <location filename="../qml/pages/AboutPage.qml" line="80"/>
