@@ -6,6 +6,7 @@ Item {
     property alias description: header.description
     property alias author: auth.text
     property alias iconSource: image.source
+    property bool  packagerShown: false
 
     width: parent.width
     height: Math.max(column.height, image.height + image.anchors.topMargin)
@@ -22,6 +23,21 @@ Item {
             id: header
             rightMargin: 0
             width: parent.width
+        }
+
+        Label {
+            anchors {
+                left: parent.left
+                leftMargin: Theme.horizontalPageMargin
+                right: parent.right
+            }
+            color: Theme.secondaryHighlightColor
+            font.pixelSize: Theme.fontSizeSmall
+            height: visible ? implicitHeight + Theme.paddingSmall : 0
+            horizontalAlignment: implicitWidth < width ? Text.AlignRight : Text.AlignLeft
+            //% "Packaged by"
+            text: qsTrId("chum-page-header-packaged-by")
+            visible: packagerShown
         }
 
         Label {

@@ -7,6 +7,7 @@ MouseArea {
     property bool enableExpansion: true
     property int  shrunkHeight: 500
     property var  pkg
+    property bool developerShown: false
 
     property bool _expanded: !_expansionEnabled
     property bool _expansionEnabled: enableExpansion && content.implicitHeight > shrunkHeight
@@ -31,7 +32,6 @@ MouseArea {
         }
 
         Label {
-            id: bodyLabel
             width: parent.width
             text: pkg.description
             color: infoItem.pressed ? Theme.highlightColor : Theme.primaryColor
@@ -43,10 +43,17 @@ MouseArea {
         Item {
             id: spacer
             height: Theme.paddingLarge
+            width: parent.width
         }
 
         ChumDetailItem {
-            id: installedVersionItem
+            visible: pkg.developer && infoItem.developerShown
+            //% "Developer"
+            label: qsTrId("chum-pkg-developer")
+            value: pkg.developer
+        }
+
+        ChumDetailItem {
             visible: pkg.installed
             //% "Installed version"
             label: qsTrId("chum-pkg-installed-version")
@@ -54,7 +61,6 @@ MouseArea {
         }
 
         ChumDetailItem {
-            id: availableVersionItem
             //% "Available version"
             label: qsTrId("chum-pkg-available-version")
             value: pkg.availableVersion
@@ -62,7 +68,6 @@ MouseArea {
         }
 
         ChumDetailItem {
-            id: packageNameItem
             //% "Package name"
             label: qsTrId("chum-pkg-package-name")
             value: pkg.packageName

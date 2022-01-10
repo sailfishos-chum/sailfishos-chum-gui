@@ -6,8 +6,8 @@ Item {
     id: item
 
     height: Theme.paddingLarge + Math.max(image.height,
-                                          title.height + categories.height + developer.height +
-                                          categories.anchors.topMargin + developer.anchors.topMargin)
+                                          title.height + categories.height + author.height +
+                                          categories.anchors.topMargin + author.anchors.topMargin)
     width: parent.width
 
     property bool highlighted: false
@@ -55,7 +55,7 @@ Item {
     }
 
     Label {
-        id: developer
+        id: author
         anchors.left: image.right
         anchors.leftMargin: Theme.paddingLarge
         anchors.right: stickers.left
@@ -65,7 +65,7 @@ Item {
         color: Theme.highlightColor
         font.pixelSize: Theme.fontSizeSmall
         height: visible ? implicitHeight : 0
-        text: model.packageDeveloper
+        text: model.packagePackager ?  model.packagePackager : model.packageDeveloper
         truncationMode: TruncationMode.Fade
         visible: text
     }

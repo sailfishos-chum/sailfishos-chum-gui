@@ -60,9 +60,10 @@ Page {
             FancyPageHeader {
                 id: header
                 title: pkg.name
-                author: pkg.developer
+                author: pkg.packager ? pkg.packager : pkg.developer
                 description: pkg.summary
                 iconSource: pkg.icon
+                packagerShown: pkg.packager
             }
 
             AppSummary {
@@ -71,6 +72,7 @@ Page {
 
             AppInformation {
                 pkg: page.pkg
+                developerShown: header.packagerShown
                 shrunkHeight: Math.max(page.height/4, page.height - (y - content.y + content.spacing +
                                                                      (screenshots.visible ? (screenshots.height+content.spacing) : 0) +
                                                                      (btnReleases.visible ? btnReleases.implicitHeight : 0) +

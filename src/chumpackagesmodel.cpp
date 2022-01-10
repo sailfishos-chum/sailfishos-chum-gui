@@ -36,6 +36,8 @@ QVariant ChumPackagesModel::data(const QModelIndex &index, int role) const {
         return p->installedVersion();
     case ChumPackage::PackageNameRole:
         return p->name();
+    case ChumPackage::PackagePackagerRole:
+        return p->packager();
     case ChumPackage::PackageStarsCountRole:
         return p->starsCount();
     case ChumPackage::PackageTypeRole:
@@ -56,6 +58,7 @@ QHash<int, QByteArray> ChumPackagesModel::roleNames() const {
         {ChumPackage::PackageInstalledRole,  QByteArrayLiteral("packageInstalled")},
         {ChumPackage::PackageInstalledVersionRole,  QByteArrayLiteral("packageInstalledVersion")},
         {ChumPackage::PackageNameRole,     QByteArrayLiteral("packageName")},
+        {ChumPackage::PackagePackagerRole,     QByteArrayLiteral("packagePackager")},
         {ChumPackage::PackageStarsCountRole, QByteArrayLiteral("packageStarsCount")},
         {ChumPackage::PackageTypeRole, QByteArrayLiteral("packageType")},
         {ChumPackage::PackageUpdateAvailableRole,  QByteArrayLiteral("packageUpdateAvailable")},
@@ -135,7 +138,8 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
                 ChumPackage::PackageSummaryRole,
                 ChumPackage::PackageCategoriesRole,
                 ChumPackage::PackageDeveloperRole,
-                ChumPackage::PackageDescriptionRole
+                ChumPackage::PackageDescriptionRole,
+                ChumPackage::PackagePackagerRole
     };
 
     QList<ChumPackage::Role> sort_roles{
