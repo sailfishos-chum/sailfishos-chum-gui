@@ -14,23 +14,23 @@
     <message id="chum-package-project-repo">
         <location filename="../qml/pages/PackagePage.qml" line="20"/>
         <source>Project Repository</source>
-        <translation type="unfinished"></translation>
+        <translation>Repozytorium projektu</translation>
     </message>
     <message id="chum-package-file-issue">
         <location filename="../qml/pages/PackagePage.qml" line="26"/>
         <source>File Issue</source>
-        <translation type="unfinished"></translation>
+        <translation>Problem z plikiem</translation>
     </message>
     <message id="chum-package-discussion-forum">
         <location filename="../qml/pages/PackagePage.qml" line="32"/>
         <source>Discussion Forum</source>
-        <translation type="unfinished"></translation>
+        <translation>Forum dyskusyjne</translation>
     </message>
     <message id="chum-update">
         <location filename="../qml/pages/PackagePage.qml" line="39"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="63"/>
         <source>Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizuj</translation>
     </message>
     <message id="chum-install">
         <location filename="../qml/pages/PackagePage.qml" line="41"/>
@@ -42,22 +42,22 @@
         <location filename="../qml/pages/PackagePage.qml" line="49"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="69"/>
         <source>Uninstall</source>
-        <translation type="unfinished"></translation>
+        <translation>Odinstaluj</translation>
     </message>
     <message id="chum-releases-number">
         <location filename="../qml/pages/PackagePage.qml" line="95"/>
         <source>Releases (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Wydania (%1)</translation>
     </message>
     <message id="chum-issues-number">
         <location filename="../qml/pages/PackagePage.qml" line="106"/>
         <source>Issues (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemy (%1)</translation>
     </message>
     <message id="chum-package-donation">
         <location filename="../qml/pages/PackagePage.qml" line="118"/>
         <source>Make Dontation</source>
-        <translation type="unfinished"></translation>
+        <translation>Zrób donację</translation>
     </message>
     <message id="chum-pkg-installed-version">
         <location filename="../qml/components/AppInformation.qml" line="52"/>
@@ -72,7 +72,7 @@
     <message id="chum-pkg-package-name">
         <location filename="../qml/components/AppInformation.qml" line="67"/>
         <source>Package name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa pakietu</translation>
     </message>
     <message id="chum-pkg-download-size">
         <location filename="../qml/components/AppInformation.qml" line="74"/>
@@ -92,37 +92,37 @@
     <message id="chum-pkg-update-available">
         <location filename="../qml/components/AppSummary.qml" line="36"/>
         <source>Update available</source>
-        <translation type="unfinished"></translation>
+        <translation>Dostępna aktualizacja</translation>
     </message>
     <message id="chum-pkg-installed">
         <location filename="../qml/components/AppSummary.qml" line="39"/>
         <source>Installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Zainstalowane</translation>
     </message>
     <message id="chum-pkg-type-desktop">
         <location filename="../qml/components/AppSummary.qml" line="53"/>
         <source>Sailfish application</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplikacja Sailfish</translation>
     </message>
     <message id="chum-pkg-type-console">
         <location filename="../qml/components/AppSummary.qml" line="56"/>
         <source>Console application</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplikacja konsolowa</translation>
     </message>
     <message id="chum-pkg-categories">
         <location filename="../qml/components/AppSummary.qml" line="66"/>
         <source>Categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategorie</translation>
     </message>
     <message id="chum-busy">
         <location filename="../qml/cover/CoverPage.qml" line="25"/>
         <source>Busy</source>
-        <translation type="unfinished"></translation>
+        <translation>Zajęty</translation>
     </message>
     <message id="chum-about-gui">
         <location filename="../qml/pages/AboutPage.qml" line="19"/>
         <source>About Chum GUI</source>
-        <translation type="unfinished"></translation>
+        <translation>O Chum GUI</translation>
     </message>
     <message id="chum-about-store">
         <location filename="../qml/pages/AboutPage.qml" line="31"/>
@@ -132,12 +132,12 @@
     <message id="chum-about-version">
         <location filename="../qml/pages/AboutPage.qml" line="37"/>
         <source>Version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Wersja: %1</translation>
     </message>
     <message id="chum-about-license">
         <location filename="../qml/pages/AboutPage.qml" line="43"/>
         <source>License: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Licencja: %1</translation>
     </message>
     <message id="chum-about-home">
         <location filename="../qml/pages/AboutPage.qml" line="49"/>
@@ -147,7 +147,7 @@
     <message id="chum-about-issues">
         <location filename="../qml/pages/AboutPage.qml" line="58"/>
         <source>Issues</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemy</translation>
     </message>
     <message id="chum-about-description">
         <location filename="../qml/pages/AboutPage.qml" line="80"/>
@@ -158,7 +158,7 @@
         <location filename="../qml/pages/CategoriesPage.qml" line="20"/>
         <location filename="../qml/pages/MainPage.qml" line="81"/>
         <source>Categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategorie</translation>
     </message>
     <message id="chum-category-accessibility">
         <location filename="../qml/pages/CategoriesPage.qml" line="49"/>
@@ -173,83 +173,83 @@
     <message id="chum-category-education">
         <location filename="../qml/pages/CategoriesPage.qml" line="59"/>
         <source>Education</source>
-        <translation type="unfinished"></translation>
+        <translation>Edukacja</translation>
     </message>
     <message id="chum-category-games">
         <location filename="../qml/pages/CategoriesPage.qml" line="64"/>
         <source>Games</source>
-        <translation type="unfinished"></translation>
+        <translation>Gry</translation>
     </message>
     <message id="chum-category-graphics">
         <location filename="../qml/pages/CategoriesPage.qml" line="69"/>
         <source>Graphics</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafika</translation>
     </message>
     <message id="chum-category-libraries">
         <location filename="../qml/pages/CategoriesPage.qml" line="74"/>
         <source>Libraries</source>
-        <translation type="unfinished"></translation>
+        <translation>Biblioteki</translation>
     </message>
     <message id="chum-category-maps">
         <location filename="../qml/pages/CategoriesPage.qml" line="79"/>
         <source>Location and Navigation</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokalizacja i nawigacja</translation>
     </message>
     <message id="chum-category-multimedia">
         <location filename="../qml/pages/CategoriesPage.qml" line="84"/>
         <source>Multimedia</source>
-        <translation type="unfinished"></translation>
+        <translation>Multimedia</translation>
     </message>
     <message id="chum-category-network">
         <location filename="../qml/pages/CategoriesPage.qml" line="89"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Sieć</translation>
     </message>
     <message id="chum-category-office">
         <location filename="../qml/pages/CategoriesPage.qml" line="94"/>
         <source>Office</source>
-        <translation type="unfinished"></translation>
+        <translation>Biuro</translation>
     </message>
     <message id="chum-category-science">
         <location filename="../qml/pages/CategoriesPage.qml" line="99"/>
         <source>Science</source>
-        <translation type="unfinished"></translation>
+        <translation>Nauka</translation>
     </message>
     <message id="chum-category-utilities">
         <location filename="../qml/pages/CategoriesPage.qml" line="104"/>
         <source>Utilities</source>
-        <translation type="unfinished"></translation>
+        <translation>Narzędzia</translation>
     </message>
     <message id="chum-category-other">
         <location filename="../qml/pages/CategoriesPage.qml" line="109"/>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>Inne</translation>
     </message>
     <message id="chum-issue-with-number">
         <location filename="../qml/pages/IssuePage.qml" line="35"/>
         <source>Issue: #%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Problem: #%1</translation>
     </message>
     <message id="chum-issue">
         <location filename="../qml/pages/IssuePage.qml" line="37"/>
         <source>Issue</source>
-        <translation type="unfinished"></translation>
+        <translation>Problem</translation>
     </message>
     <message id="chum-issues-comments-number">
         <location filename="../qml/pages/IssuePage.qml" line="75"/>
         <source>Comments: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Komentarze: %1</translation>
     </message>
     <message id="chum-created-updated-datetime">
         <location filename="../qml/pages/IssuePage.qml" line="122"/>
         <location filename="../qml/pages/IssuesListPage.qml" line="106"/>
         <source>Created: %1; Updated: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Utworzony: %1, Zaktualizowany: %2</translation>
     </message>
     <message id="chum-issues">
         <location filename="../qml/pages/IssuesListPage.qml" line="28"/>
         <source>Issues</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemy</translation>
     </message>
     <message id="chum-issue-nr-by">
         <location filename="../qml/pages/IssuesListPage.qml" line="78"/>
@@ -259,90 +259,90 @@
     <message id="chum-about">
         <location filename="../qml/pages/MainPage.qml" line="40"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>O</translation>
     </message>
     <message id="chum-settings-title">
         <location filename="../qml/pages/MainPage.qml" line="46"/>
         <location filename="../qml/pages/SettingsPage.qml" line="21"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia</translation>
     </message>
     <message id="chum-refresh-cache">
         <location filename="../qml/pages/MainPage.qml" line="53"/>
         <source>Refresh repository</source>
-        <translation type="unfinished"></translation>
+        <translation>Odśwież repozytorium</translation>
     </message>
     <message id="chum-no-updates">
         <location filename="../qml/pages/MainPage.qml" line="71"/>
         <source>No updates available</source>
-        <translation type="unfinished"></translation>
+        <translation>Brak aktualizacji</translation>
     </message>
     <message id="chum-updates">
         <location filename="../qml/pages/MainPage.qml" line="75"/>
         <source>Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizacje</translation>
     </message>
     <message id="chum-applications">
         <location filename="../qml/pages/MainPage.qml" line="89"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="32"/>
         <source>Applications</source>
-        <translation type="unfinished"></translation>
+        <translation>Aplikacje</translation>
     </message>
     <message id="chum-packages">
         <location filename="../qml/pages/MainPage.qml" line="91"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="33"/>
         <source>Packages</source>
-        <translation type="unfinished"></translation>
+        <translation>Pakiety</translation>
     </message>
     <message id="chum-installed-packages">
         <location filename="../qml/pages/MainPage.qml" line="102"/>
         <source>Installed packages</source>
-        <translation type="unfinished"></translation>
+        <translation>Zainstalowane pakiety</translation>
     </message>
     <message id="chum-no-installed">
         <location filename="../qml/pages/MainPage.qml" line="104"/>
         <source>No packages installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Brak zainstalowanych pakietów</translation>
     </message>
     <message id="chum-installed">
         <location filename="../qml/pages/MainPage.qml" line="108"/>
         <source>Installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Zainstalowane</translation>
     </message>
     <message id="chum-search">
         <location filename="../qml/pages/PackagesListPage.qml" line="41"/>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Szukaj</translation>
     </message>
     <message id="chum-packages-list-show-all">
         <location filename="../qml/pages/PackagesListPage.qml" line="97"/>
         <source>Show all packages</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż wszystkie pakiety</translation>
     </message>
     <message id="chum-packages-list-show-apps">
         <location filename="../qml/pages/PackagesListPage.qml" line="99"/>
         <source>Show applications only</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż tylko aplikacje</translation>
     </message>
     <message id="chum-packages-list-apply-all-updates">
         <location filename="../qml/pages/PackagesListPage.qml" line="104"/>
         <source>Apply all updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaktualizauj wszystko</translation>
     </message>
     <message id="chum-release">
         <location filename="../qml/pages/ReleasePage.qml" line="36"/>
         <source>Release</source>
-        <translation type="unfinished"></translation>
+        <translation>Wydanie</translation>
     </message>
     <message id="chum-releases">
         <location filename="../qml/pages/ReleasesListPage.qml" line="28"/>
         <source>Releases</source>
-        <translation type="unfinished"></translation>
+        <translation>Wydania</translation>
     </message>
     <message id="chum-settings-status">
         <location filename="../qml/pages/SettingsPage.qml" line="26"/>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Status</translation>
     </message>
     <message id="chum-settings-status-repo-management-failed">
         <location filename="../qml/pages/SettingsPage.qml" line="40"/>
@@ -377,7 +377,7 @@
     <message id="chum-settings-general">
         <location filename="../qml/pages/SettingsPage.qml" line="67"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Ogólne</translation>
     </message>
     <message id="chum-settings-show-apps-description">
         <location filename="../qml/pages/SettingsPage.qml" line="74"/>
