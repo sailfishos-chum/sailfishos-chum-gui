@@ -99,6 +99,18 @@ MouseArea {
 
             onLinkActivated: Qt.openUrlExternally(link)
         }
+
+        ChumDetailItem {
+            visible: !!pkg.packagingUrl
+            text: '<font color="%1">%3</font> <font color="%2"><a href="%4">%4</a></font>'
+            .arg(Theme.secondaryHighlightColor)
+            .arg(Theme.primaryColor)
+            //% "Packaging repository"
+            .arg(qsTrId("chum-pkg-packaging-link"))
+            .arg(pkg.packagingUrl)
+
+            onLinkActivated: Qt.openUrlExternally(link)
+        }
     }
 
     Image {

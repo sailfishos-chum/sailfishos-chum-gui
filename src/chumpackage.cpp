@@ -201,6 +201,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
     if (m_categories.isEmpty()) m_categories.push_back(QStringLiteral("Other"));
 
     m_repo_url = json.value("Custom").toObject().value("Repo").toString();
+    m_packaging_repo_url = json.value("Custom").toObject().value("PackagingRepo").toString();
 
     m_icon = json.value("Icon").toString();
     m_screenshots = json.value("Screenshots").toVariant().toStringList();
