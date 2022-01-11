@@ -24,6 +24,8 @@ class ChumPackage : public QObject {
     Q_PROPERTY(QString    license     READ license      NOTIFY updated)
     Q_PROPERTY(QString    name        READ name         NOTIFY updated)
     Q_PROPERTY(QString    packageName READ packageName  NOTIFY updated)
+    Q_PROPERTY(QString    packager    READ packager     NOTIFY updated)
+    Q_PROPERTY(QString    packagingUrl READ packagingUrl NOTIFY updated)
     Q_PROPERTY(int        releasesCount READ releasesCount  NOTIFY updated)
     Q_PROPERTY(QString    repo        READ repo         NOTIFY updated)
     Q_PROPERTY(QStringList screenshots READ screenshots NOTIFY updated)
@@ -47,6 +49,7 @@ public:
         PackageInstalledRole,
         PackageInstalledVersionRole,
         PackageNameRole,
+        PackagePackagerRole,
         PackageStarsCountRole,
         PackageSummaryRole,
         PackageTypeRole,
@@ -89,6 +92,8 @@ public:
     QString license() const { return m_license; }
     QString name() const { return m_name; }
     QString packageName() const { return m_package_name; }
+    QString packager() const;
+    QString packagingUrl() const { return m_packaging_repo_url; }
     QString repo() const { return m_repo_url; }
     int     releasesCount() const { return m_releases_count; }
     QStringList screenshots() const { return m_screenshots; }
@@ -111,6 +116,8 @@ public:
     void setDeveloperName(const QString &name);
     void setForksCount(int count);
     void setIssuesCount(int count);
+    void setPackagerLogin(const QString &login);
+    void setPackagerName(const QString &name);
     void setReleasesCount(int count);
     void setStarsCount(int count);
     void setUrl(const QString &url);
@@ -152,8 +159,11 @@ private:
     QString     m_license;
     QString     m_name;
     QString     m_package_name;
+    QString     m_packager_login;
+    QString     m_packager_name;
+    bool        m_packager_name_from_spec{false};
+    QString     m_packaging_repo_url;
     int         m_releases_count{-1};
-    QString     m_repo_type;
     QString     m_repo_url;
     QStringList m_screenshots;
     qulonglong  m_size{0};

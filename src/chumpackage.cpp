@@ -36,12 +36,20 @@ ChumPackage::ChumPackage(const QString &id, QObject *parent)
     m_id = id;
 }
 
-QString ChumPackage::developer() const {
-    if (!m_developer_login.isEmpty() && !m_developer_name.isEmpty())
-        return QStringLiteral("%1 (%2)").arg(m_developer_name, m_developer_login);
-    if (!m_developer_login.isEmpty()) return m_developer_login;
-    if (!m_developer_name.isEmpty()) return m_developer_name;
+static QString nameFormatting(const QString &name, const QString &login) {
+    if (!login.isEmpty() && !name.isEmpty())
+        return QStringLiteral("%1 (%2)").arg(name, login);
+    if (!login.isEmpty()) return login;
+    if (!name.isEmpty()) return name;
     return QString();
+}
+
+QString ChumPackage::developer() const {
+    return nameFormatting(m_developer_name, m_developer_login);
+}
+
+QString ChumPackage::packager() const {
+    return nameFormatting(m_packager_name, m_packager_login);
 }
 
 bool ChumPackage::installed() const {
@@ -184,14 +192,16 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
 
     m_developer_name = json.value("DeveloperName").toString();
     m_developer_name_from_spec = !m_developer_name.isEmpty();
+    m_packager_name = json.value("PackagerName").toString();
+    m_packager_name_from_spec = !m_packager_name.isEmpty();
     m_categories = json.value("Categories").toVariant().toStringList();
     // guess category only if it is empty
     if (is_lib && m_categories.isEmpty())
         m_categories.push_back(QStringLiteral("Library"));
     if (m_categories.isEmpty()) m_categories.push_back(QStringLiteral("Other"));
 
-    m_repo_type = json.value("Custom").toObject().value("RepoType").toString();
     m_repo_url = json.value("Custom").toObject().value("Repo").toString();
+    m_packaging_repo_url = json.value("Custom").toObject().value("PackagingRepo").toString();
 
     m_icon = json.value("Icon").toString();
     m_screenshots = json.value("Screenshots").toVariant().toStringList();
@@ -201,7 +211,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
     m_url_issues = json.value("Url").toObject().value("Bugtracker").toString();
     m_donation = json.value("Url").toObject().value("Donation").toString();
 
-    for (const QString &u: {m_repo_url, m_url}) {
+    for (const QString &u: {m_repo_url, m_url, m_packaging_repo_url}) {
         if (ProjectGitHub::isProject(u))
             m_project = new ProjectGitHub(u, this);
         else if (ProjectGitLab::isProject(u))
@@ -240,6 +250,18 @@ void ChumPackage::setDeveloperLogin(const QString &login) {
 
 void ChumPackage::setDeveloperName(const QString &name) {
     SET_IF_EMPTY(m_developer_name, PackageDeveloperRole, name);
+}
+
+void ChumPackage::setPackagerLogin(const QString &login) {
+    // If packager name was set (presumingly from SPEC) then avoid setting login separately.
+    // As login is impssible to set from SPEC separately, this prevents getting conflicting
+    // records
+    if (m_packager_name_from_spec) return;
+    SET_IF_EMPTY(m_packager_login, PackagePackagerRole, login);
+}
+
+void ChumPackage::setPackagerName(const QString &name) {
+    SET_IF_EMPTY(m_packager_name, PackagePackagerRole, name);
 }
 
 void ChumPackage::setUrl(const QString &url) {
