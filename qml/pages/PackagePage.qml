@@ -34,6 +34,14 @@ Page {
                 visible: pkg.urlForum
             }
             MenuItem {
+                //% "Uninstall"
+                text: qsTrId("chum-uninstall")
+                visible: pkg.installed
+                //% "Uninstalling"
+                onClicked: remorse.execute(qsTrId("chum-uninstalling"),
+                                           function() { Chum.uninstallPackage(pkg.id) } )
+            }
+            MenuItem {
                 text: pkg.installed
                 //% "Update"
                       ? qsTrId("chum-update")
@@ -44,13 +52,9 @@ Page {
                            ? Chum.updatePackage(pkg.id)
                            : Chum.installPackage(pkg.id)
             }
-            MenuItem {
-                //% "Uninstall"
-                text: qsTrId("chum-uninstall")
-                visible: pkg.installed
-                onClicked: Chum.uninstallPackage(pkg.id)
-            }
         }
+
+        RemorsePopup { id: remorse }
 
         Column {
             id: content
