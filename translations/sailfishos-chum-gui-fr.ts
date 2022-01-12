@@ -124,28 +124,34 @@
         <source>Discussion Forum</source>
         <translation>Forum de discussion</translation>
     </message>
+    <message id="chum-uninstalling">
+        <location filename="../qml/pages/PackagePage.qml" line="41"/>
+        <source>Uninstalling</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="chum-update">
-        <location filename="../qml/pages/PackagePage.qml" line="39"/>
+        <location filename="../qml/pages/PackagePage.qml" line="47"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="63"/>
         <source>Update</source>
         <translation>Mise à jour</translation>
     </message>
     <message id="chum-install">
-        <location filename="../qml/pages/PackagePage.qml" line="41"/>
+        <location filename="../qml/pages/PackagePage.qml" line="49"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="70"/>
         <source>Install</source>
         <translation>Installer</translation>
     </message>
     <message id="chum-uninstall">
-        <location filename="../qml/pages/PackagePage.qml" line="49"/>
+        <location filename="../qml/pages/PackagePage.qml" line="38"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="69"/>
         <source>Uninstall</source>
         <translation>Désinstaller</translation>
     </message>
     <message id="chum-package-donation">
-        <location filename="../qml/pages/PackagePage.qml" line="118"/>
-        <source>Make Donation</source>
-        <translation>Faire un don</translation>
+        <location filename="../qml/pages/PackagePage.qml" line="124"/>
+        <source>Make Dontation</source>
+        <oldsource>Make Donation</oldsource>
+        <translation type="unfinished">Faire un don</translation>
     </message>
     <message id="chum-pkg-update-available">
         <location filename="../qml/components/AppSummary.qml" line="36"/>
@@ -173,12 +179,12 @@
         <translation>Catégories</translation>
     </message>
     <message id="chum-releases-number">
-        <location filename="../qml/pages/PackagePage.qml" line="95"/>
+        <location filename="../qml/pages/PackagePage.qml" line="101"/>
         <source>Releases (%1)</source>
         <translation>Releases (%1)</translation>
     </message>
     <message id="chum-issues-number">
-        <location filename="../qml/pages/PackagePage.qml" line="106"/>
+        <location filename="../qml/pages/PackagePage.qml" line="112"/>
         <source>Issues (%1)</source>
         <translation>Problèmes (%1)</translation>
     </message>
@@ -242,7 +248,7 @@
 Please remove all defined Chum repositories and restart GUI. GUI will add missing Chum repository if needed on restart.</source>
         <translation>Impossible de gérer les dépôts Chum par l&apos;application graphique. Vous avez probablement plusieurs dépôts Chum définis dans SSU ou le dépôt Chum est désactivé. Pour lister les dépôts et les retirer, utilisez la commande &apos;ssu&apos; dans un terminal.
           
-Veuillez supprimer tous les dépôts Chum et redémarrer l&apos;application graphique. L'application graphique ajoutera le dépôt Chum manquant si nécessaire au redémarrage.</translation>
+Veuillez supprimer tous les dépôts Chum et redémarrer l&apos;application graphique. L&apos;application graphique ajoutera le dépôt Chum manquant si nécessaire au redémarrage.</translation>
     </message>
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="341"/>
@@ -312,35 +318,45 @@ Veuillez supprimer tous les dépôts Chum et redémarrer l&apos;application grap
         <source>Created: %1; Updated: %2</source>
         <translation>Créé : %1 ; Mis à jour : %2</translation>
     </message>
-    <message id="chum-pkg-installed-version">
+    <message id="chum-pkg-developer">
         <location filename="../qml/components/AppInformation.qml" line="52"/>
+        <source>Developer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-pkg-installed-version">
+        <location filename="../qml/components/AppInformation.qml" line="59"/>
         <source>Installed version</source>
         <translation>Version installée</translation>
     </message>
     <message id="chum-pkg-available-version">
-        <location filename="../qml/components/AppInformation.qml" line="59"/>
+        <location filename="../qml/components/AppInformation.qml" line="65"/>
         <source>Available version</source>
         <translation>Version disponible</translation>
     </message>
     <message id="chum-pkg-package-name">
-        <location filename="../qml/components/AppInformation.qml" line="67"/>
+        <location filename="../qml/components/AppInformation.qml" line="72"/>
         <source>Package name</source>
         <translation>Nom du paquet</translation>
     </message>
     <message id="chum-pkg-download-size">
-        <location filename="../qml/components/AppInformation.qml" line="74"/>
+        <location filename="../qml/components/AppInformation.qml" line="79"/>
         <source>Download size</source>
         <translation>Taille de téléchargement</translation>
     </message>
     <message id="chum-pkg-license">
-        <location filename="../qml/components/AppInformation.qml" line="81"/>
+        <location filename="../qml/components/AppInformation.qml" line="86"/>
         <source>License</source>
         <translation>Licence</translation>
     </message>
     <message id="chum-pkg-link">
-        <location filename="../qml/components/AppInformation.qml" line="92"/>
+        <location filename="../qml/components/AppInformation.qml" line="97"/>
         <source>Link</source>
         <translation>Lien</translation>
+    </message>
+    <message id="chum-pkg-packaging-link">
+        <location filename="../qml/components/AppInformation.qml" line="109"/>
+        <source>Packaging repository</source>
+        <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-status-repo-management-failed">
         <location filename="../qml/pages/SettingsPage.qml" line="40"/>
@@ -533,17 +549,22 @@ Veuillez supprimer tous les dépôts Chum et redémarrer l&apos;application grap
         <location filename="../qml/pages/AboutPage.qml" line="80"/>
         <source>Sailfish OS Community repositories provide a collection of applications, tools, and libraries compiled for different combinations of architectures and Sailfish versions.&lt;br&gt;&lt;br&gt;The ambition is to become the main repository for software distribution on Sailfish OS. When compared to software distribution via Jolla Store or OpenRepos, the software is compiled into RPMs in a reproducible way directly from the source. The source used for the compilation is available at OBS together with the compiled packages. This is in contrast with the Jolla Store and OpenRepos where all packages are uploaded in binary form without any control over how the binary was compiled.&lt;br&gt;&lt;br&gt;By collecting the software in a single automated build system, we can benefit from collaboration between developers through shared packaging of required libraries, reduce duplication of work by keeping the packages up to date, and get a clear overview of missing software.</source>
         <oldsource>Sailfish OS Community repositories provide a collection of applications, tools, and libraries compiled for different combinations of architectures and Sailfish versions.&lt;br&gt;&lt;br&gt;The ambition is to become the main repository for software distribution on Sailfish OS.When compared to software distribution via Jolla Store or OpenRepos, the software is compiled into RPMs in a reproducible way directly from the source. The source used for the compilation is available at OBS together with the compiled packages. This is in contrast with the Jolla Store and OpenRepos where all packages are uploaded in binary form without any control over how the binary was compiled.&lt;br&gt;&lt;br&gt;By collecting the software in a single automated build system, we can benefit from collaboration between developers through shared packaging of required libraries, reduce duplication of work by keeping the packages up to date, and get a clear overview of missing software.</oldsource>
-        <translation>Les dépôts de la communauté Sailfish OS fournissent un ensemble d'applications, outils et bibliothèques compilés pour différentes combinaisons d&apos;architectures et de versions de Sailfish. &lt;br&gt;&lt;br&gt; L&apos;ambition est de devenir le principal dépôt pour la distribution des logiciles de Sailfish OS. Par comparaison avec la distribution via Jolla Store ou Openrepos, le logiciel est compilé en RPM d&apos;une façon reproductible directement depuis le code source. Le code source utilisé pour la compilation est disponible sur OBS avec les paquets compilés. Cela diffère de Jolla Store et OpenRepos où tous les paquets sont téléversés sous forme binaire sans aucun contrôle sur la façon dont ils ont été compilés.&lt;br&gt;&lt;br&gt; En rassemblant le logiciel dans un seul système de création automatique, nous pouvons bénéficier de la collaboration entre développeurs au travers de l&apos;empaquetage partagé des bibliothèques nécessaires, réduissant ainsi la duplication du travail en gardant les paquets à jour et en ayant une vue claire des logiciels manquants.</translation>
+        <translation>Les dépôts de la communauté Sailfish OS fournissent un ensemble d&apos;applications, outils et bibliothèques compilés pour différentes combinaisons d&apos;architectures et de versions de Sailfish. &lt;br&gt;&lt;br&gt; L&apos;ambition est de devenir le principal dépôt pour la distribution des logiciles de Sailfish OS. Par comparaison avec la distribution via Jolla Store ou Openrepos, le logiciel est compilé en RPM d&apos;une façon reproductible directement depuis le code source. Le code source utilisé pour la compilation est disponible sur OBS avec les paquets compilés. Cela diffère de Jolla Store et OpenRepos où tous les paquets sont téléversés sous forme binaire sans aucun contrôle sur la façon dont ils ont été compilés.&lt;br&gt;&lt;br&gt; En rassemblant le logiciel dans un seul système de création automatique, nous pouvons bénéficier de la collaboration entre développeurs au travers de l&apos;empaquetage partagé des bibliothèques nécessaires, réduissant ainsi la duplication du travail en gardant les paquets à jour et en ayant une vue claire des logiciels manquants.</translation>
     </message>
     <message id="chum-desc-library">
-        <location filename="../src/chumpackage.cpp" line="131"/>
+        <location filename="../src/chumpackage.cpp" line="139"/>
         <source>Library</source>
         <translation>Bibliothèque</translation>
     </message>
     <message id="chum-desc-development">
-        <location filename="../src/chumpackage.cpp" line="136"/>
+        <location filename="../src/chumpackage.cpp" line="144"/>
         <source>Development</source>
         <translation>Développement</translation>
+    </message>
+    <message id="chum-page-header-packaged-by">
+        <location filename="../qml/components/FancyPageHeader.qml" line="39"/>
+        <source>Packaged by</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

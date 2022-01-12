@@ -123,26 +123,31 @@
         <source>Discussion Forum</source>
         <translation>Fórum</translation>
     </message>
+    <message id="chum-uninstalling">
+        <location filename="../qml/pages/PackagePage.qml" line="41"/>
+        <source>Uninstalling</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="chum-update">
-        <location filename="../qml/pages/PackagePage.qml" line="39"/>
+        <location filename="../qml/pages/PackagePage.qml" line="47"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="63"/>
         <source>Update</source>
         <translation>Frissítés</translation>
     </message>
     <message id="chum-install">
-        <location filename="../qml/pages/PackagePage.qml" line="41"/>
+        <location filename="../qml/pages/PackagePage.qml" line="49"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="70"/>
         <source>Install</source>
         <translation>Telepítés</translation>
     </message>
     <message id="chum-uninstall">
-        <location filename="../qml/pages/PackagePage.qml" line="49"/>
+        <location filename="../qml/pages/PackagePage.qml" line="38"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="69"/>
         <source>Uninstall</source>
         <translation>Eltávolítás</translation>
     </message>
     <message id="chum-package-donation">
-        <location filename="../qml/pages/PackagePage.qml" line="118"/>
+        <location filename="../qml/pages/PackagePage.qml" line="124"/>
         <source>Make Dontation</source>
         <translation>Anyagi támogatás</translation>
     </message>
@@ -172,12 +177,12 @@
         <translation>Kategóriák</translation>
     </message>
     <message id="chum-releases-number">
-        <location filename="../qml/pages/PackagePage.qml" line="95"/>
+        <location filename="../qml/pages/PackagePage.qml" line="101"/>
         <source>Releases (%1)</source>
         <translation>Kiadások (%1)</translation>
     </message>
     <message id="chum-issues-number">
-        <location filename="../qml/pages/PackagePage.qml" line="106"/>
+        <location filename="../qml/pages/PackagePage.qml" line="112"/>
         <source>Issues (%1)</source>
         <translation>Hibajegyek (%1)</translation>
     </message>
@@ -311,35 +316,45 @@ Távolítsd el az összes Chum csomagtrárolót, majd indítsd újra ezt az alka
         <source>Created: %1; Updated: %2</source>
         <translation>Létrehozva: %1; Frissítve: %2</translation>
     </message>
-    <message id="chum-pkg-installed-version">
+    <message id="chum-pkg-developer">
         <location filename="../qml/components/AppInformation.qml" line="52"/>
+        <source>Developer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-pkg-installed-version">
+        <location filename="../qml/components/AppInformation.qml" line="59"/>
         <source>Installed version</source>
         <translation>Telepített verzió</translation>
     </message>
     <message id="chum-pkg-available-version">
-        <location filename="../qml/components/AppInformation.qml" line="59"/>
+        <location filename="../qml/components/AppInformation.qml" line="65"/>
         <source>Available version</source>
         <translation>Elérhető verzió</translation>
     </message>
     <message id="chum-pkg-package-name">
-        <location filename="../qml/components/AppInformation.qml" line="67"/>
+        <location filename="../qml/components/AppInformation.qml" line="72"/>
         <source>Package name</source>
         <translation>Csomag neve</translation>
     </message>
     <message id="chum-pkg-download-size">
-        <location filename="../qml/components/AppInformation.qml" line="74"/>
+        <location filename="../qml/components/AppInformation.qml" line="79"/>
         <source>Download size</source>
         <translation>Letöltési méret</translation>
     </message>
     <message id="chum-pkg-license">
-        <location filename="../qml/components/AppInformation.qml" line="81"/>
+        <location filename="../qml/components/AppInformation.qml" line="86"/>
         <source>License</source>
         <translation>Licenc</translation>
     </message>
     <message id="chum-pkg-link">
-        <location filename="../qml/components/AppInformation.qml" line="92"/>
+        <location filename="../qml/components/AppInformation.qml" line="97"/>
         <source>Link</source>
         <translation>Link</translation>
+    </message>
+    <message id="chum-pkg-packaging-link">
+        <location filename="../qml/components/AppInformation.qml" line="109"/>
+        <source>Packaging repository</source>
+        <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-status-repo-management-failed">
         <location filename="../qml/pages/SettingsPage.qml" line="40"/>
@@ -535,14 +550,19 @@ Távolítsd el az összes Chum csomagtrárolót, majd indítsd újra ezt az alka
         <translation>A Sailfish OS közösségi csomagtárolókban alkalmazások, eszközök és programkönyvtárak széles kollekciój érhető el több architektúrára illetve Sailfish OS verzióra is.&lt;br&gt;&lt;br&gt;A projekt célja a Sailfish OS fő szoftverterjesztési csatornává válni. A fő különbség a Jolla Áruházzal és az Openrepossal összehasonlítva az az, hogy az itt elérhető szoftverek RPM csomagjai reprodukálható módon kerülnek előállításra. A csomagok forrásai elérhetőek az OBS-en keresztül a lefordított csomagokkal együtt. Ezzel a megoldással szemben mind a Jolla Áruházban mint az OpenRepos-on csak bináris csomagok érhetőek el, melyek készítési módja/forrása ismeretlen.&lt;br&gt;&lt;br&gt;A Sailfish szoftverek egy közös automatizált build rendszer alá mozgatásával megnyílik az út a fejlesztők számára, hogy szoftvereik közös függőségeit külön csomagokban terjeszthessék. Ezáltal csökkenthető a közös függőségek kezelésére fordított idő, segít ezen csomagok naprakészen tartásában, továbbá egyszerűen lehet átfogó képet kapni a hiányzó szoftverkomponensekről.</translation>
     </message>
     <message id="chum-desc-library">
-        <location filename="../src/chumpackage.cpp" line="131"/>
+        <location filename="../src/chumpackage.cpp" line="139"/>
         <source>Library</source>
         <translation>Programkönyvtárak</translation>
     </message>
     <message id="chum-desc-development">
-        <location filename="../src/chumpackage.cpp" line="136"/>
+        <location filename="../src/chumpackage.cpp" line="144"/>
         <source>Development</source>
         <translation>Fejlesztés</translation>
+    </message>
+    <message id="chum-page-header-packaged-by">
+        <location filename="../qml/components/FancyPageHeader.qml" line="39"/>
+        <source>Packaged by</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

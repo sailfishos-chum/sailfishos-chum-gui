@@ -124,26 +124,31 @@
         <source>Discussion Forum</source>
         <translation>Diskussionsforum</translation>
     </message>
+    <message id="chum-uninstalling">
+        <location filename="../qml/pages/PackagePage.qml" line="41"/>
+        <source>Uninstalling</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="chum-update">
-        <location filename="../qml/pages/PackagePage.qml" line="39"/>
+        <location filename="../qml/pages/PackagePage.qml" line="47"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="63"/>
         <source>Update</source>
         <translation>Uppdatera</translation>
     </message>
     <message id="chum-install">
-        <location filename="../qml/pages/PackagePage.qml" line="41"/>
+        <location filename="../qml/pages/PackagePage.qml" line="49"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="70"/>
         <source>Install</source>
         <translation>Installera</translation>
     </message>
     <message id="chum-uninstall">
-        <location filename="../qml/pages/PackagePage.qml" line="49"/>
+        <location filename="../qml/pages/PackagePage.qml" line="38"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="69"/>
         <source>Uninstall</source>
         <translation>Avinstallera</translation>
     </message>
     <message id="chum-package-donation">
-        <location filename="../qml/pages/PackagePage.qml" line="118"/>
+        <location filename="../qml/pages/PackagePage.qml" line="124"/>
         <source>Make Dontation</source>
         <translation>Donera</translation>
     </message>
@@ -173,12 +178,12 @@
         <translation>Kategorier</translation>
     </message>
     <message id="chum-releases-number">
-        <location filename="../qml/pages/PackagePage.qml" line="95"/>
+        <location filename="../qml/pages/PackagePage.qml" line="101"/>
         <source>Releases (%1)</source>
         <translation>Utgåvor (%1)</translation>
     </message>
     <message id="chum-issues-number">
-        <location filename="../qml/pages/PackagePage.qml" line="106"/>
+        <location filename="../qml/pages/PackagePage.qml" line="112"/>
         <source>Issues (%1)</source>
         <translation>Ärenden (%1)</translation>
     </message>
@@ -312,35 +317,45 @@ Ta bort alla definierade Chum-förråd och starta om GUI. GUI lägger, vid behov
         <source>Created: %1; Updated: %2</source>
         <translation>Skapad: %1; Uppdaterad: %2</translation>
     </message>
-    <message id="chum-pkg-installed-version">
+    <message id="chum-pkg-developer">
         <location filename="../qml/components/AppInformation.qml" line="52"/>
+        <source>Developer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-pkg-installed-version">
+        <location filename="../qml/components/AppInformation.qml" line="59"/>
         <source>Installed version</source>
         <translation>Installerad version</translation>
     </message>
     <message id="chum-pkg-available-version">
-        <location filename="../qml/components/AppInformation.qml" line="59"/>
+        <location filename="../qml/components/AppInformation.qml" line="65"/>
         <source>Available version</source>
         <translation>Tillgänglig version</translation>
     </message>
     <message id="chum-pkg-package-name">
-        <location filename="../qml/components/AppInformation.qml" line="67"/>
+        <location filename="../qml/components/AppInformation.qml" line="72"/>
         <source>Package name</source>
         <translation>Paketnamn</translation>
     </message>
     <message id="chum-pkg-download-size">
-        <location filename="../qml/components/AppInformation.qml" line="74"/>
+        <location filename="../qml/components/AppInformation.qml" line="79"/>
         <source>Download size</source>
         <translation>Nerladdningsstorlek</translation>
     </message>
     <message id="chum-pkg-license">
-        <location filename="../qml/components/AppInformation.qml" line="81"/>
+        <location filename="../qml/components/AppInformation.qml" line="86"/>
         <source>License</source>
         <translation>Licens</translation>
     </message>
     <message id="chum-pkg-link">
-        <location filename="../qml/components/AppInformation.qml" line="92"/>
+        <location filename="../qml/components/AppInformation.qml" line="97"/>
         <source>Link</source>
         <translation>Länk</translation>
+    </message>
+    <message id="chum-pkg-packaging-link">
+        <location filename="../qml/components/AppInformation.qml" line="109"/>
+        <source>Packaging repository</source>
+        <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-status-repo-management-failed">
         <location filename="../qml/pages/SettingsPage.qml" line="40"/>
@@ -536,14 +551,19 @@ Ta bort alla definierade Chum-förråd och starta om GUI. GUI lägger, vid behov
         <translation>Sailfish OS Community-förråd tillhandahåller en samling appar, verktyg och bibliotek som sammanställts för olika kombinationer av arkitekturer och Sailfish-versioner. &lt;br&gt;&lt;br&gt;Ambitionen är att bli huvudförvaret för mjukvarudistribution på Sailfish OS. Jämfört med programvarudistribution via Jolla Store eller OpenRepos kompileras programvaran till RPM på ett reproducerbart sätt direkt från källan. Källan som används för kompilering finns på OBS, tillsammans med de kompilerade paketen. Detta står i kontrast till Jolla Store och OpenRepos där alla paket laddas upp i binär form, utan någon kontroll över hur binärfilen kompilerades. &lt;br&gt;&lt;br&gt;Gernom att samla in programvaran i ett enda automatiserat byggsystem kan vi dra nytta av samarbete mellan utvecklare genom delad förpackning av nödvändiga bibliotek, minska dubblering av arbetet genom att hålla paketen uppdaterade och få en tydlig överblick över saknad programvara.</translation>
     </message>
     <message id="chum-desc-library">
-        <location filename="../src/chumpackage.cpp" line="131"/>
+        <location filename="../src/chumpackage.cpp" line="139"/>
         <source>Library</source>
         <translation>Bibliotek</translation>
     </message>
     <message id="chum-desc-development">
-        <location filename="../src/chumpackage.cpp" line="136"/>
+        <location filename="../src/chumpackage.cpp" line="144"/>
         <source>Development</source>
         <translation>Utveckling</translation>
+    </message>
+    <message id="chum-page-header-packaged-by">
+        <location filename="../qml/components/FancyPageHeader.qml" line="39"/>
+        <source>Packaged by</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

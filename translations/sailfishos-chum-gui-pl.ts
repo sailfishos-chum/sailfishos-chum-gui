@@ -26,68 +26,83 @@
         <source>Discussion Forum</source>
         <translation>Forum dyskusyjne</translation>
     </message>
+    <message id="chum-uninstalling">
+        <location filename="../qml/pages/PackagePage.qml" line="41"/>
+        <source>Uninstalling</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message id="chum-update">
-        <location filename="../qml/pages/PackagePage.qml" line="39"/>
+        <location filename="../qml/pages/PackagePage.qml" line="47"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="63"/>
         <source>Update</source>
         <translation>Aktualizuj</translation>
     </message>
     <message id="chum-install">
-        <location filename="../qml/pages/PackagePage.qml" line="41"/>
+        <location filename="../qml/pages/PackagePage.qml" line="49"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="70"/>
         <source>Install</source>
         <translation>Instaluj</translation>
     </message>
     <message id="chum-uninstall">
-        <location filename="../qml/pages/PackagePage.qml" line="49"/>
+        <location filename="../qml/pages/PackagePage.qml" line="38"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="69"/>
         <source>Uninstall</source>
         <translation>Odinstaluj</translation>
     </message>
     <message id="chum-releases-number">
-        <location filename="../qml/pages/PackagePage.qml" line="95"/>
+        <location filename="../qml/pages/PackagePage.qml" line="101"/>
         <source>Releases (%1)</source>
         <translation>Wydania (%1)</translation>
     </message>
     <message id="chum-issues-number">
-        <location filename="../qml/pages/PackagePage.qml" line="106"/>
+        <location filename="../qml/pages/PackagePage.qml" line="112"/>
         <source>Issues (%1)</source>
         <translation>Problemy (%1)</translation>
     </message>
     <message id="chum-package-donation">
-        <location filename="../qml/pages/PackagePage.qml" line="118"/>
+        <location filename="../qml/pages/PackagePage.qml" line="124"/>
         <source>Make Dontation</source>
         <translation>Zrób donację</translation>
     </message>
-    <message id="chum-pkg-installed-version">
+    <message id="chum-pkg-developer">
         <location filename="../qml/components/AppInformation.qml" line="52"/>
+        <source>Developer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-pkg-installed-version">
+        <location filename="../qml/components/AppInformation.qml" line="59"/>
         <source>Installed version</source>
         <translation>zainstalowana wersja</translation>
     </message>
     <message id="chum-pkg-available-version">
-        <location filename="../qml/components/AppInformation.qml" line="59"/>
+        <location filename="../qml/components/AppInformation.qml" line="65"/>
         <source>Available version</source>
         <translation>Dostępna wersja</translation>
     </message>
     <message id="chum-pkg-package-name">
-        <location filename="../qml/components/AppInformation.qml" line="67"/>
+        <location filename="../qml/components/AppInformation.qml" line="72"/>
         <source>Package name</source>
         <translation>Nazwa pakietu</translation>
     </message>
     <message id="chum-pkg-download-size">
-        <location filename="../qml/components/AppInformation.qml" line="74"/>
+        <location filename="../qml/components/AppInformation.qml" line="79"/>
         <source>Download size</source>
         <translation>Rozmiar pliku do pobrania</translation>
     </message>
     <message id="chum-pkg-license">
-        <location filename="../qml/components/AppInformation.qml" line="81"/>
+        <location filename="../qml/components/AppInformation.qml" line="86"/>
         <source>License</source>
         <translation>Licencja</translation>
     </message>
     <message id="chum-pkg-link">
-        <location filename="../qml/components/AppInformation.qml" line="92"/>
+        <location filename="../qml/components/AppInformation.qml" line="97"/>
         <source>Link</source>
         <translation>Odnośnik</translation>
+    </message>
+    <message id="chum-pkg-packaging-link">
+        <location filename="../qml/components/AppInformation.qml" line="109"/>
+        <source>Packaging repository</source>
+        <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-update-available">
         <location filename="../qml/components/AppSummary.qml" line="36"/>
@@ -537,13 +552,18 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-desc-library">
-        <location filename="../src/chumpackage.cpp" line="131"/>
+        <location filename="../src/chumpackage.cpp" line="139"/>
         <source>Library</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-desc-development">
-        <location filename="../src/chumpackage.cpp" line="136"/>
+        <location filename="../src/chumpackage.cpp" line="144"/>
         <source>Development</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-page-header-packaged-by">
+        <location filename="../qml/components/FancyPageHeader.qml" line="39"/>
+        <source>Packaged by</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
