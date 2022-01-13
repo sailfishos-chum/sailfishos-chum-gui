@@ -100,7 +100,7 @@ Page {
                 onClicked: page.applicationsOnly = !page.applicationsOnly
             }
             MenuItem {
-                //% "Apply all updates"
+                //% "Update all"
                 text: qsTrId("chum-packages-list-apply-all-updates")
                 onClicked: Chum.updateAllPackages()
                 visible: page.updatesOnly
