@@ -25,7 +25,7 @@ Page {
             contentHeight: Theme.itemSizeSmall
             onClicked: pageStack.push(Qt.resolvedUrl("../pages/PackagesListPage.qml"), {
                                           title: model.category,
-                                          applicationsOnly: Chum.showAppsByDefault,
+                                          applicationsOnly: model.categoryIds === 'Library' ? false : Chum.showAppsByDefault,
                                           category: model.categoryIds
                                       })
 
