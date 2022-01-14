@@ -16,6 +16,14 @@ Page {
         PullDownMenu {
             busy: Chum.busy
             MenuItem {
+                //% "Uninstall"
+                text: qsTrId("chum-uninstall")
+                visible: pkg.installed
+                //% "Uninstalling"
+                onClicked: remorse.execute(qsTrId("chum-uninstalling"),
+                                           function() { Chum.uninstallPackage(pkg.id) } )
+            }
+            MenuItem {
                 //% "Project Repository"
                 text: qsTrId("chum-package-project-repo")
                 onClicked: Qt.openUrlExternally(pkg.repo)
@@ -32,14 +40,6 @@ Page {
                 text: qsTrId("chum-package-discussion-forum")
                 onClicked: Qt.openUrlExternally(pkg.urlForum)
                 visible: pkg.urlForum
-            }
-            MenuItem {
-                //% "Uninstall"
-                text: qsTrId("chum-uninstall")
-                visible: pkg.installed
-                //% "Uninstalling"
-                onClicked: remorse.execute(qsTrId("chum-uninstalling"),
-                                           function() { Chum.uninstallPackage(pkg.id) } )
             }
             MenuItem {
                 text: pkg.installed

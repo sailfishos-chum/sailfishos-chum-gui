@@ -157,7 +157,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
     try {
         metayaml = YAML::Load(descLines.last().toStdString());
     } catch(const YAML::ParserException &e) {
-        qWarning() << "Invalid Chum section for" << m_pkid_latest;
+        // ignore it, probably not chum section to start with
     }
 
     if (!metayaml.IsNull() && metayaml.size() > 0) {
