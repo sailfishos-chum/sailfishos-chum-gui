@@ -64,7 +64,7 @@ Item {
             id: categories
             //% "Categories"
             label: qsTrId("chum-pkg-categories")
-            value: pkg.categories.join(" ")
+            value: pkg.categories.join(", ")
             visible: value
         }
     }

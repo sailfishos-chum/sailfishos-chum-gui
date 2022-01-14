@@ -49,7 +49,7 @@ Item {
         color: parent.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
         font.pixelSize: Theme.fontSizeSmall
         height: visible ? implicitHeight : 0
-        text: model.packageCategories.join(" ")
+        text: model.packageCategories.join(", ")
         truncationMode: TruncationMode.Fade
         visible: text
     }
