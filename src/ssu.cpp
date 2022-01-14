@@ -97,8 +97,6 @@ void Ssu::onListFinished(QDBusPendingCallWatcher *call) {
     }
     m_added_repo_name.clear();
 
-    qDebug() << "SSU repo:" << m_manage_repo << m_repo_testing << m_repo_name;
-
     emit updated();
 }
 
