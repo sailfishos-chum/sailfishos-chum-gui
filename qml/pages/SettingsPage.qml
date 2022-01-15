@@ -106,14 +106,8 @@ Page {
                 text: qsTrId("chum-settings-override-selection")
             }
 
-            TextField {
+            TextFieldDesc {
                 id: txtRelease
-                anchors {
-                    left: parent.left
-                    leftMargin: Theme.horizontalPageMargin
-                    right: parent.right
-                    rightMargin: Theme.horizontalPageMargin
-                }
                 //% "Usually, selected Chum repository is automatically set to your Sailfish OS version. "
                 //% "To follow Chum repository for specific Sailfish OS release, "
                 //% "specify Sailfish OS release here (for example, 4.3.0.12). This is useful "
@@ -123,11 +117,9 @@ Page {
                 //% "Specify Sailfish version
                 placeholderText: qsTrId("chum-setings-override-release-placeholder")
                 text: Chum.manualVersion
-                EnterKey.enabled: true
-                EnterKey.onClicked: {
+                onEnterClicked: {
                     console.log("Setting release to ", txtRelease.text);
                     Chum.manualVersion = txtRelease.text;
-                    focus = false
                 }
             }
         }

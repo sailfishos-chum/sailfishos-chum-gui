@@ -78,6 +78,7 @@ add_custom_target(distfiles SOURCES
   qml/components/MoreButton.qml
   qml/components/PackagesListItem.qml
   qml/components/ScreenshotsBox.qml
+  qml/components/TextFieldDesc.qml
   mapplauncherd/privileges.d/${PROJECT_NAME}
   LICENSE
   README.md
