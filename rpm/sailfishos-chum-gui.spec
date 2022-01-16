@@ -21,6 +21,7 @@ BuildRequires:  cmake >= 3.11
 BuildRequires:  sailfish-svg2png
 BuildRequires:  PackageKit-Qt5-devel
 BuildRequires:  qt5-qttools-linguist
+BuildRequires:  sed
 
 # Bundle YAML library only for builds at OBS corresponding to older SFOS version targets
 %if 0%{?sailfishos_version} && 0%{?sailfishos_version}<40000
@@ -70,6 +71,10 @@ mkdir -p %{buildroot}%{_datadir}/%{name}/lib
 cp -a %{_libdir}/libyaml-cpp.so.* %{buildroot}%{_datadir}/%{name}/lib
 # strip executable bit from all libraries
 chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
+%endif
+
+%if 0%{?sailfishos_version} && 0%{?sailfishos_version}<40000
+sed -i 's/silica-qt5/generic/' %{buildroot}%{_datadir}/applications/sailfishos-chum-gui.desktop
 %endif
 
 %postun
