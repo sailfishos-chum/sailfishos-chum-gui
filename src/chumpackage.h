@@ -14,6 +14,7 @@ class ChumPackage : public QObject {
     Q_PROPERTY(QString    availableVersion READ availableVersion NOTIFY updated)
     Q_PROPERTY(QStringList categories READ categories   NOTIFY updated)
     Q_PROPERTY(QString    description READ description  NOTIFY updated)
+    Q_PROPERTY(QString    descriptionMDUrl READ descriptionMDUrl  NOTIFY updated)
     Q_PROPERTY(QString    developer   READ developer    NOTIFY updated)
     Q_PROPERTY(QString    donation    READ donation     NOTIFY updated)
     Q_PROPERTY(int        forksCount  READ forksCount   NOTIFY updated)
@@ -82,6 +83,7 @@ public:
     QString availableVersion() const { return m_available_version; }
     QStringList categories() const { return m_categories; }
     QString description() const { return m_description; }
+    QString descriptionMDUrl() const { return m_description_md_url; }
     QString developer() const;
     QString donation() const { return m_donation; }
     int     forksCount() const { return m_forks_count; }
@@ -149,6 +151,7 @@ private:
     QString     m_available_version;
     QStringList m_categories;
     QString     m_description;
+    QString     m_description_md_url;
     QString     m_developer_login;
     QString     m_developer_name;
     bool        m_developer_name_from_spec{false};

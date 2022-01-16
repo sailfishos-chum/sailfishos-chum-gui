@@ -74,7 +74,9 @@ add_custom_target(distfiles SOURCES
   qml/components/ChumDetailItem.qml
   qml/components/FancyPageHeader.qml
   qml/components/ImageLabel.qml
+  qml/components/LabelMarkdown.qml
   qml/components/MainPageButton.qml
+  qml/components/MarkdownParser.qml
   qml/components/MoreButton.qml
   qml/components/PackagesListItem.qml
   qml/components/ScreenshotsBox.qml
