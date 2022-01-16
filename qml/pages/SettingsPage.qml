@@ -36,26 +36,26 @@ Page {
                 color: Theme.highlightColor
                 text: {
                     if (!Chum.repoManaged) {
-                        //% "Chum repository management failed"
+                        //% "SailfishOS:Chum repository management failed"
                         return qsTrId("chum-settings-status-repo-management-failed");
                     }
                     if (Chum.busy)
                         return Chum.status
 
                     if (!Chum.repoAvailable)
-                        //% "Chum repository is not available"
+                        //% "SailfishOS:Chum repository is not available"
                         return qsTrId("chum-settings-status-repo-not-available");
 
                     if (Chum.manualVersion)
                         return Chum.repoTesting ?
-                                    //% "Following testing Chum repository with a manually set Sailfish OS version (%1)"
+                                    //% "Subscribed the SailfishOS:Chum testing repository with a manually set Sailfish OS version (%1)"
                                     qsTrId("chum-settings-status-repo-testing-manual").arg(Chum.manualVersion) :
-                                    //% "Following regular Chum repository with a manually set Sailfish OS version (%1)"
+                                    //% "Subscribed the regular SailfishOS:Chum repository with a manually set Sailfish OS version (%1)"
                                     qsTrId("chum-settings-status-repo-regular-manual").arg(Chum.manualVersion)
                     return Chum.repoTesting ?
-                                //% "Following testing Chum repository with an automatically determined Sailfish OS version"
+                                //% "Subscribed the SailfishOS:Chum testing repository with an automatically determined Sailfish OS version"
                                 qsTrId("chum-settings-status-repo-testing-auto") :
-                                //% "Following regular Chum repository with an automatically determined Sailfish OS version"
+                                //% "Subscribed the regular SailfishOS:Chum repository with an automatically determined Sailfish OS version"
                                 qsTrId("chum-settings-status-repo-regular-auto");
 
                 }
@@ -69,10 +69,11 @@ Page {
 
             TextSwitch {
                 checked: Chum.showAppsByDefault
-                //% "When listing available software, show only applications by default. This is a default setting and, in each listing, "
-                //% "you can switch between showing only applications or all packages using pulley menu."
+                //% "When listing available software packages, by default only applications are shown. "
+                //% "But for each listing you can switch between showing only applications or "
+                //% "all packages by using the corresponding switch in the pulley menu."
                 description: qsTrId("chum-settings-show-apps-description")
-                //% "Show applications only by default"
+                //% "Show applications only"
                 text: qsTrId("chum-settings-show-apps")
                 onClicked: Chum.showAppsByDefault = !Chum.showAppsByDefault
             }
@@ -81,8 +82,8 @@ Page {
                 automaticCheck: false
                 busy: Chum.busy
                 checked: Chum.repoTesting
-                //% "Use testing version of Chum repository. This is mainly useful for developers "
-                //% "for testing their packages before publishing."
+                //% "Use the SailfishOS:Chum testing repository. This is mainly useful for developers "
+                //% "to test their packages before publishing."
                 description: qsTrId("chum-settings-testing-description")
                 //% "Use testing repository"
                 text: qsTrId("chum-settings-testing")
@@ -102,19 +103,19 @@ Page {
                     rightMargin: Theme.horizontalPageMargin
                 }
                 color: Theme.highlightColor
-                //% "Override Chum repository selection"
+                //% "Override SailfishOS:Chum repository selection"
                 text: qsTrId("chum-settings-override-selection")
             }
 
             TextFieldDesc {
                 id: txtRelease
-                //% "Usually, selected Chum repository is automatically set to your Sailfish OS version. "
-                //% "To follow Chum repository for specific Sailfish OS release, "
-                //% "specify Sailfish OS release here (for example, 4.3.0.12). This is useful "
-                //% "when Chum repository is not available for your Sailfish OS version, as for "
-                //% "Cbeta users."
+                //% "Usually a specific SailfishOS:Chum repository is automatically selected according to the "
+                //% "installed Sailfish OS release version. To subscribe to a SailfishOS:Chum repository for "
+                //% "a specific Sailfish OS release, specify this Sailfish OS release here (for example, 4.3.0.12). "
+                //% "This is useful when the SailfishOS:Chum repository is not available for the installed "
+                //% "Sailfish OS version, as for Cbeta users."
                 description: qsTrId("chum-setings-override-release-description")
-                //% "Specify Sailfish version
+                //% "Specify Sailfish OS version"
                 placeholderText: qsTrId("chum-setings-override-release-placeholder")
                 text: Chum.manualVersion
                 onEnterClicked: {
