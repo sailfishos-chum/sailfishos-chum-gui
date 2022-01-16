@@ -48,14 +48,14 @@ Page {
 
                     if (Chum.manualVersion)
                         return Chum.repoTesting ?
-                                    //% "Subscribed the SailfishOS:Chum testing repository with a manually set Sailfish OS version (%1)"
+                                    //% "Subscribed to the SailfishOS:Chum testing repository with a manually set Sailfish OS version (%1)"
                                     qsTrId("chum-settings-status-repo-testing-manual").arg(Chum.manualVersion) :
-                                    //% "Subscribed the regular SailfishOS:Chum repository with a manually set Sailfish OS version (%1)"
+                                    //% "Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish OS version (%1)"
                                     qsTrId("chum-settings-status-repo-regular-manual").arg(Chum.manualVersion)
                     return Chum.repoTesting ?
-                                //% "Subscribed the SailfishOS:Chum testing repository with an automatically determined Sailfish OS version"
+                                //% "Subscribed to the SailfishOS:Chum testing repository with an automatically determined Sailfish OS version"
                                 qsTrId("chum-settings-status-repo-testing-auto") :
-                                //% "Subscribed the regular SailfishOS:Chum repository with an automatically determined Sailfish OS version"
+                                //% "Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish OS version"
                                 qsTrId("chum-settings-status-repo-regular-auto");
 
                 }
