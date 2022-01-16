@@ -1,3 +1,3 @@
-# SailfishOS Chum GUI
+# SailfishOS:Chum GUI
 
-A client app for the Chum repositories.
+A client app for the SailfishOS:Chum repository.
