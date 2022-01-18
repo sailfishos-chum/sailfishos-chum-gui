@@ -28,12 +28,12 @@ Item {
                 "del { text-decoration: line-through; }\n" +
                 "table { border-color: " + Theme.secondaryColor + "; }\n" +
                 "blockquote { font-style: italic; color: "+ Theme.highlightColor + ";}\n" +
-                "h1 { font-size:x-large; }\n" +
-                "h2 { font-size:large; }\n" +
+                "h1 { font-size:large; }\n" +
+                "h2 { font-size:medium; }\n" +
                 "h3 { font-size:medium; }\n" +
-                "h4 { font-size:medium; }\n" +
-                "h5 { font-size:medium; }\n" +
-                "h6 { font-size:medium; }\n" +
+                "h4 { font-size:small; }\n" +
+                "h5 { font-size:small; }\n" +
+                "h6 { font-size:small; }\n" +
                 "</style>\n" +
                 convertedText
     }
