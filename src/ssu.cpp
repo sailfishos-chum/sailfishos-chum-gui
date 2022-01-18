@@ -6,10 +6,14 @@
 
 static QString s_repo_regular(
         QStringLiteral("https://repo.sailfishos.org/obs/sailfishos:/chum/%(release)_%(arch)/"));
+static QString s_repo_regular_alias(
+        QStringLiteral("sailfishos-chum"));
 static QString s_repo_regular_prefix(
         QStringLiteral("https://repo.sailfishos.org/obs/sailfishos:/chum/"));
 static QString s_repo_testing(
         QStringLiteral("https://repo.sailfishos.org/obs/sailfishos:/chum:/testing/%(release)_%(arch)/"));
+static QString s_repo_testing_alias(
+        QStringLiteral("sailfishos-chum-testing"));
 static QString s_repo_testing_prefix(
         QStringLiteral("https://repo.sailfishos.org/obs/sailfishos:/chum:/testing/"));
 
@@ -60,19 +64,29 @@ void Ssu::onListFinished(QDBusPendingCallWatcher *call) {
     // count chum repos
     int count = 0;
     bool has_reg = false;
+    bool has_wrong_alias = false;
     QString repo_name;
     for (const auto &u: m_repos)
-        if (u.second.startsWith(s_repo_regular_prefix)) {
+        if (u.second.startsWith(s_repo_regular_prefix) && u.first == s_repo_regular_alias) {
             ++count;
             has_reg = true;
             repo_name = u.first;
-        } else if (u.second.startsWith(s_repo_testing_prefix)) {
+        } else if (u.second.startsWith(s_repo_testing_prefix) && u.first == s_repo_testing_alias) {
             ++count;
             repo_name = u.first;
+        } else if (u.first == s_repo_regular_alias || u.first == s_repo_testing_alias) {
+            has_wrong_alias = true;
         }
 
     if (count > 1) {
         qWarning() << "More than one Chum repository defined in SSU - skipping management of repositories";
+        m_manage_repo = false;
+        emit updated();
+        return;
+    }
+
+    if (has_wrong_alias) {
+        qWarning() << "Some of the expected Chum aliases taken by wrong repository - skipping management of repositories";
         m_manage_repo = false;
         emit updated();
         return;
@@ -113,8 +127,7 @@ void Ssu::setRepo(const QString &version, bool testing) {
     }
 
     // find new repo name
-    QString rname = testing ? QStringLiteral("sailfishos-chum-testing") :
-                              QStringLiteral("sailfishos-chum");
+    QString rname = testing ? s_repo_testing_alias : s_repo_regular_alias;
     QString url = testing ? s_repo_testing : s_repo_regular;
 
     if (!version.isEmpty()) {
@@ -123,14 +136,12 @@ void Ssu::setRepo(const QString &version, bool testing) {
 
     if (rname != m_repo_name) {
         // check if proposed name is taken
-        for (bool done=false; !done; ) {
-            done = true;
-            for (const auto &u: m_repos) {
-                if (u.first == rname) {
-                    rname.append(QStringLiteral("-gui"));
-                    done = false;
-                    break; // check new name
-                }
+        for (const auto &u: m_repos) {
+            if (u.first == rname) {
+                qWarning() << "Expected free repository alias already taken - skipping management of repositories";
+                m_manage_repo = false;
+                emit updated();
+                return;
             }
         }
     }
