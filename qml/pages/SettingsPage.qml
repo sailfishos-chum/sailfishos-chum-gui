@@ -105,6 +105,7 @@ Page {
                 color: Theme.highlightColor
                 //% "Override SailfishOS:Chum repository selection"
                 text: qsTrId("chum-settings-override-selection")
+                wrapMode: Text.WordWrap
             }
 
             TextFieldDesc {

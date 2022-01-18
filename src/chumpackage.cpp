@@ -202,6 +202,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
 
     m_repo_url = json.value("Custom").toObject().value("Repo").toString();
     m_packaging_repo_url = json.value("Custom").toObject().value("PackagingRepo").toString();
+    m_description_md_url = json.value("Custom").toObject().value("DescriptionMD").toString();
 
     m_icon = json.value("Icon").toString();
     m_screenshots = json.value("Screenshots").toVariant().toStringList();

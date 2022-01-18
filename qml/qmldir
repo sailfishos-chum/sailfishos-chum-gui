@@ -1,0 +1,2 @@
+singleton MarkdownParser 1.0 components/MarkdownParser.qml
+ShowDown 1.0 js/showdown.min.js

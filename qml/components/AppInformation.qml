@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../components"
 
 MouseArea {
     id: infoItem
@@ -31,13 +32,25 @@ MouseArea {
             rightMargin: Theme.horizontalPageMargin
         }
 
+        LabelMarkdown {
+            id: descMD
+            height: fetching ? Theme.paddingLarge + implicitHeight : implicitHeight
+            width: parent.width
+            url: pkg.descriptionMDUrl
+            color: infoItem.pressed ? Theme.highlightColor : Theme.primaryColor
+            linkColor: Theme.highlightColor
+            wrapMode: Text.WordWrap
+            onLinkActivated: Qt.openUrlExternally(link)
+        }
+
         Label {
             width: parent.width
             text: pkg.description
             color: infoItem.pressed ? Theme.highlightColor : Theme.primaryColor
             linkColor: Theme.highlightColor
+            visible: descMD.fetching || !descMD.text
             wrapMode: Text.WordWrap
-            onLinkActivated: openLink(link)
+            onLinkActivated: Qt.openUrlExternally(link)
         }
 
         Item {
