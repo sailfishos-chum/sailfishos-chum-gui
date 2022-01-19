@@ -20,7 +20,8 @@
     </message>
     <message id="chum-packages-list-apply-all-updates">
         <location filename="../qml/pages/PackagesListPage.qml" line="104"/>
-        <source>Apply all updates</source>
+        <source>Update all</source>
+        <oldsource>Apply all updates</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-updates-available" numerus="yes">
@@ -110,22 +111,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-package-project-repo">
-        <location filename="../qml/pages/PackagePage.qml" line="20"/>
+        <location filename="../qml/pages/PackagePage.qml" line="28"/>
         <source>Project Repository</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-package-file-issue">
-        <location filename="../qml/pages/PackagePage.qml" line="26"/>
+        <location filename="../qml/pages/PackagePage.qml" line="34"/>
         <source>File Issue</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-package-discussion-forum">
-        <location filename="../qml/pages/PackagePage.qml" line="32"/>
+        <location filename="../qml/pages/PackagePage.qml" line="40"/>
         <source>Discussion Forum</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-uninstalling">
-        <location filename="../qml/pages/PackagePage.qml" line="41"/>
+        <location filename="../qml/pages/PackagePage.qml" line="23"/>
         <source>Uninstalling</source>
         <translation type="unfinished"></translation>
     </message>
@@ -142,7 +143,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-uninstall">
-        <location filename="../qml/pages/PackagePage.qml" line="38"/>
+        <location filename="../qml/pages/PackagePage.qml" line="20"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="69"/>
         <source>Uninstall</source>
         <translation type="unfinished"></translation>
@@ -316,48 +317,49 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-developer">
-        <location filename="../qml/components/AppInformation.qml" line="52"/>
+        <location filename="../qml/components/AppInformation.qml" line="65"/>
         <source>Developer</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-installed-version">
-        <location filename="../qml/components/AppInformation.qml" line="59"/>
+        <location filename="../qml/components/AppInformation.qml" line="72"/>
         <source>Installed version</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-available-version">
-        <location filename="../qml/components/AppInformation.qml" line="65"/>
+        <location filename="../qml/components/AppInformation.qml" line="78"/>
         <source>Available version</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-package-name">
-        <location filename="../qml/components/AppInformation.qml" line="72"/>
+        <location filename="../qml/components/AppInformation.qml" line="85"/>
         <source>Package name</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-download-size">
-        <location filename="../qml/components/AppInformation.qml" line="79"/>
+        <location filename="../qml/components/AppInformation.qml" line="92"/>
         <source>Download size</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-license">
-        <location filename="../qml/components/AppInformation.qml" line="86"/>
+        <location filename="../qml/components/AppInformation.qml" line="99"/>
         <source>License</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-link">
-        <location filename="../qml/components/AppInformation.qml" line="97"/>
+        <location filename="../qml/components/AppInformation.qml" line="110"/>
         <source>Link</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-pkg-packaging-link">
-        <location filename="../qml/components/AppInformation.qml" line="109"/>
+        <location filename="../qml/components/AppInformation.qml" line="122"/>
         <source>Packaging repository</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-status-repo-management-failed">
         <location filename="../qml/pages/SettingsPage.qml" line="40"/>
-        <source>Chum repository management failed</source>
+        <source>SailfishOS:Chum repository management failed</source>
+        <oldsource>Chum repository management failed</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-status">
@@ -367,28 +369,32 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
     </message>
     <message id="chum-settings-status-repo-not-available">
         <location filename="../qml/pages/SettingsPage.qml" line="47"/>
-        <source>Chum repository is not available</source>
-        <oldsource>Current status: Chum repository is not available</oldsource>
+        <source>SailfishOS:Chum repository is not available</source>
+        <oldsource>Chum repository is not available</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-status-repo-testing-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="52"/>
-        <source>Following testing Chum repository with a manually set Sailfish OS version (%1)</source>
+        <source>Subscribed to the SailfishOS:Chum testing repository with a manually set Sailfish OS version (%1)</source>
+        <oldsource>Following testing Chum repository with a manually set Sailfish OS version (%1)</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
-        <source>Following regular Chum repository with a manually set Sailfish OS version (%1)</source>
+        <source>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish OS version (%1)</source>
+        <oldsource>Following regular Chum repository with a manually set Sailfish OS version (%1)</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-status-repo-testing-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="57"/>
-        <source>Following testing Chum repository with an automatically determined Sailfish OS version</source>
+        <source>Subscribed to the SailfishOS:Chum testing repository with an automatically determined Sailfish OS version</source>
+        <oldsource>Following testing Chum repository with an automatically determined Sailfish OS version</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-status-repo-regular-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="59"/>
-        <source>Following regular Chum repository with an automatically determined Sailfish OS version</source>
+        <source>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish OS version</source>
+        <oldsource>Following regular Chum repository with an automatically determined Sailfish OS version</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-general">
@@ -397,43 +403,49 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-show-apps-description">
-        <location filename="../qml/pages/SettingsPage.qml" line="74"/>
-        <source>When listing available software, show only applications by default. This is a default setting and, in each listing, you can switch between showing only applications or all packages using pulley menu.</source>
+        <location filename="../qml/pages/SettingsPage.qml" line="75"/>
+        <source>When listing available software packages, by default only applications are shown. But for each listing you can switch between showing only applications or all packages by using the corresponding switch in the pulley menu.</source>
+        <oldsource>When listing available software, show only applications by default. This is a default setting and, in each listing, you can switch between showing only applications or all packages using pulley menu.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-show-apps">
-        <location filename="../qml/pages/SettingsPage.qml" line="76"/>
-        <source>Show applications only by default</source>
+        <location filename="../qml/pages/SettingsPage.qml" line="77"/>
+        <source>Show applications only</source>
+        <oldsource>Show applications only by default</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-testing-description">
-        <location filename="../qml/pages/SettingsPage.qml" line="86"/>
-        <source>Use testing version of Chum repository. This is mainly useful for developers for testing their packages before publishing.</source>
+        <location filename="../qml/pages/SettingsPage.qml" line="87"/>
+        <source>Use the SailfishOS:Chum testing repository. This is mainly useful for developers to test their packages before publishing.</source>
+        <oldsource>Use testing version of Chum repository. This is mainly useful for developers for testing their packages before publishing.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-testing">
-        <location filename="../qml/pages/SettingsPage.qml" line="88"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="89"/>
         <source>Use testing repository</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-advanced">
-        <location filename="../qml/pages/SettingsPage.qml" line="94"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="95"/>
         <source>Advanced</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-settings-override-selection">
-        <location filename="../qml/pages/SettingsPage.qml" line="106"/>
-        <source>Override Chum repository selection</source>
+        <location filename="../qml/pages/SettingsPage.qml" line="107"/>
+        <source>Override SailfishOS:Chum repository selection</source>
+        <oldsource>Override Chum repository selection</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-setings-override-release-description">
-        <location filename="../qml/pages/SettingsPage.qml" line="122"/>
-        <source>Usually, selected Chum repository is automatically set to your Sailfish OS version. To follow Chum repository for specific Sailfish OS release, specify Sailfish OS release here (for example, 4.3.0.12). This is useful when Chum repository is not available for your Sailfish OS version, as for Cbeta users.</source>
+        <location filename="../qml/pages/SettingsPage.qml" line="118"/>
+        <source>Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish OS release version. To subscribe to a SailfishOS:Chum repository for a specific Sailfish OS release, specify this Sailfish OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish OS version, as for Cbeta users.</source>
+        <oldsource>Usually, selected Chum repository is automatically set to your Sailfish OS version. To follow Chum repository for specific Sailfish OS release, specify Sailfish OS release here (for example, 4.3.0.12). This is useful when Chum repository is not available for your Sailfish OS version, as for Cbeta users.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-setings-override-release-placeholder">
-        <location filename="../qml/pages/SettingsPage.qml" line="124"/>
-        <source>Specify Sailfish version</source>
+        <location filename="../qml/pages/SettingsPage.qml" line="120"/>
+        <source>Specify Sailfish OS version</source>
+        <oldsource>Specify Sailfish version</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-categories">
@@ -561,6 +573,11 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
     <message id="chum-page-header-packaged-by">
         <location filename="../qml/components/FancyPageHeader.qml" line="39"/>
         <source>Packaged by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message id="chum-loading-text">
+        <location filename="../qml/components/LabelMarkdown.qml" line="22"/>
+        <source>Loading...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
