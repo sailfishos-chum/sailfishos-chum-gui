@@ -1,3 +1,14 @@
+* Wed Jan 19 2022 Rinigus <rinigus.git@gmail.com> 0.3.0-1
+- Improve compatibility with older SFOS versions
+- Allow to specify description as URL pointing to MarkDown
+- Add packagers and packaging URL
+- Enhance wording in several locations
+- Allow to use in ports with Chum repo defined globally
+- Revise package pulley menu
+- Prefer developer name as set in SPEC
+- Bugfixes
+- Add and update translations
+
 * Sun Jan 02 2022 Rinigus <rinigus.git@gmail.com> 0.3.0-1
 - Add metadata support
 - Add GitHub and GitLab integration
