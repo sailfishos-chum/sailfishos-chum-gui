@@ -22,7 +22,7 @@
         <location filename="../qml/pages/PackagesListPage.qml" line="104"/>
         <source>Update all</source>
         <oldsource>Apply all updates</oldsource>
-        <translation type="unfinished">Alle Aktualisierungen durchführen</translation>
+        <translation>Alle aktualisierunge</translation>
     </message>
     <message id="chum-updates-available" numerus="yes">
         <location filename="../qml/sailfishos-chum-gui.qml" line="65"/>
@@ -128,7 +128,7 @@
     <message id="chum-uninstalling">
         <location filename="../qml/pages/PackagePage.qml" line="23"/>
         <source>Uninstalling</source>
-        <translation type="unfinished"></translation>
+        <translation>Deinstalliere</translation>
     </message>
     <message id="chum-update">
         <location filename="../qml/pages/PackagePage.qml" line="47"/>
@@ -321,7 +321,7 @@ Bitte enferne alle definierten Chum Repositories und starte die GUI neu. Die GUI
     <message id="chum-pkg-developer">
         <location filename="../qml/components/AppInformation.qml" line="65"/>
         <source>Developer</source>
-        <translation type="unfinished"></translation>
+        <translation>Entwickler</translation>
     </message>
     <message id="chum-pkg-installed-version">
         <location filename="../qml/components/AppInformation.qml" line="72"/>
@@ -356,13 +356,13 @@ Bitte enferne alle definierten Chum Repositories und starte die GUI neu. Die GUI
     <message id="chum-pkg-packaging-link">
         <location filename="../qml/components/AppInformation.qml" line="122"/>
         <source>Packaging repository</source>
-        <translation type="unfinished"></translation>
+        <translation>Packaging Repository</translation>
     </message>
     <message id="chum-settings-status-repo-management-failed">
         <location filename="../qml/pages/SettingsPage.qml" line="40"/>
         <source>SailfishOS:Chum repository management failed</source>
         <oldsource>Chum repository management failed</oldsource>
-        <translation type="unfinished">Chum Repository Verwaltung fehlgeschlagen</translation>
+        <translation>SailfishOS:Chum Repository Verwaltung fehlgeschlagen</translation>
     </message>
     <message id="chum-settings-status">
         <location filename="../qml/pages/SettingsPage.qml" line="26"/>
@@ -373,31 +373,31 @@ Bitte enferne alle definierten Chum Repositories und starte die GUI neu. Die GUI
         <location filename="../qml/pages/SettingsPage.qml" line="47"/>
         <source>SailfishOS:Chum repository is not available</source>
         <oldsource>Chum repository is not available</oldsource>
-        <translation type="unfinished">Chum Repository nicht verfügbar</translation>
+        <translation>SailfishOS:Chum Repository nicht verfügbar</translation>
     </message>
     <message id="chum-settings-status-repo-testing-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="52"/>
         <source>Subscribed to the SailfishOS:Chum testing repository with a manually set Sailfish OS version (%1)</source>
         <oldsource>Following testing Chum repository with a manually set Sailfish OS version (%1)</oldsource>
-        <translation type="unfinished">Folge dem Testing Chum Repository mit manuell eingestellter Sailfish OS Version (%1)</translation>
+        <translation>Folge dem SailfishOS:Chum Testing Repository mit manuell eingestellter Sailfish OS Version (%1)</translation>
     </message>
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
         <source>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish OS version (%1)</source>
         <oldsource>Following regular Chum repository with a manually set Sailfish OS version (%1)</oldsource>
-        <translation type="unfinished">Folge dem regulären Chum Repository mit manuell eingestellter Sailfish OS Version (%1)</translation>
+        <translation>Folge dem regulären SailfishOS:Chum Repository mit manuell eingestellter Sailfish OS Version (%1)</translation>
     </message>
     <message id="chum-settings-status-repo-testing-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="57"/>
         <source>Subscribed to the SailfishOS:Chum testing repository with an automatically determined Sailfish OS version</source>
         <oldsource>Following testing Chum repository with an automatically determined Sailfish OS version</oldsource>
-        <translation type="unfinished">Folge dem Testing Chum Repository mit automatisch bestimmter Sailfish OS Version</translation>
+        <translation>Folge dem SailfishOS:Chum Testing Repository mit automatisch bestimmter Sailfish OS Version</translation>
     </message>
     <message id="chum-settings-status-repo-regular-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="59"/>
         <source>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish OS version</source>
         <oldsource>Following regular Chum repository with an automatically determined Sailfish OS version</oldsource>
-        <translation type="unfinished">Folge dem regulären Chum Repository mit automatisch bestimmter Sailfish OS Version</translation>
+        <translation>Folge dem regulären SailfishOS:Chum Repository mit automatisch bestimmter Sailfish OS Version</translation>
     </message>
     <message id="chum-settings-general">
         <location filename="../qml/pages/SettingsPage.qml" line="67"/>
@@ -408,19 +408,19 @@ Bitte enferne alle definierten Chum Repositories und starte die GUI neu. Die GUI
         <location filename="../qml/pages/SettingsPage.qml" line="75"/>
         <source>When listing available software packages, by default only applications are shown. But for each listing you can switch between showing only applications or all packages by using the corresponding switch in the pulley menu.</source>
         <oldsource>When listing available software, show only applications by default. This is a default setting and, in each listing, you can switch between showing only applications or all packages using pulley menu.</oldsource>
-        <translation type="unfinished">Zeige standardmäßig nur Anwendungen an, wenn die verfügbare Software aufgelistet wird. Das ist die Standardeinstellung in jeder Liste. Du kannst zwischen dem Anzeigen von ausschließlich Anwendungen und allen Paketen im Pulley Menu wechseln.</translation>
+        <translation>Beim Anzeigen der verfügbaren Software Pakete, werden standardmäig nur Anwendungen aufgeführt. Für jede Auflistung kann aber zwischen der Anzeige von ausschließlich Anwendungen oder allen Paketen mit dem entsprechenden Eintrag im Pulley Menü gewechselt werden.</translation>
     </message>
     <message id="chum-settings-show-apps">
         <location filename="../qml/pages/SettingsPage.qml" line="77"/>
         <source>Show applications only</source>
         <oldsource>Show applications only by default</oldsource>
-        <translation type="unfinished">Standardmäßig nur Anwendungen anzeigen</translation>
+        <translation>Nur Anwendungen anzeigen</translation>
     </message>
     <message id="chum-settings-testing-description">
         <location filename="../qml/pages/SettingsPage.qml" line="87"/>
         <source>Use the SailfishOS:Chum testing repository. This is mainly useful for developers to test their packages before publishing.</source>
         <oldsource>Use testing version of Chum repository. This is mainly useful for developers for testing their packages before publishing.</oldsource>
-        <translation type="unfinished">Benutze das Testing Chum Repository. Dieses ist hauptsächlich für Entwickler gedacht, um ihre Pakete zu testen, bevor diese veröffentlicht werden.</translation>
+        <translation>Benutze das SailfishOS::Chum Testing Repository. Dieses ist hauptsächlich für Entwickler gedacht, um ihre Pakete zu testen, bevor diese veröffentlicht werden.</translation>
     </message>
     <message id="chum-settings-testing">
         <location filename="../qml/pages/SettingsPage.qml" line="89"/>
@@ -436,19 +436,19 @@ Bitte enferne alle definierten Chum Repositories und starte die GUI neu. Die GUI
         <location filename="../qml/pages/SettingsPage.qml" line="107"/>
         <source>Override SailfishOS:Chum repository selection</source>
         <oldsource>Override Chum repository selection</oldsource>
-        <translation type="unfinished">Überschreibe Chum Repository Auswahl</translation>
+        <translation>Überschreibe SailfishOS:Chum Repository Auswahl</translation>
     </message>
     <message id="chum-setings-override-release-description">
         <location filename="../qml/pages/SettingsPage.qml" line="118"/>
         <source>Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish OS release version. To subscribe to a SailfishOS:Chum repository for a specific Sailfish OS release, specify this Sailfish OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish OS version, as for Cbeta users.</source>
         <oldsource>Usually, selected Chum repository is automatically set to your Sailfish OS version. To follow Chum repository for specific Sailfish OS release, specify Sailfish OS release here (for example, 4.3.0.12). This is useful when Chum repository is not available for your Sailfish OS version, as for Cbeta users.</oldsource>
-        <translation type="unfinished">Normalerweise wird das ausgewählte Chum Repository automatisch auf Deine Sailfish OS Version eingestellt. Um einem Chum Repository für eine spezielle Sailfish OS Version zu folgen, spezifiziere diese Version hier (z.B. 4.3.0.12). Das ist hilfreich wenn kein Chum Repository für deine Sailfish OS Version zur Verfügung steht, so wie für Cbeta-Benutzer.</translation>
+        <translation>Normalerweise wird das ausgewählte SailfishOS:Chum Repository automatisch auf deine Sailfish OS Version eingestellt. Um einem SailfishOS:Chum Repository für eine spezielle Sailfish OS Version zu folgen, spezifiziere diese Version hier (z.B. 4.3.0.12). Das ist hilfreich wenn kein SailfishOS:Chum Repository für deine Sailfish OS Version zur Verfügung steht, so wie für Cbeta-Benutzer.</translation>
     </message>
     <message id="chum-setings-override-release-placeholder">
         <location filename="../qml/pages/SettingsPage.qml" line="120"/>
         <source>Specify Sailfish OS version</source>
         <oldsource>Specify Sailfish version</oldsource>
-        <translation type="unfinished">Sailfish Version festlegen</translation>
+        <translation>Sailfish OS Version festlegen</translation>
     </message>
     <message id="chum-categories">
         <location filename="../qml/pages/CategoriesPage.qml" line="20"/>
@@ -575,12 +575,12 @@ Bitte enferne alle definierten Chum Repositories und starte die GUI neu. Die GUI
     <message id="chum-page-header-packaged-by">
         <location filename="../qml/components/FancyPageHeader.qml" line="39"/>
         <source>Packaged by</source>
-        <translation type="unfinished"></translation>
+        <translation>Erstellt von</translation>
     </message>
     <message id="chum-loading-text">
         <location filename="../qml/components/LabelMarkdown.qml" line="22"/>
         <source>Loading...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lade...</translation>
     </message>
 </context>
 </TS>
