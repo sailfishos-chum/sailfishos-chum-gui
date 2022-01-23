@@ -1,4 +1,4 @@
-* Wed Jan 19 2022 Rinigus <rinigus.git@gmail.com> 0.3.0-1
+* Wed Jan 19 2022 Rinigus <rinigus.git@gmail.com> 0.4.0-1
 - Improve compatibility with older SFOS versions
 - Allow to specify description as URL pointing to MarkDown
 - Add packagers and packaging URL
