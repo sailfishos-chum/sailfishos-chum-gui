@@ -6,7 +6,7 @@
     <message id="chum-search">
         <location filename="../qml/pages/PackagesListPage.qml" line="41"/>
         <source>Search</source>
-        <translation type="unfinished">Recherche</translation>
+        <translation>Rechercher</translation>
     </message>
     <message id="chum-packages-list-show-all">
         <location filename="../qml/pages/PackagesListPage.qml" line="97"/>
@@ -22,7 +22,7 @@
         <location filename="../qml/pages/PackagesListPage.qml" line="104"/>
         <source>Update all</source>
         <oldsource>Apply all updates</oldsource>
-        <translation type="unfinished">Lancer toutes les mises à jour</translation>
+        <translation>Tout mettre à jour</translation>
     </message>
     <message id="chum-updates-available" numerus="yes">
         <location filename="../qml/sailfishos-chum-gui.qml" line="65"/>
@@ -53,12 +53,12 @@
         <location filename="../qml/sailfishos-chum-gui.qml" line="26"/>
         <source>%1 %2 updated</source>
         <extracomment>%1 - package name, %2 - package version</extracomment>
-        <translation type="unfinished">%1 %2 mis à jour</translation>
+        <translation>%1 %2 mis à jour</translation>
     </message>
     <message id="chum-about">
         <location filename="../qml/pages/MainPage.qml" line="40"/>
         <source>About</source>
-        <translation>À propos de</translation>
+        <translation>À propos</translation>
     </message>
     <message id="chum-settings-title">
         <location filename="../qml/pages/MainPage.qml" line="46"/>
@@ -128,13 +128,13 @@
     <message id="chum-uninstalling">
         <location filename="../qml/pages/PackagePage.qml" line="23"/>
         <source>Uninstalling</source>
-        <translation type="unfinished"></translation>
+        <translation>Désinstallation</translation>
     </message>
     <message id="chum-update">
         <location filename="../qml/pages/PackagePage.qml" line="47"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="63"/>
         <source>Update</source>
-        <translation>Mise à jour</translation>
+        <translation>Mettre à jour</translation>
     </message>
     <message id="chum-install">
         <location filename="../qml/pages/PackagePage.qml" line="49"/>
@@ -152,7 +152,7 @@
         <location filename="../qml/pages/PackagePage.qml" line="124"/>
         <source>Make Dontation</source>
         <oldsource>Make Donation</oldsource>
-        <translation type="unfinished">Faire un don</translation>
+        <translation>Faire un don</translation>
     </message>
     <message id="chum-pkg-update-available">
         <location filename="../qml/components/AppSummary.qml" line="36"/>
@@ -167,7 +167,7 @@
     <message id="chum-pkg-type-desktop">
         <location filename="../qml/components/AppSummary.qml" line="53"/>
         <source>Sailfish application</source>
-        <translation>Applications Sailfish</translation>
+        <translation>Application Sailfish</translation>
     </message>
     <message id="chum-pkg-type-console">
         <location filename="../qml/components/AppSummary.qml" line="56"/>
@@ -222,7 +222,7 @@
     <message id="chum-refresh-repository-impossible">
         <location filename="../src/chum.cpp" line="293"/>
         <source>Cannot refresh repository as it is not available</source>
-        <translation>Impossible de mettre à jour le dépôt car il n&apos;est pas disponible</translation>
+        <translation>Impossible de mettre à jour le dépôt car il est indisponible</translation>
     </message>
     <message id="chum-refresh-repository">
         <location filename="../src/chum.cpp" line="303"/>
@@ -322,7 +322,7 @@ Veuillez supprimer tous les dépôts Chum et redémarrer l&apos;application grap
     <message id="chum-pkg-developer">
         <location filename="../qml/components/AppInformation.qml" line="65"/>
         <source>Developer</source>
-        <translation type="unfinished"></translation>
+        <translation>Développeur</translation>
     </message>
     <message id="chum-pkg-installed-version">
         <location filename="../qml/components/AppInformation.qml" line="72"/>
@@ -342,7 +342,7 @@ Veuillez supprimer tous les dépôts Chum et redémarrer l&apos;application grap
     <message id="chum-pkg-download-size">
         <location filename="../qml/components/AppInformation.qml" line="92"/>
         <source>Download size</source>
-        <translation>Taille de téléchargement</translation>
+        <translation>Taille du téléchargement</translation>
     </message>
     <message id="chum-pkg-license">
         <location filename="../qml/components/AppInformation.qml" line="99"/>
@@ -357,13 +357,13 @@ Veuillez supprimer tous les dépôts Chum et redémarrer l&apos;application grap
     <message id="chum-pkg-packaging-link">
         <location filename="../qml/components/AppInformation.qml" line="122"/>
         <source>Packaging repository</source>
-        <translation type="unfinished"></translation>
+        <translation>Dépôt d'empaquetage</translation>
     </message>
     <message id="chum-settings-status-repo-management-failed">
         <location filename="../qml/pages/SettingsPage.qml" line="40"/>
         <source>SailfishOS:Chum repository management failed</source>
         <oldsource>Chum repository management failed</oldsource>
-        <translation type="unfinished">Erreur de gestion du dépôt Chum</translation>
+        <translation>Erreur de gestion du dépôt SailfishOS:Chum</translation>
     </message>
     <message id="chum-settings-status">
         <location filename="../qml/pages/SettingsPage.qml" line="26"/>
@@ -374,31 +374,31 @@ Veuillez supprimer tous les dépôts Chum et redémarrer l&apos;application grap
         <location filename="../qml/pages/SettingsPage.qml" line="47"/>
         <source>SailfishOS:Chum repository is not available</source>
         <oldsource>Chum repository is not available</oldsource>
-        <translation type="unfinished">Le dépôt Chum n&apos;est pas disponible</translation>
+        <translation>Le dépôt SailfishOS:Chum est indisponible</translation>
     </message>
     <message id="chum-settings-status-repo-testing-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="52"/>
         <source>Subscribed to the SailfishOS:Chum testing repository with a manually set Sailfish OS version (%1)</source>
         <oldsource>Following testing Chum repository with a manually set Sailfish OS version (%1)</oldsource>
-        <translation type="unfinished">Utilisation du dépot Chum de test avec une version spécifique de Sailfish OS (%1)</translation>
+        <translation>Utilisation du dépot SailfishOS:Chum de test avec une version spécifique de Sailfish OS (%1)</translation>
     </message>
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
         <source>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish OS version (%1)</source>
         <oldsource>Following regular Chum repository with a manually set Sailfish OS version (%1)</oldsource>
-        <translation type="unfinished">Utilsation du dépôt Chum standard avec une version spécifique de Sailfish OS (%1)</translation>
+        <translation>Utilsation du dépôt SailfishOS:Chum standard avec une version spécifique de Sailfish OS (%1)</translation>
     </message>
     <message id="chum-settings-status-repo-testing-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="57"/>
         <source>Subscribed to the SailfishOS:Chum testing repository with an automatically determined Sailfish OS version</source>
         <oldsource>Following testing Chum repository with an automatically determined Sailfish OS version</oldsource>
-        <translation type="unfinished">Utilisation du dépôt Chum de test avec la version de Sailfish OS définie automatiquement</translation>
+        <translation>Utilisation du dépôt SailfishOS:Chum de test avec la version de Sailfish OS définie automatiquement</translation>
     </message>
     <message id="chum-settings-status-repo-regular-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="59"/>
         <source>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish OS version</source>
         <oldsource>Following regular Chum repository with an automatically determined Sailfish OS version</oldsource>
-        <translation type="unfinished">Utilisation du dépôt Chum standard avec la version de Sailfish OS définie automatiquement</translation>
+        <translation>Utilisation du dépôt SailfishOS:Chum standard avec la version de Sailfish OS définie automatiquement</translation>
     </message>
     <message id="chum-settings-general">
         <location filename="../qml/pages/SettingsPage.qml" line="67"/>
@@ -409,19 +409,19 @@ Veuillez supprimer tous les dépôts Chum et redémarrer l&apos;application grap
         <location filename="../qml/pages/SettingsPage.qml" line="75"/>
         <source>When listing available software packages, by default only applications are shown. But for each listing you can switch between showing only applications or all packages by using the corresponding switch in the pulley menu.</source>
         <oldsource>When listing available software, show only applications by default. This is a default setting and, in each listing, you can switch between showing only applications or all packages using pulley menu.</oldsource>
-        <translation type="unfinished">Par défaut, ne lister que les appplications disponibles. Ceci est la configuration par défaut, vous pouvez changer entre ne montrer que les applications ou montrer tous les paquets en utilisant le pulley menu.</translation>
+        <translation>Par défaut, ne lister que les appplications disponibles. Ceci est la configuration par défaut, vous pouvez changer entre ne montrer que les applications ou montrer tous les paquets en utilisant le pulley menu.</translation>
     </message>
     <message id="chum-settings-show-apps">
         <location filename="../qml/pages/SettingsPage.qml" line="77"/>
         <source>Show applications only</source>
         <oldsource>Show applications only by default</oldsource>
-        <translation type="unfinished">Par défaut, ne montrer ques les applications</translation>
+        <translation>Par défaut, ne montrer ques les applications</translation>
     </message>
     <message id="chum-settings-testing-description">
         <location filename="../qml/pages/SettingsPage.qml" line="87"/>
         <source>Use the SailfishOS:Chum testing repository. This is mainly useful for developers to test their packages before publishing.</source>
         <oldsource>Use testing version of Chum repository. This is mainly useful for developers for testing their packages before publishing.</oldsource>
-        <translation type="unfinished">Utiliser la version de test du dépôt Chum. Ceci est surtout utile pour les développeurs quand ils testent leurs paquets avant publication.</translation>
+        <translation>Utiliser la version de test du dépôt SailfishOS:Chum. Ceci est surtout utile pour les développeurs quand ils testent leurs paquets avant publication.</translation>
     </message>
     <message id="chum-settings-testing">
         <location filename="../qml/pages/SettingsPage.qml" line="89"/>
@@ -431,25 +431,25 @@ Veuillez supprimer tous les dépôts Chum et redémarrer l&apos;application grap
     <message id="chum-settings-advanced">
         <location filename="../qml/pages/SettingsPage.qml" line="95"/>
         <source>Advanced</source>
-        <translation type="unfinished">Avancé</translation>
+        <translation>Avancé</translation>
     </message>
     <message id="chum-settings-override-selection">
         <location filename="../qml/pages/SettingsPage.qml" line="107"/>
         <source>Override SailfishOS:Chum repository selection</source>
         <oldsource>Override Chum repository selection</oldsource>
-        <translation type="unfinished">Passer outre le choix du dépôt Chum</translation>
+        <translation>Passer outre le choix du dépôt SailfishOS:Chum</translation>
     </message>
     <message id="chum-setings-override-release-description">
         <location filename="../qml/pages/SettingsPage.qml" line="118"/>
         <source>Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish OS release version. To subscribe to a SailfishOS:Chum repository for a specific Sailfish OS release, specify this Sailfish OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish OS version, as for Cbeta users.</source>
         <oldsource>Usually, selected Chum repository is automatically set to your Sailfish OS version. To follow Chum repository for specific Sailfish OS release, specify Sailfish OS release here (for example, 4.3.0.12). This is useful when Chum repository is not available for your Sailfish OS version, as for Cbeta users.</oldsource>
-        <translation type="unfinished">Normalement, le dépôt Chum choisi est défini automatiquement par votre version de Sailfish OS. Pour utiliser le dépôt Chum d&apos;une version spécifique de Sailfish OS, spécifiez ici la version de Sailfish OS (par exemple, 4.3.0.12). Cela est utile quand le dépôt Chum n&apos;est pas disponible pour votre version de Sailfish OS ainsi que pour les utilisateurs Cbeta.</translation>
+        <translation>Normalement, le dépôt SailfishOS:Chum choisi est défini automatiquement par votre version de Sailfish OS. Pour utiliser le dépôt SailfishOS:Chum d&apos;une version spécifique de Sailfish OS, spécifiez ici la version de Sailfish OS (par exemple, 4.3.0.12). Cela est utile quand le dépôt SailfishOS:Chum est indisponible pour votre version de Sailfish OS ainsi que pour les utilisateurs Cbeta.</translation>
     </message>
     <message id="chum-setings-override-release-placeholder">
         <location filename="../qml/pages/SettingsPage.qml" line="120"/>
         <source>Specify Sailfish OS version</source>
         <oldsource>Specify Sailfish version</oldsource>
-        <translation type="unfinished">Spécifiez la version de Sailfish</translation>
+        <translation>Spécifiez la version de Sailfish</translation>
     </message>
     <message id="chum-categories">
         <location filename="../qml/pages/CategoriesPage.qml" line="20"/>
@@ -576,12 +576,12 @@ Veuillez supprimer tous les dépôts Chum et redémarrer l&apos;application grap
     <message id="chum-page-header-packaged-by">
         <location filename="../qml/components/FancyPageHeader.qml" line="39"/>
         <source>Packaged by</source>
-        <translation type="unfinished"></translation>
+        <translation>Empaqueté par</translation>
     </message>
     <message id="chum-loading-text">
         <location filename="../qml/components/LabelMarkdown.qml" line="22"/>
         <source>Loading...</source>
-        <translation type="unfinished"></translation>
+        <translation>Chargement...</translation>
     </message>
 </context>
 </TS>
