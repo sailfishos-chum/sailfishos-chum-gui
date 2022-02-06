@@ -14,6 +14,7 @@ Page {
     property alias  updatesOnly: chumModel.filterUpdatesOnly
 
     signal searchFocus;
+    signal removeSearchFocus;
 
     allowedOrientations: Orientation.All
 
@@ -45,8 +46,10 @@ Page {
             Connections {
                 target: page
                 onSearchFocus: {
-                    console.log("Signal focus");
                     searchField.forceActiveFocus();
+                }
+                onRemoveSearchFocus: {
+                    searchField.focus = false;
                 }
             }
         }
@@ -77,6 +80,10 @@ Page {
             onClicked: pageStack.push(Qt.resolvedUrl("../pages/PackagePage.qml"), {
                                           pkg:    Chum.package(model.packageId)
                                       })
+
+            onDownChanged: {
+                page.removeSearchFocus();
+            }
 
             PackagesListItem {
                 id: item
