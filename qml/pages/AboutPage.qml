@@ -15,7 +15,7 @@ Page {
             width: parent.width
 
             PageHeader {
-                //% "About Chum GUI"
+                //% "About the SailfishOS:Chum GUI client app"
                 title: qsTrId("chum-about-gui")
             }
 
@@ -27,7 +27,7 @@ Page {
             }
 
             Label {
-                //% "A store frontend for the Chum repository"
+                //% "A graphical frontend app for the SailfishOS:Chum repository"
                 text: qsTrId("chum-about-store")
                 anchors.horizontalCenter: parent.horizontalCenter
             }
@@ -45,16 +45,7 @@ Page {
             }
 
             Label {
-                //% "Home"
-                text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui">' + qsTrId("chum-about-home") + '</a>'
-                anchors.horizontalCenter: parent.horizontalCenter
-                linkColor: Theme.highlightColor
-                wrapMode: Text.WordWrap
-                onLinkActivated: Qt.openUrlExternally(link)
-            }
-
-            Label {
-                //% "Issues"
+                //% "Issue tracker"
                 text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui/issues">' + qsTrId("chum-about-issues") + '</a>'
                 anchors.horizontalCenter: parent.horizontalCenter
                 linkColor: Theme.highlightColor
@@ -63,20 +54,49 @@ Page {
             }
 
             Label {
-                //% "Sailfish OS Community repositories provide a collection of applications, tools, "
-                //% "and libraries compiled for different combinations of architectures and Sailfish versions.<br>"
-                //% "<br>"
-                //% "The ambition is to become the main repository for software distribution on Sailfish OS. "
-                //% "When compared to software distribution via Jolla Store or OpenRepos, the software "
-                //% "is compiled into RPMs in a reproducible way directly from the source. The source used "
-                //% "for the compilation is available at OBS together with the compiled packages. This is in "
-                //% "contrast with the Jolla Store and OpenRepos where all packages are uploaded in binary form "
-                //% "without any control over how the binary was compiled.<br>"
-                //% "<br>"
-                //% "By collecting the software in a single automated build system, we can benefit from "
-                //% "collaboration between developers through shared packaging of required libraries, reduce "
-                //% "duplication of work by keeping the packages up to date, and get a clear overview of "
-                //% "missing software."
+                //% "Source code"
+                text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui">' + qsTrId("chum-about-home") + '</a>'
+                anchors.horizontalCenter: parent.horizontalCenter
+                linkColor: Theme.highlightColor
+                wrapMode: Text.WordWrap
+                onLinkActivated: Qt.openUrlExternally(link)
+            }
+
+            Label {           
+                //% "The SailfishOS:Chum community repository provides a collection of "
+                //% "applications, tools and libraries compiled for various hardware "
+                //% "architectures and Sailfish&nbsp;OS release versions.<br />"
+                //% "<br />"
+                //% "In contrast to the software distribution model of the Jolla Store or "
+                //% "OpenRepos, to which binary packages are uploaded by developers, at "
+                //% "SailfishOS:Chum software is compiled and packaged into RPMs in a "
+                //% "reproducible manner directly from its source code. The source code used "
+                //% "for compiling and packaging is submitted by developers to OBS (Open "
+                //% "Build Service), which generates multiple RPM files for different "
+                //% "combinations of hardware architectures and Sailfish&nbsp;OS release "
+                //% "versions.<br />"
+                //% "<br />"
+                //% "This scheme ensures that the complete source code of all packages at "
+                //% "SailfishOS:Chum is available and inspectable there, and that all "
+                //% "packages are generated solely from this source code. Hence all software "
+                //% "packages at SailfishOS:Chum are created in a transparent and fully "
+                //% "traceable manner.<br />"
+                //% "<br />"
+                //% "By collecting software for Sailfish&nbsp;OS in a single automated build "
+                //% "system, collaboration between developers through common packaging of "
+                //% "shared libraries etc. is fostered, duplication of work for keeping these "
+                //% "common packages up-to-date is eliminated, and it becomes much easier to "
+                //% "determine which pieces of software exist and which are missing at the "
+                //% "Sailfish&nbsp;OS OBS. Additionally this eases tracing multiple and "
+                //% "potentially layered dependencies (&quot;dependency chains&quot;) which is crucial "
+                //% "for keeping the software supply chains of complex packages up-to-date.<br />"
+                //% "<br />"
+                //% "The SailfishOS:Chum repository is located at the Sailfish&nbsp;OS OBS:<br />"
+                //% "<a href='https://build.sailfishos.org/project/show/sailfishos:chum'>https://build.sailfishos.org/project/show/sailfishos:chum</a><br />"
+                //% "<br />"
+                //% "For the etymological origin and meanings of the word &quot;chum&quot;, see "
+                //% "<a href='https://en.wikipedia.org/wiki/Chumming'>en.wikipedia.org:Chumming</a> "
+                //% "and <a href='https://en.wiktionary.org/wiki/chum'>en.wiktionary.org:chum</a>."
                 text: qsTrId("chum-about-description")
                 textFormat: Text.StyledText
                 anchors.horizontalCenter: parent.horizontalCenter
