@@ -4,22 +4,22 @@
 <context>
     <name></name>
     <message id="chum-search">
-        <location filename="../qml/pages/PackagesListPage.qml" line="41"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="42"/>
         <source>Search</source>
         <translation>Suchen</translation>
     </message>
     <message id="chum-packages-list-show-all">
-        <location filename="../qml/pages/PackagesListPage.qml" line="97"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="104"/>
         <source>Show all packages</source>
         <translation>Alle Pakete anzeigen</translation>
     </message>
     <message id="chum-packages-list-show-apps">
-        <location filename="../qml/pages/PackagesListPage.qml" line="99"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="106"/>
         <source>Show applications only</source>
         <translation>Nur Anwendungen anzeigen</translation>
     </message>
     <message id="chum-packages-list-apply-all-updates">
-        <location filename="../qml/pages/PackagesListPage.qml" line="104"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="111"/>
         <source>Update all</source>
         <oldsource>Apply all updates</oldsource>
         <translation>Alle aktualisierunge</translation>
@@ -85,13 +85,13 @@
     </message>
     <message id="chum-applications">
         <location filename="../qml/pages/MainPage.qml" line="89"/>
-        <location filename="../qml/pages/PackagesListPage.qml" line="32"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="33"/>
         <source>Applications</source>
         <translation>Anwendungen</translation>
     </message>
     <message id="chum-packages">
         <location filename="../qml/pages/MainPage.qml" line="91"/>
-        <location filename="../qml/pages/PackagesListPage.qml" line="33"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="34"/>
         <source>Packages</source>
         <translation>Pakete</translation>
     </message>
@@ -132,19 +132,19 @@
     </message>
     <message id="chum-update">
         <location filename="../qml/pages/PackagePage.qml" line="47"/>
-        <location filename="../qml/pages/PackagesListPage.qml" line="63"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="66"/>
         <source>Update</source>
         <translation>Aktualisieren</translation>
     </message>
     <message id="chum-install">
         <location filename="../qml/pages/PackagePage.qml" line="49"/>
-        <location filename="../qml/pages/PackagesListPage.qml" line="70"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="73"/>
         <source>Install</source>
         <translation>Installieren</translation>
     </message>
     <message id="chum-uninstall">
         <location filename="../qml/pages/PackagePage.qml" line="20"/>
-        <location filename="../qml/pages/PackagesListPage.qml" line="69"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="72"/>
         <source>Uninstall</source>
         <translation>Deinstallieren</translation>
     </message>

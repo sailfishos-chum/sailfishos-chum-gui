@@ -4,22 +4,22 @@
 <context>
     <name></name>
     <message id="chum-search">
-        <location filename="../qml/pages/PackagesListPage.qml" line="41"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="42"/>
         <source>Search</source>
         <translation>Rechercher</translation>
     </message>
     <message id="chum-packages-list-show-all">
-        <location filename="../qml/pages/PackagesListPage.qml" line="97"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="104"/>
         <source>Show all packages</source>
         <translation>Afficher tous les paquets</translation>
     </message>
     <message id="chum-packages-list-show-apps">
-        <location filename="../qml/pages/PackagesListPage.qml" line="99"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="106"/>
         <source>Show applications only</source>
         <translation>Afficher uniquement les applications</translation>
     </message>
     <message id="chum-packages-list-apply-all-updates">
-        <location filename="../qml/pages/PackagesListPage.qml" line="104"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="111"/>
         <source>Update all</source>
         <oldsource>Apply all updates</oldsource>
         <translation>Tout mettre à jour</translation>
@@ -85,13 +85,13 @@
     </message>
     <message id="chum-applications">
         <location filename="../qml/pages/MainPage.qml" line="89"/>
-        <location filename="../qml/pages/PackagesListPage.qml" line="32"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="33"/>
         <source>Applications</source>
         <translation>Applications</translation>
     </message>
     <message id="chum-packages">
         <location filename="../qml/pages/MainPage.qml" line="91"/>
-        <location filename="../qml/pages/PackagesListPage.qml" line="33"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="34"/>
         <source>Packages</source>
         <translation>Paquets</translation>
     </message>
@@ -132,19 +132,19 @@
     </message>
     <message id="chum-update">
         <location filename="../qml/pages/PackagePage.qml" line="47"/>
-        <location filename="../qml/pages/PackagesListPage.qml" line="63"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="66"/>
         <source>Update</source>
         <translation>Mettre à jour</translation>
     </message>
     <message id="chum-install">
         <location filename="../qml/pages/PackagePage.qml" line="49"/>
-        <location filename="../qml/pages/PackagesListPage.qml" line="70"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="73"/>
         <source>Install</source>
         <translation>Installer</translation>
     </message>
     <message id="chum-uninstall">
         <location filename="../qml/pages/PackagePage.qml" line="20"/>
-        <location filename="../qml/pages/PackagesListPage.qml" line="69"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="72"/>
         <source>Uninstall</source>
         <translation>Désinstaller</translation>
     </message>
@@ -357,7 +357,7 @@ Veuillez supprimer tous les dépôts Chum et redémarrer l&apos;application grap
     <message id="chum-pkg-packaging-link">
         <location filename="../qml/components/AppInformation.qml" line="122"/>
         <source>Packaging repository</source>
-        <translation>Dépôt d'empaquetage</translation>
+        <translation>Dépôt d&apos;empaquetage</translation>
     </message>
     <message id="chum-settings-status-repo-management-failed">
         <location filename="../qml/pages/SettingsPage.qml" line="40"/>
