@@ -22,7 +22,7 @@
         <location filename="../qml/pages/PackagesListPage.qml" line="104"/>
         <source>Update all</source>
         <oldsource>Apply all updates</oldsource>
-        <translation type="unfinished">Tillämpa alla uppdateringar</translation>
+        <translation>Uppdatera alla</translation>
     </message>
     <message id="chum-updates-available" numerus="yes">
         <location filename="../qml/sailfishos-chum-gui.qml" line="65"/>
@@ -128,7 +128,7 @@
     <message id="chum-uninstalling">
         <location filename="../qml/pages/PackagePage.qml" line="23"/>
         <source>Uninstalling</source>
-        <translation type="unfinished"></translation>
+        <translation>Avinstallerar</translation>
     </message>
     <message id="chum-update">
         <location filename="../qml/pages/PackagePage.qml" line="47"/>
@@ -227,12 +227,12 @@
         <location filename="../src/chum.cpp" line="303"/>
         <source>Refreshing Chum repository</source>
         <oldsource>Refresh repositories</oldsource>
-        <translation>Uppdaterar Chum-förråd</translation>
+        <translation>Uppdaterar Chum-förrådet</translation>
     </message>
     <message id="chum-refresh-repository-failed">
         <location filename="../src/chum.cpp" line="320"/>
         <source>Failed to refresh Chum repository</source>
-        <translation>Kunde inte uppdatera Chum-förråd</translation>
+        <translation>Kunde inte uppdatera Chum-förrådet</translation>
     </message>
     <message id="chum-repo-management-disabled-title">
         <location filename="../src/chum.cpp" line="67"/>
@@ -321,7 +321,7 @@ Ta bort alla definierade Chum-förråd och starta om GUI. GUI lägger, vid behov
     <message id="chum-pkg-developer">
         <location filename="../qml/components/AppInformation.qml" line="65"/>
         <source>Developer</source>
-        <translation type="unfinished"></translation>
+        <translation>Utvecklare</translation>
     </message>
     <message id="chum-pkg-installed-version">
         <location filename="../qml/components/AppInformation.qml" line="72"/>
@@ -356,13 +356,13 @@ Ta bort alla definierade Chum-förråd och starta om GUI. GUI lägger, vid behov
     <message id="chum-pkg-packaging-link">
         <location filename="../qml/components/AppInformation.qml" line="122"/>
         <source>Packaging repository</source>
-        <translation type="unfinished"></translation>
+        <translation>Paketförråd</translation>
     </message>
     <message id="chum-settings-status-repo-management-failed">
         <location filename="../qml/pages/SettingsPage.qml" line="40"/>
         <source>SailfishOS:Chum repository management failed</source>
         <oldsource>Chum repository management failed</oldsource>
-        <translation type="unfinished">Hantering av Chum-förråd misslyckades</translation>
+        <translation>Hantering av SailfishOS:Chum-förrådet misslyckades</translation>
     </message>
     <message id="chum-settings-status">
         <location filename="../qml/pages/SettingsPage.qml" line="26"/>
@@ -373,31 +373,31 @@ Ta bort alla definierade Chum-förråd och starta om GUI. GUI lägger, vid behov
         <location filename="../qml/pages/SettingsPage.qml" line="47"/>
         <source>SailfishOS:Chum repository is not available</source>
         <oldsource>Chum repository is not available</oldsource>
-        <translation type="unfinished">Chum-förråd är inte tillgängligt</translation>
+        <translation>SailfishOS:Chum-förrådet är inte tillgängligt</translation>
     </message>
     <message id="chum-settings-status-repo-testing-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="52"/>
         <source>Subscribed to the SailfishOS:Chum testing repository with a manually set Sailfish OS version (%1)</source>
         <oldsource>Following testing Chum repository with a manually set Sailfish OS version (%1)</oldsource>
-        <translation type="unfinished">Följande testning av Chum-förrådet med en manuellt inställd Sailfish OS-version (%1)</translation>
+        <translation>Prenumererar på SailfishOS:Chum testförråd med en manuellt inställd Sailfish OS-version (%1)</translation>
     </message>
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
         <source>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish OS version (%1)</source>
         <oldsource>Following regular Chum repository with a manually set Sailfish OS version (%1)</oldsource>
-        <translation type="unfinished">Följande vanligt Chum-förråd med en manuellt inställd Sailfish OS-version (%1)</translation>
+        <translation>Prenumererar på SailfishOS:Chum reguljärförråd med en manuellt inställd Sailfish OS-version (%1)</translation>
     </message>
     <message id="chum-settings-status-repo-testing-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="57"/>
         <source>Subscribed to the SailfishOS:Chum testing repository with an automatically determined Sailfish OS version</source>
         <oldsource>Following testing Chum repository with an automatically determined Sailfish OS version</oldsource>
-        <translation type="unfinished">Följande testning av Chum-förrådet med en automatiskt inställd Sailfish OS-version</translation>
+        <translation>Prenumererar på SailfishOS:Chum testförråd med en automatiskt inställd Sailfish OS-version</translation>
     </message>
     <message id="chum-settings-status-repo-regular-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="59"/>
         <source>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish OS version</source>
         <oldsource>Following regular Chum repository with an automatically determined Sailfish OS version</oldsource>
-        <translation type="unfinished">Följande vanligt Chum-förråd med en automatiskt inställd Sailfish OS-version</translation>
+        <translation>Prenumererar på SailfishOS:Chum reguljärförråd med en automatiskt inställd Sailfish OS-version</translation>
     </message>
     <message id="chum-settings-general">
         <location filename="../qml/pages/SettingsPage.qml" line="67"/>
@@ -408,19 +408,19 @@ Ta bort alla definierade Chum-förråd och starta om GUI. GUI lägger, vid behov
         <location filename="../qml/pages/SettingsPage.qml" line="75"/>
         <source>When listing available software packages, by default only applications are shown. But for each listing you can switch between showing only applications or all packages by using the corresponding switch in the pulley menu.</source>
         <oldsource>When listing available software, show only applications by default. This is a default setting and, in each listing, you can switch between showing only applications or all packages using pulley menu.</oldsource>
-        <translation type="unfinished">Vid listning av tillgänglig programvara visas endast appar som standard. Detta är en standardinställning och i varje lista kan du växla mellan att bara visa appar, eller alla paket med hjälp av toppmenyn.</translation>
+        <translation>Vid listning av tillgänglig programvara visas endast appar som standard, men i varje lista kan du växla mellan att bara visa appar, eller alla paket med hjälp av toppmenyn.</translation>
     </message>
     <message id="chum-settings-show-apps">
         <location filename="../qml/pages/SettingsPage.qml" line="77"/>
         <source>Show applications only</source>
         <oldsource>Show applications only by default</oldsource>
-        <translation type="unfinished">Visa endast appar som standard</translation>
+        <translation>Visa endast appar</translation>
     </message>
     <message id="chum-settings-testing-description">
         <location filename="../qml/pages/SettingsPage.qml" line="87"/>
         <source>Use the SailfishOS:Chum testing repository. This is mainly useful for developers to test their packages before publishing.</source>
         <oldsource>Use testing version of Chum repository. This is mainly useful for developers for testing their packages before publishing.</oldsource>
-        <translation type="unfinished">Använd testversionen av Chum-förrådet. Detta är främst användbart för utvecklare som vill testa sina paket innan de publiceras.</translation>
+        <translation>Använd testversionen av SailfishOS:Chum-förrådet. Detta är främst användbart för utvecklare som vill testa sina paket innan de publiceras.</translation>
     </message>
     <message id="chum-settings-testing">
         <location filename="../qml/pages/SettingsPage.qml" line="89"/>
@@ -436,19 +436,19 @@ Ta bort alla definierade Chum-förråd och starta om GUI. GUI lägger, vid behov
         <location filename="../qml/pages/SettingsPage.qml" line="107"/>
         <source>Override SailfishOS:Chum repository selection</source>
         <oldsource>Override Chum repository selection</oldsource>
-        <translation type="unfinished">Åsidosätt val av Chum-förråd</translation>
+        <translation>Åsidosätt val av SailfishOS:Chum-förråd</translation>
     </message>
     <message id="chum-setings-override-release-description">
         <location filename="../qml/pages/SettingsPage.qml" line="118"/>
         <source>Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish OS release version. To subscribe to a SailfishOS:Chum repository for a specific Sailfish OS release, specify this Sailfish OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish OS version, as for Cbeta users.</source>
         <oldsource>Usually, selected Chum repository is automatically set to your Sailfish OS version. To follow Chum repository for specific Sailfish OS release, specify Sailfish OS release here (for example, 4.3.0.12). This is useful when Chum repository is not available for your Sailfish OS version, as for Cbeta users.</oldsource>
-        <translation type="unfinished">Vanligtvis ställs valt Chum-förråd in automatiskt på din Sailfish OS-version. Om du vill följa Chum-arkivet för specifik Sailfish OS-version anger du Sailfish OS-versionen här (till exempel 4.3.0.12). Detta är användbart när Chum-förrådet inte är tillgängligt för din Sailfish OS-version, som för Cbeta-användare.</translation>
+        <translation>Vanligtvis ställs ett specifikt SailfishOS:Chum-förråd in automatiskt efter din installerade Sailfish OS-version. För att prenumerera på SailfishOS:Chum-förrådet för en specifik Sailfish OS-version anger du Sailfish OS-versionen här (till exempel 4.3.0.12). Detta är användbart när SailfishOS:Chum-förrådet inte är tillgängligt för din Sailfish OS-version, som för Cbeta-användare.</translation>
     </message>
     <message id="chum-setings-override-release-placeholder">
         <location filename="../qml/pages/SettingsPage.qml" line="120"/>
         <source>Specify Sailfish OS version</source>
         <oldsource>Specify Sailfish version</oldsource>
-        <translation type="unfinished">Specificera Sailfish-version</translation>
+        <translation>Specificera Sailfish OS-version</translation>
     </message>
     <message id="chum-categories">
         <location filename="../qml/pages/CategoriesPage.qml" line="20"/>
@@ -575,12 +575,12 @@ Ta bort alla definierade Chum-förråd och starta om GUI. GUI lägger, vid behov
     <message id="chum-page-header-packaged-by">
         <location filename="../qml/components/FancyPageHeader.qml" line="39"/>
         <source>Packaged by</source>
-        <translation type="unfinished"></translation>
+        <translation>Packeterad av</translation>
     </message>
     <message id="chum-loading-text">
         <location filename="../qml/components/LabelMarkdown.qml" line="22"/>
         <source>Loading...</source>
-        <translation type="unfinished"></translation>
+        <translation>Läser in...</translation>
     </message>
 </context>
 </TS>
