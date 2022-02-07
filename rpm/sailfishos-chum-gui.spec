@@ -1,6 +1,6 @@
 Name:           sailfishos-chum-gui
 Summary:        SailfishOS:Chum GUI
-Version:        0.4.0
+Version:        0.4.1
 Release:        1
 Group:          Applications/System
 License:        MIT
