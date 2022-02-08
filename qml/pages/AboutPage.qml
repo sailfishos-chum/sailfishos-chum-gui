@@ -15,7 +15,7 @@ Page {
             width: parent.width
 
             PageHeader {
-                //% "About the SailfishOS:Chum GUI application"
+                //% "About the SailfishOS:Chum GUI"
                 title: qsTrId("chum-about-gui")
             }
 
