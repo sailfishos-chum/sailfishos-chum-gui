@@ -60,7 +60,7 @@ Page {
             width: parent.width
 
             PageHeader {
-                title: "SailfishOS:Chum GUI application"
+                title: "SailfishOS:Chum GUI"
             }
 
             MainPageButton {
