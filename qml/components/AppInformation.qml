@@ -61,41 +61,41 @@ MouseArea {
 
         ChumDetailItem {
             visible: pkg.developer && infoItem.developerShown
-            //% "Developer"
+            //% "Developer "
             label: qsTrId("chum-pkg-developer")
             value: pkg.developer
         }
 
         ChumDetailItem {
             visible: pkg.installed
-            //% "Installed version"
+            //% "Installed version "
             label: qsTrId("chum-pkg-installed-version")
             value: pkg.installedVersion
         }
 
         ChumDetailItem {
-            //% "Available version"
+            //% "Available version "
             label: qsTrId("chum-pkg-available-version")
             value: pkg.availableVersion
             visible: pkg.availableVersion
         }
 
         ChumDetailItem {
-            //% "Package name"
+            //% "Package name "
             label: qsTrId("chum-pkg-package-name")
             value: pkg.packageName
             visible: pkg.packageName
         }
 
         ChumDetailItem {
-            //% "Download size"
+            //% "Download size "
             label: qsTrId("chum-pkg-download-size")
             value: Format.formatFileSize(pkg.size)
             visible: pkg.size
         }
 
         ChumDetailItem {
-            //% "License"
+            //% "License "
             label: qsTrId("chum-pkg-license")
             value: pkg.license
             visible: pkg.license
@@ -106,7 +106,7 @@ MouseArea {
             text: '<font color="%1">%3</font> <font color="%2"><a href="%4">%4</a></font>'
             .arg(Theme.secondaryHighlightColor)
             .arg(Theme.primaryColor)
-            //% "Link"
+            //% "Homepage "
             .arg(qsTrId("chum-pkg-link"))
             .arg(pkg.url)
 
@@ -118,7 +118,7 @@ MouseArea {
             text: '<font color="%1">%3</font> <font color="%2"><a href="%4">%4</a></font>'
             .arg(Theme.secondaryHighlightColor)
             .arg(Theme.primaryColor)
-            //% "Packaging repository"
+            //% "Packaging repository "
             .arg(qsTrId("chum-pkg-packaging-link"))
             .arg(pkg.packagingUrl)
 
