@@ -118,7 +118,7 @@
     <message id="chum-package-file-issue">
         <location filename="../qml/pages/PackagePage.qml" line="34"/>
         <source>File Issue</source>
-        <translation>Filproblem</translation>
+        <translation>Ärendehanterare</translation>
     </message>
     <message id="chum-package-discussion-forum">
         <location filename="../qml/pages/PackagePage.qml" line="40"/>
