@@ -112,23 +112,27 @@
     </message>
     <message id="chum-package-project-repo">
         <location filename="../qml/pages/PackagePage.qml" line="28"/>
-        <source>Project Repository</source>
-        <translation>Projektförråd</translation>
+        <source>Source code</source>
+        <oldsource>Project Repository</oldsource>
+        <translation type="unfinished">Projektförråd</translation>
     </message>
     <message id="chum-package-file-issue">
         <location filename="../qml/pages/PackagePage.qml" line="34"/>
-        <source>File Issue</source>
-        <translation>Ärendehanterare</translation>
+        <source>Issue tracker</source>
+        <oldsource>File Issue</oldsource>
+        <translation type="unfinished">Ärendehanterare</translation>
     </message>
     <message id="chum-package-discussion-forum">
         <location filename="../qml/pages/PackagePage.qml" line="40"/>
-        <source>Discussion Forum</source>
-        <translation>Diskussionsforum</translation>
+        <source>Discussion forum</source>
+        <oldsource>Discussion Forum</oldsource>
+        <translation type="unfinished">Diskussionsforum</translation>
     </message>
     <message id="chum-uninstalling">
         <location filename="../qml/pages/PackagePage.qml" line="23"/>
-        <source>Uninstalling</source>
-        <translation>Avinstallerar</translation>
+        <source>Removing</source>
+        <oldsource>Uninstalling</oldsource>
+        <translation type="unfinished">Avinstallerar</translation>
     </message>
     <message id="chum-update">
         <location filename="../qml/pages/PackagePage.qml" line="47"/>
@@ -145,13 +149,15 @@
     <message id="chum-uninstall">
         <location filename="../qml/pages/PackagePage.qml" line="20"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="72"/>
-        <source>Uninstall</source>
-        <translation>Avinstallera</translation>
+        <source>Remove</source>
+        <oldsource>Uninstall</oldsource>
+        <translation type="unfinished">Avinstallera</translation>
     </message>
     <message id="chum-package-donation">
         <location filename="../qml/pages/PackagePage.qml" line="124"/>
-        <source>Make Dontation</source>
-        <translation>Donera</translation>
+        <source>Donate</source>
+        <oldsource>Make Dontation</oldsource>
+        <translation type="unfinished">Donera</translation>
     </message>
     <message id="chum-pkg-update-available">
         <location filename="../qml/components/AppSummary.qml" line="36"/>
@@ -175,8 +181,9 @@
     </message>
     <message id="chum-pkg-categories">
         <location filename="../qml/components/AppSummary.qml" line="66"/>
-        <source>Categories</source>
-        <translation>Kategorier</translation>
+        <source>Categories:</source>
+        <oldsource>Categories</oldsource>
+        <translation type="unfinished">Kategorier</translation>
     </message>
     <message id="chum-releases-number">
         <location filename="../qml/pages/PackagePage.qml" line="101"/>
@@ -320,43 +327,51 @@ Ta bort alla definierade Chum-förråd och starta om GUI. GUI lägger, vid behov
     </message>
     <message id="chum-pkg-developer">
         <location filename="../qml/components/AppInformation.qml" line="65"/>
-        <source>Developer</source>
-        <translation>Utvecklare</translation>
+        <source>Developer:</source>
+        <oldsource>Developer</oldsource>
+        <translation type="unfinished">Utvecklare</translation>
     </message>
     <message id="chum-pkg-installed-version">
         <location filename="../qml/components/AppInformation.qml" line="72"/>
-        <source>Installed version</source>
-        <translation>Installerad version</translation>
+        <source>Installed version:</source>
+        <oldsource>Installed version</oldsource>
+        <translation type="unfinished">Installerad version</translation>
     </message>
     <message id="chum-pkg-available-version">
         <location filename="../qml/components/AppInformation.qml" line="78"/>
-        <source>Available version</source>
-        <translation>Tillgänglig version</translation>
+        <source>Available version:</source>
+        <oldsource>Available version</oldsource>
+        <translation type="unfinished">Tillgänglig version</translation>
     </message>
     <message id="chum-pkg-package-name">
         <location filename="../qml/components/AppInformation.qml" line="85"/>
-        <source>Package name</source>
-        <translation>Paketnamn</translation>
+        <source>Package name:</source>
+        <oldsource>Package name</oldsource>
+        <translation type="unfinished">Paketnamn</translation>
     </message>
     <message id="chum-pkg-download-size">
         <location filename="../qml/components/AppInformation.qml" line="92"/>
-        <source>Download size</source>
-        <translation>Nerladdningsstorlek</translation>
+        <source>Download size:</source>
+        <oldsource>Download size</oldsource>
+        <translation type="unfinished">Nerladdningsstorlek</translation>
     </message>
     <message id="chum-pkg-license">
         <location filename="../qml/components/AppInformation.qml" line="99"/>
-        <source>License</source>
-        <translation>Licens</translation>
+        <source>License:</source>
+        <oldsource>License</oldsource>
+        <translation type="unfinished">Licens</translation>
     </message>
     <message id="chum-pkg-link">
         <location filename="../qml/components/AppInformation.qml" line="110"/>
-        <source>Link</source>
-        <translation>Länk</translation>
+        <source>Homepage:</source>
+        <oldsource>Link</oldsource>
+        <translation type="unfinished">Länk</translation>
     </message>
     <message id="chum-pkg-packaging-link">
         <location filename="../qml/components/AppInformation.qml" line="122"/>
-        <source>Packaging repository</source>
-        <translation>Paketförråd</translation>
+        <source>Packaging repository:</source>
+        <oldsource>Packaging repository</oldsource>
+        <translation type="unfinished">Paketförråd</translation>
     </message>
     <message id="chum-settings-status-repo-management-failed">
         <location filename="../qml/pages/SettingsPage.qml" line="40"/>
@@ -377,38 +392,39 @@ Ta bort alla definierade Chum-förråd och starta om GUI. GUI lägger, vid behov
     </message>
     <message id="chum-settings-status-repo-testing-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="52"/>
-        <source>Subscribed to the SailfishOS:Chum testing repository with a manually set Sailfish OS version (%1)</source>
-        <oldsource>Following testing Chum repository with a manually set Sailfish OS version (%1)</oldsource>
-        <translation>Prenumererar på SailfishOS:Chum testförråd med en manuellt inställd Sailfish OS-version (%1)</translation>
+        <source>Subscribed to the SailfishOS:Chum testing repository with a manually set Sailfish OS version (%1).</source>
+        <oldsource>Subscribed to the SailfishOS:Chum testing repository with a manually set Sailfish OS version (%1)</oldsource>
+        <translation type="unfinished">Prenumererar på SailfishOS:Chum testförråd med en manuellt inställd Sailfish OS-version (%1)</translation>
     </message>
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
-        <source>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish OS version (%1)</source>
-        <oldsource>Following regular Chum repository with a manually set Sailfish OS version (%1)</oldsource>
-        <translation>Prenumererar på SailfishOS:Chum reguljärförråd med en manuellt inställd Sailfish OS-version (%1)</translation>
+        <source>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish OS version (%1).</source>
+        <oldsource>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish OS version (%1)</oldsource>
+        <translation type="unfinished">Prenumererar på SailfishOS:Chum reguljärförråd med en manuellt inställd Sailfish OS-version (%1)</translation>
     </message>
     <message id="chum-settings-status-repo-testing-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="57"/>
-        <source>Subscribed to the SailfishOS:Chum testing repository with an automatically determined Sailfish OS version</source>
-        <oldsource>Following testing Chum repository with an automatically determined Sailfish OS version</oldsource>
-        <translation>Prenumererar på SailfishOS:Chum testförråd med en automatiskt inställd Sailfish OS-version</translation>
+        <source>Subscribed to the SailfishOS:Chum testing repository with an automatically determined Sailfish OS version.</source>
+        <oldsource>Subscribed to the SailfishOS:Chum testing repository with an automatically determined Sailfish OS version</oldsource>
+        <translation type="unfinished">Prenumererar på SailfishOS:Chum testförråd med en automatiskt inställd Sailfish OS-version</translation>
     </message>
     <message id="chum-settings-status-repo-regular-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="59"/>
-        <source>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish OS version</source>
-        <oldsource>Following regular Chum repository with an automatically determined Sailfish OS version</oldsource>
-        <translation>Prenumererar på SailfishOS:Chum reguljärförråd med en automatiskt inställd Sailfish OS-version</translation>
+        <source>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish OS version.</source>
+        <oldsource>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish OS version</oldsource>
+        <translation type="unfinished">Prenumererar på SailfishOS:Chum reguljärförråd med en automatiskt inställd Sailfish OS-version</translation>
     </message>
     <message id="chum-settings-general">
         <location filename="../qml/pages/SettingsPage.qml" line="67"/>
-        <source>General</source>
-        <translation>Allmänt</translation>
+        <source>General settings</source>
+        <oldsource>General</oldsource>
+        <translation type="unfinished">Allmänt</translation>
     </message>
     <message id="chum-settings-show-apps-description">
         <location filename="../qml/pages/SettingsPage.qml" line="75"/>
-        <source>When listing available software packages, by default only applications are shown. But for each listing you can switch between showing only applications or all packages by using the corresponding switch in the pulley menu.</source>
-        <oldsource>When listing available software, show only applications by default. This is a default setting and, in each listing, you can switch between showing only applications or all packages using pulley menu.</oldsource>
-        <translation>Vid listning av tillgänglig programvara visas endast appar som standard, men i varje lista kan du växla mellan att bara visa appar, eller alla paket med hjälp av toppmenyn.</translation>
+        <source>When listing available software packages, by default only applications are shown. But every listing can be toggled between showing solely applications or all packages by using the corresponding switch in the pulley menu.</source>
+        <oldsource>When listing available software packages, by default only applications are shown. But for each listing you can switch between showing only applications or all packages by using the corresponding switch in the pulley menu.</oldsource>
+        <translation type="unfinished">Vid listning av tillgänglig programvara visas endast appar som standard, men i varje lista kan du växla mellan att bara visa appar, eller alla paket med hjälp av toppmenyn.</translation>
     </message>
     <message id="chum-settings-show-apps">
         <location filename="../qml/pages/SettingsPage.qml" line="77"/>
@@ -417,26 +433,27 @@ Ta bort alla definierade Chum-förråd och starta om GUI. GUI lägger, vid behov
         <translation>Visa endast appar</translation>
     </message>
     <message id="chum-settings-testing-description">
-        <location filename="../qml/pages/SettingsPage.qml" line="87"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="92"/>
         <source>Use the SailfishOS:Chum testing repository. This is mainly useful for developers to test their packages before publishing.</source>
         <oldsource>Use testing version of Chum repository. This is mainly useful for developers for testing their packages before publishing.</oldsource>
         <translation>Använd testversionen av SailfishOS:Chum-förrådet. Detta är främst användbart för utvecklare som vill testa sina paket innan de publiceras.</translation>
     </message>
     <message id="chum-settings-testing">
-        <location filename="../qml/pages/SettingsPage.qml" line="89"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="94"/>
         <source>Use testing repository</source>
         <translation>Använd testförrådet</translation>
     </message>
     <message id="chum-settings-advanced">
-        <location filename="../qml/pages/SettingsPage.qml" line="95"/>
-        <source>Advanced</source>
-        <translation>Avancerat</translation>
+        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
+        <source>Advanced settings</source>
+        <oldsource>Advanced</oldsource>
+        <translation type="unfinished">Avancerat</translation>
     </message>
     <message id="chum-settings-override-selection">
         <location filename="../qml/pages/SettingsPage.qml" line="107"/>
-        <source>Override SailfishOS:Chum repository selection</source>
-        <oldsource>Override Chum repository selection</oldsource>
-        <translation>Åsidosätt val av SailfishOS:Chum-förråd</translation>
+        <source>Override the automatic SailfishOS:Chum repository selection</source>
+        <oldsource>Override SailfishOS:Chum repository selection</oldsource>
+        <translation type="unfinished">Åsidosätt val av SailfishOS:Chum-förråd</translation>
     </message>
     <message id="chum-setings-override-release-description">
         <location filename="../qml/pages/SettingsPage.qml" line="118"/>
@@ -446,9 +463,9 @@ Ta bort alla definierade Chum-förråd och starta om GUI. GUI lägger, vid behov
     </message>
     <message id="chum-setings-override-release-placeholder">
         <location filename="../qml/pages/SettingsPage.qml" line="120"/>
-        <source>Specify Sailfish OS version</source>
-        <oldsource>Specify Sailfish version</oldsource>
-        <translation>Specificera Sailfish OS-version</translation>
+        <source>Specify a Sailfish OS version</source>
+        <oldsource>Specify Sailfish OS version</oldsource>
+        <translation type="unfinished">Specificera Sailfish OS-version</translation>
     </message>
     <message id="chum-categories">
         <location filename="../qml/pages/CategoriesPage.qml" line="20"/>
@@ -528,39 +545,43 @@ Ta bort alla definierade Chum-förråd och starta om GUI. GUI lägger, vid behov
     </message>
     <message id="chum-about-gui">
         <location filename="../qml/pages/AboutPage.qml" line="19"/>
-        <source>About Chum GUI</source>
-        <translation>Om Chum GUI</translation>
+        <source>About SailfishOS:Chum GUI</source>
+        <oldsource>About Chum GUI</oldsource>
+        <translation type="unfinished">Om Chum GUI</translation>
     </message>
     <message id="chum-about-store">
         <location filename="../qml/pages/AboutPage.qml" line="31"/>
-        <source>A store frontend for the Chum repository</source>
-        <translation>Ett butiksgränssnitt för Chum-förrådet</translation>
+        <source>A graphical application for the SailfishOS:Chum community repository</source>
+        <oldsource>A store frontend for the Chum repository</oldsource>
+        <translation type="unfinished">Ett butiksgränssnitt för Chum-förrådet</translation>
     </message>
     <message id="chum-about-version">
-        <location filename="../qml/pages/AboutPage.qml" line="37"/>
+        <location filename="../qml/pages/AboutPage.qml" line="40"/>
         <source>Version: %1</source>
         <translation>Version: %1</translation>
     </message>
     <message id="chum-about-license">
-        <location filename="../qml/pages/AboutPage.qml" line="43"/>
+        <location filename="../qml/pages/AboutPage.qml" line="46"/>
         <source>License: %1</source>
         <translation>Licens: %1</translation>
     </message>
     <message id="chum-about-home">
-        <location filename="../qml/pages/AboutPage.qml" line="49"/>
-        <source>Home</source>
-        <translation>Hem</translation>
+        <location filename="../qml/pages/AboutPage.qml" line="61"/>
+        <source>Source code</source>
+        <oldsource>Home</oldsource>
+        <translation type="unfinished">Hem</translation>
     </message>
     <message id="chum-about-issues">
-        <location filename="../qml/pages/AboutPage.qml" line="58"/>
-        <source>Issues</source>
-        <translation>Ärenden</translation>
+        <location filename="../qml/pages/AboutPage.qml" line="52"/>
+        <source>Issue tracker</source>
+        <oldsource>Issues</oldsource>
+        <translation type="unfinished">Ärenden</translation>
     </message>
     <message id="chum-about-description">
-        <location filename="../qml/pages/AboutPage.qml" line="80"/>
-        <source>Sailfish OS Community repositories provide a collection of applications, tools, and libraries compiled for different combinations of architectures and Sailfish versions.&lt;br&gt;&lt;br&gt;The ambition is to become the main repository for software distribution on Sailfish OS. When compared to software distribution via Jolla Store or OpenRepos, the software is compiled into RPMs in a reproducible way directly from the source. The source used for the compilation is available at OBS together with the compiled packages. This is in contrast with the Jolla Store and OpenRepos where all packages are uploaded in binary form without any control over how the binary was compiled.&lt;br&gt;&lt;br&gt;By collecting the software in a single automated build system, we can benefit from collaboration between developers through shared packaging of required libraries, reduce duplication of work by keeping the packages up to date, and get a clear overview of missing software.</source>
-        <oldsource>Sailfish OS Community repositories provide a collection of applications, tools, and libraries compiled for different combinations of architectures and Sailfish versions.&lt;br&gt;&lt;br&gt;The ambition is to become the main repository for software distribution on Sailfish OS.When compared to software distribution via Jolla Store or OpenRepos, the software is compiled into RPMs in a reproducible way directly from the source. The source used for the compilation is available at OBS together with the compiled packages. This is in contrast with the Jolla Store and OpenRepos where all packages are uploaded in binary form without any control over how the binary was compiled.&lt;br&gt;&lt;br&gt;By collecting the software in a single automated build system, we can benefit from collaboration between developers through shared packaging of required libraries, reduce duplication of work by keeping the packages up to date, and get a clear overview of missing software.</oldsource>
-        <translation>Sailfish OS Community-förråd tillhandahåller en samling appar, verktyg och bibliotek som sammanställts för olika kombinationer av arkitekturer och Sailfish-versioner. &lt;br&gt;&lt;br&gt;Ambitionen är att bli huvudförvaret för mjukvarudistribution på Sailfish OS. Jämfört med programvarudistribution via Jolla Store eller OpenRepos kompileras programvaran till RPM på ett reproducerbart sätt direkt från källan. Källan som används för kompilering finns på OBS, tillsammans med de kompilerade paketen. Detta står i kontrast till Jolla Store och OpenRepos där alla paket laddas upp i binär form, utan någon kontroll över hur binärfilen kompilerades. &lt;br&gt;&lt;br&gt;Gernom att samla in programvaran i ett enda automatiserat byggsystem kan vi dra nytta av samarbete mellan utvecklare genom delad förpackning av nödvändiga bibliotek, minska dubblering av arbetet genom att hålla paketen uppdaterade och få en tydlig överblick över saknad programvara.</translation>
+        <location filename="../qml/pages/AboutPage.qml" line="103"/>
+        <source>The SailfishOS:Chum community repository provides a collection of applications, tools and libraries compiled for various hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;In contrast to the software distribution model of the Jolla Store or OpenRepos, to which binary packages are uploaded by developers, at SailfishOS:Chum software is compiled and packaged into RPMs in a reproducible manner directly from its source code. The source code used for compiling and packaging is submitted by developers to OBS (Open Build Service), which generates multiple RPM files for different combinations of hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;This scheme ensures that the complete source code of all packages at SailfishOS:Chum is available and inspectable there, and that all packages are generated solely from this source code. Hence all software packages at SailfishOS:Chum are created in a transparent and fully traceable manner.&lt;br /&gt;&lt;br /&gt;By collecting software for Sailfish&amp;nbsp;OS in a single automated build system, collaboration between developers through common packaging of shared libraries etc. is fostered, duplication of work for keeping these common packages up-to-date is eliminated, and it becomes much easier to determine which pieces of software exist and which are missing at the Sailfish&amp;nbsp;OS OBS. Additionally this eases tracing multiple and potentially layered dependencies (&amp;quot;dependency chains&amp;quot;) which is crucial for keeping the software supply chains of complex packages up-to-date.&lt;br /&gt;&lt;br /&gt;The SailfishOS:Chum repository is located at the Sailfish&amp;nbsp;OS OBS:&lt;br /&gt;&lt;a href=&apos;https://build.sailfishos.org/project/show/sailfishos:chum&apos;&gt;https://build.sailfishos.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;For the etymological origin and meanings of the word &amp;quot;chum&amp;quot;, see &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; and &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.</source>
+        <oldsource>Sailfish OS Community repositories provide a collection of applications, tools, and libraries compiled for different combinations of architectures and Sailfish versions.&lt;br&gt;&lt;br&gt;The ambition is to become the main repository for software distribution on Sailfish OS. When compared to software distribution via Jolla Store or OpenRepos, the software is compiled into RPMs in a reproducible way directly from the source. The source used for the compilation is available at OBS together with the compiled packages. This is in contrast with the Jolla Store and OpenRepos where all packages are uploaded in binary form without any control over how the binary was compiled.&lt;br&gt;&lt;br&gt;By collecting the software in a single automated build system, we can benefit from collaboration between developers through shared packaging of required libraries, reduce duplication of work by keeping the packages up to date, and get a clear overview of missing software.</oldsource>
+        <translation type="unfinished">Sailfish OS Community-förråd tillhandahåller en samling appar, verktyg och bibliotek som sammanställts för olika kombinationer av arkitekturer och Sailfish-versioner. &lt;br&gt;&lt;br&gt;Ambitionen är att bli huvudförvaret för mjukvarudistribution på Sailfish OS. Jämfört med programvarudistribution via Jolla Store eller OpenRepos kompileras programvaran till RPM på ett reproducerbart sätt direkt från källan. Källan som används för kompilering finns på OBS, tillsammans med de kompilerade paketen. Detta står i kontrast till Jolla Store och OpenRepos där alla paket laddas upp i binär form, utan någon kontroll över hur binärfilen kompilerades. &lt;br&gt;&lt;br&gt;Gernom att samla in programvaran i ett enda automatiserat byggsystem kan vi dra nytta av samarbete mellan utvecklare genom delad förpackning av nödvändiga bibliotek, minska dubblering av arbetet genom att hålla paketen uppdaterade och få en tydlig överblick över saknad programvara.</translation>
     </message>
     <message id="chum-desc-library">
         <location filename="../src/chumpackage.cpp" line="139"/>
