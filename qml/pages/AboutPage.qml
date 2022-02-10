@@ -30,6 +30,8 @@ Page {
                 //% "A graphical application for the SailfishOS:Chum community repository"
                 text: qsTrId("chum-about-store")
                 anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width - 2*Theme.horizontalPageMargin
+                horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WordWrap
             }
 
