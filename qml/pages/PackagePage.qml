@@ -16,10 +16,10 @@ Page {
         PullDownMenu {
             busy: Chum.busy
             MenuItem {
-                //% "Uninstall"
+                //% "Remove"
                 text: qsTrId("chum-uninstall")
                 visible: pkg.installed
-                //% "Uninstalling"
+                //% "Removing"
                 onClicked: remorse.execute(qsTrId("chum-uninstalling"),
                                            function() { Chum.uninstallPackage(pkg.id) } )
             }
@@ -120,7 +120,7 @@ Page {
             Button {
                 id: btnDonate
                 anchors.horizontalCenter: parent.horizontalCenter
-                //% "Make a donation"
+                //% "Donate"
                 text: qsTrId("chum-package-donation")
                 visible: pkg.donation
                 onClicked: {
