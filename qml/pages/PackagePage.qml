@@ -16,27 +16,27 @@ Page {
         PullDownMenu {
             busy: Chum.busy
             MenuItem {
-                //% "Uninstall"
+                //% "Remove"
                 text: qsTrId("chum-uninstall")
                 visible: pkg.installed
-                //% "Uninstalling"
+                //% "Removing"
                 onClicked: remorse.execute(qsTrId("chum-uninstalling"),
                                            function() { Chum.uninstallPackage(pkg.id) } )
             }
             MenuItem {
-                //% "Project Repository"
+                //% "Source code"
                 text: qsTrId("chum-package-project-repo")
                 onClicked: Qt.openUrlExternally(pkg.repo)
                 visible: pkg.repo
             }
             MenuItem {
-                //% "File Issue"
+                //% "Issue tracker"
                 text: qsTrId("chum-package-file-issue")
                 onClicked: Qt.openUrlExternally(pkg.urlIssues)
                 visible: pkg.urlIssues
             }
             MenuItem {
-                //% "Discussion Forum"
+                //% "Discussion forum"
                 text: qsTrId("chum-package-discussion-forum")
                 onClicked: Qt.openUrlExternally(pkg.urlForum)
                 visible: pkg.urlForum
@@ -120,7 +120,7 @@ Page {
             Button {
                 id: btnDonate
                 anchors.horizontalCenter: parent.horizontalCenter
-                //% "Make Dontation"
+                //% "Donate"
                 text: qsTrId("chum-package-donation")
                 visible: pkg.donation
                 onClicked: {
