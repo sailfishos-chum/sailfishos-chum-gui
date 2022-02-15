@@ -107,6 +107,8 @@ Page {
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
                 horizontalAlignment: Text.AlignHCenter
+                linkColor: Theme.highlightColor
+                onLinkActivated: Qt.openUrlExternally(link)
             }
         }
     }
