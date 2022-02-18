@@ -183,7 +183,7 @@
         <location filename="../qml/components/AppSummary.qml" line="66"/>
         <source>Categories:</source>
         <oldsource>Categories</oldsource>
-        <translation>Категории</translation>
+        <translation>Категории:</translation>
     </message>
     <message id="chum-releases-number">
         <location filename="../qml/pages/PackagePage.qml" line="101"/>
@@ -329,31 +329,31 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
         <location filename="../qml/components/AppInformation.qml" line="65"/>
         <source>Developer:</source>
         <oldsource>Developer</oldsource>
-        <translation>Разработчик</translation>
+        <translation>Разработчик:</translation>
     </message>
     <message id="chum-pkg-installed-version">
         <location filename="../qml/components/AppInformation.qml" line="72"/>
         <source>Installed version:</source>
         <oldsource>Installed version</oldsource>
-        <translation>Установлена версия</translation>
+        <translation>Установлена версия:</translation>
     </message>
     <message id="chum-pkg-available-version">
         <location filename="../qml/components/AppInformation.qml" line="78"/>
         <source>Available version:</source>
         <oldsource>Available version</oldsource>
-        <translation>Доступна версия</translation>
+        <translation>Доступна версия:</translation>
     </message>
     <message id="chum-pkg-package-name">
         <location filename="../qml/components/AppInformation.qml" line="85"/>
         <source>Package name:</source>
         <oldsource>Package name</oldsource>
-        <translation>Название пакета</translation>
+        <translation>Название пакета:</translation>
     </message>
     <message id="chum-pkg-download-size">
         <location filename="../qml/components/AppInformation.qml" line="92"/>
         <source>Download size:</source>
         <oldsource>Download size</oldsource>
-        <translation>Объём загрузки</translation>
+        <translation>Объём загрузки:</translation>
     </message>
     <message id="chum-pkg-license">
         <location filename="../qml/components/AppInformation.qml" line="99"/>
@@ -394,25 +394,25 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
         <location filename="../qml/pages/SettingsPage.qml" line="52"/>
         <source>Subscribed to the SailfishOS:Chum testing repository with a manually set Sailfish OS version (%1).</source>
         <oldsource>Subscribed to the SailfishOS:Chum testing repository with a manually set Sailfish OS version (%1)</oldsource>
-        <translation>Подключён репозиторий SailfishOS:Chum, включая тестируемые версии пакетов, для заданной вручную версии Sailfish ОС (%1)</translation>
+        <translation>Подключён репозиторий SailfishOS:Chum, включая тестируемые версии пакетов, для заданной вручную версии ОС Sailfish (%1).</translation>
     </message>
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
         <source>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish OS version (%1).</source>
         <oldsource>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish OS version (%1)</oldsource>
-        <translation>Подключён обычный репозиторий SailfishOS:Chum для заданной вручную версии Sailfish ОС (%1)</translation>
+        <translation>Подключён обычный репозиторий SailfishOS:Chum для заданной вручную версии ОС Sailfish (%1).</translation>
     </message>
     <message id="chum-settings-status-repo-testing-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="57"/>
         <source>Subscribed to the SailfishOS:Chum testing repository with an automatically determined Sailfish OS version.</source>
         <oldsource>Subscribed to the SailfishOS:Chum testing repository with an automatically determined Sailfish OS version</oldsource>
-        <translation>Подключён репозиторий SailfishOS:Chum, включая тестируемые версии пакетов, для автоматически определённой версии Sailfish ОС (%1)</translation>
+        <translation>Подключён репозиторий SailfishOS:Chum, включая тестируемые версии пакетов, для автоматически определённой версии ОС Sailfish.</translation>
     </message>
     <message id="chum-settings-status-repo-regular-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="59"/>
         <source>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish OS version.</source>
         <oldsource>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish OS version</oldsource>
-        <translation>Подключён обычный репозиторий SailfishOS:Chum для автоматически определённой версии Sailfish ОС (%1)</translation>
+        <translation>Подключён обычный репозиторий SailfishOS:Chum для автоматически определённой версии ОС Sailfish.</translation>
     </message>
     <message id="chum-settings-general">
         <location filename="../qml/pages/SettingsPage.qml" line="67"/>
