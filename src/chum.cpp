@@ -224,7 +224,7 @@ void Chum::refreshInstalledVersion() {
         ChumPackage *p = m_packages.value(this->packageId(packageID), nullptr);
         if (p) p->setPkidInstalled(packageID);
         else
-            qWarning() << "Found an installed package, which is not available anymore:" << packageID;
+            qWarning() << "Found an installed package, which is currently not available:" << packageID;
     });
 
     connect(tr, &Transaction::finished, this, [this]() {
