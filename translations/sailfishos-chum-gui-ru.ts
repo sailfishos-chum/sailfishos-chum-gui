@@ -30,6 +30,7 @@
         <translation>
             <numerusform>Доступно %n обноление</numerusform>
             <numerusform>Доступно %n обновлений</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message id="chum-repo-refreshed">
@@ -605,4 +606,3 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
     </message>
 </context>
 </TS>
-
