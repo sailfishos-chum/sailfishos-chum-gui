@@ -202,7 +202,8 @@
     </message>
     <message id="chum-load-repositories">
         <location filename="../src/chum.cpp" line="42"/>
-        <source>Load repositories</source>
+        <source>Loading SailfishOS:Chum repository</source>
+        <oldsource>Load repositories</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-get-list-packages">
@@ -212,12 +213,14 @@
     </message>
     <message id="chum-get-package-details">
         <location filename="../src/chum.cpp" line="181"/>
-        <source>Get package details</source>
+        <source>Retrieving the current detail information for installed packages</source>
+        <oldsource>Get package details</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-get-package-version">
         <location filename="../src/chum.cpp" line="211"/>
-        <source>Get versions of installed packages</source>
+        <source>Retrieving the currently available versions of installed packages</source>
+        <oldsource>Get versions of installed packages</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-check-updates">
@@ -227,63 +230,76 @@
     </message>
     <message id="chum-refresh-repository-impossible">
         <location filename="../src/chum.cpp" line="293"/>
-        <source>Cannot refresh repository as it is not available</source>
+        <source>Failed to refresh SailfishOS:Chum repository, because it is not available!</source>
+        <oldsource>Cannot refresh repository as it is not available</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-refresh-repository">
         <location filename="../src/chum.cpp" line="303"/>
-        <source>Refreshing Chum repository</source>
-        <oldsource>Refresh repositories</oldsource>
+        <source>Refreshing SailfishOS:Chum repository</source>
+        <oldsource>Refreshing Chum repository</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-refresh-repository-failed">
         <location filename="../src/chum.cpp" line="320"/>
-        <source>Failed to refresh Chum repository</source>
+        <source>Failed to refresh SailfishOS:Chum repository!</source>
+        <oldsource>Failed to refresh Chum repository</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-repo-management-disabled-title">
         <location filename="../src/chum.cpp" line="67"/>
         <location filename="../src/chum.cpp" line="329"/>
-        <location filename="../src/chum.cpp" line="350"/>
+        <location filename="../src/chum.cpp" line="351"/>
         <source>Repositories misconfigured</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-repo-management-disabled-txt">
-        <location filename="../src/chum.cpp" line="335"/>
-        <source>Cannot manage Chum repositories through GUI. You probably have multiple Chum repositories defined in SSU or Chum repository disabled. For listing repositories and their removal, use &apos;ssu&apos; command in terminal.
+        <location filename="../src/chum.cpp" line="336"/>
+        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository. You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
 
-Please remove all defined Chum repositories and restart GUI. GUI will add missing Chum repository if needed on restart.</source>
+Please remove all SailfishOS:Chum repositories by executing this command line as root user:
+for i in $(ssu lr | fgrep chum | cut -f 3 -d &apos; &apos;); do ssu rr $i; done
+This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
+        <oldsource>Cannot manage Chum repositories through GUI. You probably have multiple Chum repositories defined in SSU or Chum repository disabled. For listing repositories and their removal, use &apos;ssu&apos; command in terminal.
+
+Please remove all defined Chum repositories and restart GUI. GUI will add missing Chum repository if needed on restart.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-add-repo">
-        <location filename="../src/chum.cpp" line="341"/>
-        <source>Adding Chum repository</source>
+        <location filename="../src/chum.cpp" line="342"/>
+        <source>Adding SailfishOS:Chum repository</source>
+        <oldsource>Adding Chum repository</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-setup-repo">
         <location filename="../src/chum.cpp" line="80"/>
-        <location filename="../src/chum.cpp" line="358"/>
-        <source>Setting up Chum repository</source>
+        <location filename="../src/chum.cpp" line="359"/>
+        <source>Adding SailfishOS:Chum testing repository</source>
+        <oldsource>Setting up Chum repository</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-install-package">
-        <location filename="../src/chum.cpp" line="371"/>
-        <source>Install package</source>
+        <location filename="../src/chum.cpp" line="372"/>
+        <source>Installing package</source>
+        <oldsource>Install package</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-uninstall-package">
-        <location filename="../src/chum.cpp" line="383"/>
-        <source>Uninstall package</source>
+        <location filename="../src/chum.cpp" line="384"/>
+        <source>Removing package</source>
+        <oldsource>Uninstall package</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-update-package">
-        <location filename="../src/chum.cpp" line="395"/>
-        <source>Update package</source>
+        <location filename="../src/chum.cpp" line="396"/>
+        <source>Updating package</source>
+        <oldsource>Update package</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-update-all-packages">
-        <location filename="../src/chum.cpp" line="411"/>
-        <source>Update all packages</source>
+        <location filename="../src/chum.cpp" line="412"/>
+        <source>Updating all packages</source>
+        <oldsource>Update all packages</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-release">
@@ -455,8 +471,8 @@ Please remove all defined Chum repositories and restart GUI. GUI will add missin
     </message>
     <message id="chum-setings-override-release-description">
         <location filename="../qml/pages/SettingsPage.qml" line="118"/>
-        <source>Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish OS release version. To subscribe to a SailfishOS:Chum repository for a specific Sailfish OS release, specify this Sailfish OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish OS version, as for Cbeta users.</source>
-        <oldsource>Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To subscribe to a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</oldsource>
+        <source>Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish OS release, specify this Sailfish OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish OS version, as for Cbeta users.</source>
+        <oldsource>Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish OS release version. To subscribe to a SailfishOS:Chum repository for a specific Sailfish OS release, specify this Sailfish OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish OS version, as for Cbeta users.</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-setings-override-release-placeholder">
