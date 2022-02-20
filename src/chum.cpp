@@ -38,7 +38,7 @@ Chum::Chum(QObject *parent)
     m_manualVersion = (settings.value(s_config_manualversion, QString()).toString());
 
     m_busy = true;
-    //% "Load repositories"
+    //% "Loading SailfishOS:Chum repository"
     setStatus(qtTrId("chum-load-repositories"));
     m_ssu.loadRepos();
 }
@@ -50,7 +50,7 @@ Chum* Chum::instance() {
 
 QString Chum::packageId(const QString &pkg_id)
 {
-    // use the name as package ID to ensure that we have only one copy of each package
+    // Use the name of a package as its package ID to ensure that only a single copy of each package is handled
     return Daemon::packageName(pkg_id);
 }
 
@@ -82,13 +82,13 @@ void Chum::setManualVersion(const QString &v) {
 }
 
 /////////////////////////////////////////////////////////////
-/// Sequence of methods used to fill in data for packages.
-/// This sequence allows to call PackageKit calls sequentially
-/// in bulk. Netsed calls seem to interfere with the PackageKit.
-/// Note that m_busy is not checked for methods that are called
-/// internally only.
+/// A sequence of methods is used to obtain the metadata of packages.
+/// This sequence allows to execute PackageKit calls sequentially
+/// in a batch. Nested / overlapping calls seem to not work well 
+/// for PackageKit. Note that m_busy is not checked for methods
+/// which are only called internally.
 ///
-/// At the end of updates, packagesChanged() is emitted.
+/// At the end of the update sequence, packagesChanged() is emitted.
 ///
 void Chum::refreshPackages() {
     if (!m_busy) {
@@ -122,13 +122,13 @@ void Chum::refreshPackages() {
 
 void Chum::refreshPackagesInstalled()
 {
-    // check what repository provides installed packages
+    // Check which repository provides the installed packages
     QHash<QString,QString> packages;
     for (const auto &p: m_packages_last_refresh_installed)
         packages[p] = Daemon::packageName(p);
 
     auto tr = Daemon::whatProvides(packages.values());
-    connect(tr, &Transaction::package,  this, [this](
+    connect(tr, &Transaction::package, this, [this](
             [[maybe_unused]] int info,
             const QString &packageID,
             [[maybe_unused]] const QString &summary
@@ -142,12 +142,12 @@ void Chum::refreshPackagesInstalled()
 
 void Chum::refreshPackagesFinished()
 {
-    // check if some packages disappeared
+    // Check if some packages are not offered anymore
     QSet<QString> last_ids;
     for (const QString &p: m_packages_last_refresh)
         last_ids.insert(packageId(p));
 
-    // remove packages that are not listed anymore
+    // Remove packages from local list, which are not offered anymore
     auto current = m_packages.keys();
     for (const QString &id: current)
         if (!last_ids.contains(id)) {
@@ -156,7 +156,7 @@ void Chum::refreshPackagesFinished()
             m_packages.remove(id);
         }
 
-    // create or update packages
+    // Create or update package entries on the local list
     for (const QString &p: m_packages_last_refresh) {
         const QString id = packageId(p);
         ChumPackage *package = m_packages.value(id, nullptr);
@@ -177,7 +177,7 @@ void Chum::refreshDetails() {
         emit busyChanged();
     }
 
-    //% "Get package details"
+    //% "Retrieving the current detail information for installed packages"
     setStatus(qtTrId("chum-get-package-details"));
 
     QStringList packages;
@@ -192,7 +192,7 @@ void Chum::refreshDetails() {
         if (p)
             p->setDetails(v);
         else
-            qWarning() << "Got details for missing package:" << pkid;
+            qWarning() << "Found detail infomation of currently unavailable package:" << pkid;
     });
 
     connect(tr, &Transaction::finished, this, [this]() {
@@ -207,7 +207,7 @@ void Chum::refreshInstalledVersion() {
         emit busyChanged();
     }
 
-    //% "Get versions of installed packages"
+    //% "Retrieving the currently available versions of installed packages"
     setStatus(qtTrId("chum-get-package-version"));
 
     QStringList packages;
@@ -224,7 +224,7 @@ void Chum::refreshInstalledVersion() {
         ChumPackage *p = m_packages.value(this->packageId(packageID), nullptr);
         if (p) p->setPkidInstalled(packageID);
         else
-            qWarning() << "Got installed version for missing package:" << packageID;
+            qWarning() << "Found an installed package, which is currently not available:" << packageID;
     });
 
     connect(tr, &Transaction::finished, this, [this]() {
@@ -241,10 +241,10 @@ void Chum::refreshInstalledVersion() {
     });
 }
 
-/// Last method in the sequence of methods used to update
-/// packages information. Can be called as a slot for
-/// packagekit signal. So, flag `force` is used to distinguish
-/// whether the call was internal (from this class, force=true)
+/// This is the last method in the sequence of methods used to update
+/// the metadata of packages. It can be called as a Qt-"slot" for the
+/// packagekit signal. The flag `force` is used to distinguish
+/// whether the call was internal (i.e., from this class: force=true)
 /// or as a signal slot (force=false).
 void Chum::getUpdates(bool force) {
     if (m_busy && !force) return;
@@ -285,11 +285,11 @@ void Chum::getUpdates(bool force) {
     });
 }
 
-// refresh repository and call package info updates
+// Refresh repository and update package metadata
 void Chum::refreshRepo(bool force) {
     if (m_busy && !force) return;
     if (!m_ssu.repoAvailable()) {
-        //% "Cannot refresh repository as it is not available"
+        //% "Failed to refresh SailfishOS:Chum repository, because it is not available!"
         emit error(qtTrId("chum-refresh-repository-impossible"));
         return;
     }
@@ -299,7 +299,7 @@ void Chum::refreshRepo(bool force) {
         emit busyChanged();
     }
 
-    //% "Refreshing Chum repository"
+    //% "Refreshing SailfishOS:Chum repository"
     setStatus(qtTrId("chum-refresh-repository"));
 
     auto pktr = Daemon::repoSetData(
@@ -316,28 +316,29 @@ void Chum::refreshRepo(bool force) {
     connect(pktr, &Transaction::errorCode, this,
             [this](PackageKit::Transaction::Error /*error*/, const QString &details){
         qWarning() << "Failed to refresh Chum repository" << details;
-        //% "Failed to refresh Chum repository"
+        //% "Failed to refresh SailfishOS:Chum repository!"
         emit error(qtTrId("chum-refresh-repository-failed"));
     });
 }
 
 void Chum::repositoriesListUpdated() {
     if (!m_ssu.manageRepo()) {
-        // repos are managed outside of GUI, probably misconfiguration
+        // Found SailfishOS:Chum repositories, which were not configured by this app, probably a misconfiguration
         emit errorFatal(
                     //% "Repositories misconfigured"
                     qtTrId("chum-repo-management-disabled-title"),
-                    //% "Cannot manage Chum repositories through GUI. You probably have multiple Chum "
-                    //% "repositories defined in SSU or Chum repository disabled. For listing repositories "
-                    //% "and their removal, use 'ssu' command in terminal.\n\n"
-                    //% "Please remove all defined Chum repositories and restart GUI. "
-                    //% "GUI will add missing Chum repository if needed on restart."
+                    //% "The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository. "
+                    //% "You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a "
+                    //% "SailfishOS:Chum repository.\n\n"
+                    //% "Please remove all SailfishOS:Chum repositories by executing this command line as root user:\n"
+                    //% "for i in $(ssu lr | fgrep chum | cut -f 3 -d ' '); do ssu rr $i; done\n"
+                    //% "This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again."
                     qtTrId("chum-repo-management-disabled-txt"));
         return;
     } else if (!m_ssu.repoAvailable()) {
         m_busy = true;
         emit busyChanged();
-        //% "Adding Chum repository"
+        //% "Adding SailfishOS:Chum repository"
         setStatus(qtTrId("chum-add-repo"));
         m_ssu.setRepo(m_manualVersion);
         return;
@@ -354,20 +355,20 @@ void Chum::setRepoTesting(bool testing) {
     if (!m_ssu.repoAvailable() || m_ssu.repoTesting() != testing) {
         m_busy = true;
         emit busyChanged();
-        //% "Setting up Chum repository"
+        //% "Adding SailfishOS:Chum testing repository"
         setStatus(qtTrId("chum-setup-repo"));
         m_ssu.setRepo(m_manualVersion, testing);
     }
 }
 
-// operations on packages
+// Operations on packages: Install, remove and update
 void Chum::installPackage(const QString &id) {
     if (m_busy) return;
     ChumPackage *p = m_packages.value(id, nullptr);
-    if (!p) return; // no such id
+    if (!p) return; // This package ID does not exist
     m_busy = true;
     emit busyChanged();
-    //% "Install package"
+    //% "Installing package"
     setStatus(qtTrId("chum-install-package"));
     QString pkid = p->pkidLatest();
     startOperation(Daemon::installPackage(pkid), pkid);
@@ -376,10 +377,10 @@ void Chum::installPackage(const QString &id) {
 void Chum::uninstallPackage(const QString &id) {
     if (m_busy) return;
     ChumPackage *p = m_packages.value(id, nullptr);
-    if (!p) return; // no such id
+    if (!p) return; // This package ID does not exist
     m_busy = true;
     emit busyChanged();
-    //% "Uninstall package"
+    //% "Removing package"
     setStatus(qtTrId("chum-uninstall-package"));
     QString pkid = p->pkidInstalled();
     startOperation(Daemon::removePackage(pkid), pkid);
@@ -388,10 +389,10 @@ void Chum::uninstallPackage(const QString &id) {
 void Chum::updatePackage(const QString &id) {
     if (m_busy) return;
     ChumPackage *p = m_packages.value(id, nullptr);
-    if (!p) return; // no such id
+    if (!p) return; // This package ID does not exist
     m_busy = true;
     emit busyChanged();
-    //% "Update package"
+    //% "Updating package"
     setStatus(qtTrId("chum-update-package"));
     QString pkid = p->pkidLatest();
     startOperation(Daemon::updatePackage(pkid), pkid);
@@ -403,11 +404,11 @@ void Chum::updateAllPackages() {
     for (ChumPackage *p: m_packages)
         if (p->updateAvailable())
             pkids.append(p->pkidLatest());
-    if (pkids.isEmpty()) return; // nothing to update
+    if (pkids.isEmpty()) return; // No package(s) to update
 
     m_busy = true;
     emit busyChanged();
-    //% "Update all packages"
+    //% "Updating all packages"
     setStatus(qtTrId("chum-update-all-packages"));
     startOperation(Daemon::updatePackages(pkids), QString{});
 }
@@ -432,7 +433,7 @@ void Chum::startOperation(Transaction *pktr, const QString &pkg_id) {
                     Daemon::packageName(pkg_id),
                     Daemon::packageVersion(pkg_id)
                     );
-        refreshPackages(); // update all packages details and installed status
+        refreshPackages(); // Update details of all packages and their install-status
     });
 
     connect(pktr, &Transaction::errorCode, this,
