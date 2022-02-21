@@ -18,7 +18,7 @@ ApplicationWindow {
             return QT_TRID_NOOP("chum-package-installed")
         case Chum.PackageRemove:
             //: %1 - package name, %2 - package version
-            //% "%1 %2 uninstalled"
+            //% "%1 %2 removed"
             return QT_TRID_NOOP("chum-package-uninstalled")
         case Chum.PackageUpdate:
             //: %1 - package name, %2 - package version
