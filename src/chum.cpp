@@ -100,7 +100,7 @@ void Chum::refreshPackages() {
     m_packages_last_refresh_installed.clear();
 
     auto pktr = Daemon::getPackages(Transaction::FilterNotSource);
-    //% "Get list of packages"
+    //% "Retrieving list of available packages"
     setStatus(qtTrId("chum-get-list-packages"));
     connect(pktr, &Transaction::package,  this, [this](
             [[maybe_unused]] int info,
@@ -254,7 +254,7 @@ void Chum::getUpdates(bool force) {
         emit busyChanged();
     }
 
-    //% "Check for updates"
+    //% "Checking for which installed packages an update is available"
     setStatus(qtTrId("chum-check-updates"));
 
     for (ChumPackage *p: m_packages)
@@ -325,9 +325,9 @@ void Chum::repositoriesListUpdated() {
     if (!m_ssu.manageRepo()) {
         // Found SailfishOS:Chum repositories, which were not configured by this app, probably a misconfiguration
         emit errorFatal(
-                    //% "Repositories misconfigured"
+                    //% "Repositories misconfigured."
                     qtTrId("chum-repo-management-disabled-title"),
-                    //% "The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository. "
+                    //% "The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository! "
                     //% "You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a "
                     //% "SailfishOS:Chum repository.\n\n"
                     //% "Please remove all SailfishOS:Chum repositories by executing this command line as root user:\n"
