@@ -44,9 +44,10 @@
     </message>
     <message id="chum-package-uninstalled">
         <location filename="../qml/sailfishos-chum-gui.qml" line="22"/>
-        <source>%1 %2 uninstalled</source>
+        <source>%1 %2 removed</source>
+        <oldsource>%1 %2 uninstalled</oldsource>
         <extracomment>%1 - package name, %2 - package version</extracomment>
-        <translation>%1 %2 eltávolítva</translation>
+        <translation type="unfinished">%1 %2 eltávolítva</translation>
     </message>
     <message id="chum-package-updated">
         <location filename="../qml/sailfishos-chum-gui.qml" line="26"/>
@@ -207,8 +208,9 @@
     </message>
     <message id="chum-get-list-packages">
         <location filename="../src/chum.cpp" line="104"/>
-        <source>Get list of packages</source>
-        <translation>Csomaglisták lekérése</translation>
+        <source>Retrieving list of available packages</source>
+        <oldsource>Get list of packages</oldsource>
+        <translation type="unfinished">Csomaglisták lekérése</translation>
     </message>
     <message id="chum-get-package-details">
         <location filename="../src/chum.cpp" line="181"/>
@@ -224,8 +226,9 @@
     </message>
     <message id="chum-check-updates">
         <location filename="../src/chum.cpp" line="258"/>
-        <source>Check for updates</source>
-        <translation>Frissítések keresése</translation>
+        <source>Checking for which installed packages an update is available</source>
+        <oldsource>Check for updates</oldsource>
+        <translation type="unfinished">Frissítések keresése</translation>
     </message>
     <message id="chum-refresh-repository-impossible">
         <location filename="../src/chum.cpp" line="293"/>
@@ -249,19 +252,22 @@
         <location filename="../src/chum.cpp" line="67"/>
         <location filename="../src/chum.cpp" line="329"/>
         <location filename="../src/chum.cpp" line="351"/>
-        <source>Repositories misconfigured</source>
-        <translation>A csomagtárolók beállítása hibás</translation>
+        <source>Repositories misconfigured.</source>
+        <oldsource>Repositories misconfigured</oldsource>
+        <translation type="unfinished">A csomagtárolók beállítása hibás</translation>
     </message>
     <message id="chum-repo-management-disabled-txt">
         <location filename="../src/chum.cpp" line="336"/>
-        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository. You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
+        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository! You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
 
 Please remove all SailfishOS:Chum repositories by executing this command line as root user:
 for i in $(ssu lr | fgrep chum | cut -f 3 -d &apos; &apos;); do ssu rr $i; done
 This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
-        <oldsource>Cannot manage Chum repositories through GUI. You probably have multiple Chum repositories defined in SSU or Chum repository disabled. For listing repositories and their removal, use &apos;ssu&apos; command in terminal.
+        <oldsource>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository. You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
 
-Please remove all defined Chum repositories and restart GUI. GUI will add missing Chum repository if needed on restart.</oldsource>
+Please remove all SailfishOS:Chum repositories by executing this command line as root user:
+for i in $(ssu lr | fgrep chum | cut -f 3 -d &apos; &apos;); do ssu rr $i; done
+This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</oldsource>
         <translation type="unfinished">A Chum csomagtárolók sajnos nem kezelhetőek ezen a grafikus interfészen keresztül. Valószínűleg több Chum csomagtárolód is meg van adva az SSU-ban vagy a Chum csomagtároló le van tiltva. A csomagtárolók listázáshához és eltávolításukhoz használd az &apos;ssu&apos; parancsot terminálból.
 
 Távolítsd el az összes Chum csomagtrárolót, majd indítsd újra ezt az alkalmazást. Az alkalmazás hozzá fogja adni a helyes Chum tárolókat a következő indításnál.</translation>
