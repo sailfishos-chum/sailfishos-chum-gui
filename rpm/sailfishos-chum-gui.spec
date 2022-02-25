@@ -1,5 +1,5 @@
 Name:           sailfishos-chum-gui
-Summary:        SailfishOS:Chum GUI
+Summary:        GUI application for utilising the SailfishOS:Chum community repository
 Version:        0.4.1
 Release:        1
 Group:          Applications/System
@@ -34,9 +34,12 @@ BuildRequires:  sed
 %endif
 
 %description
-A client app for the Chum repositories.
+SailfishOS:Chum GUI is a graphical application for managing software packages from the SailfishOS:Chum community repository.
 
-PackageName: Chum GUI
+# This description section includes the metadata for SailfishOS:Chum, see
+# https://github.com/sailfishos-chum/main/blob/main/Metadata.md
+%if "%{?vendor}" == "chum"
+PackageName: SailfishOS:Chum GUI application
 Type: desktop-application
 Categories:
   - System
@@ -44,6 +47,7 @@ Categories:
 Custom:
   Repo: https://github.com/sailfishos-chum/sailfishos-chum-gui
 Icon: https://raw.githubusercontent.com/sailfishos-chum/sailfishos-chum-gui/main/icons/sailfishos-chum-gui.svg
+%endif
 
 %prep
 %setup -q -n %{name}-%{version}
