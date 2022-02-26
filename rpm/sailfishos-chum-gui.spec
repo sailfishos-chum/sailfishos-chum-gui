@@ -73,7 +73,7 @@ cp -a %{_libdir}/libyaml-cpp.so.* %{buildroot}%{_datadir}/%{name}/lib
 chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
 %endif
 
-%if 0%{?sailfishos_version} && 0%{?sailfishos_version}<40000
+%if 0%{?sailfishos_version} && 0%{?sailfishos_version}<40100
 sed -i 's/silica-qt5/generic/' %{buildroot}%{_datadir}/applications/sailfishos-chum-gui.desktop
 %endif
 
