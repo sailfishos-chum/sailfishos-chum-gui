@@ -341,6 +341,9 @@ query {
       name
       createdAt
       descriptionHTML
+      tagCommit {
+        message
+      }
     }
   }
 }"
@@ -362,8 +365,12 @@ query {
                 value("release").toObject().toVariantMap();
 
         QVariantMap result;
-        result["name"] = r.value("name");
-        result["description"] = r.value("descriptionHTML");
+        QString name = r.value("name").toString();
+        QString description = r.value("descriptionHTML").toString();
+        result["name"] = name.isEmpty() ? release_id : name;
+        result["description"] = description.isEmpty() ?
+              r.value("tagCommit").toMap().value("message") :
+              description;
         result["datetime"] = parseDate(r.value("createdAt").toString());
 
         value->setValue(release_id, result);
@@ -411,8 +418,10 @@ query {
         for (const auto &e: r) {
             QVariantMap element = e.toMap();
             QVariantMap m;
-            m["id"] = element.value("tagName");
-            m["name"] = element.value("name");
+            QString name = element.value("name").toString();
+            QString tagName = element.value("tagName").toString();
+            m["id"] = tagName;
+            m["name"] = name.isEmpty() ? tagName : name;
             m["datetime"] = parseDate(element.value("createdAt").toString());
             rlist.append(m);
         }
