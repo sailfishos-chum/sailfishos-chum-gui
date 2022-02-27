@@ -16,6 +16,7 @@ Page {
         PullDownMenu {
             busy: Chum.busy
             MenuItem {
+                enabled: !Chum.busy
                 //% "Remove"
                 text: qsTrId("chum-uninstall")
                 visible: pkg.installed
@@ -42,6 +43,7 @@ Page {
                 visible: pkg.urlForum
             }
             MenuItem {
+                enabled: !Chum.busy
                 text: pkg.installed
                 //% "Update"
                       ? qsTrId("chum-update")
