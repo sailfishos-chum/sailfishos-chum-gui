@@ -112,50 +112,50 @@
         <translation>Installierte Pakete</translation>
     </message>
     <message id="chum-package-project-repo">
-        <location filename="../qml/pages/PackagePage.qml" line="28"/>
+        <location filename="../qml/pages/PackagePage.qml" line="29"/>
         <source>Source code</source>
         <oldsource>Project Repository</oldsource>
         <translation type="unfinished">Projekt Repository</translation>
     </message>
     <message id="chum-package-file-issue">
-        <location filename="../qml/pages/PackagePage.qml" line="34"/>
+        <location filename="../qml/pages/PackagePage.qml" line="35"/>
         <source>Issue tracker</source>
         <oldsource>File Issue</oldsource>
         <translation type="unfinished">Fehler melden</translation>
     </message>
     <message id="chum-package-discussion-forum">
-        <location filename="../qml/pages/PackagePage.qml" line="40"/>
+        <location filename="../qml/pages/PackagePage.qml" line="41"/>
         <source>Discussion forum</source>
         <oldsource>Discussion Forum</oldsource>
         <translation type="unfinished">Diskussionsforum</translation>
     </message>
     <message id="chum-uninstalling">
-        <location filename="../qml/pages/PackagePage.qml" line="23"/>
+        <location filename="../qml/pages/PackagePage.qml" line="24"/>
         <source>Removing</source>
         <oldsource>Uninstalling</oldsource>
         <translation type="unfinished">Deinstalliere</translation>
     </message>
     <message id="chum-update">
-        <location filename="../qml/pages/PackagePage.qml" line="47"/>
+        <location filename="../qml/pages/PackagePage.qml" line="49"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="66"/>
         <source>Update</source>
         <translation>Aktualisieren</translation>
     </message>
     <message id="chum-install">
-        <location filename="../qml/pages/PackagePage.qml" line="49"/>
+        <location filename="../qml/pages/PackagePage.qml" line="51"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="73"/>
         <source>Install</source>
         <translation>Installieren</translation>
     </message>
     <message id="chum-uninstall">
-        <location filename="../qml/pages/PackagePage.qml" line="20"/>
+        <location filename="../qml/pages/PackagePage.qml" line="21"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="72"/>
         <source>Remove</source>
         <oldsource>Uninstall</oldsource>
         <translation type="unfinished">Deinstallieren</translation>
     </message>
     <message id="chum-package-donation">
-        <location filename="../qml/pages/PackagePage.qml" line="124"/>
+        <location filename="../qml/pages/PackagePage.qml" line="126"/>
         <source>Donate</source>
         <oldsource>Make Dontation</oldsource>
         <translation type="unfinished">Spenden</translation>
@@ -187,12 +187,12 @@
         <translation type="unfinished">Kategorien</translation>
     </message>
     <message id="chum-releases-number">
-        <location filename="../qml/pages/PackagePage.qml" line="101"/>
+        <location filename="../qml/pages/PackagePage.qml" line="103"/>
         <source>Releases (%1)</source>
         <translation>Veröffentlichungen (%1)</translation>
     </message>
     <message id="chum-issues-number">
-        <location filename="../qml/pages/PackagePage.qml" line="112"/>
+        <location filename="../qml/pages/PackagePage.qml" line="114"/>
         <source>Issues (%1)</source>
         <translation>Probleme (%1)</translation>
     </message>
