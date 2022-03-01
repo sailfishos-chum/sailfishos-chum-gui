@@ -1,3 +1,3 @@
-# SailfishOS:Chum GUI
+## SailfishOS:Chum GUI application
 
-A client app for the SailfishOS:Chum repository.
+SailfishOS:Chum GUI is a graphical application for managing software packages from the SailfishOS:Chum community repository.
