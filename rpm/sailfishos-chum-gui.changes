@@ -1,3 +1,15 @@
+* Wed Mar 02 2022 Rinigus <rinigus.git@gmail.com> 0.5.0-1
+- Rework strings
+- Update translations
+- Use generic type for SFOS older than 4.1
+- Enhance spec file
+- Fallback to tag info if release is not described at GitHub
+- Disable package operations while there is some operation running
+
+* Mon Feb 07 2022 Rinigus <rinigus.git@gmail.com> 0.4.1-1
+- Update translations
+- Remove the search box focus when scrolling
+
 * Wed Jan 19 2022 Rinigus <rinigus.git@gmail.com> 0.4.0-1
 - Improve compatibility with older SFOS versions
 - Allow to specify description as URL pointing to MarkDown
