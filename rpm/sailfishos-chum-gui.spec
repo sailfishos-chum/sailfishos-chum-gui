@@ -51,7 +51,7 @@ Categories:
   - Utility
 Custom:
   Repo: %{url}
-Icon: https://raw.githubusercontent.com/sailfishos-chum/sailfishos-chum-gui/main/icons/sailfishos-chum-gui.svg
+Icon: %{url}/raw/main/icons/sailfishos-chum-gui.svg
 %endif
 
 %prep
