@@ -8,7 +8,7 @@ URL:            https://github.com/sailfishos-chum/sailfishos-chum-gui
 Source0:        %{name}-%{version}.tar.bz2
 Source1:        token-github.txt
 Source2:        token-gitlab.txt
-Source101:      sailfishos-chum-gui-rpmlintrc
+Source101:      %{name}-rpmlintrc
 Requires:       sailfishsilica-qt5 >= 0.10.9
 Requires:       ssu
 Conflicts:      sailfishos-chum
