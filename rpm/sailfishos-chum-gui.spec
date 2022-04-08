@@ -55,7 +55,7 @@ Icon: https://raw.githubusercontent.com/sailfishos-chum/sailfishos-chum-gui/main
 %endif
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 
