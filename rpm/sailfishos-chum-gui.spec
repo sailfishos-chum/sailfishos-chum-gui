@@ -50,7 +50,7 @@ Categories:
   - System
   - Utility
 Custom:
-  Repo: https://github.com/sailfishos-chum/sailfishos-chum-gui
+  Repo: %{url}
 Icon: https://raw.githubusercontent.com/sailfishos-chum/sailfishos-chum-gui/main/icons/sailfishos-chum-gui.svg
 %endif
 
