@@ -15,25 +15,25 @@
         <location filename="../qml/pages/PackagePage.qml" line="29"/>
         <source>Source code</source>
         <oldsource>Project Repository</oldsource>
-        <translation type="unfinished">Repozytorium projektu</translation>
+        <translation>Kod źródłowy</translation>
     </message>
     <message id="chum-package-file-issue">
         <location filename="../qml/pages/PackagePage.qml" line="35"/>
         <source>Issue tracker</source>
         <oldsource>File Issue</oldsource>
-        <translation type="unfinished">Problem z plikiem</translation>
+        <translation>Tracker błędów</translation>
     </message>
     <message id="chum-package-discussion-forum">
         <location filename="../qml/pages/PackagePage.qml" line="41"/>
         <source>Discussion forum</source>
         <oldsource>Discussion Forum</oldsource>
-        <translation type="unfinished">Forum dyskusyjne</translation>
+        <translation>Forum dyskusyjne</translation>
     </message>
     <message id="chum-uninstalling">
         <location filename="../qml/pages/PackagePage.qml" line="24"/>
         <source>Removing</source>
         <oldsource>Uninstalling</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Usuwanie</translation>
     </message>
     <message id="chum-update">
         <location filename="../qml/pages/PackagePage.qml" line="49"/>
@@ -52,7 +52,7 @@
         <location filename="../qml/pages/PackagesListPage.qml" line="72"/>
         <source>Remove</source>
         <oldsource>Uninstall</oldsource>
-        <translation type="unfinished">Odinstaluj</translation>
+        <translation>Usuń</translation>
     </message>
     <message id="chum-releases-number">
         <location filename="../qml/pages/PackagePage.qml" line="103"/>
@@ -68,49 +68,49 @@
         <location filename="../qml/pages/PackagePage.qml" line="126"/>
         <source>Donate</source>
         <oldsource>Make Dontation</oldsource>
-        <translation type="unfinished">Zrób donację</translation>
+        <translation>Zrób donację</translation>
     </message>
     <message id="chum-pkg-developer">
         <location filename="../qml/components/AppInformation.qml" line="65"/>
         <source>Developer:</source>
         <oldsource>Developer</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Deweloper</translation>
     </message>
     <message id="chum-pkg-installed-version">
         <location filename="../qml/components/AppInformation.qml" line="72"/>
         <source>Installed version:</source>
         <oldsource>Installed version</oldsource>
-        <translation type="unfinished">zainstalowana wersja</translation>
+        <translation>Zainstalowana wersja:</translation>
     </message>
     <message id="chum-pkg-available-version">
         <location filename="../qml/components/AppInformation.qml" line="78"/>
         <source>Available version:</source>
         <oldsource>Available version</oldsource>
-        <translation type="unfinished">Dostępna wersja</translation>
+        <translation>Dostępna wersja:</translation>
     </message>
     <message id="chum-pkg-package-name">
         <location filename="../qml/components/AppInformation.qml" line="85"/>
         <source>Package name:</source>
         <oldsource>Package name</oldsource>
-        <translation type="unfinished">Nazwa pakietu</translation>
+        <translation>Nazwa pakietu:</translation>
     </message>
     <message id="chum-pkg-download-size">
         <location filename="../qml/components/AppInformation.qml" line="92"/>
         <source>Download size:</source>
         <oldsource>Download size</oldsource>
-        <translation type="unfinished">Rozmiar pliku do pobrania</translation>
+        <translation>Rozmiar pliku do pobrania:</translation>
     </message>
     <message id="chum-pkg-license">
         <location filename="../qml/components/AppInformation.qml" line="99"/>
         <source>License:</source>
         <oldsource>License</oldsource>
-        <translation type="unfinished">Licencja</translation>
+        <translation>Licencja:</translation>
     </message>
     <message id="chum-pkg-link">
         <location filename="../qml/components/AppInformation.qml" line="110"/>
         <source>Homepage:</source>
         <oldsource>Link</oldsource>
-        <translation type="unfinished">Odnośnik</translation>
+        <translation>Odnośnik:</translation>
     </message>
     <message id="chum-pkg-packaging-link">
         <location filename="../qml/components/AppInformation.qml" line="122"/>
@@ -142,7 +142,7 @@
         <location filename="../qml/components/AppSummary.qml" line="66"/>
         <source>Categories:</source>
         <oldsource>Categories</oldsource>
-        <translation type="unfinished">Kategorie</translation>
+        <translation>Kategorie:</translation>
     </message>
     <message id="chum-busy">
         <location filename="../qml/cover/CoverPage.qml" line="25"/>
@@ -153,7 +153,7 @@
         <location filename="../qml/pages/AboutPage.qml" line="19"/>
         <source>About SailfishOS:Chum GUI</source>
         <oldsource>About the SailfishOS:Chum GUI</oldsource>
-        <translation type="unfinished">O Chum GUI</translation>
+        <translation>O SailfishOS:Chum GUI</translation>
     </message>
     <message id="chum-about-store">
         <location filename="../qml/pages/AboutPage.qml" line="31"/>
@@ -175,13 +175,13 @@
         <location filename="../qml/pages/AboutPage.qml" line="61"/>
         <source>Source code</source>
         <oldsource>Home</oldsource>
-        <translation type="unfinished">Repozytorium projektu</translation>
+        <translation>Kod źródłowy</translation>
     </message>
     <message id="chum-about-issues">
         <location filename="../qml/pages/AboutPage.qml" line="52"/>
         <source>Issue tracker</source>
         <oldsource>Issues</oldsource>
-        <translation type="unfinished">Problemy</translation>
+        <translation>Błedy</translation>
     </message>
     <message id="chum-about-description">
         <location filename="../qml/pages/AboutPage.qml" line="103"/>
@@ -363,7 +363,7 @@
         <location filename="../qml/pages/PackagesListPage.qml" line="111"/>
         <source>Update all</source>
         <oldsource>Apply all updates</oldsource>
-        <translation type="unfinished">Zaktualizauj wszystko</translation>
+        <translation>Aktualizuj wszystko</translation>
     </message>
     <message id="chum-release">
         <location filename="../qml/pages/ReleasePage.qml" line="36"/>
@@ -443,13 +443,13 @@
     <message id="chum-settings-testing">
         <location filename="../qml/pages/SettingsPage.qml" line="94"/>
         <source>Use testing repository</source>
-        <translation type="unfinished"></translation>
+        <translation>Użyj repozytorium testowego</translation>
     </message>
     <message id="chum-settings-advanced">
         <location filename="../qml/pages/SettingsPage.qml" line="83"/>
         <source>Advanced settings</source>
         <oldsource>Advanced</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia zaawansowane</translation>
     </message>
     <message id="chum-settings-override-selection">
         <location filename="../qml/pages/SettingsPage.qml" line="107"/>
@@ -500,13 +500,13 @@
     <message id="chum-repo-refreshed">
         <location filename="../qml/sailfishos-chum-gui.qml" line="83"/>
         <source>Repository refreshed</source>
-        <translation type="unfinished"></translation>
+        <translation>Repozytorium odświeżone</translation>
     </message>
     <message id="chum-load-repositories">
         <location filename="../src/chum.cpp" line="42"/>
         <source>Loading SailfishOS:Chum repository</source>
         <oldsource>Load repositories</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Ładowanie repozytoriów SailfishOS:Chum</translation>
     </message>
     <message id="chum-repo-management-disabled-title">
         <location filename="../src/chum.cpp" line="67"/>
