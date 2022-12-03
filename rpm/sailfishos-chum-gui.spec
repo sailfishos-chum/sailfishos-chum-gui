@@ -1,6 +1,6 @@
 Name:           sailfishos-chum-gui
 Summary:        GUI application for utilising the SailfishOS:Chum community repository
-Version:        0.5.0
+Version:        0.5.1
 Release:        1
 Group:          Applications/System
 License:        MIT
@@ -28,12 +28,9 @@ BuildRequires:  PackageKit-Qt5-devel
 BuildRequires:  qt5-qttools-linguist
 BuildRequires:  sed
 
-# Bundle YAML library only for builds at OBS corresponding to older SFOS version targets
-%if 0%{?sailfishos_version} && 0%{?sailfishos_version}<40000
+# Bundle YAML library only for builds at OBS corresponding to older SFOS version targets < 4.0.0.00
+%if 0%{?sailfishos_version} && 0%{?sailfishos_version} < 40000
 %define bundle_yaml 1
-%endif
-
-%if 0%{?bundle_yaml}
 %define __provides_exclude_from ^%{_datadir}/.*$
 %define __requires_exclude ^libyaml-cpp.*$
 %endif
@@ -58,44 +55,50 @@ Icon: https://raw.githubusercontent.com/sailfishos-chum/sailfishos-chum-gui/main
 %setup -q -n %{name}-%{version}
 
 %build
-
 # SFOS RPM cmake macro disables RPATH
-%cmake -DCHUMGUI_VERSION=%(echo %{version} | grep -Eo '^[0-9]+(\.[0-9]+)*') \
-      -DCMAKE_SKIP_RPATH:BOOL=OFF \
-      -DCMAKE_INSTALL_RPATH=%{_datadir}/%{name}/lib: \
-      -DGITHUB_TOKEN=%(cat %{SOURCE1})  \
-      -DGITLAB_TOKEN=%(cat %{SOURCE2})  \
-     .
+%cmake -DCHUMGUI_VERSION=%(echo %{version} | grep -Eo '^[0-9]+(\.[0-9]+)*')  \
+       -DCMAKE_SKIP_RPATH:BOOL=OFF  \
+       -DCMAKE_INSTALL_RPATH=%{_datadir}/%{name}/lib:  \
+       -DGITHUB_TOKEN=%(cat %{SOURCE1})  \
+       -DGITLAB_TOKEN=%(cat %{SOURCE2})  \
+       .
 cmake --build .
 
 %install
-rm -rf %{buildroot}
 %make_install
-desktop-file-install --delete-original       \
-  --dir %{buildroot}%{_datadir}/applications \
-   %{buildroot}%{_datadir}/applications/*.desktop
+desktop-file-install --delete-original  \
+                     --dir %{buildroot}%{_datadir}/applications  \
+                     %{buildroot}%{_datadir}/applications/*.desktop
 
 %if 0%{?bundle_yaml}
 mkdir -p %{buildroot}%{_datadir}/%{name}/lib
 cp -a %{_libdir}/libyaml-cpp.so.* %{buildroot}%{_datadir}/%{name}/lib
-# strip executable bit from all libraries
+# Strip executable bit from all libraries
 chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
 %endif
 
-%if 0%{?sailfishos_version} && 0%{?sailfishos_version}<40100
+# Rectify desktop file for old SailfishOS releases < 4.0.1.00
+%if 0%{?sailfishos_version} && 0%{?sailfishos_version} < 40100
 sed -i 's/silica-qt5/generic/' %{buildroot}%{_datadir}/applications/sailfishos-chum-gui.desktop
 %endif
 
 %postun
-ssu rr sailfishos-chum || true
-ssu rr sailfishos-chum-testing || true
-rm -f /var/cache/ssu/features.ini || true
-ssu ur || true
+if [ $1 = 0 ]  # Removal
+then
+  ssu rr sailfishos-chum
+  ssu rr sailfishos-chum-testing
+  rm -f /var/cache/ssu/features.ini
+  ssu ur
+fi
+# BTW, `ssu`, `rm -f`, `mkdir -p` etc. *always* return with "0" ("success"), hence
+# no appended `|| true` needed to satisfy `set -e` for failing commands outside of
+# flow control directives (if, while, until etc.).  Furthermore on Fedora Docs it
+# is indicated that solely the final exit status of a whole scriptlet is crucial: 
+# https://docs.fedoraproject.org/en-US/packaging-guidelines/Scriptlets/#_syntax
 
 %files
-%defattr(-,root,root,-)
-%{_bindir}
-%{_datadir}/%{name}
+%{_bindir}/%{name}
+%dir %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 %{_datadir}/mapplauncherd/privileges.d/%{name}
