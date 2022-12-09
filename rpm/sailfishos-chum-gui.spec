@@ -11,6 +11,7 @@ Source2:        token-gitlab.txt
 Source101:      sailfishos-chum-gui-rpmlintrc
 Requires:       sailfishsilica-qt5 >= 0.10.9
 Requires:       ssu
+Requires:       ssu
 Conflicts:      sailfishos-chum
 Obsoletes:      sailfishos-chum
 Conflicts:      sailfishos-chum-testing
@@ -48,11 +49,11 @@ Categories:
   - Utility
 Custom:
   Repo: https://github.com/sailfishos-chum/sailfishos-chum-gui
-Icon: https://raw.githubusercontent.com/sailfishos-chum/sailfishos-chum-gui/main/icons/sailfishos-chum-gui.svg
+Icon: https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/icons/sailfishos-chum-gui.svg
 %endif
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 # SFOS RPM cmake macro disables RPATH
@@ -83,7 +84,7 @@ sed -i 's/silica-qt5/generic/' %{buildroot}%{_datadir}/applications/sailfishos-c
 %endif
 
 %postun
-if [ $1 = 0 ]  # Removal
+if [ "$1" = 0 ]  # Removal
 then
   ssu rr sailfishos-chum
   ssu rr sailfishos-chum-testing
@@ -94,9 +95,15 @@ fi
 # no appended `|| true` needed to satisfy `set -e` for failing commands outside of
 # flow control directives (if, while, until etc.).  Furthermore on Fedora Docs it
 # is indicated that solely the final exit status of a whole scriptlet is crucial: 
-# https://docs.fedoraproject.org/en-US/packaging-guidelines/Scriptlets/#_syntax
+# See https://docs.pagure.org/packaging-guidelines/Packaging%3AScriptlets.html
+# or https://docs.fedoraproject.org/en-US/packaging-guidelines/Scriptlets/#_syntax
+# committed on 18 February 2019 by tibbs ( https://pagure.io/user/tibbs ) as
+# "8d0cec9 Partially convert to semantic line breaks." in
+# https://pagure.io/packaging-committee/c/8d0cec97aedc9b34658d004e3a28123f36404324
+exit 0
 
 %files
+%defattr(-,root,root,-)
 %{_bindir}/%{name}
 %dir %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
