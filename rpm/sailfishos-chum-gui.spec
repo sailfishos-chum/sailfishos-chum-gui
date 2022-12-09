@@ -104,7 +104,7 @@ exit 0
 %files
 %defattr(-,root,root,-)
 %{_bindir}/%{name}
-%dir %{_datadir}/%{name}
+%{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 %{_datadir}/mapplauncherd/privileges.d/%{name}
