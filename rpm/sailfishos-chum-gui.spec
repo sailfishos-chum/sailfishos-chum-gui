@@ -11,7 +11,6 @@ Source2:        token-gitlab.txt
 Source101:      sailfishos-chum-gui-rpmlintrc
 Requires:       sailfishsilica-qt5 >= 0.10.9
 Requires:       ssu
-Requires:       ssu
 Conflicts:      sailfishos-chum
 Obsoletes:      sailfishos-chum
 Conflicts:      sailfishos-chum-testing
