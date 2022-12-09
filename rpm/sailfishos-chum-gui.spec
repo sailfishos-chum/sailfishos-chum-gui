@@ -31,6 +31,9 @@ BuildRequires:  sed
 # Bundle YAML library only for builds at OBS corresponding to older SFOS version targets < v4.0.0.00
 %if 0%{?sailfishos_version} && 0%{?sailfishos_version} < 40000
 %define bundle_yaml 1
+%endif
+
+%if 0%{?bundle_yaml}
 %define __provides_exclude_from ^%{_datadir}/.*$
 %define __requires_exclude ^libyaml-cpp.*$
 %endif
