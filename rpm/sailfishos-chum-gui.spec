@@ -8,7 +8,7 @@ URL:            https://github.com/sailfishos-chum/sailfishos-chum-gui
 Source0:        %{name}-%{version}.tar.bz2
 Source1:        token-github.txt
 Source2:        token-gitlab.txt
-Source101:      sailfishos-chum-gui-rpmlintrc
+Source101:      %{name}-rpmlintrc
 Requires:       sailfishsilica-qt5 >= 0.10.9
 Requires:       ssu
 Conflicts:      sailfishos-chum
@@ -50,12 +50,12 @@ Categories:
   - System
   - Utility
 Custom:
-  Repo: https://github.com/sailfishos-chum/sailfishos-chum-gui
-Icon: https://raw.githubusercontent.com/sailfishos-chum/sailfishos-chum-gui/main/icons/sailfishos-chum-gui.svg
+  Repo: %{url}
+Icon: %{url}/raw/main/icons/sailfishos-chum-gui.svg
 %endif
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
 
@@ -94,7 +94,7 @@ ssu ur || true
 
 %files
 %defattr(-,root,root,-)
-%{_bindir}
+%{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
