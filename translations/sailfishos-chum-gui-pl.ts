@@ -159,7 +159,7 @@
         <location filename="../qml/pages/AboutPage.qml" line="31"/>
         <source>A graphical application for the SailfishOS:Chum community repository</source>
         <oldsource>A store frontend for the Chum repository</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Graficzna aplikacja dla repozytorium społeczności SailfishOS:Chum</translation>
     </message>
     <message id="chum-about-version">
         <location filename="../qml/pages/AboutPage.qml" line="40"/>
@@ -198,7 +198,7 @@
     <message id="chum-category-accessibility">
         <location filename="../qml/pages/CategoriesPage.qml" line="49"/>
         <source>Accessibility</source>
-        <translation type="unfinished"></translation>
+        <translation>Ułatwienia dostępu</translation>
     </message>
     <message id="chum-category-development">
         <location filename="../qml/pages/CategoriesPage.qml" line="54"/>
@@ -390,7 +390,7 @@
         <location filename="../qml/pages/SettingsPage.qml" line="47"/>
         <source>SailfishOS:Chum repository is not available</source>
         <oldsource>Chum repository is not available</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Repozytorium SailfishOS:Chum jest niedostępne</translation>
     </message>
     <message id="chum-settings-status-repo-testing-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="52"/>
@@ -420,7 +420,7 @@
         <location filename="../qml/pages/SettingsPage.qml" line="67"/>
         <source>General settings</source>
         <oldsource>General</oldsource>
-        <translation type="unfinished">Ogólne</translation>
+        <translation>Ustawienia ogólne</translation>
     </message>
     <message id="chum-settings-show-apps-description">
         <location filename="../qml/pages/SettingsPage.qml" line="75"/>
@@ -432,7 +432,7 @@
         <location filename="../qml/pages/SettingsPage.qml" line="77"/>
         <source>Show applications only</source>
         <oldsource>Show applications only by default</oldsource>
-        <translation type="unfinished">Pokaż tylko aplikacje</translation>
+        <translation>Pokaż tylko aplikacje</translation>
     </message>
     <message id="chum-settings-testing-description">
         <location filename="../qml/pages/SettingsPage.qml" line="92"/>
@@ -467,34 +467,34 @@
         <location filename="../qml/pages/SettingsPage.qml" line="120"/>
         <source>Specify a Sailfish OS version</source>
         <oldsource>Specify a Sailfish&amp;nbsp;OS version</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Określ wersję SailfishOS</translation>
     </message>
     <message id="chum-package-installed">
         <location filename="../qml/sailfishos-chum-gui.qml" line="18"/>
         <source>%1 %2 installed</source>
         <extracomment>%1 - package name, %2 - package version</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>$1 %2 zainstalowane</translation>
     </message>
     <message id="chum-package-uninstalled">
         <location filename="../qml/sailfishos-chum-gui.qml" line="22"/>
         <source>%1 %2 removed</source>
         <oldsource>%1 %2 uninstalled</oldsource>
         <extracomment>%1 - package name, %2 - package version</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 usunięte</translation>
     </message>
     <message id="chum-package-updated">
         <location filename="../qml/sailfishos-chum-gui.qml" line="26"/>
         <source>%1 %2 updated</source>
         <extracomment>%1 - package name, %2 - package version</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 zaktualizowane</translation>
     </message>
     <message id="chum-updates-available" numerus="yes">
         <location filename="../qml/sailfishos-chum-gui.qml" line="65"/>
         <source>%n update(s) available</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>dostępna %n aktualizacja</numerusform>
+            <numerusform>dostępne %n aktualizacje</numerusform>
+            <numerusform>dostępne %n aktualizacji</numerusform>
         </translation>
     </message>
     <message id="chum-repo-refreshed">
@@ -514,56 +514,56 @@
         <location filename="../src/chum.cpp" line="351"/>
         <source>Repositories misconfigured.</source>
         <oldsource>Repositories misconfigured</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Źle skonfigurowane repozytoria.</translation>
     </message>
     <message id="chum-setup-repo">
         <location filename="../src/chum.cpp" line="80"/>
         <location filename="../src/chum.cpp" line="359"/>
         <source>Adding SailfishOS:Chum testing repository</source>
         <oldsource>Setting up Chum repository</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Dodawanie testowego repozytorium SailfishOS:Chum</translation>
     </message>
     <message id="chum-get-list-packages">
         <location filename="../src/chum.cpp" line="104"/>
         <source>Retrieving list of available packages</source>
         <oldsource>Get list of packages</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Pobieranie listy dostępnych pakietów</translation>
     </message>
     <message id="chum-get-package-details">
         <location filename="../src/chum.cpp" line="181"/>
         <source>Retrieving the current detail information for installed packages</source>
         <oldsource>Get package details</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Pobieranie aktualnych szczegółowych informacji o zainstalowanych pakietach</translation>
     </message>
     <message id="chum-get-package-version">
         <location filename="../src/chum.cpp" line="211"/>
         <source>Retrieving the currently available versions of installed packages</source>
         <oldsource>Get versions of installed packages</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Pobieranie aktualnie dostępnych wersji zainstalowanych pakietów</translation>
     </message>
     <message id="chum-check-updates">
         <location filename="../src/chum.cpp" line="258"/>
         <source>Checking for which installed packages an update is available</source>
         <oldsource>Check for updates</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Sprawdzanie, dla których zainstalowanych pakietów dostępna jest aktualizacja</translation>
     </message>
     <message id="chum-refresh-repository-impossible">
         <location filename="../src/chum.cpp" line="293"/>
         <source>Failed to refresh SailfishOS:Chum repository, because it is not available!</source>
         <oldsource>Cannot refresh repository as it is not available</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Błąd odświeżenia repozytoium SailfishOS:Chum, ponieważ jest ono niedostępne!</translation>
     </message>
     <message id="chum-refresh-repository">
         <location filename="../src/chum.cpp" line="303"/>
         <source>Refreshing SailfishOS:Chum repository</source>
         <oldsource>Refreshing Chum repository</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Odświeżanie repozytorium SailfishOS:Chum</translation>
     </message>
     <message id="chum-refresh-repository-failed">
         <location filename="../src/chum.cpp" line="320"/>
         <source>Failed to refresh SailfishOS:Chum repository!</source>
         <oldsource>Failed to refresh Chum repository</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Nieudane odświeżenie repozytorium SailfishOS:Chum!</translation>
     </message>
     <message id="chum-repo-management-disabled-txt">
         <location filename="../src/chum.cpp" line="336"/>
@@ -583,36 +583,36 @@ This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum reposi
         <location filename="../src/chum.cpp" line="342"/>
         <source>Adding SailfishOS:Chum repository</source>
         <oldsource>Adding Chum repository</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Dodawanie repozytorium SailfishOS:Chum</translation>
     </message>
     <message id="chum-install-package">
         <location filename="../src/chum.cpp" line="372"/>
         <source>Installing package</source>
         <oldsource>Install package</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Instaluj pakiet</translation>
     </message>
     <message id="chum-uninstall-package">
         <location filename="../src/chum.cpp" line="384"/>
         <source>Removing package</source>
         <oldsource>Uninstall package</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Odinstaluj pakiet</translation>
     </message>
     <message id="chum-update-package">
         <location filename="../src/chum.cpp" line="396"/>
         <source>Updating package</source>
         <oldsource>Update package</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizuj pakiet</translation>
     </message>
     <message id="chum-update-all-packages">
         <location filename="../src/chum.cpp" line="412"/>
         <source>Updating all packages</source>
         <oldsource>Update all packages</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizacja wszystkich pakietów</translation>
     </message>
     <message id="chum-desc-library">
         <location filename="../src/chumpackage.cpp" line="139"/>
         <source>Library</source>
-        <translation type="unfinished"></translation>
+        <translation>Biblioteka</translation>
     </message>
     <message id="chum-desc-development">
         <location filename="../src/chumpackage.cpp" line="144"/>
@@ -622,12 +622,12 @@ This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum reposi
     <message id="chum-page-header-packaged-by">
         <location filename="../qml/components/FancyPageHeader.qml" line="39"/>
         <source>Packaged by</source>
-        <translation type="unfinished"></translation>
+        <translation>Paczkowane przez</translation>
     </message>
     <message id="chum-loading-text">
         <location filename="../qml/components/LabelMarkdown.qml" line="22"/>
         <source>Loading...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ładowanie...</translation>
     </message>
 </context>
 </TS>
