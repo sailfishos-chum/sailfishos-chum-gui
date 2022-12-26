@@ -11,10 +11,9 @@ Source2:        token-gitlab.txt
 Source101:      %{name}-rpmlintrc
 Requires:       sailfishsilica-qt5 >= 0.10.9
 Requires:       ssu
+Requires(postun): ssu
 Conflicts:      sailfishos-chum
-Obsoletes:      sailfishos-chum
 Conflicts:      sailfishos-chum-testing
-Obsoletes:      sailfishos-chum-testing
 Provides:       sailfishos-chum-repository
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
