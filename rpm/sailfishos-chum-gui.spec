@@ -91,6 +91,8 @@ then
   ssu rr sailfishos-chum-testing
   rm -f /var/cache/ssu/features.ini
   ssu ur
+  # Remove a %%{name}-installer log-file, if extant:
+  rm -f %{_localstatedir}/log/%{name}-installer.log.txt
 fi
 # BTW, `ssu`, `rm -f`, `mkdir -p` etc. *always* return with "0" ("success"), hence
 # no appended `|| true` needed to satisfy `set -e` for failing commands outside of
