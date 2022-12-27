@@ -91,7 +91,10 @@ then
   ssu rr sailfishos-chum-testing
   rm -f /var/cache/ssu/features.ini
   ssu ur
-  # Remove a %%{name}-installer log-file, if extant:
+  # Remove a %%{name}-installer log-file, if there.
+  # This is deliberately solely done when removing %%{name}, because users tend
+  # to try things until %%{name} is installed and subsequently report issues with
+  # the %%{name}-installer, hence the log file shall be still there, then.
   rm -f %{_localstatedir}/log/%{name}-installer.log.txt
 fi
 # BTW, `ssu`, `rm -f`, `mkdir -p` etc. *always* return with "0" ("success"), hence
