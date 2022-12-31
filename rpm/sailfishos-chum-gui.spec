@@ -4,8 +4,8 @@ Version:        0.5.1
 Release:        1
 Group:          Applications/System
 License:        MIT
-URL:            https://github.com/sailfishos-chum/sailfishos-chum-gui
-Source0:        %{name}-%{version}.tar.bz2
+URL:            https://github.com/sailfishos-chum/%{name}
+Source0:        https://github.com/sailfishos-chum/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:        token-github.txt
 Source2:        token-gitlab.txt
 Source101:      %{name}-rpmlintrc
@@ -14,6 +14,7 @@ Requires:       ssu
 Requires(postun): ssu
 Conflicts:      sailfishos-chum
 Conflicts:      sailfishos-chum-testing
+Conflicts:      sailfishos-chum-gui-installer
 Provides:       sailfishos-chum-repository
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
