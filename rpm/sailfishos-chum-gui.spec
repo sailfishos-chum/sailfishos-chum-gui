@@ -5,7 +5,7 @@ Release:        1
 Group:          Applications/System
 License:        MIT
 URL:            https://github.com/sailfishos-chum/%{name}
-Source0:        https://github.com/sailfishos-chum/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:        token-github.txt
 Source2:        token-gitlab.txt
 Source101:      %{name}-rpmlintrc
