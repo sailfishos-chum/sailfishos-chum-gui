@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
+about: Suggest an idea for SailfishOS:Chum GUI application
 title: "[Suggestion] "
 labels: 'feature request'
 assignees: ''
@@ -12,4 +12,4 @@ assignees: ''
 
 #### ADDITIONAL INFORMATION
 
-\<Please consider which other pieces of information may be relevant: Attach relevant data, provide screenshots etc.\>
+<sub>\[Please consider which other pieces of information may be relevant: Attach relevant data, provide screenshots etc.\]</sub>
