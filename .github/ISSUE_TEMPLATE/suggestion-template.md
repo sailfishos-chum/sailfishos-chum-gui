@@ -2,7 +2,7 @@
 name: Feature request
 about: Suggest an idea for SailfishOS:Chum GUI application
 title: "[Suggestion] "
-labels: 'feature request'
+labels: 'enhancement'
 assignees: ''
 
 ---
