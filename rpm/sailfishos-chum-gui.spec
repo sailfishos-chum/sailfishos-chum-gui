@@ -1,6 +1,6 @@
 Name:           sailfishos-chum-gui
 Summary:        GUI application for utilising the SailfishOS:Chum community repository
-Version:        0.5.1
+Version:        0.5.2
 Release:        1
 Group:          Applications/System
 License:        MIT
