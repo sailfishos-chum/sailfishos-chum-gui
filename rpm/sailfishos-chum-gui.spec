@@ -73,7 +73,7 @@ desktop-file-install --delete-original  \
                      --dir %{buildroot}%{_datadir}/applications  \
                      %{buildroot}%{_datadir}/applications/*.desktop
 
-%if 0%{?bundle_yaml}
+%if %{defined bundle_yaml}
 mkdir -p %{buildroot}%{_datadir}/%{name}/lib
 cp -a %{_libdir}/libyaml-cpp.so.* %{buildroot}%{_datadir}/%{name}/lib
 # Strip executable bit from all libraries
