@@ -29,11 +29,11 @@ BuildRequires:  qt5-qttools-linguist
 BuildRequires:  sed
 
 # Bundle YAML library only for builds at OBS corresponding to older SFOS version targets < v4.0.0.00
-%if 0%{?sailfishos_version} && 0%{?sailfishos_version} < 40000
+%if %{defined sailfishos_version} && 0%{?sailfishos_version} < 40000
 %define bundle_yaml 1
 %endif
 
-%if 0%{?bundle_yaml}
+%if %{defined bundle_yaml}
 %define __provides_exclude_from ^%{_datadir}/.*$
 %define __requires_exclude ^libyaml-cpp.*$
 %endif
@@ -81,7 +81,7 @@ chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
 %endif
 
 # Rectify desktop file for old SailfishOS releases < v4.0.1.00
-%if 0%{?sailfishos_version} && 0%{?sailfishos_version} < 40100
+%if %{defined sailfishos_version} && 0%{?sailfishos_version} < 40100
 sed -i 's/silica-qt5/generic/' %{buildroot}%{_datadir}/applications/sailfishos-chum-gui.desktop
 %endif
 
