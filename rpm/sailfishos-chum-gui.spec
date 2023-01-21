@@ -14,7 +14,7 @@ Requires:       ssu
 Requires(postun): ssu
 Conflicts:      sailfishos-chum
 Conflicts:      sailfishos-chum-testing
-Conflicts:      sailfishos-chum-gui-installer
+Conflicts:      %{name}-installer
 Provides:       sailfishos-chum-repository
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
