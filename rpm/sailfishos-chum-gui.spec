@@ -24,7 +24,7 @@ BuildRequires:  pkgconfig(yaml-cpp)
 BuildRequires:  desktop-file-utils
 BuildRequires:  cmake >= 3.11
 BuildRequires:  sailfish-svg2png
-BuildRequires:  pkgconfig(packagekitqt5)
+BuildRequires:  PackageKit-Qt5-devel
 BuildRequires:  qt5-qttools-linguist
 BuildRequires:  sed
 
