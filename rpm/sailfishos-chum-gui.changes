@@ -1,8 +1,8 @@
 * Sun Jan 22 2023 olf <Olf0@users.noreply.github.com> - 0.5.1-1
-- Overhaul spec file
-- Create three issue-templates
+- Overhaul spec file (#124, #131)
+- Enhance the three issue-templates (#135, #136)
 - Use build.merproject.org as SFOS-OBS' DNS-name (#133)
-- New or updated translations: DE, ES, PL, SK
+- New or updated translations: DE (#125), ES (#134), PL (#127, #128), SK (#123)
 
 * Wed Mar 02 2022 Rinigus <rinigus.git@gmail.com> - 0.5.0-1
 - Rework strings
