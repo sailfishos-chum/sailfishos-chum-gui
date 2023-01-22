@@ -82,7 +82,8 @@ jobs:
     - name: Build ${{ env.ARCH }} on ${{ env.RELEASE }}
       env:
         ARCH: armv7hl
-        RELEASE: 3.1.0.12
+        #RELEASE: 3.1.0.12
+        RELEASE: 3.4.0.24
       # mb2 wants bash: https://github.com/sailfishos/sdk-setup/blob/master/sdk-setup/src/mb2#L1
       run: docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -c "
             mkdir -p build ;
@@ -94,7 +95,8 @@ jobs:
     - name: Build ${{ env.ARCH }} on ${{ env.RELEASE }}
       env:
         ARCH: i486
-        RELEASE: 3.1.0.12
+        #RELEASE: 3.1.0.12
+        RELEASE: 3.4.0.24
       # mb2 wants bash: https://github.com/sailfishos/sdk-setup/blob/master/sdk-setup/src/mb2#L1
       run: docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -c "
             mkdir -p build ;
