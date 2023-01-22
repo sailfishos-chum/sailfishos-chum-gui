@@ -20,7 +20,8 @@ jobs:
     - name: Prepare
       run: |
         mkdir -p output/{4.0.1.45,$LATEST}/aarch64
-        mkdir -p output/{3.1.0.12,$LATEST}/{armv7hl,i486}
+        mkdir -p output/{3.4.0.24,$LATEST}/{armv7hl,i486}
+        #mkdir -p output/{3.1.0.12,$LATEST}/{armv7hl,i486}
 
     # Caching Docker images is not ready yet, see 
     # https://github.com/storeman-developers/harbour-storeman-installer/blob/devel/cache-docker-images_github-ci.md
