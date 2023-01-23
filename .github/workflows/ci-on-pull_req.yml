@@ -36,6 +36,7 @@ jobs:
       run: |
         mkdir -p output/$RELEASE/$ARCH
         docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -c "
+            mkdir -p rpmbuild/SOURCES
             printf '%s' "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt ;
             printf '%s' "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt ;
             mkdir -p build ;
