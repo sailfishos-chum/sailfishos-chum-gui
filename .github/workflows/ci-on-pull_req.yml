@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@v3
 
     #- name: Prepare
-    #  run: mkdir -p output/3.4.0.24/armv7hl  #mkdir -p output/3.1.0.12/armv7hl
+    #  run: 
 
     # Caching Docker images is not ready yet, see 
     # https://github.com/storeman-developers/harbour-storeman-installer/blob/devel/cache-docker-images_github-ci.md
@@ -39,7 +39,8 @@ jobs:
             mkdir -p rpmbuild/SOURCES
             printf '%s' "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt ;
             printf '%s' "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt ;
-            mkdir -p build ;
+            mkdir -p build/rpm ;
+            cp rpmbuild/SOURCES/token-git??b.txt build/rpm/ ;
             cd build ;
             cp -r /share/* ./ ;
             mb2 -t SailfishOS-$RELEASE-$ARCH build --enable-debug ;
