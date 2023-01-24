@@ -43,9 +43,9 @@ jobs:
             cp rpmbuild/SOURCES/token-git??b.txt build/rpm/ ;
             cd build ;
             cp -r /share/* ./ ;
-            mb2 build-shell sudo ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%(release)_%(arch)/' ;
-            mb2 build-shell sudo ssu ur ;
-            mb2 build-shell sudo pkcon -pv repo-set-data sailfishos-chum refresh-now true ;
+            sfdk build-shell --maintain ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%(release)_%(arch)/' ;
+            sfdk build-shell --maintain ssu ur ;
+            sfdk build-shell --maintain pkcon -pv repo-set-data sailfishos-chum refresh-now true ;
             mb2 -t SailfishOS-$RELEASE-$ARCH build --enable-debug ;
             sudo cp -r RPMS/*.rpm /share/output/$RELEASE/$ARCH/"
 
