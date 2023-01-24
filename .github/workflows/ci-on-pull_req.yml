@@ -9,6 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     env:
+      DWNLD_PKGS: 'yaml-cpp'
+      DWNLD_REPO: 'https://repo.merproject.org/obs/sailfishos:/chum'
       SEGMENT_DOWNLOAD_TIMEOUT_MINS: 1
     steps:
     - name: Checkout
@@ -41,12 +43,16 @@ jobs:
             printf '%s' '${{ secrets.TOKEN_GITLAB }}' > rpmbuild/SOURCES/token-gitlab.txt ;
             mkdir -p build/rpm ;
             cp rpmbuild/SOURCES/token-git??b.txt build/rpm/ ;
-            cd build ;
+            mkdir -p build/RPMS ;
+            cd build/RPMS ;
+            List="$(curl -sS "$DWNLD_REPO/${RELEASE}_$ARCH/{${ARCH},noarch}/" | egrep -o "[A-Za-z][+0-9A-Z_a-z-]*-[0-9][+.0-9A-Z_a-z]*-[+.0-9A-Z_a-z]+\.${ARCH}\.rpm|[A-Za-z][+0-9A-Z_a-z-]*-[0-9][+.0-9A-Z_a-z]*-[+.0-9A-Z_a-z]+\.noarch\.rpm" | uniq)" ;
+            for i in $DWNLD_PKGS; do curl -sfO "$echo "$List" | grep "^${i}-[0-9]")"; done ;
+            cd .. ;
             cp -r /share/* ./ ;
-            sfdk build-shell --maintain ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%(release)_%(arch)/' ;
-            sfdk build-shell --maintain ssu ur ;
-            sfdk build-shell --maintain pkcon -pv repo-set-data sailfishos-chum refresh-now true ;
-            mb2 -t SailfishOS-$RELEASE-$ARCH build --enable-debug ;
+            mb2 build-shell --maintain ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%(release)_%(arch)/' ;
+            mb2 build-shell --maintain ssu ur ;
+            mb2 build-shell --maintain pkcon -pv repo-set-data sailfishos-chum refresh-now true ;
+            mb2 -t SailfishOS-$RELEASE-$ARCH build -d ;
             sudo cp -r RPMS/*.rpm /share/output/$RELEASE/$ARCH/"
 
     - name: Upload build results
