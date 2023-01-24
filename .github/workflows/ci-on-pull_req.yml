@@ -37,15 +37,15 @@ jobs:
         mkdir -p output/$RELEASE/$ARCH
         docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -c "
             mkdir -p rpmbuild/SOURCES ;
-            printf '%s' "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt ;
-            printf '%s' "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt ;
+            printf '%s' '${{ secrets.TOKEN_GITHUB }}' > rpmbuild/SOURCES/token-github.txt ;
+            printf '%s' '${{ secrets.TOKEN_GITLAB }}' > rpmbuild/SOURCES/token-gitlab.txt ;
             mkdir -p build/rpm ;
             cp rpmbuild/SOURCES/token-git??b.txt build/rpm/ ;
             cd build ;
             cp -r /share/* ./ ;
-            mb2 build-shell --maintain ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%(release)_%(arch)/' ;
-            mb2 build-shell --maintain ssu ur ;
-            mb2 build-shell --maintain pkcon -pv repo-set-data sailfishos-chum refresh-now true ;
+            mb2 build-shell ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%(release)_%(arch)/' ;
+            mb2 build-shell ssu ur ;
+            mb2 build-shell pkcon -pv repo-set-data sailfishos-chum refresh-now true ;
             mb2 -t SailfishOS-$RELEASE-$ARCH build --enable-debug ;
             sudo cp -r RPMS/*.rpm /share/output/$RELEASE/$ARCH/"
 
