@@ -30,8 +30,8 @@ jobs:
       env:
         ARCH: armv7hl
         #RELEASE: 3.1.0.12
-        #RELEASE: 3.4.0.24
-        RELEASE: 4.0.1.45
+        RELEASE: 3.4.0.24
+        #RELEASE: 4.0.1.45
       # mb2 wants bash: https://github.com/sailfishos/sdk-setup/blob/master/sdk-setup/src/mb2#L1
       run: |
         mkdir -p output/$RELEASE/$ARCH
@@ -43,6 +43,9 @@ jobs:
             cp rpmbuild/SOURCES/token-git??b.txt build/rpm/ ;
             cd build ;
             cp -r /share/* ./ ;
+            mb2 build-shell --maintain ssu ar sailfishos-chum 'https://repo.sailfishos.org/obs/sailfishos:/chum/%(release)_%(arch)/'
+            mb2 build-shell --maintain ssu ur
+            mb2 build-shell --maintain pkcon -pv repo-set-data sailfishos-chum refresh-now true
             mb2 -t SailfishOS-$RELEASE-$ARCH build --enable-debug ;
             sudo cp -r RPMS/*.rpm /share/output/$RELEASE/$ARCH/"
 
