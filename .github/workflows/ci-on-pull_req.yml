@@ -52,8 +52,9 @@ jobs:
             do curl -sfO "$3/$(echo "$List" | grep "^$i-[0-9][+.0-9A-Z_a-z]*-[+.0-9A-Z_a-z][+.0-9A-Z_a-z]*$")" ;
             done ;
             cd .. ;
-            cp -r /share/* ./ ;
-            mb2 build-shell run /usr/bin/zypper ar sailfishos-chum "$3/%(release)_%(arch)/" ;
+            cp -r /share/. ./ ;
+            ls -l RPMS ;
+            sudo mb2 build-shell --maintain -- /usr/bin/zypper ar sailfishos-chum "$3/%(release)_%(arch)/" ;
             mb2 -t SailfishOS-$1-$2 --search-output-dir build -d ;
             sudo cp -r RPMS/*.rpm /share/output/$1/$2/' bash_mb2 "$RELEASE" "$ARCH" "$DWNLD_REPO" "$DWNLD_PKGS"
 
