@@ -37,7 +37,6 @@ jobs:
       # mb2 wants bash: https://github.com/sailfishos/sdk-setup/blob/master/sdk-setup/src/mb2#L1
       run: |
         mkdir -p output/$RELEASE/$ARCH
-        export 
         docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -xc '
             mkdir -p rpmbuild/SOURCES
             printf "%s" "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
