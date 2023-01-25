@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     env:
-      DWNLD_PKGS: 'yaml-cpp yaml-cpp-devel'
+      DWNLD_PKGS: 'yaml-cpp yaml-cpp-devel sailfish-svg2png'
       DWNLD_REPO: 'https://repo.merproject.org/obs/sailfishos:/chum'
       SEGMENT_DOWNLOAD_TIMEOUT_MINS: 1
     steps:
@@ -54,7 +54,7 @@ jobs:
             cd .. ;
             cp -r /share/* ./ ;
             mb2 build-shell run /usr/bin/zypper ar sailfishos-chum "$3/%(release)_%(arch)/" ;
-            mb2 -t SailfishOS-$1-$2 build -d ;
+            mb2 -t SailfishOS-$1-$2 --search-output-dir build -d ;
             sudo cp -r RPMS/*.rpm /share/output/$1/$2/' bash_mb2 "$RELEASE" "$ARCH" "$DWNLD_REPO" "$DWNLD_PKGS"
 
     - name: Upload build results
