@@ -57,8 +57,8 @@ jobs:
             cp -r /share/. ./ ;
             foo="$(ls -l RPMS)" ;
             # mb2 build-shell --maintain zypper ar sailfishos-chum "$3/%(release)_%(arch)/" ;
-            mb2 build-shell --maintain a="$(whoami; ls -la)"
-            mb2 -t "SailfishOS-$1-$2" -o "./RPM" build -d ;
+            # mb2 build-shell --maintain a="$(whoami; ls -la)" ;  # --maintain could not be executed: No such file or directory
+            mb2 -t "SailfishOS-$1-$2" -o "./RPMS" build -d ;
             sudo cp -r RPMS/*.rpm /share/output/$1/$2/' bash_mb2 "$RELEASE" "$ARCH" "$DWNLD_REPO" "$DWNLD_PKGS"
 
     - name: Upload build results
