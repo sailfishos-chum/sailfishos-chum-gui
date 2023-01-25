@@ -58,7 +58,7 @@ jobs:
             bar="$(ls -la .)" ;
             car="$(ls -la ..)" ;
             # mb2 build-shell --maintain zypper ar sailfishos-chum "$3/%(release)_%(arch)/" ;
-            mb2 -t SailfishOS-$1-$2 --output-dir=RPMS build -d ;
+            mb2 -t SailfishOS-$1-$2 --output-dir ./RPMS build -d ;
             sudo cp -r RPMS/*.rpm /share/output/$1/$2/' bash_mb2 "$RELEASE" "$ARCH" "$DWNLD_REPO" "$DWNLD_PKGS"
 
     - name: Upload build results
