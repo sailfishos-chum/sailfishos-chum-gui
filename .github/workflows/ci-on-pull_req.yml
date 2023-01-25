@@ -49,13 +49,14 @@ jobs:
             Filter="[A-Za-z][+.0-9A-Z_a-z-]*" ;  # Filter="[A-Za-z][+0-9A-Z_a-z-]*-[0-9][+.0-9A-Z_a-z]*-[+.0-9A-Z_a-z]+" ;
             List="$(curl -sf "$3/${1}_$2/{${2},noarch}/" | egrep -o "${Filter}\.${2}\.rpm|${Filter}\.noarch\.rpm" | uniq)" ;
             for i in $4 ; 
-            do curl -sfO "$3/$(echo "$List" | grep "^$i-[0-9][+.0-9A-Z_a-z]*-[+.0-9A-Z_a-z][+.0-9A-Z_a-z]*$")" ;
+            do curl -sfO "$3/$(echo "$List" | grep "^$i-[0-9][+.0-9A-Z_a-z]*-[0-9A-Z_a-z][+.0-9A-Z_a-z]*")" ;
             done ;
             cp * ../rpm/
             cd .. ;
             cp -r /share/. ./ ;
             foo="$(ls -l RPMS)" ;
-            bar="$(ls -l .)" ;
+            bar="$(ls -la .)" ;
+            car="$(ls -la ..)" ;
             # mb2 build-shell --maintain zypper ar sailfishos-chum "$3/%(release)_%(arch)/" ;
             mb2 -t SailfishOS-$1-$2 --output-dir=RPMS build -d ;
             sudo cp -r RPMS/*.rpm /share/output/$1/$2/' bash_mb2 "$RELEASE" "$ARCH" "$DWNLD_REPO" "$DWNLD_PKGS"
