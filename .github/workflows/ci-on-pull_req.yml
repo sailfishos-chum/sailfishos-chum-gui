@@ -52,13 +52,13 @@ jobs:
             do curl -sfO "$3/${1}_$2/{${2},noarch}/$(echo "$List" | grep "^${i}-[0-9][+.0-9A-Z_a-z]*-[+.0-9A-Z_a-z][+.0-9A-Z_a-z]*$")" ;
             done ;
             mkdir -p ../.mb2/filtered-output-dir ;
-            cp * ../.mb2/filtered-output-dir ;
+            cp * ../.mb2/filtered-output-dir/ ;
             cd .. ;
             cp -r /share/. ./ ;
             foo="$(ls -l RPMS)" ;
             # mb2 build-shell --maintain zypper ar sailfishos-chum "$3/%(release)_%(arch)/" ;
             # mb2 build-shell --maintain a="$(whoami; ls -la)" ;  # --maintain could not be executed: No such file or directory
-            mb2 -t "SailfishOS-$1-$2" -o "./RPMS" build -d ;
+            mb2 -t "SailfishOS-$1-$2" --search-output-dir build -d ;
             sudo cp -r RPMS/*.rpm /share/output/$1/$2/' bash_mb2 "$RELEASE" "$ARCH" "$DWNLD_REPO" "$DWNLD_PKGS"
 
     - name: Upload build results
