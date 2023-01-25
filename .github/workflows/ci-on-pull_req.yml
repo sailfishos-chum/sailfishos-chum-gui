@@ -48,8 +48,7 @@ jobs:
             cd build/RPMS ;
             List="$(curl -sS "$3/${1}_$2/{${2},noarch}/" | egrep -o "[A-Za-z][+0-9A-Z_a-z-]*-[0-9][+.0-9A-Z_a-z]*-[+.0-9A-Z_a-z]+\.${2}\.rpm|[A-Za-z][+0-9A-Z_a-z-]*-[0-9][+.0-9A-Z_a-z]*-[+.0-9A-Z_a-z]+\.noarch\.rpm" | uniq)" ;
             for i in $4 ; 
-            do ;
-            curl -sfO "$(echo "$List" | grep "^${i}-[0-9]")" ;
+            do curl -sfO "$(echo "$List" | grep "^${i}-[0-9]")" ;
             done ;
             cd .. ;
             cp -r /share/* ./ ;
