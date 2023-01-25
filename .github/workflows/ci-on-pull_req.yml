@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     env:
-      DWNLD_PKGS: 'yaml-cpp yaml-cpp-devel sailfish-svg2png'
+      DWNLD_PKGS: 'yaml-cpp yaml-cpp-devel'
       DWNLD_REPO: 'https://repo.merproject.org/obs/sailfishos:/chum'
       SEGMENT_DOWNLOAD_TIMEOUT_MINS: 1
     steps:
@@ -56,9 +56,9 @@ jobs:
             cd ..
             cp -r /share/. ./
             foo="$(ls -l RPMS)"
-            mb2 -t "SailfishOS-$1-$2" build-shell --maintain zypper ar sailfishos-chum "$3/%(release)_%(arch)/"
+            mb2 -t "SailfishOS-$1-$2" build-shell --maintain zypper ar sailfishos-chum "$3/%(release)_%(arch)/"  # `build-shell --maintain` always fails with:
             # mb2 build-shell --maintain a="$(whoami; ls -la)"  # --maintain could not be executed: No such file or directory
-            mb2 -t "SailfishOS-$1-$2" build-requires pull
+            # mb2 -t "SailfishOS-$1-$2" build-requires pull  # Does something, but ultimately fails and deletes the .rpm files in RPMS!
             mb2 -t "SailfishOS-$1-$2" build -d
             sudo cp -r RPMS/*.rpm /share/output/$1/$2/' bash_mb2 "$RELEASE" "$ARCH" "$DWNLD_REPO" "$DWNLD_PKGS"
 
