@@ -53,8 +53,8 @@ jobs:
             done ;
             cd .. ;
             cp -r /share/. ./ ;
-            ls -l RPMS ;
-            sudo mb2 build-shell --maintain -- /usr/bin/zypper ar sailfishos-chum "$3/%(release)_%(arch)/" ;
+            echo "$(ls -l RPMS)" ;
+            # mb2 build-shell --maintain zypper ar sailfishos-chum "$3/%(release)_%(arch)/" ;
             mb2 -t SailfishOS-$1-$2 --search-output-dir build -d ;
             sudo cp -r RPMS/*.rpm /share/output/$1/$2/' bash_mb2 "$RELEASE" "$ARCH" "$DWNLD_REPO" "$DWNLD_PKGS"
 
