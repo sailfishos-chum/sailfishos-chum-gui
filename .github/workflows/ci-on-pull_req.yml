@@ -39,26 +39,27 @@ jobs:
         mkdir -p output/$RELEASE/$ARCH
         export 
         docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -xc '
-            mkdir -p rpmbuild/SOURCES ;
-            printf "%s" "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt ;
-            printf "%s" "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt ;
-            mkdir -p build/rpm ;
-            cp rpmbuild/SOURCES/token-git??b.txt build/rpm/ ;
-            mkdir -p build/RPMS ;
-            cd build/RPMS ;
-            Filter="[A-Za-z][+.0-9A-Z_a-z-]*" ;  # Filter="[A-Za-z][+0-9A-Z_a-z-]*-[0-9][+.0-9A-Z_a-z]*-[+.0-9A-Z_a-z]+" ;
-            List="$(curl -sf "$3/${1}_$2/{${2},noarch}/" | egrep -o "${Filter}\.${2}\.rpm|${Filter}\.noarch\.rpm" | uniq)" ;
-            for i in $4 ; 
-            do curl -sfO "$3/${1}_$2/{${2},noarch}/$(echo "$List" | grep "^${i}-[0-9][+.0-9A-Z_a-z]*-[+.0-9A-Z_a-z][+.0-9A-Z_a-z]*$")" ;
-            done ;
-            mkdir -p ../.mb2/filtered-output-dir ;
-            cp * ../.mb2/filtered-output-dir/ ;
-            cd .. ;
-            cp -r /share/. ./ ;
-            foo="$(ls -l RPMS)" ;
-            # mb2 build-shell --maintain zypper ar sailfishos-chum "$3/%(release)_%(arch)/" ;
-            # mb2 build-shell --maintain a="$(whoami; ls -la)" ;  # --maintain could not be executed: No such file or directory
-            mb2 -t "SailfishOS-$1-$2" --search-output-dir build -d ;
+            mkdir -p rpmbuild/SOURCES
+            printf "%s" "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
+            printf "%s" "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
+            mkdir -p build/rpm
+            cp rpmbuild/SOURCES/token-git??b.txt build/rpm/
+            mkdir -p build/RPMS
+            cd build/RPMS
+            Filter="[A-Za-z][+.0-9A-Z_a-z-]*" ;  # Filter="[A-Za-z][+0-9A-Z_a-z-]*-[0-9][+.0-9A-Z_a-z]*-[+.0-9A-Z_a-z]+"
+            List="$(curl -sf "$3/${1}_$2/{${2},noarch}/" | egrep -o "${Filter}\.${2}\.rpm|${Filter}\.noarch\.rpm" | uniq)"
+            for i in $4
+            do curl -sfO "$3/${1}_$2/{${2},noarch}/$(echo "$List" | grep "^${i}-[0-9][+.0-9A-Z_a-z]*-[+.0-9A-Z_a-z][+.0-9A-Z_a-z]*$")"
+            done
+            mkdir -p ../.mb2/filtered-output-dir
+            cp * ../.mb2/filtered-output-dir/
+            cd ..
+            cp -r /share/. ./
+            foo="$(ls -l RPMS)"
+            # mb2 build-shell --maintain zypper ar sailfishos-chum "$3/%(release)_%(arch)/"
+            # mb2 build-shell --maintain a="$(whoami; ls -la)"  # --maintain could not be executed: No such file or directory
+            mb2 -t "SailfishOS-$1-$2" -o ./RPMS build-requires --refresh pull
+            mb2 -t "SailfishOS-$1-$2" build -d
             sudo cp -r RPMS/*.rpm /share/output/$1/$2/' bash_mb2 "$RELEASE" "$ARCH" "$DWNLD_REPO" "$DWNLD_PKGS"
 
     - name: Upload build results
