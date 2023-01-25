@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     env:
-      DWNLD_PKGS: 'yaml-cpp'
+      DWNLD_PKGS: 'yaml-cpp- yaml-cpp-devel-'
       DWNLD_REPO: 'https://repo.merproject.org/obs/sailfishos:/chum'
       SEGMENT_DOWNLOAD_TIMEOUT_MINS: 1
     steps:
@@ -38,7 +38,7 @@ jobs:
       run: |
         mkdir -p output/$RELEASE/$ARCH
         export 
-        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -c '
+        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -xc '
             mkdir -p rpmbuild/SOURCES ;
             printf "%s" "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt ;
             printf "%s" "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt ;
@@ -46,9 +46,10 @@ jobs:
             cp rpmbuild/SOURCES/token-git??b.txt build/rpm/ ;
             mkdir -p build/RPMS ;
             cd build/RPMS ;
-            List="$(curl -sS "$3/${1}_$2/{${2},noarch}/" | egrep -o "[A-Za-z][+0-9A-Z_a-z-]*-[0-9][+.0-9A-Z_a-z]*-[+.0-9A-Z_a-z]+\.${2}\.rpm|[A-Za-z][+0-9A-Z_a-z-]*-[0-9][+.0-9A-Z_a-z]*-[+.0-9A-Z_a-z]+\.noarch\.rpm" | uniq)" ;
+            Filter="[A-Za-z][+.0-9A-Z_a-z-]*" ;  # Filter="[A-Za-z][+0-9A-Z_a-z-]*-[0-9][+.0-9A-Z_a-z]*-[+.0-9A-Z_a-z]+" ;
+            List="$(curl -sf "$3/${1}_$2/{${2},noarch}/" | egrep -o "${Filter}\.${2}\.rpm|${Filter}\.noarch\.rpm" | uniq)" ;
             for i in $4 ; 
-            do curl -sfO "$(echo "$List" | grep "^${i}-[0-9]")" ;
+            do curl -sfO "$(echo "$List" | grep "^$i")" ;
             done ;
             cd .. ;
             cp -r /share/* ./ ;
