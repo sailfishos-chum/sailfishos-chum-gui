@@ -35,8 +35,9 @@ jobs:
         RELEASE: ${{ env.LATEST }}
       # mb2 wants bash: https://github.com/sailfishos/sdk-setup/blob/master/sdk-setup/src/mb2#L1
       run: |
+        set -x
         mkdir -p output/$RELEASE/$ARCH
-        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -vxc '
+        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -xc '
            mkdir -p rpmbuild/SOURCES
            printf %s "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
            printf %s "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
@@ -53,8 +54,9 @@ jobs:
         RELEASE: ${{ env.LATEST }}
       # mb2 wants bash: https://github.com/sailfishos/sdk-setup/blob/master/sdk-setup/src/mb2#L1
       run: |
+        set -x
         mkdir -p output/$RELEASE/$ARCH
-        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -vxc '
+        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -xc '
            mkdir -p rpmbuild/SOURCES
            printf %s "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
            printf %s "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
@@ -71,8 +73,9 @@ jobs:
         RELEASE: ${{ env.LATEST }}
       # mb2 wants bash: https://github.com/sailfishos/sdk-setup/blob/master/sdk-setup/src/mb2#L1
       run: |
+        set -x
         mkdir -p output/$RELEASE/$ARCH
-        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -vxc '
+        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -xc '
            mkdir -p rpmbuild/SOURCES
            printf %s "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
            printf %s "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
@@ -89,8 +92,9 @@ jobs:
         RELEASE: 4.0.1.45
       # mb2 wants bash: https://github.com/sailfishos/sdk-setup/blob/master/sdk-setup/src/mb2#L1
       run: |
+        set -x
         mkdir -p output/$RELEASE/$ARCH
-        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -vxc '
+        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -xc '
            mkdir -p rpmbuild/SOURCES
            printf %s "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
            printf %s "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
@@ -107,8 +111,9 @@ jobs:
         RELEASE: 4.0.1.45
       # mb2 wants bash: https://github.com/sailfishos/sdk-setup/blob/master/sdk-setup/src/mb2#L1
       run: |
+        set -x
         mkdir -p output/$RELEASE/$ARCH
-        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -vxc '
+        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -xc '
            mkdir -p rpmbuild/SOURCES
            printf %s "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
            printf %s "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
@@ -125,8 +130,9 @@ jobs:
         RELEASE: 4.0.1.45
       # mb2 wants bash: https://github.com/sailfishos/sdk-setup/blob/master/sdk-setup/src/mb2#L1
       run: |
+        set -x
         mkdir -p output/$RELEASE/$ARCH
-        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -vxc '
+        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/bash -xc '
            mkdir -p rpmbuild/SOURCES
            printf %s "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
            printf %s "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
