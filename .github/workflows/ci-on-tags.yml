@@ -44,7 +44,7 @@ jobs:
            mkdir -p build/rpm
            cp rpmbuild/SOURCES/token-git??b.txt build/rpm/
            cd build
-           cp -r /share/. ./
+           cp -r /share/. .
            mb2 -t SailfishOS-$1-$2 build -d
            sudo cp -r RPMS/*.rpm /share/output/$1/$2/' bash_mb2 $RELEASE $ARCH
 
@@ -63,7 +63,7 @@ jobs:
            mkdir -p build/rpm
            cp rpmbuild/SOURCES/token-git??b.txt build/rpm/
            cd build
-           cp -r /share/. ./
+           cp -r /share/. .
            mb2 -t SailfishOS-$1-$2 build -d
            sudo cp -r RPMS/*.rpm /share/output/$1/$2/' bash_mb2 $RELEASE $ARCH
 
@@ -82,7 +82,7 @@ jobs:
            mkdir -p build/rpm
            cp rpmbuild/SOURCES/token-git??b.txt build/rpm/
            cd build
-           cp -r /share/. ./
+           cp -r /share/. .
            mb2 -t SailfishOS-$1-$2 build -d
            sudo cp -r RPMS/*.rpm /share/output/$1/$2/' bash_mb2 $RELEASE $ARCH
 
@@ -101,7 +101,7 @@ jobs:
            mkdir -p build/rpm
            cp rpmbuild/SOURCES/token-git??b.txt build/rpm/
            cd build
-           cp -r /share/. ./
+           cp -r /share/. .
            mb2 -t SailfishOS-$1-$2 build -d
            sudo cp -r RPMS/*.rpm /share/output/$1/$2/' bash_mb2 $RELEASE $ARCH
 
@@ -120,7 +120,7 @@ jobs:
            mkdir -p build/rpm
            cp rpmbuild/SOURCES/token-git??b.txt build/rpm/
            cd build
-           cp -r /share/. ./
+           cp -r /share/. .
            mb2 -t SailfishOS-$1-$2 build -d
            sudo cp -r RPMS/*.rpm /share/output/$1/$2/' bash_mb2 $RELEASE $ARCH
 
@@ -139,7 +139,7 @@ jobs:
            mkdir -p build/rpm
            cp rpmbuild/SOURCES/token-git??b.txt build/rpm/
            cd build
-           cp -r /share/. ./
+           cp -r /share/. .
            mb2 -t SailfishOS-$1-$2 build -d
            sudo cp -r RPMS/*.rpm /share/output/$1/$2/' bash_mb2 $RELEASE $ARCH
 
