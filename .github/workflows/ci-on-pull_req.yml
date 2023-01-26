@@ -42,7 +42,7 @@ jobs:
            cd build
            cp -r /share/. .
            mb2 -t SailfishOS-$1-$2 build -d
-           sudo cp -r RPMS/*.rpm /share/output/$1/$2/' bash_mb2 $RELEASE $ARCH
+           sudo cp -r RPMS/*.rpm /share/output/$1/$2/' sh_mb2 $RELEASE $ARCH
 
     - name: Upload build results
       uses: actions/upload-artifact@v3
