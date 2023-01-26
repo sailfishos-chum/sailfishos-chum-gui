@@ -36,7 +36,7 @@ jobs:
       run: |
         set -x
         mkdir -p output/$RELEASE/$ARCH
-        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/sh -xc '
+        docker run --rm -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/sh -xc '
            mkdir -p rpmbuild/SOURCES
            printf %s "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
            printf %s "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
@@ -54,7 +54,7 @@ jobs:
       run: |
         set -x
         mkdir -p output/$RELEASE/$ARCH
-        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/sh -xc '
+        docker run --rm -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/sh -xc '
            mkdir -p rpmbuild/SOURCES
            printf %s "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
            printf %s "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
@@ -72,7 +72,7 @@ jobs:
       run: |
         set -x
         mkdir -p output/$RELEASE/$ARCH
-        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/sh -xc '
+        docker run --rm -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/sh -xc '
            mkdir -p rpmbuild/SOURCES
            printf %s "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
            printf %s "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
@@ -90,7 +90,7 @@ jobs:
       run: |
         set -x
         mkdir -p output/$RELEASE/$ARCH
-        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/sh -xc '
+        docker run --rm -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/sh -xc '
            mkdir -p rpmbuild/SOURCES
            printf %s "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
            printf %s "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
@@ -108,7 +108,7 @@ jobs:
       run: |
         set -x
         mkdir -p output/$RELEASE/$ARCH
-        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/sh -xc '
+        docker run --rm -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/sh -xc '
            mkdir -p rpmbuild/SOURCES
            printf %s "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
            printf %s "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
@@ -126,7 +126,7 @@ jobs:
       run: |
         set -x
         mkdir -p output/$RELEASE/$ARCH
-        docker run --rm --privileged -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/sh -xc '
+        docker run --rm -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/sh -xc '
            mkdir -p rpmbuild/SOURCES
            printf %s "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
            printf %s "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
