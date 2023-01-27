@@ -47,11 +47,18 @@ SailfishOS:Chum GUI is a graphical application for managing software packages fr
 PackageName: SailfishOS:Chum GUI application
 Type: desktop-application
 Categories:
-  - System
-  - Utility
+ - System
+ - Utility
+ - Network
+ - Settings
+ - PackageManager
 Custom:
   Repo: %{url}
 Icon: %{url}/raw/main/icons/sailfishos-chum-gui.svg
+Url:
+  Homepage: https://openrepos.net/content/olf/storeman-installer
+  Help: %{url}/issues
+  Bugtracker: %{url}/issues
 %endif
 
 %prep
@@ -108,8 +115,7 @@ fi
 # https://pagure.io/packaging-committee/c/8d0cec97aedc9b34658d004e3a28123f36404324
 # Hence I have the impression, that only the main section of a spec file is
 # interpreted in a shell called with the option `-e', but not the scriptlets
-# (`%%pre`, `%%post`, `%%preun`, `%%postun`, `%%pretrans`, `%%posttrans`,
-# `%%trigger*` and `%%file*`).
+# (`%%pre*`, `%%post*`, `%%trigger*` and `%%file*`).
 exit 0
 
 %files
