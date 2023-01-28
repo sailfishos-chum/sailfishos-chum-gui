@@ -59,7 +59,7 @@ Custom:
   Repo: %{url}
 Icon: %{url}/raw/main/icons/sailfishos-chum-gui.svg
 Url:
-  Homepage: https://openrepos.net/content/olf/storeman-installer
+  Homepage: https://openrepos.net/content/olf/sailfishoschum-gui-installer
   Help: %{url}/issues
   Bugtracker: %{url}/issues
 %endif
