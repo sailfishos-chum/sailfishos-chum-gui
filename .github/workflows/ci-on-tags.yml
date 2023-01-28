@@ -7,6 +7,7 @@ on:
 
 env:
   LATEST: 4.4.0.68
+  # See https://hub.docker.com/r/coderus/sailfishos-platform-sdk/tags
 
 jobs:
   build:
