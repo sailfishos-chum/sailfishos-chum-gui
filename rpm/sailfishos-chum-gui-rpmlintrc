@@ -3,7 +3,7 @@
 # but adheres to the old syntax, not the new TOML one: https://toml.io/en/
 # See also https://fedoraproject.org/wiki/Common_Rpmlint_issues and
 # https://en.opensuse.org/openSUSE:Packaging_checks#Building_Packages_in_spite_of_errors
-# 
+
 # On behalf of Jolla's tar_git / SailfishOS-OBS:
 # - It re-writes the DistURL, rendering it inconsistent
 addFilter('invalid-url DistURL')
@@ -11,7 +11,11 @@ addFilter('invalid-url DistURL')
 addFilter('invalid-license')
 # - It extracts strange changelog entries out of Git, if a %%changelog section is used
 addFilter('incoherent-version-in-changelog')
-#
+# - It sometimes re-writes the %version-%release strings of package names, 
+#   when referencing (only) a branch (i.e., not a git tag), for example,
+#   0.5.2-1 to 0.5.2+rebuild1+main.20230129011931.1.g584263a-1.8.1.jolla
+addFilter('filename-too-long-for-joliet')
+
 # On behalf of the SailfishOS:Chum specification:
 # - which re-uses the spec file tag "Url:"
 addFilter('tag-in-description Url:')
@@ -20,7 +24,7 @@ addFilter('tag-in-description Icon:')
 # - which makes one easily do
 addFilter('description-line-too-long')
 setBadness('description-line-too-long', 0)
-#
+
 # On our own behalf:
 # - This is how it ought to be
 addFilter('obsolete-not-provided sailfishos-chum')
@@ -33,8 +37,11 @@ addFilter('obsolete-not-provided sailfishos-chum-installer')
 addFilter('unversioned Obsoletes: Obsoletes:  *sailfishos-chum-installer')
 # - So is this
 addFilter('dangerous-command-in-%post rm')
-# - Are these still relevant?
-#addFilter('arch-dependent-file-in-usr-share')
-#addFilter('library-without-ldconfig-post')
-#addFilter('filename-too-long-for-joliet')
+# - These are all due to libyaml-cpp.so, which should be scrutinised
+#   - Why is it in /usr/share/sailfishos-chum-gui/lib/, not /usr/lib/?
+addFilter('arch-dependent-file-in-usr-share .* libyaml-cpp.so')
+setBadness('description-line-too-long', 0)
+#   - This appears to be wrong, too
+addFilter('library-without-ldconfig-post .* libyaml-cpp.so')
+setBadness('library-without-ldconfig-post', 0)
 
