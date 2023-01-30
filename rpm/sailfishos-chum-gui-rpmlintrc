@@ -28,7 +28,7 @@ setBadness('description-line-too-long', 0)
 # On our own behalf:
 # - This is how it ought to be
 addFilter('obsolete-not-provided sailfishos-chum')
-addFilter('unversioned Obsoletes: Obsoletes:  *sailfishos-chum')')
+addFilter('unversioned Obsoletes: Obsoletes:  *sailfishos-chum')
 # - This is also how it ought to be
 addFilter('dangerous-command-in-%post rm')
 # - These are all due to libyaml-cpp.so, which should be scrutinised
