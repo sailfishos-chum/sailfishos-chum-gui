@@ -39,9 +39,11 @@ addFilter('unversioned Obsoletes: Obsoletes:  *sailfishos-chum-installer')
 addFilter('dangerous-command-in-%post rm')
 # - These are all due to libyaml-cpp.so, which should be scrutinised
 #   - Why is it in /usr/share/sailfishos-chum-gui/lib/, not /usr/lib/?
-addFilter('arch-dependent-file-in-usr-share .* libyaml-cpp.so')
-setBadness('description-line-too-long', 0)
+addFilter('arch-dependent-file-in-usr-share .*libyaml-cpp.so')
+setBadness('arch-dependent-file-in-usr-share', 0)
 #   - This appears to be wrong, too
-addFilter('library-without-ldconfig-post .* libyaml-cpp.so')
-setBadness('library-without-ldconfig-post', 0)
+addFilter('library-without-ldconfig-postin .*libyaml-cpp.so')
+setBadness('library-without-ldconfig-postin', 0)
+#   - So does this
+addFilter('postun-without-ldconfig .*libyaml-cpp.so')
 
