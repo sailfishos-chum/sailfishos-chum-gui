@@ -1,3 +1,12 @@
+* Mon Jan 30 2023 olf <Olf0@users.noreply.github.com> - 0.5.3-1
+- Overhaul rpmlintrc file (584263a, a1da001)
+- Improve Slovak translation (#147)
+
+* Sun Jan 29 2023 olf <Olf0@users.noreply.github.com> - 0.5.2-1
+- Optimise CI workflow configuration
+- Fix being installed via the Installer
+- Complete SailfishOS:Chum metadata
+
 * Sun Jan 22 2023 olf <Olf0@users.noreply.github.com> - 0.5.1-1
 - Overhaul spec file (#124, #131)
 - Enhance the three issue-templates (#135, #136)
