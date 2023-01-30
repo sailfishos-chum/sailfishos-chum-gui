@@ -1,19 +1,19 @@
-* Mon Jan 30 2023 olf <Olf0@users.noreply.github.com> - 0.5.3-1
+* Mon Jan 30 2023 olf <Olf0@users.noreply.github.com> - 0.5.4
 - Overhaul rpmlintrc file (584263a, a1da001)
 - Update Slovak translation (#147)
 
-* Sun Jan 29 2023 olf <Olf0@users.noreply.github.com> - 0.5.2-1
+* Sun Jan 29 2023 olf <Olf0@users.noreply.github.com> - 0.5.2
 - Optimise CI workflow configuration
 - Fix being installed via the Installer
 - Complete SailfishOS:Chum metadata
 
-* Sun Jan 22 2023 olf <Olf0@users.noreply.github.com> - 0.5.1-1
+* Sun Jan 22 2023 olf <Olf0@users.noreply.github.com> - 0.5.1
 - Overhaul spec file (#124, #131)
 - Enhance the three issue-templates (#135, #136)
 - Use build.merproject.org as SFOS-OBS' DNS-name (#133)
 - New or updated translations: DE (#125), ES (#134), PL (#127, #128), SK (#123)
 
-* Wed Mar 02 2022 Rinigus <rinigus.git@gmail.com> - 0.5.0-1
+* Wed Mar 02 2022 Rinigus <rinigus.git@gmail.com> - 0.5.0
 - Rework strings
 - Update translations
 - Use generic type for SFOS older than 4.1
@@ -21,11 +21,11 @@
 - Fallback to tag info if release is not described at GitHub
 - Disable package operations while there is some operation running
 
-* Mon Feb 07 2022 Rinigus <rinigus.git@gmail.com> - 0.4.1-1
+* Mon Feb 07 2022 Rinigus <rinigus.git@gmail.com> - 0.4.1
 - Update translations
 - Remove the search box focus when scrolling
 
-* Wed Jan 19 2022 Rinigus <rinigus.git@gmail.com> - 0.4.0-1
+* Wed Jan 19 2022 Rinigus <rinigus.git@gmail.com> - 0.4.0
 - Improve compatibility with older SFOS versions
 - Allow to specify description as URL pointing to MarkDown
 - Add packagers and packaging URL
@@ -36,13 +36,13 @@
 - Bugfixes
 - Add and update translations
 
-* Sun Jan 02 2022 Rinigus <rinigus.git@gmail.com> - 0.3.0-1
+* Sun Jan 02 2022 Rinigus <rinigus.git@gmail.com> - 0.3.0
 - Add metadata support
 - Add GitHub and GitLab integration
 - GUI updates and addition of missing elements
 - Manage Chum repositories from GUI
 
-* Thu Sep 23 2021 Petr Tsymbarovich <petr@tsymbarovich.ru> - 0.2.0-1
+* Thu Sep 23 2021 Petr Tsymbarovich <petr@tsymbarovich.ru> - 0.2.0
 - Don't list devel packages
 - Show installed version for updates
 - Notify on updates available
@@ -51,5 +51,5 @@
 - Fix building for SFOS 3.1, 3.2
 - Add an option for manual repository refresh
 
-* Tue Sep 21 2021 Petr Tsymbarovich <petr@tsymbarovich.ru> - 0.1-1
+* Tue Sep 21 2021 Petr Tsymbarovich <petr@tsymbarovich.ru> - 0.1
 - First public release
