@@ -1,10 +1,10 @@
-* Fri Feb 10 2023 olf <Olf0@users.noreply.github.com> - 0.5.5
+* Sat Feb 11 2023 olf <Olf0@users.noreply.github.com> - 0.5.5
 - Fix to utilise the Slovak translation (dea15a7)
 - Fix issue #150 (f063d79)
 - Fix version mismatch (6a73a50)
 - Claim more categories in SailfishOS:Chum metadata (8fe09ca)
 - Beautify (reference to) rpmlintrc file name (ab7ca89, 39cc8b0)
-- Update and rectify changelog (5a07861, 2a4510e, 7344303, +1)
+- Update and rectify changelog (5a07861, 2a4510e, 7344303, 7419732, +1)
 
 * Mon Jan 30 2023 olf <Olf0@users.noreply.github.com> - 0.5.4
 - Overhaul rpmlintrc file (584263a, a1da001, 979d8dc, 3d83602, 9e9a082, 58c7fa8)
