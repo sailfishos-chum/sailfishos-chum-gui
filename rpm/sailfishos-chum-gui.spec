@@ -1,6 +1,6 @@
 Name:           sailfishos-chum-gui
 Summary:        GUI application for utilising the SailfishOS:Chum community repository
-Version:        0.5.3
+Version:        0.5.5
 Release:        1
 Group:          Applications/System
 License:        MIT
@@ -8,7 +8,7 @@ URL:            https://github.com/sailfishos-chum/%{name}
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:        token-github.txt
 Source2:        token-gitlab.txt
-Source101:      %{name}-rpmlintrc
+Source99:       %{name}.rpmlintrc
 Requires:       sailfishsilica-qt5 >= 0.10.9
 Requires:       ssu
 Requires(postun): ssu
@@ -24,10 +24,10 @@ BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(yaml-cpp)
+BuildRequires:  pkgconfig(packagekitqt5)
 BuildRequires:  desktop-file-utils
 BuildRequires:  cmake >= 3.11
 BuildRequires:  sailfish-svg2png
-BuildRequires:  PackageKit-Qt5-devel
 BuildRequires:  qt5-qttools-linguist
 BuildRequires:  sed
 
