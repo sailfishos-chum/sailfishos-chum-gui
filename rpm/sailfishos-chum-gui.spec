@@ -24,10 +24,10 @@ BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(yaml-cpp)
+BuildRequires:  pkgconfig(packagekitqt5)
 BuildRequires:  desktop-file-utils
 BuildRequires:  cmake >= 3.11
 BuildRequires:  sailfish-svg2png
-BuildRequires:  PackageKit-Qt5-devel
 BuildRequires:  qt5-qttools-linguist
 BuildRequires:  sed
 
