@@ -91,7 +91,7 @@ chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
 %endif
 
 # Rectify desktop file for older SFOS version targets < v4.0.1.00
-if %{defined sailfishos_version} && 0%{?sailfishos_version} < 40100
+%if %{defined sailfishos_version} && 0%{?sailfishos_version} < 40100
 sed -i 's/silica-qt5/generic/' %{buildroot}%{_datadir}/applications/sailfishos-chum-gui.desktop
 %endif
 
