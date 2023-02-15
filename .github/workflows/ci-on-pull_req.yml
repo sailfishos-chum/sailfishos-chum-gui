@@ -28,7 +28,7 @@ jobs:
 
     - name: Build ${{ env.ARCH }} on ${{ env.RELEASE }}
       env:
-        ARCH: armv7hl
+        ARCH: i486
         RELEASE: 4.0.1.45
       run: |
         set -x
