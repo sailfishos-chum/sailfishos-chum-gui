@@ -64,6 +64,11 @@ Url:
   Bugtracker: %{url}/issues
 %endif
 
+# Define (S)RPM compression sensibly, also taking compatibility into account, see
+# https://github.com/sailfishos-patches/patchmanager/pull/417#issuecomment-1429068156
+%define _source_payload w6.gzdio
+%define _binary_payload w2.xzdio
+
 %prep
 %setup -q
 
