@@ -18,6 +18,10 @@ Conflicts:      sailfishos-chum
 Obsoletes:      sailfishos-chum
 Conflicts:      sailfishos-chum-testing
 Obsoletes:      sailfishos-chum-testing
+Conflicts:      sailfishos-chum-repo-config
+Obsoletes:      sailfishos-chum-repo-config
+Conflicts:      sailfishos-chum-repo-config-testing
+Obsoletes:      sailfishos-chum-repo-config-testing
 Provides:       sailfishos-chum-repository
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
