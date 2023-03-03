@@ -18,6 +18,13 @@ Page {
 
     allowedOrientations: Orientation.All
 
+    BusyIndicator {
+        size: BusyIndicatorSize.Large
+        anchors.centerIn: parent
+        running: chumModel.busy == true
+        visible: running
+    }
+
     SilicaListView {
         id: view
         anchors.fill: parent
@@ -78,7 +85,8 @@ Page {
             }
 
             onClicked: pageStack.push(Qt.resolvedUrl("../pages/PackagePage.qml"), {
-                                          pkg:    Chum.package(model.packageId)
+                                          pkg:    Chum.package(model.packageId),
+                                          mtime: model.packageMTime
                                       })
 
             onDownChanged: {

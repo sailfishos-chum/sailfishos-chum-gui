@@ -2,6 +2,7 @@
 
 #include <QDBusPendingCall>
 #include <QDBusPendingReply>
+#include <QDBusReply>
 #include <QDebug>
 
 static QString s_repo_regular(
@@ -25,6 +26,9 @@ Ssu::Ssu(QObject *parent) :
         QDBusConnection::systemBus(),
         parent )
 {
+    QDBusReply<QString> version = call(QStringLiteral("release"), false);
+    m_device_version = version;
+    qDebug() << "Device version:" << m_device_version;
 }
 
 void Ssu::loadRepos() {

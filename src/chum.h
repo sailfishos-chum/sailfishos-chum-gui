@@ -45,6 +45,8 @@ public:
     void    setRepoTesting(bool testing);
     void    setShowAppsByDefault(bool v);
     void    setManualVersion(const QString &v);
+    QString repoName() { return m_ssu.repoName();}
+    QString repoVersion() { return m_manualVersion.isEmpty() ? m_ssu.deviceVersion() : m_manualVersion; }
 
     const QList<ChumPackage*> packages() const { return m_packages.values(); }
     Q_INVOKABLE ChumPackage* package(const QString &id) const { return m_packages.value(id, nullptr); }

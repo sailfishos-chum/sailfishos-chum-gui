@@ -55,6 +55,7 @@ public:
         PackageSummaryRole,
         PackageTypeRole,
         PackageUpdateAvailableRole,
+        PackageMTime,
 
         PackageOtherRole,
         PackageRefreshRole // used for updates of many parameters

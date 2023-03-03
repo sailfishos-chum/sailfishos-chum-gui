@@ -3,6 +3,7 @@
 #include <QAbstractListModel>
 #include <QQmlParserStatus>
 #include <QSet>
+#include <QJsonDocument>
 
 #include "chumpackage.h"
 
@@ -18,6 +19,7 @@ class ChumPackagesModel
     Q_PROPERTY(bool    filterUpdatesOnly READ filterUpdatesOnly WRITE setFilterUpdatesOnly NOTIFY filterUpdatesOnlyChanged)
     Q_PROPERTY(QString search READ search WRITE setSearch NOTIFY searchChanged)
     Q_PROPERTY(QString showCategory READ showCategory WRITE setShowCategory NOTIFY showCategoryChanged)
+    Q_PROPERTY(bool    busy READ busy NOTIFY busyChanged)
 
 public:
     explicit ChumPackagesModel(QObject *parent = nullptr);
@@ -43,23 +45,30 @@ public:
     void classBegin() override {}
     void componentComplete() override { m_postpone_loading=false; reset(); }
 
+    bool busy() { return m_busy; }
+
 signals:
     void filterApplicationsOnlyChanged();
     void filterInstalledOnlyChanged();
     void filterUpdatesOnlyChanged();
     void searchChanged();
     void showCategoryChanged();
+    void busyChanged();
 
 private:
     void updatePackage(QString packageId, ChumPackage::Role role);
+    void getChumCache();
+    QDateTime findPackageMTime(const QString &rpm) const;
 
 private:
     QList<QString> m_packages;
     bool           m_postpone_loading{true};
+    bool           m_busy{false};
 
     bool m_filter_applications_only{false};
     bool m_filter_installed_only{false};
     bool m_filter_updates_only{false};
     QString m_search;
     QSet<QString> m_show_category;
+    QJsonDocument m_chumPackageCache;
 };
