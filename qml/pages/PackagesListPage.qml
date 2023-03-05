@@ -86,7 +86,6 @@ Page {
 
             onClicked: pageStack.push(Qt.resolvedUrl("../pages/PackagePage.qml"), {
                                           pkg:    Chum.package(model.packageId),
-                                          mtime: model.packageMTime
                                       })
 
             onDownChanged: {

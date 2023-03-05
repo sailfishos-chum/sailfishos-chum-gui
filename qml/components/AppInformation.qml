@@ -8,7 +8,6 @@ MouseArea {
     property bool enableExpansion: true
     property int  shrunkHeight: 500
     property var  pkg
-    property var  mtime
     property bool developerShown: false
 
     property bool _expanded: !_expansionEnabled
@@ -91,8 +90,8 @@ MouseArea {
         ChumDetailItem {
             //% "Package last updated:"
             label: qsTrId("chum-pkg-package-mtime")
-            value: mtime
-            visible: mtime
+            value: pkg.packageMTime
+            visible: pkg.packageMTime
         }
 
         ChumDetailItem {

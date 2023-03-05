@@ -4,6 +4,13 @@
 
 #include <QDebug>
 #include <QSettings>
+#include <QtNetwork/QNetworkAccessManager>
+#include <QtNetwork/QNetworkReply>
+#include <QtNetwork/QNetworkRequest>
+#include <QJsonObject>
+#include <QJsonArray>
+
+static char* apiUrl = "http://piggz.co.uk:8081";
 
 using namespace PackageKit;
 
@@ -37,10 +44,7 @@ Chum::Chum(QObject *parent)
     m_show_apps_by_default = (settings.value(s_config_showapps, 1).toInt() != 0);
     m_manualVersion = (settings.value(s_config_manualversion, QString()).toString());
 
-    m_busy = true;
-    //% "Loading SailfishOS:Chum repository"
-    setStatus(qtTrId("chum-load-repositories"));
-    m_ssu.loadRepos();
+    getChumCache();
 }
 
 Chum* Chum::instance() {
@@ -449,4 +453,87 @@ void Chum::setStatus(QString status) {
     if (m_status == status) return;
     m_status = status;
     emit statusChanged();
+}
+
+void Chum::getChumCache()
+{
+    if (!m_busy) {
+        m_busy = true;
+        emit busyChanged();
+    }
+
+    //% "Receiving the chum package cache"
+    setStatus(qtTrId("chum-update-cache"));
+
+    QNetworkAccessManager *netManager = new QNetworkAccessManager();
+
+    QObject::connect(netManager,&QNetworkAccessManager::finished,[=](QNetworkReply *reply) {
+        if (reply->error()){
+            qDebug() << "Unable to get package build times" << reply->errorString();
+        }
+        else {
+            m_chumPackageCache = QJsonDocument::fromJson(reply->readAll());
+            qDebug() << "Received chum package cache";
+        }
+        m_busy = false;
+        //% "Loading SailfishOS:Chum repository"
+        setStatus(qtTrId("chum-load-repositories"));
+        m_ssu.loadRepos();
+    });
+
+    // Start the network request
+    QNetworkRequest request=QNetworkRequest(QUrl(apiUrl));
+    m_busy = true;
+    emit busyChanged();
+    netManager->get(request);
+}
+
+QDateTime Chum::findPackageMTime(const QString &rpm) const
+{
+    qDebug() << Q_FUNC_INFO << rpm << Chum::instance()->repoName() << Chum::instance()->repoVersion();
+
+    QString repo = Chum::instance()->repoVersion() + "_aarch64"; //TODO need to determine device architecture
+    QString projectName = Chum::instance()->repoName().replace("-", ":");
+    QString packageName;
+    QDateTime mtime = QDateTime::fromMSecsSinceEpoch(0);
+    bool found = false;
+
+    QJsonArray projects = m_chumPackageCache.object().value("projects").toArray();
+
+    for (auto project : projects) {
+        //qDebug() << project.toObject()["name"];
+        if (project.toObject()["name"].toString() == projectName) {
+            QJsonArray repos = project.toObject()["repositories"].toArray();
+            for (auto repo : repos) {
+                //qDebug() << repo.toObject()["name"];
+                QJsonArray packages = repo.toObject()["packages"].toArray();
+                for (auto package : packages) {
+                    //qDebug() << package.toObject()["name"].toString();
+                    QJsonArray binaries = package.toObject()["binaries"].toArray();
+                    for (auto binary : binaries) {
+                        //qDebug() << binary.toString();
+                        if (binary.toString().startsWith(rpm)) {
+                            packageName = package.toObject()["name"].toString();
+                            found = true;
+                        }
+                    }
+                }
+            }
+
+            if (found) {
+                //loop the source projects
+                QJsonArray packages = project.toObject()["packages"].toArray();
+                for (auto package : packages) {
+                    //qDebug() << package.toObject()["name"];
+                    if (package.toObject()["name"].toString() == packageName) {
+                        int mt = package.toObject()["mtime"].toString().toInt();
+                        mtime = QDateTime::fromMSecsSinceEpoch(1000L * mt);
+                        qDebug() << "Found binary " << rpm << " in source package " << packageName << mt << mtime;
+                    }
+                }
+            }
+        }
+    }
+    return mtime;
+
 }

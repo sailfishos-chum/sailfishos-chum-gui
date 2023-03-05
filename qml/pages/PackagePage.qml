@@ -5,7 +5,6 @@ import "../components"
 
 Page {
     property ChumPackage pkg
-    property var mtime
 
     id: page
     allowedOrientations: Orientation.All
@@ -79,7 +78,6 @@ Page {
 
             AppInformation {
                 pkg: page.pkg
-                mtime: page.mtime
                 developerShown: header.packagerShown
                 shrunkHeight: Math.max(page.height/4, page.height - (y - content.y + content.spacing +
                                                                      (screenshots.visible ? (screenshots.height+content.spacing) : 0) +

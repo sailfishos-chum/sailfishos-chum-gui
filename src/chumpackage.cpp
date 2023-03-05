@@ -1,4 +1,5 @@
 #include "chumpackage.h"
+#include "chum.h"
 
 #include "projectgithub.h"
 #include "projectgitlab.h"
@@ -122,6 +123,8 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
     // derive name
     QString pname = Daemon::packageName(m_pkid_latest);
     m_package_name = pname;
+    m_package_mtime = Chum::instance()->findPackageMTime(m_package_name);
+
     m_name = QString{};
     QStringList nparts = pname.split('-');
     bool is_app = false;
@@ -259,6 +262,12 @@ void ChumPackage::setPackagerLogin(const QString &login) {
     // records
     if (m_packager_name_from_spec) return;
     SET_IF_EMPTY(m_packager_login, PackagePackagerRole, login);
+}
+
+void ChumPackage::setPackageMTime(const QDateTime &mtime)
+{
+    m_package_mtime = mtime;
+    emit updated(m_id, PackageMTime);
 }
 
 void ChumPackage::setPackagerName(const QString &name) {
