@@ -48,8 +48,8 @@ Page {
             }
 
             Label {
-                //% "Issue tracker"
-                text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui/issues">' + qsTrId("chum-about-issues") + '</a>'
+                //% "Source code"
+                text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui">' + qsTrId("chum-about-home") + '</a>'
                 anchors.horizontalCenter: parent.horizontalCenter
                 linkColor: Theme.highlightColor
                 wrapMode: Text.WordWrap
@@ -57,8 +57,8 @@ Page {
             }
 
             Label {
-                //% "Source code"
-                text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui">' + qsTrId("chum-about-home") + '</a>'
+                //% "Issue tracker for bug reports, feature suggestions and help requests"
+                text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui/issues">' + qsTrId("chum-about-issues") + '</a>'
                 anchors.horizontalCenter: parent.horizontalCenter
                 linkColor: Theme.highlightColor
                 wrapMode: Text.WordWrap
