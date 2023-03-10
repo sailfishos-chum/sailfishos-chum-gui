@@ -1,3 +1,6 @@
+* Sat Mar 11 2023 olf <Olf0@users.noreply.github.com> - 0.5.7
+- 
+
 * Fri Mar 10 2023 olf <Olf0@users.noreply.github.com> - 0.5.6
 - Internal enhancements in comments, for compatibility with older SailfishOS releases and the CI workflow
 - New icon (#156)
