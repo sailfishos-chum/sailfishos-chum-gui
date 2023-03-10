@@ -1,5 +1,7 @@
-* Sun Feb 19 2023 olf <Olf0@users.noreply.github.com> - 0.5.6
-- Internal enhancements in comments, for compatibility and the CI workflow
+* Fri Mar 10 2023 olf <Olf0@users.noreply.github.com> - 0.5.6
+- Internal enhancements in comments, for compatibility with older SailfishOS releases and the CI workflow
+- New icon (#156)
+- Overhaul German translation (#154)
 
 * Sat Feb 11 2023 olf <Olf0@users.noreply.github.com> - 0.5.5
 - Fix to utilise the Slovak translation (dea15a7)
