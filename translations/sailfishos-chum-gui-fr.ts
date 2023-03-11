@@ -588,15 +588,15 @@ Veuillez supprimer tous les dépôts Chum et redémarrer l&apos;application grap
         <translation>Licence : %1</translation>
     </message>
     <message id="chum-about-home">
-        <location filename="../qml/pages/AboutPage.qml" line="61"/>
+        <location filename="../qml/pages/AboutPage.qml" line="52"/>
         <source>Source code</source>
         <oldsource>Home</oldsource>
         <translation type="unfinished">Accueil</translation>
     </message>
     <message id="chum-about-issues">
-        <location filename="../qml/pages/AboutPage.qml" line="52"/>
-        <source>Issue tracker</source>
-        <oldsource>Issues</oldsource>
+        <location filename="../qml/pages/AboutPage.qml" line="61"/>
+        <source>Issue tracker for bug reports, feature suggestions and help requests</source>
+        <oldsource>Issue tracker</oldsource>
         <translation type="unfinished">Problèmes</translation>
     </message>
     <message id="chum-about-description">

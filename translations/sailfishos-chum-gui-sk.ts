@@ -592,16 +592,16 @@ Táto aplikácia GUI SailfishOS:Chum pridá po opätovnom spustení všetky chý
         <translation>Licencia: %1</translation>
     </message>
     <message id="chum-about-home">
-        <location filename="../qml/pages/AboutPage.qml" line="61"/>
+        <location filename="../qml/pages/AboutPage.qml" line="52"/>
         <source>Source code</source>
         <oldsource>Home</oldsource>
         <translation>Zdrojový text</translation>
     </message>
     <message id="chum-about-issues">
-        <location filename="../qml/pages/AboutPage.qml" line="52"/>
-        <source>Issue tracker</source>
-        <oldsource>Issues</oldsource>
-        <translation>Sledovač problémov</translation>
+        <location filename="../qml/pages/AboutPage.qml" line="61"/>
+        <source>Issue tracker for bug reports, feature suggestions and help requests</source>
+        <oldsource>Issue tracker</oldsource>
+        <translation type="unfinished">Sledovač problémov</translation>
     </message>
     <message id="chum-about-description">
         <location filename="../qml/pages/AboutPage.qml" line="103"/>
