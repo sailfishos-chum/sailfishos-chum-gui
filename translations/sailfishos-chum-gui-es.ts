@@ -589,17 +589,17 @@ Esta aplicación SailfishOS:Chum GUI añadira cualquier repositorio SailfishOS:C
         <source>License: %1</source>
         <translation>Licencia: %1</translation>
     </message>
-    <message id="chum-about-issues">
-        <location filename="../qml/pages/AboutPage.qml" line="52"/>
-        <source>Issue tracker</source>
-        <oldsource>Issues</oldsource>
-        <translation>Gestor de incidencias</translation>
-    </message>
     <message id="chum-about-home">
-        <location filename="../qml/pages/AboutPage.qml" line="61"/>
+        <location filename="../qml/pages/AboutPage.qml" line="52"/>
         <source>Source code</source>
         <oldsource>Home</oldsource>
         <translation>Código fuente</translation>
+    </message>
+    <message id="chum-about-issues">
+        <location filename="../qml/pages/AboutPage.qml" line="61"/>
+        <source>Issue tracker for bug reports, feature suggestions and help requests</source>
+        <oldsource>Issue tracker</oldsource>
+        <translation type="unfinished">Gestor de incidencias</translation>
     </message>
     <message id="chum-about-description">
         <location filename="../qml/pages/AboutPage.qml" line="103"/>
