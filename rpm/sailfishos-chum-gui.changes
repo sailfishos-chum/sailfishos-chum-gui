@@ -1,5 +1,8 @@
-* Sat Mar 11 2023 olf <Olf0@users.noreply.github.com> - 0.5.7
-- 
+* Sun Mar 12 2023 olf <Olf0@users.noreply.github.com> - 0.5.7
+- Optimise icon (#158)
+- Reorder and expand "Issue tracker" specifically (a2eee9, 4cd944c, 638a709)
+- [German translation] Fixes, improvements and align with source strings (dd02f83)
+- [All other translations] Align with source strings (a2899c3, c9be167, 36b4e4e, 63b85c3, 8293291, 300d217, 7b40d5c)
 
 * Fri Mar 10 2023 olf <Olf0@users.noreply.github.com> - 0.5.6
 - Internal enhancements in comments, for compatibility with older SailfishOS releases and the CI workflow
