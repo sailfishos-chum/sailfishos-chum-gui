@@ -1,3 +1,6 @@
+* Mon Mar 13 2023 olf <Olf0@users.noreply.github.com> - 0.5.8
+- 
+
 * Sun Mar 12 2023 olf <Olf0@users.noreply.github.com> - 0.5.7
 - Optimise icon (#158)
 - Reorder and expand "Issue tracker" specifically (a2eee9, 4cd944c, 638a709)
