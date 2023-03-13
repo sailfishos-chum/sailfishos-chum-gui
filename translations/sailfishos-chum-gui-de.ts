@@ -305,7 +305,7 @@ Die SailfishOS:Chum-GUI-App wird jegliches fehlende SailfishOS:Chum-Repository b
         <location filename="../src/chum.cpp" line="412"/>
         <source>Updating all packages</source>
         <oldsource>Update all packages</oldsource>
-        <translation>Aktualisieren aller Pakete</translation>
+        <translation>Aktualisiere alle Pakete</translation>
     </message>
     <message id="chum-release">
         <location filename="../qml/pages/ReleasePage.qml" line="36"/>
