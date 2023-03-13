@@ -200,7 +200,7 @@
         <location filename="../src/chum.cpp" line="42"/>
         <source>Loading SailfishOS:Chum repository</source>
         <oldsource>Load repositories</oldsource>
-        <translation>Lade SailfishOS:Chum-Repositorys</translation>
+        <translation>Lade SailfishOS:Chum-Repository</translation>
     </message>
     <message id="chum-get-list-packages">
         <location filename="../src/chum.cpp" line="104"/>
