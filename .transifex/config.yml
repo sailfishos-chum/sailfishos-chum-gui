@@ -10,4 +10,3 @@ git:
       # Path expression to translation files, must be quoted in single-quotes
       # and must contain <lang> placeholder:
       translation_files_expression: 'translations/sailfishos-chum-gui-<lang>.ts'
-
