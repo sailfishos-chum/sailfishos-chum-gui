@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es_ES">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="es">
 <context>
-    <name></name>
+    <name/>
     <message id="chum-search">
         <location filename="../qml/pages/PackagesListPage.qml" line="42"/>
         <source>Search</source>
@@ -24,6 +22,16 @@
         <oldsource>Apply all updates</oldsource>
         <translation>Actializar todo</translation>
     </message>
+    <message id="chum-updates-available" numerus="yes">
+        <location filename="../qml/sailfishos-chum-gui.qml" line="65"/>
+        <source>%n update(s) available</source>
+        <translation><numerusform>%n actualización disponible</numerusform><numerusform>%n actualizaciones disponibles</numerusform><numerusform>%n actualizaciones disponibles</numerusform></translation>
+    </message>
+    <message id="chum-repo-refreshed">
+        <location filename="../qml/sailfishos-chum-gui.qml" line="83"/>
+        <source>Repository refreshed</source>
+        <translation>Repositorio refrescado</translation>
+    </message>
     <message id="chum-package-installed">
         <location filename="../qml/sailfishos-chum-gui.qml" line="18"/>
         <source>%1 %2 installed</source>
@@ -42,19 +50,6 @@
         <source>%1 %2 updated</source>
         <extracomment>%1 - package name, %2 - package version</extracomment>
         <translation>%1 %2 actualizado</translation>
-    </message>
-    <message id="chum-updates-available" numerus="yes">
-        <location filename="../qml/sailfishos-chum-gui.qml" line="65"/>
-        <source>%n update(s) available</source>
-        <translation>
-            <numerusform>%n actualización disponible</numerusform>
-            <numerusform>%n actualizaciones disponibles</numerusform>
-        </translation>
-    </message>
-    <message id="chum-repo-refreshed">
-        <location filename="../qml/sailfishos-chum-gui.qml" line="83"/>
-        <source>Repository refreshed</source>
-        <translation>Repositorio refrescado</translation>
     </message>
     <message id="chum-about">
         <location filename="../qml/pages/MainPage.qml" line="40"/>
@@ -96,33 +91,20 @@
         <source>Packages</source>
         <translation>Paquetes</translation>
     </message>
-    <message id="chum-installed-packages">
-        <location filename="../qml/pages/MainPage.qml" line="102"/>
-        <source>Installed packages</source>
-        <translation>Paquetes instalados</translation>
+    <message id="chum-installed">
+        <location filename="../qml/pages/MainPage.qml" line="108"/>
+        <source>Installed</source>
+        <translation>Instalado</translation>
     </message>
     <message id="chum-no-installed">
         <location filename="../qml/pages/MainPage.qml" line="104"/>
         <source>No packages installed</source>
         <translation>No hay paquetes instalados</translation>
     </message>
-    <message id="chum-installed">
-        <location filename="../qml/pages/MainPage.qml" line="108"/>
-        <source>Installed</source>
-        <translation>Instalado</translation>
-    </message>
-    <message id="chum-uninstall">
-        <location filename="../qml/pages/PackagePage.qml" line="21"/>
-        <location filename="../qml/pages/PackagesListPage.qml" line="72"/>
-        <source>Remove</source>
-        <oldsource>Uninstall</oldsource>
-        <translation>Eliminar</translation>
-    </message>
-    <message id="chum-uninstalling">
-        <location filename="../qml/pages/PackagePage.qml" line="24"/>
-        <source>Removing</source>
-        <oldsource>Uninstalling</oldsource>
-        <translation>Eliminando</translation>
+    <message id="chum-installed-packages">
+        <location filename="../qml/pages/MainPage.qml" line="102"/>
+        <source>Installed packages</source>
+        <translation>Paquetes instalados</translation>
     </message>
     <message id="chum-package-project-repo">
         <location filename="../qml/pages/PackagePage.qml" line="29"/>
@@ -142,6 +124,12 @@
         <oldsource>Discussion Forum</oldsource>
         <translation>Foro de discusión</translation>
     </message>
+    <message id="chum-uninstalling">
+        <location filename="../qml/pages/PackagePage.qml" line="24"/>
+        <source>Removing</source>
+        <oldsource>Uninstalling</oldsource>
+        <translation>Eliminando</translation>
+    </message>
     <message id="chum-update">
         <location filename="../qml/pages/PackagePage.qml" line="49"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="66"/>
@@ -154,15 +142,12 @@
         <source>Install</source>
         <translation>Instalar</translation>
     </message>
-    <message id="chum-releases-number">
-        <location filename="../qml/pages/PackagePage.qml" line="103"/>
-        <source>Releases (%1)</source>
-        <translation>Lanzamientos (%1)</translation>
-    </message>
-    <message id="chum-issues-number">
-        <location filename="../qml/pages/PackagePage.qml" line="114"/>
-        <source>Issues (%1)</source>
-        <translation>Incidencias (%1)</translation>
+    <message id="chum-uninstall">
+        <location filename="../qml/pages/PackagePage.qml" line="21"/>
+        <location filename="../qml/pages/PackagesListPage.qml" line="72"/>
+        <source>Remove</source>
+        <oldsource>Uninstall</oldsource>
+        <translation>Eliminar</translation>
     </message>
     <message id="chum-package-donation">
         <location filename="../qml/pages/PackagePage.qml" line="126"/>
@@ -196,6 +181,16 @@
         <oldsource>Categories</oldsource>
         <translation>Categorías</translation>
     </message>
+    <message id="chum-releases-number">
+        <location filename="../qml/pages/PackagePage.qml" line="103"/>
+        <source>Releases (%1)</source>
+        <translation>Lanzamientos (%1)</translation>
+    </message>
+    <message id="chum-issues-number">
+        <location filename="../qml/pages/PackagePage.qml" line="114"/>
+        <source>Issues (%1)</source>
+        <translation>Incidencias (%1)</translation>
+    </message>
     <message id="chum-releases">
         <location filename="../qml/pages/ReleasesListPage.qml" line="28"/>
         <source>Releases</source>
@@ -206,21 +201,6 @@
         <source>Loading SailfishOS:Chum repository</source>
         <oldsource>Load repositories</oldsource>
         <translation>Cargando repositorio SailfishOS:Chum</translation>
-    </message>
-    <message id="chum-repo-management-disabled-title">
-        <location filename="../src/chum.cpp" line="67"/>
-        <location filename="../src/chum.cpp" line="329"/>
-        <location filename="../src/chum.cpp" line="351"/>
-        <source>Repositories misconfigured.</source>
-        <oldsource>Repositories misconfigured</oldsource>
-        <translation>Repositorios configurados incorrectamente.</translation>
-    </message>
-    <message id="chum-setup-repo">
-        <location filename="../src/chum.cpp" line="80"/>
-        <location filename="../src/chum.cpp" line="359"/>
-        <source>Adding SailfishOS:Chum testing repository</source>
-        <oldsource>Setting up Chum repository</oldsource>
-        <translation>Añadiendo el repositorio de pruebas de SailfishOS:Chum</translation>
     </message>
     <message id="chum-get-list-packages">
         <location filename="../src/chum.cpp" line="104"/>
@@ -264,17 +244,25 @@
         <oldsource>Failed to refresh Chum repository</oldsource>
         <translation>¡Fallo al refrescar el repositorio SailfishOS:Chum!</translation>
     </message>
+    <message id="chum-repo-management-disabled-title">
+        <location filename="../src/chum.cpp" line="67"/>
+        <location filename="../src/chum.cpp" line="329"/>
+        <location filename="../src/chum.cpp" line="351"/>
+        <source>Repositories misconfigured.</source>
+        <oldsource>Repositories misconfigured</oldsource>
+        <translation>Repositorios configurados incorrectamente.</translation>
+    </message>
     <message id="chum-repo-management-disabled-txt">
         <location filename="../src/chum.cpp" line="336"/>
         <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository! You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
 
 Please remove all SailfishOS:Chum repositories by executing this command line as root user:
-for i in $(ssu lr | fgrep chum | cut -f 3 -d &apos; &apos;); do ssu rr $i; done
+for i in $(ssu lr | fgrep chum | cut -f 3 -d ' '); do ssu rr $i; done
 This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
         <oldsource>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository. You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
 
 Please remove all SailfishOS:Chum repositories by executing this command line as root user:
-for i in $(ssu lr | fgrep chum | cut -f 3 -d &apos; &apos;); do ssu rr $i; done
+for i in $(ssu lr | fgrep chum | cut -f 3 -d ' '); do ssu rr $i; done
 This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</oldsource>
         <translation>¡La aplicación SailfishOS:Chum GUI no pudo gestionar el repositorio SailfishOS:Chum! Probablemente tiene múltiples repositorios SailfishOS:Chum definidos para SSU o ha deshabilitado un repositorio SailfishOS:Chum.
 
@@ -287,6 +275,13 @@ Esta aplicación SailfishOS:Chum GUI añadira cualquier repositorio SailfishOS:C
         <source>Adding SailfishOS:Chum repository</source>
         <oldsource>Adding Chum repository</oldsource>
         <translation>Añadiendo el repositorio SailfishOS:Chum</translation>
+    </message>
+    <message id="chum-setup-repo">
+        <location filename="../src/chum.cpp" line="80"/>
+        <location filename="../src/chum.cpp" line="359"/>
+        <source>Adding SailfishOS:Chum testing repository</source>
+        <oldsource>Setting up Chum repository</oldsource>
+        <translation>Añadiendo el repositorio de pruebas de SailfishOS:Chum</translation>
     </message>
     <message id="chum-install-package">
         <location filename="../src/chum.cpp" line="372"/>
@@ -397,16 +392,16 @@ Esta aplicación SailfishOS:Chum GUI añadira cualquier repositorio SailfishOS:C
         <oldsource>Packaging repository</oldsource>
         <translation>Repositorio de empaquetado:</translation>
     </message>
-    <message id="chum-settings-status">
-        <location filename="../qml/pages/SettingsPage.qml" line="26"/>
-        <source>Status</source>
-        <translation>Estado</translation>
-    </message>
     <message id="chum-settings-status-repo-management-failed">
         <location filename="../qml/pages/SettingsPage.qml" line="40"/>
         <source>SailfishOS:Chum repository management failed</source>
         <oldsource>Chum repository management failed</oldsource>
         <translation>Fallo en la gestión del repositorio SailfishOS:Chum</translation>
+    </message>
+    <message id="chum-settings-status">
+        <location filename="../qml/pages/SettingsPage.qml" line="26"/>
+        <source>Status</source>
+        <translation>Estado</translation>
     </message>
     <message id="chum-settings-status-repo-not-available">
         <location filename="../qml/pages/SettingsPage.qml" line="47"/>
@@ -456,12 +451,6 @@ Esta aplicación SailfishOS:Chum GUI añadira cualquier repositorio SailfishOS:C
         <oldsource>Show applications only by default</oldsource>
         <translation>Mostrar sólo las aplicaciones</translation>
     </message>
-    <message id="chum-settings-advanced">
-        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
-        <source>Advanced settings</source>
-        <oldsource>Advanced</oldsource>
-        <translation>Configuración avanzada</translation>
-    </message>
     <message id="chum-settings-testing-description">
         <location filename="../qml/pages/SettingsPage.qml" line="92"/>
         <source>Use the SailfishOS:Chum testing repository. This is mainly useful for developers to test their packages before publishing.</source>
@@ -472,6 +461,12 @@ Esta aplicación SailfishOS:Chum GUI añadira cualquier repositorio SailfishOS:C
         <location filename="../qml/pages/SettingsPage.qml" line="94"/>
         <source>Use testing repository</source>
         <translation>Usar el repositorio de pruebas</translation>
+    </message>
+    <message id="chum-settings-advanced">
+        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
+        <source>Advanced settings</source>
+        <oldsource>Advanced</oldsource>
+        <translation>Configuración avanzada</translation>
     </message>
     <message id="chum-settings-override-selection">
         <location filename="../qml/pages/SettingsPage.qml" line="107"/>
@@ -599,11 +594,11 @@ Esta aplicación SailfishOS:Chum GUI añadira cualquier repositorio SailfishOS:C
         <location filename="../qml/pages/AboutPage.qml" line="61"/>
         <source>Issue tracker for bug reports, feature suggestions and help requests</source>
         <oldsource>Issue tracker</oldsource>
-        <translation type="unfinished">Gestor de incidencias</translation>
+        <translation>Gestor de incidencias para informar de errores, sugerir funcionalidades y solicitar ayuda.</translation>
     </message>
     <message id="chum-about-description">
         <location filename="../qml/pages/AboutPage.qml" line="103"/>
-        <source>The SailfishOS:Chum community repository provides a collection of applications, tools and libraries compiled for various hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;In contrast to the software distribution model of the Jolla Store or OpenRepos, to which binary packages are uploaded by developers, at SailfishOS:Chum software is compiled and packaged into RPMs in a reproducible manner directly from its source code. The source code used for compiling and packaging is submitted by developers to OBS (Open Build Service), which generates multiple RPM files for different combinations of hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;This scheme ensures that the complete source code of all packages at SailfishOS:Chum is available and inspectable there, and that all packages are generated solely from this source code. Hence all software packages at SailfishOS:Chum are created in a transparent and fully traceable manner.&lt;br /&gt;&lt;br /&gt;By collecting software for Sailfish&amp;nbsp;OS in a single automated build system, collaboration between developers through common packaging of shared libraries etc. is fostered, duplication of work for keeping these common packages up-to-date is eliminated, and it becomes much easier to determine which pieces of software exist and which are missing at the Sailfish&amp;nbsp;OS OBS. Additionally this eases tracing multiple and potentially layered dependencies (&amp;quot;dependency chains&amp;quot;) which is crucial for keeping the software supply chains of complex packages up-to-date.&lt;br /&gt;&lt;br /&gt;The SailfishOS:Chum repository is located at the Sailfish&amp;nbsp;OS OBS:&lt;br /&gt;&lt;a href=&apos;https://build.sailfishos.org/project/show/sailfishos:chum&apos;&gt;https://build.sailfishos.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;For the etymological origin and meanings of the word &amp;quot;chum&amp;quot;, see &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; and &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.</source>
+        <source>The SailfishOS:Chum community repository provides a collection of applications, tools and libraries compiled for various hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;In contrast to the software distribution model of the Jolla Store or OpenRepos, to which binary packages are uploaded by developers, at SailfishOS:Chum software is compiled and packaged into RPMs in a reproducible manner directly from its source code. The source code used for compiling and packaging is submitted by developers to OBS (Open Build Service), which generates multiple RPM files for different combinations of hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;This scheme ensures that the complete source code of all packages at SailfishOS:Chum is available and inspectable there, and that all packages are generated solely from this source code. Hence all software packages at SailfishOS:Chum are created in a transparent and fully traceable manner.&lt;br /&gt;&lt;br /&gt;By collecting software for Sailfish&amp;nbsp;OS in a single automated build system, collaboration between developers through common packaging of shared libraries etc. is fostered, duplication of work for keeping these common packages up-to-date is eliminated, and it becomes much easier to determine which pieces of software exist and which are missing at the Sailfish&amp;nbsp;OS OBS. Additionally this eases tracing multiple and potentially layered dependencies (&amp;quot;dependency chains&amp;quot;) which is crucial for keeping the software supply chains of complex packages up-to-date.&lt;br /&gt;&lt;br /&gt;The SailfishOS:Chum repository is located at the Sailfish&amp;nbsp;OS OBS:&lt;br /&gt;&lt;a href=&apos;https://build.merproject.org/project/show/sailfishos:chum&apos;&gt;https://build.merproject.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;For the etymological origin and meanings of the word &amp;quot;chum&amp;quot;, see &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; and &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.</source>
         <oldsource>Sailfish OS Community repositories provide a collection of applications, tools, and libraries compiled for different combinations of architectures and Sailfish versions.&lt;br&gt;&lt;br&gt;The ambition is to become the main repository for software distribution on Sailfish OS. When compared to software distribution via Jolla Store or OpenRepos, the software is compiled into RPMs in a reproducible way directly from the source. The source used for the compilation is available at OBS together with the compiled packages. This is in contrast with the Jolla Store and OpenRepos where all packages are uploaded in binary form without any control over how the binary was compiled.&lt;br&gt;&lt;br&gt;By collecting the software in a single automated build system, we can benefit from collaboration between developers through shared packaging of required libraries, reduce duplication of work by keeping the packages up to date, and get a clear overview of missing software.</oldsource>
         <translation>El repositorio comunitario SailfishOS:Chum GUI provee una colección de aplicaciones, herramientas y librerías compiladas para distintas arquitecturas de hardware y versiones de Sailfish&amp;nbsp;OS.&lt;br /&gt;&lt;br /&gt;Al contrario que el modelo de distribución de software de la tienda de Jolla o OpenRepos, en las que los desarrolladores suben paquetes binarios, en SailfishOS:Chum el software se compila y se empaqueta en RPMs de forma reproducible directamente a partir de su código fuente. Los desarroladores envían el código fuente usado para la compilación y empaquetado a OBS (Open Build Services), que genera múltiples archivos RPM para distintas combinaciones de arquitecturas de hardware y versiones de Sailfish&amp;nbsp;OS.&lt;br /&gt;&lt;br /&gt;Este modelo garantiza que el código fuente completo de todos los paquetes en SailfishOS:Chum está disponible y es inspeccionable ahí, y que todos los paquetes se generan exclusivamente a partir de su código fuente. Por tanto todos los paquetes de software en SailfishOS:Chum se crean de forma transparente y trazable.&lt;br /&gt;&lt;br /&gt;Al recopilar software para Sailfish&amp;nbsp;OS en un único sistema automatizado de compilación, se fomenta la colaboración entre desarrolladores mediante el empaquetado común de librerías compartidas etc, se elimina la duplicación del trabajo de mantener al día estos paquetes comunes, y es más fácil qué piezas de software existen y cuáles faltan en Sailfish&amp;nbsp;OS OBS. Además facilita trazar las dependencias múltiples y potencialmente con distintas capas (&amp;quot;cadenas de dependencias&amp;quot;), lo cuál es crucial para mantener las cadenas de suministro de software de paquetes complejos actualizadas.&lt;br /&gt;&lt;br /&gt;El repositorio SailfishOS:Chum está alojado en Sailfish&amp;nbsp;OS OBS&lt;br /&gt;&lt;a href=&apos;https://build.sailfishos.org/project/show/sailfishos:chum&apos;&gt;https://build.sailfishos.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Para el origen etimológico y el significado de la palabra &amp;quot;chum&amp;quot;, vea &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; y &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.</translation>
     </message>
