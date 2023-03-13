@@ -594,7 +594,7 @@ Esta aplicación SailfishOS:Chum GUI añadira cualquier repositorio SailfishOS:C
         <location filename="../qml/pages/AboutPage.qml" line="61"/>
         <source>Issue tracker for bug reports, feature suggestions and help requests</source>
         <oldsource>Issue tracker</oldsource>
-        <translation>Seguimiento de inciencias para informar de errores, sugerir funcionalidades y solicitar ayuda.</translation>
+        <translation>Seguimiento de incidencias para informar de errores, sugerir funcionalidades y solicitar ayuda.</translation>
     </message>
     <message id="chum-about-description">
         <location filename="../qml/pages/AboutPage.qml" line="103"/>
