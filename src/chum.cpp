@@ -77,7 +77,7 @@ void Chum::setManualVersion(const QString &v) {
 
     m_busy = true;
     emit busyChanged();
-    setStatus(qtTrId("chum-setup-repo"));
+    setStatus(qtTrId("chum-add-testing-repo"));
     m_ssu.setRepo(m_manualVersion, m_ssu.repoTesting());
 }
 
@@ -355,8 +355,8 @@ void Chum::setRepoTesting(bool testing) {
     if (!m_ssu.repoAvailable() || m_ssu.repoTesting() != testing) {
         m_busy = true;
         emit busyChanged();
-        //% "Adding SailfishOS:Chum testing repository"
-        setStatus(qtTrId("chum-setup-repo"));
+        //% "Adding SailfishOS:Chum:Testing repository"
+        setStatus(qtTrId("chum-add-testing-repo"));
         m_ssu.setRepo(m_manualVersion, testing);
     }
 }
