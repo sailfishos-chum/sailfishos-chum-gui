@@ -1,6 +1,9 @@
 # SailfishOS:Chum GUI application
 SailfishOS:Chum GUI is a graphical application for managing software packages from the SailfishOS:Chum community repository.
 
+### [How to install the SailfishOS:Chum GUI application](https://github.com/sailfishos-chum/main#how-to-install-the-sailfishoschum-gui-application)
+See [sailfishos-chum/main#how-to-install-the-sailfishoschum-gui-application](https://github.com/sailfishos-chum/main#how-to-install-the-sailfishoschum-gui-application).
+
 ### Translating (i18n / l10n) the SailfishOS:Chum GUI application
 Translating the text strings of the SailfishOS:Chum GUI application can be either performed [at Transifex](https://www.transifex.com/olf/sailfishos-chum-gui/dashboard/), by [Qt Linguist](https://doc.qt.io/qt-5/linguist-translators.html) or very tediously manually.
 
