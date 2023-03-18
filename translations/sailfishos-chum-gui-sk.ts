@@ -277,12 +277,12 @@ Táto aplikácia GUI SailfishOS:Chum pridá po opätovnom spustení všetky chý
         <oldsource>Adding Chum repository</oldsource>
         <translation>Pridávanie skladu SailfishOS:Chum</translation>
     </message>
-    <message id="chum-setup-repo">
+    <message id="chum-add-testing-repo">
         <location filename="../src/chum.cpp" line="80"/>
         <location filename="../src/chum.cpp" line="359"/>
-        <source>Adding SailfishOS:Chum testing repository</source>
+        <source>Adding SailfishOS:Chum:Testing repository</source>
         <oldsource>Setting up Chum repository</oldsource>
-        <translation>Pridávanie testovacieho skladu SailfishOS:Chum</translation>
+        <translation>Pridávanie repozitára SailfishOS:Chum:Testing repository</translation>
     </message>
     <message id="chum-install-package">
         <location filename="../src/chum.cpp" line="372"/>
@@ -412,9 +412,9 @@ Táto aplikácia GUI SailfishOS:Chum pridá po opätovnom spustení všetky chý
     </message>
     <message id="chum-settings-status-repo-testing-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="52"/>
-        <source>Subscribed to the SailfishOS:Chum testing repository with a manually set Sailfish OS version (%1).</source>
+        <source>Subscribed to the SailfishOS:Chum:Testing repository with a manually set Sailfish OS version (%1).</source>
         <oldsource>Subscribed to the SailfishOS:Chum testing repository with a manually set Sailfish&amp;nbsp;OS version (%1).</oldsource>
-        <translation>Prihlásený na odber testovacieho skladu SailfishOS:Chum s manuálne nastavenou verziou Sailfish OS (%1).</translation>
+        <translation>Prihlásené na odber repozitára SailfishOS:Chum:Testing s ručným nastavením verzie Sailfish OS (%1).</translation>
     </message>
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
@@ -424,9 +424,9 @@ Táto aplikácia GUI SailfishOS:Chum pridá po opätovnom spustení všetky chý
     </message>
     <message id="chum-settings-status-repo-testing-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="57"/>
-        <source>Subscribed to the SailfishOS:Chum testing repository with an automatically determined Sailfish OS version.</source>
+        <source>Subscribed to the SailfishOS:Chum:Testing repository with an automatically determined Sailfish OS version.</source>
         <oldsource>Subscribed to the SailfishOS:Chum testing repository with an automatically determined Sailfish&amp;nbsp;OS version.</oldsource>
-        <translation>Prihlásený na odber testovacieho skladu SailfishOS:Chum s automaticky určenou verziou Sailfish OS.</translation>
+        <translation>Prihlásené na odber repozitára SailfishOS:Chum:Testing s automaticky určenou verziou Sailfish OS.</translation>
     </message>
     <message id="chum-settings-status-repo-regular-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="59"/>
@@ -454,9 +454,9 @@ Táto aplikácia GUI SailfishOS:Chum pridá po opätovnom spustení všetky chý
     </message>
     <message id="chum-settings-testing-description">
         <location filename="../qml/pages/SettingsPage.qml" line="92"/>
-        <source>Use the SailfishOS:Chum testing repository. This is mainly useful for developers to test their packages before publishing.</source>
+        <source>Use the SailfishOS:Chum:Testing repository. This is mainly useful for developers to test their packages before publishing.</source>
         <oldsource>Use testing version of Chum repository. This is mainly useful for developers for testing their packages before publishing.</oldsource>
-        <translation>Použiť testovací sklad SailfishOS:Chum. Je to vhodné najmä pre vývojárov pre testovanie balíkov pred publikovaním.</translation>
+        <translation>Použiť repozitár SailfishOS:Chum:Testing. Toto je vhodné najmä pre vývojárov na testovanie ich balíkov pred vydaním.</translation>
     </message>
     <message id="chum-settings-testing">
         <location filename="../qml/pages/SettingsPage.qml" line="94"/>
