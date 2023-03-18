@@ -276,12 +276,12 @@ Esta aplicación SailfishOS:Chum GUI añadira cualquier repositorio SailfishOS:C
         <oldsource>Adding Chum repository</oldsource>
         <translation>Añadiendo el repositorio SailfishOS:Chum</translation>
     </message>
-    <message id="chum-setup-repo">
+    <message id="chum-add-testing-repo">
         <location filename="../src/chum.cpp" line="80"/>
         <location filename="../src/chum.cpp" line="359"/>
-        <source>Adding SailfishOS:Chum testing repository</source>
+        <source>Adding SailfishOS:Chum:Testing repository</source>
         <oldsource>Setting up Chum repository</oldsource>
-        <translation>Añadiendo el repositorio de pruebas de SailfishOS:Chum</translation>
+        <translation>Añadiendo el repositorio SailfishOS:Chum:Testing</translation>
     </message>
     <message id="chum-install-package">
         <location filename="../src/chum.cpp" line="372"/>
@@ -411,9 +411,9 @@ Esta aplicación SailfishOS:Chum GUI añadira cualquier repositorio SailfishOS:C
     </message>
     <message id="chum-settings-status-repo-testing-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="52"/>
-        <source>Subscribed to the SailfishOS:Chum testing repository with a manually set Sailfish OS version (%1).</source>
+        <source>Subscribed to the SailfishOS:Chum:Testing repository with a manually set Sailfish OS version (%1).</source>
         <oldsource>Subscribed to the SailfishOS:Chum testing repository with a manually set Sailfish&amp;nbsp;OS version (%1).</oldsource>
-        <translation>Suscrito al repositorio de pruebas de SailfishOS:Chum con una versión de Sailfish OS configurada manualmente (%1).</translation>
+        <translation>Suscrito al repositorio SailfishOS:Chum:Testing con una versión de Sailfish OS configurada manualmente (%1).</translation>
     </message>
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
@@ -423,9 +423,9 @@ Esta aplicación SailfishOS:Chum GUI añadira cualquier repositorio SailfishOS:C
     </message>
     <message id="chum-settings-status-repo-testing-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="57"/>
-        <source>Subscribed to the SailfishOS:Chum testing repository with an automatically determined Sailfish OS version.</source>
+        <source>Subscribed to the SailfishOS:Chum:Testing repository with an automatically determined Sailfish OS version.</source>
         <oldsource>Subscribed to the SailfishOS:Chum testing repository with an automatically determined Sailfish&amp;nbsp;OS version.</oldsource>
-        <translation>Suscrito al repositorio de pruebas de SailfishOS:Chum con una versión de Sailfish OS determinada automáticamente.</translation>
+        <translation>Suscrito al repositorio SailfishOS:Chum:Testing con una versión de Sailfish OS determinada automáticamente.</translation>
     </message>
     <message id="chum-settings-status-repo-regular-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="59"/>
@@ -453,9 +453,9 @@ Esta aplicación SailfishOS:Chum GUI añadira cualquier repositorio SailfishOS:C
     </message>
     <message id="chum-settings-testing-description">
         <location filename="../qml/pages/SettingsPage.qml" line="92"/>
-        <source>Use the SailfishOS:Chum testing repository. This is mainly useful for developers to test their packages before publishing.</source>
+        <source>Use the SailfishOS:Chum:Testing repository. This is mainly useful for developers to test their packages before publishing.</source>
         <oldsource>Use testing version of Chum repository. This is mainly useful for developers for testing their packages before publishing.</oldsource>
-        <translation>Usar el repositorio de pruebas de SailfishOS:Chum. Esto es principalmente útil para que los desarroladores prueben sus paquetes antes de publicarlos.</translation>
+        <translation>Usar el repositorio SailfishOS:Chum:Testing. Esto es principalmente útil para que los desarrolladores prueben sus paquetes antes de publicarlos.</translation>
     </message>
     <message id="chum-settings-testing">
         <location filename="../qml/pages/SettingsPage.qml" line="94"/>
