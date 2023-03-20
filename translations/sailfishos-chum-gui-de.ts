@@ -266,7 +266,7 @@ for i in $(ssu lr | fgrep chum | cut -f 3 -d ' '); do ssu rr $i; done
 This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</oldsource>
         <translation>Die SailfishOS:Chum-GUI-App konnte das SailfishOS:Chum-Repository nicht verwalten! Vielleicht hast du mehrere SailfishOS:Chum-Repositorys für SSU definiert oder ein SailfishOS:Chum-Repository deaktiviert.
 
-Bitte entferne alle SailfishOS:Chum-Repositories mit dem Ausführen dieser Kommandozeile als Root-User:
+Bitte entferne alle SailfishOS:Chum-Repositorys mit dem Ausführen dieser Kommandozeile als Root-User:
 for i in $(ssu lr | fgrep chum | cut -f 3 -d &apos; &apos;); do ssu rr $i; done
 Die SailfishOS:Chum-GUI-App wird jegliches fehlende SailfishOS:Chum-Repository beim Neustart hinzufügen.</translation>
     </message>
