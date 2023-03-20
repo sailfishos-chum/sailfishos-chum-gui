@@ -268,7 +268,7 @@ This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum reposi
 
 Távolítsd el az összes SailfishOS:Chum csomagtárolót az alábbi parancsot futtava root jogosultsággal:
 for i in $(ssu lr | fgrep chum | cut -f 3 -d &apos; &apos;); do ssu rr $i; done
-Az alkalmazás automatikusan fel fogja venni a kötevkező indításnál a Chum csomagtárolókat.</translation>
+Az alkalmazás automatikusan fel fogja venni a következő indításnál a Chum csomagtárolókat.</translation>
     </message>
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="342"/>
