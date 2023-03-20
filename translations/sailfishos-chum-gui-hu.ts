@@ -455,7 +455,7 @@ Az alkalmazás automatikusan fel fogja venni a következő indításnál a Chum 
         <location filename="../qml/pages/SettingsPage.qml" line="92"/>
         <source>Use the SailfishOS:Chum:Testing repository. This is mainly useful for developers to test their packages before publishing.</source>
         <oldsource>Use testing version of Chum repository. This is mainly useful for developers for testing their packages before publishing.</oldsource>
-        <translation>Tesztelői SailfishOS:Chum csomatároló használata. Ez főleg fejlesztőknek való a szoftverkiadások előtti tesztek elvégzéséhez.</translation>
+        <translation>Tesztelői SailfishOS:Chum csomagtároló használata. Ez főleg fejlesztőknek való a szoftverkiadások előtti tesztek elvégzéséhez.</translation>
     </message>
     <message id="chum-settings-testing">
         <location filename="../qml/pages/SettingsPage.qml" line="94"/>
