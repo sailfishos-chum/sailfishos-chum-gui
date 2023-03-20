@@ -594,7 +594,7 @@ Az alkalmazás automatikusan fel fogja venni a következő indításnál a Chum 
         <location filename="../qml/pages/AboutPage.qml" line="61"/>
         <source>Issue tracker for bug reports, feature suggestions and help requests</source>
         <oldsource>Issue tracker</oldsource>
-        <translation>HIbajegykezelő ahol fejlesztési javaslatokat is be lehet nyújtani</translation>
+        <translation>Hibajegykezelő ahol fejlesztési javaslatokat is be lehet nyújtani</translation>
     </message>
     <message id="chum-about-description">
         <location filename="../qml/pages/AboutPage.qml" line="103"/>
