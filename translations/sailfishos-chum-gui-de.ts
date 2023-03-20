@@ -615,7 +615,7 @@ Die SailfishOS:Chum-GUI-App wird jegliches fehlende SailfishOS:Chum-Repository b
     <message id="chum-page-header-packaged-by">
         <location filename="../qml/components/FancyPageHeader.qml" line="39"/>
         <source>Packaged by</source>
-        <translation>Erstellt von</translation>
+        <translation>Paketiert von</translation>
     </message>
     <message id="chum-loading-text">
         <location filename="../qml/components/LabelMarkdown.qml" line="22"/>
