@@ -443,7 +443,7 @@ Az alkalmazás automatikusan fel fogja venni a következő indításnál a Chum 
         <location filename="../qml/pages/SettingsPage.qml" line="75"/>
         <source>When listing available software packages, by default only applications are shown. But every listing can be toggled between showing solely applications or all packages by using the corresponding switch in the pulley menu.</source>
         <oldsource>When listing available software packages, by default only applications are shown. But for each listing you can switch between showing only applications or all packages by using the corresponding switch in the pulley menu.</oldsource>
-        <translation>Az elérhető szoftvercsomagok listájában alapértelmezetten csak az alkalmazások kerülnek megjelenítésre. De minden listát át lehet állítani a lehúzható menüben, hogy csak alkalmazások legyenek megjelenítve vagy minden egyéb csomag is.</translation>
+        <translation>Az elérhető szoftvercsomagok listájában alapértelmezetten csak az alkalmazások kerülnek megjelenítésre. Minden listát át lehet állítani a lehúzható menüben, hogy csak alkalmazások legyenek megjelenítve vagy minden egyéb csomag is.</translation>
     </message>
     <message id="chum-settings-show-apps">
         <location filename="../qml/pages/SettingsPage.qml" line="77"/>
