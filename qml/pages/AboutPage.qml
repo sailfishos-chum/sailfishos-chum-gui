@@ -27,7 +27,7 @@ Page {
             }
 
             Label {
-                //% "A graphical application for the SailfishOS:Chum community repository"
+                //% "A graphical client application for the SailfishOS:Chum community repository"
                 text: qsTrId("chum-about-store")
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -105,7 +105,7 @@ Page {
                 //% "for keeping the software supply chains of complex packages up-to-date.<br />"
                 //% "<br />"
                 //% "The SailfishOS:Chum repository is located at the Sailfish&nbsp;OS OBS:<br />"
-                //% "<a href='https://build.merproject.org/project/show/sailfishos:chum'>https://build.merproject.org/project/show/sailfishos:chum</a><br />"
+                //% "<a href='https://build.merproject.org/project/show/sailfishos:chum'>build.merproject.org/project/show/sailfishos:chum</a><br />"
                 //% "<br />"
                 //% "For the etymological origin and meanings of the word &quot;chum&quot;, see "
                 //% "<a href='https://en.wikipedia.org/wiki/Chumming'>en.wikipedia.org:Chumming</a> "
