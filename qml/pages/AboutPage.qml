@@ -26,12 +26,19 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
+            // When using the same, theoretically correct, horizontal margin as in
+            // SettingsPage.qml (twice Theme.horizontalPageMargin), centering the text
+            // horizontally makes Qt render a much larger margin (circa twice the size).
+            // Thus halving the margin: width: parent.width - Theme.horizontalPageMargin
+            // The long text of the last label emphasises this issue by using much space
+            // vertically when rendered with such big horizontal margin(s).
+            
             Label {
-                //% "A graphical application for the SailfishOS:Chum community repository"
+                //% "A graphical client application for the SailfishOS:Chum community repository"
                 text: qsTrId("chum-about-store")
                 anchors.horizontalCenter: parent.horizontalCenter
-                width: parent.width - 2*Theme.horizontalPageMargin
                 horizontalAlignment: Text.AlignHCenter
+                width: parent.width - Theme.horizontalPageMargin
                 wrapMode: Text.WordWrap
             }
 
@@ -39,29 +46,39 @@ Page {
                 //% "Version: %1"
                 text: qsTrId("chum-about-version").arg(Qt.application.version)
                 anchors.horizontalCenter: parent.horizontalCenter
-            }
-
-            Label {
-                //% "License: %1"
-                text: qsTrId("chum-about-license").arg("MIT")
-                anchors.horizontalCenter: parent.horizontalCenter
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width - Theme.horizontalPageMargin
+                wrapMode: Text.WordWrap
             }
 
             Label {
                 //% "Source code"
                 text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui">' + qsTrId("chum-about-home") + '</a>'
                 anchors.horizontalCenter: parent.horizontalCenter
-                linkColor: Theme.highlightColor
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width - Theme.horizontalPageMargin
                 wrapMode: Text.WordWrap
+                linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally(link)
+            }
+
+            Label {
+                //% "License: %1"
+                text: qsTrId("chum-about-license").arg("MIT")
+                anchors.horizontalCenter: parent.horizontalCenter
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width - Theme.horizontalPageMargin
+                wrapMode: Text.WordWrap
             }
 
             Label {
                 //% "Issue tracker for bug reports, feature suggestions and help requests"
                 text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui/issues">' + qsTrId("chum-about-issues") + '</a>'
                 anchors.horizontalCenter: parent.horizontalCenter
-                linkColor: Theme.highlightColor
+                width: parent.width - Theme.horizontalPageMargin
                 wrapMode: Text.WordWrap
+                horizontalAlignment: Text.AlignHCenter
+                linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally(link)
             }
 
@@ -95,18 +112,18 @@ Page {
                 //% "for keeping the software supply chains of complex packages up-to-date.<br />"
                 //% "<br />"
                 //% "The SailfishOS:Chum repository is located at the Sailfish&nbsp;OS OBS:<br />"
-                //% "<a href='https://build.merproject.org/project/show/sailfishos:chum'>https://build.merproject.org/project/show/sailfishos:chum</a><br />"
+                //% "<a href='https://build.merproject.org/project/show/sailfishos:chum'>build.merproject.org/project/show/sailfishos:chum</a><br />"
                 //% "<br />"
                 //% "For the etymological origin and meanings of the word &quot;chum&quot;, see "
                 //% "<a href='https://en.wikipedia.org/wiki/Chumming'>en.wikipedia.org:Chumming</a> "
                 //% "and <a href='https://en.wiktionary.org/wiki/chum'>en.wiktionary.org:chum</a>."
                 text: qsTrId("chum-about-description")
                 textFormat: Text.StyledText
-                anchors.horizontalCenter: parent.horizontalCenter
-                width: parent.width * 0.8
-                wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
+                anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter
+                width: parent.width - Theme.horizontalPageMargin
+                wrapMode: Text.WordWrap
                 linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally(link)
             }
