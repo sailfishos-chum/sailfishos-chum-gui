@@ -45,15 +45,6 @@ Page {
             }
 
             Label {
-                //% "License: %1"
-                text: qsTrId("chum-about-license").arg("MIT")
-                anchors.horizontalCenter: parent.horizontalCenter
-                horizontalAlignment: Text.AlignHCenter
-                width: parent.width - 2*Theme.horizontalPageMargin
-                wrapMode: Text.WordWrap
-            }
-
-            Label {
                 //% "Source code"
                 text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui">' + qsTrId("chum-about-home") + '</a>'
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -62,6 +53,15 @@ Page {
                 wrapMode: Text.WordWrap
                 linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally(link)
+            }
+
+            Label {
+                //% "License: %1"
+                text: qsTrId("chum-about-license").arg("MIT")
+                anchors.horizontalCenter: parent.horizontalCenter
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width - 2*Theme.horizontalPageMargin
+                wrapMode: Text.WordWrap
             }
 
             Label {
