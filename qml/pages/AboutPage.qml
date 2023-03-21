@@ -30,8 +30,8 @@ Page {
                 //% "A graphical application for the SailfishOS:Chum community repository"
                 text: qsTrId("chum-about-store")
                 anchors.horizontalCenter: parent.horizontalCenter
-                width: parent.width - 2*Theme.horizontalPageMargin
                 horizontalAlignment: Text.AlignHCenter
+                width: parent.width - 2*Theme.horizontalPageMargin
                 wrapMode: Text.WordWrap
             }
 
@@ -39,20 +39,28 @@ Page {
                 //% "Version: %1"
                 text: qsTrId("chum-about-version").arg(Qt.application.version)
                 anchors.horizontalCenter: parent.horizontalCenter
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width - 2*Theme.horizontalPageMargin
+                wrapMode: Text.WordWrap
             }
 
             Label {
                 //% "License: %1"
                 text: qsTrId("chum-about-license").arg("MIT")
                 anchors.horizontalCenter: parent.horizontalCenter
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width - 2*Theme.horizontalPageMargin
+                wrapMode: Text.WordWrap
             }
 
             Label {
                 //% "Source code"
                 text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui">' + qsTrId("chum-about-home") + '</a>'
                 anchors.horizontalCenter: parent.horizontalCenter
-                linkColor: Theme.highlightColor
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width - 2*Theme.horizontalPageMargin
                 wrapMode: Text.WordWrap
+                linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally(link)
             }
 
@@ -60,8 +68,10 @@ Page {
                 //% "Issue tracker for bug reports, feature suggestions and help requests"
                 text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui/issues">' + qsTrId("chum-about-issues") + '</a>'
                 anchors.horizontalCenter: parent.horizontalCenter
-                linkColor: Theme.highlightColor
+                width: parent.width - 2*Theme.horizontalPageMargin
                 wrapMode: Text.WordWrap
+                horizontalAlignment: Text.AlignHCenter
+                linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally(link)
             }
 
@@ -102,11 +112,11 @@ Page {
                 //% "and <a href='https://en.wiktionary.org/wiki/chum'>en.wiktionary.org:chum</a>."
                 text: qsTrId("chum-about-description")
                 textFormat: Text.StyledText
-                anchors.horizontalCenter: parent.horizontalCenter
-                width: parent.width * 0.8
-                wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
+                anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter
+                width: parent.width - 2*Theme.horizontalPageMargin
+                wrapMode: Text.WordWrap
                 linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally(link)
             }
