@@ -26,12 +26,19 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
+            // When using the same, theoretically correct, horizontal margin as in
+            // SettingsPage.qml (twice Theme.horizontalPageMargin), centering the text
+            // horizontally makes Qt render a much larger margin (circa twice the size).
+            // Thus halving the margin: width: parent.width - Theme.horizontalPageMargin
+            // The long text of the last label emphasises this issue by using much space
+            // vertically when rendered with such big horizontal margin(s).
+            
             Label {
                 //% "A graphical client application for the SailfishOS:Chum community repository"
                 text: qsTrId("chum-about-store")
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter
-                width: parent.width - 2*Theme.horizontalPageMargin
+                width: parent.width - Theme.horizontalPageMargin
                 wrapMode: Text.WordWrap
             }
 
@@ -40,7 +47,7 @@ Page {
                 text: qsTrId("chum-about-version").arg(Qt.application.version)
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter
-                width: parent.width - 2*Theme.horizontalPageMargin
+                width: parent.width - Theme.horizontalPageMargin
                 wrapMode: Text.WordWrap
             }
 
@@ -49,7 +56,7 @@ Page {
                 text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui">' + qsTrId("chum-about-home") + '</a>'
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter
-                width: parent.width - 2*Theme.horizontalPageMargin
+                width: parent.width - Theme.horizontalPageMargin
                 wrapMode: Text.WordWrap
                 linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally(link)
@@ -60,7 +67,7 @@ Page {
                 text: qsTrId("chum-about-license").arg("MIT")
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter
-                width: parent.width - 2*Theme.horizontalPageMargin
+                width: parent.width - Theme.horizontalPageMargin
                 wrapMode: Text.WordWrap
             }
 
@@ -68,7 +75,7 @@ Page {
                 //% "Issue tracker for bug reports, feature suggestions and help requests"
                 text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui/issues">' + qsTrId("chum-about-issues") + '</a>'
                 anchors.horizontalCenter: parent.horizontalCenter
-                width: parent.width - 2*Theme.horizontalPageMargin
+                width: parent.width - Theme.horizontalPageMargin
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignHCenter
                 linkColor: Theme.highlightColor
@@ -115,7 +122,7 @@ Page {
                 font.pixelSize: Theme.fontSizeSmall
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter
-                width: parent.width - 2*Theme.horizontalPageMargin
+                width: parent.width - Theme.horizontalPageMargin
                 wrapMode: Text.WordWrap
                 linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally(link)
