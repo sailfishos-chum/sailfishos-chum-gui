@@ -1,5 +1,14 @@
-* Mon Mar 13 2023 olf <Olf0@users.noreply.github.com> - 0.5.8
-- 
+* Sat Mar 25 2023 olf <Olf0@users.noreply.github.com> - 0.5.8
+- Allow for l10n ("translating") the SailfishOS:Chum GUI application at Atlassian's Transifex
+- Improve rendering etc. in `qml/pages/AboutPage.qml` (#176, also fixes sub-issue of #154)
+- Updated translations
+  - `de` quality assurance by @spodermenpls & @Olf0 (olf) (#161, #166, #170, #174)
+  - `es` by @jaimeMF & @carmenfdezb, quality assurance by @carmenfdezb & @Olf0 (olf) (#163, #169, #171, #177)
+  - `hu` by @martonmiklos (#175)
+  - `ru` by @dikonov (#172)
+  - `sk` by @okruhliak (holask@tx) (#164, #168, #178)
+  - `sv` by @eson57 (Eson) (#162)
+- Improve legibility of and links in README.md
 
 * Sun Mar 12 2023 olf <Olf0@users.noreply.github.com> - 0.5.7
 - Optimise icon (#158)
