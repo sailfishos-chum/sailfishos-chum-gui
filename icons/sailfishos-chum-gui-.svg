@@ -13,7 +13,7 @@
    width="86"
    version="1.1"
    id="svg14"
-   sodipodi:docname="sailfishos-chum-gui.svg"
+   sodipodi:docname="sailfishos-chum-gui-.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
    inkscape:label="SailfishOS:Chum logos 2023-Q1"
    inkscape:export-filename="/home/bsi/Downloads/sailfishos-chum/new-logos/sailfishos-chum_which-font-to-use-v2.png"
@@ -77,14 +77,58 @@
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient905"
-       id="linearGradient1881"
+       id="linearGradient886"
        gradientUnits="userSpaceOnUse"
        x1="0"
        y1="86"
        x2="71"
        y2="10"
        spreadMethod="pad"
-       gradientTransform="matrix(1.0186336,0,0,0.81818182,-0.80124226,15.840909)" />
+       gradientTransform="matrix(0.99418605,0,0,0.99418605,0.25,0.25)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient905"
+       id="linearGradient2393"
+       gradientUnits="userSpaceOnUse"
+       x1="0"
+       y1="86"
+       x2="71"
+       y2="10"
+       spreadMethod="pad"
+       gradientTransform="matrix(0.81818182,0,0,0.81818182,15.590909,15.590909)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient905"
+       id="linearGradient2395"
+       gradientUnits="userSpaceOnUse"
+       x1="0"
+       y1="86"
+       x2="71"
+       y2="10"
+       spreadMethod="pad"
+       gradientTransform="matrix(0.8181818,0,0,0.8181818,0.04545455,15.590911)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient905"
+       id="linearGradient2397"
+       gradientUnits="userSpaceOnUse"
+       x1="0"
+       y1="86"
+       x2="71"
+       y2="10"
+       spreadMethod="pad"
+       gradientTransform="matrix(1.0124224,0,0,0.81818182,-0.53416151,15.590909)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient905"
+       id="linearGradient2399"
+       gradientUnits="userSpaceOnUse"
+       x1="0"
+       y1="86"
+       x2="71"
+       y2="10"
+       spreadMethod="pad"
+       gradientTransform="matrix(1,0,0,1.0123457,0,-0.52777777)" />
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -99,7 +143,7 @@
      inkscape:window-height="992"
      id="namedview16"
      showgrid="true"
-     inkscape:zoom="9.0465116"
+     inkscape:zoom="9.0994152"
      inkscape:cx="43"
      inkscape:cy="43"
      inkscape:window-x="72"
@@ -115,46 +159,46 @@
      style="display:inline;fill:url(#linearGradient907);fill-opacity:1"
      inkscape:label="Background">
     <path
-       style="fill:url(#linearGradient1881);fill-opacity:1;stroke:none;stroke-width:1"
+       style="fill:url(#linearGradient2393);fill-opacity:1;stroke-width:0.81818181"
        id="arc3b"
        sodipodi:type="arc"
-       sodipodi:cx="83.75"
-       sodipodi:cy="83.75"
+       sodipodi:cx="83.5"
+       sodipodi:cy="83.5"
        sodipodi:rx="2.25"
        sodipodi:ry="2.25"
        sodipodi:start="0"
        sodipodi:end="1.5707963"
-       d="M 86,83.75 A 2.25,2.25 0 0 1 83.75,86 l 0,-2.25 z" />
+       d="m 85.75,83.5 a 2.25,2.25 0 0 1 -2.25,2.25 l 0,-2.25 z" />
     <path
-       style="fill:url(#linearGradient1881);fill-opacity:1;stroke:none;stroke-width:1"
+       style="fill:url(#linearGradient2395);fill-opacity:1;stroke-width:0.81818181"
        id="arc3a"
        sodipodi:type="arc"
-       sodipodi:cx="2.25"
-       sodipodi:cy="83.75"
+       sodipodi:cx="2.5"
+       sodipodi:cy="83.5"
        sodipodi:rx="2.25"
        sodipodi:ry="2.25"
        sodipodi:start="1.5707963"
        sodipodi:end="3.1415927"
-       d="M 2.2500001,86 A 2.25,2.25 0 0 1 0.65900973,85.34099 2.25,2.25 0 0 1 0,83.75 l 2.25,0 z" />
+       d="M 2.5000001,85.75 A 2.25,2.25 0 0 1 0.90900973,85.09099 2.25,2.25 0 0 1 0.25,83.5 l 2.25,0 z" />
     <rect
        id="rect82-3"
-       width="82"
+       width="81.5"
        height="2.25"
-       x="2"
-       y="83.75"
-       style="fill:url(#linearGradient1881);fill-opacity:1;stroke:none;stroke-width:1" />
+       x="2.25"
+       y="83.5"
+       style="fill:url(#linearGradient2397);fill-opacity:1;stroke:none;stroke-width:0.91013491" />
     <rect
        id="rect86-42"
-       width="86"
-       height="41.25"
-       x="0"
+       width="85.5"
+       height="41"
+       x="0.25"
        y="42.75"
-       style="fill:url(#linearGradient1881);fill-opacity:1;stroke:none;stroke-width:1" />
+       style="fill:url(#linearGradient2399);fill-opacity:1;stroke-width:1.00615394" />
     <path
-       d="M 0,43 A 43,43 0 0 1 43,0 43,43 0 0 1 86,43"
+       d="M 0.25,43 A 42.75,42.75 0 0 1 43,0.25 42.75,42.75 0 0 1 85.75,43"
        id="arc43"
        inkscape:connector-curvature="0"
-       style="fill:url(#linearGradient1881);fill-opacity:1;stroke:none;stroke-width:1" />
+       style="fill:url(#linearGradient886);fill-opacity:1;stroke-width:0.99418604" />
   </g>
   <g
      id="g1038"
