@@ -181,8 +181,11 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
     // Parse metadata
     QJsonObject json{QJsonDocument::fromJson(metainjson).object()};
 
-    m_name = json.value("PackageName").toString(m_name); // spec v0 legacy
-    if (m_name.isEmpty()) m_name = json.value("Title").toString(m_name);
+    if (json.value("PackageName").isUndefined()) {
+        m_name = json.value("Title").toString(m_name);
+    } else {
+        m_name = json.value("PackageName").toString(m_name); // spec v0 legacy
+    }
 
     QString typestr = json.value("Type").toString(is_app ?
                                                       QStringLiteral("desktop-application") :
