@@ -181,7 +181,8 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
     // Parse metadata
     QJsonObject json{QJsonDocument::fromJson(metainjson).object()};
 
-    m_name = json.value("PackageName").toString(m_name);
+    m_name = json.value("PackageName").toString(m_name); // spec v0 legacy
+    if (m_name.isEmpty()) m_name = json.value("Title").toString(m_name);
 
     QString typestr = json.value("Type").toString(is_app ?
                                                       QStringLiteral("desktop-application") :
@@ -192,7 +193,9 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
 
     m_developer_name = json.value("DeveloperName").toString();
     m_developer_name_from_spec = !m_developer_name.isEmpty();
-    m_packager_name = json.value("PackagerName").toString();
+    m_packager_name = json.value("PackagedBy").toString();
+    if (m_packager_name.isEmpty()
+        m_packager_name = json.value("PackagerName").toString(); // spec v0 legacy
     m_packager_name_from_spec = !m_packager_name.isEmpty();
     m_categories = json.value("Categories").toVariant().toStringList();
     // guess category only if it is empty
@@ -204,13 +207,22 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
     m_packaging_repo_url = json.value("Custom").toObject().value("PackagingRepo").toString();
     m_description_md_url = json.value("Custom").toObject().value("DescriptionMD").toString();
 
-    m_icon = json.value("Icon").toString();
+    m_icon = json.value("PackageIcon").toString();
+    if (m_icon.isEmpty()) m_icon = json.value("Icon").toString(); // spec v0 legacy
+
     m_screenshots = json.value("Screenshots").toVariant().toStringList();
 
-    m_url = json.value("Url").toObject().value("Homepage").toString(m_url);
-    m_url_forum = json.value("Url").toObject().value("Help").toString();
-    m_url_issues = json.value("Url").toObject().value("Bugtracker").toString();
-    m_donation = json.value("Url").toObject().value("Donation").toString();
+    if (json.value("Url").isEmpty() { // spec v0 legacy
+        m_url = json.value("Links").toObject().value("Homepage").toString(m_url);
+        m_url_forum = json.value("Links").toObject().value("Help").toString();
+        m_url_issues = json.value("Links").toObject().value("Bugtracker").toString();
+        m_donation = json.value("Links").toObject().value("Donation").toString();
+    } else {
+        m_url = json.value("Url").toObject().value("Homepage").toString(m_url);
+        m_url_forum = json.value("Url").toObject().value("Help").toString();
+        m_url_issues = json.value("Url").toObject().value("Bugtracker").toString();
+        m_donation = json.value("Url").toObject().value("Donation").toString();
+    }
 
     for (const QString &u: {m_repo_url, m_url, m_packaging_repo_url}) {
         if (ProjectGitHub::isProject(u))
