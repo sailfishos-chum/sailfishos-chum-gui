@@ -23,4 +23,8 @@ Storeman tries to automatically load a translation file according to your system
 export LANG=sv; sailfishos-chum-gui
 ```
 
+### Updating source strings from the source code to the source strings TS file
+
+Developers and release managers can use the `lupdate` process, either from [within Qt Linguist](https://doc.qt.io/qtcreator/creator-editor-external.html) or directly [at the command line](https://doc.qt.io/qt-5/linguist-manager.html), or tediously perform this manually, which hence is only suitable for small changes.
+
 <sub>When updating this README, please also update [its counterpart for Storeman](https://github.com/storeman-developers/harbour-storeman/blob/devel/translations/README.md)</sub>
