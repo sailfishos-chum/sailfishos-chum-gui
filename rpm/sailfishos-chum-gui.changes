@@ -1,4 +1,4 @@
-* Sat Mar 25 2023 olf <Olf0@users.noreply.github.com> - 0.5.8
+* Sat Mar 25 2023 olf <Olf0@users.noreply.github.com> - 0.6.0
 - Allow for l10n ("translating") the SailfishOS:Chum GUI application at Atlassian's Transifex
 - Improve rendering etc. in `qml/pages/AboutPage.qml` (#176, also fixes sub-issue of #154)
 - Updated translations
