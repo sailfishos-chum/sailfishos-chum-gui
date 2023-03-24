@@ -63,7 +63,7 @@ Custom:
   Repo: %{url}
 Icon: %{url}/raw/main/icons/sailfishos-chum-gui.svg
 Screenshots:
- - %{url}/raw/main/.screenshots/%{name}_refreshing.png
+ - %{url}/raw/main/.screenshots/%{name}_retrieving-refreshed.png
  - %{url}/raw/main/.screenshots/%{name}_main-page.png
  - %{url}/raw/main/.screenshots/%{name}_settings.png
  - %{url}/raw/main/.screenshots/%{name}_applications.png
