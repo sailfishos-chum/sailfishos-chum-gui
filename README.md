@@ -1,5 +1,5 @@
 # SailfishOS:Chum GUI application
-SailfishOS:Chum GUI is a graphical application for managing software packages from the SailfishOS:Chum community repository.
+SailfishOS:Chum GUI is a graphical client application for managing software packages from the SailfishOS:Chum community repository.
 
 ### [How to install the SailfishOS:Chum GUI application](https://github.com/sailfishos-chum/main#how-to-install-the-sailfishoschum-gui-application)
 See [sailfishos-chum/main#how-to-install-the-sailfishoschum-gui-application](https://github.com/sailfishos-chum/main#how-to-install-the-sailfishoschum-gui-application).
