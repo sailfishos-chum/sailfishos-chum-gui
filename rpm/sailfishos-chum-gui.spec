@@ -62,6 +62,13 @@ Categories:
 Custom:
   Repo: %{url}
 Icon: %{url}/raw/main/icons/sailfishos-chum-gui.svg
+Screenshots:
+ - %{url}/raw/main/.screenshots/%{name}_retrieving-refreshed.png
+ - %{url}/raw/main/.screenshots/%{name}_main-page.png
+ - %{url}/raw/main/.screenshots/%{name}_settings.png
+ - %{url}/raw/main/.screenshots/%{name}_applications.png
+ - %{url}/raw/main/.screenshots/%{name}_categories.png
+ - %{url}/raw/main/.screenshots/%{name}_installed-packages.png
 Url:
   Homepage: https://openrepos.net/content/olf/sailfishoschum-gui-installer
   Help: %{url}/issues
