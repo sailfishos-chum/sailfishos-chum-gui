@@ -11,3 +11,22 @@ See [sailfishos-chum/main#how-to-install-the-sailfishoschum-gui-application](htt
 
 ### Translating (i18n / l10n) the SailfishOS:Chum GUI application
 See the [translation README](https://github.com/sailfishos-chum/sailfishos-chum-gui/tree/main/translations#readme).
+
+<sup>**Translators**: [@atlochowski](https://github.com/atlochowski) (`pl`), [@black-sheep-dev](https://github.com/black-sheep-dev) (`de`), [@carmenfdezb](https://github.com/carmenfdezb) (`es`), [@dikonov](https://github.com/dikonov) (`ru`), [@eson57](https://github.com/eson57) (`sv`), [@jaimeMF](https://github.com/jaimeMF) (`es`), [@martonmiklos](https://github.com/martonmiklos) (`hu`), [@Olf0](https://github.com/Olf0) (`de` etc.), [@okruhliak](https://github.com/okruhliak) (`sk`), [@pherjung](https://github.com/pherjung) (`fr`), [@phklrz](https://github.com/phklrz) (`fr`), [@spodermenpls](https://github.com/spodermenpls) (`de`)</sup>
+
+## Screenshots of the SailfishOS:Chum GUI application
+|     |     |     |
+| --- | --- | --- |
+| ![RefreshingRepository](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_refreshing.png) | ![MainPage](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_main-page.png) | ![Settings](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_settings.png) |
+| ![Applications](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_applications.png) | ![Categories](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_categories.png) | ![InstalledPackages](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_installed-packages.png) |
+
+### Developers
+- [Rinigus](https://github.com/rinigus)
+- [olf (Olf0)](https://github.com/Olf0)
+- [Adam Pigg (piggz)](https://github.com/piggz)
+- [Petr Tsymbarovich (mentaljam / osetr)](https://github.com/mentaljam)
+
+### Credits
+- [SailfishOS:Chum OBS repository](https://build.merproject.org/project/show/sailfishos:chum) hosted at the [SailfishOS-OBS](https://build.merproject.org/), which is maintained by [Jolla Ltd.](https://jolla.com/)
+- [SailfishOS:Chum community repository (source code)](https://github.com/orgs/sailfishos-chum/repositories?type=all) hosted at [GitHub](https://github.com/about)
+- [SailfishOS:Chum (GUI) icon(s)](https://github.com/sailfishos-chum/sailfishos-chum-gui-installer/tree/main/.icons#readme) by [olf (Olf0)](https://github.com/Olf0)
