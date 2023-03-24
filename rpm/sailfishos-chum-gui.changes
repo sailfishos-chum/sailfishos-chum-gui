@@ -9,6 +9,9 @@
   - `sk` by @okruhliak (holask@tx) (#164, #168, #178)
   - `sv` by @eson57 (eson) (#162, #179)
 - Improve legibility of and links in README.md
+- Overhaul and add README sections
+- Upload new icon v3 and v3- (#180)
+- Create `translations/README.md` (d91b4f7, 9ef2431, 07099ad, e9bfcb8)
 
 * Sun Mar 12 2023 olf <Olf0@users.noreply.github.com> - 0.5.7
 - Optimise icon (#158)
