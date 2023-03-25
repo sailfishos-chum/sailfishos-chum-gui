@@ -1,6 +1,55 @@
 # SailfishOS:Chum GUI application
 SailfishOS:Chum GUI is a graphical client application for managing software packages from the SailfishOS:Chum community repository.
 
+### Feature set
+The SailfishOS:Chum GUI application deploys the same repository configuration as either of the [SailfishOS:Chum repository configuration RPMs](https://github.com/sailfishos-chum/sailfishos-chum-repo-config#readme) do, hence one can alternatively use command line tools as `pkcon` or `zypper` at any time.
+
+The main page of the SailfishOS:Chum GUI app provides:
+- In the pulley menu
+  - **About** page
+  - **Settings** page
+    - Preset to show either applications or all packages for each package list by default
+    - Switch between the regular SailfishOS:Chum and the SailfishOS:Chum:Testing repository
+    - The ability to overrride the automatic SailfishOS:Chum repository selection based on the installed Sailfish&nbsp;OS release
+  - **Refresh repository** trigger
+- **Updates** page
+  - Lists all installed packages, for which an update is available
+- **Categories** page
+  - List of all categories
+    - Each category lists all packages assigned to it
+- **Applications** / **Packages** page
+  - Package list of all applications or packages
+- **Installed packages** page
+  - Package list of all installed packages or applications
+- All packages lists
+  - Searchable
+  - Switchable between "applications only" and "all packages"
+  - Display for each package
+    - Package title
+    - Categories the package is assigned to
+    - The name if its develeoper
+    - A package icon, if provided
+    - The number of *stars* its source code repository has aquired (only for packages hosted at GitHub or GitLab.com)
+    - Its install status (checkmark when installed) or if an update for an installed package is available (by a down-arrow)
+- Every package page
+  - All aforementioned items which are displayed for each package in a package list
+  - If the package is a Sailfish application or a console application
+  - The number of *forks* of its source code repository (gear in curly brackets; only for packages hosted at GitHub or GitLab.com)
+  - A detailed description
+  - Installed and available version, if applicable
+  - Package name, download size and license (if indicated)
+  - A link to it homepage
+  - **Releases** sub-page (only for packages hosted at GitHub or GitLab.com)
+    - Release versions and dates
+      - Details of each release
+  - **Issues** sub-page (only for packages hosted at GitHub or GitLab.com)
+    - Issue title, number and creator
+    - Creation date and last updated date
+    - Number of comments to the original issue report
+      - Whole issue thread with all aforementioned items displayed in thne thread header
+      - Creator, creation date and last updated date for each message
+
+
 ### How to install the SailfishOS:Chum GUI application
 See [sailfishos-chum/main#how-to-install-the-sailfishoschum-gui-application](https://github.com/sailfishos-chum/main#how-to-install-the-sailfishoschum-gui-application).
 
