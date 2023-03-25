@@ -59,7 +59,7 @@ See [sailfishos-chum/main#how-to-install-the-sailfishoschum-gui-application](htt
 * Disclaimer: The SailfishOS:Chum GUI application and its installer may still have flaws, kill your kittens or break your SailfishOS installation!  Although this is very unlikely after years of testing by many users, new flaws may be introduced in any release (as for any software).  Mind that the license you implicitly accept by using the SailfishOS:Chum GUI application or the SailfishOS:Chum GUI Installer excludes any liability.
 
 ### Translating (i18n / l10n) the SailfishOS:Chum GUI application
-See the [translation README](https://github.com/sailfishos-chum/sailfishos-chum-gui/tree/main/translations#readme).
+If you want to translate the SailfishOS:Chum GUI application to a language it does not support yet or enhance an existing translation, please read the [translation README](https://github.com/sailfishos-chum/sailfishos-chum-gui/tree/main/translations#readme).
 
 <sup>**Translators**: [@atlochowski](https://github.com/atlochowski) (`pl`), [@black-sheep-dev](https://github.com/black-sheep-dev) (`de`), [@carmenfdezb](https://github.com/carmenfdezb) (`es`), [@dikonov](https://github.com/dikonov) (`ru`), [@eson57](https://github.com/eson57) (`sv`), [@jaimeMF](https://github.com/jaimeMF) (`es`), [@martonmiklos](https://github.com/martonmiklos) (`hu`), [@Olf0](https://github.com/Olf0) (`de` etc.), [@okruhliak](https://github.com/okruhliak) (`sk`), [@pherjung](https://github.com/pherjung) (`fr`), [@phklrz](https://github.com/phklrz) (`fr`), [@spodermenpls](https://github.com/spodermenpls) (`de`)</sup>
 
