@@ -15,13 +15,13 @@ The main page of the SailfishOS:Chum GUI app provides:
 - **Updates** page
   - Lists all installed packages, for which an update is available
 - **Categories** page
-  - List of all categories
+  - Lists all categories
     - Each category lists all packages assigned to it
 - **Applications** / **Packages** page
   - Package list of all applications or packages
 - **Installed packages** page
   - Package list of all installed packages or applications
-- All packages lists
+- All package lists
   - Searchable
   - Switchable between "applications only" and "all packages"
   - Display for each package
@@ -38,17 +38,19 @@ The main page of the SailfishOS:Chum GUI app provides:
   - A detailed description
   - Installed and available version, if applicable
   - Package name, download size and license (if indicated)
-  - A link to it homepage
+  - A link to its homepage
   - **Releases** sub-page (only for packages hosted at GitHub or GitLab.com)
     - Release versions and dates
-      - Details of each release
+    - On each release's sub-sub-page:
+      - Release version and date
+      - Release notes (if provided)
   - **Issues** sub-page (only for packages hosted at GitHub or GitLab.com)
     - Issue title, number and creator
     - Creation date and last updated date
     - Number of comments to the original issue report
-      - Whole issue thread with all aforementioned items displayed in thne thread header
+    - On each issue's sub-sub-page:
+      - Whole issue thread with all aforementioned items displayed in the thread header
       - Creator, creation date and last updated date for each message
-
 
 ### How to install the SailfishOS:Chum GUI application
 See [sailfishos-chum/main#how-to-install-the-sailfishoschum-gui-application](https://github.com/sailfishos-chum/main#how-to-install-the-sailfishoschum-gui-application).
