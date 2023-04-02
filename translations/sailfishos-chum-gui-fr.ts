@@ -184,7 +184,7 @@
     <message id="chum-releases-number">
         <location filename="../qml/pages/PackagePage.qml" line="103"/>
         <source>Releases (%1)</source>
-        <translation>Releases (%1)</translation>
+        <translation>Versions (%1)</translation>
     </message>
     <message id="chum-issues-number">
         <location filename="../qml/pages/PackagePage.qml" line="114"/>
@@ -194,7 +194,7 @@
     <message id="chum-releases">
         <location filename="../qml/pages/ReleasesListPage.qml" line="28"/>
         <source>Releases</source>
-        <translation>Releases</translation>
+        <translation>Versions</translation>
     </message>
     <message id="chum-load-repositories">
         <location filename="../src/chum.cpp" line="42"/>
