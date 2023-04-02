@@ -242,7 +242,7 @@
         <location filename="../src/chum.cpp" line="320"/>
         <source>Failed to refresh SailfishOS:Chum repository!</source>
         <oldsource>Failed to refresh Chum repository</oldsource>
-        <translation>Échec de la mise à jour du dépôt SailfishOS:Chum !</translation>
+        <translation>Échec de l&apos;actualisation du dépôt SailfishOS:Chum !</translation>
     </message>
     <message id="chum-repo-management-disabled-title">
         <location filename="../src/chum.cpp" line="67"/>
