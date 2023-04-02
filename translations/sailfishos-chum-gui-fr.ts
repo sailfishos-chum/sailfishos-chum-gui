@@ -66,7 +66,7 @@
         <location filename="../qml/pages/MainPage.qml" line="53"/>
         <source>Refresh repository</source>
         <oldsource>Refresh cache</oldsource>
-        <translation>Mettre à jour le cache</translation>
+        <translation>Actualiser le cache</translation>
     </message>
     <message id="chum-no-updates">
         <location filename="../qml/pages/MainPage.qml" line="71"/>
