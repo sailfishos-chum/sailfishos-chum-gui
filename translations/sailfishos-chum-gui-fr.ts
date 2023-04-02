@@ -455,7 +455,7 @@ L&apos;application graphique ajoutera les dépôts nécessaires au redémarrage.
         <location filename="../qml/pages/SettingsPage.qml" line="92"/>
         <source>Use the SailfishOS:Chum:Testing repository. This is mainly useful for developers to test their packages before publishing.</source>
         <oldsource>Use testing version of Chum repository. This is mainly useful for developers for testing their packages before publishing.</oldsource>
-        <translation>Utiliser la version de test du dépôt SailfishOS:Chum. Ceci est surtout utile pour les développeurs quand ils testent leurs paquets avant publication.</translation>
+        <translation>Utiliser la version de test du dépôt SailfishOS:Chum. Ceci est principalement utile pour les développeurs pour tester leurs paquets avant publication.</translation>
     </message>
     <message id="chum-settings-testing">
         <location filename="../qml/pages/SettingsPage.qml" line="94"/>
