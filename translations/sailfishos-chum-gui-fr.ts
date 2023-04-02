@@ -443,7 +443,7 @@ L&apos;application graphique ajoutera les dépôts nécessaires au redémarrage.
         <location filename="../qml/pages/SettingsPage.qml" line="75"/>
         <source>When listing available software packages, by default only applications are shown. But every listing can be toggled between showing solely applications or all packages by using the corresponding switch in the pulley menu.</source>
         <oldsource>When listing available software packages, by default only applications are shown. But for each listing you can switch between showing only applications or all packages by using the corresponding switch in the pulley menu.</oldsource>
-        <translation>Par défaut, seules les applications disponibles sont listées. En utilisant le commutateur ad-hoc dans le pulley menu, il est possible d&apos;afficher uniquement les applications ou tous les paquets.</translation>
+        <translation>Par défaut, seules les applications disponibles sont listées. En utilisant le commutateur ad-hoc dans le menu déroulant, il est possible d&apos;afficher uniquement les applications ou tous les paquets.</translation>
     </message>
     <message id="chum-settings-show-apps">
         <location filename="../qml/pages/SettingsPage.qml" line="77"/>
