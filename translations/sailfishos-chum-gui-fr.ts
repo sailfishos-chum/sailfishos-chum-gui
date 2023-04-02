@@ -311,7 +311,7 @@ L&apos;application graphique ajoutera les dépôts nécessaires au redémarrage.
         <location filename="../qml/pages/ReleasePage.qml" line="36"/>
         <source>Release</source>
         <oldsource>Release %1</oldsource>
-        <translation>Release</translation>
+        <translation>Version</translation>
     </message>
     <message id="chum-issues">
         <location filename="../qml/pages/IssuesListPage.qml" line="28"/>
