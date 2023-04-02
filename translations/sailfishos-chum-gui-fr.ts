@@ -212,7 +212,7 @@
         <location filename="../src/chum.cpp" line="181"/>
         <source>Retrieving the current detail information for installed packages</source>
         <oldsource>Get package details</oldsource>
-        <translation>Obtention de la description des paquets installés</translation>
+        <translation>Récupération de la description des paquets installés</translation>
     </message>
     <message id="chum-get-package-version">
         <location filename="../src/chum.cpp" line="211"/>
