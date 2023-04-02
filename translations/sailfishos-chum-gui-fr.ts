@@ -264,7 +264,7 @@ This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum reposi
 Please remove all SailfishOS:Chum repositories by executing this command line as root user:
 for i in $(ssu lr | fgrep chum | cut -f 3 -d ' '); do ssu rr $i; done
 This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</oldsource>
-        <translation>Impossible de gérer les dépôts SailfishOS:Chum par l&apos;application graphique. Vous en avez probablement plusieurs définis pour SSU, voire désactivé.
+        <translation>L&apos;application graphique SailfishOS:Chum a échoué à gérer les dépôts SailfishOS:Chum. Il est probable que plusieurs soient définis, voire désactivés.
 
 En tant que root, veuillez supprimer tous les dépôts SailfishOS:Chum en exécutant la commande suivante :
 for i in $(ssu lr | fgrep chum | cut -f 3 -d &apos; &apos;); do ssu rr $i; done
