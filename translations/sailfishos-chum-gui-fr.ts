@@ -173,7 +173,7 @@
     <message id="chum-pkg-type-console">
         <location filename="../qml/components/AppSummary.qml" line="56"/>
         <source>Console application</source>
-        <translation>Application de console</translation>
+        <translation>Application console</translation>
     </message>
     <message id="chum-pkg-categories">
         <location filename="../qml/components/AppSummary.qml" line="66"/>
