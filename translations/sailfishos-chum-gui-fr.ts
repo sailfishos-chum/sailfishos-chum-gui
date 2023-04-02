@@ -30,7 +30,7 @@
     <message id="chum-repo-refreshed">
         <location filename="../qml/sailfishos-chum-gui.qml" line="83"/>
         <source>Repository refreshed</source>
-        <translation>Dépôt mis à jour</translation>
+        <translation>Dépôt actualisé</translation>
     </message>
     <message id="chum-package-installed">
         <location filename="../qml/sailfishos-chum-gui.qml" line="18"/>
