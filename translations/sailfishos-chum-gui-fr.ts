@@ -431,7 +431,7 @@ L&apos;application graphique ajoutera les dépôts nécessaires au redémarrage.
         <location filename="../qml/pages/SettingsPage.qml" line="59"/>
         <source>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish OS version.</source>
         <oldsource>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish&amp;nbsp;OS version.</oldsource>
-        <translation>Abonné au dépôt  régulier SailfishOS:Chum avec une version Sailfish OS définie automatiquement.</translation>
+        <translation>Abonné au dépôt régulier SailfishOS:Chum avec une version Sailfish OS définie automatiquement.</translation>
     </message>
     <message id="chum-settings-general">
         <location filename="../qml/pages/SettingsPage.qml" line="67"/>
