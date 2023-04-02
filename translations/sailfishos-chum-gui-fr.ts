@@ -230,7 +230,7 @@
         <location filename="../src/chum.cpp" line="293"/>
         <source>Failed to refresh SailfishOS:Chum repository, because it is not available!</source>
         <oldsource>Cannot refresh repository as it is not available</oldsource>
-        <translation>Échec de la mise à jour du dépôt car il est indisponible</translation>
+        <translation>Échec de l&apos;actualisation du dépôt car il est indisponible !</translation>
     </message>
     <message id="chum-refresh-repository">
         <location filename="../src/chum.cpp" line="303"/>
