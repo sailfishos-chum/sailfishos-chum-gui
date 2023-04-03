@@ -197,7 +197,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
     m_developer_name = json.value("DeveloperName").toString();
     m_developer_name_from_spec = !m_developer_name.isEmpty();
     m_packager_name = json.value("PackagedBy").toString();
-    if (m_packager_name.isEmpty()
+    if (m_packager_name.isEmpty())
         m_packager_name = json.value("PackagerName").toString(); // spec v0 legacy
     m_packager_name_from_spec = !m_packager_name.isEmpty();
     m_categories = json.value("Categories").toVariant().toStringList();
@@ -215,7 +215,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
 
     m_screenshots = json.value("Screenshots").toVariant().toStringList();
 
-    if (json.value("Url").isEmpty() { // spec v0 legacy
+    if (json.value("Url").isUndefined()) { // spec v0 legacy
         m_url = json.value("Links").toObject().value("Homepage").toString(m_url);
         m_url_forum = json.value("Links").toObject().value("Help").toString();
         m_url_issues = json.value("Links").toObject().value("Bugtracker").toString();
