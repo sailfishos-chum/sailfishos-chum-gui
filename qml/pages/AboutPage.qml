@@ -21,7 +21,7 @@ Page {
 
             Image {
                 source: Qt.resolvedUrl("../../icons/sailfishos-chum-gui.svg")
-                width: Math.min(page.width, page.height) / 2
+                width: Math.min(page.width, page.height) / 3
                 height: width
                 anchors.horizontalCenter: parent.horizontalCenter
             }
