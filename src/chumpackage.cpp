@@ -257,9 +257,9 @@ void ChumPackage::setInstalledVersion(const QString &v)
 }
 
 void ChumPackage::setDeveloperLogin(const QString &login) {
-    // If developer name was set (presumingly from SPEC) then avoid setting login separately.
-    // As login is impssible to set from SPEC separately, this prevents getting conflicting
-    // records
+    // If developer name from the spec file was used, then do not set a separate login name.
+    // As it is impossible to provide a separate login name via RPM spec file, this prevents
+    // conflicting records,
     if (m_developer_name_from_spec) return;
     SET_IF_EMPTY(m_developer_login, PackageDeveloperRole, login);
 }
@@ -269,9 +269,9 @@ void ChumPackage::setDeveloperName(const QString &name) {
 }
 
 void ChumPackage::setPackagerLogin(const QString &login) {
-    // If packager name was set (presumingly from SPEC) then avoid setting login separately.
-    // As login is impssible to set from SPEC separately, this prevents getting conflicting
-    // records
+    // If packager name from the spec file was used, then do not set a separate packager name.
+    // As it is impossible to provide a separate packager name via RPM spec file, this prevents
+    // conflicting records.
     if (m_packager_name_from_spec) return;
     SET_IF_EMPTY(m_packager_login, PackagePackagerRole, login);
 }
