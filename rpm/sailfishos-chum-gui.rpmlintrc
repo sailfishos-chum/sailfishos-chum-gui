@@ -17,11 +17,7 @@ addFilter('incoherent-version-in-changelog')
 addFilter('filename-too-long-for-joliet')
 
 # On behalf of the SailfishOS:Chum specification:
-# - which re-uses the spec file tag "Url:"
-addFilter('tag-in-description Url:')
-# - which also re-uses the spec file tag "Icon:"
-addFilter('tag-in-description Icon:')
-# - which makes one easily do
+# - which often forces one to do
 addFilter('description-line-too-long')
 setBadness('description-line-too-long', 0)
 
