@@ -51,7 +51,7 @@ SailfishOS:Chum GUI is a graphical application for managing software packages fr
 # This description section includes the metadata for SailfishOS:Chum, see
 # https://github.com/sailfishos-chum/main/blob/main/Metadata.md
 %if 0%{?_chum}
-PackageName: SailfishOS:Chum GUI application
+Title: SailfishOS:Chum GUI application
 Type: desktop-application
 Categories:
  - System
@@ -61,7 +61,7 @@ Categories:
  - PackageManager
 Custom:
   Repo: %{url}
-Icon: %{url}/raw/main/icons/sailfishos-chum-gui.svg
+PackageIcon: %{url}/raw/main/icons/sailfishos-chum-gui.svg
 Screenshots:
  - %{url}/raw/main/.screenshots/%{name}_retrieving-refreshed.png
  - %{url}/raw/main/.screenshots/%{name}_main-page.png
@@ -69,7 +69,7 @@ Screenshots:
  - %{url}/raw/main/.screenshots/%{name}_applications.png
  - %{url}/raw/main/.screenshots/%{name}_categories.png
  - %{url}/raw/main/.screenshots/%{name}_installed-packages.png
-Url:
+Links:
   Homepage: https://openrepos.net/content/olf/sailfishoschum-gui-installer
   Help: %{url}/issues
   Bugtracker: %{url}/issues
