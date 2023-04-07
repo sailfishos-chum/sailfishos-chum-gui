@@ -110,7 +110,7 @@ Page {
 
             TextFieldDesc {
                 id: txtRelease
-                //% "Usually a specific SailfishOS:Chum repository is automatically selected according to the "
+                //% "Press Enter to apply. Usually a specific SailfishOS:Chum repository is automatically selected according to the "
                 //% "installed Sailfish OS release version. To manually select a SailfishOS:Chum repository for "
                 //% "a specific Sailfish OS release, specify this Sailfish OS release here (for example, 4.3.0.12). "
                 //% "This is useful when the SailfishOS:Chum repository is not available for the installed "
