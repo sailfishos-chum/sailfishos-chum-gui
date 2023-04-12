@@ -2,10 +2,10 @@ Name:           sailfishos-chum-gui
 Summary:        GUI application for utilising the SailfishOS:Chum community repository
 Version:        0.6.1
 Release:        1
-Vendor:         chum
 Group:          Applications/System
 License:        MIT
 URL:            https://github.com/sailfishos-chum/%{name}
+Vendor:         chum
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:        token-github.txt
 Source2:        token-gitlab.txt
