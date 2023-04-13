@@ -6,13 +6,13 @@
   * [1] https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/SF4VVE4NBEDQJDJZ4DJ6YW2DTGMWP23E/#6O6DFC6GDOLCU7QC3QJKJ3VCUGAOTD24
   * [2] https://en.opensuse.org/openSUSE:Creating_a_changes_file_(RPM)
 - Migrate Transifex's DNS name (344a9bc)
-- Adapt metadata for SailfishOS:Chum to v1 of the Chum metadata definition (for details, see PR #181, which was deployed via v0.6.0) (fec15d0)
+- Adapt metadata for SailfishOS:Chum to v1 of the Chum metadata definition (for details, see PR #181, which was deployed by v0.6.0) (fec15d0)
 - Remove entries obsoleted by commit fec15d0 from `.rpmlintrc` file (3b6ff4e)
 - Add help message for applying version override (#188, 028cf60), fixes issue #184
   * Adapt `sv` localisation accordingly (#189, #193)
   * Adapt `de` localisation accordingly (#192)
 - Adapt, fix and improve `fr` localisation (#187)
-- Always set the vendor to `chum`, so updating does not become blocked by vendor stickiness, regardless where a binary was compiled. (b403a5a)
+- Set vendor statically to `chum` for all builds to prevent blocked upgrade paths due to vendor stickiness (b403a5a)
 
 * Mon Apr 03 2023 olf <Olf0@users.noreply.github.com> - 0.6.0
 - Allow for l10n ("translation") of the SailfishOS:Chum GUI application at Atlassian's Transifex
