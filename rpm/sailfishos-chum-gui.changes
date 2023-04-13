@@ -1,3 +1,6 @@
+* Sun Apr 16 2023 olf <Olf0@users.noreply.github.com> - 0.6.2
+- Foo
+
 * Thu Apr 13 2023 olf <Olf0@users.noreply.github.com> - 0.6.1
 - Adapt the format of changelog entries to these two references (9d371c5):
   * [1] https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/SF4VVE4NBEDQJDJZ4DJ6YW2DTGMWP23E/#6O6DFC6GDOLCU7QC3QJKJ3VCUGAOTD24
@@ -9,7 +12,7 @@
   * Adapt `sv` localisation accordingly (#189, #193)
   * Adapt `de` localisation accordingly (#192)
 - Adapt, fix and improve `fr` localisation (#187)
-- Always set the vendor to chum, so updating does not become blocked by vendor stickiness, regardless where a binary was compiled. (b403a5a)
+- Always set the vendor to `chum`, so updating does not become blocked by vendor stickiness, regardless where a binary was compiled. (b403a5a)
 
 * Mon Apr 03 2023 olf <Olf0@users.noreply.github.com> - 0.6.0
 - Allow for l10n ("translation") of the SailfishOS:Chum GUI application at Atlassian's Transifex
