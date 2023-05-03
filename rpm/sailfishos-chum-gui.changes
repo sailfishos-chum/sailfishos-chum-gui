@@ -1,5 +1,5 @@
-* Sun Apr 16 2023 olf <Olf0@users.noreply.github.com> - 0.6.2
-- Foo
+* Sun May 06 2023 olf <Olf0@users.noreply.github.com> - 0.6.2
+- Pick a proper Group: tag (#197)
 
 * Thu Apr 13 2023 olf <Olf0@users.noreply.github.com> - 0.6.1
 - Adapt the format of changelog entries to these two references (9d371c5):
