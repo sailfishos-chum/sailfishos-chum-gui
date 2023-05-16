@@ -82,7 +82,12 @@ Page {
                 onLinkActivated: Qt.openUrlExternally(link)
             }
 
-            Label {           
+            // The formatting might look better, if paragraphs ('<p></p>') are used, instead
+            // of two consequtive breaks ('<br /><br />'); lacking motivation to try that now.
+            // Reference: https://doc.qt.io/qt-5/richtext-html-subset.html#supported-tags
+            // But Qt5's Rich Text Engine suprises sometimes, hence test first!
+            Label {
+                //% "&nbsp;<br />"
                 //% "The SailfishOS:Chum community repository provides a collection of "
                 //% "applications, tools and libraries compiled for various hardware "
                 //% "architectures and Sailfish&nbsp;OS release versions.<br />"

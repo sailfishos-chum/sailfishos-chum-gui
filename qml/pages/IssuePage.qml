@@ -105,6 +105,7 @@ Page {
                     text: model.author
                     wrapMode: Text.WordWrap
                     color: Theme.highlightColor
+                    linkColor: Theme.highlightColor
                 }
 
                 Label {

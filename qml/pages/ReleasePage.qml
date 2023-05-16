@@ -86,6 +86,7 @@ Page {
                     rightMargin: Theme.horizontalPageMargin
                 }
                 color: Theme.primaryColor
+                linkColor: Theme.highlightColor
                 text: releaseDescription
                 textFormat: Text.RichText
                 wrapMode: Text.WordWrap
