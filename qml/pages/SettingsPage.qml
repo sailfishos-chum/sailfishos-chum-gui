@@ -108,6 +108,7 @@ Page {
                 wrapMode: Text.WordWrap
             }
 
+            // '<big>' does not work, but should: https://doc.qt.io/qt-5/richtext-html-subset.html#supported-tags
             TextFieldDesc {
                 id: txtRelease
                 //% "<big>Press Enter to apply.</big><br />"
