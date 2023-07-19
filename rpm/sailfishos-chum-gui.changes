@@ -1,5 +1,10 @@
-* Sun May 06 2023 olf <Olf0@users.noreply.github.com> - 0.6.2
-- Pick a proper Group: tag (#197)
+* Thu Jul 20 2023 olf <Olf0@users.noreply.github.com> - 0.6.2
+- Update Spanish translation (#195)
+- Pick a proper `Group:` tag (#197)
+- Document changelog format (15f5c61)
+- Update Slovak translation (#199)
+- Fix issue #186 (0898381, 3108b73, 246d0ee)
+- Add some comments etc. (5c5a0d6, 332e6c8, 09c69b8, d916024)
 
 * Thu Apr 13 2023 olf <Olf0@users.noreply.github.com> - 0.6.1
 - Adapt the format of changelog entries to these two references (9d371c5):
