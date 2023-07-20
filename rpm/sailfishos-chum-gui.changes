@@ -1,3 +1,6 @@
+* Fri Jul 21 2023 olf <Olf0@users.noreply.github.com> - 0.6.3
+- Foo
+
 * Thu Jul 20 2023 olf <Olf0@users.noreply.github.com> - 0.6.2
 - Update Spanish translation (#195)
 - Pick a proper `Group:` tag (#197)
