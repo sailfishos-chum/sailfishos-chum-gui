@@ -97,7 +97,7 @@ Page {
                 //% "SailfishOS:Chum software is compiled and packaged into RPMs in a "
                 //% "reproducible manner directly from its source code. The source code used "
                 //% "for compiling and packaging is submitted by developers to OBS (Open "
-                //% "Build Service), which generates multiple RPM files for different "
+                //% "Build Service), which generates multiple RPM files for various "
                 //% "combinations of hardware architectures and Sailfish&nbsp;OS release "
                 //% "versions.<br />"
                 //% "<br />"
