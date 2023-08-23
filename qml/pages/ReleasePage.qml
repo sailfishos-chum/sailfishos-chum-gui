@@ -10,7 +10,7 @@ Page {
     property string releaseDate: release.ready ? release.value.datetime : ""
     property string releaseDescription: release.ready ? release.value.description : ""
     property string releaseName: release.ready ? release.value.name : ""
-    property string linkedDescription
+    property string styledDescription
 
     id: page
     allowedOrientations: Orientation.All
@@ -21,7 +21,7 @@ Page {
         const styled = "<a style='color:%1;' ".arg(Theme.secondaryHighlightColor)
         if (releaseDescription.length > 0) {
             // poor-man's replaceAll() method:
-            linkedDescription = releaseDescription.split(plain).join(styled)
+            styledDescription = releaseDescription.split(plain).join(styled)
         }
     }
 
@@ -98,7 +98,7 @@ Page {
                 }
                 color: Theme.primaryColor
                 linkColor: Theme.highlightColor
-                text: linkedDescription
+                text: styledDescription
                 textFormat: Text.RichText
                 wrapMode: Text.WordWrap
                 onLinkActivated: Qt.openUrlExternally(link)
