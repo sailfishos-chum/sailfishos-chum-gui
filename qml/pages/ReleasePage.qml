@@ -10,9 +10,20 @@ Page {
     property string releaseDate: release.ready ? release.value.datetime : ""
     property string releaseDescription: release.ready ? release.value.description : ""
     property string releaseName: release.ready ? release.value.name : ""
+    property string styledDescription
 
     id: page
     allowedOrientations: Orientation.All
+
+    onReleaseDescriptionChanged: {
+        // style links in Theme color, not blue.
+        const plain  = "<a "
+        const styled = "<a style='color:%1;' ".arg(Theme.secondaryHighlightColor)
+        if (releaseDescription.length > 0) {
+            // poor-man's replaceAll() method:
+            styledDescription = releaseDescription.split(plain).join(styled)
+        }
+    }
 
     BusyIndicator {
         id: busyInd
@@ -87,7 +98,7 @@ Page {
                 }
                 color: Theme.primaryColor
                 linkColor: Theme.highlightColor
-                text: releaseDescription
+                text: styledDescription
                 textFormat: Text.RichText
                 wrapMode: Text.WordWrap
                 onLinkActivated: Qt.openUrlExternally(link)

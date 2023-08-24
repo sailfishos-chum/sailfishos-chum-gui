@@ -157,7 +157,12 @@ Page {
         _model.clear();
         if (issue.value && issue.value["discussion"])
             issue.value["discussion"].forEach(function (e) {
-                _model.append(e);
+                var tmp = e;
+                const plain  = "<a "
+                const styled = "<a style='color:%1;' ".arg(Theme.secondaryHighlightColor)
+                // poor-man's replaceAll() method:
+                tmp.body = e.body.split(plain).join(styled)
+                _model.append(tmp);
             });
     }
 }
