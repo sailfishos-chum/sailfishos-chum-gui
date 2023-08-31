@@ -1,5 +1,5 @@
-* Fri Jul 21 2023 olf <Olf0@users.noreply.github.com> - 0.6.3
-- Foo
+* Fri Sep 01 2023 olf <Olf0@users.noreply.github.com> - 0.6.3
+- Color links in theme colors (#206), fixes issue #186.
 
 * Thu Jul 20 2023 olf <Olf0@users.noreply.github.com> - 0.6.2
 - Update Spanish translation (#195)
