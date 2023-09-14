@@ -7,13 +7,6 @@ on:
       # see https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
       - '**'
 
-env:
-  # See https://hub.docker.com/r/coderus/sailfishos-platform-sdk/tags
-  LATEST: 4.5.0.16
-  OLDEST: 4.0.1.45
-  # Do not wait up to the default of 10 minutes for network timeouts in a workflow which runs ca. 20 minutes.
-  SEGMENT_DOWNLOAD_TIMEOUT_MINS: 2
-  
 defaults:
   run:
     # Note thas 'bash' provides -o pipefail, in contrast to the default (i.e., unspecified, which also uses bash) or 'sh',
@@ -33,13 +26,13 @@ jobs:
   build-on-SFOS-SDK:
     strategy:
       matrix:
-        # release: [ ] # Unable to use variables for defining the matrix array
-        include:
-        - release: ${{ env.OLDEST }}
-        - release: ${{ env.LATEST }}
+        # See https://hub.docker.com/r/coderus/sailfishos-platform-sdk/tags
+        release: [4.0.1.45, 4.5.0.16]
         # Cannot use a two matrix dimensions, because the ARCH-specific builds
         # must be carried out in a single job to allow for Docker image reuse.
     env:
+      # Do not wait up to the default of 10 minutes for network timeouts in a workflow which runs ca. 20 minutes.
+      SEGMENT_DOWNLOAD_TIMEOUT_MINS: 2
       RELEASE: ${{ matrix.release }}
     runs-on: ubuntu-22.04
     steps:
