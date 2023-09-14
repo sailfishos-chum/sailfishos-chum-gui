@@ -21,9 +21,9 @@ concurrency:
 
 jobs:
   # One job for the latest Docker images used and one for the oldest ones.
-  # Trying to download three multi-GB, layered docker images in a single job may
-  # result in "docker: write /var/lib/docker/tmp/GetImageBlobXYZ: no space left on device."
-  SFOS-SDK:
+  # Trying to download three multi-GB, layered docker images in a single job usually
+  # results in "docker: write /var/lib/docker/tmp/GetImageBlobXYZ: no space left on device."
+  SDK:
     strategy:
       matrix:
         # See https://hub.docker.com/r/coderus/sailfishos-platform-sdk/tags for available images.
