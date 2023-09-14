@@ -30,10 +30,15 @@ jobs:
   # One job for the latest Docker images used and one for the oldest ones.
   # Trying to download three multi-GB, layered docker images in a single job may
   # result in "docker: write /var/lib/docker/tmp/GetImageBlobXYZ: no space left on device."
-  build-on-${{ env.RELEASE }}:
+  build-on-SFOS-SDK:
     strategy:
       matrix:
-        release: [ ${{ env.LATEST }}, ${{ env.OLDEST }} ]
+        # release: [ ] # Unable to use variables for defining the matrix array
+        include:
+        - release: ${{ env.OLDEST }}
+        - release: ${{ env.LATEST }}
+        # Cannot use a two matrix dimensions, because the ARCH-specific builds
+        # must be carried out in a single job to allow for Docker image reuse.
     env:
       RELEASE: ${{ matrix.release }}
     runs-on: ubuntu-22.04
