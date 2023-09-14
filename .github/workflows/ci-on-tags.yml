@@ -17,13 +17,13 @@ defaults:
 concurrency:
   group: ci-${{ github.ref_name }}
   # 'false' (default) allows for two concurrent runs, one executing and one freshly enqueued; 'true' for only one; no 'concurrency:' defined for multiple.
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   # One job for the latest Docker images used and one for the oldest ones.
   # Trying to download three multi-GB, layered docker images in a single job may
   # result in "docker: write /var/lib/docker/tmp/GetImageBlobXYZ: no space left on device."
-  build-on-SFOS-SDK:
+  SFOS-SDK:
     strategy:
       matrix:
         # See https://hub.docker.com/r/coderus/sailfishos-platform-sdk/tags for available images.
