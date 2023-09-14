@@ -20,7 +20,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # One job for the latest Docker images used and one for the oldest ones.
+  # One job for the latest Docker image used and one for the oldest one.
   # Trying to download three multi-GB, layered docker images in a single job usually
   # results in "docker: write /var/lib/docker/tmp/GetImageBlobXYZ: no space left on device."
   SDK:
