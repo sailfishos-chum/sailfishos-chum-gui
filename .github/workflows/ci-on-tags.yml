@@ -8,9 +8,12 @@ on:
       - '**'
 
 env:
-  LATEST: 4.5.0.16
   # See https://hub.docker.com/r/coderus/sailfishos-platform-sdk/tags
-
+  LATEST: 4.5.0.16
+  OLDEST: 4.0.1.45
+  # Do not wait up to the default of 10 minutes for network timeouts in a workflow which runs ca. 20 minutes.
+  SEGMENT_DOWNLOAD_TIMEOUT_MINS: 2
+  
 defaults:
   run:
     # Note thas 'bash' provides -o pipefail, in contrast to the default (i.e., unspecified, which also uses bash) or 'sh',
@@ -24,11 +27,16 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-22.04
+  # One job for the latest Docker images used and one for the oldest ones.
+  # Trying to download three multi-GB, layered docker images in a single job may
+  # result in "docker: write /var/lib/docker/tmp/GetImageBlobXYZ: no space left on device."
+  build-on-${{ env.RELEASE }}:
+    strategy:
+      matrix:
+        release: [ ${{ env.LATEST }}, ${{ env.OLDEST }} ]
     env:
-      # Do not wait up to the default of 10 minutes for network timeouts in a workflow which runs ca. 20 minutes.
-      SEGMENT_DOWNLOAD_TIMEOUT_MINS: 2
+      RELEASE: ${{ matrix.release }}
+    runs-on: ubuntu-22.04
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -48,7 +56,6 @@ jobs:
     - name: Build ${{ env.ARCH }} on ${{ env.RELEASE }}
       env:
         ARCH: aarch64
-        RELEASE: ${{ env.LATEST }}
       run: |
         set -x
         mkdir -p output/$RELEASE/$ARCH
@@ -66,7 +73,6 @@ jobs:
     - name: Build ${{ env.ARCH }} on ${{ env.RELEASE }}
       env:
         ARCH: armv7hl
-        RELEASE: ${{ env.LATEST }}
       run: |
         set -x
         mkdir -p output/$RELEASE/$ARCH
@@ -84,61 +90,6 @@ jobs:
     - name: Build ${{ env.ARCH }} on ${{ env.RELEASE }}
       env:
         ARCH: i486
-        RELEASE: ${{ env.LATEST }}
-      run: |
-        set -x
-        mkdir -p output/$RELEASE/$ARCH
-        docker run --rm -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/sh -xc '
-           mkdir -p rpmbuild/SOURCES
-           printf %s "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
-           printf %s "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
-           mkdir -p build/rpm
-           cp rpmbuild/SOURCES/token-git??b.txt build/rpm/
-           cd build
-           cp -r /share/. .
-           mb2 -t SailfishOS-$1-$2 build -d
-           sudo cp -r RPMS/. /share/output/$1/$2/' sh_mb2 $RELEASE $ARCH
-
-    - name: Build ${{ env.ARCH }} on ${{ env.RELEASE }}
-      env:
-        ARCH: aarch64
-        RELEASE: 4.0.1.45
-      run: |
-        set -x
-        mkdir -p output/$RELEASE/$ARCH
-        docker run --rm -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/sh -xc '
-           mkdir -p rpmbuild/SOURCES
-           printf %s "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
-           printf %s "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
-           mkdir -p build/rpm
-           cp rpmbuild/SOURCES/token-git??b.txt build/rpm/
-           cd build
-           cp -r /share/. .
-           mb2 -t SailfishOS-$1-$2 build -d
-           sudo cp -r RPMS/. /share/output/$1/$2/' sh_mb2 $RELEASE $ARCH
-
-    - name: Build ${{ env.ARCH }} on ${{ env.RELEASE }}
-      env:
-        ARCH: armv7hl
-        RELEASE: 4.0.1.45
-      run: |
-        set -x
-        mkdir -p output/$RELEASE/$ARCH
-        docker run --rm -v $PWD:/share coderus/sailfishos-platform-sdk:$RELEASE /bin/sh -xc '
-           mkdir -p rpmbuild/SOURCES
-           printf %s "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
-           printf %s "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
-           mkdir -p build/rpm
-           cp rpmbuild/SOURCES/token-git??b.txt build/rpm/
-           cd build
-           cp -r /share/. .
-           mb2 -t SailfishOS-$1-$2 build -d
-           sudo cp -r RPMS/. /share/output/$1/$2/' sh_mb2 $RELEASE $ARCH
-
-    - name: Build ${{ env.ARCH }} on ${{ env.RELEASE }}
-      env:
-        ARCH: i486
-        RELEASE: 4.0.1.45
       run: |
         set -x
         mkdir -p output/$RELEASE/$ARCH
@@ -156,7 +107,7 @@ jobs:
     - name: Upload build results
       uses: actions/upload-artifact@v3
       with:
-        name: RPM-build-results
+        name: RPM-build-results_SFOS${{ env.RELEASE }}
         path: output/
 
 # Due to building two releases for each architecture, they will clobber each other,
