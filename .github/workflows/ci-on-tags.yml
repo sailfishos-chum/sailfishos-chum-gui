@@ -33,7 +33,7 @@ jobs:
   build-on-${{ env.RELEASE }}:
     strategy:
       matrix:
-        release: [ ${{ env.LATEST }}, ${{ env.OLDEST }} ]
+        release: [${{ env.LATEST }}, ${{ env.OLDEST }}]
     env:
       RELEASE: ${{ matrix.release }}
     runs-on: ubuntu-22.04
