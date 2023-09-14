@@ -26,7 +26,8 @@ jobs:
   build-on-SFOS-SDK:
     strategy:
       matrix:
-        # See https://hub.docker.com/r/coderus/sailfishos-platform-sdk/tags for available images
+        # See https://hub.docker.com/r/coderus/sailfishos-platform-sdk/tags for available images.
+        # Use the newest available Docker SFOS-Platform-SDK image and the oldest image on which the build works.
         release: [4.5.0.16, 4.0.1.45]
         # Cannot use two matrix dimensions, because the ARCH-specific builds must be
         # carried out in a single job to allow for reuse of the downloaded Docker image.
