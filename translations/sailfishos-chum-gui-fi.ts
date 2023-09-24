@@ -316,7 +316,7 @@ SailfishOS:Chumin graafinen käyttöliittymäsovellus lisää kaikki puuttuvat S
     <message id="chum-issues">
         <location filename="../qml/pages/IssuesListPage.qml" line="28"/>
         <source>Issues</source>
-        <translation>Tehtävät</translation>
+        <translation>Tiketit</translation>
     </message>
     <message id="chum-issue-nr-by">
         <location filename="../qml/pages/IssuesListPage.qml" line="78"/>
