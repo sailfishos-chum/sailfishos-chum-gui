@@ -116,7 +116,7 @@
         <location filename="../qml/pages/PackagePage.qml" line="35"/>
         <source>Issue tracker</source>
         <oldsource>File Issue</oldsource>
-        <translation>Tehtävienhallinta</translation>
+        <translation>Tikettien seuranta</translation>
     </message>
     <message id="chum-package-discussion-forum">
         <location filename="../qml/pages/PackagePage.qml" line="41"/>
@@ -189,7 +189,7 @@
     <message id="chum-issues-number">
         <location filename="../qml/pages/PackagePage.qml" line="114"/>
         <source>Issues (%1)</source>
-        <translation>Tehtävät (%1)</translation>
+        <translation>Tiketit (%1)</translation>
     </message>
     <message id="chum-releases">
         <location filename="../qml/pages/ReleasesListPage.qml" line="28"/>
