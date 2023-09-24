@@ -326,12 +326,12 @@ SailfishOS:Chumin graafinen käyttöliittymäsovellus lisää kaikki puuttuvat S
     <message id="chum-issue-with-number">
         <location filename="../qml/pages/IssuePage.qml" line="35"/>
         <source>Issue: #%1</source>
-        <translation>Tehtävä: #%1</translation>
+        <translation>Tiketti: #%1</translation>
     </message>
     <message id="chum-issue">
         <location filename="../qml/pages/IssuePage.qml" line="37"/>
         <source>Issue</source>
-        <translation>Tehtävä</translation>
+        <translation>Tiketti</translation>
     </message>
     <message id="chum-issues-comments-number">
         <location filename="../qml/pages/IssuePage.qml" line="75"/>
