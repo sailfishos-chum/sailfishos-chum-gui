@@ -594,7 +594,7 @@ SailfishOS:Chumin graafinen käyttöliittymäsovellus lisää kaikki puuttuvat S
         <location filename="../qml/pages/AboutPage.qml" line="76"/>
         <source>Issue tracker for bug reports, feature suggestions and help requests</source>
         <oldsource>Issue tracker</oldsource>
-        <translation>Vikaraporttien, ominaisuusehdotusten ja avunpyyntöjen seuranta</translation>
+        <translation>Tikettien seuranta vikaraportteja, ominaisuusehdotuksia ja avunpyyntöjä varten</translation>
     </message>
     <message id="chum-about-description">
         <location filename="../qml/pages/AboutPage.qml" line="120"/>
