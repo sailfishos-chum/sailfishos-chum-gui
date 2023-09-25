@@ -419,7 +419,7 @@ Die SailfishOS:Chum-GUI-App wird jegliches fehlende SailfishOS:Chum-Repository b
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
         <source>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish OS version (%1).</source>
         <oldsource>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish&amp;nbsp;OS version (%1).</oldsource>
-        <translation>Abonniere das reguläre SailfishOS:Chum-Repository mit manuell eingestellter Sailfish OS-Version (%1).</translation>
+        <translation>Abonniere das reguläre SailfishOS:Chum-Repository mit manuell eingestellter Sailfish OS-Version (%1).</translation>
     </message>
     <message id="chum-settings-status-repo-testing-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="57"/>
