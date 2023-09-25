@@ -443,7 +443,7 @@ SailfishOS:Chumin graafinen käyttöliittymäsovellus lisää kaikki puuttuvat S
         <location filename="../qml/pages/SettingsPage.qml" line="75"/>
         <source>When listing available software packages, by default only applications are shown. But every listing can be toggled between showing solely applications or all packages by using the corresponding switch in the pulley menu.</source>
         <oldsource>When listing available software packages, by default only applications are shown. But for each listing you can switch between showing only applications or all packages by using the corresponding switch in the pulley menu.</oldsource>
-        <translation>Ohjelmistopakettien listauksessa näytetään oletuksena pelkästään sovellukset. Voit vaihtaa näkymän vetovalikosta jokaisen listauksen kohdalla  näyttämään joko pelkät sovellukset tai kaikki paketit.</translation>
+        <translation>Ohjelmistopakettien listauksessa näytetään oletuksena pelkästään sovellukset. Voit vaihtaa näkymän vetovalikosta jokaisen listauksen kohdalla näyttämään joko pelkät sovellukset tai kaikki paketit.</translation>
     </message>
     <message id="chum-settings-show-apps">
         <location filename="../qml/pages/SettingsPage.qml" line="77"/>
