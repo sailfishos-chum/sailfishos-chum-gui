@@ -224,7 +224,7 @@
         <location filename="../src/chum.cpp" line="258"/>
         <source>Checking for which installed packages an update is available</source>
         <oldsource>Check for updates</oldsource>
-        <translation>Tarkistetaan päivitettävissä olevat paketit</translation>
+        <translation>Tarkistetaan päivitettäviä paketteja</translation>
     </message>
     <message id="chum-refresh-repository-impossible">
         <location filename="../src/chum.cpp" line="293"/>
