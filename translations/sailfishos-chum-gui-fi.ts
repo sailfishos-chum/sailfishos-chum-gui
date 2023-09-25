@@ -116,7 +116,7 @@
         <location filename="../qml/pages/PackagePage.qml" line="35"/>
         <source>Issue tracker</source>
         <oldsource>File Issue</oldsource>
-        <translation>Tikettien seuranta</translation>
+        <translation>Tehtävienhallinta</translation>
     </message>
     <message id="chum-package-discussion-forum">
         <location filename="../qml/pages/PackagePage.qml" line="41"/>
