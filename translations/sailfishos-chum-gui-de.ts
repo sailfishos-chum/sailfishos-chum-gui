@@ -413,25 +413,25 @@ Die SailfishOS:Chum-GUI-App wird jegliches fehlende SailfishOS:Chum-Repository b
         <location filename="../qml/pages/SettingsPage.qml" line="52"/>
         <source>Subscribed to the SailfishOS:Chum:Testing repository with a manually set Sailfish OS version (%1).</source>
         <oldsource>Subscribed to the SailfishOS:Chum testing repository with a manually set Sailfish&amp;nbsp;OS version (%1).</oldsource>
-        <translation>Abonniere das SailfishOS:Chum:Testing-Repository mit manuell eingestellter Sailfish OS-Version (%1).</translation>
+        <translation>Abonniere das SailfishOS:Chum:Testing-Repository mit manuell eingestellter Sailfish&amp;nbsp;OS-Version (%1).</translation>
     </message>
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
         <source>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish OS version (%1).</source>
         <oldsource>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish&amp;nbsp;OS version (%1).</oldsource>
-        <translation>Abonniere das reguläre SailfishOS:Chum-Repository mit manuell eingestellter Sailfish OS-Version (%1).</translation>
+        <translation>Abonniere das reguläre SailfishOS:Chum-Repository mit manuell eingestellter Sailfish&amp;nbsp;OS-Version (%1).</translation>
     </message>
     <message id="chum-settings-status-repo-testing-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="57"/>
         <source>Subscribed to the SailfishOS:Chum:Testing repository with an automatically determined Sailfish OS version.</source>
         <oldsource>Subscribed to the SailfishOS:Chum testing repository with an automatically determined Sailfish&amp;nbsp;OS version.</oldsource>
-        <translation>Abonniere das SailfishOS:Chum:Testing-Repository mit automatisch bestimmter Sailfish OS-Version.</translation>
+        <translation>Abonniere das SailfishOS:Chum:Testing-Repository mit automatisch bestimmter Sailfish&amp;nbsp;OS-Version.</translation>
     </message>
     <message id="chum-settings-status-repo-regular-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="59"/>
         <source>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish OS version.</source>
         <oldsource>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish&amp;nbsp;OS version.</oldsource>
-        <translation>Abonniere das reguläre SailfishOS:Chum-Repository mit automatisch bestimmter Sailfish OS-Version.</translation>
+        <translation>Abonniere das reguläre SailfishOS:Chum-Repository mit automatisch bestimmter Sailfish&amp;nbsp;OS-Version.</translation>
     </message>
     <message id="chum-settings-general">
         <location filename="../qml/pages/SettingsPage.qml" line="67"/>
@@ -478,13 +478,13 @@ Die SailfishOS:Chum-GUI-App wird jegliches fehlende SailfishOS:Chum-Repository b
         <location filename="../qml/pages/SettingsPage.qml" line="118"/>
         <source>&lt;big&gt;Press Enter to apply.&lt;/big&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish OS release, specify this Sailfish OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish OS version, as for Cbeta users.</source>
         <oldsource>Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish OS release, specify this Sailfish OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish OS version, as for Cbeta users.</oldsource>
-        <translation>&lt;big&gt;Übernehmen mit der Eingabetaste.&lt;/big&gt;&lt;br /&gt;Normalerweise wird das ausgewählte SailfishOS:Chum-Repository automatisch auf deine Sailfish OS-Version eingestellt. Um manuell ein SailfishOS:Chum-Repository für eine spezielle Sailfish OS-Version auszuwählen, spezifiziere diese Version hier (z.B. 4.3.0.12). Dies ist hilfreich, wenn kein SailfishOS:Chum-Repository für die installierte Sailfish OS-Version zur Verfügung steht, wie für Cbeta-Benutzer.</translation>
+        <translation>&lt;big&gt;Übernehmen mit der Eingabetaste.&lt;/big&gt;&lt;br /&gt;Normalerweise wird das ausgewählte SailfishOS:Chum-Repository automatisch auf deine Sailfish&amp;nbsp;OS-Version eingestellt. Um manuell ein SailfishOS:Chum-Repository für eine spezifische Sailfish&amp;nbsp;OS-Version auszuwählen, spezifiziere diese Version hier (z.&amp;nbsp;B. 4.3.0.12). Dies ist hilfreich, wenn kein SailfishOS:Chum-Repository für die installierte Sailfish&amp;nbsp;OS-Version zur Verfügung steht, wie für Cbeta-Benutzer.</translation>
     </message>
     <message id="chum-setings-override-release-placeholder">
         <location filename="../qml/pages/SettingsPage.qml" line="120"/>
         <source>Specify a Sailfish OS version</source>
         <oldsource>Specify a Sailfish&amp;nbsp;OS version</oldsource>
-        <translation>Sailfish OS-Version festlegen</translation>
+        <translation>Sailfish&amp;nbsp;OS-Version festlegen</translation>
     </message>
     <message id="chum-categories">
         <location filename="../qml/pages/CategoriesPage.qml" line="20"/>
