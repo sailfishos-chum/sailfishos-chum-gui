@@ -484,7 +484,7 @@ Die SailfishOS:Chum-GUI-App wird jegliches fehlende SailfishOS:Chum-Repository b
         <location filename="../qml/pages/SettingsPage.qml" line="120"/>
         <source>Specify a Sailfish OS version</source>
         <oldsource>Specify a Sailfish&amp;nbsp;OS version</oldsource>
-        <translation>Sailfish&amp;amp;nbsp;OS-Version festlegen</translation>
+        <translation>Sailfish&amp;nbsp;OS-Version festlegen</translation>
     </message>
     <message id="chum-categories">
         <location filename="../qml/pages/CategoriesPage.qml" line="20"/>
