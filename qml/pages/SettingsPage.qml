@@ -48,14 +48,14 @@ Page {
 
                     if (Chum.manualVersion)
                         return Chum.repoTesting ?
-                                    //% "Subscribed to the SailfishOS:Chum:Testing repository with a manually set Sailfish OS version (%1)."
+                                    //% "Subscribed to the SailfishOS:Chum:Testing repository with a manually set Sailfish&nbsp;OS version (%1)."
                                     qsTrId("chum-settings-status-repo-testing-manual").arg(Chum.manualVersion) :
-                                    //% "Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish OS version (%1)."
+                                    //% "Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish&nbsp;OS version (%1)."
                                     qsTrId("chum-settings-status-repo-regular-manual").arg(Chum.manualVersion)
                     return Chum.repoTesting ?
-                                //% "Subscribed to the SailfishOS:Chum:Testing repository with an automatically determined Sailfish OS version."
+                                //% "Subscribed to the SailfishOS:Chum:Testing repository with an automatically determined Sailfish&nbsp;OS version."
                                 qsTrId("chum-settings-status-repo-testing-auto") :
-                                //% "Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish OS version."
+                                //% "Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish&nbsp;OS version."
                                 qsTrId("chum-settings-status-repo-regular-auto");
 
                 }
@@ -118,7 +118,7 @@ Page {
                 //% "This is useful when the SailfishOS:Chum repository is not available for the installed "
                 //% "Sailfish&nbsp;OS version, as for Cbeta users."
                 description: qsTrId("chum-setings-override-release-description")
-                //% "Specify a Sailfish OS version"
+                //% "Specify a Sailfish&nbsp;OS version"
                 placeholderText: qsTrId("chum-setings-override-release-placeholder")
                 text: Chum.manualVersion
                 onEnterClicked: {
