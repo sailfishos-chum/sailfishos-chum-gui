@@ -66,10 +66,16 @@ If you want to translate the SailfishOS:Chum GUI application to a language it do
 <sup>**Translators**: [@atlochowski](https://github.com/atlochowski) (`pl`), [@black-sheep-dev](https://github.com/black-sheep-dev) (`de`), [@carmenfdezb](https://github.com/carmenfdezb) (`es`), [@dikonov](https://github.com/dikonov) (`ru`), [@eson57](https://github.com/eson57) (`sv`), [@jaimeMF](https://github.com/jaimeMF) (`es`), [@martonmiklos](https://github.com/martonmiklos) (`hu`), [@Olf0](https://github.com/Olf0) (`de` etc.), [@okruhliak](https://github.com/okruhliak) (`sk`), [@pherjung](https://github.com/pherjung) (`fr`), [@phklrz](https://github.com/phklrz) (`fr`), [@spodermenpls](https://github.com/spodermenpls) (`de`)</sup>
 
 ### Screenshots of the SailfishOS:Chum GUI application
-|     |     |     |
-| --- | --- | --- |
+|       |       |       |
+| :---: | :---: | :---: |
+|       |       |       |
 | ![RetrievingRepoRefreshed](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_retrieving-refreshed.png) | ![MainPage](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_main-page.png) | ![Settings](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_settings.png) |
+| Refreshing repository | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;Settings page&nbsp;&nbsp;&nbsp;&nbsp; |
+|       |       |       |
+|       |       |       |
 | ![Applications](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_applications.png) | ![Categories](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_categories.png) | ![InstalledPackages](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_installed-packages.png) |
+| Search available apps | Browse by category | Search installed packages |
+|       |       |       |
 
 ### Developers
 - [Rinigus](https://github.com/rinigus)
