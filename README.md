@@ -70,7 +70,7 @@ If you want to translate the SailfishOS:Chum GUI application to a language it do
 | :---: | :---: | :---: |
 |       |       |       |
 | ![RetrievingRepoRefreshed](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_retrieving-refreshed.png) | ![MainPage](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_main-page.png) | ![Settings](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_settings.png) |
-| Refreshing repository | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;Settings page&nbsp;&nbsp;&nbsp;&nbsp; |
+| Refreshing&nbsp;repository | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main&nbsp;page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Settings&nbsp;page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |       |       |       |
 |       |       |       |
 | ![Applications](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_applications.png) | ![Categories](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_categories.png) | ![InstalledPackages](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_installed-packages.png) |
