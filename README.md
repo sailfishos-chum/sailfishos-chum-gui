@@ -1,25 +1,25 @@
 # SailfishOS:Chum GUI application
-SailfishOS:Chum GUI is a graphical client application for managing software packages from the SailfishOS:Chum community repository.
+**SailfishOS:Chum GUI is a graphical client application for managing software packages from the SailfishOS:Chum community repository.**
 
 ### Feature set
 The SailfishOS:Chum GUI application deploys the same repository configuration as either of the [SailfishOS:Chum repository configuration RPMs](https://github.com/sailfishos-chum/sailfishos-chum-repo-config#readme) do, hence one can alternatively use command line tools as `pkcon` or `zypper` at any time.
 
-The [main page](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_main-page.png) of the SailfishOS:Chum GUI app provides:
+The [main page](./.screenshots/sailfishos-chum-gui_main-page.png?raw=true) of the SailfishOS:Chum GUI app provides:
 - In the pulley menu
   - **About** page
-  - [**Settings** page](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_settings.png)
+  - [**Settings** page](./.screenshots/sailfishos-chum-gui_settings.png?raw=true)
     - Preset to show either applications or all packages for each package list by default
     - Switch between the regular SailfishOS:Chum and the SailfishOS:Chum:Testing repository
     - The ability to overrride the automatic SailfishOS:Chum repository selection based on the installed Sailfish&nbsp;OS release
-  - [**Refresh repository**](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_retrieving-refreshed.png) trigger
+  - [**Refresh repository**](./.screenshots/sailfishos-chum-gui_retrieving-refreshed.png?raw=true) trigger
 - **Updates** page
   - Lists all installed packages, for which an update is available
-- [**Categories** page](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_categories.png)
+- [**Categories** page](./.screenshots/sailfishos-chum-gui_categories.png?raw=true)
   - Lists all categories
     - Each category lists all packages assigned to it
-- [**Applications** / **Packages** page](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_applications.png)
+- [**Applications** / **Packages** page](./.screenshots/sailfishos-chum-gui_applications.png?raw=true)
   - Package list of all applications or packages
-- [**Installed packages** page](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_installed-packages.png)
+- [**Installed packages** page](./.screenshots/sailfishos-chum-gui_installed-packages.png?raw=true)
   - Package list of all installed packages or applications
 - All package lists
   - Searchable
@@ -69,11 +69,11 @@ If you want to translate the SailfishOS:Chum GUI application to a language it do
 |       |       |       |
 | :---: | :---: | :---: |
 |       |       |       |
-| ![RetrievingRepoRefreshed](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_retrieving-refreshed.png) | ![MainPage](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_main-page.png) | ![Settings](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_settings.png) |
+| ![RetrievingRepoRefreshed](./.screenshots/sailfishos-chum-gui_retrieving-refreshed.png?raw=true) | ![MainPage](./.screenshots/sailfishos-chum-gui_main-page.png?raw=true) | ![Settings](./.screenshots/sailfishos-chum-gui_settings.png?raw=true) |
 | Refreshing&nbsp;repository | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main&nbsp;page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Settings&nbsp;page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |       |       |       |
 |       |       |       |
-| ![Applications](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_applications.png) | ![Categories](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_categories.png) | ![InstalledPackages](https://github.com/sailfishos-chum/sailfishos-chum-gui/raw/main/.screenshots/sailfishos-chum-gui_installed-packages.png) |
+| ![Applications](./.screenshots/sailfishos-chum-gui_applications.png?raw=true) | ![Categories](./.screenshots/sailfishos-chum-gui_categories.png?raw=true) | ![InstalledPackages](./.screenshots/sailfishos-chum-gui_installed-packages.png?raw=true) |
 | Search available apps | Browse by category | Search installed packages |
 |       |       |       |
 
