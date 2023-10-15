@@ -254,10 +254,11 @@
     </message>
     <message id="chum-repo-management-disabled-txt">
         <location filename="../src/chum.cpp" line="336"/>
-        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository! You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
+        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!
+You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
 
 Please remove all SailfishOS:Chum repositories by executing this command line as root user:
-for i in $(ssu lr | fgrep chum | cut -f 3 -d ' '); do ssu rr $i; done
+%1
 This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
         <oldsource>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository. You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
 
@@ -267,7 +268,7 @@ This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum reposi
         <translation>L&apos;application graphique SailfishOS:Chum a échoué à gérer les dépôts SailfishOS:Chum. Il est probable que plusieurs soient définis, voire désactivés.
 
 En tant que root, veuillez supprimer tous les dépôts SailfishOS:Chum en exécutant la commande suivante :
-for i in $(ssu lr | fgrep chum | cut -f 3 -d &apos; &apos;); do ssu rr $i; done
+%1
 L&apos;application graphique ajoutera les dépôts nécessaires au redémarrage.</translation>
     </message>
     <message id="chum-add-repo">
@@ -411,27 +412,27 @@ L&apos;application graphique ajoutera les dépôts nécessaires au redémarrage.
     </message>
     <message id="chum-settings-status-repo-testing-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="52"/>
-        <source>Subscribed to the SailfishOS:Chum:Testing repository with a manually set Sailfish OS version (%1).</source>
+        <source>Subscribed to the SailfishOS:Chum:Testing repository with a manually set Sailfish&amp;nbsp;OS version (%1).</source>
         <oldsource>Subscribed to the SailfishOS:Chum testing repository with a manually set Sailfish&amp;nbsp;OS version (%1).</oldsource>
-        <translation>Abonné au dépôt SailfishOS:Chum:Testing avec une version Sailfish OS définie manuellement (%1).</translation>
+        <translation>Abonné au dépôt SailfishOS:Chum:Testing avec une version Sailfish&amp;nbsp;OS définie manuellement (%1).</translation>
     </message>
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
-        <source>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish OS version (%1).</source>
+        <source>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish&amp;nbsp;OS version (%1).</source>
         <oldsource>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish&amp;nbsp;OS version (%1).</oldsource>
-        <translation>Abonné au dépôt régulier SailfishOS:Chum avec une version Sailfish OS définie manuellement (%1).</translation>
+        <translation>Abonné au dépôt régulier SailfishOS:Chum avec une version Sailfish&amp;nbsp;OS définie manuellement (%1).</translation>
     </message>
     <message id="chum-settings-status-repo-testing-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="57"/>
-        <source>Subscribed to the SailfishOS:Chum:Testing repository with an automatically determined Sailfish OS version.</source>
+        <source>Subscribed to the SailfishOS:Chum:Testing repository with an automatically determined Sailfish&amp;nbsp;OS version.</source>
         <oldsource>Subscribed to the SailfishOS:Chum testing repository with an automatically determined Sailfish&amp;nbsp;OS version.</oldsource>
-        <translation>Abonné au dépôt SailfishOS:Chum:Testing avec une version Sailfish OS définie automatiquement.</translation>
+        <translation>Abonné au dépôt SailfishOS:Chum:Testing avec une version Sailfish&amp;nbsp;OS définie automatiquement.</translation>
     </message>
     <message id="chum-settings-status-repo-regular-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="59"/>
-        <source>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish OS version.</source>
+        <source>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish&amp;nbsp;OS version.</source>
         <oldsource>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish&amp;nbsp;OS version.</oldsource>
-        <translation>Abonné au dépôt régulier SailfishOS:Chum avec une version Sailfish OS définie automatiquement.</translation>
+        <translation>Abonné au dépôt régulier SailfishOS:Chum avec une version Sailfish&amp;nbsp;OS définie automatiquement.</translation>
     </message>
     <message id="chum-settings-general">
         <location filename="../qml/pages/SettingsPage.qml" line="67"/>
@@ -476,15 +477,15 @@ L&apos;application graphique ajoutera les dépôts nécessaires au redémarrage.
     </message>
     <message id="chum-setings-override-release-description">
         <location filename="../qml/pages/SettingsPage.qml" line="118"/>
-        <source>&lt;big&gt;Press Enter to apply.&lt;/big&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish OS release, specify this Sailfish OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish OS version, as for Cbeta users.</source>
-        <oldsource>Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish OS release, specify this Sailfish OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish OS version, as for Cbeta users.</oldsource>
-        <translation>&lt;big&gt;Pressez sur Entrée pour appliquer.&lt;/big&gt;&lt;br /&gt;Normalement un dépôt spécifique SailfishOS:Chum est sélectionné automatiquement selon la version installée de Sailfish OS. Pour sélectionner manuellement un dépôt SailfishOS:Chum pour une version spécifique de Sailfish OS, spécifiez ici la version (par exemple Sailfish 4.3.0.12). C&apos;est utile si aucun dépôt SailfishOS:Chum n&apos;est disponible pour la version de Sailfish OS installé, comme pour les utilisateurs Cbeta.</translation>
+        <source>&lt;big&gt;Press Enter to apply.&lt;/big&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</source>
+        <oldsource>Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</oldsource>
+        <translation>&lt;big&gt;Pressez sur Entrée pour appliquer.&lt;/big&gt;&lt;br /&gt;Normalement un dépôt spécifique SailfishOS:Chum est sélectionné automatiquement selon la version installée de Sailfish&amp;nbsp;OS. Pour sélectionner manuellement un dépôt SailfishOS:Chum pour une version spécifique de Sailfish&amp;nbsp;OS, spécifiez ici la version (par exemple Sailfish 4.3.0.12). C&apos;est utile si aucun dépôt SailfishOS:Chum n&apos;est disponible pour la version de Sailfish&amp;nbsp;OS installé, comme pour les utilisateurs Cbeta.</translation>
     </message>
     <message id="chum-setings-override-release-placeholder">
         <location filename="../qml/pages/SettingsPage.qml" line="120"/>
-        <source>Specify a Sailfish OS version</source>
+        <source>Specify a Sailfish&amp;nbsp;OS version</source>
         <oldsource>Specify a Sailfish&amp;nbsp;OS version</oldsource>
-        <translation>Spécifier la version de Sailfish OS</translation>
+        <translation>Spécifier la version de Sailfish&amp;nbsp;OS</translation>
     </message>
     <message id="chum-categories">
         <location filename="../qml/pages/CategoriesPage.qml" line="20"/>
@@ -599,7 +600,7 @@ L&apos;application graphique ajoutera les dépôts nécessaires au redémarrage.
     <message id="chum-about-description">
         <location filename="../qml/pages/AboutPage.qml" line="120"/>
         <source>The SailfishOS:Chum community repository provides a collection of applications, tools and libraries compiled for various hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;In contrast to the software distribution model of the Jolla Store or OpenRepos, to which binary packages are uploaded by developers, at SailfishOS:Chum software is compiled and packaged into RPMs in a reproducible manner directly from its source code. The source code used for compiling and packaging is submitted by developers to OBS (Open Build Service), which generates multiple RPM files for different combinations of hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;This scheme ensures that the complete source code of all packages at SailfishOS:Chum is available and inspectable there, and that all packages are generated solely from this source code. Hence all software packages at SailfishOS:Chum are created in a transparent and fully traceable manner.&lt;br /&gt;&lt;br /&gt;By collecting software for Sailfish&amp;nbsp;OS in a single automated build system, collaboration between developers through common packaging of shared libraries etc. is fostered, duplication of work for keeping these common packages up-to-date is eliminated, and it becomes much easier to determine which pieces of software exist and which are missing at the Sailfish&amp;nbsp;OS OBS. Additionally this eases tracing multiple and potentially layered dependencies (&amp;quot;dependency chains&amp;quot;) which is crucial for keeping the software supply chains of complex packages up-to-date.&lt;br /&gt;&lt;br /&gt;The SailfishOS:Chum repository is located at the Sailfish&amp;nbsp;OS OBS:&lt;br /&gt;&lt;a href=&apos;https://build.merproject.org/project/show/sailfishos:chum&apos;&gt;build.merproject.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;For the etymological origin and meanings of the word &amp;quot;chum&amp;quot;, see &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; and &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.</source>
-        <oldsource>Sailfish OS Community repositories provide a collection of applications, tools, and libraries compiled for different combinations of architectures and Sailfish versions.&lt;br&gt;&lt;br&gt;The ambition is to become the main repository for software distribution on Sailfish OS. When compared to software distribution via Jolla Store or OpenRepos, the software is compiled into RPMs in a reproducible way directly from the source. The source used for the compilation is available at OBS together with the compiled packages. This is in contrast with the Jolla Store and OpenRepos where all packages are uploaded in binary form without any control over how the binary was compiled.&lt;br&gt;&lt;br&gt;By collecting the software in a single automated build system, we can benefit from collaboration between developers through shared packaging of required libraries, reduce duplication of work by keeping the packages up to date, and get a clear overview of missing software.</oldsource>
+        <oldsource>Sailfish&amp;nbsp;OS Community repositories provide a collection of applications, tools, and libraries compiled for different combinations of architectures and Sailfish versions.&lt;br&gt;&lt;br&gt;The ambition is to become the main repository for software distribution on Sailfish&amp;nbsp;OS. When compared to software distribution via Jolla Store or OpenRepos, the software is compiled into RPMs in a reproducible way directly from the source. The source used for the compilation is available at OBS together with the compiled packages. This is in contrast with the Jolla Store and OpenRepos where all packages are uploaded in binary form without any control over how the binary was compiled.&lt;br&gt;&lt;br&gt;By collecting the software in a single automated build system, we can benefit from collaboration between developers through shared packaging of required libraries, reduce duplication of work by keeping the packages up to date, and get a clear overview of missing software.</oldsource>
         <translation>Les dépôts de la communauté Sailfish OS fournissent un ensemble d&apos;applications, d&apos;outils et de bibliothèques compilés pour différentes combinaisons d&apos;architectures et de versions de Sailfish OS.&lt;br /&gt;&lt;br /&gt;Contrairement à la Boutique ou OpenRepos, où les binaires sont téléversés par les développeurs, SailfishOS:Chum automatise la compilation et l&apos;empaquetage de manière reproductible directement depuis leurs sources. Les sources pour compiler et empaqueter sont soumis par les développeurs à l&apos;OBS (Open Build Service), générant ainsi divers fichiers RPM pour les différentes combinaisons d&apos;architectures et version de Sailfish OS.&lt;br /&gt;&lt;br /&gt;Ce schéma permet l&apos;accès et l&apos;inspection depuis les sources des paquets disponibles dans SailfishOS:Chum, cela garantit également l&apos;intégrité des paquets. Par conséquent, tous les paquets dans SailfishOS:Chum sont créés de manière transparente et sont entièrement traçables.&lt;br /&gt;&lt;br /&gt;En collectant les logiciels pour Sailfish OS dans une plateforme pour construire des paquets automatiquement, la collaboration entre développeurs via l&apos;empaquetage de librairies communes est encouragé. Cela élimine le travail en double pour les maintenir à jour et facilite la tâche pour déterminer quelle pile de logiciels existe déjà ou est manquante. En outre, cela facilite la recherche de dépendances multiples et potentiellement superposées (chaînes de dépendances). Ce qui est crucial pour maintenir à jour une pile de paquets complexes.&lt;br /&gt;&lt;br /&gt;Le dépôt SailfishOS:Chum est situé à l&apos;adresse suivante :&lt;br /&gt;&lt;a href=&quot;https://build.merproject.org/project/show/sailfishos:chum&quot;&gt;build.merproject.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Pour de plus amples informations sur l&apos;origine, l&apos;étymologie et la signification du mot Chum, voir &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; et &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.</translation>
     </message>
     <message id="chum-desc-library">
