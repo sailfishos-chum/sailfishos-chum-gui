@@ -327,13 +327,13 @@ void Chum::repositoriesListUpdated() {
         emit errorFatal(
                     //% "Repositories misconfigured."
                     qtTrId("chum-repo-management-disabled-title"),
-                    //% "The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository! "
+                    //% "The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!\n"
                     //% "You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a "
                     //% "SailfishOS:Chum repository.\n\n"
                     //% "Please remove all SailfishOS:Chum repositories by executing this command line as root user:\n"
-                    //% "for i in $(ssu lr | fgrep chum | cut -f 3 -d ' '); do ssu rr $i; done\n"
+                    //% "%1\n"
                     //% "This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again."
-                    qtTrId("chum-repo-management-disabled-txt"));
+                    qtTrId("chum-repo-management-disabled-txt").arg("for i in $(ssu lr | fgrep chum | cut -f 3 -d ' '); do ssu rr $i; done"));
         return;
     } else if (!m_ssu.repoAvailable()) {
         m_busy = true;
