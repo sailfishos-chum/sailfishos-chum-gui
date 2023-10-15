@@ -254,20 +254,22 @@
     </message>
     <message id="chum-repo-management-disabled-txt">
         <location filename="../src/chum.cpp" line="336"/>
-        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository! You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
+        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!
+You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
 
 Please remove all SailfishOS:Chum repositories by executing this command line as root user:
-for i in $(ssu lr | fgrep chum | cut -f 3 -d ' '); do ssu rr $i; done
+%1
 This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
         <oldsource>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository. You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
 
 Please remove all SailfishOS:Chum repositories by executing this command line as root user:
 for i in $(ssu lr | fgrep chum | cut -f 3 -d ' '); do ssu rr $i; done
 This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</oldsource>
-        <translation>SailfishOS:Chum GUI -sovellus epäonnistui SailfishOS:Chum-pakettilähteen hallinnassa! Tämä johtuu luultavasti joko siitä, että olet määritellyt useita SailfishOS:Chum-pakettilähteitä SSU:lle tai olet poistanut SailfishOS:Chum-pakettilähteen käytöstä.
+        <translation>SailfishOS:Chum GUI -sovellus epäonnistui SailfishOS:Chum-pakettilähteen hallinnassa!
+Tämä johtuu luultavasti joko siitä, että olet määritellyt useita SailfishOS:Chum-pakettilähteitä SSU:lle tai olet poistanut SailfishOS:Chum-pakettilähteen käytöstä.
 
 Ole hyvä ja poista kaikki SailfishOS:Chum-pakettilähteet suorittamalla tämä komento pääkäyttäjänä:
-for i in $(ssu lr | fgrep chum | cut -f 3 -d &apos; &apos;); do ssu rr $i; done
+%1
 SailfishOS:Chum GUI -sovellus lisää kaikki puuttuvat SailfishOS:Chum-pakettilähteet sovelluksen uudelleenkäynnistyksen yhteydessä.</translation>
     </message>
     <message id="chum-add-repo">
