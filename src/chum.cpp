@@ -327,11 +327,11 @@ void Chum::repositoriesListUpdated() {
         emit errorFatal(
                     //% "Repositories misconfigured."
                     qtTrId("chum-repo-management-disabled-title"),
-                    //% "The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!\n"
+                    //% "The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!<br />"
                     //% "You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a "
-                    //% "SailfishOS:Chum repository.\n\n"
-                    //% "Please remove all SailfishOS:Chum repositories by executing this command line as root user:\n"
-                    //% "%1\n"
+                    //% "SailfishOS:Chum repository.<br /><br />"
+                    //% "Please remove all SailfishOS:Chum repositories by executing this command line as root user:<br />"
+                    //% "%1<br />"
                     //% "This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again."
                     qtTrId("chum-repo-management-disabled-txt").arg("for i in $(ssu lr | fgrep chum | cut -f 3 -d ' '); do ssu rr $i; done"));
         return;
