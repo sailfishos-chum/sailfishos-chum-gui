@@ -109,7 +109,7 @@ Page {
             }
 
             // '<big>' does not work, but should: https://doc.qt.io/qt-5/richtext-html-subset.html#supported-tags
-            // hence using '<b>' (bold), because '<strong>' also does not seem to work, though specified as equivalent.
+            // hence using '<b>' (bold).
             TextFieldDesc {
                 id: txtRelease
                 //% "<b>Press Enter to apply.</b><br />"
