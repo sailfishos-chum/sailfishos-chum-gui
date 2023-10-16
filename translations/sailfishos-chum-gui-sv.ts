@@ -260,7 +260,7 @@
 Please remove all SailfishOS:Chum repositories by executing this command line as root user:
 for i in $(ssu lr | fgrep chum | cut -f 3 -d ' '); do ssu rr $i; done
 This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</oldsource>
-        <translation>SailfishOS:Chum GUI kunde inte hantera SailfishOS:Chum-förrådet.&lt;br /&gt;Du har förmodligen flera SailfishOS:Chum-förråd definierade för SSU, eller ett SailfishOS:Chum-förråd inaktiverat.&lt;br /&gt;&lt;br /&gt;Ta bort alla SailfishOS:Chum-förråd genom att köra detta kommando som root:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;SailfishOS:Chum GUI lägger automatiskt till det SailfishOS:Chum-förråd som saknas, när du startar appen igen.</translation>
+        <translation>SailfishOS:Chum GUI kunde inte hantera SailfishOS:Chum-förrådet!&lt;br /&gt;Du har förmodligen flera SailfishOS:Chum-förråd definierade för SSU, eller ett SailfishOS:Chum-förråd inaktiverat.&lt;br /&gt;&lt;br /&gt;Ta bort alla SailfishOS:Chum-förråd genom att köra detta kommando som root:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;SailfishOS:Chum GUI lägger automatiskt till det SailfishOS:Chum-förråd som saknas, när du startar appen igen.</translation>
     </message>
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="342"/>
