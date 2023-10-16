@@ -331,7 +331,7 @@ void Chum::repositoriesListUpdated() {
                     //% "You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a "
                     //% "SailfishOS:Chum repository.<br /><br />"
                     //% "Please remove all SailfishOS:Chum repositories by executing this command line as root user:<br />"
-                    //% "%1<br />"
+                    //% "<code>%1</code><br />"
                     //% "This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again."
                     qtTrId("chum-repo-management-disabled-txt").arg("for i in $(ssu lr | fgrep chum | cut -f 3 -d ' '); do ssu rr $i; done"));
         return;
