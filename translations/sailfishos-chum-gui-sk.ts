@@ -254,22 +254,13 @@
     </message>
     <message id="chum-repo-management-disabled-txt">
         <location filename="../src/chum.cpp" line="336"/>
-        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!
-You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
-
-Please remove all SailfishOS:Chum repositories by executing this command line as root user:
-%1
-This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
+        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!&lt;br /&gt;You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.&lt;br /&gt;&lt;br /&gt;Please remove all SailfishOS:Chum repositories by executing this command line as root user:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
         <oldsource>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository. You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
 
 Please remove all SailfishOS:Chum repositories by executing this command line as root user:
 for i in $(ssu lr | fgrep chum | cut -f 3 -d ' '); do ssu rr $i; done
 This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</oldsource>
-        <translation>Aplikácii GUI SailfishOS:Chum sa nepodarilo spravovať sklad SailfishOS:Chum! Pravdepodobne máte definovaných viacero skladov SailfishOS:Chum pre SSU alebo ste deaktivovali sklad SailfishOS:Chum.
-
-Odstráňte všetky sklady SailfishOS:Chum spustením tohto príkazu ako používateľ root:
-%1
-Táto aplikácia GUI SailfishOS:Chum pridá po opätovnom spustení všetky chýbajúce sklady SailfishOS:Chum.</translation>
+        <translation>Aplikácii GUI SailfishOS:Chum sa nepodarilo spravovať sklad SailfishOS:Chum!&lt;br /&gt;Pravdepodobne máte definovaných viacero skladov SailfishOS:Chum pre SSU alebo ste deaktivovali sklad SailfishOS:Chum.&lt;br /&gt;&lt;br /&gt;Odstráňte všetky sklady SailfishOS:Chum spustením tohto príkazu ako používateľ root:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;Táto aplikácia GUI SailfishOS:Chum pridá po opätovnom spustení všetky chýbajúce sklady SailfishOS:Chum.</translation>
     </message>
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="342"/>
@@ -477,9 +468,9 @@ Táto aplikácia GUI SailfishOS:Chum pridá po opätovnom spustení všetky chý
     </message>
     <message id="chum-setings-override-release-description">
         <location filename="../qml/pages/SettingsPage.qml" line="118"/>
-        <source>&lt;big&gt;Press Enter to apply.&lt;/big&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</source>
+        <source>&lt;b&gt;Press Enter to apply.&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</source>
         <oldsource>Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</oldsource>
-        <translation>&lt;big&gt;Ak chcete použiť, stlačte kláves Enter.&lt;/big&gt;&lt;br /&gt;Zvyčajne sa automaticky vyberie konkrétny sklad SailfishOS:Chum podľa nainštalovanej verzie Sailfish&amp;nbsp;OS. Ak chcete ručne vybrať sklad SailfishOS:Chum pre konkrétne vydanie Sailfish&amp;nbsp;OS, zadajte toto vydanie Sailfish&amp;nbsp;OS tu (napríklad 4.3.0.12). Toto je užitočné, keď sklad SailfishOS:Chum nie je dostupný pre nainštalovanú verziu Sailfish&amp;nbsp;OS, napr. pre používateľov Cbeta.</translation>
+        <translation>&lt;b&gt;Ak chcete použiť, stlačte kláves Enter.&lt;/b&gt;&lt;br /&gt;Zvyčajne sa automaticky vyberie konkrétny sklad SailfishOS:Chum podľa nainštalovanej verzie Sailfish&amp;nbsp;OS. Ak chcete ručne vybrať sklad SailfishOS:Chum pre konkrétne vydanie Sailfish&amp;nbsp;OS, zadajte toto vydanie Sailfish&amp;nbsp;OS tu (napríklad 4.3.0.12). Toto je užitočné, keď sklad SailfishOS:Chum nie je dostupný pre nainštalovanú verziu Sailfish&amp;nbsp;OS, napr. pre používateľov Cbeta.</translation>
     </message>
     <message id="chum-setings-override-release-placeholder">
         <location filename="../qml/pages/SettingsPage.qml" line="120"/>
