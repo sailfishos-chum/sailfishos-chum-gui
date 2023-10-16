@@ -254,22 +254,13 @@
     </message>
     <message id="chum-repo-management-disabled-txt">
         <location filename="../src/chum.cpp" line="336"/>
-        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!
-You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
-
-Please remove all SailfishOS:Chum repositories by executing this command line as root user:
-%1
-This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
+        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!&lt;br /&gt;You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.&lt;br /&gt;&lt;br /&gt;Please remove all SailfishOS:Chum repositories by executing this command line as root user:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
         <oldsource>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository. You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
 
 Please remove all SailfishOS:Chum repositories by executing this command line as root user:
 for i in $(ssu lr | fgrep chum | cut -f 3 -d ' '); do ssu rr $i; done
 This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</oldsource>
-        <translation>L&apos;application graphique SailfishOS:Chum a échoué à gérer les dépôts SailfishOS:Chum. Il est probable que plusieurs soient définis, voire désactivés.
-
-En tant que root, veuillez supprimer tous les dépôts SailfishOS:Chum en exécutant la commande suivante :
-%1
-L&apos;application graphique ajoutera les dépôts nécessaires au redémarrage.</translation>
+        <translation>L&apos;application graphique SailfishOS:Chum a échoué à gérer les dépôts SailfishOS:Chum.&lt;br /&gt;Il est probable que plusieurs soient définis, voire désactivés.&lt;br /&gt;&lt;br /&gt;En tant que root, veuillez supprimer tous les dépôts SailfishOS:Chum en exécutant la commande suivante :&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;L&apos;application graphique ajoutera les dépôts nécessaires au redémarrage.</translation>
     </message>
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="342"/>
@@ -477,9 +468,9 @@ L&apos;application graphique ajoutera les dépôts nécessaires au redémarrage.
     </message>
     <message id="chum-setings-override-release-description">
         <location filename="../qml/pages/SettingsPage.qml" line="118"/>
-        <source>&lt;big&gt;Press Enter to apply.&lt;/big&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</source>
+        <source>&lt;b&gt;Press Enter to apply.&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</source>
         <oldsource>Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</oldsource>
-        <translation>&lt;big&gt;Pressez sur Entrée pour appliquer.&lt;/big&gt;&lt;br /&gt;Normalement un dépôt spécifique SailfishOS:Chum est sélectionné automatiquement selon la version installée de Sailfish&amp;nbsp;OS. Pour sélectionner manuellement un dépôt SailfishOS:Chum pour une version spécifique de Sailfish&amp;nbsp;OS, spécifiez ici la version (par exemple Sailfish 4.3.0.12). C&apos;est utile si aucun dépôt SailfishOS:Chum n&apos;est disponible pour la version de Sailfish&amp;nbsp;OS installé, comme pour les utilisateurs Cbeta.</translation>
+        <translation>&lt;b&gt;Pressez sur Entrée pour appliquer.&lt;/b&gt;&lt;br /&gt;Normalement un dépôt spécifique SailfishOS:Chum est sélectionné automatiquement selon la version installée de Sailfish&amp;nbsp;OS. Pour sélectionner manuellement un dépôt SailfishOS:Chum pour une version spécifique de Sailfish&amp;nbsp;OS, spécifiez ici la version (par exemple Sailfish 4.3.0.12). C&apos;est utile si aucun dépôt SailfishOS:Chum n&apos;est disponible pour la version de Sailfish&amp;nbsp;OS installé, comme pour les utilisateurs Cbeta.</translation>
     </message>
     <message id="chum-setings-override-release-placeholder">
         <location filename="../qml/pages/SettingsPage.qml" line="120"/>
