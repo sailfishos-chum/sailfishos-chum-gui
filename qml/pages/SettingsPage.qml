@@ -109,9 +109,10 @@ Page {
             }
 
             // '<big>' does not work, but should: https://doc.qt.io/qt-5/richtext-html-subset.html#supported-tags
+            // hence using '<b>' (bold).
             TextFieldDesc {
                 id: txtRelease
-                //% "<big><strong>Press Enter to apply.</strong></big><br />"
+                //% "<b>Press Enter to apply.</b><br />"
                 //% "Usually a specific SailfishOS:Chum repository is automatically selected according to the "
                 //% "installed Sailfish&nbsp;OS release version. To manually select a SailfishOS:Chum repository "
                 //% "for a specific Sailfish&nbsp;OS release, specify this release here (for example, 4.3.0.12). "
