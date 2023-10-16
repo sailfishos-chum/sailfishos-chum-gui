@@ -254,22 +254,13 @@
     </message>
     <message id="chum-repo-management-disabled-txt">
         <location filename="../src/chum.cpp" line="336"/>
-        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!
-You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
-
-Please remove all SailfishOS:Chum repositories by executing this command line as root user:
-%1
-This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
+        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!&lt;br /&gt;You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.&lt;br /&gt;&lt;br /&gt;Please remove all SailfishOS:Chum repositories by executing this command line as root user:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
         <oldsource>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository. You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.
 
 Please remove all SailfishOS:Chum repositories by executing this command line as root user:
 for i in $(ssu lr | fgrep chum | cut -f 3 -d ' '); do ssu rr $i; done
 This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</oldsource>
-        <translation>Az alkalmazásnak nem sikerült a SaifishOS:Chum csomagtároló kezelése! Lehetséges, hogy több SailfishOS:Chum csomagtárolód van az SSU-hoz beállítva, vagy le lett tiltva a SaifishOS:Chum csomagtároló.
-
-Távolítsd el az összes SailfishOS:Chum csomagtárolót az alábbi parancsot futtava root jogosultsággal:
-%1
-Az alkalmazás automatikusan fel fogja venni a következő indításnál a Chum csomagtárolókat.</translation>
+        <translation>Az alkalmazásnak nem sikerült a SaifishOS:Chum csomagtároló kezelése!&lt;br /&gt;Lehetséges, hogy több SailfishOS:Chum csomagtárolód van az SSU-hoz beállítva, vagy le lett tiltva a SaifishOS:Chum csomagtároló.&lt;br /&gt;&lt;br /&gt;Távolítsd el az összes SailfishOS:Chum csomagtárolót az alábbi parancsot futtava root jogosultsággal:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;Az alkalmazás automatikusan fel fogja venni a következő indításnál a Chum csomagtárolókat.</translation>
     </message>
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="342"/>
@@ -477,9 +468,9 @@ Az alkalmazás automatikusan fel fogja venni a következő indításnál a Chum 
     </message>
     <message id="chum-setings-override-release-description">
         <location filename="../qml/pages/SettingsPage.qml" line="118"/>
-        <source>&lt;big&gt;Press Enter to apply.&lt;/big&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</source>
+        <source>&lt;b&gt;Press Enter to apply.&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</source>
         <oldsource>Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</oldsource>
-        <translation>&lt;big&gt;Press Enter to apply.&lt;/big&gt;&lt;br /&gt;Többnyire a készüléken futó Sailfish&amp;nbsp;OS verziónak megfelelő SailfishOS:Chum csomagtároló automatikusan kiválasztásra kerül. Lehetséges manuálisan is SailfishOS:Chum csomagtárolót is beállítani a kívánt Sailfish&amp;nbsp;OS verziónak megadásával (pld. 4.3.0.12). Ez akkor lehet hasznos ha a SailfishOS:Chum csomagtároló még nem elérhető az adott Sailfish&amp;nbsp;OS verzióra (pld. a Cbeta felhasználóknak).</translation>
+        <translation>&lt;b&gt;Press Enter to apply.&lt;/b&gt;&lt;br /&gt;Többnyire a készüléken futó Sailfish&amp;nbsp;OS verziónak megfelelő SailfishOS:Chum csomagtároló automatikusan kiválasztásra kerül. Lehetséges manuálisan is SailfishOS:Chum csomagtárolót is beállítani a kívánt Sailfish&amp;nbsp;OS verziónak megadásával (pld. 4.3.0.12). Ez akkor lehet hasznos ha a SailfishOS:Chum csomagtároló még nem elérhető az adott Sailfish&amp;nbsp;OS verzióra (pld. a Cbeta felhasználóknak).</translation>
     </message>
     <message id="chum-setings-override-release-placeholder">
         <location filename="../qml/pages/SettingsPage.qml" line="120"/>
