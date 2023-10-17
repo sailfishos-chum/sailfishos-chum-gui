@@ -1,5 +1,11 @@
-* Fri Sep 15 2023 olf <Olf0@users.noreply.github.com> - 0.6.4
+* Fri Oct 20 2023 olf <Olf0@users.noreply.github.com> - 0.6.5
 - 
+
+* Mon Oct 16 2023 olf <Olf0@users.noreply.github.com> - 0.6.4
+- Add Finnish translation (#211)
+- Try to fix issue #173 (#215)
+- Improve formatting of some strings (#213, #223)
+- Minor improvements to look&feel of project site
 
 * Wed Sep 13 2023 olf <Olf0@users.noreply.github.com> - 0.6.3
 - Color links in theme colors (#206), fixes issue #186.
