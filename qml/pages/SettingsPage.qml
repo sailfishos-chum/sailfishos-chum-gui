@@ -48,14 +48,14 @@ Page {
 
                     if (Chum.manualVersion)
                         return Chum.repoTesting ?
-                                    //% "Subscribed to the SailfishOS:Chum:Testing repository with a manually set Sailfish&nbsp;OS version (%1)."
+                                    //% "<html>Subscribed to the SailfishOS:Chum:Testing repository with a manually set Sailfish&nbsp;OS version (%1).</html>"
                                     qsTrId("chum-settings-status-repo-testing-manual").arg(Chum.manualVersion) :
-                                    //% "Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish&nbsp;OS version (%1)."
+                                    //% "<html>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish&nbsp;OS version (%1).</html>"
                                     qsTrId("chum-settings-status-repo-regular-manual").arg(Chum.manualVersion)
                     return Chum.repoTesting ?
-                                //% "Subscribed to the SailfishOS:Chum:Testing repository with an automatically determined Sailfish&nbsp;OS version."
+                                //% "<html>Subscribed to the SailfishOS:Chum:Testing repository with an automatically determined Sailfish&nbsp;OS version.</html>"
                                 qsTrId("chum-settings-status-repo-testing-auto") :
-                                //% "Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish&nbsp;OS version."
+                                //% "<html>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish&nbsp;OS version.</html>"
                                 qsTrId("chum-settings-status-repo-regular-auto");
 
                 }
@@ -112,14 +112,14 @@ Page {
             // hence using '<b>' (bold).
             TextFieldDesc {
                 id: txtRelease
-                //% "<b>Press Enter to apply.</b><br />"
+                //% "<b>Press <kbd>Enter</kbd> to apply</b><br />"
                 //% "Usually a specific SailfishOS:Chum repository is automatically selected according to the "
                 //% "installed Sailfish&nbsp;OS release version. To manually select a SailfishOS:Chum repository "
                 //% "for a specific Sailfish&nbsp;OS release, specify this release here (for example, 4.3.0.12). "
                 //% "This is useful when the SailfishOS:Chum repository is not available for the installed "
                 //% "Sailfish&nbsp;OS version, as for Cbeta users."
                 description: qsTrId("chum-setings-override-release-description")
-                //% "Specify a Sailfish&nbsp;OS version"
+                //% "<dfn>Specify a Sailfish&nbsp;OS version</dfn>"
                 placeholderText: qsTrId("chum-setings-override-release-placeholder")
                 text: Chum.manualVersion
                 onEnterClicked: {
