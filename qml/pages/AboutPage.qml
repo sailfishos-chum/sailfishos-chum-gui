@@ -20,7 +20,6 @@ Page {
             }
 
             Image {
-                id: chumGUIicon
                 source: Qt.resolvedUrl("../../icons/sailfishos-chum-gui.svg")
                 width: Math.min(page.width, page.height) / 3
                 height: width
@@ -33,9 +32,10 @@ Page {
             // Thus halving the margin: width: parent.width - Theme.horizontalPageMargin
             // The long text of the last label emphasises this issue by using much space
             // vertically when rendered with such big horizontal margin(s).
+            // This seems to work correctly when using IDs for each element, but then the
+            // Vspace also has to be defined for each element.
             
             Label {
-                id: subTitle
                 //% "A graphical client application for the SailfishOS:Chum community repository"
                 text: qsTrId("chum-about-store")
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -45,7 +45,6 @@ Page {
             }
 
             Label {
-                id: versionInfo
                 //% "Version: %1"
                 text: qsTrId("chum-about-version").arg(Qt.application.version)
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -55,7 +54,6 @@ Page {
             }
 
             Label {
-                id: sourceCode
                 //% "Source code repository"
                 text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui">' + qsTrId("chum-about-home") + '</a>'
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -67,7 +65,6 @@ Page {
             }
 
             Label {
-                id: license
                 //% "License: %1"
                 text: qsTrId("chum-about-license").arg("MIT")
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -77,7 +74,6 @@ Page {
             }
 
             Label {
-                id: issueTracker
                 //% "Issue tracker for bug reports, feature suggestions and help requests"
                 text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui/issues">' + qsTrId("chum-about-issues") + '</a>'
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -92,10 +88,11 @@ Page {
             // two consequtive line-breaks (`<br /><br />`).
             // Reference: https://doc.qt.io/qt-5/richtext-html-subset.html#supported-tags
             // But either way is not the "proper" one for achiving some vertical space atop
-            // the text: The Qt5 Rich Text engine eliminates any such space, one should use
-            // the Qt text `anchors` attributes `top:` and `topMargin:` to achieve that.
+            // the text: One should use the Qt text `anchors` attributes `top:` and
+            // `topMargin:` to achieve that, but that requires IDs and Vspace definitions
+            // for each element: Too much hassle for now.
             Label {
-                //% "<p>"
+                //% "<p>&nbsp;<br />"
                 //% "The SailfishOS:Chum community repository provides a collection of "
                 //% "applications, tools and libraries compiled for various hardware "
                 //% "architectures and Sailfish&nbsp;OS release versions."
@@ -133,11 +130,7 @@ Page {
                 text: qsTrId("chum-about-description")
                 textFormat: Text.StyledText
                 font.pixelSize: Theme.fontSizeSmall
-                anchors {
-                    top: issueTracker.bottom
-                    topMargin: Theme.paddingLarge
-                    horizontalCenter: parent.horizontalCenter
-                }
+                anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter
                 width: parent.width - Theme.horizontalPageMargin
                 wrapMode: Text.WordWrap
