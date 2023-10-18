@@ -361,23 +361,23 @@
     </message>
     <message id="chum-settings-status-repo-testing-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="52"/>
-        <source>&lt;html&gt;Subscribed to the SailfishOS:Chum:Testing repository with a manually set Sailfish&amp;nbsp;OS version (%1).&lt;/html&gt;</source>
-        <translation>&lt;html&gt;Prenumererar på SailfishOS:Chum testförråd med en manuellt inställd Sailfish&amp;nbsp;OS-version (%1).&lt;/html&gt;</translation>
+        <source>Subscribed to the SailfishOS:Chum:Testing repository with a manually set Sailfish&amp;nbsp;OS version (%1).</source>
+        <translation>Prenumererar på SailfishOS:Chum testförråd med en manuellt inställd Sailfish&amp;nbsp;OS-version (%1).</translation>
     </message>
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
-        <source>&lt;html&gt;Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish&amp;nbsp;OS version (%1).&lt;/html&gt;</source>
-        <translation>&lt;html&gt;Prenumererar på SailfishOS:Chum reguljärförråd med en manuellt inställd Sailfish&amp;nbsp;OS-version (%1).&lt;/html&gt;</translation>
+        <source>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish&amp;nbsp;OS version (%1).</source>
+        <translation>Prenumererar på SailfishOS:Chum reguljärförråd med en manuellt inställd Sailfish&amp;nbsp;OS-version (%1).</translation>
     </message>
     <message id="chum-settings-status-repo-testing-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="57"/>
-        <source>&lt;html&gt;Subscribed to the SailfishOS:Chum:Testing repository with an automatically determined Sailfish&amp;nbsp;OS version.&lt;/html&gt;</source>
-        <translation>&lt;html&gt;Prenumererar på SailfishOS:Chum testförråd med en automatiskt inställd Sailfish&amp;nbsp;OS-version.&lt;/html&gt;</translation>
+        <source>Subscribed to the SailfishOS:Chum:Testing repository with an automatically determined Sailfish&amp;nbsp;OS version.</source>
+        <translation>Prenumererar på SailfishOS:Chum testförråd med en automatiskt inställd Sailfish&amp;nbsp;OS-version.</translation>
     </message>
     <message id="chum-settings-status-repo-regular-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="59"/>
-        <source>&lt;html&gt;Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish&amp;nbsp;OS version.&lt;/html&gt;</source>
-        <translation>&lt;html&gt;Prenumererar på SailfishOS:Chum reguljärförråd med en automatiskt inställd Sailfish&amp;nbsp;OS-version&lt;/html&gt;</translation>
+        <source>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish&amp;nbsp;OS version.</source>
+        <translation>Prenumererar på SailfishOS:Chum reguljärförråd med en automatiskt inställd Sailfish&amp;nbsp;OS-version</translation>
     </message>
     <message id="chum-settings-general">
         <location filename="../qml/pages/SettingsPage.qml" line="67"/>
@@ -416,13 +416,13 @@
     </message>
     <message id="chum-setings-override-release-description">
         <location filename="../qml/pages/SettingsPage.qml" line="118"/>
-        <source>&lt;b&gt;Press &lt;tt&gt;Enter&lt;/tt&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, &lt;code&gt;4.3.0.12&lt;/code&gt;). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</source>
-        <translation>&lt;b&gt;Tryck &lt;tt&gt;Retur&lt;/tt&gt; för att använda detta.&lt;/b&gt;&lt;br /&gt;Vanligtvis ställs ett specifikt SailfishOS:Chum-förråd in automatiskt efter din installerade Sailfish&amp;nbsp;OS-version. För att prenumerera på SailfishOS:Chum-förrådet för en specifik Sailfish&amp;nbsp;OS-version anger du Sailfish&amp;nbsp;OS-versionen här (till exempel &lt;code&gt;4.3.0.12&lt;/code&gt;). Detta är användbart när SailfishOS:Chum-förrådet inte är tillgängligt för din Sailfish&amp;nbsp;OS-version, som för Cbeta-användare.</translation>
+        <source>&lt;b&gt;Press Enter to apply.&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</source>
+        <translation>&lt;b&gt;Tryck Retur för att använda detta.&lt;/b&gt;&lt;br /&gt;Vanligtvis ställs ett specifikt SailfishOS:Chum-förråd in automatiskt efter din installerade Sailfish&amp;nbsp;OS-version. För att prenumerera på SailfishOS:Chum-förrådet för en specifik Sailfish&amp;nbsp;OS-version anger du Sailfish&amp;nbsp;OS-versionen här (till exempel 4.3.0.12). Detta är användbart när SailfishOS:Chum-förrådet inte är tillgängligt för din Sailfish&amp;nbsp;OS-version, som för Cbeta-användare.</translation>
     </message>
     <message id="chum-setings-override-release-placeholder">
         <location filename="../qml/pages/SettingsPage.qml" line="120"/>
-        <source>&lt;i&gt;Specify a Sailfish&amp;nbsp;OS version&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Specificera en Sailfish&amp;nbsp;OS-version&lt;/i&gt;</translation>
+        <source>Specify a Sailfish&amp;nbsp;OS version</source>
+        <translation>Specificera en Sailfish&amp;nbsp;OS-version</translation>
     </message>
     <message id="chum-categories">
         <location filename="../qml/pages/CategoriesPage.qml" line="20"/>
@@ -501,39 +501,39 @@
         <translation>Upptagen</translation>
     </message>
     <message id="chum-about-gui">
-        <location filename="../qml/pages/AboutPage.qml" line="18"/>
+        <location filename="../qml/pages/AboutPage.qml" line="19"/>
         <source>About SailfishOS:Chum GUI</source>
         <translation>Om SailfishOS:Chum GUI</translation>
     </message>
     <message id="chum-about-store">
-        <location filename="../qml/pages/AboutPage.qml" line="39"/>
+        <location filename="../qml/pages/AboutPage.qml" line="38"/>
         <source>A graphical client application for the SailfishOS:Chum community repository</source>
         <translation>En grafisk klientapp för gemenskapens SailfishOS:Chum-förråd</translation>
     </message>
     <message id="chum-about-version">
-        <location filename="../qml/pages/AboutPage.qml" line="49"/>
+        <location filename="../qml/pages/AboutPage.qml" line="47"/>
         <source>Version: %1</source>
         <translation>Version: %1</translation>
     </message>
     <message id="chum-about-home">
-        <location filename="../qml/pages/AboutPage.qml" line="59"/>
-        <source>Source code repository</source>
-        <translation>Källkodsförråd</translation>
+        <location filename="../qml/pages/AboutPage.qml" line="56"/>
+        <source>Source code</source>
+        <translation>Källkod</translation>
     </message>
     <message id="chum-about-license">
-        <location filename="../qml/pages/AboutPage.qml" line="71"/>
+        <location filename="../qml/pages/AboutPage.qml" line="67"/>
         <source>License: %1</source>
         <translation>Licens: %1</translation>
     </message>
     <message id="chum-about-issues">
-        <location filename="../qml/pages/AboutPage.qml" line="81"/>
+        <location filename="../qml/pages/AboutPage.qml" line="76"/>
         <source>Issue tracker for bug reports, feature suggestions and help requests</source>
         <translation>Ärendehanterare för felrapporter, funktionsförslag och hjälpförfrågningar</translation>
     </message>
     <message id="chum-about-description">
-        <location filename="../qml/pages/AboutPage.qml" line="98"/>
-        <source>&lt;p&gt;&amp;nbsp;&lt;br /&gt;The SailfishOS:Chum community repository provides a collection of applications, tools and libraries compiled for various hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;/p&gt;&lt;p&gt;In contrast to the software distribution model of the Jolla Store or OpenRepos, to which binary packages are uploaded by developers, at SailfishOS:Chum software is compiled and packaged into RPMs in a reproducible manner directly from its source code. The source code used for compiling and packaging is submitted by developers to OBS (Open Build Service), which generates multiple RPM files for different combinations of hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;/p&gt;&lt;p&gt;This scheme ensures that the complete source code of all packages at SailfishOS:Chum is available and inspectable there, and that all packages are generated solely from this source code. Hence all software packages at SailfishOS:Chum are created in a transparent and fully traceable manner.&lt;/p&gt;&lt;p&gt;By collecting software for Sailfish&amp;nbsp;OS in a single automated build system, collaboration between developers through common packaging of shared libraries etc. is fostered, duplication of work for keeping these common packages up-to-date is eliminated, and it becomes much easier to determine which pieces of software exist and which are missing at the Sailfish&amp;nbsp;OS OBS. Additionally this eases tracing multiple and potentially layered dependencies (&amp;quot;dependency chains&amp;quot;) which is crucial for keeping the software supply chains of complex packages up-to-date.&lt;/p&gt;&lt;p&gt;The SailfishOS:Chum repository is located at the Sailfish&amp;nbsp;OS OBS:&lt;br /&gt;&lt;a href=&apos;https://build.merproject.org/project/show/sailfishos:chum&apos;&gt;build.merproject.org/project/show/sailfishos:chum&lt;/a&gt;&lt;/p&gt;&lt;p&gt;For the etymological origin and meanings of the word &amp;quot;chum&amp;quot;, see &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; and &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&amp;nbsp;&lt;br /&gt;I gemenskapsförrådet SailfishOS:Chum finns en samling program, verktyg och bibliotek som kompileras för olika hårdvaruarkitekturer och versioner av Sailfish&amp;nbsp;OS.&lt;/p&gt;&lt;p&gt;Till skillnad från programvarudistributionen i Jolla Store eller OpenRepos, där binära paket laddas upp av utvecklare, kompileras och paketeras programvaran i SailfishOS:Chum till RPM:er på ett reproducerbart sätt direkt från källkoden. Den källkod som används för kompilering och paketering skickas av utvecklarna till OBS (Open Build Service), som genererar flera RPM-filer för olika kombinationer av hårdvaruarkitekturer och Sailfish&amp;nbsp;OS-versioner.&lt;/p&gt;&lt;p&gt;Detta system garanterar att den fullständiga källkoden för alla paket på SailfishOS:Chum är tillgänglig och kan inspekteras där, och att alla paket genereras enbart från denna källkod.&lt;/p&gt;&lt;p&gt;Genom att samla programvara för Sailfish&amp;nbsp;OS i ett enda automatiserat byggsystem främjas samarbetet mellan utvecklare genom gemensam paketering av gemensamma bibliotek etc. Dubbelarbete, för att hålla dessa gemensamma paket uppdaterade, elimineras och det blir mycket lättare att avgöra vilka programvaror som finns och vilka som saknas i Sailfish&amp;nbsp;OS OBS. Dessutom underlättar detta spårningen av flera och potentiellt skiktade beroenden (&amp;quot;beroendekedjor&amp;quot;), vilket är avgörande för att hålla programvaruförsörjningskedjorna för komplexa paket uppdaterade.&lt;/p&gt;&lt;p&gt;Förrådet SailfishOS:Chum finns på Sailfish&amp;nbsp;OS OBS:&lt;br /&gt;&lt;a href=&apos;https://build.merproject.org/project/show/sailfishos:chum&apos;&gt;build.merproject.org/project/show/sailfishos:chum&lt;/a&gt;&lt;/p&gt;&lt;p&gt;För etymologiskt ursprung och betydelser av ordet &amp;quot;chum&amp;quot, se &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; och &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.&lt;/p&gt;</translation>
+        <location filename="../qml/pages/AboutPage.qml" line="120"/>
+        <source>The SailfishOS:Chum community repository provides a collection of applications, tools and libraries compiled for various hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;In contrast to the software distribution model of the Jolla Store or OpenRepos, to which binary packages are uploaded by developers, at SailfishOS:Chum software is compiled and packaged into RPMs in a reproducible manner directly from its source code. The source code used for compiling and packaging is submitted by developers to OBS (Open Build Service), which generates multiple RPM files for different combinations of hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;This scheme ensures that the complete source code of all packages at SailfishOS:Chum is available and inspectable there, and that all packages are generated solely from this source code. Hence all software packages at SailfishOS:Chum are created in a transparent and fully traceable manner.&lt;br /&gt;&lt;br /&gt;By collecting software for Sailfish&amp;nbsp;OS in a single automated build system, collaboration between developers through common packaging of shared libraries etc. is fostered, duplication of work for keeping these common packages up-to-date is eliminated, and it becomes much easier to determine which pieces of software exist and which are missing at the Sailfish&amp;nbsp;OS OBS. Additionally this eases tracing multiple and potentially layered dependencies (&amp;quot;dependency chains&amp;quot;) which is crucial for keeping the software supply chains of complex packages up-to-date.&lt;br /&gt;&lt;br /&gt;The SailfishOS:Chum repository is located at the Sailfish&amp;nbsp;OS OBS:&lt;br /&gt;&lt;a href=&apos;https://build.merproject.org/project/show/sailfishos:chum&apos;&gt;build.merproject.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;For the etymological origin and meanings of the word &amp;quot;chum&amp;quot;, see &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; and &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.</source>
+        <translation>I gemenskapsförrådet SailfishOS:Chum finns en samling program, verktyg och bibliotek som kompileras för olika hårdvaruarkitekturer och versioner av Sailfish&amp;nbsp;OS.&lt;br /&gt;&lt;br /&gt;Till skillnad från programvarudistributionen i Jolla Store eller OpenRepos, där binära paket laddas upp av utvecklare, kompileras och paketeras programvaran i SailfishOS:Chum till RPM:er på ett reproducerbart sätt direkt från källkoden. Den källkod som används för kompilering och paketering skickas av utvecklarna till OBS (Open Build Service), som genererar flera RPM-filer för olika kombinationer av hårdvaruarkitekturer och Sailfish&amp;nbsp;OS-versioner.&lt;br /&gt;&lt;br /&gt;Detta system garanterar att den fullständiga källkoden för alla paket på SailfishOS:Chum är tillgänglig och kan inspekteras där, och att alla paket genereras enbart från denna källkod.&lt;br /&gt;&lt;br /&gt;Genom att samla programvara för Sailfish&amp;nbsp;OS i ett enda automatiserat byggsystem främjas samarbetet mellan utvecklare genom gemensam paketering av gemensamma bibliotek etc. Dubbelarbete, för att hålla dessa gemensamma paket uppdaterade, elimineras och det blir mycket lättare att avgöra vilka programvaror som finns och vilka som saknas i Sailfish&amp;nbsp;OS OBS. Dessutom underlättar detta spårningen av flera och potentiellt skiktade beroenden (&amp;quot;beroendekedjor&amp;quot;), vilket är avgörande för att hålla programvaruförsörjningskedjorna för komplexa paket uppdaterade.&lt;br /&gt;&lt;br /&gt;Förrådet SailfishOS:Chum finns på Sailfish&amp;nbsp;OS OBS:&lt;br /&gt;&lt;a href=&apos;https://build.merproject.org/project/show/sailfishos:chum&apos;&gt;build.merproject.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;För etymologiskt ursprung och betydelser av ordet &amp;quot;chum&amp;quot, se &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; och &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.</translation>
     </message>
     <message id="chum-desc-library">
         <location filename="../src/chumpackage.cpp" line="139"/>
