@@ -1,7 +1,7 @@
 * Mon Oct 16 2023 olf <Olf0@users.noreply.github.com> - 0.6.4
 - Add Finnish translation (#211)
 - Try to fix issue #173 (#215)
-- Improve formatting of some strings (#213, #223, #237, #238)
+- Improve formatting of some strings (#213, #223, #237, #238, #239, #240, #242)
 - Update translations accordingly
 - Minor improvements to look&feel of project site
 - Improve workflow file `ci-on-tags.yml`
