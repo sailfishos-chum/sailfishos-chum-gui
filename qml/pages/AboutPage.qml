@@ -89,8 +89,8 @@ Page {
             // Reference: https://doc.qt.io/qt-5/richtext-html-subset.html#supported-tags
             // But either way is not the "proper" one for achiving some vertical space atop
             // the text: One should use the Qt text `anchors` attributes `top:` and
-            // `topMargin:` to achieve that, but that requires IDs and Vspace definitions
-            // for each element: Too much hassle for now.
+            // `topMargin:` to achieve that, but this requires an ID and Vspace definition
+            // via `top:` and `topMargin:` for each and every element: Too much hassle for now.
             Label {
                 //% "&nbsp;<br />"
                 //% "The SailfishOS:Chum community repository provides a collection of "
