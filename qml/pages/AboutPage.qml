@@ -20,6 +20,7 @@ Page {
             }
 
             Image {
+                id: chumGUIicon
                 source: Qt.resolvedUrl("../../icons/sailfishos-chum-gui.svg")
                 width: Math.min(page.width, page.height) / 3
                 height: width
@@ -34,6 +35,7 @@ Page {
             // vertically when rendered with such big horizontal margin(s).
             
             Label {
+                id: subTitle
                 //% "A graphical client application for the SailfishOS:Chum community repository"
                 text: qsTrId("chum-about-store")
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -43,6 +45,7 @@ Page {
             }
 
             Label {
+                id: versionInfo
                 //% "Version: %1"
                 text: qsTrId("chum-about-version").arg(Qt.application.version)
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -52,7 +55,8 @@ Page {
             }
 
             Label {
-                //% "Source code"
+                id: sourceCode
+                //% "Source code repository"
                 text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui">' + qsTrId("chum-about-home") + '</a>'
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter
@@ -63,6 +67,7 @@ Page {
             }
 
             Label {
+                id: license
                 //% "License: %1"
                 text: qsTrId("chum-about-license").arg("MIT")
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -72,6 +77,7 @@ Page {
             }
 
             Label {
+                id: issueTracker
                 //% "Issue tracker for bug reports, feature suggestions and help requests"
                 text: '<a href="https://github.com/sailfishos-chum/sailfishos-chum-gui/issues">' + qsTrId("chum-about-issues") + '</a>'
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -82,12 +88,14 @@ Page {
                 onLinkActivated: Qt.openUrlExternally(link)
             }
 
-            // Try if formatting looks better, when paragraphs ('<p></p>') are used, instead
-            // of two consequtive breaks ('<br /><br />').
+            // Formatting looks better, when paragraphs (`<p></p>`) are used, instead of
+            // two consequtive line-breaks (`<br /><br />`).
             // Reference: https://doc.qt.io/qt-5/richtext-html-subset.html#supported-tags
-            // But Qt5's Rich Text Engine suprises sometimes, hence test first!
+            // But either way is not the "proper" one for achiving some vertical space atop
+            // the text: The Qt5 Rich Text engine eliminates any such space, one should use
+            // the Qt text `anchors` attributes `top:` and `topMargin:` to achieve that.
             Label {
-                //% "<p>&nbsp;<br />"
+                //% "<p>"
                 //% "The SailfishOS:Chum community repository provides a collection of "
                 //% "applications, tools and libraries compiled for various hardware "
                 //% "architectures and Sailfish&nbsp;OS release versions."
@@ -125,7 +133,11 @@ Page {
                 text: qsTrId("chum-about-description")
                 textFormat: Text.StyledText
                 font.pixelSize: Theme.fontSizeSmall
-                anchors.horizontalCenter: parent.horizontalCenter
+                anchors {
+                    top: issueTracker.bottom
+                    topMargin: Theme.paddingLarge
+                    horizontalCenter: parent.horizontalCenter
+                }
                 horizontalAlignment: Text.AlignHCenter
                 width: parent.width - Theme.horizontalPageMargin
                 wrapMode: Text.WordWrap
