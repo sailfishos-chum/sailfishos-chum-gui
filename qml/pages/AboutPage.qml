@@ -88,12 +88,12 @@ Page {
                 onLinkActivated: Qt.openUrlExternally(link)
             }
 
-            // Formatting might look better, when paragraphs (`<p></p>`) are used, instead
-            // of two consequtive line-breaks (`<br /><br />`).
+            // Formatting looks better, when paragraphs (`<p></p>`) are used, instead of
+            // two consequtive line-breaks (`<br /><br />`).
             // Reference: https://doc.qt.io/qt-5/richtext-html-subset.html#supported-tags
-            // But trying to achive some vertical space atop the text either way is futile:
-            // The Qt5 Rich Text engine eliminates any such space, one has to use the Qt 
-            // text `anchors` attributes `top:` and `topMargin:` to achieve that.
+            // But either way is not the "proper" one for achiving some vertical space atop
+            // the text: The Qt5 Rich Text engine eliminates any such space, one should use
+            // the Qt text `anchors` attributes `top:` and `topMargin:` to achieve that.
             Label {
                 //% "<p>"
                 //% "The SailfishOS:Chum community repository provides a collection of "
