@@ -361,23 +361,23 @@
     </message>
     <message id="chum-settings-status-repo-testing-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="52"/>
-        <source>Subscribed to the SailfishOS:Chum:Testing repository with a manually set Sailfish&amp;nbsp;OS version (%1).</source>
-        <translation>Sikeresen feliratkoztál a (%1) Sailfish&amp;nbsp;OS verzióhoz való manuálisan beállított tesztelési SailfishOS:Chum csomagtárolóra.</translation>
+        <source>&lt;html&gt;Subscribed to the SailfishOS:Chum:Testing repository with a manually set Sailfish&amp;nbsp;OS version (%1).&lt;/html&gt;</source>
+        <translation>&lt;html&gt;Sikeresen feliratkoztál a (%1) Sailfish&amp;nbsp;OS verzióhoz való manuálisan beállított tesztelési SailfishOS:Chum csomagtárolóra.&lt;/html&gt;</translation>
     </message>
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
-        <source>Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish&amp;nbsp;OS version (%1).</source>
-        <translation>Sikeresen feliratkoztál a (%1) Sailfish&amp;nbsp;OS verzióhoz való manuálisan beállított SailfishOS:Chum csomagtárolóra.</translation>
+        <source>&lt;html&gt;Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish&amp;nbsp;OS version (%1).&lt;/html&gt;</source>
+        <translation>&lt;html&gt;Sikeresen feliratkoztál a (%1) Sailfish&amp;nbsp;OS verzióhoz való manuálisan beállított SailfishOS:Chum csomagtárolóra.&lt;/html&gt;</translation>
     </message>
     <message id="chum-settings-status-repo-testing-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="57"/>
-        <source>Subscribed to the SailfishOS:Chum:Testing repository with an automatically determined Sailfish&amp;nbsp;OS version.</source>
-        <translation>Sikeresen feliratkoztál az automatikusan kiválasztott Sailfish&amp;nbsp;OS verzióhoz való tesztelési SailfishOS:Chum csomagtárolóra.</translation>
+        <source>&lt;html&gt;Subscribed to the SailfishOS:Chum:Testing repository with an automatically determined Sailfish&amp;nbsp;OS version.&lt;/html&gt;</source>
+        <translation>&lt;html&gt;Sikeresen feliratkoztál az automatikusan kiválasztott Sailfish&amp;nbsp;OS verzióhoz való tesztelési SailfishOS:Chum csomagtárolóra.&lt;/html&gt;</translation>
     </message>
     <message id="chum-settings-status-repo-regular-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="59"/>
-        <source>Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish&amp;nbsp;OS version.</source>
-        <translation>Sikeresen feliratkoztál az automatikusan kiválasztott Sailfish&amp;nbsp;OS verzióhoz való SailfishOS:Chum csomagtárolóra.</translation>
+        <source>&lt;html&gt;Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish&amp;nbsp;OS version.&lt;/html&gt;</source>
+        <translation>&lt;html&gt;Sikeresen feliratkoztál az automatikusan kiválasztott Sailfish&amp;nbsp;OS verzióhoz való SailfishOS:Chum csomagtárolóra.&lt;/html&gt;</translation>
     </message>
     <message id="chum-settings-general">
         <location filename="../qml/pages/SettingsPage.qml" line="67"/>
@@ -416,13 +416,13 @@
     </message>
     <message id="chum-setings-override-release-description">
         <location filename="../qml/pages/SettingsPage.qml" line="118"/>
-        <source>&lt;b&gt;Press Enter to apply.&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, 4.3.0.12). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</source>
-        <translation>&lt;b&gt;Press Enter to apply.&lt;/b&gt;&lt;br /&gt;Többnyire a készüléken futó Sailfish&amp;nbsp;OS verziónak megfelelő SailfishOS:Chum csomagtároló automatikusan kiválasztásra kerül. Lehetséges manuálisan is SailfishOS:Chum csomagtárolót is beállítani a kívánt Sailfish&amp;nbsp;OS verziónak megadásával (pld. 4.3.0.12). Ez akkor lehet hasznos ha a SailfishOS:Chum csomagtároló még nem elérhető az adott Sailfish&amp;nbsp;OS verzióra (pld. a Cbeta felhasználóknak).</translation>
+        <source>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, &lt;i&gt;4.3.0.12&lt;/i&gt;). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</source>
+        <translation>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply.&lt;/b&gt;&lt;br /&gt;Többnyire a készüléken futó Sailfish&amp;nbsp;OS verziónak megfelelő SailfishOS:Chum csomagtároló automatikusan kiválasztásra kerül. Lehetséges manuálisan is SailfishOS:Chum csomagtárolót is beállítani a kívánt Sailfish&amp;nbsp;OS verziónak megadásával (pld. &lt;i&gt;4.3.0.12&lt;/i&gt;). Ez akkor lehet hasznos ha a SailfishOS:Chum csomagtároló még nem elérhető az adott Sailfish&amp;nbsp;OS verzióra (pld. a Cbeta felhasználóknak).</translation>
     </message>
     <message id="chum-setings-override-release-placeholder">
         <location filename="../qml/pages/SettingsPage.qml" line="120"/>
-        <source>Specify a Sailfish&amp;nbsp;OS version</source>
-        <translation>Sailfish&amp;nbsp;OS verzió megadása</translation>
+        <source>&lt;i&gt;Specify a Sailfish&amp;nbsp;OS version&lt;/i&gt;</source>
+        <translation>&lt;i&gt;Sailfish&amp;nbsp;OS verzió megadása&lt;/i&gt;</translation>
     </message>
     <message id="chum-categories">
         <location filename="../qml/pages/CategoriesPage.qml" line="20"/>
@@ -501,39 +501,39 @@
         <translation>Folyamatban</translation>
     </message>
     <message id="chum-about-gui">
-        <location filename="../qml/pages/AboutPage.qml" line="19"/>
+        <location filename="../qml/pages/AboutPage.qml" line="18"/>
         <source>About SailfishOS:Chum GUI</source>
         <translation>A SailfishOS:Chum GUI-ról</translation>
     </message>
     <message id="chum-about-store">
-        <location filename="../qml/pages/AboutPage.qml" line="38"/>
+        <location filename="../qml/pages/AboutPage.qml" line="39"/>
         <source>A graphical client application for the SailfishOS:Chum community repository</source>
         <translation>A SailfishOS:Chum csomagtárolók kezelésére szolgáló alkalmazás</translation>
     </message>
     <message id="chum-about-version">
-        <location filename="../qml/pages/AboutPage.qml" line="47"/>
+        <location filename="../qml/pages/AboutPage.qml" line="49"/>
         <source>Version: %1</source>
         <translation>Verzió: %1</translation>
     </message>
     <message id="chum-about-home">
-        <location filename="../qml/pages/AboutPage.qml" line="56"/>
-        <source>Source code</source>
-        <translation>Forráskód</translation>
+        <location filename="../qml/pages/AboutPage.qml" line="59"/>
+        <source>Source code repository</source>
+        <translation>Forráskód tárház</translation>
     </message>
     <message id="chum-about-license">
-        <location filename="../qml/pages/AboutPage.qml" line="67"/>
+        <location filename="../qml/pages/AboutPage.qml" line="71"/>
         <source>License: %1</source>
         <translation>Licenc: %1</translation>
     </message>
     <message id="chum-about-issues">
-        <location filename="../qml/pages/AboutPage.qml" line="76"/>
+        <location filename="../qml/pages/AboutPage.qml" line="81"/>
         <source>Issue tracker for bug reports, feature suggestions and help requests</source>
         <translation>Hibajegykezelő ahol fejlesztési javaslatokat is be lehet nyújtani</translation>
     </message>
     <message id="chum-about-description">
-        <location filename="../qml/pages/AboutPage.qml" line="120"/>
-        <source>The SailfishOS:Chum community repository provides a collection of applications, tools and libraries compiled for various hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;In contrast to the software distribution model of the Jolla Store or OpenRepos, to which binary packages are uploaded by developers, at SailfishOS:Chum software is compiled and packaged into RPMs in a reproducible manner directly from its source code. The source code used for compiling and packaging is submitted by developers to OBS (Open Build Service), which generates multiple RPM files for different combinations of hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;This scheme ensures that the complete source code of all packages at SailfishOS:Chum is available and inspectable there, and that all packages are generated solely from this source code. Hence all software packages at SailfishOS:Chum are created in a transparent and fully traceable manner.&lt;br /&gt;&lt;br /&gt;By collecting software for Sailfish&amp;nbsp;OS in a single automated build system, collaboration between developers through common packaging of shared libraries etc. is fostered, duplication of work for keeping these common packages up-to-date is eliminated, and it becomes much easier to determine which pieces of software exist and which are missing at the Sailfish&amp;nbsp;OS OBS. Additionally this eases tracing multiple and potentially layered dependencies (&amp;quot;dependency chains&amp;quot;) which is crucial for keeping the software supply chains of complex packages up-to-date.&lt;br /&gt;&lt;br /&gt;The SailfishOS:Chum repository is located at the Sailfish&amp;nbsp;OS OBS:&lt;br /&gt;&lt;a href=&apos;https://build.merproject.org/project/show/sailfishos:chum&apos;&gt;build.merproject.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;For the etymological origin and meanings of the word &amp;quot;chum&amp;quot;, see &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; and &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.</source>
-        <translation>A SailfishOS:Chum közösségi csomagtárolókban alkalmazások, eszközök és programkönyvtárak széles kollekciója érhető el több architektúrára illetve Sailfish&amp;nbsp;OS verzióra is.&lt;br /&gt;&lt;br /&gt;A fő különbség a Jolla Áruházzal és az Openrepossal összehasonlítva az, hogy az itt elérhető szoftverek RPM csomagjai reprodukálható módon kerülnek előállításra nem pedig a fejlesztők által feltöltött binárisok kerülnek terjesztésre. A fejlesztők a csomagok forrásait és a csomagoláshoz szükséges fájlokat az OBS-en (Open Build Service) töltik fel ami generálja az RPM csomagokat a különböző hardver architektúrákhoz és Sailfish OS verziókhoz.&lt;br /&gt;&lt;br /&gt; Ez a megoldás biztosítja azt, hogy az összes SailfishOS:Chum csomagtárolón keresztül elérhetővé tett csomag teljes forráskódja a elérhető és átvizsgálható illetve biztosítható, hogy a terjesztett csomagok valóban ezekből a forrásokból lettek generálva. Röviden: az összes SailfishOS:Chum csomagtárolóban elérhető csomag áttekinthető és transzparens módon került előállításra. &lt;br /&gt;&lt;br /&gt;  A Sailfish&amp;nbsp;OS-hez használt szoftverek központi build rendszeren keresztül történő terjesztésével a fejlesztők közötti kollaboráció is serkentve van azáltal, hogy lehetőség nyílik például közös programkönyvtárak használatára csökkentve ezáltal a közös csomagok naprakészen tartására dedikálandó időt. Ezen felül jóval egyszerűbbé válhat annak megállapítása, hogy milyen komponensek érhetőek el a Sailfish&amp;nbsp;OS OBS-en keresztül. Továbbá egyszerűsíti követését egyszerre több és rétegezett függőségek kezelésének ami a szoftver beszállítói lánc naprakészen tartásában kulcsfontosságú.&lt;br /&gt;&lt;br /&gt; A SailfishOS:Chum csomagtároló a Sailfish&amp;nbsp;OS OBS-en keresztül érhető el:&lt;br /&gt;&lt;a href=&apos;https://build.merproject.org/project/show/sailfishos:chum&apos;&gt;build.merproject.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;A &amp;quot;chum&amp;quot; szó etimológia eredetéről további információkat a Wikipédián találhatsz: &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; és &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.</translation>
+        <location filename="../qml/pages/AboutPage.qml" line="98"/>
+        <source>&amp;nbsp;&lt;br /&gt;The SailfishOS:Chum community repository provides a collection of applications, tools and libraries compiled for various hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;In contrast to the software distribution model of the Jolla Store or OpenRepos, to which binary packages are uploaded by developers, at SailfishOS:Chum software is compiled and packaged into RPMs in a reproducible manner directly from its source code. The source code used for compiling and packaging is submitted by developers to OBS (Open Build Service), which generates multiple RPM files for different combinations of hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;This scheme ensures that the complete source code of all packages at SailfishOS:Chum is available and inspectable there, and that all packages are generated solely from this source code. Hence all software packages at SailfishOS:Chum are created in a transparent and fully traceable manner.&lt;br /&gt;&lt;br /&gt;By collecting software for Sailfish&amp;nbsp;OS in a single automated build system, collaboration between developers through common packaging of shared libraries etc. is fostered, duplication of work for keeping these common packages up-to-date is eliminated, and it becomes much easier to determine which pieces of software exist and which are missing at the Sailfish&amp;nbsp;OS OBS. Additionally this eases tracing multiple and potentially layered dependencies (&amp;quot;dependency chains&amp;quot;) which is crucial for keeping the software supply chains of complex packages up-to-date.&lt;br /&gt;&lt;br /&gt;The SailfishOS:Chum repository is located at the Sailfish&amp;nbsp;OS OBS:&lt;br /&gt;&lt;a href=&apos;https://build.merproject.org/project/show/sailfishos:chum&apos;&gt;build.merproject.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;For the etymological origin and meanings of the word &amp;quot;chum&amp;quot;, see &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; and &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.</source>
+        <translation>&amp;nbsp;&lt;br /&gt;A SailfishOS:Chum közösségi csomagtárolókban alkalmazások, eszközök és programkönyvtárak széles kollekciója érhető el több architektúrára illetve Sailfish&amp;nbsp;OS verzióra is.&lt;br /&gt;&lt;br /&gt;A fő különbség a Jolla Áruházzal és az Openrepossal összehasonlítva az, hogy az itt elérhető szoftverek RPM csomagjai reprodukálható módon kerülnek előállításra nem pedig a fejlesztők által feltöltött binárisok kerülnek terjesztésre. A fejlesztők a csomagok forrásait és a csomagoláshoz szükséges fájlokat az OBS-en (Open Build Service) töltik fel ami generálja az RPM csomagokat a különböző hardver architektúrákhoz és Sailfish OS verziókhoz.&lt;br /&gt;&lt;br /&gt;Ez a megoldás biztosítja azt, hogy az összes SailfishOS:Chum csomagtárolón keresztül elérhetővé tett csomag teljes forráskódja a elérhető és átvizsgálható illetve biztosítható, hogy a terjesztett csomagok valóban ezekből a forrásokból lettek generálva. Röviden: az összes SailfishOS:Chum csomagtárolóban elérhető csomag áttekinthető és transzparens módon került előállításra.&lt;br /&gt;&lt;br /&gt;A Sailfish&amp;nbsp;OS-hez használt szoftverek központi build rendszeren keresztül történő terjesztésével a fejlesztők közötti kollaboráció is serkentve van azáltal, hogy lehetőség nyílik például közös programkönyvtárak használatára csökkentve ezáltal a közös csomagok naprakészen tartására dedikálandó időt. Ezen felül jóval egyszerűbbé válhat annak megállapítása, hogy milyen komponensek érhetőek el a Sailfish&amp;nbsp;OS OBS-en keresztül. Továbbá egyszerűsíti követését egyszerre több és rétegezett függőségek kezelésének ami a szoftver beszállítói lánc naprakészen tartásában kulcsfontosságú.&lt;br /&gt;&lt;br /&gt;A SailfishOS:Chum csomagtároló a Sailfish&amp;nbsp;OS OBS-en keresztül érhető el:&lt;br /&gt;&lt;a href=&apos;https://build.merproject.org/project/show/sailfishos:chum&apos;&gt;build.merproject.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;A &amp;quot;chum&amp;quot; szó etimológia eredetéről további információkat a Wikipédián találhatsz: &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; és &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.</translation>
     </message>
     <message id="chum-desc-library">
         <location filename="../src/chumpackage.cpp" line="139"/>
