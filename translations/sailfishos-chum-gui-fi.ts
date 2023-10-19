@@ -518,7 +518,7 @@
     <message id="chum-about-home">
         <location filename="../qml/pages/AboutPage.qml" line="59"/>
         <source>Source code repository</source>
-        <translation>Koodipakettilähde</translation>
+        <translation>Lähdekoodin arkisto</translation>
     </message>
     <message id="chum-about-license">
         <location filename="../qml/pages/AboutPage.qml" line="71"/>
