@@ -1,14 +1,15 @@
 Name:           sailfishos-chum-gui
 Summary:        GUI application for utilising the SailfishOS:Chum community repository
 Version:        0.6.4
-Release:        4
+Release:        5
 # The Group tag should comprise one of the groups listed here:
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
 Group:          Software Management/Package Manager
 License:        MIT
 URL:            https://github.com/sailfishos-chum/%{name}
 Vendor:         chum
-Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+# Note that the git tag format for releases must be `%{release}/%{version}`
+Source0:        %{url}/archive/%{release}/%{version}/%{name}-%{version}.tar.gz
 Source1:        token-github.txt
 Source2:        token-gitlab.txt
 Source99:       %{name}.rpmlintrc
