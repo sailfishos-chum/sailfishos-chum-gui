@@ -108,15 +108,15 @@ Page {
                 wrapMode: Text.WordWrap
             }
 
-            // `<big>`, `<kbd>` and `<dfn>` do not work, although all three should, see
-            // https://doc.qt.io/qt-5/richtext-html-subset.html#supported-tags
-            // Hence using `<b>` (bold), `<tt>` (typewriter) and `<i>` (italic) instead.
+            // `<big>`, `<kbd>`, `<dfn>`, `<tt>` and `<code>` do not work, although all should,
+            // see https://doc.qt.io/qt-5/richtext-html-subset.html#supported-tags
+            // Hence using `<b>` (bold) and `<i>` (italic) instead.
             TextFieldDesc {
                 id: txtRelease
-                //% "<b>Press <tt>Enter</tt> to apply</b><br />"
+                //% "<b>Press <kbd>Enter</kbd> to apply</b><br />"
                 //% "Usually a specific SailfishOS:Chum repository is automatically selected according to the "
                 //% "installed Sailfish&nbsp;OS release version. To manually select a SailfishOS:Chum repository "
-                //% "for a specific Sailfish&nbsp;OS release, specify this release here (for example, <code>4.3.0.12</code>). "
+                //% "for a specific Sailfish&nbsp;OS release, specify this release here (for example, <i>4.3.0.12</i>). "
                 //% "This is useful when the SailfishOS:Chum repository is not available for the installed "
                 //% "Sailfish&nbsp;OS version, as for Cbeta users."
                 description: qsTrId("chum-setings-override-release-description")
