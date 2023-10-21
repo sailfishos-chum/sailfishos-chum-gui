@@ -402,7 +402,7 @@
     <message id="chum-settings-testing">
         <location filename="../qml/pages/SettingsPage.qml" line="94"/>
         <source>Use testing repository</source>
-        <translation>Käytä testipakettilähdettä</translation>
+        <translation>Käytä testauspakettilähdettä</translation>
     </message>
     <message id="chum-settings-advanced">
         <location filename="../qml/pages/SettingsPage.qml" line="83"/>
