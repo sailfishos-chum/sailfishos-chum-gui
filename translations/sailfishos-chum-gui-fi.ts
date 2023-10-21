@@ -286,7 +286,7 @@
     <message id="chum-issue-with-number">
         <location filename="../qml/pages/IssuePage.qml" line="35"/>
         <source>Issue: #%1</source>
-        <translation>Ongema: #%1</translation>
+        <translation>Ongelma: #%1</translation>
     </message>
     <message id="chum-issue">
         <location filename="../qml/pages/IssuePage.qml" line="37"/>
