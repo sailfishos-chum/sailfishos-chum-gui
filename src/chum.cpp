@@ -325,7 +325,7 @@ void Chum::repositoriesListUpdated() {
     if (!m_ssu.manageRepo()) {
         // Found SailfishOS:Chum repositories, which were not configured by this app, probably a misconfiguration
         emit errorFatal(
-                    //% "Repositories misconfigured."
+                    //% "Repositories misconfigured"
                     qtTrId("chum-repo-management-disabled-title"),
                     //% "The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!<br />"
                     //% "You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a "
