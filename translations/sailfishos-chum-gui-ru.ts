@@ -229,13 +229,13 @@
         <location filename="../src/chum.cpp" line="67"/>
         <location filename="../src/chum.cpp" line="329"/>
         <location filename="../src/chum.cpp" line="351"/>
-        <source>Repositories misconfigured.</source>
+        <source>Repositories misconfigured</source>
         <translation>Неправильно настроены репозитории</translation>
     </message>
     <message id="chum-repo-management-disabled-txt">
         <location filename="../src/chum.cpp" line="336"/>
-        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!&lt;br /&gt;You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.&lt;br /&gt;&lt;br /&gt;Please remove all SailfishOS:Chum repositories by executing this command line as root user:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
-        <translation>Приложение SailfishOS:Chum не может управлять пакетами из репозитория SailfishOS:Chum!&lt;br /&gt;Вероятно для SSU задано несколько репозиториев SailfishOS:Chum или этот репозиторий отключён.&lt;br /&gt;&lt;br /&gt;Удалите, пожалуйста, все репозитории SailfishOS:Chum в командной строке администратора с помощью команды&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;При повторном запуске приложение SailfishOS:Chum само добавит недостающую запись о репозитории SailfishOS:Chum.</translation>
+        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!&lt;br /&gt;You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.&lt;br /&gt;&lt;br /&gt;Please remove all references to SailfishOS:Chum repositories by executing this command line as root user:&lt;br /&gt;&lt;b&gt;&lt;code&gt;%1&lt;/code&gt;&lt;/b&gt;&lt;br /&gt;This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
+        <translation>Приложение SailfishOS:Chum не может управлять пакетами из репозитория SailfishOS:Chum!&lt;br /&gt;Вероятно для SSU задано несколько репозиториев SailfishOS:Chum или этот репозиторий отключён.&lt;br /&gt;&lt;br /&gt;Удалите, пожалуйста, все репозитории SailfishOS:Chum в командной строке администратора с помощью команды&lt;br /&gt;&lt;b&gt;&lt;code&gt;%1&lt;/code&gt;&lt;/b&gt;&lt;br /&gt;При повторном запуске приложение SailfishOS:Chum само добавит недостающую запись о репозитории SailfishOS:Chum.</translation>
     </message>
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="342"/>
