@@ -1,7 +1,7 @@
-* Fri Oct 20 2023 olf <Olf0@users.noreply.github.com> - 0.6.5
+* Fri Nov 10 2023 olf <Olf0@users.noreply.github.com> - 0.6.5
 - Improve Finnish translation (#252)
-- Additionally use <b>, because <code> does not work in QT-RichText
-- [chum.cpp] Revert adding a full stop to line 320 in PR #112, because it is a window title!
+- Additionally use `<b>`, because `<code>` does not work in QT-RichText (#253)
+- Revert adding a full stop in PR #112, because it is a window title! (#253)
 
 * Mon Oct 16 2023 olf <Olf0@users.noreply.github.com> - 0.6.4
 - Add Finnish translation (#211)
