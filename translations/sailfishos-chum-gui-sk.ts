@@ -229,13 +229,13 @@
         <location filename="../src/chum.cpp" line="67"/>
         <location filename="../src/chum.cpp" line="329"/>
         <location filename="../src/chum.cpp" line="351"/>
-        <source>Repositories misconfigured.</source>
-        <translation>Zle nakonfigurované sklady.</translation>
+        <source>Repositories misconfigured</source>
+        <translation>Zle nakonfigurované sklady</translation>
     </message>
     <message id="chum-repo-management-disabled-txt">
         <location filename="../src/chum.cpp" line="336"/>
-        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!&lt;br /&gt;You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.&lt;br /&gt;&lt;br /&gt;Please remove all SailfishOS:Chum repositories by executing this command line as root user:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
-        <translation>Aplikácii GUI SailfishOS:Chum sa nepodarilo spravovať sklad SailfishOS:Chum!&lt;br /&gt;Pravdepodobne máte definovaných viacero skladov SailfishOS:Chum pre SSU alebo ste deaktivovali sklad SailfishOS:Chum.&lt;br /&gt;&lt;br /&gt;Odstráňte všetky sklady SailfishOS:Chum spustením tohto príkazu ako používateľ root:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;Táto aplikácia GUI SailfishOS:Chum pridá po opätovnom spustení všetky chýbajúce sklady SailfishOS:Chum.</translation>
+        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!&lt;br /&gt;You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.&lt;br /&gt;&lt;br /&gt;Please remove all references to SailfishOS:Chum repositories by executing this command line as root user:&lt;br /&gt;&lt;b&gt;&lt;code&gt;%1&lt;/code&gt;&lt;/b&gt;&lt;br /&gt;This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
+        <translation>Aplikácii GUI SailfishOS:Chum sa nepodarilo spravovať sklad SailfishOS:Chum!&lt;br /&gt;Pravdepodobne máte definovaných viacero skladov SailfishOS:Chum pre SSU alebo ste deaktivovali sklad SailfishOS:Chum.&lt;br /&gt;&lt;br /&gt;Odstráňte všetky sklady SailfishOS:Chum spustením tohto príkazu ako používateľ root:&lt;br /&gt;&lt;b&gt;&lt;code&gt;%1&lt;/code&gt;&lt;/b&gt;&lt;br /&gt;Táto aplikácia GUI SailfishOS:Chum pridá po opätovnom spustení všetky chýbajúce sklady SailfishOS:Chum.</translation>
     </message>
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="342"/>
