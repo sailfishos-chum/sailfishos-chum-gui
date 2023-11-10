@@ -234,7 +234,7 @@
         <location filename="../src/chum.cpp" line="67"/>
         <location filename="../src/chum.cpp" line="329"/>
         <location filename="../src/chum.cpp" line="351"/>
-        <source>Repositories misconfigured.</source>
+        <source>Repositories misconfigured</source>
         <translation type="unfinished"></translation>
     </message>
     <message id="chum-repo-management-disabled-txt">
