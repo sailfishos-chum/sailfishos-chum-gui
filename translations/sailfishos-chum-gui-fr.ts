@@ -229,13 +229,13 @@
         <location filename="../src/chum.cpp" line="67"/>
         <location filename="../src/chum.cpp" line="329"/>
         <location filename="../src/chum.cpp" line="351"/>
-        <source>Repositories misconfigured.</source>
-        <translation>Dépôts mal configurés.</translation>
+        <source>Repositories misconfigured</source>
+        <translation>Dépôts mal configurés</translation>
     </message>
     <message id="chum-repo-management-disabled-txt">
         <location filename="../src/chum.cpp" line="336"/>
-        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!&lt;br /&gt;You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.&lt;br /&gt;&lt;br /&gt;Please remove all SailfishOS:Chum repositories by executing this command line as root user:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
-        <translation>L&apos;application graphique SailfishOS:Chum a échoué à gérer les dépôts SailfishOS:Chum !&lt;br /&gt;Il est probable que plusieurs soient définis, voire désactivés.&lt;br /&gt;&lt;br /&gt;En tant que root, veuillez supprimer tous les dépôts SailfishOS:Chum en exécutant la commande suivante :&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;L&apos;application graphique ajoutera les dépôts nécessaires au redémarrage.</translation>
+        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!&lt;br /&gt;You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.&lt;br /&gt;&lt;br /&gt;Please remove all references to SailfishOS:Chum repositories by executing this command line as root user:&lt;br /&gt;&lt;b&gt;&lt;code&gt;%1&lt;/code&gt;&lt;/b&gt;&lt;br /&gt;This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
+        <translation>L&apos;application graphique SailfishOS:Chum a échoué à gérer les dépôts SailfishOS:Chum !&lt;br /&gt;Il est probable que plusieurs soient définis, voire désactivés.&lt;br /&gt;&lt;br /&gt;En tant que root, veuillez supprimer tous les dépôts SailfishOS:Chum en exécutant la commande suivante :&lt;br /&gt;&lt;b&gt;&lt;code&gt;%1&lt;/code&gt;&lt;/b&gt;&lt;br /&gt;L&apos;application graphique ajoutera les dépôts nécessaires au redémarrage.</translation>
     </message>
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="342"/>
