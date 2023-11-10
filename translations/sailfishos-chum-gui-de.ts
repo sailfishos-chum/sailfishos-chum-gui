@@ -229,13 +229,13 @@
         <location filename="../src/chum.cpp" line="67"/>
         <location filename="../src/chum.cpp" line="329"/>
         <location filename="../src/chum.cpp" line="351"/>
-        <source>Repositories misconfigured.</source>
-        <translation>Repositorys falsch konfiguriert.</translation>
+        <source>Repositories misconfigured</source>
+        <translation>Repositorys falsch konfiguriert</translation>
     </message>
     <message id="chum-repo-management-disabled-txt">
         <location filename="../src/chum.cpp" line="336"/>
-        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!&lt;br /&gt;You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.&lt;br /&gt;&lt;br /&gt;Please remove all SailfishOS:Chum repositories by executing this command line as root user:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
-        <translation>Die SailfishOS:Chum-GUI-App konnte das SailfishOS:Chum-Repository nicht verwalten!&lt;br /&gt;Vielleicht hast du mehrere SailfishOS:Chum-Repositorys für SSU definiert oder ein SailfishOS:Chum-Repository deaktiviert.&lt;br /&gt;&lt;br /&gt;Bitte entferne alle SailfishOS:Chum-Repositorys mit dem Ausführen dieser Kommandozeile als Root-User:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;Die SailfishOS:Chum-GUI-App wird jegliches fehlende SailfishOS:Chum-Repository beim Neustart hinzufügen.</translation>
+        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!&lt;br /&gt;You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.&lt;br /&gt;&lt;br /&gt;Please remove all references to SailfishOS:Chum repositories by executing this command line as root user:&lt;br /&gt;&lt;b&gt;&lt;code&gt;%1&lt;/code&gt;&lt;/b&gt;&lt;br /&gt;This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
+        <translation>Die SailfishOS:Chum-GUI-App konnte das SailfishOS:Chum-Repository nicht verwalten!&lt;br /&gt;Vielleicht hast du mehrere SailfishOS:Chum-Repositorys für SSU definiert oder ein SailfishOS:Chum-Repository deaktiviert.&lt;br /&gt;&lt;br /&gt;Bitte entferne alle Referenzen auf SailfishOS:Chum-Repositorys mit dem Ausführen dieser Kommandozeile als Root-User:&lt;br /&gt;&lt;b&gt;&lt;code&gt;%1&lt;/code&gt;&lt;/b&gt;&lt;br /&gt;Die SailfishOS:Chum-GUI-App wird jegliches fehlende SailfishOS:Chum-Repository beim Neustart hinzufügen.</translation>
     </message>
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="342"/>
