@@ -229,13 +229,13 @@
         <location filename="../src/chum.cpp" line="67"/>
         <location filename="../src/chum.cpp" line="329"/>
         <location filename="../src/chum.cpp" line="351"/>
-        <source>Repositories misconfigured.</source>
-        <translation>Virhe pakettilähteiden määrityksessä.</translation>
+        <source>Repositories misconfigured</source>
+        <translation>Virhe pakettilähteiden määrityksessä</translation>
     </message>
     <message id="chum-repo-management-disabled-txt">
         <location filename="../src/chum.cpp" line="336"/>
-        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!&lt;br /&gt;You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.&lt;br /&gt;&lt;br /&gt;Please remove all SailfishOS:Chum repositories by executing this command line as root user:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
-        <translation>SailfishOS:Chum GUI -sovellus epäonnistui SailfishOS:Chum-pakettilähteen hallinnassa!&lt;br /&gt;Tämä johtuu luultavasti joko siitä, että olet määritellyt useita SailfishOS:Chum-pakettilähteitä SSU:lle tai olet poistanut SailfishOS:Chum-pakettilähteen käytöstä.&lt;br /&gt;&lt;br /&gt;Ole hyvä ja poista kaikki SailfishOS:Chum-pakettilähteet suorittamalla tämä komento pääkäyttäjänä:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;SailfishOS:Chum GUI -sovellus lisää kaikki puuttuvat SailfishOS:Chum-pakettilähteet sovelluksen uudelleenkäynnistyksen yhteydessä.</translation>
+        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!&lt;br /&gt;You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.&lt;br /&gt;&lt;br /&gt;Please remove all references to SailfishOS:Chum repositories by executing this command line as root user:&lt;br /&gt;&lt;b&gt;&lt;code&gt;%1&lt;/code&gt;&lt;/b&gt;&lt;br /&gt;This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
+        <translation>SailfishOS:Chum GUI -sovellus epäonnistui SailfishOS:Chum-pakettilähteen hallinnassa!&lt;br /&gt;Tämä johtuu luultavasti joko siitä, että olet määritellyt useita SailfishOS:Chum-pakettilähteitä SSU:lle tai olet poistanut SailfishOS:Chum-pakettilähteen käytöstä.&lt;br /&gt;&lt;br /&gt;Ole hyvä ja poista kaikki SailfishOS:Chum-pakettilähteet suorittamalla tämä komento pääkäyttäjänä:&lt;br /&gt;&lt;b&gt;&lt;code&gt;%1&lt;/code&gt;&lt;/b&gt;&lt;br /&gt;SailfishOS:Chum GUI -sovellus lisää kaikki puuttuvat SailfishOS:Chum-pakettilähteet sovelluksen uudelleenkäynnistyksen yhteydessä.</translation>
     </message>
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="342"/>
