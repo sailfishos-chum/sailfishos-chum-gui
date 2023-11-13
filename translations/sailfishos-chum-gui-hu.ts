@@ -229,13 +229,13 @@
         <location filename="../src/chum.cpp" line="67"/>
         <location filename="../src/chum.cpp" line="329"/>
         <location filename="../src/chum.cpp" line="351"/>
-        <source>Repositories misconfigured.</source>
-        <translation>Néhány csomagtároló beállítása hibás.</translation>
+        <source>Repositories misconfigured</source>
+        <translation>Néhány csomagtároló beállítása hibás</translation>
     </message>
     <message id="chum-repo-management-disabled-txt">
         <location filename="../src/chum.cpp" line="336"/>
-        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!&lt;br /&gt;You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.&lt;br /&gt;&lt;br /&gt;Please remove all SailfishOS:Chum repositories by executing this command line as root user:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
-        <translation>Az alkalmazásnak nem sikerült a SaifishOS:Chum csomagtároló kezelése!&lt;br /&gt;Lehetséges, hogy több SailfishOS:Chum csomagtárolód van az SSU-hoz beállítva, vagy le lett tiltva a SaifishOS:Chum csomagtároló.&lt;br /&gt;&lt;br /&gt;Távolítsd el az összes SailfishOS:Chum csomagtárolót az alábbi parancsot futtava root jogosultsággal:&lt;br /&gt;&lt;code&gt;%1&lt;/code&gt;&lt;br /&gt;Az alkalmazás automatikusan fel fogja venni a következő indításnál a Chum csomagtárolókat.</translation>
+        <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!&lt;br /&gt;You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.&lt;br /&gt;&lt;br /&gt;Please remove all references to SailfishOS:Chum repositories by executing this command line as root user:&lt;br /&gt;&lt;b&gt;&lt;code&gt;%1&lt;/code&gt;&lt;/b&gt;&lt;br /&gt;This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
+        <translation>Az alkalmazásnak nem sikerült a SaifishOS:Chum csomagtároló kezelése!&lt;br /&gt;Lehetséges, hogy több SailfishOS:Chum csomagtárolód van az SSU-hoz beállítva, vagy le lett tiltva a SaifishOS:Chum csomagtároló.&lt;br /&gt;&lt;br /&gt;Távolítsd el az összes SailfishOS:Chum csomagtárolót az alábbi parancsot futtava root jogosultsággal:&lt;br /&gt;&lt;b&gt;&lt;code&gt;%1&lt;/code&gt;&lt;/b&gt;&lt;br /&gt;Az alkalmazás automatikusan fel fogja venni a következő indításnál a Chum csomagtárolókat.</translation>
     </message>
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="342"/>
