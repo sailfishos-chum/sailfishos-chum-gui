@@ -1,6 +1,7 @@
 Name:           sailfishos-chum-gui
 Summary:        GUI application for utilising the SailfishOS:Chum community repository
-# Must adhere to semantic versioning: https://semver.org/
+# The %%{version} tag must adhere to semantic versioning: Among multiple other
+# reasons due to its use for `qmake5` in line 94.  See https://semver.org/
 Version:        0.6.6
 Release:        1
 # The Group tag should comprise one of the groups listed here:
