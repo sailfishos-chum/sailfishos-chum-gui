@@ -1,6 +1,8 @@
 Name:           sailfishos-chum-gui
 Summary:        GUI application for utilising the SailfishOS:Chum community repository
-Version:        0.6.5
+# The %%{version} tag must adhere to semantic versioning: Among multiple other
+# reasons due to its use for `qmake5` in line 94.  See https://semver.org/
+Version:        0.6.6
 Release:        1
 # The Group tag should comprise one of the groups listed here:
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
@@ -8,7 +10,7 @@ Group:          Software Management/Package Manager
 License:        MIT
 URL:            https://github.com/sailfishos-chum/%{name}
 Vendor:         chum
-# Note that the git tag format for releases must be `%{release}/%{version}`
+# Note that the git tag format for releases must be `%%{release}/%%{version}`
 Source0:        %{url}/archive/%{release}/%{version}/%{name}-%{version}.tar.gz
 Source1:        token-github.txt
 Source2:        token-gitlab.txt
@@ -89,7 +91,7 @@ Links:
 
 %build
 # SFOS RPM cmake macro disables RPATH
-%cmake -DCHUMGUI_VERSION=%(echo %{version} | grep -Eo '^[0-9]+(\.[0-9]+)*')  \
+%cmake -DCHUMGUI_VERSION=%{version}  \
        -DCMAKE_SKIP_RPATH:BOOL=OFF  \
        -DCMAKE_INSTALL_RPATH=%{_datadir}/%{name}/lib:  \
        -DGITHUB_TOKEN=%(cat %{SOURCE1})  \

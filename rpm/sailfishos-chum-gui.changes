@@ -1,3 +1,6 @@
+* Tue Nov 14 2023 olf <Olf0@users.noreply.github.com> - 0.6.6
+- 
+
 * Fri Nov 10 2023 olf <Olf0@users.noreply.github.com> - 0.6.5
 - Improve Finnish translation (#252)
 - Additionally use `<b>`, because `<code>` does not work in QT-RichText (#253)
