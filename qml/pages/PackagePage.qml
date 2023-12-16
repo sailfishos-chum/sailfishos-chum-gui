@@ -54,6 +54,12 @@ Page {
                            ? Chum.updatePackage(pkg.id)
                            : Chum.installPackage(pkg.id)
             }
+            MenuItem {
+                //% "Launch"
+                text: qsTrId("chum-launch")
+                visible: pkg.installed && pkg.type == ChumPackage.PackageApplicationDesktop && pkg.desktopFile.length > 0
+                onClicked: Chum.launchDesktopFile(pkg.desktopFile)
+            }
         }
 
         RemorsePopup { id: remorse }
