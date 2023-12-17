@@ -154,11 +154,13 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
     QByteArray metainjson;
     YAML::Node metayaml;
 
-    try {
-        metayaml = YAML::Load(descLines.last().toStdString());
-    } catch(const YAML::ParserException &e) {
-        // ignore it, probably not chum section to start with
-    }
+    if (descLines.size() > 0) {
+        try {
+            metayaml = YAML::Load(descLines.last().toStdString());
+        } catch(const YAML::ParserException &e) {
+            // ignore it, probably not chum section to start with
+        }
+      }
 
     if (!metayaml.IsNull() && metayaml.size() > 0) {
         YAML::Emitter emitter;
