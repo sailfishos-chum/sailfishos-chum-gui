@@ -1,5 +1,8 @@
-* Tue Nov 14 2023 olf <Olf0@users.noreply.github.com> - 0.6.6
-- Bugfix: handle packages without description
+* Sat Dec 23 2023 olf <Olf0@users.noreply.github.com> - 0.6.7
+- 
+
+* Mon Dec 18 2023 olf <Olf0@users.noreply.github.com> - 0.6.6
+- Bugfix: handle packages without description (#265), fixes #264
 
 * Fri Nov 10 2023 olf <Olf0@users.noreply.github.com> - 0.6.5
 - Improve Finnish translation (#252)
