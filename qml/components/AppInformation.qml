@@ -88,6 +88,13 @@ MouseArea {
         }
 
         ChumDetailItem {
+            //% "Package last updated:"
+            label: qsTrId("chum-pkg-package-mtime")
+            value: pkg.packageMTime
+            visible: pkg.packageMTime
+        }
+
+        ChumDetailItem {
             //% "Download size:"
             label: qsTrId("chum-pkg-download-size")
             value: Format.formatFileSize(pkg.size)

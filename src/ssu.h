@@ -16,6 +16,7 @@ public:
     bool repoAvailable() const { return m_manage_repo && !m_repo_name.isEmpty(); }
     bool repoTesting() const { return m_manage_repo && m_repo_testing; }
     QString repoName() const { return m_manage_repo ? m_repo_name : QString{}; }
+    QString deviceVersion() const {return m_device_version;}
 
     void loadRepos();
     void setRepo(const QString &version=QString(), bool testing=false);
@@ -30,6 +31,7 @@ private:
     bool m_manage_repo{false};
     bool m_repo_testing{false};
     QString m_repo_name;
+    QString m_device_version;
 
     QList< std::pair<QString,QString> > m_repos;
     QString m_added_repo_name;

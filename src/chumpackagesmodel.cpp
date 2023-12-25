@@ -44,6 +44,8 @@ QVariant ChumPackagesModel::data(const QModelIndex &index, int role) const {
         return p->type();
     case ChumPackage::PackageUpdateAvailableRole:
         return p->updateAvailable();
+    case ChumPackage::PackageMTime:
+        return p->packageMTime();
     default:
         return QVariant{};
     }
@@ -62,6 +64,7 @@ QHash<int, QByteArray> ChumPackagesModel::roleNames() const {
         {ChumPackage::PackageStarsCountRole, QByteArrayLiteral("packageStarsCount")},
         {ChumPackage::PackageTypeRole, QByteArrayLiteral("packageType")},
         {ChumPackage::PackageUpdateAvailableRole,  QByteArrayLiteral("packageUpdateAvailable")},
+        {ChumPackage::PackageMTime,  QByteArrayLiteral("packageMTime")},
     };
 }
 

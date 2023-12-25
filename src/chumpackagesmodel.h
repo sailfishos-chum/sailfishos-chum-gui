@@ -49,6 +49,7 @@ signals:
     void filterUpdatesOnlyChanged();
     void searchChanged();
     void showCategoryChanged();
+    void busyChanged();
 
 private:
     void updatePackage(QString packageId, ChumPackage::Role role);
