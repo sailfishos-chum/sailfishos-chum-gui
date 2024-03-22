@@ -84,6 +84,6 @@ If you want to translate the SailfishOS:Chum GUI application to a language it do
 - [Petr Tsymbarovich (mentaljam / osetr)](https://github.com/mentaljam)
 
 ### Credits
-- [SailfishOS:Chum OBS repository](https://build.sailfishos.org/project/show/sailfishos:chum) hosted at the [SailfishOS-OBS](https://build.sailfishos.org/), which is maintained by [Jolla Ltd.](https://jolla.com/)
+- [SailfishOS:Chum OBS repository](https://build.sailfishos.org/project/show/sailfishos:chum) hosted at the [SailfishOS-OBS](https://build.sailfishos.org/), which is maintained by [Jolla Group Ltd. / Jollyboys OY](https://jolla.com/)
 - [SailfishOS:Chum community repository (source code)](https://github.com/orgs/sailfishos-chum/repositories?type=all) hosted at [GitHub](https://github.com/about)
 - [SailfishOS:Chum (GUI) icon(s)](https://github.com/sailfishos-chum/sailfishos-chum-gui-installer/tree/main/.icons#readme) by [olf (Olf0)](https://github.com/Olf0)
