@@ -122,7 +122,7 @@ Page {
                 //% "for keeping the software supply chains of complex packages up-to-date.<br />"
                 //% "<br />"
                 //% "The SailfishOS:Chum repository is located at the Sailfish&nbsp;OS OBS:<br />"
-                //% "<a href='https://build.merproject.org/project/show/sailfishos:chum'>build.merproject.org/project/show/sailfishos:chum</a><br />"
+                //% "<a href='https://build.sailfishos.org/project/show/sailfishos:chum'>build.sailfishos.org/project/show/sailfishos:chum</a><br />"
                 //% "<br />"
                 //% "For the etymological origin and meanings of the word &quot;chum&quot;, see "
                 //% "<a href='https://en.wikipedia.org/wiki/Chumming'>en.wikipedia.org:Chumming</a> "
