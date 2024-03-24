@@ -16,7 +16,7 @@ lrelease -idbased sailfishos-chum-gui.ts
 ```
 If you want to test your translation before publishing, you should compile it and copy the resulting `.qm` file(s) to (requires root privileges):
 ```
- /usr/share/sailfishos-chum-gui/translations
+/usr/share/sailfishos-chum-gui/translations/
 ```
 Storeman tries to automatically load a translation file according to your system locale setting.  You can also run the application with a selected locale from the terminal.  For example, for the Swedish language the command is:
 ```
