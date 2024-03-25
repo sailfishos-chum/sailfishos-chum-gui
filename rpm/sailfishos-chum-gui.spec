@@ -35,6 +35,7 @@ BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(yaml-cpp)
 BuildRequires:  pkgconfig(packagekitqt5)
+BuildRequires:  pkgconfig(mlite5)
 BuildRequires:  desktop-file-utils
 BuildRequires:  cmake >= 3.11
 BuildRequires:  sailfish-svg2png
@@ -44,6 +45,12 @@ BuildRequires:  sed
 # Bundle YAML-C++ library (for OBS builds) only for older SFOS version targets < v4.0.0.00
 %if %{defined sailfishos_version} && 0%{?sailfishos_version} < 40000
 %define bundle_yaml 1
+%endif
+
+%if %{defined sailfishos_version} && 0%{?sailfishos_version} < 40000
+%define sailjail_available OFF
+%else
+%define sailjail_available ON
 %endif
 
 %if 0%{?bundle_yaml}
@@ -96,6 +103,7 @@ Links:
        -DCMAKE_INSTALL_RPATH=%{_datadir}/%{name}/lib:  \
        -DGITHUB_TOKEN=%(cat %{SOURCE1})  \
        -DGITLAB_TOKEN=%(cat %{SOURCE2})  \
+       -DSAILJAIL_AVAILABLE:BOOL=%{sailjail_available}  \
        .
 cmake --build .
 
