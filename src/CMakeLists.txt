@@ -42,6 +42,10 @@ set_source_files_properties(projectgitlab.cpp PROPERTIES
   COMPILE_DEFINITIONS GITLAB_TOKEN=\"${GITLAB_TOKEN}\"
 )
 
+set_source_files_properties(projectforgejo.cpp PROPERTIES
+  COMPILE_DEFINITIONS FORGEJO_TOKEN=\"${FORGEJO_TOKEN}\"
+)
+
 target_link_libraries(${PROJECT_NAME}
   Qt5::Quick
   Qt5::DBus
