@@ -9,6 +9,8 @@ add_executable(${PROJECT_NAME}
   loadableobject.h
   projectabstract.cpp
   projectabstract.h
+  projectforgejo.h
+  projectforgejo.cpp
   projectgithub.cpp
   projectgithub.h
   projectgitlab.cpp

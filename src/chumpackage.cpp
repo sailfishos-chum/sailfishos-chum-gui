@@ -2,6 +2,7 @@
 
 #include "projectgithub.h"
 #include "projectgitlab.h"
+#include "projectforgejo.h"
 
 #include <PackageKit/Daemon>
 #include <PackageKit/Details>
@@ -234,6 +235,8 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
             m_project = new ProjectGitHub(u, this);
         else if (ProjectGitLab::isProject(u))
             m_project = new ProjectGitLab(u, this);
+        else if (ProjectForgejo::isProject(u))
+            m_project = new ProjectForgejo(u, this);
         if (m_project) break;
     }
 
