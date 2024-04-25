@@ -229,7 +229,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
         m_donation = json.value("Url").toObject().value("Donation").toString();
     }
 
-    for (const QString &u: {m_repo_url, m_url, m_packaging_repo_url}) {
+    for (const QString &u: {m_packaging_repo_url, m_repo_url, m_url}) {
         if (ProjectGitHub::isProject(u))
             m_project = new ProjectGitHub(u, this);
         else if (ProjectGitLab::isProject(u))
