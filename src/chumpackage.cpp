@@ -154,13 +154,11 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
     QByteArray metainjson;
     YAML::Node metayaml;
 
-    if (descLines.size() > 0) {
-        try {
-            metayaml = YAML::Load(descLines.last().toStdString());
-        } catch(const YAML::ParserException &e) {
-            // ignore it, probably not chum section to start with
-        }
-      }
+    try {
+        metayaml = YAML::Load(descLines.last().toStdString());
+    } catch(const YAML::ParserException &e) {
+        // ignore it, probably not chum section to start with
+    }
 
     if (!metayaml.IsNull() && metayaml.size() > 0) {
         YAML::Emitter emitter;
@@ -229,7 +227,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
         m_donation = json.value("Url").toObject().value("Donation").toString();
     }
 
-    for (const QString &u: {m_packaging_repo_url, m_repo_url, m_url}) {
+    for (const QString &u: {m_repo_url, m_url, m_packaging_repo_url}) {
         if (ProjectGitHub::isProject(u))
             m_project = new ProjectGitHub(u, this);
         else if (ProjectGitLab::isProject(u))
@@ -256,6 +254,21 @@ void ChumPackage::setInstalledVersion(const QString &v)
     m_installed_version = v;
     emit updated(m_id, PackageInstalledVersionRole);
     emit updated(m_id, PackageInstalledRole);
+    if (type() == PackageApplicationDesktop && installed()) {
+        auto trfl = Daemon::getFiles(m_pkid_installed);
+        connect(trfl, &Transaction::files, this, [this](
+                const QString &packageID, const QStringList &filenames)
+        {
+            for (auto f : filenames) {
+                if (f.endsWith(QStringLiteral(".desktop")))
+                {
+                    m_desktopFile = f;
+                    emit updated(m_id, PackageDesktopFileRole);
+                    break;
+                }
+            }
+        });
+    }
 }
 
 void ChumPackage::setDeveloperLogin(const QString &login) {
