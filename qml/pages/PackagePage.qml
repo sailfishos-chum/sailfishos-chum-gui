@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import org.nemomobile.lipstick 0.1 as Lipstick
 import org.chum 1.0
 import "../components"
 
@@ -58,7 +59,14 @@ Page {
                 //% "Launch"
                 text: qsTrId("chum-launch")
                 visible: pkg.installed && pkg.type == ChumPackage.PackageApplicationDesktop && pkg.desktopFile.length > 0
-                onClicked: Chum.launchDesktopFile(pkg.desktopFile)
+                onClicked: {
+                    launcher.filePath = pkg.desktopFile
+                    console.debug("Application info:" ,JSON.stringify(launcher,null,2))
+                    if (launcher.isValid && !launcher.isLaunching && !launcher.isUpdating) {
+                        launcher.launchApplication()
+                    }
+                }
+                Lipstick.LauncherItem{ id: launcher }
             }
         }
 
