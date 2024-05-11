@@ -14,6 +14,7 @@ Vendor:         chum
 Source0:        %{url}/archive/%{release}/%{version}/%{name}-%{version}.tar.gz
 Source1:        token-github.txt
 Source2:        token-gitlab.txt
+Source3:        token-forgejo.txt
 Source99:       %{name}.rpmlintrc
 Requires:       sailfishsilica-qt5 >= 0.10.9
 Requires:       ssu
@@ -96,6 +97,7 @@ Links:
        -DCMAKE_INSTALL_RPATH=%{_datadir}/%{name}/lib:  \
        -DGITHUB_TOKEN=%(cat %{SOURCE1})  \
        -DGITLAB_TOKEN=%(cat %{SOURCE2})  \
+       -DFORGEJO_TOKEN=%(cat %{SOURCE3})  \
        .
 cmake --build .
 

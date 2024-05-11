@@ -54,8 +54,10 @@ jobs:
            mkdir -p rpmbuild/SOURCES
            printf %s "${{ secrets.TOKEN_GITHUB }}" > rpmbuild/SOURCES/token-github.txt
            printf %s "${{ secrets.TOKEN_GITLAB }}" > rpmbuild/SOURCES/token-gitlab.txt
+           printf %s "${{ secrets.TOKEN_FORGEJO }}" > rpmbuild/SOURCES/token-forgejo.txt
            mkdir -p build/rpm
            cp rpmbuild/SOURCES/token-git??b.txt build/rpm/
+           cp rpmbuild/SOURCES/token-forgejo.txt build/rpm/
            cd build
            cp -r /share/. .
            mb2 -t SailfishOS-$1-$2 build -d
