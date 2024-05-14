@@ -3,10 +3,7 @@
 #include <PackageKit/Daemon>
 
 #include <QDebug>
-#include <QFileInfo>
-#include <QProcess>
 #include <QSettings>
-#include <mlite5/MDesktopEntry>
 
 using namespace PackageKit;
 
@@ -414,32 +411,6 @@ void Chum::updateAllPackages() {
     //% "Updating all packages"
     setStatus(qtTrId("chum-update-all-packages"));
     startOperation(Daemon::updatePackages(pkids), QString{});
-}
-
-void Chum::launchDesktopFile(const QString &desktopFile)
-{
-    MDesktopEntry desktopEntry(desktopFile);
-    QStringList exec = desktopEntry.exec().split(" ");
-    QString executable = exec.at(0);
-    QStringList arguments = exec.mid(1);
-#ifdef SAILJAIL_AVAILABLE
-    if (desktopEntry.isSandboxed()) {
-        // SailJail requires absolute path for the application executable
-        if (!QFileInfo(executable).isAbsolute()) {
-            executable = QStringLiteral("/usr/bin/") + executable;
-        }
-        arguments = QStringList({
-            QStringLiteral("--profile"),
-            desktopEntry.fileName(),
-            QStringLiteral("--"),
-            executable,
-        }) << arguments;
-
-        executable = QStringLiteral("sailjail");
-    }
-#endif
-    QProcess proc;
-    proc.startDetached(executable, arguments);
 }
 
 void Chum::startOperation(Transaction *pktr, const QString &pkg_id) {

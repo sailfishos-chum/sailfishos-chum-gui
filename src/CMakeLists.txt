@@ -24,7 +24,6 @@ add_executable(${PROJECT_NAME}
 target_compile_definitions(${PROJECT_NAME}
   PRIVATE
     $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>
-    $<$<BOOL:${SAILJAIL_AVAILABLE}>:SAILJAIL_AVAILABLE>
 )
 
 set_source_files_properties(chum.cpp PROPERTIES
@@ -52,7 +51,6 @@ target_link_libraries(${PROJECT_NAME}
   Qt5::DBus
   PK::packagekitqt5
   PkgConfig::sailfishapp
-  PkgConfig::mlite5
   yaml-cpp
 )
 

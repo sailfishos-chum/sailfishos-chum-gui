@@ -8,7 +8,6 @@ project(sailfishos-chum-gui
 set(GITHUB_TOKEN "unset" CACHE STRING "GitHub access token for GraphQL queries")
 set(GITLAB_TOKEN "unset" CACHE STRING "GitLab access site-token pair(s) for GraphQL queries")
 set(FORGEJO_TOKEN "unset" CACHE STRING "Forgejo (and Gitea) access site-token pair(s) for API queries")
-set(SAILJAIL_AVAILABLE ON CACHE BOOL "Whether SailJail is available")
 
 include(FindPkgConfig)
 
@@ -24,12 +23,6 @@ pkg_search_module(sailfishapp
   REQUIRED
   IMPORTED_TARGET
   sailfishapp
-)
-
-pkg_search_module(mlite5
-    REQUIRED
-    IMPORTED_TARGET
-    mlite5
 )
 
 set(CMAKE_AUTOMOC ON)
