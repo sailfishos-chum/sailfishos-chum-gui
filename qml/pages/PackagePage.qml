@@ -58,7 +58,7 @@ Page {
             MenuItem {
                 //% "Launch"
                 text: qsTrId("chum-launch")
-                visible: pkg.installed && pkg.type == ChumPackage.PackageApplicationDesktop && pkg.desktopFile.length > 0
+                visible: pkg.installed && pkg.desktopFile.length > 0
                 onClicked: {
                     launcher.filePath = pkg.desktopFile
                     console.debug("Application info:" ,JSON.stringify(launcher,null,2))
