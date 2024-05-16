@@ -1,4 +1,4 @@
-* Thu Mai 16 2024 olf <Olf0@users.noreply.github.com> - 0.6.7
+* Thu May 16 2024 olf <Olf0@users.noreply.github.com> - 0.6.7
 - Add Estonian translation (#269) by Priit Jõerüüt (tlend)
 - Change order of queried repo URLs (#273) by @nephros, see also #272
 - Add support for Forgejo/Gitea remote repos (#271) by @nephros and @Olf0, enhances #44
