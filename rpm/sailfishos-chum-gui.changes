@@ -1,3 +1,5 @@
+* Fri May 17 2024 olf <Olf0@users.noreply.github.com> - 0.6.8
+
 * Thu May 16 2024 olf <Olf0@users.noreply.github.com> - 0.6.7
 - Add Estonian translation (#269) by Priit Jõerüüt (tlend)
 - Change order of queried repo URLs (#273) by @nephros, see also #272
