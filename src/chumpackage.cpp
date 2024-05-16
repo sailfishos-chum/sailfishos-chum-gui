@@ -259,6 +259,21 @@ void ChumPackage::setInstalledVersion(const QString &v)
     m_installed_version = v;
     emit updated(m_id, PackageInstalledVersionRole);
     emit updated(m_id, PackageInstalledRole);
+    if (type() == PackageApplicationDesktop && installed()) {
+        auto trfl = Daemon::getFiles(m_pkid_installed);
+        connect(trfl, &Transaction::files, this, [this](
+                const QString &packageID, const QStringList &filenames)
+        {
+            for (auto f : filenames) {
+                if (f.endsWith(QStringLiteral(".desktop")))
+                {
+                    m_desktopFile = f;
+                    emit updated(m_id, PackageDesktopFileRole);
+                    break;
+                }
+            }
+        });
+    }
 }
 
 void ChumPackage::setDeveloperLogin(const QString &login) {
