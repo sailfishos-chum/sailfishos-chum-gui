@@ -3,7 +3,7 @@ Summary:        GUI application for utilising the SailfishOS:Chum community repo
 # The %%{version} tag must adhere to semantic versioning: Among multiple other
 # reasons due to its use for `qmake5` in line 94.  See https://semver.org/
 Version:        0.6.7
-Release:        1
+Release:        2
 # The Group tag should comprise one of the groups listed here:
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
 Group:          Software Management/Package Manager

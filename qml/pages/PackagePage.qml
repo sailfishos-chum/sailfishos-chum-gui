@@ -56,7 +56,7 @@ Page {
                            : Chum.installPackage(pkg.id)
             }
             MenuItem {
-                //% "Launch"
+                //% "Start application"
                 text: qsTrId("chum-launch")
                 visible: pkg.installed && pkg.desktopFile.length > 0
                 onClicked: {
