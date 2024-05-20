@@ -143,7 +143,7 @@
     <message id="chum-launch">
         <location filename="../qml/pages/PackagePage.qml" line="60"/>
         <source>Start application</source>
-        <translation>Starte Anwendung</translation>
+        <translation>Anwendung starten</translation>
     </message>
     <message id="chum-package-donation">
         <location filename="../qml/pages/PackagePage.qml" line="140"/>
