@@ -103,45 +103,50 @@
         <translation>Paigaldatud tarkvarapaketid</translation>
     </message>
     <message id="chum-package-project-repo">
-        <location filename="../qml/pages/PackagePage.qml" line="29"/>
+        <location filename="../qml/pages/PackagePage.qml" line="30"/>
         <source>Source code</source>
         <translation>Lähtekood</translation>
     </message>
     <message id="chum-package-file-issue">
-        <location filename="../qml/pages/PackagePage.qml" line="35"/>
+        <location filename="../qml/pages/PackagePage.qml" line="36"/>
         <source>Issue tracker</source>
         <translation>Arenduse haldus</translation>
     </message>
     <message id="chum-package-discussion-forum">
-        <location filename="../qml/pages/PackagePage.qml" line="41"/>
+        <location filename="../qml/pages/PackagePage.qml" line="42"/>
         <source>Discussion forum</source>
         <translation>Kogukonna foorum</translation>
     </message>
     <message id="chum-uninstalling">
-        <location filename="../qml/pages/PackagePage.qml" line="24"/>
+        <location filename="../qml/pages/PackagePage.qml" line="25"/>
         <source>Removing</source>
         <translation>Eemaldame</translation>
     </message>
     <message id="chum-update">
-        <location filename="../qml/pages/PackagePage.qml" line="49"/>
+        <location filename="../qml/pages/PackagePage.qml" line="50"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="66"/>
         <source>Update</source>
         <translation>Uuenda</translation>
     </message>
     <message id="chum-install">
-        <location filename="../qml/pages/PackagePage.qml" line="51"/>
+        <location filename="../qml/pages/PackagePage.qml" line="52"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="73"/>
         <source>Install</source>
         <translation>Paigalda</translation>
     </message>
     <message id="chum-uninstall">
-        <location filename="../qml/pages/PackagePage.qml" line="21"/>
+        <location filename="../qml/pages/PackagePage.qml" line="22"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="72"/>
         <source>Remove</source>
         <translation>Eemalda</translation>
     </message>
+    <message id="chum-launch">
+        <location filename="../qml/pages/PackagePage.qml" line="60"/>
+        <source>Start application</source>
+        <translation>Käivitage rakendus</translation>
+    </message>
     <message id="chum-package-donation">
-        <location filename="../qml/pages/PackagePage.qml" line="126"/>
+        <location filename="../qml/pages/PackagePage.qml" line="140"/>
         <source>Donate</source>
         <translation>Toeta meie tegevust</translation>
     </message>
@@ -171,12 +176,12 @@
         <translation>Kategooriad:</translation>
     </message>
     <message id="chum-releases-number">
-        <location filename="../qml/pages/PackagePage.qml" line="103"/>
+        <location filename="../qml/pages/PackagePage.qml" line="117"/>
         <source>Releases (%1)</source>
         <translation>Versioonid (%1)</translation>
     </message>
     <message id="chum-issues-number">
-        <location filename="../qml/pages/PackagePage.qml" line="114"/>
+        <location filename="../qml/pages/PackagePage.qml" line="128"/>
         <source>Issues (%1)</source>
         <translation>Veateated ja ettepanekud (%1)</translation>
     </message>
@@ -269,7 +274,7 @@
         <translation>Uuendame kõiki tarkvarapakette</translation>
     </message>
     <message id="chum-release">
-        <location filename="../qml/pages/ReleasePage.qml" line="36"/>
+        <location filename="../qml/pages/ReleasePage.qml" line="47"/>
         <source>Release</source>
         <translation>Versioon</translation>
     </message>
@@ -299,7 +304,7 @@
         <translation>Kommentaarid: %1</translation>
     </message>
     <message id="chum-created-updated-datetime">
-        <location filename="../qml/pages/IssuePage.qml" line="122"/>
+        <location filename="../qml/pages/IssuePage.qml" line="123"/>
         <location filename="../qml/pages/IssuesListPage.qml" line="106"/>
         <source>Created: %1; Updated: %2</source>
         <translation>Loodud: %1; Uuendatud: %2</translation>
@@ -415,12 +420,13 @@
         <translation>Loobu SailfishOS:Chum tarkvarahoidla automaatsest määramisest</translation>
     </message>
     <message id="chum-setings-override-release-description">
-        <location filename="../qml/pages/SettingsPage.qml" line="118"/>
-        <source>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, &lt;i&gt;4.3.0.12&lt;/i&gt;). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</source>
+        <location filename="../qml/pages/SettingsPage.qml" line="122"/>
+        <source>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this release here (for example, &lt;i&gt;4.3.0.12&lt;/i&gt;). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</source>
+        <oldsource>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, &lt;i&gt;4.3.0.12&lt;/i&gt;). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</oldsource>
         <translation>&lt;b&gt;Muudatuse kinnitamiseks vajuta &lt;kbd&gt;Sisestusklahvi&lt;/kbd&gt;&lt;/b&gt;&lt;br /&gt;Tavaliselt valitakse vajalik SailfishOS:Chum tarkvarahoidla automaatselt sinu nutiseadmes kasutusel oleva Sailfish&amp;nbsp;OS&apos;i versiooni alusel. Kui soovid SailfishOS:Chum tarkvarahoidla valida mingi konkreetse Sailfish&amp;nbsp;OS&apos;i versiooni jaoks, siis saad seda teha kirjutades siia soovitud versiooni numbri (näiteks &lt;i&gt;4.3.0.12&lt;/i&gt;). Sellisest võimalusest on kasu, kui SailfishOS:Chum tarkvarahoidla pole antud Sailfish&amp;nbsp;OS&apos;i versiooni jaoks saadaval. Nii võib näiteks juhtuda Sailfish&amp;nbsp;OS&apos;i beetaversiooni kasutajatel.</translation>
     </message>
     <message id="chum-setings-override-release-placeholder">
-        <location filename="../qml/pages/SettingsPage.qml" line="120"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="124"/>
         <source>&lt;i&gt;Specify a Sailfish&amp;nbsp;OS version&lt;/i&gt;</source>
         <translation>&lt;i&gt;Määra Sailfish&amp;nbsp;OS&apos;i versioon&lt;/i&gt;</translation>
     </message>
@@ -501,12 +507,12 @@
         <translation>Hõivatud</translation>
     </message>
     <message id="chum-about-gui">
-        <location filename="../qml/pages/AboutPage.qml" line="18"/>
+        <location filename="../qml/pages/AboutPage.qml" line="19"/>
         <source>About SailfishOS:Chum GUI</source>
         <translation>SailfishOS:Chum GUI teave</translation>
     </message>
     <message id="chum-about-store">
-        <location filename="../qml/pages/AboutPage.qml" line="39"/>
+        <location filename="../qml/pages/AboutPage.qml" line="40"/>
         <source>A graphical client application for the SailfishOS:Chum community repository</source>
         <translation>Graafiline klientrakendus kogukonna poolt hallatavale SailfishOS:Chum tarkvarahoidlale</translation>
     </message>
@@ -516,32 +522,33 @@
         <translation>Versioon: %1</translation>
     </message>
     <message id="chum-about-home">
-        <location filename="../qml/pages/AboutPage.qml" line="59"/>
+        <location filename="../qml/pages/AboutPage.qml" line="58"/>
         <source>Source code repository</source>
         <translation>Lähtekoodi hoidla</translation>
     </message>
     <message id="chum-about-license">
-        <location filename="../qml/pages/AboutPage.qml" line="71"/>
+        <location filename="../qml/pages/AboutPage.qml" line="69"/>
         <source>License: %1</source>
         <translation>Litsents: %1</translation>
     </message>
     <message id="chum-about-issues">
-        <location filename="../qml/pages/AboutPage.qml" line="81"/>
+        <location filename="../qml/pages/AboutPage.qml" line="78"/>
         <source>Issue tracker for bug reports, feature suggestions and help requests</source>
         <translation>Meie tarkvaraarenduse halduskeskkond veateadete, uute ideede ning abipalvete jaoks</translation>
     </message>
     <message id="chum-about-description">
-        <location filename="../qml/pages/AboutPage.qml" line="98"/>
-        <source>&amp;nbsp;&lt;br /&gt;The SailfishOS:Chum community repository provides a collection of applications, tools and libraries compiled for various hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;In contrast to the software distribution model of the Jolla Store or OpenRepos, to which binary packages are uploaded by developers, at SailfishOS:Chum software is compiled and packaged into RPMs in a reproducible manner directly from its source code. The source code used for compiling and packaging is submitted by developers to OBS (Open Build Service), which generates multiple RPM files for different combinations of hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;This scheme ensures that the complete source code of all packages at SailfishOS:Chum is available and inspectable there, and that all packages are generated solely from this source code. Hence all software packages at SailfishOS:Chum are created in a transparent and fully traceable manner.&lt;br /&gt;&lt;br /&gt;By collecting software for Sailfish&amp;nbsp;OS in a single automated build system, collaboration between developers through common packaging of shared libraries etc. is fostered, duplication of work for keeping these common packages up-to-date is eliminated, and it becomes much easier to determine which pieces of software exist and which are missing at the Sailfish&amp;nbsp;OS OBS. Additionally this eases tracing multiple and potentially layered dependencies (&amp;quot;dependency chains&amp;quot;) which is crucial for keeping the software supply chains of complex packages up-to-date.&lt;br /&gt;&lt;br /&gt;The SailfishOS:Chum repository is located at the Sailfish&amp;nbsp;OS OBS:&lt;br /&gt;&lt;a href=&apos;https://build.merproject.org/project/show/sailfishos:chum&apos;&gt;build.merproject.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;For the etymological origin and meanings of the word &amp;quot;chum&amp;quot;, see &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; and &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.</source>
-        <translation>&amp;nbsp;&lt;br /&gt;Kogukonna poolt hallatav SailfishOS:Chum tarkvarahoidla on kogumik rakendusi, tarvikuid ja teeke, mis on kompileeritud erineva raudvara ja Sailfish&amp;nbsp;OS&apos;i versioonide jaoks.&lt;br /&gt;&lt;br /&gt;Kui Jolla Store ja OpenRepos rakendustepoodidesse laadivad arendajad eelnevalt kompileeritud rakendused, siis kõik SailfishOS:Chum tarkvarahoidlast leitav tarkvara on kompileeritud ja RPM&apos;idena pakendatud korratava kompileerimise põhimõtete alusel otse lähtekoodist. Kõik selleks vajaliku lähtekoodi lisavad arendajad veebiteenusesse OBS (Open Build Service), misjärel luuakse vajalikud RPM-failid erinevate raudvara ja Sailfish&amp;nbsp;OS versioonide jaoks.&lt;br /&gt;&lt;br /&gt;Selline metoodika tagab, et kõikide meie tarkvarahoidlas leiduvate tarkvarapakettide kogu lähtekood on alati avalikult leitav ning kontrollitav ja kõik tarkvarapaketid on loodud ainult selle lähtekoodi alusel. Mistõttu kõik tarkvarapaketid SailfishOS:Chum tarkvarahoidlas on alati loodud läbipaistval ja jälgitaval viisil.&lt;br /&gt;&lt;br /&gt;Kuna me kasutame tarkvara jaoks ühte ja ühist automaatset kompileerimisteenust, siis arendajate töö on muutunud tõhusamaks ja mugavamaks - jagatud teekide haldamisele kulub vähem aega, topelttöö jääb tegemata, teegid on alati uuendatud ning on palju lihtsam tuvastada tarkvarakomponente, mis on olemas ja mis veel on Sailfish&amp;nbsp;OS OBS&apos;ist puudu. Lisaks on palju kergem jälgida paljude ja tihtipeale mitmekihiliste abiteekide ja sõltuva tarkvara olekuid (ehk „sõltuvusahelat“) - see ülioluline võimalus aga tagab et kõik meie teenusest leitav tarkvara läbi kogu oma sõltuvusahela kasutab alati kõikide komponentide õigeid versioone.&lt;br /&gt;&lt;br /&gt;SailfishOS:Chum tarkvarahoidla asub veebiteenuses Sailfish&amp;nbsp;OS OBS:&lt;br /&gt;&lt;a href=&apos;https://build.merproject.org/project/show/sailfishos:chum&apos;&gt;build.merproject.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Kui soovid ingliskeelse sõna &amp;quot;chum&amp;quot; algupära ja tähendusi teada, siis vaata neid kahte veebilehte: &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; ja &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.</translation>
+        <location filename="../qml/pages/AboutPage.qml" line="130"/>
+        <source>&amp;nbsp;&lt;br /&gt;The SailfishOS:Chum community repository provides a collection of applications, tools and libraries compiled for various hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;In contrast to the software distribution model of the Jolla Store or OpenRepos, to which binary packages are uploaded by developers, at SailfishOS:Chum software is compiled and packaged into RPMs in a reproducible manner directly from its source code. The source code used for compiling and packaging is submitted by developers to OBS (Open Build Service), which generates multiple RPM files for different combinations of hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;This scheme ensures that the complete source code of all packages at SailfishOS:Chum is available and inspectable there, and that all packages are generated solely from this source code. Hence all software packages at SailfishOS:Chum are created in a transparent and fully traceable manner.&lt;br /&gt;&lt;br /&gt;By collecting software for Sailfish&amp;nbsp;OS in a single automated build system, collaboration between developers through common packaging of shared libraries etc. is fostered, duplication of work for keeping these common packages up-to-date is eliminated, and it becomes much easier to determine which pieces of software exist and which are missing at the Sailfish&amp;nbsp;OS OBS. Additionally this eases tracing multiple and potentially layered dependencies (&amp;quot;dependency chains&amp;quot;) which is crucial for keeping the software supply chains of complex packages up-to-date.&lt;br /&gt;&lt;br /&gt;The SailfishOS:Chum repository is located at the Sailfish&amp;nbsp;OS OBS:&lt;br /&gt;&lt;a href=&apos;https://build.sailfishos.org/project/show/sailfishos:chum&apos;&gt;build.sailfishos.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;For the etymological origin and meanings of the word &amp;quot;chum&amp;quot;, see &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; and &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.</source>
+        <oldsource>&amp;nbsp;&lt;br /&gt;The SailfishOS:Chum community repository provides a collection of applications, tools and libraries compiled for various hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;In contrast to the software distribution model of the Jolla Store or OpenRepos, to which binary packages are uploaded by developers, at SailfishOS:Chum software is compiled and packaged into RPMs in a reproducible manner directly from its source code. The source code used for compiling and packaging is submitted by developers to OBS (Open Build Service), which generates multiple RPM files for different combinations of hardware architectures and Sailfish&amp;nbsp;OS release versions.&lt;br /&gt;&lt;br /&gt;This scheme ensures that the complete source code of all packages at SailfishOS:Chum is available and inspectable there, and that all packages are generated solely from this source code. Hence all software packages at SailfishOS:Chum are created in a transparent and fully traceable manner.&lt;br /&gt;&lt;br /&gt;By collecting software for Sailfish&amp;nbsp;OS in a single automated build system, collaboration between developers through common packaging of shared libraries etc. is fostered, duplication of work for keeping these common packages up-to-date is eliminated, and it becomes much easier to determine which pieces of software exist and which are missing at the Sailfish&amp;nbsp;OS OBS. Additionally this eases tracing multiple and potentially layered dependencies (&amp;quot;dependency chains&amp;quot;) which is crucial for keeping the software supply chains of complex packages up-to-date.&lt;br /&gt;&lt;br /&gt;The SailfishOS:Chum repository is located at the Sailfish&amp;nbsp;OS OBS:&lt;br /&gt;&lt;a href='https://build.merproject.org/project/show/sailfishos:chum'&gt;build.merproject.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;For the etymological origin and meanings of the word &amp;quot;chum&amp;quot;, see &lt;a href='https://en.wikipedia.org/wiki/Chumming'&gt;en.wikipedia.org:Chumming&lt;/a&gt; and &lt;a href='https://en.wiktionary.org/wiki/chum'&gt;en.wiktionary.org:chum&lt;/a&gt;.</oldsource>
+        <translation>&amp;nbsp;&lt;br /&gt;Kogukonna poolt hallatav SailfishOS:Chum tarkvarahoidla on kogumik rakendusi, tarvikuid ja teeke, mis on kompileeritud erineva raudvara ja Sailfish&amp;nbsp;OS&apos;i versioonide jaoks.&lt;br /&gt;&lt;br /&gt;Kui Jolla Store ja OpenRepos rakendustepoodidesse laadivad arendajad eelnevalt kompileeritud rakendused, siis kõik SailfishOS:Chum tarkvarahoidlast leitav tarkvara on kompileeritud ja RPM&apos;idena pakendatud korratava kompileerimise põhimõtete alusel otse lähtekoodist. Kõik selleks vajaliku lähtekoodi lisavad arendajad veebiteenusesse OBS (Open Build Service), misjärel luuakse vajalikud RPM-failid erinevate raudvara ja Sailfish&amp;nbsp;OS versioonide jaoks.&lt;br /&gt;&lt;br /&gt;Selline metoodika tagab, et kõikide meie tarkvarahoidlas leiduvate tarkvarapakettide kogu lähtekood on alati avalikult leitav ning kontrollitav ja kõik tarkvarapaketid on loodud ainult selle lähtekoodi alusel. Mistõttu kõik tarkvarapaketid SailfishOS:Chum tarkvarahoidlas on alati loodud läbipaistval ja jälgitaval viisil.&lt;br /&gt;&lt;br /&gt;Kuna me kasutame tarkvara jaoks ühte ja ühist automaatset kompileerimisteenust, siis arendajate töö on muutunud tõhusamaks ja mugavamaks - jagatud teekide haldamisele kulub vähem aega, topelttöö jääb tegemata, teegid on alati uuendatud ning on palju lihtsam tuvastada tarkvarakomponente, mis on olemas ja mis veel on Sailfish&amp;nbsp;OS OBS&apos;ist puudu. Lisaks on palju kergem jälgida paljude ja tihtipeale mitmekihiliste abiteekide ja sõltuva tarkvara olekuid (ehk „sõltuvusahelat“) - see ülioluline võimalus aga tagab et kõik meie teenusest leitav tarkvara läbi kogu oma sõltuvusahela kasutab alati kõikide komponentide õigeid versioone.&lt;br /&gt;&lt;br /&gt;SailfishOS:Chum tarkvarahoidla asub veebiteenuses Sailfish&amp;nbsp;OS OBS:&lt;br /&gt;&lt;a href=&quot;https://build.sailfishos.org/project/show/sailfishos:chum&quot;&gt;build.sailfishos.org/project/show/sailfishos:chum&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Kui soovid ingliskeelse sõna &amp;quot;chum&amp;quot; algupära ja tähendusi teada, siis vaata neid kahte veebilehte: &lt;a href=&apos;https://en.wikipedia.org/wiki/Chumming&apos;&gt;en.wikipedia.org:Chumming&lt;/a&gt; ja &lt;a href=&apos;https://en.wiktionary.org/wiki/chum&apos;&gt;en.wiktionary.org:chum&lt;/a&gt;.</translation>
     </message>
     <message id="chum-desc-library">
-        <location filename="../src/chumpackage.cpp" line="139"/>
+        <location filename="../src/chumpackage.cpp" line="140"/>
         <source>Library</source>
         <translation>Teek</translation>
     </message>
     <message id="chum-desc-development">
-        <location filename="../src/chumpackage.cpp" line="144"/>
+        <location filename="../src/chumpackage.cpp" line="145"/>
         <source>Development</source>
         <translation>Arendus</translation>
     </message>
