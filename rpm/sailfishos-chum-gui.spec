@@ -92,7 +92,7 @@ Links:
 
 %build
 # SFOS RPM cmake macro disables RPATH
-%cmake -DCHUMGUI_VERSION=%{version}  \
+%cmake -DCHUMGUI_VERSION=%(echo %{version} | grep -Eo '^[0-9]+(\.[0-9]+)*')  \
        -DCMAKE_SKIP_RPATH:BOOL=OFF  \
        -DCMAKE_INSTALL_RPATH=%{_datadir}/%{name}/lib:  \
        -DGITHUB_TOKEN=%(cat %{SOURCE1})  \
