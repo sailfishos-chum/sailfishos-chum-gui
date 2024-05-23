@@ -4,7 +4,7 @@
 #include <QDBusPendingReply>
 #include <QDebug>
 
-#if defined(sailfishos_version) && sailfishos_version >= 40600
+#if defined(SAILFISHOS_TARGET_VERSION) && SAILFISHOS_TARGET_VERSION >= 40600
 #define RELEASE_TAG "%(releaseMajorMinor)"
 #else
 #define RELEASE_TAG "%(release)"
