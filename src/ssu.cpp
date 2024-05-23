@@ -4,14 +4,20 @@
 #include <QDBusPendingReply>
 #include <QDebug>
 
+#if defined(sailfishos_version) && sailfishos_version >= 40600
+#define RELEASE_TAG "%(releaseMajorMinor)"
+#else
+#define RELEASE_TAG "%(release)"
+#endif
+
 static QString s_repo_regular(
-        QStringLiteral("https://repo.sailfishos.org/obs/sailfishos:/chum/%(release)_%(arch)/"));
+        QStringLiteral("https://repo.sailfishos.org/obs/sailfishos:/chum/" RELEASE_TAG "_%(arch)/"));
 static QString s_repo_regular_alias(
         QStringLiteral("sailfishos-chum"));
 static QString s_repo_regular_prefix(
         QStringLiteral("https://repo.sailfishos.org/obs/sailfishos:/chum/"));
 static QString s_repo_testing(
-        QStringLiteral("https://repo.sailfishos.org/obs/sailfishos:/chum:/testing/%(release)_%(arch)/"));
+        QStringLiteral("https://repo.sailfishos.org/obs/sailfishos:/chum:/testing/" RELEASE_TAG "_%(arch)/"));
 static QString s_repo_testing_alias(
         QStringLiteral("sailfishos-chum-testing"));
 static QString s_repo_testing_prefix(
@@ -131,7 +137,7 @@ void Ssu::setRepo(const QString &version, bool testing) {
     QString url = testing ? s_repo_testing : s_repo_regular;
 
     if (!version.isEmpty()) {
-        url = url.replace(QLatin1String("%(release)"), version);
+        url = url.replace(QLatin1String(RELEASE_TAG), version);
     }
 
     if (rname != m_repo_name) {
