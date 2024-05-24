@@ -1,7 +1,6 @@
 Name:           sailfishos-chum-gui
 Summary:        GUI application for utilising the SailfishOS:Chum community repository
-# The %%{version} tag must adhere to semantic versioning: Among multiple other
-# reasons due to its use for `qmake5` in line 94.  See https://semver.org/
+# The %%{version} tag must adhere to semantic versioning.  See https://semver.org/
 Version:        0.6.7
 Release:        2
 # The Group tag should comprise one of the groups listed here:
@@ -42,7 +41,7 @@ BuildRequires:  sailfish-svg2png
 BuildRequires:  qt5-qttools-linguist
 BuildRequires:  sed
 
-# Bundle YAML-C++ library (for OBS builds) only for older SFOS version targets < v4.0.0.00
+# Bundle YAML-C++ library (for OBS builds) only for older SFOS version targets < v4.0.0
 %if %{defined sailfishos_version} && 0%{?sailfishos_version} < 40000
 %define bundle_yaml 1
 %endif
@@ -92,7 +91,7 @@ Links:
 
 %build
 # SFOS RPM cmake macro disables RPATH
-%cmake -DCHUMGUI_VERSION=%(echo %{version} | grep -Eo '^[0-9]+(\.[0-9]+)*')  \
+%cmake -DCHUMGUI_VERSION=%(echo %{version} | grep -Eo '^[0-9]+\.[0-9]+\.[0-9]+')  \
        -DSAILFISHOS_TARGET_VERSION=%{!?sailfishos_version:0}%{?sailfishos_version} \
        -DCMAKE_SKIP_RPATH:BOOL=OFF  \
        -DCMAKE_INSTALL_RPATH=%{_datadir}/%{name}/lib:  \
@@ -115,7 +114,7 @@ cp -a %{_libdir}/libyaml-cpp.so.* %{buildroot}%{_datadir}/%{name}/lib
 chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
 %endif
 
-# Rectify desktop file for older SFOS version targets < v4.0.1.00
+# Rectify desktop file for older SFOS version targets < v4.1.0
 %if %{defined sailfishos_version} && 0%{?sailfishos_version} < 40100
 sed -i 's/silica-qt5/generic/' %{buildroot}%{_datadir}/applications/sailfishos-chum-gui.desktop
 %endif
