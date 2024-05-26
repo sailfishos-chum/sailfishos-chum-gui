@@ -46,6 +46,10 @@ set_source_files_properties(projectforgejo.cpp PROPERTIES
   COMPILE_DEFINITIONS FORGEJO_TOKEN=\"${FORGEJO_TOKEN}\"
 )
 
+set_source_files_properties(ssu.cpp PROPERTIES
+  COMPILE_DEFINITIONS SAILFISHOS_TARGET_VERSION=${SAILFISHOS_TARGET_VERSION}
+)
+
 target_link_libraries(${PROJECT_NAME}
   Qt5::Quick
   Qt5::DBus
