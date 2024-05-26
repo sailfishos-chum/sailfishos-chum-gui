@@ -1,8 +1,9 @@
-* Thu May 16 2024 olf <Olf0@users.noreply.github.com> - 0.6.7
+* Sun May 26 2024 olf <Olf0@users.noreply.github.com> - 0.6.7
 - Add Estonian translation (#269) by Priit Jõerüüt (tlend)
 - Change order of queried repo URLs (#273) by @nephros, see also #272
 - Add support for Forgejo/Gitea remote repos (#271) by @nephros and @Olf0, enhances #44
 - Add action for launching installed applications (#266) by @jaimeMF and @nephros, fixes #105
+- Add support for new release URL macro of SailfishOS 4.6 (#285), fixes #270
 
 * Mon Dec 18 2023 olf <Olf0@users.noreply.github.com> - 0.6.6
 - Bugfix: handle packages without description (#265), fixes #264
