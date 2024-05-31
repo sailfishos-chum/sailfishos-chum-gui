@@ -14,7 +14,7 @@ Group:          Software Management/Package Manager
 License:        MIT
 URL:            https://github.com/sailfishos-chum/%{name}
 Vendor:         chum
-# Note that the git-tag format for releases must be `%%{release}/%%{version}`.
+# Note that the git-tag format for releases must be `%%{release}/%%{version}`:
 Source0:        %{url}/archive/%{release}/%{version}/%{name}-%{version}.tar.gz
 Source1:        token-github.txt
 Source2:        token-gitlab.txt
