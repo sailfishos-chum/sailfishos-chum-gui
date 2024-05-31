@@ -1,15 +1,16 @@
 Name:           sailfishos-chum-gui
 Summary:        GUI application for utilising the SailfishOS:Chum community repository
-# The %%{version} tag must adhere to semantic versioning.  See https://semver.org/
+# The %%{version} tag must adhere to semantic versioning, see https://semver.org/
 Version:        0.6.8
 Release:        1
 # The Group tag should comprise one of the groups listed here:
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
 Group:          Software Management/Package Manager
 License:        MIT
+# Note that the value of %%{name} must be the project name at GitHub:
 URL:            https://github.com/sailfishos-chum/%{name}
 Vendor:         chum
-# Note that the git tag format for releases must be `%%{release}/%%{version}`
+# Note that the git-tag format for releases must be `%%{release}/%%{version}`:
 Source0:        %{url}/archive/%{release}/%{version}/%{name}-%{version}.tar.gz
 Source1:        token-github.txt
 Source2:        token-gitlab.txt
