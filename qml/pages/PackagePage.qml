@@ -44,18 +44,6 @@ Page {
                 visible: pkg.urlForum
             }
             MenuItem {
-                enabled: !Chum.busy
-                text: pkg.installed
-                //% "Update"
-                      ? qsTrId("chum-update")
-                        //% "Install"
-                      : qsTrId("chum-install")
-                visible: !pkg.installed || pkg.updateAvailable
-                onClicked: pkg.installed
-                           ? Chum.updatePackage(pkg.id)
-                           : Chum.installPackage(pkg.id)
-            }
-            MenuItem {
                 //% "Start application"
                 text: qsTrId("chum-launch")
                 visible: pkg.installed && pkg.desktopFile.length > 0
@@ -67,6 +55,18 @@ Page {
                     }
                 }
                 Lipstick.LauncherItem{ id: launcher }
+            }
+            MenuItem {
+                enabled: !Chum.busy
+                text: pkg.installed
+                //% "Update"
+                      ? qsTrId("chum-update")
+                        //% "Install"
+                      : qsTrId("chum-install")
+                visible: !pkg.installed || pkg.updateAvailable
+                onClicked: pkg.installed
+                           ? Chum.updatePackage(pkg.id)
+                           : Chum.installPackage(pkg.id)
             }
         }
 
