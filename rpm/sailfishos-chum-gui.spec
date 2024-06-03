@@ -3,8 +3,8 @@ Name:           sailfishos-chum-gui
 Summary:        GUI application for utilising the SailfishOS:Chum community repository
 # The Version field must adhere to semantic versioning, see https://semver.org/
 Version:        0.6.8
-# The Release field comprises a natural number greater or equal to 1, which
-# may be prefixed with one of {alpha,beta,rc,release} (e.g. "beta3").
+# The Release field should comprise a natural number greater or equal to 1,
+# which may be prefixed with one of {alpha,beta,rc,release} (e.g. "beta3").
 # For details and reasons, see
 # https://github.com/storeman-developers/harbour-storeman-installer/wiki/Git-tag-format
 Release:        1
@@ -19,6 +19,8 @@ Source0:        %{url}/archive/%{release}/%{version}/%{name}-%{version}.tar.gz
 Source1:        token-github.txt
 Source2:        token-gitlab.txt
 Source3:        token-forgejo.txt
+# Note that the rpmlintrc file must be named so according to
+# https://en.opensuse.org/openSUSE:Packaging_checks#Building_Packages_in_spite_of_errors
 Source99:       %{name}.rpmlintrc
 Requires:       sailfishsilica-qt5 >= 0.10.9
 Requires:       ssu
@@ -139,15 +141,15 @@ then
 fi
 # BTW, `ssu`, `rm -f`, `mkdir -p` etc. *always* return with "0" ("success"), hence
 # no appended `|| true` needed to satisfy `set -e` for failing commands outside of
-# flow control directives (if, while, until etc.).  Furthermore on Fedora Docs it
-# is indicated that solely the final exit status of a whole scriptlet is crucial: 
+# flow control directives (if, while, until etc.).  Furthermore Fedora Docs etc.
+# state that solely the final exit status of a whole scriptlet is crucial: 
 # See https://docs.pagure.org/packaging-guidelines/Packaging%3AScriptlets.html
 # or https://docs.fedoraproject.org/en-US/packaging-guidelines/Scriptlets/#_syntax
 # committed on 18 February 2019 by tibbs ( https://pagure.io/user/tibbs ) in
 # https://pagure.io/packaging-committee/c/8d0cec97aedc9b34658d004e3a28123f36404324
-# Hence I have the impression, that only the main section of a spec file is
-# interpreted in a shell called with the option `-e', but not the scriptlets
-# (`%%pre*`, `%%post*`, `%%trigger*` and `%%file*`).
+# Hence only the main section of a spec file and likely also `%%(<shell-script>)`
+# statements are executed in a shell called with the option `-e', but not the
+# scriptlets: `%%pre*`, `%%post*`, `%%trigger*` and `%%file*`
 exit 0
 
 %files
