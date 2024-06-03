@@ -44,7 +44,7 @@ Page {
                 visible: pkg.urlForum
             }
             MenuItem {
-                //% "Start application"
+                //% "Start app"
                 text: qsTrId("chum-launch")
                 visible: pkg.installed && pkg.desktopFile.length > 0
                 onClicked: {
