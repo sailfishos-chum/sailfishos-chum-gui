@@ -2,7 +2,7 @@ Name:           sailfishos-chum-gui
 Summary:        GUI application for utilising the SailfishOS:Chum community repository
 # The %%{version} tag must adhere to semantic versioning.  See https://semver.org/
 Version:        0.6.7
-Release:        2
+Release:        3
 # The Group tag should comprise one of the groups listed here:
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
 Group:          Software Management/Package Manager
