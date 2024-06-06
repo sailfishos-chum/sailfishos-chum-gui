@@ -123,13 +123,13 @@
         <translation>Entferne</translation>
     </message>
     <message id="chum-update">
-        <location filename="../qml/pages/PackagePage.qml" line="50"/>
+        <location filename="../qml/pages/PackagePage.qml" line="63"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="66"/>
         <source>Update</source>
         <translation>Aktualisieren</translation>
     </message>
     <message id="chum-install">
-        <location filename="../qml/pages/PackagePage.qml" line="52"/>
+        <location filename="../qml/pages/PackagePage.qml" line="65"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="73"/>
         <source>Install</source>
         <translation>Installieren</translation>
@@ -141,7 +141,7 @@
         <translation>Entfernen</translation>
     </message>
     <message id="chum-launch">
-        <location filename="../qml/pages/PackagePage.qml" line="60"/>
+        <location filename="../qml/pages/PackagePage.qml" line="48"/>
         <source>Start application</source>
         <translation>Anwendung starten</translation>
     </message>
@@ -367,7 +367,7 @@
     <message id="chum-settings-status-repo-testing-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="52"/>
         <source>&lt;html&gt;Subscribed to the SailfishOS:Chum:Testing repository with a manually set Sailfish&amp;nbsp;OS version (%1).&lt;/html&gt;</source>
-        <translation>&lt;html&gt;Abonniere das SailfishOS:Chum:Testing-Repository mit manuell eingestellter Sailfish&amp;nbsp;OS-Version (%1).&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;SailfishOS:Chum:Testing-Repository mit manuell eingestellter Sailfish&amp;nbsp;OS-Version (%1) abonniert.&lt;/html&gt;</translation>
     </message>
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
