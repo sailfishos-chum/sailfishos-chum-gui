@@ -372,12 +372,12 @@
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
         <source>&lt;html&gt;Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish&amp;nbsp;OS version (%1).&lt;/html&gt;</source>
-        <translation>&lt;html&gt;Reguläres SailfishOS:Chum-Repository mit manuell eingestellter Sailfish&amp;nbsp;OS-Version (%1) abonniert.&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;Reguläres SailfishOS:Chum-Repository mit manuell eingestellter Sailfish&amp;nbsp;OS-Version (%1) ist abonniert.&lt;/html&gt;</translation>
     </message>
     <message id="chum-settings-status-repo-testing-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="57"/>
         <source>&lt;html&gt;Subscribed to the SailfishOS:Chum:Testing repository with an automatically determined Sailfish&amp;nbsp;OS version.&lt;/html&gt;</source>
-        <translation>&lt;html&gt;SailfishOS:Chum:Testing-Repository mit automatisch bestimmter Sailfish&amp;nbsp;OS-Version abonniert.&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;SailfishOS:Chum:Testing-Repository mit automatisch bestimmter Sailfish&amp;nbsp;OS-Version ist abonniert.&lt;/html&gt;</translation>
     </message>
     <message id="chum-settings-status-repo-regular-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="59"/>
