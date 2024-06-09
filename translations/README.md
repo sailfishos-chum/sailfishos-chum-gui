@@ -1,6 +1,6 @@
 # Translations (l10n / i18n)
 
-You can help localising the SailfishOS:Chum GUI app to your language using [Transifex](https://app.transifex.com/olf/sailfishos-chum-gui/) or [Qt Linguist](https://doc.qt.io/qt-5/qtlinguist-index.html).
+You can help localising the SailfishOS:Chum GUI application to your language using [Transifex](https://app.transifex.com/olf/sailfishos-chum-gui/) or [Qt Linguist](https://doc.qt.io/qt-5/qtlinguist-index.html).
 
 Note that for the SailfishOS:Chum GUI app principally translations designated with a country code only (e.g. `pt`) shall be created and maintained.  Only if a complete and well maintained translation for the sole country code exists, a country specific variant with a locale will be accepted (e.g. `nl_BE`).
 
@@ -10,7 +10,7 @@ If you do not want to use Atlassian's Transifex, alternatives are [Qt Linguist](
 
 ### Testing translations
 
-Note that translations for Storeman are utilising *ID based* Qt `.ts` files.  Hence, to compile a translation file for testing, the `lrelease` command must be executed with the option `-idbased` to convert the translation files (`.ts` files) into Qt message files (`.qm` files), either from [within Qt Linguist](https://doc.qt.io/qtcreator/creator-editor-external.html) or directly [at the command line](https://doc.qt.io/qt-5/linguist-manager.html):
+Note that translations for the SailfishOS:Chum GUI application are utilising *ID based* Qt `.ts` files.  Hence, to compile a translation file for testing, the `lrelease` command must be executed with the option `-idbased` to convert the translation files (`.ts` files) into Qt message files (`.qm` files), either from [within Qt Linguist](https://doc.qt.io/qtcreator/creator-editor-external.html) or directly [at the command line](https://doc.qt.io/qt-5/linguist-manager.html):
 ```
 lrelease -idbased sailfishos-chum-gui.ts
 ```
@@ -18,7 +18,7 @@ If you want to test your translation before publishing, you should compile it an
 ```
 /usr/share/sailfishos-chum-gui/translations/
 ```
-Storeman tries to automatically load a translation file according to your system locale setting.  You can also run the application with a selected locale from the terminal.  For example, for the Swedish language the command is:
+The SailfishOS:Chum GUI application tries to automatically load a translation file according to your system locale setting.  You can also run the application with a selected locale from the terminal.  For example, for the Swedish language the command is:
 ```
 export LANG=sv; sailfishos-chum-gui
 ```
