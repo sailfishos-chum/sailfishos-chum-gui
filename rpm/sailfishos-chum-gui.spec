@@ -127,7 +127,8 @@ sed -i 's/silica-qt5/generic/' %{buildroot}%{_datadir}/applications/sailfishos-c
 %endif
 
 %postun
-if [ "$1" = 0 ]  # Removal
+# Removal:
+if [ "$1" = 0 ]
 then
   ssu rr sailfishos-chum
   ssu rr sailfishos-chum-testing
