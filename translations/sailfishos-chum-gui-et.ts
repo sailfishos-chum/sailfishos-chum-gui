@@ -24,7 +24,7 @@
     <message id="chum-updates-available" numerus="yes">
         <location filename="../qml/sailfishos-chum-gui.qml" line="65"/>
         <source>%n update(s) available</source>
-        <translation><numerusform>Saadaval on %1 uuendus</numerusform><numerusform>Saadaval on %1 uuendust</numerusform></translation>
+        <translation><numerusform>Saadaval on %n uuendus</numerusform><numerusform>Saadaval on %n uuendust</numerusform></translation>
     </message>
     <message id="chum-repo-refreshed">
         <location filename="../qml/sailfishos-chum-gui.qml" line="83"/>
