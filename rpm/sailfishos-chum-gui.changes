@@ -1,3 +1,6 @@
+* Sat Jun 15 2024 olf <Olf0@users.noreply.github.com> - 0.6.9
+- 
+
 * Fri Jun 14 2024 olf <Olf0@users.noreply.github.com> - 0.6.8
 - Move menu item `chum-launch` one up (#291), addresses https://github.com/sailfishos-chum/sailfishos-chum-gui/issues/290#issuecomment-2144011922
 - Add missing `et` & `fi` to list of TS-files (#293), fixes Estonian and Finnish translations not being visible
