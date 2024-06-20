@@ -24,7 +24,7 @@
     <message id="chum-updates-available" numerus="yes">
         <location filename="../qml/sailfishos-chum-gui.qml" line="65"/>
         <source>%n update(s) available</source>
-        <translation><numerusform>Saadaval on %1 uuendus</numerusform><numerusform>Saadaval on %1 uuendust</numerusform></translation>
+        <translation><numerusform>Saadaval on %n uuendus</numerusform><numerusform>Saadaval on %n uuendust</numerusform></translation>
     </message>
     <message id="chum-repo-refreshed">
         <location filename="../qml/sailfishos-chum-gui.qml" line="83"/>
@@ -123,13 +123,13 @@
         <translation>Eemaldame</translation>
     </message>
     <message id="chum-update">
-        <location filename="../qml/pages/PackagePage.qml" line="50"/>
+        <location filename="../qml/pages/PackagePage.qml" line="63"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="66"/>
         <source>Update</source>
         <translation>Uuenda</translation>
     </message>
     <message id="chum-install">
-        <location filename="../qml/pages/PackagePage.qml" line="52"/>
+        <location filename="../qml/pages/PackagePage.qml" line="65"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="73"/>
         <source>Install</source>
         <translation>Paigalda</translation>
@@ -141,9 +141,9 @@
         <translation>Eemalda</translation>
     </message>
     <message id="chum-launch">
-        <location filename="../qml/pages/PackagePage.qml" line="60"/>
+        <location filename="../qml/pages/PackagePage.qml" line="48"/>
         <source>Start application</source>
-        <translation>Käivitage rakendus</translation>
+        <translation>Käivita rakendus</translation>
     </message>
     <message id="chum-package-donation">
         <location filename="../qml/pages/PackagePage.qml" line="140"/>
