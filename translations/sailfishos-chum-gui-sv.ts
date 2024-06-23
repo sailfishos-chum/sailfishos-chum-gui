@@ -352,7 +352,7 @@
     <message id="chum-settings-status-repo-management-failed">
         <location filename="../qml/pages/SettingsPage.qml" line="40"/>
         <source>SailfishOS:Chum repository management failed</source>
-        <translation>Hantering av SailfishOS:Chum-förrådet misslyckades</translation>
+        <translation>Hantering av SailfishOS:Chum repository misslyckades</translation>
     </message>
     <message id="chum-settings-status">
         <location filename="../qml/pages/SettingsPage.qml" line="26"/>
@@ -362,27 +362,27 @@
     <message id="chum-settings-status-repo-not-available">
         <location filename="../qml/pages/SettingsPage.qml" line="47"/>
         <source>SailfishOS:Chum repository is not available</source>
-        <translation>SailfishOS:Chum-förrådet är inte tillgängligt</translation>
+        <translation>SailfishOS:Chum repository är inte tillgängligt</translation>
     </message>
     <message id="chum-settings-status-repo-testing-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="52"/>
         <source>&lt;html&gt;Subscribed to the SailfishOS:Chum:Testing repository with a manually set Sailfish&amp;nbsp;OS version (%1).&lt;/html&gt;</source>
-        <translation>&lt;html&gt;Prenumererar på SailfishOS:Chum testförråd med en manuellt inställd Sailfish&amp;nbsp;OS-version (%1).&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;Prenumererar på SailfishOS:Chum repository med en manuellt inställd Sailfish&amp;nbsp;OS-version (%1).&lt;/html&gt;</translation>
     </message>
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
         <source>&lt;html&gt;Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish&amp;nbsp;OS version (%1).&lt;/html&gt;</source>
-        <translation>&lt;html&gt;Prenumererar på SailfishOS:Chum reguljärförråd med en manuellt inställd Sailfish&amp;nbsp;OS-version (%1).&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;Prenumererar på SailfishOS:Chum repository med en manuellt inställd Sailfish&amp;nbsp;OS-version (%1).&lt;/html&gt;</translation>
     </message>
     <message id="chum-settings-status-repo-testing-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="57"/>
         <source>&lt;html&gt;Subscribed to the SailfishOS:Chum:Testing repository with an automatically determined Sailfish&amp;nbsp;OS version.&lt;/html&gt;</source>
-        <translation>&lt;html&gt;Prenumererar på SailfishOS:Chum testförråd med en automatiskt inställd Sailfish&amp;nbsp;OS-version.&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;Prenumererar på SailfishOS:Chum:Testing repository med en automatiskt inställd Sailfish&amp;nbsp;OS-version.&lt;/html&gt;</translation>
     </message>
     <message id="chum-settings-status-repo-regular-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="59"/>
         <source>&lt;html&gt;Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish&amp;nbsp;OS version.&lt;/html&gt;</source>
-        <translation>&lt;html&gt;Prenumererar på SailfishOS:Chum reguljärförråd med en automatiskt inställd Sailfish&amp;nbsp;OS-version&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;Prenumererar på SailfishOS:Chum repository med en automatiskt inställd Sailfish&amp;nbsp;OS-version&lt;/html&gt;</translation>
     </message>
     <message id="chum-settings-general">
         <location filename="../qml/pages/SettingsPage.qml" line="67"/>
@@ -402,7 +402,7 @@
     <message id="chum-settings-testing-description">
         <location filename="../qml/pages/SettingsPage.qml" line="92"/>
         <source>Use the SailfishOS:Chum:Testing repository. This is mainly useful for developers to test their packages before publishing.</source>
-        <translation>Använd SailfishOS:Chum testförråd. Detta är främst användbart för utvecklare som vill testa sina paket innan de publiceras.</translation>
+        <translation>Använd SailfishOS:Chum:Testing repository. Detta är främst användbart för utvecklare som vill testa sina paket innan de publiceras.</translation>
     </message>
     <message id="chum-settings-testing">
         <location filename="../qml/pages/SettingsPage.qml" line="94"/>
