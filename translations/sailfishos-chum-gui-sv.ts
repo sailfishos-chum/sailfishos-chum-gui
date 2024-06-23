@@ -123,13 +123,13 @@
         <translation>Tar bort</translation>
     </message>
     <message id="chum-update">
-        <location filename="../qml/pages/PackagePage.qml" line="50"/>
+        <location filename="../qml/pages/PackagePage.qml" line="63"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="66"/>
         <source>Update</source>
         <translation>Uppdatera</translation>
     </message>
     <message id="chum-install">
-        <location filename="../qml/pages/PackagePage.qml" line="52"/>
+        <location filename="../qml/pages/PackagePage.qml" line="65"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="73"/>
         <source>Install</source>
         <translation>Installera</translation>
@@ -141,7 +141,7 @@
         <translation>Ta bort</translation>
     </message>
     <message id="chum-launch">
-        <location filename="../qml/pages/PackagePage.qml" line="60"/>
+        <location filename="../qml/pages/PackagePage.qml" line="48"/>
         <source>Start application</source>
         <translation>Starta appen</translation>
     </message>
@@ -193,7 +193,7 @@
     <message id="chum-load-repositories">
         <location filename="../src/chum.cpp" line="42"/>
         <source>Loading SailfishOS:Chum repository</source>
-        <translation>Läser in SailfishOS:Chum-förrådet</translation>
+        <translation>Läser in SailfishOS:Chum repository</translation>
     </message>
     <message id="chum-get-list-packages">
         <location filename="../src/chum.cpp" line="104"/>
