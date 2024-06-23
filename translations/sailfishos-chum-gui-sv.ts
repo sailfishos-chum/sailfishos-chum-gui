@@ -218,17 +218,17 @@
     <message id="chum-refresh-repository-impossible">
         <location filename="../src/chum.cpp" line="293"/>
         <source>Failed to refresh SailfishOS:Chum repository, because it is not available!</source>
-        <translation>Kunde inte uppdatera SailfishOS:Chum-förrådet då det inte är tillgängligt!</translation>
+        <translation>Kunde inte uppdatera SailfishOS:Chum repository då det inte är tillgängligt!</translation>
     </message>
     <message id="chum-refresh-repository">
         <location filename="../src/chum.cpp" line="303"/>
         <source>Refreshing SailfishOS:Chum repository</source>
-        <translation>Uppdaterar SailfishOS:Chum-förrådet</translation>
+        <translation>Uppdaterar SailfishOS:Chum repository</translation>
     </message>
     <message id="chum-refresh-repository-failed">
         <location filename="../src/chum.cpp" line="320"/>
         <source>Failed to refresh SailfishOS:Chum repository!</source>
-        <translation>Kunde inte uppdatera SailfishOS:Chum-förrådet!</translation>
+        <translation>Kunde inte uppdatera SailfishOS:Chum repository!</translation>
     </message>
     <message id="chum-repo-management-disabled-title">
         <location filename="../src/chum.cpp" line="67"/>
