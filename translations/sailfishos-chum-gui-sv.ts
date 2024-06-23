@@ -245,13 +245,13 @@
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="342"/>
         <source>Adding SailfishOS:Chum repository</source>
-        <translation>Lägger till SailfishOS:Chum-förråd</translation>
+        <translation>Lägger till SailfishOS:Chum repository</translation>
     </message>
     <message id="chum-add-testing-repo">
         <location filename="../src/chum.cpp" line="80"/>
         <location filename="../src/chum.cpp" line="359"/>
         <source>Adding SailfishOS:Chum:Testing repository</source>
-        <translation>Lägger till SailfishOS:Chum testförråd</translation>
+        <translation>Lägger till SailfishOS:Chum:Testing repository</translation>
     </message>
     <message id="chum-install-package">
         <location filename="../src/chum.cpp" line="372"/>
