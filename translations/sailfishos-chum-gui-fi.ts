@@ -123,13 +123,13 @@
         <translation>Poistetaan</translation>
     </message>
     <message id="chum-update">
-        <location filename="../qml/pages/PackagePage.qml" line="50"/>
+        <location filename="../qml/pages/PackagePage.qml" line="63"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="66"/>
         <source>Update</source>
         <translation>Päivitä</translation>
     </message>
     <message id="chum-install">
-        <location filename="../qml/pages/PackagePage.qml" line="52"/>
+        <location filename="../qml/pages/PackagePage.qml" line="65"/>
         <location filename="../qml/pages/PackagesListPage.qml" line="73"/>
         <source>Install</source>
         <translation>Asenna</translation>
@@ -141,7 +141,7 @@
         <translation>Poista</translation>
     </message>
     <message id="chum-launch">
-        <location filename="../qml/pages/PackagePage.qml" line="60"/>
+        <location filename="../qml/pages/PackagePage.qml" line="48"/>
         <source>Start application</source>
         <translation>Käynnistä sovellus</translation>
     </message>
