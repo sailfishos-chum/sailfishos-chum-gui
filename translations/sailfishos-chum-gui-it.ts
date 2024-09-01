@@ -509,7 +509,7 @@
     <message id="chum-about-gui">
         <location filename="../qml/pages/AboutPage.qml" line="19"/>
         <source>About SailfishOS:Chum GUI</source>
-        <translation>Info su SailfishOS:Chum Gui</translation>
+        <translation>Info su SailfishOS:Chum GUI</translation>
     </message>
     <message id="chum-about-store">
         <location filename="../qml/pages/AboutPage.qml" line="40"/>
