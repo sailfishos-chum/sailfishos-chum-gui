@@ -5,6 +5,7 @@ set(TS_FILES
   sailfishos-chum-gui-fi.ts
   sailfishos-chum-gui-fr.ts
   sailfishos-chum-gui-hu.ts
+  sailfishos-chum-gui-it.ts
   sailfishos-chum-gui-pl.ts
   sailfishos-chum-gui-ru.ts
   sailfishos-chum-gui-sk.ts
