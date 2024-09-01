@@ -383,7 +383,7 @@
     <message id="chum-settings-status-repo-regular-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="59"/>
         <source>&lt;html&gt;Subscribed to the regular SailfishOS:Chum repository with an automatically determined Sailfish&amp;nbsp;OS version.&lt;/html&gt;</source>
-        <translation>&lt;html&gt;Sottoscritto al repository SailfishOs:Chum con la versione&amp;nbsp;di Sailfish Os impostata automaticamente.&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;Sottoscritto al repository SailfishOs:Chum con la versione di Sailfish&amp;amp;nbsp;OS impostata automaticamente.&lt;/html&gt;</translation>
     </message>
     <message id="chum-settings-general">
         <location filename="../qml/pages/SettingsPage.qml" line="67"/>
