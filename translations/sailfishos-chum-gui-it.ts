@@ -367,7 +367,7 @@
     <message id="chum-settings-status-repo-testing-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="52"/>
         <source>&lt;html&gt;Subscribed to the SailfishOS:Chum:Testing repository with a manually set Sailfish&amp;nbsp;OS version (%1).&lt;/html&gt;</source>
-        <translation>&lt;html&gt;Sottoscritto al repository SailfishOs:Chum:Testing con la versione&amp;nbsp;di Sailfish Os impostata manualmente (%1).&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;Sottoscritto al repository SailfishOs:Chum:Testing con la versione di Sailfish&amp;amp;nbsp;OS impostata manualmente (%1).&lt;/html&gt;</translation>
     </message>
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
