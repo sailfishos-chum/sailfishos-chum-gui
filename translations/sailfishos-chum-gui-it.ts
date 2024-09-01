@@ -429,7 +429,7 @@
     <message id="chum-setings-override-release-placeholder">
         <location filename="../qml/pages/SettingsPage.qml" line="124"/>
         <source>&lt;i&gt;Specify a Sailfish&amp;nbsp;OS version&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Specifica una versione&amp;nbsp; di Sailfish&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Specifica una versione di Sailfish&amp;amp;nbsp;OS&lt;/i&gt;</translation>
     </message>
     <message id="chum-categories">
         <location filename="../qml/pages/CategoriesPage.qml" line="20"/>
