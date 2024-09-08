@@ -5,7 +5,8 @@ set(TS_FILES
   sailfishos-chum-gui-fi.ts
   sailfishos-chum-gui-fr.ts
   sailfishos-chum-gui-hu.ts
-  sailfishos-chum-gui-it.ts
+# sailfishos-chum-gui-it.ts  # Italian translation is not ready yet, see
+# https://github.com/sailfishos-chum/sailfishos-chum-gui/pull/308#issuecomment-2323476653
   sailfishos-chum-gui-pl.ts
   sailfishos-chum-gui-ru.ts
   sailfishos-chum-gui-sk.ts
