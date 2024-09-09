@@ -14,7 +14,7 @@ Group:          Software Management/Package Manager
 License:        MIT
 URL:            https://github.com/sailfishos-chum/%{name}
 Vendor:         chum
-# Note that the git-tag format for releases must be `%%{release}/%%{version}`:
+# Note that the git-tag format for release versions must be `%%{release}/%%{version}`:
 Source0:        %{url}/archive/%{release}/%{version}/%{name}-%{version}.tar.gz
 Source1:        token-github.txt
 Source2:        token-gitlab.txt
@@ -25,6 +25,10 @@ Source99:       %{name}.rpmlintrc
 Requires:       sailfishsilica-qt5 >= 0.10.9
 Requires:       ssu
 Requires(postun): ssu
+# The oldest SailfishOS release which SailfishOS:Chum supports, because it is the
+# oldest useable DoD-repo at https://build.sailfishos.org/project/subprojects/sailfishos
+Requires:       sailfish-version >= 3.1.0
+# Provide (anti-)dependencies to sibling packages:
 Conflicts:      %{name}-installer
 Obsoletes:      %{name}-installer 
 Conflicts:      sailfishos-chum
