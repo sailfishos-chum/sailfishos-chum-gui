@@ -118,7 +118,7 @@ Page {
                 //% "installed Sailfish&nbsp;OS release version. To manually select a SailfishOS:Chum repository "
                 //% "for a specific Sailfish&nbsp;OS release, specify this release here (for example, <i>4.3.0.12</i>). "
                 //% "This is useful when the SailfishOS:Chum repository is not available for the installed "
-                //% "Sailfish&nbsp;OS version, as for Cbeta users."
+                //% "Sailfish&nbsp;OS version, as for cBeta users."
                 description: qsTrId("chum-setings-override-release-description")
                 //% "<i>Specify a Sailfish&nbsp;OS version</i>"
                 placeholderText: qsTrId("chum-setings-override-release-placeholder")
