@@ -535,7 +535,7 @@
     <message id="chum-about-issues">
         <location filename="../qml/pages/AboutPage.qml" line="78"/>
         <source>Issue tracker for bug reports, feature suggestions and help requests</source>
-        <translation>Tracker issue per riportare problemi, suggerimenti o richieste d&apos;aiuto</translation>
+        <translation>Tracker problemi per riportare dei bug, suggerimenti o richieste d&apos;aiuto</translation>
     </message>
     <message id="chum-about-description">
         <location filename="../qml/pages/AboutPage.qml" line="130"/>
