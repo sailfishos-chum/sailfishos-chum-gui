@@ -228,7 +228,7 @@
     <message id="chum-refresh-repository-failed">
         <location filename="../src/chum.cpp" line="320"/>
         <source>Failed to refresh SailfishOS:Chum repository!</source>
-        <translation>Sto ricaricando il repository SailfishOS:Chum!</translation>
+        <translation>Impossibile ricaricare il repository SailfishOS:Chum!</translation>
     </message>
     <message id="chum-repo-management-disabled-title">
         <location filename="../src/chum.cpp" line="67"/>
