@@ -163,7 +163,7 @@
     <message id="chum-pkg-type-desktop">
         <location filename="../qml/components/AppSummary.qml" line="53"/>
         <source>Sailfish application</source>
-        <translation>Applicazione sailfish</translation>
+        <translation>Applicazione Sailfish</translation>
     </message>
     <message id="chum-pkg-type-console">
         <location filename="../qml/components/AppSummary.qml" line="56"/>
