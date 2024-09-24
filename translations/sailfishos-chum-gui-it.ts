@@ -110,7 +110,7 @@
     <message id="chum-package-file-issue">
         <location filename="../qml/pages/PackagePage.qml" line="36"/>
         <source>Issue tracker</source>
-        <translation>Tracker issue</translation>
+        <translation>Tracker problemi</translation>
     </message>
     <message id="chum-package-discussion-forum">
         <location filename="../qml/pages/PackagePage.qml" line="42"/>
