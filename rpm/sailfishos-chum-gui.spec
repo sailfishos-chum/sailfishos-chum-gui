@@ -136,7 +136,6 @@ if [ "$1" = 0 ]
 then
   ssu rr sailfishos-chum
   ssu rr sailfishos-chum-testing
-  rm -f /var/cache/ssu/features.ini
   ssu ur
   # Remove a %%{name}-installer log-file, if there.
   # This is deliberately solely done when removing %%{name}, because users tend
