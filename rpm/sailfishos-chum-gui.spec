@@ -2,7 +2,7 @@ Name:           sailfishos-chum-gui
 # Note that the value of %%{name} must be the project name at GitHub.
 Summary:        GUI application for utilising the SailfishOS:Chum community repository
 # The Version field must adhere to semantic versioning, see https://semver.org/
-Version:        0.6.9
+Version:        0.6.10
 # The Release field should comprise a natural number greater or equal to 1,
 # which may be prefixed with one of {alpha,beta,rc,release} (e.g. "beta3").
 # For details and reasons, see
