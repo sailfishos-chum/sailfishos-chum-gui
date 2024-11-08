@@ -152,7 +152,7 @@ fi
 # committed on 18 February 2019 by tibbs ( https://pagure.io/user/tibbs ) in
 # https://pagure.io/packaging-committee/c/8d0cec97aedc9b34658d004e3a28123f36404324
 # Hence only the main section of a spec file and likely also `%%(<shell-script>)`
-# statements are executed in a shell called with the option `-e', but not the
+# statements are executed in a shell invoked with the option `-e', but not the
 # scriptlets: `%%pre*`, `%%post*`, `%%trigger*` and `%%file*`
 exit 0
 
