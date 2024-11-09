@@ -4,7 +4,7 @@
 * Sun Nov 03 2024 olf <Olf0@users.noreply.github.com> - 0.6.9
 - Update translations: `de` (#316), `es` (#305, #319), `et` (#297, #298, #312), `fi` (#306, #313), `fr` (#307, #314), `hu` (#304, #315), `ru` (#302, #317), `sk` (#303, #318), `sv` (#299, #320)
 - Add Italian (`it`) translation (#308, #311)
-- Rework OBS repository handling, part 1: Unify and simplify
+- Rework OBS repository handling: Unify and simplify
 
 * Fri Jun 14 2024 olf <Olf0@users.noreply.github.com> - 0.6.8
 - Move menu item `chum-launch` one up (#291), addresses https://github.com/sailfishos-chum/sailfishos-chum-gui/issues/290#issuecomment-2144011922
