@@ -32,7 +32,7 @@ jobs:
         # For available docker images, see https://github.com/CODeRUS/docker-sailfishos-platform-sdk#readme
         # Use the oldest Docker SFOS-Platform-SDK image, which produces binaries which are still compatible
         # with the current SailfishOS release, and the oldest image on which working binaries are generated.
-        release: [4.1.0.24, 4.3.0.12, 4.6.0.13]
+        release: [4.1.0.24, 4.3.0.12, 4.5.0.16]
         # Cannot use two matrix dimensions, because the ARCH-specific builds must be
         # carried out in a single job to allow for reuse of the downloaded Docker image.
     env:
