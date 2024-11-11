@@ -17,13 +17,13 @@ The [main page](./.screenshots/sailfishos-chum-gui_main-page.png?raw=true) of th
 - [**Categories** page](./.screenshots/sailfishos-chum-gui_categories.png?raw=true)
   - Lists all categories
     - Each category lists all packages assigned to it
-- [**Applications** / **Packages** page](./.screenshots/sailfishos-chum-gui_applications.png?raw=true)
-  - Package list of all applications or packages
+- [**Packages** page](./.screenshots/sailfishos-chum-gui_applications.png?raw=true)
+  - Lists all available packages
 - [**Installed packages** page](./.screenshots/sailfishos-chum-gui_installed-packages.png?raw=true)
-  - Package list of all installed packages or applications
-- All package lists
-  - Searchable
-  - Switchable between "applications only" and "all packages"
+  - Lists only the installed packages
+- On both aforementioned packages pages
+  - Search for packages
+  - Switch between "applications only" and "all packages" being displayed and searchable
   - Display for each package
     - Package title
     - Categories the package is assigned to
@@ -31,7 +31,7 @@ The [main page](./.screenshots/sailfishos-chum-gui_main-page.png?raw=true) of th
     - A package icon, if provided
     - The number of *stars* its source code repository has aquired (only for packages hosted at GitHub or GitLab.com)
     - Its install status (checkmark when installed) or if an update for an installed package is available (by a down-arrow)
-- Every package page
+- On each individual package page
   - All aforementioned items which are displayed for each package in a package list
   - If the package is a Sailfish application or a console application
   - The number of *forks* of its source code repository (gear in curly brackets; only for packages hosted at GitHub or GitLab.com)
