@@ -51,7 +51,7 @@ install(FILES ${PROJECT_NAME}.desktop
   DESTINATION share/applications
 )
 
-install(FILES icons/sailfishos-chum-gui.svg
+install(FILES icons/sailfishos-chum-gui.svg icons/icon-s-consoleapplication.svg
   DESTINATION share/${PROJECT_NAME}/icons
 )
 
