@@ -114,11 +114,12 @@ Page {
             TextFieldDesc {
                 id: txtRelease
                 //% "<b>Press <kbd>Enter</kbd> to apply</b><br />"
-                //% "Usually a specific SailfishOS:Chum repository is automatically selected according to the "
-                //% "installed Sailfish&nbsp;OS release version. To manually select a SailfishOS:Chum repository "
-                //% "for a specific Sailfish&nbsp;OS release, specify this release here (for example, <i>4.3.0.12</i>). "
-                //% "This is useful when the SailfishOS:Chum repository is not available for the installed "
-                //% "Sailfish&nbsp;OS version, as for cBeta users."
+                //% "Usually the correct SailfishOS:Chum repository is automatically selected according to the "
+                //% "installed Sailfish&nbsp;OS release. To manually select a repository "
+                //% "for a specific release, specify this release here (for example, <i>5.1</i>). "
+                //% "This is useful when a repository is not available for the installed "
+                //% "Sailfish&nbsp;OS version, as for cBeta users.<br />"
+                //% "For releases prior to 4.6, you have to set the full version (for example, <i>4.3.0.12</i>.)
                 description: qsTrId("chum-setings-override-release-description")
                 //% "<i>Specify a Sailfish&nbsp;OS version</i>"
                 placeholderText: qsTrId("chum-setings-override-release-placeholder")
