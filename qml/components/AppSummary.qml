@@ -46,7 +46,7 @@ Item {
         ImageLabel {
             image: pkg.type === ChumPackage.PackageApplicationDesktop ?
                        "image://theme/icon-s-sailfish" :
-                       "image://theme/icon-s-clipboard"
+                       "../../icons/icon-s-consoleapplication.svg"
             label: {
                 if (pkg.type === ChumPackage.PackageApplicationDesktop)
                     //% "Sailfish application"
