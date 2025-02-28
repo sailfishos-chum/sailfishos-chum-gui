@@ -208,6 +208,8 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
     if (is_lib && m_categories.isEmpty())
         m_categories.push_back(QStringLiteral("Library"));
     if (m_categories.isEmpty()) m_categories.push_back(QStringLiteral("Other"));
+    if (m_categories.contains(QStringLiteral("ConsoleOnly")))
+        m_type = PackageApplicationConsole;
 
     m_repo_url = json.value("Custom").toObject().value("Repo").toString();
     m_packaging_repo_url = json.value("Custom").toObject().value("PackagingRepo").toString();
