@@ -22,7 +22,7 @@ defaults:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     env:
       # Do not wait up to the default of 10 minutes for network timeouts in a workflow which runs ca. 4 minutes.
       SEGMENT_DOWNLOAD_TIMEOUT_MINS: 1
@@ -33,7 +33,7 @@ jobs:
     steps:
 
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     #- name: Prepare
     #  run: 
@@ -65,7 +65,7 @@ jobs:
            sudo cp -r RPMS/. /share/output/$1/$2/' sh_mb2 $RELEASE $ARCH
 
     - name: Upload build results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: RPM-build-results_SDK-for-${{ env.RELEASE }}_${{ env.ARCH }}
         path: output/
