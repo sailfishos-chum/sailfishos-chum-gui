@@ -98,9 +98,14 @@ ApplicationWindow {
         }
 
         onPackageOperationFinished: {
-            var trid = _packageOperationNotification(operation)
-            if (trid) {
-                notification.show(qsTrId(trid).arg(name).arg(version))
+            if ((operation === Chum.PackageUpdate) && (name == "")) { // multiple
+                //% "Multiple packages updated"
+                notification.show(qsTrId("chum-repo-updated-multiple"))
+            } else {
+                var trid = _packageOperationNotification(operation)
+                if (trid) {
+                    notification.show(qsTrId(trid).arg(name).arg(version))
+                }
             }
         }
     }
