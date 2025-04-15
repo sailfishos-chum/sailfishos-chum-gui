@@ -99,6 +99,7 @@ ApplicationWindow {
 
         onPackageOperationFinished: {
             if ((operation === Chum.PackageUpdate) && (name == "")) { // multiple
+                // Quick & dirty workaround for issue #300, see there for details 
                 //% "Multiple packages updated"
                 notification.show(qsTrId("chum-repo-updated-multiple"))
             } else {
