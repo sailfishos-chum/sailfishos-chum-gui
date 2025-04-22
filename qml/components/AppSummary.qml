@@ -44,9 +44,13 @@ Item {
         }
 
         ImageLabel {
-            image: pkg.type === ChumPackage.PackageApplicationDesktop ?
-                       "image://theme/icon-s-sailfish" :
-                       "../../icons/icon-s-consoleapplication.svg"
+            image: {
+                if (pkg.type === ChumPackage.PackageApplicationDesktop)
+                    return "image://theme/icon-s-sailfish"
+                if (pkg.type === ChumPackage.PackageApplicationConsole)
+                    return "../../icons/icon-s-consoleapplication.svg"
+                return "image://theme/icon-s-clipboard"; // other types
+            }
             label: {
                 if (pkg.type === ChumPackage.PackageApplicationDesktop)
                     //% "Sailfish application"
