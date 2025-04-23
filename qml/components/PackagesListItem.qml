@@ -25,22 +25,6 @@ Item {
         width: Theme.iconSizeLarge
     }
 
-    Loader { id: subimageloader
-        anchors {
-          right: image.right
-          bottom: image.bottom
-        }
-        width: image.width*1/3
-        height: width
-        visible: active && (image.status == Image.Ready)
-        active: (model.packageType === ChumPackage.PackageApplicationConsole)
-        sourceComponent: Icon {
-          opacity: 0.8
-          fillMode: Image.PreserveAspectFit
-          source: "../../icons/icon-s-consoleapplication.svg"
-        }
-    }
-
     Label {
         id: title
         anchors.left: image.right
