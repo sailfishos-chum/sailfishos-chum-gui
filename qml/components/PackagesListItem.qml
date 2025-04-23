@@ -49,9 +49,8 @@ Item {
         color: parent.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
         font.pixelSize: Theme.fontSizeSmall
         height: visible ? implicitHeight : 0
-        text: model.packageCategories.join(", ")
+        text: model.packageCategories ? model.packageCategories.join(", ") : ""
         truncationMode: TruncationMode.Fade
-        visible: text
     }
 
     Label {
@@ -65,9 +64,8 @@ Item {
         color: Theme.highlightColor
         font.pixelSize: Theme.fontSizeSmall
         height: visible ? implicitHeight : 0
-        text: model.packagePackager ?  model.packagePackager : model.packageDeveloper
+        text: model.packagePackager ? model.packagePackager : (model.packageDeveloper ? model.packageDeveloper : "")
         truncationMode: TruncationMode.Fade
-        visible: text
     }
 
     Column {
