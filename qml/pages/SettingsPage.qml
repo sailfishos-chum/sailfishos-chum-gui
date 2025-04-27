@@ -119,7 +119,7 @@ Page {
                 //% "for a specific release, specify this release here (for example, <i>5.1</i>). "
                 //% "This is useful when a repository is not available for the installed "
                 //% "Sailfish&nbsp;OS version, as for cBeta users.<br />"
-                //% "For releases prior to 4.6, you have to set the full version (for example, <i>4.3.0.12</i>.)"
+                //% "For releases prior to 4.6, the complete version number must be provided (for example, <i>4.3.0.12</i>)."
                 description: qsTrId("chum-setings-override-release-description")
                 //% "<i>Specify a Sailfish&nbsp;OS version</i>"
                 placeholderText: qsTrId("chum-setings-override-release-placeholder")
