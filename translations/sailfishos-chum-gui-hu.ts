@@ -529,7 +529,7 @@
     <message id="chum-about-home">
         <location filename="../qml/pages/AboutPage.qml" line="58"/>
         <source>Source code repository</source>
-        <translation>Forráskód tárház</translation>
+        <translation>Forráskód repó</translation>
     </message>
     <message id="chum-about-license">
         <location filename="../qml/pages/AboutPage.qml" line="69"/>
