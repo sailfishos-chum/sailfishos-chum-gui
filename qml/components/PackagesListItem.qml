@@ -49,9 +49,8 @@ Item {
         color: parent.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
         font.pixelSize: Theme.fontSizeSmall
         height: visible ? implicitHeight : 0
-        text: model.packageCategories.join(", ")
+        text: model.packageCategories ? model.packageCategories.join(", ") : ""
         truncationMode: TruncationMode.Fade
-        visible: text
     }
 
     Label {
@@ -65,32 +64,46 @@ Item {
         color: Theme.highlightColor
         font.pixelSize: Theme.fontSizeSmall
         height: visible ? implicitHeight : 0
-        text: model.packagePackager ?  model.packagePackager : model.packageDeveloper
+        text: model.packagePackager ? model.packagePackager : (model.packageDeveloper ? model.packageDeveloper : "")
         truncationMode: TruncationMode.Fade
-        visible: text
     }
 
-    Column {
+    Item {
         id: stickers
+        anchors.top: parent.top
+        anchors.topMargin: Theme.paddingLarge/2
         anchors.bottom: parent.bottom
         anchors.bottomMargin: Theme.paddingLarge/2
         anchors.right: parent.right
         anchors.rightMargin: Theme.horizontalPageMargin
-        width: Math.max(stars.visible ? stars.width : 0,
+        width: Math.max(cli.visible ? cli.width : 0,
+                        stars.visible ? stars.width : 0,
                         status.visible ? status.width : 0)
-        spacing: Theme.paddingSmall
 
         Image {
             id: status
             anchors.right: parent.right
+            anchors.top: parent.top
             source: model.packageUpdateAvailable ? "image://theme/icon-s-update" :
                                                    "image://theme/icon-s-installed"
             visible: model.packageInstalled || model.packageUpdateAvailable
         }
 
+        Image {
+            id: cli
+            anchors.right: parent.right
+            anchors.verticalCenter: parent.verticalCenter
+            width: Theme.iconSizeSmall
+            cache: true; smooth: false
+            fillMode: Image.PreserveAspectFit
+            source: "../../icons/icon-s-consoleapplication.svg"
+            visible: model.packageType === ChumPackage.PackageApplicationConsole
+        }
+
         Row {
             id: stars
             anchors.right: parent.right
+            anchors.bottom: parent.bottom
             height: Math.max(starsLab.height, starsImage.height)
             spacing: Theme.paddingSmall
             visible: model.packageStarsCount >= 0
