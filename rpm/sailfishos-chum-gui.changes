@@ -1,6 +1,7 @@
-* Tue Apr 22 2025 olf <Olf0@users.noreply.github.com> - 0.6.10
+* Sun Apr 27 2025 olf <Olf0@users.noreply.github.com> - 0.6.10
 - QML: handle "update all" in notification (#332) by @nephros
 - Update help text for manual release setting (#327)
+- Add an indicator for CLI apps (#326) by @nephros
 
 * Sun Nov 03 2024 olf <Olf0@users.noreply.github.com> - 0.6.9
 - Update translations: `de` (#316), `es` (#305, #319), `et` (#297, #298, #312), `fi` (#306, #313), `fr` (#307, #314), `hu` (#304, #315), `ru` (#302, #317), `sk` (#303, #318), `sv` (#299, #320)
