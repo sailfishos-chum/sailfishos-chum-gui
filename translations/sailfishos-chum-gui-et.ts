@@ -49,6 +49,11 @@
         <extracomment>%1 - package name, %2 - package version</extracomment>
         <translation>%1 on uuendatud versioonini %2</translation>
     </message>
+    <message id="chum-repo-updated-multiple">
+        <location filename="../qml/sailfishos-chum-gui.qml" line="104"/>
+        <source>Multiple packages updated</source>
+        <translation>Mitu paketti on uuendatud</translation>
+    </message>
     <message id="chum-about">
         <location filename="../qml/pages/MainPage.qml" line="40"/>
         <source>About</source>
@@ -161,17 +166,17 @@
         <translation>Paigaldatud</translation>
     </message>
     <message id="chum-pkg-type-desktop">
-        <location filename="../qml/components/AppSummary.qml" line="53"/>
+        <location filename="../qml/components/AppSummary.qml" line="57"/>
         <source>Sailfish application</source>
         <translation>Sailfishi rakendus</translation>
     </message>
     <message id="chum-pkg-type-console">
-        <location filename="../qml/components/AppSummary.qml" line="56"/>
+        <location filename="../qml/components/AppSummary.qml" line="60"/>
         <source>Console application</source>
         <translation>Käsurearakendus</translation>
     </message>
     <message id="chum-pkg-categories">
-        <location filename="../qml/components/AppSummary.qml" line="66"/>
+        <location filename="../qml/components/AppSummary.qml" line="70"/>
         <source>Categories:</source>
         <translation>Kategooriad:</translation>
     </message>
@@ -420,13 +425,13 @@
         <translation>Loobu SailfishOS:Chum tarkvarahoidla automaatsest määramisest</translation>
     </message>
     <message id="chum-setings-override-release-description">
-        <location filename="../qml/pages/SettingsPage.qml" line="122"/>
-        <source>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this release here (for example, &lt;i&gt;4.3.0.12&lt;/i&gt;). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for cBeta users.</source>
-        <oldsource>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, &lt;i&gt;4.3.0.12&lt;/i&gt;). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</oldsource>
-        <translation>&lt;b&gt;Muudatuse kinnitamiseks vajuta &lt;kbd&gt;Sisestusklahvi&lt;/kbd&gt;&lt;/b&gt;&lt;br /&gt;Tavaliselt valitakse vajalik SailfishOS:Chum tarkvarahoidla automaatselt sinu nutiseadmes kasutusel oleva Sailfish&amp;nbsp;OSi versiooni alusel. Kui soovid SailfishOS:Chum tarkvarahoidla valida mingi konkreetse Sailfish&amp;nbsp;OSi versiooni jaoks, siis saad seda teha kirjutades siia soovitud versiooni numbri (näiteks &lt;i&gt;4.3.0.12&lt;/i&gt;). Sellisest võimalusest on kasu, kui SailfishOS:Chum tarkvarahoidla pole antud Sailfish&amp;nbsp;OSi versiooni jaoks saadaval. Nii võib näiteks juhtuda Sailfish&amp;nbsp;OSi beetaversiooni kasutajatel.</translation>
+        <location filename="../qml/pages/SettingsPage.qml" line="123"/>
+        <source>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually the correct SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release. To manually select a repository for a specific release, specify this release here (for example, &lt;i&gt;5.1&lt;/i&gt;). This is useful when no repository is available for the installed Sailfish&amp;nbsp;OS version, as for cBeta users.&lt;br /&gt;For releases prior to 4.6, the complete version number must be provided (for example, &lt;i&gt;4.3.0.12&lt;/i&gt;).</source>
+        <oldsource>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this release here (for example, &lt;i&gt;4.3.0.12&lt;/i&gt;). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for cBeta users.</oldsource>
+        <translation>&lt;b&gt;Muudatuse kinnitamiseks vajuta &lt;kbd&gt;Sisestusklahvi&lt;/kbd&gt;&lt;/b&gt;&lt;br /&gt;Tavaliselt valitakse vajalik SailfishOS:Chum tarkvarahoidla automaatselt sinu nutiseadmes kasutusel oleva Sailfish&amp;nbsp;OSi versiooni alusel. Kui soovid SailfishOS:Chum tarkvarahoidla käsitsi sisestada mingi konkreetse Sailfish&amp;nbsp;OSi versiooni jaoks, siis saad seda teha kirjutades siia soovitud versiooni numbri (näiteks &lt;i&gt;5.1&lt;/i&gt;). Sellisest võimalusest on kasu, kui SailfishOS:Chum tarkvarahoidla pole antud Sailfish&amp;nbsp;OSi versiooni jaoks saadaval, näiteks beetaversiooni kasutajatel.&lt;br /&gt;Versioonis 4.6 vanemate versioonide puhul pead lisama detailselt täpse versiooninumbri (näiteks &lt;/i&gt;4.3.0.12&lt;/i&gt;)</translation>
     </message>
     <message id="chum-setings-override-release-placeholder">
-        <location filename="../qml/pages/SettingsPage.qml" line="124"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="125"/>
         <source>&lt;i&gt;Specify a Sailfish&amp;nbsp;OS version&lt;/i&gt;</source>
         <translation>&lt;i&gt;Määra Sailfish&amp;nbsp;OS&apos;i versioon&lt;/i&gt;</translation>
     </message>
