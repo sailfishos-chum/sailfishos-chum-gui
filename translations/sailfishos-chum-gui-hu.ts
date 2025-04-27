@@ -148,7 +148,7 @@
     <message id="chum-launch">
         <location filename="../qml/pages/PackagePage.qml" line="48"/>
         <source>Start application</source>
-        <translation>Indítsa el az alkalmazást</translation>
+        <translation>Indítsd el az alkalmazást</translation>
     </message>
     <message id="chum-package-donation">
         <location filename="../qml/pages/PackagePage.qml" line="140"/>
