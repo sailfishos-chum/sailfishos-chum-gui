@@ -117,7 +117,7 @@ Page {
                 //% "Usually the correct SailfishOS:Chum repository is automatically selected according to the "
                 //% "installed Sailfish&nbsp;OS release. To manually select a repository "
                 //% "for a specific release, specify this release here (for example, <i>5.1</i>). "
-                //% "This is useful when a repository is not available for the installed "
+                //% "This is useful when no repository is yet available for the installed "
                 //% "Sailfish&nbsp;OS version, as for cBeta users.<br />"
                 //% "For releases prior to 4.6, the complete version number must be provided (for example, <i>4.3.0.12</i>)."
                 description: qsTrId("chum-setings-override-release-description")
