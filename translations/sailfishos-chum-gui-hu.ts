@@ -49,6 +49,11 @@
         <extracomment>%1 - package name, %2 - package version</extracomment>
         <translation>%1 %2 frissítve</translation>
     </message>
+    <message id="chum-repo-updated-multiple">
+        <location filename="../qml/sailfishos-chum-gui.qml" line="104"/>
+        <source>Multiple packages updated</source>
+        <translation>Több csomag is frissült</translation>
+    </message>
     <message id="chum-about">
         <location filename="../qml/pages/MainPage.qml" line="40"/>
         <source>About</source>
@@ -143,7 +148,7 @@
     <message id="chum-launch">
         <location filename="../qml/pages/PackagePage.qml" line="48"/>
         <source>Start application</source>
-        <translation>Indítsa el az alkalmazást</translation>
+        <translation>Indítsd el az alkalmazást</translation>
     </message>
     <message id="chum-package-donation">
         <location filename="../qml/pages/PackagePage.qml" line="140"/>
@@ -161,17 +166,17 @@
         <translation>Telepítve</translation>
     </message>
     <message id="chum-pkg-type-desktop">
-        <location filename="../qml/components/AppSummary.qml" line="53"/>
+        <location filename="../qml/components/AppSummary.qml" line="57"/>
         <source>Sailfish application</source>
         <translation>Sailfish OS alkalmazás</translation>
     </message>
     <message id="chum-pkg-type-console">
-        <location filename="../qml/components/AppSummary.qml" line="56"/>
+        <location filename="../qml/components/AppSummary.qml" line="60"/>
         <source>Console application</source>
         <translation>Parancssoros alkalmazás</translation>
     </message>
     <message id="chum-pkg-categories">
-        <location filename="../qml/components/AppSummary.qml" line="66"/>
+        <location filename="../qml/components/AppSummary.qml" line="70"/>
         <source>Categories:</source>
         <translation>Kategóriák:</translation>
     </message>
@@ -240,7 +245,7 @@
     <message id="chum-repo-management-disabled-txt">
         <location filename="../src/chum.cpp" line="336"/>
         <source>The SailfishOS:Chum GUI application failed to manage the SailfishOS:Chum repository!&lt;br /&gt;You probably have multiple SailfishOS:Chum repositories defined for SSU or disabled a SailfishOS:Chum repository.&lt;br /&gt;&lt;br /&gt;Please remove all references to SailfishOS:Chum repositories by executing this command line as root user:&lt;br /&gt;&lt;b&gt;&lt;code&gt;%1&lt;/code&gt;&lt;/b&gt;&lt;br /&gt;This SailfishOS:Chum GUI application will add any missing SailfishOS:Chum repository when started again.</source>
-        <translation>Az alkalmazásnak nem sikerült a SaifishOS:Chum csomagtároló kezelése!&lt;br /&gt;Lehetséges, hogy több SailfishOS:Chum csomagtárolód van az SSU-hoz beállítva, vagy le lett tiltva a SaifishOS:Chum csomagtároló.&lt;br /&gt;&lt;br /&gt;Távolítsd el az összes SailfishOS:Chum csomagtárolót az alábbi parancsot futtava root jogosultsággal:&lt;br /&gt;&lt;b&gt;&lt;code&gt;%1&lt;/code&gt;&lt;/b&gt;&lt;br /&gt;Az alkalmazás automatikusan fel fogja venni a következő indításnál a Chum csomagtárolókat.</translation>
+        <translation>Az alkalmazásnak nem sikerült a SaifishOS:Chum csomagtároló kezelése!&lt;br /&gt;Lehetséges, hogy több SailfishOS:Chum csomagtárolód van az SSU-hoz beállítva, vagy le lett tiltva a SaifishOS:Chum csomagtároló.&lt;br /&gt;&lt;br /&gt;Távolítsd el az összes SailfishOS:Chum csomagtárolót az alábbi parancsot futtatva root jogosultsággal:&lt;br /&gt;&lt;b&gt;&lt;code&gt;%1&lt;/code&gt;&lt;/b&gt;&lt;br /&gt;Az alkalmazás automatikusan fel fogja venni a következő indításnál a Chum csomagtárolókat.</translation>
     </message>
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="342"/>
@@ -420,13 +425,13 @@
         <translation>Automatikus SailfishOS:Chum csomagtároló beállítások felülbírálása</translation>
     </message>
     <message id="chum-setings-override-release-description">
-        <location filename="../qml/pages/SettingsPage.qml" line="122"/>
-        <source>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this release here (for example, &lt;i&gt;4.3.0.12&lt;/i&gt;). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for cBeta users.</source>
-        <oldsource>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, &lt;i&gt;4.3.0.12&lt;/i&gt;). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</oldsource>
-        <translation>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply.&lt;/b&gt;&lt;br /&gt;Többnyire a készüléken futó Sailfish&amp;nbsp;OS verziónak megfelelő SailfishOS:Chum csomagtároló automatikusan kiválasztásra kerül. Lehetséges manuálisan is SailfishOS:Chum csomagtárolót is beállítani a kívánt verziónak megadásával (pld. &lt;i&gt;4.3.0.12&lt;/i&gt;). Ez akkor lehet hasznos ha a SailfishOS:Chum csomagtároló még nem elérhető az adott Sailfish&amp;nbsp;OS verzióra (pld. a cBeta felhasználóknak).</translation>
+        <location filename="../qml/pages/SettingsPage.qml" line="123"/>
+        <source>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually the correct SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release. To manually select a repository for a specific release, specify this release here (for example, &lt;i&gt;5.1&lt;/i&gt;). This is useful when no repository is available for the installed Sailfish&amp;nbsp;OS version, as for cBeta users.&lt;br /&gt;For releases prior to 4.6, the complete version number must be provided (for example, &lt;i&gt;4.3.0.12&lt;/i&gt;).</source>
+        <oldsource>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this release here (for example, &lt;i&gt;4.3.0.12&lt;/i&gt;). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for cBeta users.</oldsource>
+        <translation>&lt;b&gt;Üss &lt;kbd&gt;Entert&lt;/kbd&gt; a jóváhagyáshoz.&lt;/b&gt;&lt;br /&gt;Többnyire a készüléken futó Sailfish&amp;nbsp;OS verziónak megfelelő SailfishOS:Chum csomagtároló automatikusan kiválasztásra kerül. Lehetséges manuálisan is SailfishOS:Chum csomagtárolót is beállítani a kívánt verziónak megadásával (pld. &lt;i&gt;5.1&lt;/i&gt;). Ez akkor lehet hasznos ha a SailfishOS:Chum csomagtároló még nem elérhető az adott Sailfish&amp;nbsp;OS verzióra (pld. a cBeta felhasználóknak). &lt;br /&gt;A 4.6 előtti kiadásoknál a teljes verziószámot meg kell adni (pld. &lt;i&gt;4.3.0.12&lt;/i&gt;)</translation>
     </message>
     <message id="chum-setings-override-release-placeholder">
-        <location filename="../qml/pages/SettingsPage.qml" line="124"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="125"/>
         <source>&lt;i&gt;Specify a Sailfish&amp;nbsp;OS version&lt;/i&gt;</source>
         <translation>&lt;i&gt;Sailfish&amp;nbsp;OS verzió megadása&lt;/i&gt;</translation>
     </message>
@@ -524,7 +529,7 @@
     <message id="chum-about-home">
         <location filename="../qml/pages/AboutPage.qml" line="58"/>
         <source>Source code repository</source>
-        <translation>Forráskód tárház</translation>
+        <translation>Forráskód repó</translation>
     </message>
     <message id="chum-about-license">
         <location filename="../qml/pages/AboutPage.qml" line="69"/>
