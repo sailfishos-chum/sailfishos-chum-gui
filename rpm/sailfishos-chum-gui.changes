@@ -1,3 +1,6 @@
+* Tue May 06 2025 olf <Olf0@users.noreply.github.com> - 0.6.11
+- 
+
 * Mon May 05 2025 olf <Olf0@users.noreply.github.com> - 0.6.10
 - QML: handle "update all" in notification (#332) by @nephros
 - Update help text for manual release setting (#327)
