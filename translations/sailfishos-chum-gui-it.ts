@@ -49,6 +49,11 @@
         <extracomment>%1 - package name, %2 - package version</extracomment>
         <translation>%1 %2 aggiornato</translation>
     </message>
+    <message id="chum-repo-updated-multiple">
+        <location filename="../qml/sailfishos-chum-gui.qml" line="104"/>
+        <source>Multiple packages updated</source>
+        <translation>Più pacchetti sono stati aggiornati</translation>
+    </message>
     <message id="chum-about">
         <location filename="../qml/pages/MainPage.qml" line="40"/>
         <source>About</source>
@@ -161,17 +166,17 @@
         <translation>Installata</translation>
     </message>
     <message id="chum-pkg-type-desktop">
-        <location filename="../qml/components/AppSummary.qml" line="53"/>
+        <location filename="../qml/components/AppSummary.qml" line="57"/>
         <source>Sailfish application</source>
         <translation>Applicazione Sailfish</translation>
     </message>
     <message id="chum-pkg-type-console">
-        <location filename="../qml/components/AppSummary.qml" line="56"/>
+        <location filename="../qml/components/AppSummary.qml" line="60"/>
         <source>Console application</source>
         <translation>Applicazione console</translation>
     </message>
     <message id="chum-pkg-categories">
-        <location filename="../qml/components/AppSummary.qml" line="66"/>
+        <location filename="../qml/components/AppSummary.qml" line="70"/>
         <source>Categories:</source>
         <translation>Categorie:</translation>
     </message>
@@ -420,13 +425,13 @@
         <translation>Sovrascrivi la scelta automatica del repository SailfishOS:Chum</translation>
     </message>
     <message id="chum-setings-override-release-description">
-        <location filename="../qml/pages/SettingsPage.qml" line="122"/>
-        <source>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this release here (for example, &lt;i&gt;4.3.0.12&lt;/i&gt;). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for cBeta users.</source>
-        <oldsource>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this Sailfish&amp;nbsp;OS release here (for example, &lt;i&gt;4.3.0.12&lt;/i&gt;). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for Cbeta users.</oldsource>
-        <translation>&lt;b&gt;Premi &lt;kbd&gt;Invio&lt;/kbd&gt; per applicare&lt;/b&gt;&lt;br /&gt;Generalmente un repository specifico SailfishOS:Chum è scelto automaticamente a seconda della versione di Sailfish&amp;nbsp;OS installata. Per scegliere manualmente una versione del repository SailfishOS:Chum per una versione specifica di Sailfish&amp;nbsp;OS, specifica una versione qui (come ad esempio, &lt;i&gt;4.3.0.12&lt;/i&gt;). È utile quando la versione del repository di SailfishOS:Chum non è disponibile per la versione installata di Sailfish&amp;nbsp;OS per esempio per gli utenti cBeta.</translation>
+        <location filename="../qml/pages/SettingsPage.qml" line="123"/>
+        <source>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually the correct SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release. To manually select a repository for a specific release, specify this release here (for example, &lt;i&gt;5.1&lt;/i&gt;). This is useful when no repository is available for the installed Sailfish&amp;nbsp;OS version, as for cBeta users.&lt;br /&gt;For releases prior to 4.6, the complete version number must be provided (for example, &lt;i&gt;4.3.0.12&lt;/i&gt;).</source>
+        <oldsource>&lt;b&gt;Press &lt;kbd&gt;Enter&lt;/kbd&gt; to apply&lt;/b&gt;&lt;br /&gt;Usually a specific SailfishOS:Chum repository is automatically selected according to the installed Sailfish&amp;nbsp;OS release version. To manually select a SailfishOS:Chum repository for a specific Sailfish&amp;nbsp;OS release, specify this release here (for example, &lt;i&gt;4.3.0.12&lt;/i&gt;). This is useful when the SailfishOS:Chum repository is not available for the installed Sailfish&amp;nbsp;OS version, as for cBeta users.</oldsource>
+        <translation>&lt;b&gt;Premi &lt;kbd&gt;Invio&lt;/kbd&gt; per applicare&lt;/b&gt;&lt;br /&gt;Generalmente un repository corretto di SailfishOS:Chum è scelto automaticamente a seconda della versione di Sailfish&amp;nbsp;OS installata. Per scegliere manualmente una versione del repository, specificare quale versione qui (ad esempio, &lt;i&gt;5.1&lt;/i&gt;). È utile quando nessun repository è disponibile per la versione installata di Sailfish&amp;nbsp;OS, come per esempio per gli utenti cBeta. &lt;br /&gt;Per versioni precedenti alla 4.6, il numero completo di versione deve essere inserito (per esempio, &lt;i&gt;4.3.0.12&lt;/i&gt;).</translation>
     </message>
     <message id="chum-setings-override-release-placeholder">
-        <location filename="../qml/pages/SettingsPage.qml" line="124"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="125"/>
         <source>&lt;i&gt;Specify a Sailfish&amp;nbsp;OS version&lt;/i&gt;</source>
         <translation>&lt;i&gt;Specifica una versione di Sailfish&amp;nbsp;OS&lt;/i&gt;</translation>
     </message>
