@@ -1,5 +1,7 @@
-* Tue Sun 11 2025 olf <Olf0@users.noreply.github.com> - 0.6.11
+* Thu June 05 2025 olf <Olf0@users.noreply.github.com> - 0.6.11
 - Update `pl` translation (#354) by @BotchedRPR
+- Update `sk` translation (#357) by @okruhliak
+- Revived `it` translation (#358) by @legacychimera247
 
 * Mon May 05 2025 olf <Olf0@users.noreply.github.com> - 0.6.10
 - QML: handle "update all" in notification (#332) by @nephros
