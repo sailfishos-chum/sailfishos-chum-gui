@@ -78,7 +78,7 @@ Categories:
  - PackageManager
 Custom:
   Repo: %{url}
-PackageIcon: %{url}/raw/main/icons/sailfishos-chum-gui.svg
+PackageIcon: %{url}/raw/main/icons/%{name}.svg
 Screenshots:
  - %{url}/raw/main/.screenshots/%{name}_retrieving-refreshed.png
  - %{url}/raw/main/.screenshots/%{name}_main-page.png
@@ -127,7 +127,7 @@ chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
 
 # Rectify desktop file for older SFOS version targets < v4.1.0
 %if %{defined sailfishos_version} && 0%{?sailfishos_version} < 40100
-sed -i 's/silica-qt5/generic/' %{buildroot}%{_datadir}/applications/sailfishos-chum-gui.desktop
+sed -i 's/silica-qt5/generic/' %{buildroot}%{_datadir}/applications/%{name}.desktop
 %endif
 
 %postun
