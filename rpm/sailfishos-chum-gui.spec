@@ -78,7 +78,7 @@ Categories:
  - PackageManager
 Custom:
   Repo: %{url}
-PackageIcon: %{url}/raw/main/icons/sailfishos-chum-gui.svg
+PackageIcon: %{url}/raw/main/icons/%{name}.svg
 Screenshots:
  - %{url}/raw/main/.screenshots/%{name}_retrieving-refreshed.png
  - %{url}/raw/main/.screenshots/%{name}_main-page.png
