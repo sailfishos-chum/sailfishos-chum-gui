@@ -7,7 +7,7 @@ Version:        0.6.11
 # which may be prefixed with one of {alpha,beta,rc,release} (e.g. "beta3").
 # For details and reasons, see
 # https://github.com/storeman-developers/harbour-storeman-installer/wiki/Git-tag-format
-Release:        1
+Release:        2
 # The Group field should comprise one of the groups listed here:
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
 Group:          Software Management/Package Manager
