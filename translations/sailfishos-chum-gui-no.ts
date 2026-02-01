@@ -377,7 +377,7 @@
     <message id="chum-settings-status-repo-regular-manual">
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
         <source>&lt;html&gt;Subscribed to the regular SailfishOS:Chum repository with a manually set Sailfish&amp;nbsp;OS version (%1).&lt;/html&gt;</source>
-        <translation>&lt;html&gt;Abonnerer på den vanlige SailfishOS:Chum-pakkebrønnen med en manuelt valgt Sailfish OS-versjon (%1).&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;Abonnerer på den vanlige SailfishOS:Chum-pakkebrønnen med en manuelt valgt Sailfish&amp;nbsp;OS-versjon (%1).&lt;/html&gt;</translation>
     </message>
     <message id="chum-settings-status-repo-testing-auto">
         <location filename="../qml/pages/SettingsPage.qml" line="57"/>
