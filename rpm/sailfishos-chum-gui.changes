@@ -2,7 +2,7 @@
 - 
 
 * Mon Feb 02 2026 olf <Olf0@users.noreply.github.com> - 0.6.12
-- Add Norwegian (Bokmål) translation (#363, #364)
+- Add Norwegian (Bokmål) translation (`no`; #363 by @fsilye and #364 by @Olf0)
 
 * Fri Jun 27 2025 olf <Olf0@users.noreply.github.com> - 0.6.11
 - Update `pl` translation (#354) by @BotchedRPR
