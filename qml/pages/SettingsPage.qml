@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import QtQuick.XmlListModel 2.0
 import Sailfish.Silica 1.0
 import org.chum 1.0
 import "../components"
@@ -6,6 +7,57 @@ import "../components"
 Page {
     id: page
     allowedOrientations: Orientation.All
+    XmlListModel { id: mainModel
+        property string versions: "none"
+        source: "https://build.sailfishos.org/public/source/sailfishos:chum/_meta"
+        query: "/project/repository"
+        XmlRole { query: "@name/string()"; name: "repoName" }
+        onStatusChanged: if (status == XmlListModel.Ready) {
+            var entries = []
+            for (var i =0; i < count; ++i) {
+                const e = get(i).repoName.split('_')[0]
+                if(entries.indexOf(e) == -1)
+                    entries.push(e)
+            }
+            versions = entries.join(", ")
+        }
+    }
+    XmlListModel { id: testingModel
+        property string versions: "none"
+        source: "https://build.sailfishos.org/public/source/sailfishos:chum:testing/_meta"
+        query: "/project/repository"
+        XmlRole { query: "@name/string()"; name: "repoName" }
+        onStatusChanged: if (status == XmlListModel.Ready) {
+            var entries = []
+            for (var i =0; i < count; ++i) {
+                const e = get(i).repoName.split('_')[0]
+                if(entries.indexOf(e) == -1)
+                    entries.push(e)
+            }
+            versions = entries.join(", ")
+        }
+    }
+    XmlListModel { id: legacyModel
+        property string repos: "none"
+        property string versions: ""
+        source: "https://build.sailfishos.org/public/source/sailfishos:chum:legacy/_meta"
+        query: "/project/repository"
+        XmlRole { query: "@name/string()"; name: "repoName" }
+        onStatusChanged: if (status == XmlListModel.Ready) {
+            var vs = []
+            var rs = []
+            for (var i =0; i < count; ++i) {
+                const r = get(i).repoName
+                rs.push(r)
+                const v = r.split('_')[0]
+                if(vs.indexOf(v) == -1)
+                    vs.push(v)
+            }
+            repos = rs.join(", ")
+            versions = vs.join(";")
+        }
+    }
+
 
     SilicaFlickable {
         anchors.fill: parent
@@ -83,6 +135,44 @@ Page {
                 text: qsTrId("chum-settings-advanced")
             }
 
+            // use a Loader here as legacyModel can take a while to load
+            // which leads to problems populating the ComboBox menu and default value.
+            Loader {
+                width: parent.width
+                active: legacyModel.status === XmlListModel.Ready
+                sourceComponent: Component {
+                    ComboBox { id: legacyCombo
+                        enabled: !Chum.busy
+                        //% "Legacy repository"
+                        label: qsTrId("chum-settings-legacy-combo")
+                        //% "Add the SailfishOS:Chum:Legacy repository. This provides obsolete or unmaintained packages. "
+                        //% "Note that only some repos are available. "
+                        //% "Careful about selecting a version other than the one your device is currently running! "
+                        //% "Legacy repos: %1"
+                        description: qsTrId("chum-settings-legacy-combo-desc").arg(legacyModel.repos)
+                        menu: ContextMenu {
+                            MenuItem {
+                                //% "Disabled"
+                                text: qsTrId("chum-settings-legacy-disable")
+                            }
+                            Repeater {
+                                model: legacyModel.versions.split(";")
+                                delegate: MenuItem { text: modelData }
+                            }
+                        }
+                        currentIndex: Chum.repoLegacy ? legacyModel.versions.split(";").indexOf(Chum.manualVersionLegacy) + 1 : 0
+                        onCurrentIndexChanged: {
+                            if (legacyCombo.value > 0) {
+                                Chum.manualVersionLegacy = legacyCombo.value
+                                Chum.repoLegacy = true
+                            } else {
+                                Chum.repoLegacy = false
+                            }
+                        }
+                    }
+                }
+            }
+
             TextSwitch {
                 automaticCheck: false
                 busy: Chum.busy
@@ -95,6 +185,7 @@ Page {
                 onClicked: Chum.repoTesting = !Chum.repoTesting;
             }
 
+            // TODO/FIXME: allow separate version for legacy repo
             Label {
                 anchors {
                     left: parent.left
@@ -120,10 +211,14 @@ Page {
                 //% "This is useful when no repository is available for the installed "
                 //% "Sailfish&nbsp;OS version, as for cBeta users.<br />"
                 //% "For releases prior to 4.6, the complete version number must be provided (for example, <i>4.3.0.12</i>)."
-                description: qsTrId("chum-setings-override-release-description")
+                //% "<br />The following versions are known:<br /> %1"
+                description: qsTrId("chum-setings-override-release-description").arg( Chum.repoTesting ? testingModel.versions : mainModel.versions)
                 //% "<i>Specify a Sailfish&nbsp;OS version</i>"
                 placeholderText: qsTrId("chum-setings-override-release-placeholder")
                 text: Chum.manualVersion
+                acceptableInput: Chum.repoTesting
+                                 ? (testingModel.versions.indexOf(text) != -1)
+                                 : (mainModel.versions.indexOf(text) != -1)
                 onEnterClicked: {
                     console.log("Setting release to ", txtRelease.text);
                     Chum.manualVersion = txtRelease.text;

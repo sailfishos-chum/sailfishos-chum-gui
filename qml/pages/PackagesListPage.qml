@@ -12,6 +12,7 @@ Page {
     property alias  category: chumModel.showCategory
     property alias  installedOnly: chumModel.filterInstalledOnly
     property alias  updatesOnly: chumModel.filterUpdatesOnly
+    property alias  legacyPackagesOnly: chumModel.filterLegacyPackagesOnly
 
     signal searchFocus;
     signal removeSearchFocus;
