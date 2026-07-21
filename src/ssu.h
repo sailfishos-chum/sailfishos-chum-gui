@@ -15,10 +15,15 @@ public:
     bool manageRepo() const { return m_manage_repo; }
     bool repoAvailable() const { return m_manage_repo && !m_repo_name.isEmpty(); }
     bool repoTesting() const { return m_manage_repo && m_repo_testing; }
+    bool repoLegacy() const { return m_manage_repo && m_repo_legacy; }
     QString repoName() const { return m_manage_repo ? m_repo_name : QString{}; }
 
     void loadRepos();
     void setRepo(const QString &version=QString(), bool testing=false);
+
+    void setLegacyRepo(const QString &version=QString(), bool add = true);
+    // FIXME: no literal name
+    QString legacyRepoName() const { return m_manage_repo ? "sailfishos-chum-legacy" : QString{}; }
 
 signals:
     void updated();
@@ -29,6 +34,7 @@ private:
 private:
     bool m_manage_repo{false};
     bool m_repo_testing{false};
+    bool m_repo_legacy{false};
     QString m_repo_name;
 
     QList< std::pair<QString,QString> > m_repos;
