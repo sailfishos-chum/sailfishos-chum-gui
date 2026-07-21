@@ -36,6 +36,7 @@ Item {
         color: parent.highlighted ? Theme.highlightColor : Theme.primaryColor
         text: model.packageName
         truncationMode: TruncationMode.Fade
+        font.italic: model.legacyPackage
     }
 
     Label {
@@ -49,7 +50,7 @@ Item {
         color: parent.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
         font.pixelSize: Theme.fontSizeSmall
         height: visible ? implicitHeight : 0
-        text: model.packageCategories ? model.packageCategories.join(", ") : ""
+        text: (model.packageCategories ? model.packageCategories.join(", ") : "") + ( model.legacyPackage ? ", Legacy" : "")
         truncationMode: TruncationMode.Fade
     }
 
