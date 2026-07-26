@@ -22,8 +22,8 @@ public:
     void setRepo(const QString &version=QString(), bool testing=false);
 
     void setLegacyRepo(const QString &version=QString(), bool add = true);
-    // FIXME: no literal name
-    QString legacyRepoName() const { return m_manage_repo ? "sailfishos-chum-legacy" : QString{}; }
+    // FIXME: no magic values
+    QString legacyRepoName() const { return m_manage_repo ? QStringLiteral("sailfishos-chum-legacy") : QString{}; }
 
 signals:
     void updated();
