@@ -36,7 +36,7 @@ Item {
         color: parent.highlighted ? Theme.highlightColor : Theme.primaryColor
         text: model.packageName
         truncationMode: TruncationMode.Fade
-        font.italic: model.legacyPackage
+        font.italic: model.legacyPackage && !chumModel.filterLegacyPackagesOnly
     }
 
     Label {
@@ -50,7 +50,8 @@ Item {
         color: parent.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
         font.pixelSize: Theme.fontSizeSmall
         height: visible ? implicitHeight : 0
-        text: (model.packageCategories ? model.packageCategories.join(", ") : "") + ( model.legacyPackage ? ", Legacy" : "")
+        text: (model.packageCategories ? model.packageCategories.join(", ") : "")
+            + (model.legacyPackage && !chumModel.filterLegacyPackagesOnly ? ", Legacy" : "")
         truncationMode: TruncationMode.Fade
     }
 
