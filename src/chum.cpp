@@ -11,7 +11,6 @@ Chum* Chum::s_instance{nullptr};
 
 static QString s_config_showapps{QStringLiteral("main/showAppsByDefault")};
 static QString s_config_manualversion{QStringLiteral("main/manualVersion")};
-static QString s_config_manualversionlegacy{QStringLiteral("main/manualVersionLegacy")};
 
 static inline auto role2operation(Transaction::Role role) {
     switch (role) {
@@ -37,7 +36,6 @@ Chum::Chum(QObject *parent)
     QSettings settings;
     m_show_apps_by_default = (settings.value(s_config_showapps, 1).toInt() != 0);
     m_manualVersion = (settings.value(s_config_manualversion, QString()).toString());
-    m_manualVersionLegacy = (settings.value(s_config_manualversionlegacy, QString()).toString());
 
     m_busy = true;
     //% "Loading SailfishOS:Chum repository"
@@ -81,25 +79,6 @@ void Chum::setManualVersion(const QString &v) {
     emit busyChanged();
     setStatus(qtTrId("chum-add-testing-repo"));
     m_ssu.setRepo(m_manualVersion, m_ssu.repoTesting());
-}
-
-void Chum::setManualVersionLegacy(const QString &v) {
-    if (!m_ssu.manageRepo()) {
-        emit error(qtTrId("chum-repo-management-disabled-title"));
-        return;
-    }
-
-    if (m_manualVersionLegacy == v) return;
-    m_manualVersionLegacy = v.trimmed();
-
-    QSettings settings;
-    settings.setValue(s_config_manualversionlegacy, v);
-    emit manualVersionLegacyChanged();
-
-    m_busy = true;
-    emit busyChanged();
-    setStatus(qtTrId("chum-add-legacy-repo"));
-    m_ssu.setLegacyRepo(m_manualVersionLegacy, m_ssu.repoLegacy());
 }
 
 /////////////////////////////////////////////////////////////
@@ -366,7 +345,6 @@ void Chum::refreshRepo(bool force) {
         //% "Failed to refresh SailfishOS:Chum repository!"
         emit error(qtTrId("chum-refresh-repository-failed"));
     });
-
 }
 
 void Chum::repositoriesListUpdated() {
@@ -420,13 +398,13 @@ void Chum::setRepoLegacy(bool legacy) {
         emit busyChanged();
         //% "Adding SailfishOS:Chum:Legacy repository"
         setStatus(qtTrId("chum-add-legacy-repo"));
-        m_ssu.setLegacyRepo(m_manualVersionLegacy, true);
+        m_ssu.setLegacyRepo(m_manualVersion, true);
     } else if (!legacy && m_ssu.repoLegacy()) {
         m_busy = true;
         emit busyChanged();
         //% "Adding SailfishOS:Chum:Legacy repository"
         setStatus(qtTrId("chum-add-legacy-repo"));
-        m_ssu.setLegacyRepo(m_manualVersionLegacy, false);
+        m_ssu.setLegacyRepo(m_manualVersion, false);
      }
 }
 

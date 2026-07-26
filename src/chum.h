@@ -23,7 +23,6 @@ class Chum : public QObject {
     Q_PROPERTY(QString status         READ status NOTIFY statusChanged)
     Q_PROPERTY(quint32 updatesCount   READ updatesCount NOTIFY updatesCountChanged)
     Q_PROPERTY(QString manualVersion  READ manualVersion WRITE setManualVersion NOTIFY manualVersionChanged)
-    Q_PROPERTY(QString manualVersionLegacy  READ manualVersionLegacy WRITE setManualVersionLegacy NOTIFY manualVersionLegacyChanged)
 
 public:
     enum PackageOperation {
@@ -44,13 +43,11 @@ public:
     QString status() const { return m_status; }
     quint32 updatesCount() const { return m_updates_count; }
     QString manualVersion() const { return m_manualVersion; }
-    QString manualVersionLegacy() const { return m_manualVersionLegacy; }
 
     void    setRepoTesting(bool testing);
     void    setRepoLegacy(bool legacy);
     void    setShowAppsByDefault(bool v);
     void    setManualVersion(const QString &v);
-    void    setManualVersionLegacy(const QString &v);
 
     const QList<ChumPackage*> packages() const { return m_packages.values(); }
     Q_INVOKABLE ChumPackage* package(const QString &id) const { return m_packages.value(id, nullptr); }
@@ -80,7 +77,6 @@ signals:
     void repositoryRefreshed();
     void showAppsByDefaultChanged();
     void manualVersionChanged();
-    void manualVersionLegacyChanged();
 
 private:
     explicit Chum(QObject *parent = nullptr);
@@ -107,7 +103,6 @@ private:
     quint32       m_updates_count{0};
     bool          m_show_apps_by_default{false};
     QString       m_manualVersion;
-    QString       m_manualVersionLegacy;
 
     QHash<QString, ChumPackage*> m_packages;
     QSet<QString>                m_packages_last_refresh;
