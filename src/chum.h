@@ -18,6 +18,7 @@ class Chum : public QObject {
     Q_PROPERTY(bool    repoAvailable  READ repoAvailable NOTIFY repoUpdated)
     Q_PROPERTY(bool    repoManaged    READ repoManaged NOTIFY repoUpdated)
     Q_PROPERTY(bool    repoTesting    READ repoTesting WRITE setRepoTesting NOTIFY repoUpdated)
+    Q_PROPERTY(bool    repoLegacy     READ repoLegacy WRITE setRepoLegacy NOTIFY repoUpdated)
     Q_PROPERTY(bool    showAppsByDefault READ showAppsByDefault WRITE setShowAppsByDefault NOTIFY showAppsByDefaultChanged)
     Q_PROPERTY(QString status         READ status NOTIFY statusChanged)
     Q_PROPERTY(quint32 updatesCount   READ updatesCount NOTIFY updatesCountChanged)
@@ -37,12 +38,14 @@ public:
     bool    repoAvailable() const { return m_ssu.repoAvailable(); }
     bool    repoManaged() const { return m_ssu.manageRepo(); }
     bool    repoTesting() const { return m_ssu.repoTesting(); }
+    bool    repoLegacy() const { return m_ssu.repoLegacy(); }
     bool    showAppsByDefault() const { return m_show_apps_by_default; };
     QString status() const { return m_status; }
     quint32 updatesCount() const { return m_updates_count; }
     QString manualVersion() const { return m_manualVersion; }
 
     void    setRepoTesting(bool testing);
+    void    setRepoLegacy(bool legacy);
     void    setShowAppsByDefault(bool v);
     void    setManualVersion(const QString &v);
 

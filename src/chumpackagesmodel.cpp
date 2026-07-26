@@ -46,6 +46,8 @@ QVariant ChumPackagesModel::data(const QModelIndex &index, int role) const {
         return p->updateAvailable();
     case ChumPackage::PackageDesktopFileRole:
         return p->desktopFile();
+    case ChumPackage::PackageLegacyPackageRole:
+        return p->legacyPackage();
     default:
         return QVariant{};
     }
@@ -65,6 +67,7 @@ QHash<int, QByteArray> ChumPackagesModel::roleNames() const {
         {ChumPackage::PackageTypeRole, QByteArrayLiteral("packageType")},
         {ChumPackage::PackageUpdateAvailableRole,  QByteArrayLiteral("packageUpdateAvailable")},
         {ChumPackage::PackageDesktopFileRole,  QByteArrayLiteral("desktopFile")},
+        {ChumPackage::PackageLegacyPackageRole,  QByteArrayLiteral("legacyPackage")},
     };
 }
 
@@ -86,6 +89,8 @@ void ChumPackagesModel::reset() {
         if (m_filter_installed_only && !p->installed())
             continue;
         if (m_filter_updates_only && !p->updateAvailable())
+            continue;
+        if (m_filter_legacy_only && !p->legacyPackage())
             continue;
         if (!m_show_category.isEmpty() &&
                 !m_show_category.intersects(p->categories().toSet()))
@@ -133,7 +138,8 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
                 ChumPackage::PackageTypeRole,
                 ChumPackage::PackageInstalledRole,
                 ChumPackage::PackageInstalledVersionRole,
-                ChumPackage::PackageUpdateAvailableRole
+                ChumPackage::PackageUpdateAvailableRole,
+                ChumPackage::PackageLegacyPackageRole
     };
 
     QList<ChumPackage::Role> search_roles{
@@ -170,6 +176,8 @@ void ChumPackagesModel::updatePackage(QString packageId, ChumPackage::Role role)
         filter_or_order_may_change = true;
     if (m_filter_updates_only && role == ChumPackage::PackageUpdateAvailableRole)
         filter_or_order_may_change = true;
+    if (m_filter_legacy_only && role == ChumPackage::PackageLegacyPackageRole)
+        filter_or_order_may_change = true;
     if (!m_show_category.isEmpty() && role == ChumPackage::PackageCategoriesRole)
         filter_or_order_may_change = true;
     // TODO: other filters
@@ -204,6 +212,12 @@ void ChumPackagesModel::setFilterInstalledOnly(bool filter) {
 void ChumPackagesModel::setFilterUpdatesOnly(bool filter) {
     m_filter_updates_only = filter;
     emit filterUpdatesOnlyChanged();
+    reset();
+}
+
+void ChumPackagesModel::setFilterLegacyPackagesOnly(bool filter) {
+    m_filter_legacy_only = filter;
+    emit filterLegacyPackagesOnlyChanged();
     reset();
 }
 

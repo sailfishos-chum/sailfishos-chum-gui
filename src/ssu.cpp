@@ -22,6 +22,12 @@ static QString s_repo_testing_alias(
         QStringLiteral("sailfishos-chum-testing"));
 static QString s_repo_testing_prefix(
         QStringLiteral("https://repo.sailfishos.org/obs/sailfishos:/chum:/testing/"));
+static QString s_repo_legacy(
+        QStringLiteral("https://repo.sailfishos.org/obs/sailfishos:/chum:/legacy/" RELEASE_TAG "_%(arch)/"));
+static QString s_repo_legacy_alias(
+        QStringLiteral("sailfishos-chum-legacy"));
+static QString s_repo_legacy_prefix(
+        QStringLiteral("https://repo.sailfishos.org/obs/sailfishos:/chum:/legacy/"));
 
 Ssu::Ssu(QObject *parent) :
     QDBusAbstractInterface(
@@ -80,6 +86,10 @@ void Ssu::onListFinished(QDBusPendingCallWatcher *call) {
         } else if (u.second.startsWith(s_repo_testing_prefix) && u.first == s_repo_testing_alias) {
             ++count;
             repo_name = u.first;
+        } else if (u.second.startsWith(s_repo_legacy_prefix) && u.first == s_repo_legacy_alias) {
+            // only set the member, do not count
+            //++count; // nope
+            m_repo_legacy = true;
         } else if (u.first == s_repo_regular_alias || u.first == s_repo_testing_alias) {
             has_wrong_alias = true;
         }
@@ -162,4 +172,28 @@ void Ssu::setRepo(const QString &version, bool testing) {
 
     // refresh list
     loadRepos();
+}
+
+void Ssu::setLegacyRepo(const QString &version, bool add) {
+    QString rname =  s_repo_legacy_alias;
+    QString url =  s_repo_legacy;
+
+    if (m_repo_legacy) {
+        // remove current repository
+        callWithArgumentList(QDBus::BlockWithGui, QStringLiteral("modifyRepo"),
+                             QVariantList{0, rname});
+        m_repo_legacy = false;
+    }
+
+    if (add) {
+        if (!version.isEmpty()) {
+            url = url.replace(QLatin1String(RELEASE_TAG), version);
+        }
+        callWithArgumentList(QDBus::BlockWithGui, QStringLiteral("addRepo"),
+                             QVariantList{rname, url});
+        m_repo_legacy = true;
+    }
+    call(QDBus::BlockWithGui, QStringLiteral("updateRepos"));
+    loadRepos();
+
 }

@@ -1,1 +1,10 @@
 *.user
+*.qm
+CMakeFiles
+Makefile
+CMakeCache.txt
+cmake_install.cmake
+src/*_autogen
+icons/*x*
+src/sailfishos-chum-gui
+install_manifest.txt
