@@ -38,26 +38,20 @@ Page {
         }
     }
     XmlListModel { id: legacyModel
-        property string repos: "none"
-        property string versions: ""
+        property string versions: "none"
         source: "https://build.sailfishos.org/public/source/sailfishos:chum:legacy/_meta"
         query: "/project/repository"
         XmlRole { query: "@name/string()"; name: "repoName" }
         onStatusChanged: if (status == XmlListModel.Ready) {
-            var vs = []
-            var rs = []
+            var entries = []
             for (var i =0; i < count; ++i) {
-                const r = get(i).repoName
-                rs.push(r)
-                const v = r.split('_')[0]
-                if(vs.indexOf(v) == -1)
-                    vs.push(v)
+                const e = get(i).repoName.split('_')[0]
+                if(entries.indexOf(e) == -1)
+                    entries.push(e)
             }
-            repos = rs.join(", ")
-            versions = vs.join(";")
+            versions = entries.join(", ")
         }
     }
-
 
     SilicaFlickable {
         anchors.fill: parent
@@ -135,42 +129,18 @@ Page {
                 text: qsTrId("chum-settings-advanced")
             }
 
-            // use a Loader here as legacyModel can take a while to load
-            // which leads to problems populating the ComboBox menu and default value.
-            Loader {
-                width: parent.width
-                active: legacyModel.status === XmlListModel.Ready
-                sourceComponent: Component {
-                    ComboBox { id: legacyCombo
-                        enabled: !Chum.busy
-                        //% "Legacy repository"
-                        label: qsTrId("chum-settings-legacy-combo")
-                        //% "Add the SailfishOS:Chum:Legacy repository. This provides obsolete or unmaintained packages. "
-                        //% "Note that only some repos are available. "
-                        //% "Careful about selecting a version other than the one your device is currently running! "
-                        //% "Legacy repos: %1"
-                        description: qsTrId("chum-settings-legacy-combo-desc").arg(legacyModel.repos)
-                        menu: ContextMenu {
-                            MenuItem {
-                                //% "Disabled"
-                                text: qsTrId("chum-settings-legacy-disable")
-                            }
-                            Repeater {
-                                model: legacyModel.versions.split(";")
-                                delegate: MenuItem { text: modelData }
-                            }
-                        }
-                        currentIndex: Chum.repoLegacy ? legacyModel.versions.split(";").indexOf(Chum.manualVersionLegacy) + 1 : 0
-                        onCurrentIndexChanged: {
-                            if (legacyCombo.value > 0) {
-                                Chum.manualVersionLegacy = legacyCombo.value
-                                Chum.repoLegacy = true
-                            } else {
-                                Chum.repoLegacy = false
-                            }
-                        }
-                    }
-                }
+            TextSwitch {
+                automaticCheck: false
+                busy: Chum.busy
+                checked: Chum.repoLegacy
+                //% "Add the SailfishOS:Chum:Legacy repository. This provides obsolete or unmaintained packages. "
+                //% "Note that only some repos are available. "
+                //% "Careful about selecting a version other than the one your device is currently running! "
+                //% "The following versions are available: %1"
+                description: qsTrId("chum-settings-legacy-description").arg(legacyModel.versions)
+                //% "Add legacy repository"
+                text: qsTrId("chum-settings-legacy")
+                onClicked: Chum.repoLegacy = !Chum.repoLegacy;
             }
 
             TextSwitch {
