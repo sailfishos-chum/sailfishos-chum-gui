@@ -134,9 +134,7 @@ Page {
                 busy: Chum.busy
                 checked: Chum.repoLegacy
                 //% "Add the SailfishOS:Chum:Legacy repository. This provides obsolete or unmaintained packages. "
-                //% "Note that only some repos are available. "
-                //% "Careful about selecting a version other than the one your device is currently running! "
-                //% "The following versions are available: %1"
+                //% "Note that only the following versions are available: %1"
                 description: qsTrId("chum-settings-legacy-description").arg(legacyModel.versions)
                 //% "Add legacy repository"
                 text: qsTrId("chum-settings-legacy")
