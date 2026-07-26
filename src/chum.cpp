@@ -79,6 +79,8 @@ void Chum::setManualVersion(const QString &v) {
     emit busyChanged();
     setStatus(qtTrId("chum-add-testing-repo"));
     m_ssu.setRepo(m_manualVersion, m_ssu.repoTesting());
+    setStatus(qtTrId("chum-add-legacy-repo"));
+    m_ssu.setRepo(m_manualVersion, m_ssu.repoLegacy());
 }
 
 /////////////////////////////////////////////////////////////
