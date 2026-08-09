@@ -13,6 +13,45 @@ MouseArea {
     property bool _expanded: !_expansionEnabled
     property bool _expansionEnabled: enableExpansion && content.implicitHeight > shrunkHeight
 
+    function aiScore(key) {
+        switch (key) {
+            case "H":
+                //% "Human-written code only"
+                //: AI rating, be brief in translation
+                return qsTrId("chum-pkg-ai-code-desc-h")
+                break
+            case "A":
+                //% "Human-written code, AI used elsewhere"
+                //: AI rating, be brief in translation
+                return qsTrId("chum-pkg-ai-code-desc-a")
+                break
+            case "B":
+                //% "AI-assisted code, human-reviewed"
+                //: AI rating, be brief in translation
+                return qsTrId("chum-pkg-ai-code-desc-b")
+                break
+            case "C":
+                //% "AI-written code"
+                //: AI rating, be brief in translation
+                return qsTrId("chum-pkg-ai-code-desc-c")
+                break
+            case "V":
+                //% "Vibe-coded"
+                //: AI rating, be brief in translation
+                return qsTrId("chum-pkg-ai-code-desc-v")
+                break
+            case "X":
+                //% "Not disclosed"
+                //: AI rating, be brief in translation
+                return qsTrId("chum-pkg-ai-code-desc-not-disclosed")
+                break
+            default:
+                //% "unknown/not specified"
+                //: AI rating has not been set
+                return qsTrId("chum-pkg-ai-code-desc-unknown")
+        }
+    }
+
     clip: true
     enabled: _expansionEnabled
     height: content.height + (dots.visible ? dots.height : 0)
@@ -57,6 +96,51 @@ MouseArea {
             id: spacer
             height: Theme.paddingLarge
             width: parent.width
+        }
+
+        ChumDetailItem {
+            //% "AI Rating:"
+            label: qsTrId("chum-pkg-ai-code")
+            value: infoItem.aiScore(pkg.aiCode)
+        }
+
+        Label {
+            width: parent.width
+            //% "AI Notes:"
+            text: qsTrId("chum-pkg-ai-desc-label")
+            color: Theme.secondaryHighlightColor
+            linkColor: Theme.highlightColor
+            visible: pkg.aiDescription || aiDescMD.fetching || aiDescMD.text
+            font.pixelSize: Theme.fontSizeSmall
+        }
+
+        Label {
+            width: parent.width
+            text: pkg.aiDescription
+            color: Theme.highlightColor
+            linkColor: Theme.primaryColor
+            visible: pkg.aiDescription
+            wrapMode: Text.WordWrap
+            onLinkActivated: Qt.openUrlExternally(link)
+            font.pixelSize: Theme.fontSizeSmall
+        }
+
+        LabelMarkdown {
+            id: aiDescMD
+            height: fetching ? Theme.paddingLarge + implicitHeight : implicitHeight
+            width: parent.width
+            url: pkg.aiDescriptionMDUrl
+            color: infoItem.pressed ? Theme.secondaryHighlightColor : Theme.secondaryColor
+            linkColor: Theme.highlightColor
+            wrapMode: Text.WordWrap
+            onLinkActivated: Qt.openUrlExternally(link)
+        }
+
+        Item {
+            id: aispacer
+            height: Theme.paddingLarge
+            width: parent.width
+            visible: aiDescMD.text
         }
 
         ChumDetailItem {

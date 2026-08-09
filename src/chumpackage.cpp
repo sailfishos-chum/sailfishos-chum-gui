@@ -218,6 +218,10 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
     m_icon = json.value("PackageIcon").toString();
     if (m_icon.isEmpty()) m_icon = json.value("Icon").toString(); // spec v0 legacy
 
+    m_ai_code               = json.value("AIRating").toString();
+    m_ai_description        = json.value("AINote").toString();
+    m_ai_description_md_url = json.value("AINoteMD").toString();
+
     m_screenshots = json.value("Screenshots").toVariant().toStringList();
 
     if (json.value("Url").isUndefined()) { // spec v0 legacy
