@@ -60,6 +60,54 @@ MouseArea {
         }
 
         ChumDetailItem {
+            //% "AI Rating:"
+            label: qsTrId("chum-pkg-ai-code")
+            value: pkg.aiCode
+                 ? pkg.aiCode
+                 //% "not specified"
+                 : qsTrId("chum-pkg-ai-code-not-specified")
+        }
+
+        Label {
+            width: parent.width
+            //% "AI Notes:"
+            text: qsTrId("chum-pkg-ai-desc-label")
+            color: Theme.secondaryHighlightColor
+            linkColor: Theme.highlightColor
+            visible: pkg.aiDescription || aiDescMD.fetching || aiDescMD.text
+            font.pixelSize: Theme.fontSizeSmall
+        }
+
+        Label {
+            width: parent.width
+            text: pkg.aiDescription
+            color: Theme.highlightColor
+            linkColor: Theme.primaryColor
+            visible: pkg.aiDescription
+            wrapMode: Text.WordWrap
+            onLinkActivated: Qt.openUrlExternally(link)
+            font.pixelSize: Theme.fontSizeSmall
+        }
+
+        LabelMarkdown {
+            id: aiDescMD
+            height: fetching ? Theme.paddingLarge + implicitHeight : implicitHeight
+            width: parent.width
+            url: pkg.aiDescriptionMDUrl
+            color: infoItem.pressed ? Theme.secondaryHighlightColor : Theme.secondaryColor
+            linkColor: Theme.highlightColor
+            wrapMode: Text.WordWrap
+            onLinkActivated: Qt.openUrlExternally(link)
+        }
+
+        Item {
+            id: aispacer
+            height: Theme.paddingLarge
+            width: parent.width
+            visible: aiDescMD.text
+        }
+
+        ChumDetailItem {
             visible: pkg.developer && infoItem.developerShown
             //% "Developer:"
             label: qsTrId("chum-pkg-developer")
