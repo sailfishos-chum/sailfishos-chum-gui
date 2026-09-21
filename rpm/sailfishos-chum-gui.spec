@@ -162,4 +162,5 @@ exit 0
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
+%{_datadir}/themes/sailfish-default/silica/*/icons/AI-score-*.png
 %{_datadir}/mapplauncherd/privileges.d/%{name}
