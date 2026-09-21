@@ -13,6 +13,31 @@ MouseArea {
     property bool _expanded: !_expansionEnabled
     property bool _expansionEnabled: enableExpansion && content.implicitHeight > shrunkHeight
 
+    function aiBadge(key) {
+        switch (key) {
+            case "H":
+                return Qt.resolvedUrl("image://theme/AI-score-H")
+                break
+            case "A":
+                return Qt.resolvedUrl("image://theme/AI-score-A")
+                break
+            case "B":
+                return Qt.resolvedUrl("image://theme/AI-score-B")
+                break
+            case "C":
+                return Qt.resolvedUrl("image://theme/AI-score-C")
+                break
+            case "V":
+                return Qt.resolvedUrl("image://theme/AI-score-V")
+                break
+            case "X":
+                return Qt.resolvedUrl("image://theme/AI-score-will-not-tell")
+                break
+            default:
+                return Qt.resolvedUrl("image://theme/AI-score-unknown")
+        }
+    }
+
     function aiScore(key) {
         switch (key) {
             case "H":
@@ -46,7 +71,7 @@ MouseArea {
                 return qsTrId("chum-pkg-ai-code-desc-not-disclosed")
                 break
             default:
-                //% "unknown/not specified"
+                //% "Not specified"
                 //: AI rating has not been set
                 return qsTrId("chum-pkg-ai-code-desc-unknown")
         }
@@ -96,51 +121,6 @@ MouseArea {
             id: spacer
             height: Theme.paddingLarge
             width: parent.width
-        }
-
-        ChumDetailItem {
-            //% "AI Rating:"
-            label: qsTrId("chum-pkg-ai-code")
-            value: infoItem.aiScore(pkg.aiCode)
-        }
-
-        Label {
-            width: parent.width
-            //% "AI Notes:"
-            text: qsTrId("chum-pkg-ai-desc-label")
-            color: Theme.secondaryHighlightColor
-            linkColor: Theme.highlightColor
-            visible: pkg.aiDescription || aiDescMD.fetching || aiDescMD.text
-            font.pixelSize: Theme.fontSizeSmall
-        }
-
-        Label {
-            width: parent.width
-            text: pkg.aiDescription
-            color: Theme.highlightColor
-            linkColor: Theme.primaryColor
-            visible: pkg.aiDescription
-            wrapMode: Text.WordWrap
-            onLinkActivated: Qt.openUrlExternally(link)
-            font.pixelSize: Theme.fontSizeSmall
-        }
-
-        LabelMarkdown {
-            id: aiDescMD
-            height: fetching ? Theme.paddingLarge + implicitHeight : implicitHeight
-            width: parent.width
-            url: pkg.aiDescriptionMDUrl
-            color: infoItem.pressed ? Theme.secondaryHighlightColor : Theme.secondaryColor
-            linkColor: Theme.highlightColor
-            wrapMode: Text.WordWrap
-            onLinkActivated: Qt.openUrlExternally(link)
-        }
-
-        Item {
-            id: aispacer
-            height: Theme.paddingLarge
-            width: parent.width
-            visible: aiDescMD.text
         }
 
         ChumDetailItem {
@@ -205,6 +185,48 @@ MouseArea {
             //% "Packaging repository:"
             .arg(qsTrId("chum-pkg-packaging-link"))
             .arg(pkg.packagingUrl)
+
+            onLinkActivated: Qt.openUrlExternally(link)
+        }
+
+        Row { id: badgeRow
+            width: parent.width
+            Image { id: aiBadgeIcon
+                visible: infoItem.aiBadge(pkg.aiCode)
+                source: infoItem.aiBadge(pkg.aiCode)
+                width: Theme.itemSizeLarge
+                height: Theme.iconSizeLarge
+                anchors.verticalCenter: parent.verticalCenter
+                fillMode: Image.PreserveAspectFit
+            }
+            DetailItem {
+                id: aiRatingButton
+                anchors.verticalCenter: parent.verticalCenter
+                width: parent.width - aiBadgeIcon.width
+                //% "AI Rating:"
+                label: qsTrId("chum-pkg-ai-code")
+                value: pkg.aiCode + " - " + infoItem.aiScore(pkg.aiCode)
+                alignment: Qt.AlignLeft
+            }
+        }
+        Label {
+            width: parent.width
+            text: pkg.aiDescription
+            color: infoItem.pressed ? Theme.highlightColor : Theme.secondaryColor
+            linkColor: Theme.highlightColor
+            visible: !!pkg.aiDescription
+            wrapMode: Text.WordWrap
+            font.pixelSize: Theme.fontSizeSmall
+            onLinkActivated: Qt.openUrlExternally(link)
+        }
+        ChumDetailItem {
+            visible: !!pkg.aiDescriptionMDUrl
+            text: '<font color="%1">%3</font> <font color="%2"><a href="%4">%4</a></font>'
+            .arg(Theme.secondaryHighlightColor)
+            .arg(Theme.primaryColor)
+            //% "AI Usage Details:"
+            .arg(qsTrId("chum-pkg-ai-desc-link-label"))
+            .arg(pkg.aiDescriptionMDUrl)
 
             onLinkActivated: Qt.openUrlExternally(link)
         }
