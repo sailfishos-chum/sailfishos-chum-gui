@@ -24,6 +24,7 @@ signals:
 
 protected:
     ChumPackage *m_package;
+    const QByteArray m_userAgent;
 };
 
 #endif // PROJECTABSTRACT_H

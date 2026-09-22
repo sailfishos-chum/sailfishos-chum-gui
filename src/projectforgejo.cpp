@@ -85,6 +85,7 @@ QNetworkReply* ProjectForgejo::sendQuery(const QString &query) {
   QString reqUrl = QStringLiteral("https://%1/api/v1%2").arg(m_host).arg(query);
   QNetworkRequest request;
   request.setUrl(reqUrl);
+  request.setRawHeader("User-Agent", m_userAgent);
   request.setRawHeader("Content-Type", "application/json");
   request.setRawHeader("Authorization", reqAuth.toLocal8Bit());
   return nMng->get(request);
