@@ -6,6 +6,8 @@
 #include "loadableobject.h"
 #include "projectabstract.h"
 
+static const QString legacyRepoAlias = QStringLiteral("sailfishos-chum-legacy");
+
 class ChumPackage : public QObject {
     Q_OBJECT
 
@@ -39,6 +41,7 @@ class ChumPackage : public QObject {
     Q_PROPERTY(QString    urlForum    READ urlForum     NOTIFY updated)
     Q_PROPERTY(QString    urlIssues   READ urlIssues    NOTIFY updated)
     Q_PROPERTY(QString    desktopFile READ desktopFile  NOTIFY updated)
+    Q_PROPERTY(bool       legacyPackage READ legacyPackage NOTIFY updated)
 
 public:
     enum Role {
@@ -57,6 +60,8 @@ public:
         PackageTypeRole,
         PackageUpdateAvailableRole,
         PackageDesktopFileRole,
+        PackageChumRepoRole,
+        PackageLegacyPackageRole,
 
         PackageOtherRole,
         PackageRefreshRole // used for updates of many parameters
@@ -110,6 +115,7 @@ public:
     QString urlForum() const { return m_url_forum; }
     QString urlIssues() const { return m_url_issues; }
     QString desktopFile() const { return m_desktopFile; }
+    bool legacyPackage() const { return m_chumRepo == legacyRepoAlias; }
 
     void setPkidLatest(const QString &pkid);
     void setPkidInstalled(const QString &pkid);
@@ -180,4 +186,5 @@ private:
     QString     m_url_forum;
     QString     m_url_issues;
     QString     m_desktopFile;
+    QString     m_chumRepo;
 };

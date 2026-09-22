@@ -8,6 +8,7 @@ Column {
     property alias description: desc.text
     property alias text: entry.text
     property alias placeholderText: entry.placeholderText
+    property alias acceptableInput: entry.acceptableInput
 
     signal enterClicked
 
