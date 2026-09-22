@@ -17,6 +17,7 @@
 
 static QString reqAuth{QStringLiteral("bearer " GITHUB_TOKEN)};
 static QString reqUrl{QStringLiteral("https://api.github.com/graphql")};
+static QByteArray userAgent(QByteArrayLiteral("SailfishOS Chum GUI/0.6 (+https://github.com/sailfishos-chum/sailfishos-chum-gui)"));
 
 //////////////////////////////////////////////////////
 /// helper functions
@@ -33,6 +34,7 @@ static QString getName(const QVariant &v) {
 static QNetworkReply* sendQuery(const QString &query) {
     QNetworkRequest request;
     request.setUrl(reqUrl);
+    request.setRawHeader("User-Agent", userAgent);
     request.setRawHeader("Content-Type", "application/x-www-form-urlencoded");
     request.setRawHeader("Authorization", reqAuth.toLocal8Bit());
     return nMng->post(request, query.toLocal8Bit());

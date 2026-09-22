@@ -85,6 +85,7 @@ QNetworkReply* ProjectGitLab::sendQuery(const QString &query) {
   QString reqUrl = QStringLiteral("https://%1/api/graphql").arg(m_host);
   QNetworkRequest request;
   request.setUrl(reqUrl);
+  request.setRawHeader("User-Agent", m_userAgent);
   request.setRawHeader("Content-Type", "application/json");
   request.setRawHeader("Authorization", reqAuth.toLocal8Bit());
   return nMng->post(request, query.toLocal8Bit());
