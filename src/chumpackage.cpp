@@ -236,12 +236,27 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
         m_donation = json.value("Url").toObject().value("Donation").toString();
     }
 
+    /* ignore projects which do not have any secrets, otherwise we'll just get
+       back a bunch of 4xx errors. */
+    bool have_gh, have_gl, have_fj = false;
+#ifdef GITHUB_TOKEN
+    have_gh = true;
+#warning disabling project due to missing secret
+#endif
+#ifdef GITLAB_TOKEN
+    have_gl = true;
+#warning disabling project due to missing secret
+#endif
+#ifdef FORGEJO_TOKEN
+    have_fj = true;
+#warning disabling project due to missing secret
+#endif
     for (const QString &u: {m_packaging_repo_url, m_repo_url, m_url}) {
-        if (ProjectGitHub::isProject(u))
+        if (have_gh && ProjectGitHub::isProject(u))
             m_project = new ProjectGitHub(u, this);
-        else if (ProjectGitLab::isProject(u))
+        if (have_gl && ProjectGitLab::isProject(u))
             m_project = new ProjectGitLab(u, this);
-        else if (ProjectForgejo::isProject(u))
+        if (have_fj && ProjectForgejo::isProject(u))
             m_project = new ProjectForgejo(u, this);
         if (m_project) break;
     }

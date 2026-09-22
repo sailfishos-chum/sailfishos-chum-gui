@@ -4,8 +4,9 @@
 #include <QLocale>
 
 ProjectAbstract::ProjectAbstract(ChumPackage *package) :
-    QObject(package),
-    m_package(package)
+    QObject(package)
+    , m_package(package)
+    , m_userAgent(QByteArrayLiteral("SailfishOS Chum GUI/0.6 (+https://github.com/sailfishos-chum/sailfishos-chum-gui)"))
 {
 }
 
