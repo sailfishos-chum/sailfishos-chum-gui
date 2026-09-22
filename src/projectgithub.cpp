@@ -33,6 +33,7 @@ static QString getName(const QVariant &v) {
 static QNetworkReply* sendQuery(const QString &query) {
     QNetworkRequest request;
     request.setUrl(reqUrl);
+    request.setRawHeader("User-Agent", m_userAgent);
     request.setRawHeader("Content-Type", "application/x-www-form-urlencoded");
     request.setRawHeader("Authorization", reqAuth.toLocal8Bit());
     return nMng->post(request, query.toLocal8Bit());
