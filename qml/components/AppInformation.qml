@@ -200,10 +200,9 @@ MouseArea {
                 fillMode: Image.PreserveAspectFit
             }
             DetailItem {
-                id: aiRatingButton
                 anchors.verticalCenter: parent.verticalCenter
                 width: parent.width - aiBadgeIcon.width
-                //% "AI Rating:"
+                //% "AI Score:"
                 label: qsTrId("chum-pkg-ai-code")
                 value: pkg.aiCode + " - " + infoItem.aiScore(pkg.aiCode)
                 alignment: Qt.AlignLeft
