@@ -39,6 +39,7 @@ The [main page](./.screenshots/sailfishos-chum-gui_main-page.png?raw=true) of th
   - Installed and available version, if applicable
   - Package name, download size and license (if indicated)
   - A link to its homepage
+  - A link to contribute translations, when provided in the package metadata
   - **Releases** sub-page (only for packages hosted at GitHub or GitLab.com)
     - Release versions and dates
     - On each release's sub-sub-page:

@@ -114,6 +114,18 @@ MouseArea {
         }
 
         ChumDetailItem {
+            visible: !!pkg.urlTranslate
+            text: '<font color="%1">%3</font> <font color="%2"><a href="%4">%4</a></font>'
+            .arg(Theme.secondaryHighlightColor)
+            .arg(Theme.primaryColor)
+            //% "Translate:"
+            .arg(qsTrId("chum-pkg-translate-link"))
+            .arg(pkg.urlTranslate)
+
+            onLinkActivated: Qt.openUrlExternally(link)
+        }
+
+        ChumDetailItem {
             visible: !!pkg.packagingUrl
             text: '<font color="%1">%3</font> <font color="%2"><a href="%4">%4</a></font>'
             .arg(Theme.secondaryHighlightColor)

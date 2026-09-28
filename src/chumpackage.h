@@ -38,6 +38,7 @@ class ChumPackage : public QObject {
     Q_PROPERTY(QString    url         READ url          NOTIFY updated)
     Q_PROPERTY(QString    urlForum    READ urlForum     NOTIFY updated)
     Q_PROPERTY(QString    urlIssues   READ urlIssues    NOTIFY updated)
+    Q_PROPERTY(QString    urlTranslate READ urlTranslate NOTIFY updated)
     Q_PROPERTY(QString    desktopFile READ desktopFile  NOTIFY updated)
 
 public:
@@ -109,6 +110,7 @@ public:
     QString url() const { return m_url; }
     QString urlForum() const { return m_url_forum; }
     QString urlIssues() const { return m_url_issues; }
+    QString urlTranslate() const { return m_url_translate; }
     QString desktopFile() const { return m_desktopFile; }
 
     void setPkidLatest(const QString &pkid);
@@ -179,5 +181,6 @@ private:
     QString     m_url;
     QString     m_url_forum;
     QString     m_url_issues;
+    QString     m_url_translate;
     QString     m_desktopFile;
 };

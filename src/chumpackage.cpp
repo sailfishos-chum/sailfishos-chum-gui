@@ -224,11 +224,13 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
         m_url = json.value("Links").toObject().value("Homepage").toString(m_url);
         m_url_forum = json.value("Links").toObject().value("Help").toString();
         m_url_issues = json.value("Links").toObject().value("Bugtracker").toString();
+        m_url_translate = json.value("Links").toObject().value("Translate").toString();
         m_donation = json.value("Links").toObject().value("Donation").toString();
     } else {
         m_url = json.value("Url").toObject().value("Homepage").toString(m_url);
         m_url_forum = json.value("Url").toObject().value("Help").toString();
         m_url_issues = json.value("Url").toObject().value("Bugtracker").toString();
+        m_url_translate = json.value("Url").toObject().value("Translate").toString();
         m_donation = json.value("Url").toObject().value("Donation").toString();
     }
 
