@@ -119,6 +119,7 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
     m_url         = v.url();
     m_license     = v.license();
     m_size        = v.size();
+    m_chumRepo    = Daemon::packageData(v.packageId());
 
     // derive name
     QString pname = Daemon::packageName(m_pkid_latest);

@@ -79,6 +79,8 @@ void Chum::setManualVersion(const QString &v) {
     emit busyChanged();
     setStatus(qtTrId("chum-add-testing-repo"));
     m_ssu.setRepo(m_manualVersion, m_ssu.repoTesting());
+    setStatus(qtTrId("chum-add-legacy-repo"));
+    m_ssu.setRepo(m_manualVersion, m_ssu.repoLegacy());
 }
 
 /////////////////////////////////////////////////////////////
@@ -114,6 +116,8 @@ void Chum::refreshPackages() {
         QString pd = Daemon::packageData(packageID);
         if (pd == m_ssu.repoName())
             m_packages_last_refresh.insert(packageID);
+        else if (pd == m_ssu.legacyRepoName())
+            m_packages_last_refresh.insert(packageID);
         else if (pd == QStringLiteral("installed"))
             m_packages_last_refresh_installed.insert(packageID);
     });
@@ -135,6 +139,8 @@ void Chum::refreshPackagesInstalled()
             ) {
         QString pd = Daemon::packageData(packageID);
         if (pd == m_ssu.repoName())
+            m_packages_last_refresh.insert(packageID);
+        else if (pd == m_ssu.legacyRepoName())
             m_packages_last_refresh.insert(packageID);
     });
     connect(tr, &Transaction::finished, this, &Chum::refreshPackagesFinished);
@@ -299,6 +305,28 @@ void Chum::refreshRepo(bool force) {
         emit busyChanged();
     }
 
+    if (m_ssu.repoLegacy()) {
+        //% "Refreshing SailfishOS:Chum:Legacy repository"
+        setStatus(qtTrId("chum-refresh-legacy-repository"));
+        auto lpktr = Daemon::repoSetData(
+                     m_ssu.legacyRepoName(),
+                     QStringLiteral("refresh-now"),
+                     QVariant::fromValue(true).toString()
+                     );
+        connect(lpktr, &Transaction::finished, this, [this](PackageKit::Transaction::Exit status) {
+            setStatus(QLatin1String(""));
+            refreshPackages();
+            if (status == PackageKit::Transaction::ExitSuccess)
+                emit this->repositoryRefreshed();
+        });
+        connect(lpktr, &Transaction::errorCode, this,
+                [this](PackageKit::Transaction::Error /*error*/, const QString &details){
+            qWarning() << "Failed to refresh Chum:Legacy repository" << details;
+            //% "Failed to refresh SailfishOS:Chum:Legacy repository!"
+            emit error(qtTrId("chum-refresh-legacy-repository-failed"));
+        });
+     }
+
     //% "Refreshing SailfishOS:Chum repository"
     setStatus(qtTrId("chum-refresh-repository"));
 
@@ -360,6 +388,28 @@ void Chum::setRepoTesting(bool testing) {
         m_ssu.setRepo(m_manualVersion, testing);
     }
 }
+
+void Chum::setRepoLegacy(bool legacy) {
+    if (!m_ssu.manageRepo()) {
+        emit error(qtTrId("chum-repo-management-disabled-title"));
+        return;
+    }
+
+    if (legacy && !m_ssu.repoLegacy()) {
+        m_busy = true;
+        emit busyChanged();
+        //% "Adding SailfishOS:Chum:Legacy repository"
+        setStatus(qtTrId("chum-add-legacy-repo"));
+        m_ssu.setLegacyRepo(m_manualVersion, true);
+    } else if (!legacy && m_ssu.repoLegacy()) {
+        m_busy = true;
+        emit busyChanged();
+        //% "Adding SailfishOS:Chum:Legacy repository"
+        setStatus(qtTrId("chum-add-legacy-repo"));
+        m_ssu.setLegacyRepo(m_manualVersion, false);
+     }
+}
+
 
 // Operations on packages: Install, remove and update
 void Chum::installPackage(const QString &id) {

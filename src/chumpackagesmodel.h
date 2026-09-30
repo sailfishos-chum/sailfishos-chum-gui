@@ -16,6 +16,7 @@ class ChumPackagesModel
     Q_PROPERTY(bool    filterApplicationsOnly READ filterApplicationsOnly WRITE setFilterApplicationsOnly NOTIFY filterApplicationsOnlyChanged)
     Q_PROPERTY(bool    filterInstalledOnly READ filterInstalledOnly WRITE setFilterInstalledOnly NOTIFY filterInstalledOnlyChanged)
     Q_PROPERTY(bool    filterUpdatesOnly READ filterUpdatesOnly WRITE setFilterUpdatesOnly NOTIFY filterUpdatesOnlyChanged)
+    Q_PROPERTY(bool    filterLegacyPackagesOnly READ filterLegacyPackagesOnly WRITE setFilterLegacyPackagesOnly NOTIFY filterLegacyPackagesOnlyChanged)
     Q_PROPERTY(QString search READ search WRITE setSearch NOTIFY searchChanged)
     Q_PROPERTY(QString showCategory READ showCategory WRITE setShowCategory NOTIFY showCategoryChanged)
 
@@ -25,12 +26,14 @@ public:
     bool filterApplicationsOnly() const { return m_filter_applications_only; }
     bool filterInstalledOnly() const { return m_filter_installed_only; }
     bool filterUpdatesOnly() const { return m_filter_updates_only; }
+    bool filterLegacyPackagesOnly() const { return m_filter_legacy_only; }
     QString search() const { return m_search; }
     QString showCategory() const { return m_show_category.toList().join(QChar(';')); }
 
     void setFilterApplicationsOnly(bool filter);
     void setFilterInstalledOnly(bool filter);
     void setFilterUpdatesOnly(bool filter);
+    void setFilterLegacyPackagesOnly(bool filter);
     void setSearch(QString search);
     void setShowCategory(QString category);
 
@@ -47,6 +50,7 @@ signals:
     void filterApplicationsOnlyChanged();
     void filterInstalledOnlyChanged();
     void filterUpdatesOnlyChanged();
+    void filterLegacyPackagesOnlyChanged();
     void searchChanged();
     void showCategoryChanged();
 
@@ -60,6 +64,7 @@ private:
     bool m_filter_applications_only{false};
     bool m_filter_installed_only{false};
     bool m_filter_updates_only{false};
+    bool m_filter_legacy_only{false};
     QString m_search;
     QSet<QString> m_show_category;
 };

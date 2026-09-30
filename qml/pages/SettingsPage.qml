@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import QtQuick.XmlListModel 2.0
 import Sailfish.Silica 1.0
 import org.chum 1.0
 import "../components"
@@ -6,6 +7,51 @@ import "../components"
 Page {
     id: page
     allowedOrientations: Orientation.All
+    XmlListModel { id: mainModel
+        property string versions: "none"
+        source: "https://build.sailfishos.org/public/source/sailfishos:chum/_meta"
+        query: "/project/repository"
+        XmlRole { query: "@name/string()"; name: "repoName" }
+        onStatusChanged: if (status == XmlListModel.Ready) {
+            var entries = []
+            for (var i =0; i < count; ++i) {
+                const e = get(i).repoName.split('_')[0]
+                if(entries.indexOf(e) == -1)
+                    entries.push(e)
+            }
+            versions = entries.join(", ")
+        }
+    }
+    XmlListModel { id: testingModel
+        property string versions: "none"
+        source: "https://build.sailfishos.org/public/source/sailfishos:chum:testing/_meta"
+        query: "/project/repository"
+        XmlRole { query: "@name/string()"; name: "repoName" }
+        onStatusChanged: if (status == XmlListModel.Ready) {
+            var entries = []
+            for (var i =0; i < count; ++i) {
+                const e = get(i).repoName.split('_')[0]
+                if(entries.indexOf(e) == -1)
+                    entries.push(e)
+            }
+            versions = entries.join(", ")
+        }
+    }
+    XmlListModel { id: legacyModel
+        property string versions: "none"
+        source: "https://build.sailfishos.org/public/source/sailfishos:chum:legacy/_meta"
+        query: "/project/repository"
+        XmlRole { query: "@name/string()"; name: "repoName" }
+        onStatusChanged: if (status == XmlListModel.Ready) {
+            var entries = []
+            for (var i =0; i < count; ++i) {
+                const e = get(i).repoName.split('_')[0]
+                if(entries.indexOf(e) == -1)
+                    entries.push(e)
+            }
+            versions = entries.join(", ")
+        }
+    }
 
     SilicaFlickable {
         anchors.fill: parent
@@ -86,6 +132,18 @@ Page {
             TextSwitch {
                 automaticCheck: false
                 busy: Chum.busy
+                checked: Chum.repoLegacy
+                //% "Add the SailfishOS:Chum:Legacy repository. This provides obsolete or unmaintained packages. "
+                //% "Note that only the following versions are available: %1"
+                description: qsTrId("chum-settings-legacy-description").arg(legacyModel.versions)
+                //% "Add legacy repository"
+                text: qsTrId("chum-settings-legacy")
+                onClicked: Chum.repoLegacy = !Chum.repoLegacy;
+            }
+
+            TextSwitch {
+                automaticCheck: false
+                busy: Chum.busy
                 checked: Chum.repoTesting
                 //% "Use the SailfishOS:Chum:Testing repository. This is mainly useful for developers "
                 //% "to test their packages before publishing."
@@ -95,6 +153,7 @@ Page {
                 onClicked: Chum.repoTesting = !Chum.repoTesting;
             }
 
+            // TODO/FIXME: allow separate version for legacy repo
             Label {
                 anchors {
                     left: parent.left
@@ -120,10 +179,14 @@ Page {
                 //% "This is useful when no repository is available for the installed "
                 //% "Sailfish&nbsp;OS version, as for cBeta users.<br />"
                 //% "For releases prior to 4.6, the complete version number must be provided (for example, <i>4.3.0.12</i>)."
-                description: qsTrId("chum-setings-override-release-description")
+                //% "<br />The following versions are known:<br /> %1"
+                description: qsTrId("chum-setings-override-release-description").arg( Chum.repoTesting ? testingModel.versions : mainModel.versions)
                 //% "<i>Specify a Sailfish&nbsp;OS version</i>"
                 placeholderText: qsTrId("chum-setings-override-release-placeholder")
                 text: Chum.manualVersion
+                acceptableInput: Chum.repoTesting
+                                 ? (testingModel.versions.indexOf(text) != -1)
+                                 : (mainModel.versions.indexOf(text) != -1)
                 onEnterClicked: {
                     console.log("Setting release to ", txtRelease.text);
                     Chum.manualVersion = txtRelease.text;
