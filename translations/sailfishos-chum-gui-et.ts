@@ -208,17 +208,17 @@
     <message id="chum-get-package-details">
         <location filename="../src/chum.cpp" line="181"/>
         <source>Retrieving the current detail information for installed packages</source>
-        <translation>Laadime paigaldatud tarkvarapakettide üksikasjalikku teavet</translation>
+        <translation>Laadin paigaldatud tarkvarapakettide üksikasjalikku teavet</translation>
     </message>
     <message id="chum-get-package-version">
         <location filename="../src/chum.cpp" line="211"/>
         <source>Retrieving the currently available versions of installed packages</source>
-        <translation>Laadime paigaldatud tarkvarapakettide versiooninumbreid</translation>
+        <translation>Laadin ja tuvastan paigaldatud tarkvarapakettide versiooninumbreid</translation>
     </message>
     <message id="chum-check-updates">
         <location filename="../src/chum.cpp" line="258"/>
         <source>Checking for which installed packages an update is available</source>
-        <translation>Kontrollime millistele paigaldatud rakendustele või teekidele leidub uuendusi</translation>
+        <translation>Kontrollin, millistele paigaldatud rakendustele või teekidele leidub uuendusi</translation>
     </message>
     <message id="chum-refresh-repository-impossible">
         <location filename="../src/chum.cpp" line="293"/>
