@@ -41,7 +41,7 @@
         <location filename="../qml/sailfishos-chum-gui.qml" line="22"/>
         <source>%1 %2 removed</source>
         <extracomment>%1 - package name, %2 - package version</extracomment>
-        <translation>%1 versioon %2 on eemaldatud</translation>
+        <translation>%1 rakenduse versioon %2 on eemaldatud</translation>
     </message>
     <message id="chum-package-updated">
         <location filename="../qml/sailfishos-chum-gui.qml" line="26"/>
@@ -115,7 +115,7 @@
     <message id="chum-package-file-issue">
         <location filename="../qml/pages/PackagePage.qml" line="36"/>
         <source>Issue tracker</source>
-        <translation>Arenduse haldus</translation>
+        <translation>Arenduse- ja veahaldus</translation>
     </message>
     <message id="chum-package-discussion-forum">
         <location filename="../qml/pages/PackagePage.qml" line="42"/>
@@ -125,7 +125,7 @@
     <message id="chum-uninstalling">
         <location filename="../qml/pages/PackagePage.qml" line="25"/>
         <source>Removing</source>
-        <translation>Eemaldame</translation>
+        <translation>Eemaldamisel</translation>
     </message>
     <message id="chum-update">
         <location filename="../qml/pages/PackagePage.qml" line="63"/>
