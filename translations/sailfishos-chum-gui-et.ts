@@ -256,12 +256,12 @@
         <location filename="../src/chum.cpp" line="80"/>
         <location filename="../src/chum.cpp" line="359"/>
         <source>Adding SailfishOS:Chum:Testing repository</source>
-        <translation>Lisame SailfishOS:Chum:Testing tarkvarahoidlat</translation>
+        <translation>Lisan SailfishOS:Chum:Testing tarkvarahoidlat</translation>
     </message>
     <message id="chum-install-package">
         <location filename="../src/chum.cpp" line="372"/>
         <source>Installing package</source>
-        <translation>Paigaldame tarkvarapaketti</translation>
+        <translation>Paigaldan tarkvarapaketti</translation>
     </message>
     <message id="chum-uninstall-package">
         <location filename="../src/chum.cpp" line="384"/>
