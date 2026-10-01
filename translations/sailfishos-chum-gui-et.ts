@@ -228,7 +228,7 @@
     <message id="chum-refresh-repository">
         <location filename="../src/chum.cpp" line="303"/>
         <source>Refreshing SailfishOS:Chum repository</source>
-        <translation>Uuendame SailfishOS:Chum tarkvarahoidla andmeid</translation>
+        <translation>Uuendan SailfishOS:Chum tarkvarahoidla andmeid</translation>
     </message>
     <message id="chum-refresh-repository-failed">
         <location filename="../src/chum.cpp" line="320"/>
@@ -250,7 +250,7 @@
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="342"/>
         <source>Adding SailfishOS:Chum repository</source>
-        <translation>Lisame SailfishOS:Chum tarkvarahoidlat</translation>
+        <translation>Lisan SailfishOS:Chum tarkvarahoidlat</translation>
     </message>
     <message id="chum-add-testing-repo">
         <location filename="../src/chum.cpp" line="80"/>
