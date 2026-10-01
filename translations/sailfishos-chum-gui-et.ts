@@ -314,50 +314,102 @@
         <source>Created: %1; Updated: %2</source>
         <translation>Loodud: %1; Uuendatud: %2</translation>
     </message>
+    <message id="chum-pkg-ai-code-desc-h">
+        <location filename="../qml/components/AppInformation.qml" line="46"/>
+        <source>Human-written code only</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>Inimese poolt kirjutatud lähtekood</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-a">
+        <location filename="../qml/components/AppInformation.qml" line="51"/>
+        <source>Human-written code, AI used elsewhere</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>Inimese poolt kirjutatud lähtekood, tehisaru on  kasutusel mujal</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-b">
+        <location filename="../qml/components/AppInformation.qml" line="56"/>
+        <source>AI-assisted code, human-reviewed</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>Tehisaru abil kirjutatud lähtekood, inimese poolt üle vaadatud</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-c">
+        <location filename="../qml/components/AppInformation.qml" line="61"/>
+        <source>AI-written code</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>Tehisaru poolt kirjutatud lähtekood</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-v">
+        <location filename="../qml/components/AppInformation.qml" line="66"/>
+        <source>Vibe-coded</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>Loovkooditud</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-not-disclosed">
+        <location filename="../qml/components/AppInformation.qml" line="71"/>
+        <source>Not disclosed</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>Koodi kirjutamise viis pole avaldatud</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-unknown">
+        <location filename="../qml/components/AppInformation.qml" line="76"/>
+        <source>Not specified</source>
+        <extracomment>AI rating has not been set</extracomment>
+        <translation>Pole määratletud</translation>
+    </message>
     <message id="chum-pkg-developer">
-        <location filename="../qml/components/AppInformation.qml" line="65"/>
+        <location filename="../qml/components/AppInformation.qml" line="129"/>
         <source>Developer:</source>
         <translation>Arendaja:</translation>
     </message>
     <message id="chum-pkg-installed-version">
-        <location filename="../qml/components/AppInformation.qml" line="72"/>
+        <location filename="../qml/components/AppInformation.qml" line="136"/>
         <source>Installed version:</source>
         <translation>Paigaldatud versioon:</translation>
     </message>
     <message id="chum-pkg-available-version">
-        <location filename="../qml/components/AppInformation.qml" line="78"/>
+        <location filename="../qml/components/AppInformation.qml" line="142"/>
         <source>Available version:</source>
         <translation>Saadavalolev versioon:</translation>
     </message>
     <message id="chum-pkg-package-name">
-        <location filename="../qml/components/AppInformation.qml" line="85"/>
+        <location filename="../qml/components/AppInformation.qml" line="149"/>
         <source>Package name:</source>
         <translation>Tarkvarapaketi nimi:</translation>
     </message>
     <message id="chum-pkg-download-size">
-        <location filename="../qml/components/AppInformation.qml" line="92"/>
+        <location filename="../qml/components/AppInformation.qml" line="156"/>
         <source>Download size:</source>
         <translation>Allalaaditav andmemaht:</translation>
     </message>
     <message id="chum-pkg-license">
-        <location filename="../qml/components/AppInformation.qml" line="99"/>
+        <location filename="../qml/components/AppInformation.qml" line="163"/>
         <source>License:</source>
         <translation>Litsents:</translation>
     </message>
     <message id="chum-pkg-link">
-        <location filename="../qml/components/AppInformation.qml" line="110"/>
+        <location filename="../qml/components/AppInformation.qml" line="174"/>
         <source>Homepage:</source>
         <translation>Koduleht:</translation>
     </message>
     <message id="chum-pkg-translate-link">
-        <location filename="../qml/components/AppInformation.qml" line="122"/>
+        <location filename="../qml/components/AppInformation.qml" line="186"/>
         <source>Translate:</source>
         <translation>Tõlgi seda rakendust:</translation>
     </message>
     <message id="chum-pkg-packaging-link">
-        <location filename="../qml/components/AppInformation.qml" line="134"/>
+        <location filename="../qml/components/AppInformation.qml" line="198"/>
         <source>Packaging repository:</source>
         <translation>Pakendushalduse tarkvarahoidla:</translation>
+    </message>
+    <message id="chum-pkg-ai-code">
+        <location filename="../qml/components/AppInformation.qml" line="218"/>
+        <source>AI Score:</source>
+        <translation>Tehisaru skoor:</translation>
+    </message>
+    <message id="chum-pkg-ai-desc-link-label">
+        <location filename="../qml/components/AppInformation.qml" line="239"/>
+        <source>AI Usage Details:</source>
+        <translation>Tehisaru kasutuse üksikasjad:</translation>
     </message>
     <message id="chum-settings-status-repo-management-failed">
         <location filename="../qml/pages/SettingsPage.qml" line="40"/>
