@@ -203,7 +203,7 @@
     <message id="chum-get-list-packages">
         <location filename="../src/chum.cpp" line="104"/>
         <source>Retrieving list of available packages</source>
-        <translation>Laadime kõikide saadaval olevate tarkvarapakettide loendit</translation>
+        <translation>Laadin kõikide saadavalolevate tarkvarapakettide loendit</translation>
     </message>
     <message id="chum-get-package-details">
         <location filename="../src/chum.cpp" line="181"/>
@@ -501,7 +501,7 @@
     <message id="chum-category-accessibility">
         <location filename="../qml/pages/CategoriesPage.qml" line="49"/>
         <source>Accessibility</source>
-        <translation>Ligipääsetavus</translation>
+        <translation>Hõlbustus / ligipääsetavus</translation>
     </message>
     <message id="chum-category-development">
         <location filename="../qml/pages/CategoriesPage.qml" line="54"/>
@@ -536,7 +536,7 @@
     <message id="chum-category-multimedia">
         <location filename="../qml/pages/CategoriesPage.qml" line="84"/>
         <source>Multimedia</source>
-        <translation>Multimeedia</translation>
+        <translation>Multimeedium</translation>
     </message>
     <message id="chum-category-network">
         <location filename="../qml/pages/CategoriesPage.qml" line="89"/>
@@ -622,7 +622,7 @@
     <message id="chum-loading-text">
         <location filename="../qml/components/LabelMarkdown.qml" line="22"/>
         <source>Loading...</source>
-        <translation>Laadime...</translation>
+        <translation>Laadin...</translation>
     </message>
 </context>
 </TS>
