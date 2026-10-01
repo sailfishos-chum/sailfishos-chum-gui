@@ -266,17 +266,17 @@
     <message id="chum-uninstall-package">
         <location filename="../src/chum.cpp" line="384"/>
         <source>Removing package</source>
-        <translation>Eemaldame tarkvarapaketti</translation>
+        <translation>Eemaldan tarkvarapaketti</translation>
     </message>
     <message id="chum-update-package">
         <location filename="../src/chum.cpp" line="396"/>
         <source>Updating package</source>
-        <translation>Uuendame tarkvarapaketti</translation>
+        <translation>Uuendan tarkvarapaketti</translation>
     </message>
     <message id="chum-update-all-packages">
         <location filename="../src/chum.cpp" line="412"/>
         <source>Updating all packages</source>
-        <translation>Uuendame kõiki tarkvarapakette</translation>
+        <translation>Uuendan kõiki tarkvarapakette</translation>
     </message>
     <message id="chum-release">
         <location filename="../qml/pages/ReleasePage.qml" line="47"/>
