@@ -41,7 +41,7 @@
         <location filename="../qml/sailfishos-chum-gui.qml" line="22"/>
         <source>%1 %2 removed</source>
         <extracomment>%1 - package name, %2 - package version</extracomment>
-        <translation>%1 versioon %2 on eemaldatud</translation>
+        <translation>%1 rakenduse versioon %2 on eemaldatud</translation>
     </message>
     <message id="chum-package-updated">
         <location filename="../qml/sailfishos-chum-gui.qml" line="26"/>
@@ -115,7 +115,7 @@
     <message id="chum-package-file-issue">
         <location filename="../qml/pages/PackagePage.qml" line="36"/>
         <source>Issue tracker</source>
-        <translation>Arenduse haldus</translation>
+        <translation>Arenduse- ja veahaldus</translation>
     </message>
     <message id="chum-package-discussion-forum">
         <location filename="../qml/pages/PackagePage.qml" line="42"/>
@@ -125,7 +125,7 @@
     <message id="chum-uninstalling">
         <location filename="../qml/pages/PackagePage.qml" line="25"/>
         <source>Removing</source>
-        <translation>Eemaldame</translation>
+        <translation>Eemaldamisel</translation>
     </message>
     <message id="chum-update">
         <location filename="../qml/pages/PackagePage.qml" line="63"/>
@@ -203,22 +203,22 @@
     <message id="chum-get-list-packages">
         <location filename="../src/chum.cpp" line="104"/>
         <source>Retrieving list of available packages</source>
-        <translation>Laadime kõikide saadaval olevate tarkvarapakettide loendit</translation>
+        <translation>Laadin kõikide saadavalolevate tarkvarapakettide loendit</translation>
     </message>
     <message id="chum-get-package-details">
         <location filename="../src/chum.cpp" line="181"/>
         <source>Retrieving the current detail information for installed packages</source>
-        <translation>Laadime paigaldatud tarkvarapakettide üksikasjalikku teavet</translation>
+        <translation>Laadin paigaldatud tarkvarapakettide üksikasjalikku teavet</translation>
     </message>
     <message id="chum-get-package-version">
         <location filename="../src/chum.cpp" line="211"/>
         <source>Retrieving the currently available versions of installed packages</source>
-        <translation>Laadime paigaldatud tarkvarapakettide versiooninumbreid</translation>
+        <translation>Laadin ja tuvastan paigaldatud tarkvarapakettide versiooninumbreid</translation>
     </message>
     <message id="chum-check-updates">
         <location filename="../src/chum.cpp" line="258"/>
         <source>Checking for which installed packages an update is available</source>
-        <translation>Kontrollime millistele paigaldatud rakendustele või teekidele leidub uuendusi</translation>
+        <translation>Kontrollin, millistele paigaldatud rakendustele või teekidele leidub uuendusi</translation>
     </message>
     <message id="chum-refresh-repository-impossible">
         <location filename="../src/chum.cpp" line="293"/>
@@ -228,7 +228,7 @@
     <message id="chum-refresh-repository">
         <location filename="../src/chum.cpp" line="303"/>
         <source>Refreshing SailfishOS:Chum repository</source>
-        <translation>Uuendame SailfishOS:Chum tarkvarahoidla andmeid</translation>
+        <translation>Uuendan SailfishOS:Chum tarkvarahoidla andmeid</translation>
     </message>
     <message id="chum-refresh-repository-failed">
         <location filename="../src/chum.cpp" line="320"/>
@@ -250,33 +250,33 @@
     <message id="chum-add-repo">
         <location filename="../src/chum.cpp" line="342"/>
         <source>Adding SailfishOS:Chum repository</source>
-        <translation>Lisame SailfishOS:Chum tarkvarahoidlat</translation>
+        <translation>Lisan SailfishOS:Chum tarkvarahoidlat</translation>
     </message>
     <message id="chum-add-testing-repo">
         <location filename="../src/chum.cpp" line="80"/>
         <location filename="../src/chum.cpp" line="359"/>
         <source>Adding SailfishOS:Chum:Testing repository</source>
-        <translation>Lisame SailfishOS:Chum:Testing tarkvarahoidlat</translation>
+        <translation>Lisan SailfishOS:Chum:Testing tarkvarahoidlat</translation>
     </message>
     <message id="chum-install-package">
         <location filename="../src/chum.cpp" line="372"/>
         <source>Installing package</source>
-        <translation>Paigaldame tarkvarapaketti</translation>
+        <translation>Paigaldan tarkvarapaketti</translation>
     </message>
     <message id="chum-uninstall-package">
         <location filename="../src/chum.cpp" line="384"/>
         <source>Removing package</source>
-        <translation>Eemaldame tarkvarapaketti</translation>
+        <translation>Eemaldan tarkvarapaketti</translation>
     </message>
     <message id="chum-update-package">
         <location filename="../src/chum.cpp" line="396"/>
         <source>Updating package</source>
-        <translation>Uuendame tarkvarapaketti</translation>
+        <translation>Uuendan tarkvarapaketti</translation>
     </message>
     <message id="chum-update-all-packages">
         <location filename="../src/chum.cpp" line="412"/>
         <source>Updating all packages</source>
-        <translation>Uuendame kõiki tarkvarapakette</translation>
+        <translation>Uuendan kõiki tarkvarapakette</translation>
     </message>
     <message id="chum-release">
         <location filename="../qml/pages/ReleasePage.qml" line="47"/>
@@ -314,50 +314,102 @@
         <source>Created: %1; Updated: %2</source>
         <translation>Loodud: %1; Uuendatud: %2</translation>
     </message>
+    <message id="chum-pkg-ai-code-desc-h">
+        <location filename="../qml/components/AppInformation.qml" line="46"/>
+        <source>Human-written code only</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>Inimese poolt kirjutatud lähtekood</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-a">
+        <location filename="../qml/components/AppInformation.qml" line="51"/>
+        <source>Human-written code, AI used elsewhere</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>Inimese poolt kirjutatud lähtekood, tehisaru on  kasutusel mujal</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-b">
+        <location filename="../qml/components/AppInformation.qml" line="56"/>
+        <source>AI-assisted code, human-reviewed</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>Tehisaru abil kirjutatud lähtekood, inimese poolt üle vaadatud</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-c">
+        <location filename="../qml/components/AppInformation.qml" line="61"/>
+        <source>AI-written code</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>Tehisaru poolt kirjutatud lähtekood</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-v">
+        <location filename="../qml/components/AppInformation.qml" line="66"/>
+        <source>Vibe-coded</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>Loovkooditud</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-not-disclosed">
+        <location filename="../qml/components/AppInformation.qml" line="71"/>
+        <source>Not disclosed</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>Koodi kirjutamise viis pole avaldatud</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-unknown">
+        <location filename="../qml/components/AppInformation.qml" line="76"/>
+        <source>Not specified</source>
+        <extracomment>AI rating has not been set</extracomment>
+        <translation>Pole määratletud</translation>
+    </message>
     <message id="chum-pkg-developer">
-        <location filename="../qml/components/AppInformation.qml" line="65"/>
+        <location filename="../qml/components/AppInformation.qml" line="129"/>
         <source>Developer:</source>
         <translation>Arendaja:</translation>
     </message>
     <message id="chum-pkg-installed-version">
-        <location filename="../qml/components/AppInformation.qml" line="72"/>
+        <location filename="../qml/components/AppInformation.qml" line="136"/>
         <source>Installed version:</source>
         <translation>Paigaldatud versioon:</translation>
     </message>
     <message id="chum-pkg-available-version">
-        <location filename="../qml/components/AppInformation.qml" line="78"/>
+        <location filename="../qml/components/AppInformation.qml" line="142"/>
         <source>Available version:</source>
         <translation>Saadavalolev versioon:</translation>
     </message>
     <message id="chum-pkg-package-name">
-        <location filename="../qml/components/AppInformation.qml" line="85"/>
+        <location filename="../qml/components/AppInformation.qml" line="149"/>
         <source>Package name:</source>
         <translation>Tarkvarapaketi nimi:</translation>
     </message>
     <message id="chum-pkg-download-size">
-        <location filename="../qml/components/AppInformation.qml" line="92"/>
+        <location filename="../qml/components/AppInformation.qml" line="156"/>
         <source>Download size:</source>
         <translation>Allalaaditav andmemaht:</translation>
     </message>
     <message id="chum-pkg-license">
-        <location filename="../qml/components/AppInformation.qml" line="99"/>
+        <location filename="../qml/components/AppInformation.qml" line="163"/>
         <source>License:</source>
         <translation>Litsents:</translation>
     </message>
     <message id="chum-pkg-link">
-        <location filename="../qml/components/AppInformation.qml" line="110"/>
+        <location filename="../qml/components/AppInformation.qml" line="174"/>
         <source>Homepage:</source>
         <translation>Koduleht:</translation>
     </message>
     <message id="chum-pkg-translate-link">
-        <location filename="../qml/components/AppInformation.qml" line="122"/>
+        <location filename="../qml/components/AppInformation.qml" line="186"/>
         <source>Translate:</source>
         <translation>Tõlgi seda rakendust:</translation>
     </message>
     <message id="chum-pkg-packaging-link">
-        <location filename="../qml/components/AppInformation.qml" line="134"/>
+        <location filename="../qml/components/AppInformation.qml" line="198"/>
         <source>Packaging repository:</source>
         <translation>Pakendushalduse tarkvarahoidla:</translation>
+    </message>
+    <message id="chum-pkg-ai-code">
+        <location filename="../qml/components/AppInformation.qml" line="218"/>
+        <source>AI Score:</source>
+        <translation>Tehisaru skoor:</translation>
+    </message>
+    <message id="chum-pkg-ai-desc-link-label">
+        <location filename="../qml/components/AppInformation.qml" line="239"/>
+        <source>AI Usage Details:</source>
+        <translation>Tehisaru kasutuse üksikasjad:</translation>
     </message>
     <message id="chum-settings-status-repo-management-failed">
         <location filename="../qml/pages/SettingsPage.qml" line="40"/>
@@ -449,7 +501,7 @@
     <message id="chum-category-accessibility">
         <location filename="../qml/pages/CategoriesPage.qml" line="49"/>
         <source>Accessibility</source>
-        <translation>Ligipääsetavus</translation>
+        <translation>Hõlbustus / ligipääsetavus</translation>
     </message>
     <message id="chum-category-development">
         <location filename="../qml/pages/CategoriesPage.qml" line="54"/>
@@ -484,7 +536,7 @@
     <message id="chum-category-multimedia">
         <location filename="../qml/pages/CategoriesPage.qml" line="84"/>
         <source>Multimedia</source>
-        <translation>Multimeedia</translation>
+        <translation>Multimeedium</translation>
     </message>
     <message id="chum-category-network">
         <location filename="../qml/pages/CategoriesPage.qml" line="89"/>
@@ -570,7 +622,7 @@
     <message id="chum-loading-text">
         <location filename="../qml/components/LabelMarkdown.qml" line="22"/>
         <source>Loading...</source>
-        <translation>Laadime...</translation>
+        <translation>Laadin...</translation>
     </message>
 </context>
 </TS>
