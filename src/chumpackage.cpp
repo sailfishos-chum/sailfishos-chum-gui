@@ -219,17 +219,23 @@ void ChumPackage::setDetails(const PackageKit::Details &v) {
     m_icon = json.value("PackageIcon").toString();
     if (m_icon.isEmpty()) m_icon = json.value("Icon").toString(); // spec v0 legacy
 
+    m_ai_code               = json.value("AIRating").toString();
+    m_ai_description        = json.value("AINote").toString();
+    m_ai_description_md_url = json.value("AINoteMD").toString();
+
     m_screenshots = json.value("Screenshots").toVariant().toStringList();
 
     if (json.value("Url").isUndefined()) { // spec v0 legacy
         m_url = json.value("Links").toObject().value("Homepage").toString(m_url);
         m_url_forum = json.value("Links").toObject().value("Help").toString();
         m_url_issues = json.value("Links").toObject().value("Bugtracker").toString();
+        m_url_translate = json.value("Links").toObject().value("Translate").toString();
         m_donation = json.value("Links").toObject().value("Donation").toString();
     } else {
         m_url = json.value("Url").toObject().value("Homepage").toString(m_url);
         m_url_forum = json.value("Url").toObject().value("Help").toString();
         m_url_issues = json.value("Url").toObject().value("Bugtracker").toString();
+        m_url_translate = json.value("Url").toObject().value("Translate").toString();
         m_donation = json.value("Url").toObject().value("Donation").toString();
     }
 

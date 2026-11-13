@@ -349,8 +349,13 @@
         <source>Homepage:</source>
         <translation>Koduleht:</translation>
     </message>
-    <message id="chum-pkg-packaging-link">
+    <message id="chum-pkg-translate-link">
         <location filename="../qml/components/AppInformation.qml" line="122"/>
+        <source>Translate:</source>
+        <translation>Tõlgi seda rakendust:</translation>
+    </message>
+    <message id="chum-pkg-packaging-link">
+        <location filename="../qml/components/AppInformation.qml" line="134"/>
         <source>Packaging repository:</source>
         <translation>Pakendushalduse tarkvarahoidla:</translation>
     </message>

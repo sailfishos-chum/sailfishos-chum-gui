@@ -14,6 +14,9 @@ class ChumPackage : public QObject {
     Q_PROPERTY(QString id READ id NOTIFY idChanged)
 
     Q_PROPERTY(QString    availableVersion READ availableVersion NOTIFY updated)
+    Q_PROPERTY(QString    aiCode           READ aiCode NOTIFY updated)
+    Q_PROPERTY(QString    aiDescription    READ aiDescription NOTIFY updated)
+    Q_PROPERTY(QString    aiDescriptionMDUrl READ aiDescriptionMDUrl NOTIFY updated)
     Q_PROPERTY(QStringList categories READ categories   NOTIFY updated)
     Q_PROPERTY(QString    description READ description  NOTIFY updated)
     Q_PROPERTY(QString    descriptionMDUrl READ descriptionMDUrl  NOTIFY updated)
@@ -40,6 +43,7 @@ class ChumPackage : public QObject {
     Q_PROPERTY(QString    url         READ url          NOTIFY updated)
     Q_PROPERTY(QString    urlForum    READ urlForum     NOTIFY updated)
     Q_PROPERTY(QString    urlIssues   READ urlIssues    NOTIFY updated)
+    Q_PROPERTY(QString    urlTranslate READ urlTranslate NOTIFY updated)
     Q_PROPERTY(QString    desktopFile READ desktopFile  NOTIFY updated)
     Q_PROPERTY(bool       legacyPackage READ legacyPackage NOTIFY updated)
 
@@ -88,6 +92,9 @@ public:
     bool detailsNeedsUpdate() const { return m_details_update; }
 
     QString availableVersion() const { return m_available_version; }
+    QString aiCode()              const { return m_ai_code; }
+    QString aiDescription()       const { return m_ai_description; }
+    QString aiDescriptionMDUrl()  const { return m_ai_description_md_url; }
     QStringList categories() const { return m_categories; }
     QString description() const { return m_description; }
     QString descriptionMDUrl() const { return m_description_md_url; }
@@ -114,6 +121,7 @@ public:
     QString url() const { return m_url; }
     QString urlForum() const { return m_url_forum; }
     QString urlIssues() const { return m_url_issues; }
+    QString urlTranslate() const { return m_url_translate; }
     QString desktopFile() const { return m_desktopFile; }
     bool legacyPackage() const { return m_chumRepo == legacyRepoAlias; }
 
@@ -158,6 +166,9 @@ private:
     bool        m_details_update{false};
 
     QString     m_available_version;
+    QString     m_ai_code;
+    QString     m_ai_description;
+    QString     m_ai_description_md_url;
     QStringList m_categories;
     QString     m_description;
     QString     m_description_md_url;
@@ -185,6 +196,7 @@ private:
     QString     m_url;
     QString     m_url_forum;
     QString     m_url_issues;
+    QString     m_url_translate;
     QString     m_desktopFile;
     QString     m_chumRepo;
 };

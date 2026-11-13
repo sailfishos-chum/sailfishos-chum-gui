@@ -22,3 +22,5 @@ add_custom_target(icons
   ALL
   DEPENDS ${ICONS}
 )
+
+add_subdirectory(theme/ai-score)
