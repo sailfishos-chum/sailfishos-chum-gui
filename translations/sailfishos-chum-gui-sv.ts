@@ -314,45 +314,102 @@
         <source>Created: %1; Updated: %2</source>
         <translation>Skapad: %1; Uppdaterad: %2</translation>
     </message>
+    <message id="chum-pkg-ai-code-desc-h">
+        <location filename="../qml/components/AppInformation.qml" line="46"/>
+        <source>Human-written code only</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>Endast kod skriven av människor</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-a">
+        <location filename="../qml/components/AppInformation.qml" line="51"/>
+        <source>Human-written code, AI used elsewhere</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>Kod skriven av människor, AI används på andra ställen.</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-b">
+        <location filename="../qml/components/AppInformation.qml" line="56"/>
+        <source>AI-assisted code, human-reviewed</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>AI-assisterad kod, granskad av människor.</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-c">
+        <location filename="../qml/components/AppInformation.qml" line="61"/>
+        <source>AI-written code</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>AI-producerad kod</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-v">
+        <location filename="../qml/components/AppInformation.qml" line="66"/>
+        <source>Vibe-coded</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>Vibe-kodad</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-not-disclosed">
+        <location filename="../qml/components/AppInformation.qml" line="71"/>
+        <source>Not disclosed</source>
+        <extracomment>AI rating, be brief in translation</extracomment>
+        <translation>Ej angivet</translation>
+    </message>
+    <message id="chum-pkg-ai-code-desc-unknown">
+        <location filename="../qml/components/AppInformation.qml" line="76"/>
+        <source>Not specified</source>
+        <extracomment>AI rating has not been set</extracomment>
+        <translation>Ej specificerat</translation>
+    </message>
     <message id="chum-pkg-developer">
-        <location filename="../qml/components/AppInformation.qml" line="65"/>
+        <location filename="../qml/components/AppInformation.qml" line="129"/>
         <source>Developer:</source>
         <translation>Utvecklare:</translation>
     </message>
     <message id="chum-pkg-installed-version">
-        <location filename="../qml/components/AppInformation.qml" line="72"/>
+        <location filename="../qml/components/AppInformation.qml" line="136"/>
         <source>Installed version:</source>
         <translation>Installerad version:</translation>
     </message>
     <message id="chum-pkg-available-version">
-        <location filename="../qml/components/AppInformation.qml" line="78"/>
+        <location filename="../qml/components/AppInformation.qml" line="142"/>
         <source>Available version:</source>
         <translation>Tillgänglig version:</translation>
     </message>
     <message id="chum-pkg-package-name">
-        <location filename="../qml/components/AppInformation.qml" line="85"/>
+        <location filename="../qml/components/AppInformation.qml" line="149"/>
         <source>Package name:</source>
         <translation>Paketnamn:</translation>
     </message>
     <message id="chum-pkg-download-size">
-        <location filename="../qml/components/AppInformation.qml" line="92"/>
+        <location filename="../qml/components/AppInformation.qml" line="156"/>
         <source>Download size:</source>
         <translation>Nerladdningsstorlek:</translation>
     </message>
     <message id="chum-pkg-license">
-        <location filename="../qml/components/AppInformation.qml" line="99"/>
+        <location filename="../qml/components/AppInformation.qml" line="163"/>
         <source>License:</source>
         <translation>Licens:</translation>
     </message>
     <message id="chum-pkg-link">
-        <location filename="../qml/components/AppInformation.qml" line="110"/>
+        <location filename="../qml/components/AppInformation.qml" line="174"/>
         <source>Homepage:</source>
         <translation>Webbplats:</translation>
     </message>
+    <message id="chum-pkg-translate-link">
+        <location filename="../qml/components/AppInformation.qml" line="186"/>
+        <source>Translate:</source>
+        <translation>Översätt:</translation>
+    </message>
     <message id="chum-pkg-packaging-link">
-        <location filename="../qml/components/AppInformation.qml" line="122"/>
+        <location filename="../qml/components/AppInformation.qml" line="198"/>
         <source>Packaging repository:</source>
         <translation>Paketförråd:</translation>
+    </message>
+    <message id="chum-pkg-ai-code">
+        <location filename="../qml/components/AppInformation.qml" line="218"/>
+        <source>AI Score:</source>
+        <translation>AI-läge:</translation>
+    </message>
+    <message id="chum-pkg-ai-desc-link-label">
+        <location filename="../qml/components/AppInformation.qml" line="239"/>
+        <source>AI Usage Details:</source>
+        <translation>AI-användning detaljerat:</translation>
     </message>
     <message id="chum-settings-status-repo-management-failed">
         <location filename="../qml/pages/SettingsPage.qml" line="40"/>
