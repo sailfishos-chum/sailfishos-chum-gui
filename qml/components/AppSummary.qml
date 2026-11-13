@@ -71,6 +71,15 @@ Item {
             value: pkg.categories.join(", ")
             visible: value
         }
+
+        ImageLabel {
+            id: legacy
+            image: "image://theme/icon-s-sailfish"
+            //% "Legacy Package"
+            label: qsTrId("chum-pkg-legacy")
+            visible: pkg.legacyPackage
+            width: parent.width
+        }
     }
 
     Row {

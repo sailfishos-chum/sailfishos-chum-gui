@@ -1,12 +1,12 @@
-*.user
 *.qm
+*.user
+/QtCreatorDeployment.txt
+/src/sailfishos-chum-gui
+/src/sailfishos-chum-gui_autogen
 CMakeCache.txt
 CMakeFiles
 Makefile
 cmake_install.cmake
-install_manifest.txt
-/QtCreatorDeployment.txt
 icons/*x*
-/src/sailfishos-chum-gui
-/src/sailfishos-chum-gui_autogen
+install_manifest.txt
 translations/sources.txt

@@ -96,6 +96,20 @@ Page {
             }
 
             MainPageButton {
+                enabled: Chum.repoLegacy
+                //% "Legacy packages"
+                text: qsTrId("chum-packages-legacy")
+                visible: !Chum.busy
+                onClicked: pageStack.push(Qt.resolvedUrl("PackagesListPage.qml"), {
+                                              //% "Legacy"
+                                              title: qsTrId("chum-legacy"),
+                                              applicationsOnly: false,
+                                              legacyPackagesOnly: true
+                                          })
+            }
+
+
+            MainPageButton {
                 enabled: Chum.installedCount > 0
                 text: enabled
                 //% "Installed packages"
